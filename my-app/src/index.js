@@ -2,9 +2,9 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 
-function Hello() {
+let Hello = () => {
   return "Hello World";
-}
+};
 
 export default function AO() {
   return (
