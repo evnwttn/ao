@@ -3,14 +3,14 @@ import ReactDOM from "react-dom";
 import "./index.css";
 
 let button = (elm) => {
-  if (elm === "New") {
-    return (
-      <button key={elm} onClick={() => console.log("This is the NEW button")}>
-        {elm}
-      </button>
-    );
-  }
-  return <button>{elm}</button>;
+  return (
+    <button
+      key={elm}
+      onClick={() => console.log("This is the" + ` ${elm} ` + "button")}
+    >
+      {elm}
+    </button>
+  );
 };
 
 let Hello = () => {
