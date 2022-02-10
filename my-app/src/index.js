@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 
-let button = (elm) => {
+let Button = (elm) => {
   return (
     <button
       key={elm}
@@ -17,12 +17,12 @@ let Home = () => {
   return (
     <>
       <div className="top-right">
-        {button("About")}
-        {button("Contact")}
+        {Button("About")}
+        {Button("Contact")}
       </div>
       <div className="center">
-        {button("New")}
-        {button("Load")}
+        {Button("New")}
+        {Button("Load")}
       </div>
     </>
   );
