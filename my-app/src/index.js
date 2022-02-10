@@ -13,15 +13,23 @@ let button = (elm) => {
   );
 };
 
-let Hello = () => {
-  return "Hello World";
+let Home = () => {
+  return (
+    <>
+      <div className="top-right">{button("About")}</div>
+      <div className="center">
+        {button("New")}
+        <h1>ꜵ</h1>
+        {button("Load")}
+      </div>
+    </>
+  );
 };
 
 export default function AO() {
   return (
     <>
-      <Hello />
-      {button("New")}
+      <Home />
     </>
   );
 }
