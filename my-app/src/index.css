@@ -11,3 +11,15 @@ html {
 h1 {
   text-transform: lowercase;
 }
+
+.center {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.top-right {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
