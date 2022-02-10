@@ -16,10 +16,12 @@ let button = (elm) => {
 let Home = () => {
   return (
     <>
-      <div className="top-right">{button("About")}</div>
+      <div className="top-right">
+        {button("About")}
+        {button("Contact")}
+      </div>
       <div className="center">
         {button("New")}
-        <h1>ꜵ</h1>
         {button("Load")}
       </div>
     </>
