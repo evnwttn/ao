@@ -10,9 +10,13 @@ button {
   font-size: 19.5px;
 }
 
+h1 {
+  font-family: noto-sans, sans-serif;
+}
+
 .center {
   display: flex;
-  padding-top: 20%;
+  padding-top: 18%;
   align-content: center;
   flex-direction: row;
   justify-content: center;

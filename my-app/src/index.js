@@ -2,13 +2,13 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 
-let Button = (elm) => {
+let TextButton = (text) => {
   return (
     <button
-      key={elm}
-      onClick={() => console.log("This is the" + ` ${elm} ` + "button")}
+      key={text}
+      onClick={() => console.log("This be the" + ` ${text} ` + "button")}
     >
-      {elm}
+      {text}
     </button>
   );
 };
@@ -17,21 +17,28 @@ let Home = () => {
   return (
     <>
       <div className="top-right">
-        {Button("About")}
-        {Button("Contact")}
+        {TextButton("About")}
+        {TextButton("Contact")}
       </div>
       <div className="center">
-        {Button("New")}
-        {Button("Load")}
+        {TextButton("New")}
+        <h1>ꜵ</h1>
+        {TextButton("Load")}
       </div>
     </>
   );
+};
+
+let AOChart = () => {
+  console.log("yo");
+  return null;
 };
 
 export default function AO() {
   return (
     <>
       <Home />
+      <AOChart />
     </>
   );
 }
