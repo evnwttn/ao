@@ -8,13 +8,14 @@ import "./index.css";
 
 let TextButton = (text) => {
   return (
-    <button
-      key={text}
-      onClick={() => console.log("This be the" + ` ${text} ` + "button")}
-    >
+    <button key={text} onClick={() => HandleButton(text)}>
       {text}
     </button>
   );
+};
+
+let HandleButton = (input) => {
+  console.log("This is the" + ` ${input} ` + "button");
 };
 
 let Home = () => {
