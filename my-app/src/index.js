@@ -20,6 +20,7 @@ let Home = () => {
   };
 
   let HandleModal = (input, show) => {
+    let pass;
     show = true
       ? input === "New"
         ? console.log("New")
@@ -29,8 +30,8 @@ let Home = () => {
         ? console.log("About")
         : input === "Contact"
         ? console.log("Contact")
-        : ""
-      : "";
+        : pass
+      : pass;
   };
 
   return (
