@@ -2,10 +2,6 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 
-// task right meow -
-// button functions - relay to other functions using name key
-// elm - if elm > elmfunction
-
 let TextButton = (text) => {
   return (
     <button key={text} onClick={() => HandleButton(text)}>
@@ -15,7 +11,11 @@ let TextButton = (text) => {
 };
 
 let HandleButton = (input) => {
-  console.log("This is the" + ` ${input} ` + "button");
+  input === "New"
+    ? alert("New")
+    : input === "Load"
+    ? alert("Load")
+    : console.log("This is the" + ` ${input} ` + "button");
 };
 
 let Home = () => {
