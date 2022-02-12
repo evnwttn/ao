@@ -1,24 +1,27 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
-
-let TextButton = (text) => {
-  return (
-    <button key={text} onClick={() => HandleButton(text)}>
-      {text}
-    </button>
-  );
-};
-
-let HandleButton = (input) => {
-  input === "New"
-    ? alert("New")
-    : input === "Load"
-    ? alert("Load")
-    : console.log("This is the" + ` ${input} ` + "button");
-};
+import { useState } from "react";
 
 let Home = () => {
+  const [show, setCount] = useState(false);
+
+  let TextButton = (text) => {
+    return (
+      <button key={text} onClick={() => HandleButton(text)}>
+        {text}
+      </button>
+    );
+  };
+
+  let HandleButton = (input) => {
+    input === "New"
+      ? alert("New")
+      : input === "Load"
+      ? alert("Load")
+      : console.log("This is the" + ` ${input} ` + "button");
+  };
+
   return (
     <>
       <div className="top-right">
