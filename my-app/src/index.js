@@ -2,6 +2,10 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 
+// task right meow -
+// button functions - relay to other functions using name key
+// elm - if elm > elmfunction
+
 let TextButton = (text) => {
   return (
     <button
