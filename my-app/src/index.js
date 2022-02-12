@@ -4,7 +4,7 @@ import "./index.css";
 import { useState } from "react";
 
 let Home = () => {
-  let [show, setCount] = useState(false);
+  let [show, setModal] = useState(false);
 
   let TextButton = (text) => {
     return (
@@ -15,11 +15,22 @@ let Home = () => {
   };
 
   let HandleButton = (input) => {
-    input === "New"
-      ? setCount((show = true))
-      : input === "Load"
-      ? alert("Load")
-      : console.log("This is the" + ` ${input} ` + "button");
+    setModal(true);
+    HandleModal(input, show);
+  };
+
+  let HandleModal = (a, b) => {
+    if ((b = true)) {
+      if (a === "New") {
+        console.log("New");
+      } else if (a === "Load") {
+        console.log("Load");
+      } else if (a === "About") {
+        console.log("About");
+      } else if (a === "Contact") {
+        console.log("Contact");
+      }
+    }
   };
 
   return (
