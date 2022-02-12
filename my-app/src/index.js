@@ -20,17 +20,17 @@ let Home = () => {
   };
 
   let HandleModal = (input, show) => {
-    if ((show = true)) {
-      if (input === "New") {
-        console.log("New");
-      } else if (input === "Load") {
-        console.log("Load");
-      } else if (input === "About") {
-        console.log("About");
-      } else if (input === "Contact") {
-        console.log("Contact");
-      }
-    }
+    show = true
+      ? input === "New"
+        ? console.log("New")
+        : input === "Load"
+        ? console.log("Load")
+        : input === "About"
+        ? console.log("About")
+        : input === "Contact"
+        ? console.log("Contact")
+        : ""
+      : "";
   };
 
   return (
