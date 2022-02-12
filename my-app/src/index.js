@@ -4,7 +4,7 @@ import "./index.css";
 import { useState } from "react";
 
 let Home = () => {
-  const [show, setCount] = useState(false);
+  let [show, setCount] = useState(false);
 
   let TextButton = (text) => {
     return (
@@ -16,7 +16,7 @@ let Home = () => {
 
   let HandleButton = (input) => {
     input === "New"
-      ? alert("New")
+      ? setCount((show = true))
       : input === "Load"
       ? alert("Load")
       : console.log("This is the" + ` ${input} ` + "button");
