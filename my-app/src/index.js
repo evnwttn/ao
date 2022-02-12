@@ -19,15 +19,15 @@ let Home = () => {
     HandleModal(input, show);
   };
 
-  let HandleModal = (a, b) => {
-    if ((b = true)) {
-      if (a === "New") {
+  let HandleModal = (input, show) => {
+    if ((show = true)) {
+      if (input === "New") {
         console.log("New");
-      } else if (a === "Load") {
+      } else if (input === "Load") {
         console.log("Load");
-      } else if (a === "About") {
+      } else if (input === "About") {
         console.log("About");
-      } else if (a === "Contact") {
+      } else if (input === "Contact") {
         console.log("Contact");
       }
     }
