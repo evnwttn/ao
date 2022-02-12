@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
+import "./modal.css";
 import { useState } from "react";
 
 let Home = () => {
