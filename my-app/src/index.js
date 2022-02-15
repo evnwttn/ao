@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import "@fontsource/noto-sans";
 import "./index.css";
 import { useState } from "react";
 
