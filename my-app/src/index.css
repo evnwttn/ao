@@ -1,5 +1,5 @@
 button {
-  font-family: noto-sans, sans-serif;
+  font-family: "Noto Sans", sans-serif;
   letter-spacing: 5px;
   text-transform: uppercase;
   border: none;
@@ -9,7 +9,7 @@ button {
 }
 
 h1 {
-  font-family: noto-sans, sans-serif;
+  font-family: "Noto Sans", sans-serif;
 }
 
 .center {
