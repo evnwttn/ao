@@ -55,13 +55,13 @@ let AOChart = () => {
   return null;
 };
 
-export default function AO() {
+let AO = () => {
   return (
     <>
       <Home />
       <AOChart />
     </>
   );
-}
+};
 
 ReactDOM.render(AO(), document.getElementById("root"));
