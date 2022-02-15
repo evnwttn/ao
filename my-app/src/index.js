@@ -3,14 +3,9 @@ import ReactDOM from "react-dom";
 import "@fontsource/noto-sans";
 import "./index.css";
 import { useState } from "react";
-import Button from "@mui/material/Button";
 
 let Home = () => {
   let [show, setModal] = useState(false);
-
-  function App() {
-    return <Button variant="contained">Hello World</Button>;
-  }
 
   let TextButton = (text) => {
     return (
@@ -50,7 +45,6 @@ let Home = () => {
         {TextButton("New")}
         <h1>ꜵ</h1>
         {TextButton("Load")}
-        <App />
       </div>
     </>
   );
