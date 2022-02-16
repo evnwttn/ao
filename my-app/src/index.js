@@ -6,45 +6,26 @@ import { useState } from "react";
 import { TextButton } from "./components/TextButton";
 
 let Home = () => {
-  let [showModal, setShowModal] = useState(false);
-
   let HandleButton = (input) => {
-    HandleModal(input, showModal);
-    setShowModal(true);
-  };
-
-  let HandleModal = (input, showModal) => {
-    let pass;
-    showModal = true
-      ? input === "New"
-        ? console.log("New")
-        : input === "Load"
-        ? console.log("Load")
-        : input === "About"
-        ? console.log("About")
-        : input === "Contact"
-        ? console.log("Contact")
-        : pass
-      : pass;
+    console.log(input);
   };
 
   return (
     <>
       <div className="top-right">
-        <TextButton text={"About"} onClick={HandleButton(text)} />
-        <TextButton text={"Contact"} onClick={HandleButton(text)} />
+        <TextButton text={"About"} />
+        <TextButton text={"Contact"} />
       </div>
       <div className="center">
-        <TextButton text={"New"} onClick={HandleButton(text)} />
+        <TextButton text={"New"} />
         <h1>ꜵ</h1>
-        <TextButton text={"Load"} onClick={HandleButton(text)} />
+        <TextButton text={"Load"} />
       </div>
     </>
   );
 };
 
 let AOChart = () => {
-  console.log("yo");
   return null;
 };
 

@@ -1,6 +1,6 @@
-export const TextButton = ({ text, onClick }) => {
+export const TextButton = ({ text }) => {
   return (
-    <button key={text} onClick={() => onClick()}>
+    <button key={text} onClick={() => console.log(text)}>
       {text}
     </button>
   );
