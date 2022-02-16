@@ -3,24 +3,17 @@ import ReactDOM from "react-dom";
 import "@fontsource/noto-sans";
 import "./index.css";
 import { useState } from "react";
+import { TextButton } from "./components/TextButton";
 
 let Home = () => {
   let [showModal, setShowModal] = useState(false);
-
-  let TextButton = (text) => {
-    return (
-      <button key={text} onClick={() => HandleButton(text)}>
-        {text}
-      </button>
-    );
-  };
 
   let HandleButton = (input) => {
     HandleModal(input, showModal);
     setShowModal(true);
   };
 
-  let HandleModal = (input, show) => {
+  let HandleModal = (input, showModal) => {
     let pass;
     showModal = true
       ? input === "New"
@@ -38,13 +31,13 @@ let Home = () => {
   return (
     <>
       <div className="top-right">
-        {TextButton("About")}
-        {TextButton("Contact")}
+        <TextButton text={"About"} onClick={HandleButton(text)} />
+        <TextButton text={"Contact"} onClick={HandleButton(text)} />
       </div>
       <div className="center">
-        {TextButton("New")}
+        <TextButton text={"New"} onClick={HandleButton(text)} />
         <h1>ꜵ</h1>
-        {TextButton("Load")}
+        <TextButton text={"Load"} onClick={HandleButton(text)} />
       </div>
     </>
   );
