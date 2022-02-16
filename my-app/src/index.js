@@ -6,10 +6,6 @@ import { useState } from "react";
 import { TextButton } from "./components/TextButton";
 
 let Home = () => {
-  let HandleButton = (input) => {
-    console.log(input);
-  };
-
   return (
     <>
       <div className="top-right">
