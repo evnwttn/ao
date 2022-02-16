@@ -3,10 +3,9 @@ import ReactDOM from "react-dom";
 import "@fontsource/noto-sans";
 import "./index.css";
 import { useState } from "react";
-import ModalUnstyled from "@mui/base/ModalUnstyled";
 
 let Home = () => {
-  let [show, setModal] = useState(false);
+  let [showModal, setShowModal] = useState(false);
 
   let TextButton = (text) => {
     return (
@@ -17,13 +16,13 @@ let Home = () => {
   };
 
   let HandleButton = (input) => {
-    setModal(true);
-    HandleModal(input, show);
+    HandleModal(input, showModal);
+    setShowModal(true);
   };
 
   let HandleModal = (input, show) => {
     let pass;
-    show = true
+    showModal = true
       ? input === "New"
         ? console.log("New")
         : input === "Load"
