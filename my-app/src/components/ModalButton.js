@@ -2,9 +2,14 @@ import * as React from "react";
 import Box from "@mui/material/Box";
 import Modal from "@mui/material/Modal";
 import "@fontsource/noto-sans";
+import Divider from "@mui/material/Divider";
 
 const style = {
   fontFamily: "Noto Sans",
+  textTransform: "uppercase",
+  fontSize: "0.9rem",
+  letterSpacing: "0.2pt",
+  textAlign: "center",
   position: "absolute",
   top: "50%",
   left: "50%",
@@ -34,6 +39,11 @@ export const ModalButton = ({ text }) => {
         aria-describedby="modal-modal-description"
       >
         <Box sx={style}>
+          AO
+          <br />
+          <br />
+          <Divider variant="middle" />
+          <br />
           This be the {text} modal and it'll show {text} shit.
         </Box>
       </Modal>
