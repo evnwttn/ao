@@ -1,16 +1,18 @@
 import * as React from "react";
 import Box from "@mui/material/Box";
 import Modal from "@mui/material/Modal";
+import "@fontsource/noto-sans";
 
 const style = {
+  fontFamily: "Noto Sans",
   position: "absolute",
   top: "50%",
   left: "50%",
   transform: "translate(-50%, -50%)",
   width: 400,
-  bgcolor: "background.paper",
-  border: "2px solid #000",
-  boxShadow: 24,
+  bgcolor: "#2D2D2D",
+  color: "#F3EFE0",
+  boxShadow: "0px 0px 200px #000000",
   p: 4,
 };
 
