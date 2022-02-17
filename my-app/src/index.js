@@ -4,7 +4,7 @@ import "@fontsource/noto-sans";
 import "./index.css";
 import { useState } from "react";
 import { TextButton } from "./components/TextButton";
-import ModalUnstyled from "@mui/base/ModalUnstyled";
+import { BasicModal } from "./components/BasicModal";
 
 let Home = () => {
   return (
@@ -17,6 +17,8 @@ let Home = () => {
         <TextButton text={"New"} />
         <h1>ꜵ</h1>
         <TextButton text={"Load"} />
+        <br />
+        <BasicModal />
       </div>
     </>
   );
