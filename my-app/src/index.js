@@ -3,22 +3,19 @@ import ReactDOM from "react-dom";
 import "@fontsource/noto-sans";
 import "./index.css";
 import { useState } from "react";
-import { TextButton } from "./components/TextButton";
-import { BasicModal } from "./components/BasicModal";
+import { ModalButton } from "./components/ModalButton";
 
 let Home = () => {
   return (
     <>
       <div className="top-right">
-        <TextButton text={"About"} />
-        <TextButton text={"Contact"} />
+        <ModalButton text={"About"} />
+        <ModalButton text={"Contact"} />
       </div>
       <div className="center">
-        <TextButton text={"New"} />
+        <ModalButton text={"New"} />
         <h1>ꜵ</h1>
-        <TextButton text={"Load"} />
-        <br />
-        <BasicModal />
+        <ModalButton text={"Load"} />
       </div>
     </>
   );
