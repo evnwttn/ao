@@ -39,7 +39,15 @@ export const ModalButton = ({ text }) => {
         aria-describedby="modal-modal-description"
       >
         <Box sx={style}>
-          AO
+          <div
+            style={{
+              fontSize: "2.5rem",
+              textTransform: "lowercase",
+              color: "#D93D1A",
+            }}
+          >
+            ꜵ
+          </div>
           <br />
           <br />
           <Divider variant="middle" />
