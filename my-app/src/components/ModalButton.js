@@ -14,7 +14,7 @@ const style = {
   top: "50%",
   left: "50%",
   transform: "translate(-50%, -50%)",
-  width: 400,
+  width: "33%",
   bgcolor: "#2D2D2D",
   color: "#F3EFE0",
   boxShadow: "0px 0px 200px #000000",
@@ -51,6 +51,7 @@ export const ModalButton = ({ text }) => {
           </div>
 
           <Divider variant="middle" />
+
           <br />
           <div style={{ fontFamily: "Noto Sans" }}>
             This be the {text} modal and it'll show {text} shit.
