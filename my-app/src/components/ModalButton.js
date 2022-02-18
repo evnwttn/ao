@@ -2,12 +2,12 @@ import * as React from "react";
 import Box from "@mui/material/Box";
 import Modal from "@mui/material/Modal";
 import "@fontsource/noto-sans";
+import "@fontsource/noto-serif";
 import Divider from "@mui/material/Divider";
 
 const style = {
-  fontFamily: "Noto Sans",
   textTransform: "uppercase",
-  fontSize: "0.9rem",
+  fontSize: "0.8rem",
   letterSpacing: "0.2pt",
   textAlign: "center",
   position: "absolute",
@@ -42,17 +42,19 @@ export const ModalButton = ({ text }) => {
           <div
             style={{
               fontSize: "2.5rem",
+              fontFamily: "Noto Serif",
               textTransform: "lowercase",
               color: "#D93D1A",
             }}
           >
             ꜵ
           </div>
-          <br />
-          <br />
+
           <Divider variant="middle" />
           <br />
-          This be the {text} modal and it'll show {text} shit.
+          <div style={{ fontFamily: "Noto Sans" }}>
+            This be the {text} modal and it'll show {text} shit.
+          </div>
         </Box>
       </Modal>
     </div>
