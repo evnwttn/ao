@@ -13,21 +13,27 @@ const aotheme = createTheme({
     secondary: {
       main: secondaryColor,
     },
-    error: {
+    tertiary: {
+      main: dangerColor,
+    },
+    pink: {
+      main: "pink",
+    },
+    info: {
       main: dangerColor,
     },
   },
-  components: {
-    MuiFab: {
-      styleOverrides: {
-        secondary: {
-          "&:hover": {
-            color: "white",
-          },
-        },
-      },
-    },
-  },
+  //   components: {
+  //     MuiFab: {
+  //       styleOverrides: {
+  //         secondary: {
+  //           "&:hover": {
+  //             color: "white",
+  //           },
+  //         },
+  //       },
+  //     },
+  //   },
 });
 
 export default aotheme;

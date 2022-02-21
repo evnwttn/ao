@@ -31,7 +31,7 @@ const ImageCard = () => {
         <Fab size="large" color="primary" variant="extended">
           Share
         </Fab>
-        <Fab size="small" color="secondary" variant="extended">
+        <Fab size="small" color="pink" variant="extended">
           Learn More
         </Fab>
       </CardActions>
