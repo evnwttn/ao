@@ -13,10 +13,10 @@ const aoDivider = "#707070";
 
 const aotheme = createTheme({
   palette: {
-    black: {
+    primary: {
       main: aoBlack,
     },
-    white: {
+    secondary: {
       main: aoWhite,
     },
     blue: {
@@ -35,17 +35,18 @@ const aotheme = createTheme({
       main: aoDivider,
     },
   },
-  //   components: {
-  //     MuiFab: {
-  //       styleOverrides: {
-  //         secondary: {
-  //           "&:hover": {
-  //             color: "white",
-  //           },
-  //         },
-  //       },
-  //     },
-  //   },
+  components: {
+    MuiDivider: {
+      styleOverrides: {
+        secondary: {
+          main: {
+            color: "white",
+          },
+        },
+      },
+    },
+  },
 });
 
 export default aotheme;
+export { aoBlack, aoWhite, aoBlue, aoYellow, aoRed, aoGrey, aoDivider };

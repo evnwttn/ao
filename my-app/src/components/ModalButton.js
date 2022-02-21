@@ -4,6 +4,15 @@ import Modal from "@mui/material/Modal";
 import "@fontsource/noto-sans";
 import "@fontsource/noto-serif";
 import Divider from "@mui/material/Divider";
+import {
+  aoBlack,
+  aoWhite,
+  aoBlue,
+  aoYellow,
+  aoRed,
+  aoGrey,
+  aoDivider,
+} from "../assets/theme";
 
 const style = {
   textTransform: "uppercase",
@@ -15,7 +24,7 @@ const style = {
   left: "50%",
   transform: "translate(-50%, -50%)",
   width: "33%",
-  bgcolor: "#2D2D2D",
+  bgcolor: aoGrey,
   boxShadow: "0px 0px 200px #000000",
   p: 4,
 };
@@ -26,7 +35,7 @@ export const ModalButton = ({ text }) => {
   const handleClose = () => setOpen(false);
 
   return (
-    <div>
+    <>
       <button key={text} onClick={handleOpen}>
         {text}
       </button>
@@ -43,19 +52,20 @@ export const ModalButton = ({ text }) => {
               fontSize: "2.5rem",
               fontFamily: "Noto Serif",
               textTransform: "lowercase",
+              color: aoRed,
             }}
           >
             ꜵ
           </div>
 
-          <Divider variant="middle" />
+          <Divider variant="middle" style={{ color: aoDivider }} />
 
           <br />
-          <div style={{ fontFamily: "Noto Sans" }}>
+          <div style={{ fontFamily: "Noto Sans", color: "#F3EFE0" }}>
             This be the {text} modal and it'll show {text} shit.
           </div>
         </Box>
       </Modal>
-    </div>
+    </>
   );
 };
