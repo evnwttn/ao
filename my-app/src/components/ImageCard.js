@@ -28,8 +28,12 @@ const ImageCard = () => {
         </Typography>
       </CardContent>
       <CardActions>
-        <Fab size="small">Share</Fab>
-        <Fab size="small">Learn More</Fab>
+        <Fab size="small" color="primary" variant="extended">
+          Share
+        </Fab>
+        <Fab size="small" color="secondary" variant="extended">
+          Learn More
+        </Fab>
       </CardActions>
     </Card>
   );
