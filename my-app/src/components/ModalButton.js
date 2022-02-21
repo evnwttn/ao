@@ -1,9 +1,7 @@
 import * as React from "react";
-import Box from "@mui/material/Box";
-import Modal from "@mui/material/Modal";
 import "@fontsource/noto-sans";
 import "@fontsource/noto-serif";
-import Divider from "@mui/material/Divider";
+import { Divider, Button, Box, Modal } from "@mui/material";
 import { aoWhite, aoRed, aoGrey, aoDivider } from "../assets/theme";
 
 const style = {
@@ -28,9 +26,9 @@ export const ModalButton = ({ text }) => {
 
   return (
     <>
-      <button key={text} onClick={handleOpen}>
+      <Button key={text} onClick={handleOpen} color="secondary">
         {text}
-      </button>
+      </Button>
 
       <Modal
         open={open}

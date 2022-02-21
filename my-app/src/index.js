@@ -10,7 +10,7 @@ let Home = () => {
   return (
     <ThemeProvider theme={aotheme}>
       <div className="top-right">
-        <ModalButton text={"About"} />
+        <ModalButton text={"About"} color="secondary" />
         <ModalButton text={"Contact"} />
       </div>
       <div className="center">
