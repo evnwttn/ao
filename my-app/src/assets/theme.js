@@ -36,11 +36,16 @@ const aotheme = createTheme({
     },
   },
   components: {
-    MuiDivider: {
+    MuiButton: {
       styleOverrides: {
-        secondary: {
-          main: {
-            color: "white",
+        textSecondary: {
+          color: aoWhite,
+          fontFamily: "Noto Sans",
+          fontSize: "15.5pt",
+          pointerEvents: "all",
+          letterSpacing: "8.2pt",
+          "&:hover": {
+            background: "none",
           },
         },
       },

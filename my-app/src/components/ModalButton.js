@@ -26,7 +26,8 @@ export const ModalButton = ({ text }) => {
 
   return (
     <>
-      <Button key={text} onClick={handleOpen} color="secondary">
+      {/* BECUASE ITS NOT A FUCKING REACT BUTTON */}
+      <Button key={text} onClick={handleOpen} variant="text" color="secondary">
         {text}
       </Button>
 
