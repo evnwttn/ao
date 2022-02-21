@@ -7,17 +7,11 @@ import {
   Fab,
   Typography,
 } from "@mui/material/";
-import reptile from "../assets/images/reptile.jpg";
 
 const ImageCard = () => {
   return (
     <Card sx={{ mt: 4 }}>
-      <CardMedia
-        component="img"
-        height="140"
-        image={reptile}
-        alt="green iguana"
-      />
+      <CardMedia component="img" height="140" />
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
           Lizard

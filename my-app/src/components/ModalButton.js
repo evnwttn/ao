@@ -4,15 +4,7 @@ import Modal from "@mui/material/Modal";
 import "@fontsource/noto-sans";
 import "@fontsource/noto-serif";
 import Divider from "@mui/material/Divider";
-import {
-  aoBlack,
-  aoWhite,
-  aoBlue,
-  aoYellow,
-  aoRed,
-  aoGrey,
-  aoDivider,
-} from "../assets/theme";
+import { aoWhite, aoRed, aoGrey, aoDivider } from "../assets/theme";
 
 const style = {
   textTransform: "uppercase",
@@ -25,7 +17,7 @@ const style = {
   transform: "translate(-50%, -50%)",
   width: "33%",
   bgcolor: aoGrey,
-  boxShadow: "0px 0px 200px #000000",
+  boxShadow: "0px 0px 200px",
   p: 4,
 };
 
@@ -61,7 +53,7 @@ export const ModalButton = ({ text }) => {
           <Divider variant="middle" style={{ color: aoDivider }} />
 
           <br />
-          <div style={{ fontFamily: "Noto Sans", color: "#F3EFE0" }}>
+          <div style={{ fontFamily: "Noto Sans", color: aoWhite }}>
             This be the {text} modal and it'll show {text} shit.
           </div>
         </Box>
