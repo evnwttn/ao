@@ -4,14 +4,14 @@ import {
   CardActions,
   CardContent,
   CardMedia,
-  Button,
+  Fab,
   Typography,
 } from "@mui/material/";
 import reptile from "../assets/images/reptile.jpg";
 
 const ImageCard = () => {
   return (
-    <Card sx={{ maxWidth: 345 }}>
+    <Card sx={{ mt: 4 }}>
       <CardMedia
         component="img"
         height="140"
@@ -28,8 +28,8 @@ const ImageCard = () => {
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small">Share</Button>
-        <Button size="small">Learn More</Button>
+        <Fab size="small">Share</Fab>
+        <Fab size="small">Learn More</Fab>
       </CardActions>
     </Card>
   );
