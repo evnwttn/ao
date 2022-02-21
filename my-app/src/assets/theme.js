@@ -5,7 +5,7 @@ const primaryColor = purple[600];
 const secondaryColor = orange[500];
 const dangerColor = red[900];
 
-const theme = createTheme({
+const aotheme = createTheme({
   palette: {
     primary: {
       main: primaryColor,
@@ -17,6 +17,17 @@ const theme = createTheme({
       main: dangerColor,
     },
   },
+  components: {
+    MuiFab: {
+      styleOverrides: {
+        secondary: {
+          "&:hover": {
+            color: "white",
+          },
+        },
+      },
+    },
+  },
 });
 
-export default theme;
+export default aotheme;
