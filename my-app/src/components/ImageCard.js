@@ -7,6 +7,7 @@ import {
   Button,
   Typography,
 } from "@mui/material/";
+import reptile from "../assets/images/reptile.jpg";
 
 const ImageCard = () => {
   return (
@@ -14,7 +15,7 @@ const ImageCard = () => {
       <CardMedia
         component="img"
         height="140"
-        image="/static/images/cards/contemplative-reptile.jpg"
+        image={reptile}
         alt="green iguana"
       />
       <CardContent>
