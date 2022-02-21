@@ -3,10 +3,12 @@ import ReactDOM from "react-dom";
 import "@fontsource/noto-sans";
 import "./index.css";
 import { ModalButton } from "./components/ModalButton";
+import ImageCard from "./components/ImageCard";
 
 let Home = () => {
   return (
     <>
+      <ImageCard />
       <div className="top-right">
         <ModalButton text={"About"} />
         <ModalButton text={"Contact"} />

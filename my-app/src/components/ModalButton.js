@@ -43,7 +43,6 @@ export const ModalButton = ({ text }) => {
               fontSize: "2.5rem",
               fontFamily: "Noto Serif",
               textTransform: "lowercase",
-              color: "#D93D1A",
             }}
           >
             ꜵ
