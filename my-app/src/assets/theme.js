@@ -1,26 +1,38 @@
 import { createTheme } from "@mui/material";
-import { purple, orange, red } from "@mui/material/colors";
 
-const primaryColor = purple[600];
-const secondaryColor = orange[500];
-const dangerColor = red[900];
+// palette
+const aoBlack = "#272727";
+const aoWhite = "#F3EFE0";
+const aoBlue = "#7284A8";
+const aoYellow = "#F2BF80";
+const aoRed = "#D93D1A";
+
+// shades
+const aoGrey = "#2D2D2D";
+const aoDivider = "#707070";
 
 const aotheme = createTheme({
   palette: {
-    primary: {
-      main: primaryColor,
+    black: {
+      main: aoBlack,
     },
-    secondary: {
-      main: secondaryColor,
+    white: {
+      main: aoWhite,
     },
-    tertiary: {
-      main: dangerColor,
+    blue: {
+      main: aoBlue,
     },
-    pink: {
-      main: "pink",
+    yellow: {
+      main: aoYellow,
     },
-    info: {
-      main: dangerColor,
+    red: {
+      main: aoRed,
+    },
+    grey: {
+      main: aoGrey,
+    },
+    divider: {
+      main: aoDivider,
     },
   },
   //   components: {

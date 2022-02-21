@@ -1,16 +1,14 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { ThemeProvider } from "@mui/material";
-import theme from "./assets/theme";
+import aotheme from "./assets/theme";
 import "@fontsource/noto-sans";
 import "./index.css";
 import { ModalButton } from "./components/ModalButton";
-import ImageCard from "./components/ImageCard";
 
 let Home = () => {
   return (
-    <ThemeProvider theme={theme}>
-      <ImageCard />
+    <ThemeProvider theme={aotheme}>
       <div className="top-right">
         <ModalButton text={"About"} />
         <ModalButton text={"Contact"} />
