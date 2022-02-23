@@ -19,10 +19,11 @@ const style = {
 };
 
 export const ModalText = ({ prompt }) => {
-  if (prompt === "New") {
-    console.log("yes");
-  }
   return (
+    // for the how to do shit modal on the AOchart
+    // drop an if not here to dodge the AO logo
+    // & just render instructions
+
     <Box sx={style}>
       <div
         style={{
@@ -39,15 +40,22 @@ export const ModalText = ({ prompt }) => {
 
       <br />
       <div style={{ fontFamily: "Noto Sans", color: aoWhite }}>
-        {prompt === "New"
-          ? "This be some new shit"
-          : prompt === "Load"
-          ? "This be some loading shit"
-          : prompt === "About"
-          ? "This be some ABOUT SHIT"
-          : prompt === "Contact"
-          ? "This be some CONTRACTING"
-          : null}
+        {prompt === "New" ? (
+          "This be some new shit"
+        ) : prompt === "Load" ? (
+          "This be some loading shit"
+        ) : prompt === "About" ? (
+          <>
+            A visual album management toolkit designed by &#x0026; for musicians
+            to track &#x0026; monitor progress, foster collaboration, and aid in
+            the smashing of goals.
+            <br />
+            <br />
+            To begin, start a <b>new</b> project.
+          </>
+        ) : prompt === "Contact" ? (
+          "This be some CONTRACTING"
+        ) : null}
       </div>
     </Box>
   );
