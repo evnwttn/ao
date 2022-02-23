@@ -19,6 +19,9 @@ const style = {
 };
 
 export const ModalText = ({ prompt }) => {
+  if (prompt === "New") {
+    console.log("yes");
+  }
   return (
     <Box sx={style}>
       <div
@@ -36,7 +39,15 @@ export const ModalText = ({ prompt }) => {
 
       <br />
       <div style={{ fontFamily: "Noto Sans", color: aoWhite }}>
-        This be the {prompt} modal and it'll show {prompt} shit.
+        {prompt === "New"
+          ? "This be some new shit"
+          : prompt === "Load"
+          ? "This be some loading shit"
+          : prompt === "About"
+          ? "This be some ABOUT SHIT"
+          : prompt === "Contact"
+          ? "This be some CONTRACTING"
+          : null}
       </div>
     </Box>
   );
