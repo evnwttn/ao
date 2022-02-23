@@ -41,9 +41,9 @@ export const ModalText = ({ prompt }) => {
       <br />
       <div style={{ fontFamily: "Noto Sans", color: aoWhite }}>
         {prompt === "New" ? (
-          "This be some new shit"
+          <>This be some new shit</>
         ) : prompt === "Load" ? (
-          "This be some loading shit"
+          <>This be some contacting shit</>
         ) : prompt === "About" ? (
           <>
             A visual album management toolkit designed by &#x0026; for musicians
@@ -54,7 +54,7 @@ export const ModalText = ({ prompt }) => {
             To begin, start a <b>new</b> project.
           </>
         ) : prompt === "Contact" ? (
-          "This be some CONTRACTING"
+          <>This be some contacting shit</>
         ) : null}
       </div>
     </Box>
