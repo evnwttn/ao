@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import "@fontsource/noto-sans";
 import "@fontsource/noto-serif";
 import { Divider, Button, Box, Modal } from "@mui/material";
@@ -26,10 +26,11 @@ export const ModalButton = ({ text }) => {
 
   return (
     <>
-      {/* BECUASE ITS NOT A FUCKING REACT BUTTON */}
       <Button key={text} onClick={handleOpen} variant="text" color="secondary">
         {text}
       </Button>
+
+      {/*  */}
 
       <Modal
         open={open}
