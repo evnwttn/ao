@@ -19,7 +19,7 @@ const style = {
   p: 4,
 };
 
-export const ModalText = ({ text }) => {
+export const ModalText = ({ prompt }) => {
   return (
     <Box sx={style}>
       <div
@@ -37,7 +37,7 @@ export const ModalText = ({ text }) => {
 
       <br />
       <div style={{ fontFamily: "Noto Sans", color: aoWhite }}>
-        This be the {text} modal and it'll show {text} shit.
+        This be the {prompt} modal and it'll show {prompt} shit.
       </div>
     </Box>
   );
