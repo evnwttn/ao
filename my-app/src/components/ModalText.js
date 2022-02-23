@@ -1,4 +1,3 @@
-import React from "react";
 import { Divider, Box } from "@mui/material";
 import "@fontsource/noto-sans";
 import "@fontsource/noto-serif";

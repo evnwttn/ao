@@ -1,15 +1,5 @@
 import { createTheme } from "@mui/material";
 
-export const colours = [
-  { colour: "black", hex: "#272727" },
-  { colour: "white", hex: "#F3EFE0" },
-  { colour: "blue", hex: "#7284A8" },
-  { colour: "yellow", hex: "#F2BF80" },
-  { colour: "red", hex: "#D93D1A" },
-  { colour: "grey", hex: "#2D2D2D" },
-  { colour: "divider", hex: "#707070" },
-];
-
 // palette
 const aoBlack = "#272727";
 const aoWhite = "#F3EFE0";

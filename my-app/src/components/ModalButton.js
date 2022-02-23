@@ -21,7 +21,9 @@ export const ModalButton = ({ text }) => {
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
-        <ModalText prompt={text} />
+        <>
+          <ModalText prompt={text} />
+        </>
       </Modal>
     </>
   );
