@@ -7,11 +7,6 @@ export const MainLogo = () => {
     color: aoBlue,
     fontFamily: "Noto-Serif",
     fontSize: "10.8rem",
-    textAlign: "center",
-    position: "absolute",
-    top: "50%",
-    left: "50%",
-    transform: "translate(-50%, -50%)",
   };
 
   return (

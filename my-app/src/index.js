@@ -10,7 +10,7 @@ import { MainLogo } from "./components/MainLogo";
 
 let centerStyle = {
   display: "flex",
-  paddingTop: "18%",
+  paddingTop: "11.5%",
   alignContent: "center",
   flexDirection: "row",
   justifyContent: "center",
