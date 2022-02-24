@@ -9,7 +9,6 @@ import { ModalButton } from "./components/ModalButton";
 import { MainLogo } from "./components/MainLogo";
 
 let containerStyle = {
-  backgroundColor: "#272727",
   marginLeft: "2.5vw",
   marginRight: "2.5vw",
   marginTop: "2.5vh",
