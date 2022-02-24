@@ -5,6 +5,7 @@ import aotheme from "./assets/theme";
 import "@fontsource/noto-sans";
 import "./index.css";
 import { ModalButton } from "./components/ModalButton";
+import { MainLogo } from "./components/MainLogo";
 
 let Home = () => {
   return (
@@ -15,7 +16,7 @@ let Home = () => {
       </div>
       <div className="center">
         <ModalButton text={"New"} />
-        <h1>ꜵ</h1>
+        <MainLogo />
         <ModalButton text={"Load"} />
       </div>
     </ThemeProvider>
