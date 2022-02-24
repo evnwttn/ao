@@ -1,13 +1,20 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { ThemeProvider } from "@mui/material";
+import { ThemeProvider, Box } from "@mui/material";
 import aotheme from "./assets/theme";
 import "@fontsource/noto-sans";
 import "@fontsource/noto-serif";
-
 import "./index.css";
 import { ModalButton } from "./components/ModalButton";
 import { MainLogo } from "./components/MainLogo";
+
+let centerStyle = {
+  display: "flex",
+  paddingTop: "18%",
+  alignContent: "center",
+  flexDirection: "row",
+  justifyContent: "center",
+};
 
 let Home = () => {
   return (
@@ -16,11 +23,11 @@ let Home = () => {
         <ModalButton text={"About"} />
         <ModalButton text={"Contact"} />
       </div>
-      <div className="center">
+      <Box sx={centerStyle}>
         <ModalButton text={"New"} />
         <MainLogo />
         <ModalButton text={"Load"} />
-      </div>
+      </Box>
     </ThemeProvider>
   );
 };
