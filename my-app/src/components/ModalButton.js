@@ -12,12 +12,20 @@ export const ModalButton = ({ text }) => {
   return (
     <>
       {text === "New" ? (
+        <Button key={text} onClick={handleOpen} variant="text" color="primary">
+          {text}
+        </Button>
+      ) : text === "Load" ? (
         <Button
           key={text}
           onClick={handleOpen}
           variant="text"
           color="secondary"
         >
+          {text}
+        </Button>
+      ) : text === "Contact" || "About" ? (
+        <Button key={text} onClick={handleOpen} variant="text" color="primary">
           {text}
         </Button>
       ) : null}
