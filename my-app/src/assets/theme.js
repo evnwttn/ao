@@ -39,19 +39,21 @@ const aotheme = createTheme({
     MuiButton: {
       styleOverrides: {
         text: {
+          color: aoWhite,
           fontFamily: "Noto Sans",
           fontSize: "15.5pt",
           pointerEvents: "all",
-          letterSpacing: "8.2pt",
+          letterSpacing: "8pt",
           "&:hover": {
             background: "none",
           },
         },
-        textPrimary: {
-          color: aoWhite,
-        },
         textSecondary: {
           color: aoRed,
+        },
+        textInherit: {
+          fontSize: "9pt",
+          letterSpacing: "5pt",
         },
       },
     },

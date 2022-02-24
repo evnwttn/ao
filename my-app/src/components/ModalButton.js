@@ -25,7 +25,7 @@ export const ModalButton = ({ text }) => {
           {text}
         </Button>
       ) : text === "Contact" || "About" ? (
-        <Button key={text} onClick={handleOpen} variant="text" color="primary">
+        <Button key={text} onClick={handleOpen} variant="text" color="inherit">
           {text}
         </Button>
       ) : null}
