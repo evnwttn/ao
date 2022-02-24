@@ -38,8 +38,7 @@ const aotheme = createTheme({
   components: {
     MuiButton: {
       styleOverrides: {
-        textPrimary: {
-          color: aoWhite,
+        text: {
           fontFamily: "Noto Sans",
           fontSize: "15.5pt",
           pointerEvents: "all",
@@ -48,15 +47,11 @@ const aotheme = createTheme({
             background: "none",
           },
         },
+        textPrimary: {
+          color: aoWhite,
+        },
         textSecondary: {
           color: aoRed,
-          fontFamily: "Noto Sans",
-          fontSize: "15.5pt",
-          pointerEvents: "all",
-          letterSpacing: "8.2pt",
-          "&:hover": {
-            background: "none",
-          },
         },
       },
     },
