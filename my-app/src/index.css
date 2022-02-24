@@ -2,18 +2,8 @@ html {
   background-color: #272727;
   margin-left: 2.5%;
   margin-right: 2.5%;
-  margin-top: 1.5%;
-  margin-bottom: 1.5%;
-}
-
-button {
-  font-family: "Noto Sans", sans-serif;
-  letter-spacing: 5px;
-  text-transform: uppercase;
-  border: none;
-  background: none;
-  cursor: pointer;
-  font-size: 19.5px;
+  margin-top: 1.25%;
+  margin-bottom: 1.25%;
 }
 
 h1 {
