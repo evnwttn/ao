@@ -6,7 +6,7 @@ export const MainLogo = () => {
   const style = {
     color: aoBlue,
     fontFamily: "Noto-Serif",
-    fontSize: "10.8rem",
+    fontSize: "13vw",
   };
 
   return (

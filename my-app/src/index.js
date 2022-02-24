@@ -8,9 +8,17 @@ import "./index.css";
 import { ModalButton } from "./components/ModalButton";
 import { MainLogo } from "./components/MainLogo";
 
+let containerStyle = {
+  backgroundColor: "#272727",
+  marginLeft: "2.5vw",
+  marginRight: "2.5vw",
+  marginTop: "2.5vh",
+  marginBottom: "2.5vh",
+};
+
 let centerStyle = {
   display: "flex",
-  paddingTop: "11%",
+  paddingTop: "22.5vh",
   alignContent: "center",
   flexDirection: "row",
   justifyContent: "center",
@@ -25,18 +33,20 @@ let topRightStyle = {
 
 let Home = () => {
   return (
-    <ThemeProvider theme={aotheme}>
-      <Box sx={topRightStyle}>
-        <ModalButton text={"About"} />
-        <ModalButton text={"Contact"} />
-      </Box>
+    <Box sx={containerStyle}>
+      <ThemeProvider theme={aotheme}>
+        <Box sx={topRightStyle}>
+          <ModalButton text={"About"} />
+          <ModalButton text={"Contact"} />
+        </Box>
 
-      <Box sx={centerStyle}>
-        <ModalButton text={"New"} />
-        <MainLogo />
-        <ModalButton text={"Load"} />
-      </Box>
-    </ThemeProvider>
+        <Box sx={centerStyle}>
+          <ModalButton text={"New"} />
+          <MainLogo />
+          <ModalButton text={"Load"} />
+        </Box>
+      </ThemeProvider>
+    </Box>
   );
 };
 

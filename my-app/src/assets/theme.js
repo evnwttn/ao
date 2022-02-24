@@ -41,9 +41,9 @@ const aotheme = createTheme({
         text: {
           color: aoWhite,
           fontFamily: "Noto Sans",
-          fontSize: "15.5pt",
+          fontSize: "1.5vw",
           pointerEvents: "all",
-          letterSpacing: "8pt",
+          letterSpacing: "0.75vw",
           "&:hover": {
             background: "none",
           },
@@ -52,8 +52,8 @@ const aotheme = createTheme({
           color: aoRed,
         },
         textInherit: {
-          fontSize: "9pt",
-          letterSpacing: "5pt",
+          fontSize: "1vw",
+          letterSpacing: "0.5vw",
         },
       },
     },
