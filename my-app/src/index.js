@@ -3,6 +3,8 @@ import ReactDOM from "react-dom";
 import { ThemeProvider } from "@mui/material";
 import aotheme from "./assets/theme";
 import "@fontsource/noto-sans";
+import "@fontsource/noto-serif";
+
 import "./index.css";
 import { ModalButton } from "./components/ModalButton";
 import { MainLogo } from "./components/MainLogo";

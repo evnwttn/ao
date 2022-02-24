@@ -1,6 +1,4 @@
 import { Divider, Box } from "@mui/material";
-import "@fontsource/noto-sans";
-import "@fontsource/noto-serif";
 import { aoWhite, aoRed, aoGrey, aoDivider } from "../assets/theme";
 
 const style = {

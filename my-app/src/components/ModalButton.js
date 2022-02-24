@@ -1,6 +1,4 @@
 import React from "react";
-import "@fontsource/noto-sans";
-import "@fontsource/noto-serif";
 import { Button, Modal } from "@mui/material";
 import { ModalText } from "./ModalText";
 
