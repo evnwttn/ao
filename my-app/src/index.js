@@ -10,19 +10,27 @@ import { MainLogo } from "./components/MainLogo";
 
 let centerStyle = {
   display: "flex",
-  paddingTop: "11.5%",
+  paddingTop: "11%",
   alignContent: "center",
   flexDirection: "row",
   justifyContent: "center",
 };
 
+let topRightStyle = {
+  display: "flex",
+  flexDirection: "row",
+  justifyContent: "flex-end",
+  alignItems: "center",
+};
+
 let Home = () => {
   return (
     <ThemeProvider theme={aotheme}>
-      <div className="top-right">
+      <Box sx={topRightStyle}>
         <ModalButton text={"About"} />
         <ModalButton text={"Contact"} />
-      </div>
+      </Box>
+
       <Box sx={centerStyle}>
         <ModalButton text={"New"} />
         <MainLogo />

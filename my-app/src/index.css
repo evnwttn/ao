@@ -5,22 +5,3 @@ html {
   margin-top: 1.25%;
   margin-bottom: 1.25%;
 }
-
-h1 {
-  font-family: "Noto Sans", sans-serif;
-}
-
-.center {
-  display: flex;
-  padding-top: 18%;
-  align-content: center;
-  flex-direction: row;
-  justify-content: center;
-}
-
-.top-right {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  align-items: center;
-}
