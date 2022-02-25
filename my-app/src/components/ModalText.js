@@ -18,10 +18,6 @@ const style = {
 
 export const ModalText = ({ prompt }) => {
   return (
-    // for the how to do shit modal on the AOchart
-    // drop an if not here to dodge the AO logo
-    // & just render instructions
-
     <Box sx={style}>
       <div
         style={{
