@@ -3,8 +3,8 @@ import { aoWhite, aoRed, aoGrey, aoDivider } from "../assets/theme";
 
 const style = {
   textTransform: "uppercase",
-  fontSize: "0.8rem",
-  letterSpacing: "0.2pt",
+  fontSize: "1vw",
+  letterSpacing: "0.5vw",
   textAlign: "center",
   position: "absolute",
   top: "50%",
