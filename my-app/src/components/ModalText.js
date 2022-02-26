@@ -30,6 +30,7 @@ export const ModalText = ({ prompt }) => {
           fontFamily: "Noto Serif",
           textTransform: "lowercase",
           color: aoRed,
+          marginLeft: "0.25rem",
         }}
       >
         ꜵ
