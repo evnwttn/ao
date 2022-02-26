@@ -7,6 +7,7 @@ export const MainLogo = () => {
     color: aoBlue,
     fontFamily: "Noto-Serif",
     fontSize: "13vw",
+    marginTop: "-5vh",
   };
 
   return (
