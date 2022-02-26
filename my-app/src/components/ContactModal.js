@@ -1,3 +1,11 @@
+import AlternateEmailIcon from "@mui/icons-material/AlternateEmail";
+import GitHubIcon from "@mui/icons-material/GitHub";
+
 export const ContactModal = () => {
-  return <>This be some NEW CONTACTING SHIT</>;
+  return (
+    <>
+      <AlternateEmailIcon />
+      <GitHubIcon />
+    </>
+  );
 };
