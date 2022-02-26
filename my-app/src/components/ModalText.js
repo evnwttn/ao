@@ -1,8 +1,9 @@
 import { Divider, Box } from "@mui/material";
-import { NewModal } from "./NewModal";
-import { LoadModal } from "./LoadModal";
-import { AboutModal } from "./AboutModal";
-import { ContactModal } from "./ContactModal";
+import { NewModal } from "./modals/NewModal";
+import { LoadModal } from "./modals/LoadModal";
+import { ContactModal } from "./modals/ContactModal";
+import { AboutModal } from "./modals/AboutModal";
+
 import { aoWhite, aoRed, aoGrey, aoDivider } from "../assets/theme";
 
 const style = {

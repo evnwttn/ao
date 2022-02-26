@@ -4,8 +4,8 @@ import GitHubIcon from "@mui/icons-material/GitHub";
 export const ContactModal = () => {
   return (
     <>
-      <AlternateEmailIcon />
-      <GitHubIcon />
+      <AlternateEmailIcon color="secondary" />
+      <GitHubIcon color="secondary" />
     </>
   );
 };
