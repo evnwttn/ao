@@ -1,5 +1,8 @@
 import { Divider, Box } from "@mui/material";
 import { NewModal } from "./NewModal";
+import { LoadModal } from "./LoadModal";
+import { AboutModal } from "./AboutModal";
+import { ContactModal } from "./ContactModal";
 import { aoWhite, aoRed, aoGrey, aoDivider } from "../assets/theme";
 
 const style = {
@@ -38,18 +41,11 @@ export const ModalText = ({ prompt }) => {
         {prompt === "New" ? (
           <NewModal />
         ) : prompt === "Load" ? (
-          <>This be some contacting shit</>
+          <LoadModal />
         ) : prompt === "About" ? (
-          <>
-            A visual album management toolkit designed by &#x0026; for musicians
-            to track &#x0026; monitor progress, foster collaboration, and aid in
-            the smashing of goals.
-            <br />
-            <br />
-            To begin, start a <b>new</b> project.
-          </>
+          <AboutModal />
         ) : prompt === "Contact" ? (
-          <>This be some contacting shit</>
+          <ContactModal />
         ) : null}
       </div>
     </Box>
