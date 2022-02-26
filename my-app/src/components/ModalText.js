@@ -4,15 +4,15 @@ import { aoWhite, aoRed, aoGrey, aoDivider } from "../assets/theme";
 const style = {
   textTransform: "uppercase",
   fontSize: "1vw",
-  letterSpacing: "0.5vw",
+  letterSpacing: "0.08vw",
   textAlign: "center",
   position: "absolute",
-  top: "50%",
-  left: "50%",
+  top: "50vh",
+  left: "50vw",
   transform: "translate(-50%, -50%)",
-  width: "33%",
+  width: "33vw",
   bgcolor: aoGrey,
-  boxShadow: "0px 0px 200px",
+  boxShadow: "0px 0px 50pt rbg(0 0 0 / 0.16)",
   p: 4,
 };
 
