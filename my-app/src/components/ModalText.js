@@ -1,4 +1,5 @@
 import { Divider, Box } from "@mui/material";
+import { NewModal } from "./NewModal";
 import { aoWhite, aoRed, aoGrey, aoDivider } from "../assets/theme";
 
 const style = {
@@ -35,7 +36,7 @@ export const ModalText = ({ prompt }) => {
       <br />
       <div style={{ fontFamily: "Noto Sans", color: aoWhite }}>
         {prompt === "New" ? (
-          <>This be some new shit</>
+          <NewModal />
         ) : prompt === "Load" ? (
           <>This be some contacting shit</>
         ) : prompt === "About" ? (
