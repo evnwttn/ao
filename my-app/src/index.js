@@ -17,7 +17,7 @@ let containerStyle = {
 
 let centerStyle = {
   display: "flex",
-  paddingTop: "22.5vh",
+  paddingTop: "28vh",
   alignContent: "center",
   flexDirection: "row",
   justifyContent: "center",
