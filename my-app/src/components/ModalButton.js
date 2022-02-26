@@ -10,11 +10,18 @@ export const ModalButton = ({ text }) => {
   return (
     <>
       {text === "New" ? (
-        <Button key={text} onClick={handleOpen} variant="text" color="primary">
+        <Button
+          disableRipple
+          key={text}
+          onClick={handleOpen}
+          variant="text"
+          color="primary"
+        >
           {text}
         </Button>
       ) : text === "Load" ? (
         <Button
+          disableRipple
           key={text}
           onClick={handleOpen}
           variant="text"
@@ -23,7 +30,13 @@ export const ModalButton = ({ text }) => {
           {text}
         </Button>
       ) : text === "Contact" || "About" ? (
-        <Button key={text} onClick={handleOpen} variant="text" color="inherit">
+        <Button
+          disableRipple
+          key={text}
+          onClick={handleOpen}
+          variant="text"
+          color="inherit"
+        >
           {text}
         </Button>
       ) : null}
