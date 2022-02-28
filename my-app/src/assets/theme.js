@@ -38,6 +38,11 @@ const aotheme = createTheme({
     },
   },
   components: {
+    MuiInputLabel: {
+      styleOverrides: {
+        color: aoWhite,
+      },
+    },
     MuiInputBase: {
       styleOverrides: {
         input: {
