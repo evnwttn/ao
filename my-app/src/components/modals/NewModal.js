@@ -1,17 +1,22 @@
 import { Box, TextField } from "@mui/material";
 import AddCircleOutline from "@mui/icons-material/AddCircleOutline";
+import { aoWhite } from "../../assets/theme";
 
 export const NewModal = () => {
   return (
-    <Box sx={{ display: "flex", alignItems: "flex-end" }}>
-      <AddCircleOutline sx={{ color: "action.active", mr: 1, my: 0.5 }} />
+    <Box
+      sx={{
+        display: "flex",
+        alignItems: "flex-end",
+      }}
+    >
+      <AddCircleOutline sx={{ color: aoWhite, mr: 1, my: 0.5 }} />
       <TextField
-        id="input-with-sx"
-        label="Session Name"
+        id="session-title"
+        label="Session Title"
         variant="standard"
         size="small"
-        margin="normal"
-        color="primary"
+        color="red"
       />
     </Box>
   );
