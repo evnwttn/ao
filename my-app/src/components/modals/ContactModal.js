@@ -1,11 +1,29 @@
-import AlternateEmailIcon from "@mui/icons-material/AlternateEmail";
-import GitHubIcon from "@mui/icons-material/GitHub";
+import { Box, TextField } from "@mui/material";
+import AddCircleOutline from "@mui/icons-material/AddCircleOutline";
+import { aoWhite } from "../../assets/theme";
 
 export const ContactModal = () => {
   return (
     <>
-      <AlternateEmailIcon sx={{ mx: 1 }} color="secondary" />
-      <GitHubIcon sx={{ mx: 1 }} color="secondary" />
+      <Box
+        sx={{
+          display: "flex",
+          alignItems: "flex-end",
+          justifyContent: "center",
+        }}
+      >
+        <TextField
+          id="session-title"
+          label="New Session"
+          variant="standard"
+          size="small"
+          color="divider"
+          margin="normal"
+        />
+      </Box>
+      <Box>
+        <AddCircleOutline sx={{ color: aoWhite, mr: 1, my: 0.5 }} />
+      </Box>
     </>
   );
 };
