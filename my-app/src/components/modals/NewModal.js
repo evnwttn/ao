@@ -22,6 +22,9 @@ export const NewModal = () => {
           margin="normal"
         />
       </Box>
+      <Box>
+        <AddCircleOutline sx={{ color: aoWhite, mr: 1, my: 0.5 }} />
+      </Box>
     </>
   );
 };
