@@ -5,7 +5,14 @@ export const NewModal = () => {
   return (
     <Box sx={{ display: "flex", alignItems: "flex-end" }}>
       <AddCircleOutline sx={{ color: "action.active", mr: 1, my: 0.5 }} />
-      <TextField id="input-with-sx" label="With sx" variant="standard" />
+      <TextField
+        id="input-with-sx"
+        label="Session Name"
+        variant="standard"
+        size="small"
+        margin="normal"
+        color="primary"
+      />
     </Box>
   );
 };
