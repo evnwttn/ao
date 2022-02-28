@@ -38,9 +38,14 @@ const aotheme = createTheme({
     },
   },
   components: {
+    MuiFormHelperText: {
+      styleOverrides: {
+        root: { color: aoRed },
+      },
+    },
     MuiInputLabel: {
       styleOverrides: {
-        root: { color: aoWhite },
+        root: { color: aoDivider },
       },
     },
     MuiInputBase: {
