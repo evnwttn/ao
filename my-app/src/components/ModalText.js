@@ -17,6 +17,7 @@ const style = {
   transform: "translate(-50%, -50%)",
   width: "33vw",
   bgcolor: aoGrey,
+  color: aoWhite,
   boxShadow: "0px 0px 50pt rbg(0 0 0 / 0.16)",
   p: 4,
 };
@@ -39,7 +40,7 @@ export const ModalText = ({ prompt }) => {
       <Divider variant="middle" style={{ color: aoDivider }} />
 
       <br />
-      <div style={{ fontFamily: "Noto Sans", color: aoWhite }}>
+      <>
         {prompt === "New" ? (
           <NewModal />
         ) : prompt === "Load" ? (
@@ -49,7 +50,7 @@ export const ModalText = ({ prompt }) => {
         ) : prompt === "Contact" ? (
           <ContactModal />
         ) : null}
-      </div>
+      </>
     </Box>
   );
 };
