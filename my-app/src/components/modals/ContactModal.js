@@ -1,5 +1,5 @@
 import { Box, TextField } from "@mui/material";
-import AddCircleOutline from "@mui/icons-material/AddCircleOutline";
+import SendIcon from "@mui/icons-material/Send";
 import { aoWhite } from "../../assets/theme";
 
 export const ContactModal = () => {
@@ -32,9 +32,21 @@ export const ContactModal = () => {
           color="divider"
           sx={{ width: "75%" }}
         />
+        <br />
+        <TextField
+          id="contact-message"
+          label="Message"
+          multiline
+          rows={3}
+          size="small"
+          variant="standard"
+          color="divider"
+          sx={{ width: "75%" }}
+        />
+        <br />
       </Box>
       <Box>
-        <AddCircleOutline sx={{ color: aoWhite, my: 0.5 }} />
+        <SendIcon sx={{ color: aoWhite, my: 0.5 }} />
       </Box>
     </>
   );
