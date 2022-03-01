@@ -6,18 +6,18 @@ import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import Divider from "@mui/material/Divider";
-import InboxIcon from "@mui/icons-material/Inbox";
+import ArrowRightIcon from "@mui/icons-material/ArrowRight";
 import DraftsIcon from "@mui/icons-material/Drafts";
 
 export const LoadModal = () => {
   return (
     <Box sx={{ width: "100%" }}>
-      <nav aria-label="main mailbox folders">
+      <nav aria-label="load session">
         <List>
           <ListItem disablePadding>
             <ListItemButton>
               <ListItemIcon>
-                <InboxIcon />
+                <ArrowRightIcon />
               </ListItemIcon>
               <ListItemText primary="Inbox" />
             </ListItemButton>
