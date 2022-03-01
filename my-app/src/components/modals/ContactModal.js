@@ -8,21 +8,33 @@ export const ContactModal = () => {
       <Box
         sx={{
           display: "flex",
-          alignItems: "flex-end",
+          flexDirection: "column",
           justifyContent: "center",
+          alignItems: "center",
+          width: "100%",
         }}
       >
         <TextField
-          id="session-title"
-          label="New Session"
+          id="contact-name"
+          label="Your name"
           variant="standard"
           size="small"
           color="divider"
-          margin="normal"
+          margin="dense"
+          sx={{ width: "75%" }}
+        />
+        <br />
+        <TextField
+          id="contact-email"
+          label="email address"
+          variant="standard"
+          size="small"
+          color="divider"
+          sx={{ width: "75%" }}
         />
       </Box>
       <Box>
-        <AddCircleOutline sx={{ color: aoWhite, mr: 1, my: 0.5 }} />
+        <AddCircleOutline sx={{ color: aoWhite, my: 0.5 }} />
       </Box>
     </>
   );
