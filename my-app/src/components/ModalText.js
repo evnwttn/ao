@@ -36,9 +36,7 @@ export const ModalText = ({ prompt }) => {
       >
         ꜵ
       </div>
-
       <Divider variant="middle" style={{ color: aoDivider }} />
-
       <br />
       <>
         {prompt === "New" ? (
