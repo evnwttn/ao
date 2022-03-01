@@ -8,6 +8,7 @@ import {
   ListItemText,
 } from "@mui/material";
 import ArrowRightIcon from "@mui/icons-material/ArrowRight";
+import SendIcon from "@mui/icons-material/Send";
 
 export const LoadModal = () => {
   return (
@@ -31,6 +32,9 @@ export const LoadModal = () => {
             </ListItemButton>
           </ListItem>
         </List>
+        <Box>
+          <SendIcon sx={{ my: 0.5 }} />
+        </Box>
       </nav>
     </Box>
   );

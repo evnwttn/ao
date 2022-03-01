@@ -1,6 +1,6 @@
 import { Box, TextField } from "@mui/material";
 import SendIcon from "@mui/icons-material/Send";
-import { aoWhite, aoRed } from "../../assets/theme";
+import { aoWhite } from "../../assets/theme";
 
 export const ContactModal = () => {
   return (
@@ -46,7 +46,7 @@ export const ContactModal = () => {
         <br />
       </Box>
       <Box>
-        <SendIcon sx={{ color: aoWhite, my: 0.5, ml: "58%" }} />
+        <SendIcon sx={{ color: aoWhite, my: 0.5 }} />
       </Box>
     </>
   );
