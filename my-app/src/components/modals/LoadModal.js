@@ -7,7 +7,6 @@ import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import Divider from "@mui/material/Divider";
 import ArrowRightIcon from "@mui/icons-material/ArrowRight";
-import DraftsIcon from "@mui/icons-material/Drafts";
 
 export const LoadModal = () => {
   return (
@@ -19,30 +18,15 @@ export const LoadModal = () => {
               <ListItemIcon>
                 <ArrowRightIcon />
               </ListItemIcon>
-              <ListItemText primary="Inbox" />
+              <ListItemText primary="Session I" />
             </ListItemButton>
           </ListItem>
           <ListItem disablePadding>
             <ListItemButton>
               <ListItemIcon>
-                <DraftsIcon />
+                <ArrowRightIcon />
               </ListItemIcon>
-              <ListItemText primary="Drafts" />
-            </ListItemButton>
-          </ListItem>
-        </List>
-      </nav>
-      <Divider />
-      <nav aria-label="secondary mailbox folders">
-        <List>
-          <ListItem disablePadding>
-            <ListItemButton>
-              <ListItemText primary="Trash" />
-            </ListItemButton>
-          </ListItem>
-          <ListItem disablePadding>
-            <ListItemButton component="a" href="#simple-list">
-              <ListItemText primary="Spam" />
+              <ListItemText primary="Session II" />
             </ListItemButton>
           </ListItem>
         </List>
