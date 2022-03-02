@@ -8,9 +8,9 @@ export const NewModal = () => {
   const handleChange = (titleForm) => {
     setSessionTitle(titleForm.target.value);
   };
-  let [titleFormCompleted, isFormCompleted] = useState(false);
+  const [titleFormCompleted, isFormCompleted] = useState(false);
 
-  if (titleFormCompleted === true) {
+  if (titleFormCompleted !== true) {
     return (
       <>
         <Box
