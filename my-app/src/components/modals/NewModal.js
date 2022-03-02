@@ -4,7 +4,7 @@ import { aoWhite } from "../../assets/theme";
 import React, { useState } from "react";
 
 export const NewModal = () => {
-  const [count, setCount] = useState(0);
+  let [hasSessionTitle, setSessionTitle] = useState(false);
 
   return (
     <>
@@ -29,8 +29,8 @@ export const NewModal = () => {
       <Box>
         <AddCircleOutline
           onClick={() => {
-            setCount(count + 1);
-            console.log(count);
+            setSessionTitle((hasSessionTitle = true));
+            console.log(hasSessionTitle);
           }}
           sx={{ color: aoWhite, mr: 1, my: 0.5 }}
         />
