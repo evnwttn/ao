@@ -8,38 +8,43 @@ export const NewModal = () => {
   const handleChange = (titleForm) => {
     setSessionTitle(titleForm.target.value);
   };
+  let [titleFormCompleted, isFormCompleted] = useState(false);
 
-  return (
-    <>
-      <Box
-        sx={{
-          display: "flex",
-          alignItems: "flex-end",
-          justifyContent: "center",
-        }}
-      >
-        <TextField
-          required
-          label="New Session"
-          variant="standard"
-          size="small"
-          color="divider"
-          helperText="Please enter a session title to continue"
-          margin="normal"
-          value={sessionTitle}
-          onChange={handleChange}
-        />
-      </Box>
-      <Box>
-        <AddCircleOutline
-          onClick={() => {
-            sessionTitle !== ""
-              ? console.log(`${sessionTitle}, now that's a title`)
-              : console.log("that's not a title");
+  if (titleFormCompleted === true) {
+    return (
+      <>
+        <Box
+          sx={{
+            display: "flex",
+            alignItems: "flex-end",
+            justifyContent: "center",
           }}
-          sx={{ color: aoWhite, mr: 1, my: 0.5 }}
-        />
-      </Box>
-    </>
-  );
+        >
+          <TextField
+            required
+            label="New Session"
+            variant="standard"
+            size="small"
+            color="divider"
+            helperText="Please enter a session title to continue"
+            margin="normal"
+            value={sessionTitle}
+            onChange={handleChange}
+          />
+        </Box>
+        <Box>
+          <AddCircleOutline
+            onClick={() => {
+              sessionTitle !== ""
+                ? isFormCompleted(true)
+                : console.log("that's not a title");
+            }}
+            sx={{ color: aoWhite, mr: 1, my: 0.5 }}
+          />
+        </Box>
+      </>
+    );
+  } else {
+    return <>Yo mothafucka</>;
+  }
 };
