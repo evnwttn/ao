@@ -9,38 +9,42 @@ export const NewModal = () => {
     setSessionTitle(titleForm.target.value);
   };
 
-  return (
-    <>
-      <Box
-        sx={{
-          display: "flex",
-          alignItems: "flex-end",
-          justifyContent: "center",
-        }}
-      >
-        <TextField
-          required
-          id="session-title"
-          label="New Session"
-          variant="standard"
-          size="small"
-          color="divider"
-          helperText="Please enter a session title to continue"
-          margin="normal"
-          value={sessionTitle}
-          onChange={handleChange}
-        />
-      </Box>
-      <Box>
-        <AddCircleOutline
-          onClick={() => {
-            console.log(sessionTitle);
+  if (sessionTitle === "") {
+    return (
+      <>
+        <Box
+          sx={{
+            display: "flex",
+            alignItems: "flex-end",
+            justifyContent: "center",
           }}
-          sx={{ color: aoWhite, mr: 1, my: 0.5 }}
-        />
-      </Box>
-    </>
-  );
+        >
+          <TextField
+            required
+            id="session-title"
+            label="New Session"
+            variant="standard"
+            size="small"
+            color="divider"
+            helperText="Please enter a session title to continue"
+            margin="normal"
+            value={sessionTitle}
+            onChange={handleChange}
+          />
+        </Box>
+        <Box>
+          <AddCircleOutline
+            onClick={() => {
+              console.log(sessionTitle);
+            }}
+            sx={{ color: aoWhite, mr: 1, my: 0.5 }}
+          />
+        </Box>
+      </>
+    );
+  } else {
+    return <>Yo bitches</>;
+  }
 };
 
 // const NewModalTracks = () => {
