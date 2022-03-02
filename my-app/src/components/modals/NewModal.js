@@ -1,8 +1,11 @@
 import { Box, TextField } from "@mui/material";
 import AddCircleOutline from "@mui/icons-material/AddCircleOutline";
 import { aoWhite } from "../../assets/theme";
+import React, { useState } from "react";
 
 export const NewModal = () => {
+  const [count, setCount] = useState(0);
+
   return (
     <>
       <Box
@@ -13,6 +16,7 @@ export const NewModal = () => {
         }}
       >
         <TextField
+          required
           id="session-title"
           label="New Session"
           variant="standard"
@@ -24,7 +28,10 @@ export const NewModal = () => {
       </Box>
       <Box>
         <AddCircleOutline
-          onClick={() => console.log("yo")}
+          onClick={() => {
+            setCount(count + 1);
+            console.log(count);
+          }}
           sx={{ color: aoWhite, mr: 1, my: 0.5 }}
         />
       </Box>
@@ -32,6 +39,6 @@ export const NewModal = () => {
   );
 };
 
-const NewModalTracks = () => {
-  return null;
-};
+// const NewModalTracks = () => {
+//   return null;
+// };
