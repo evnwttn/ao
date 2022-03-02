@@ -3,6 +3,21 @@ import { Box, TextField } from "@mui/material";
 import AddCircleOutline from "@mui/icons-material/AddCircleOutline";
 import { aoWhite } from "../../assets/theme";
 
+const boxStyle = {
+  display: "flex",
+  alignItems: "flex-end",
+  justifyContent: "center",
+};
+
+const fontStyle = {
+  fontWeight: "400",
+  fontSize: "0.75rem",
+  lineHeight: "1.66",
+  fontFamily: "Noto Sans",
+  letterSpacing: "0.03333em",
+  color: aoWhite,
+};
+
 export const NewModal = () => {
   const [sessionTitle, setSessionTitle] = useState("");
   const handleChange = (titleForm) => {
@@ -11,17 +26,15 @@ export const NewModal = () => {
   const [titleFormCompleted, isFormCompleted] = useState(false);
 
   if (titleFormCompleted) {
-    return <>We here</>;
+    return (
+      <>
+        <Box sx={{ boxStyle, fontStyle }}>Yeah yeah yeah.</Box>
+      </>
+    );
   } else {
     return (
       <>
-        <Box
-          sx={{
-            display: "flex",
-            alignItems: "flex-end",
-            justifyContent: "center",
-          }}
-        >
+        <Box sx={{ boxStyle }}>
           <TextField
             required
             label="New Session"
