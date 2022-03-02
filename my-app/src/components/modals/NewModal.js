@@ -20,7 +20,6 @@ export const NewModal = () => {
       >
         <TextField
           required
-          id="session-title"
           label="New Session"
           variant="standard"
           size="small"
@@ -34,7 +33,9 @@ export const NewModal = () => {
       <Box>
         <AddCircleOutline
           onClick={() => {
-            console.log(sessionTitle);
+            sessionTitle !== ""
+              ? console.log(`${sessionTitle}, now that's a title`)
+              : console.log("that's not a title");
           }}
           sx={{ color: aoWhite, mr: 1, my: 0.5 }}
         />
