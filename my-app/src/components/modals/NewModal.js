@@ -41,7 +41,7 @@ export const NewModal = () => {
                 ? isFormCompleted(true)
                 : console.log("that's not a title");
             }}
-            sx={{ color: aoWhite, mr: 1, my: 0.5 }}
+            sx={{ color: aoWhite, mr: 1, my: 0.5, cursor: "pointer" }}
           />
         </Box>
       </>
