@@ -1,10 +1,13 @@
+import React, { useState } from "react";
 import { Box, TextField } from "@mui/material";
 import AddCircleOutline from "@mui/icons-material/AddCircleOutline";
 import { aoWhite } from "../../assets/theme";
-import React, { useState } from "react";
 
 export const NewModal = () => {
-  let [hasSessionTitle, setSessionTitle] = useState(false);
+  const [sessionTitle, setSessionTitle] = useState("");
+  const handleChange = (event) => {
+    setSessionTitle(event.target.value);
+  };
 
   return (
     <>
@@ -24,13 +27,14 @@ export const NewModal = () => {
           color="divider"
           helperText="Please enter a session title to continue"
           margin="normal"
+          value={sessionTitle}
+          onChange={handleChange}
         />
       </Box>
       <Box>
         <AddCircleOutline
           onClick={() => {
-            setSessionTitle((hasSessionTitle = true));
-            console.log(hasSessionTitle);
+            console.log(sessionTitle);
           }}
           sx={{ color: aoWhite, mr: 1, my: 0.5 }}
         />
