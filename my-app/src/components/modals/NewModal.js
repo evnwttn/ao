@@ -5,8 +5,8 @@ import { aoWhite } from "../../assets/theme";
 
 export const NewModal = () => {
   const [sessionTitle, setSessionTitle] = useState("");
-  const handleChange = (event) => {
-    setSessionTitle(event.target.value);
+  const handleChange = (titleForm) => {
+    setSessionTitle(titleForm.target.value);
   };
 
   return (
