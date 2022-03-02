@@ -23,8 +23,15 @@ export const NewModal = () => {
         />
       </Box>
       <Box>
-        <AddCircleOutline sx={{ color: aoWhite, mr: 1, my: 0.5 }} />
+        <AddCircleOutline
+          onClick={() => console.log("yo")}
+          sx={{ color: aoWhite, mr: 1, my: 0.5 }}
+        />
       </Box>
     </>
   );
+};
+
+const NewModalTracks = () => {
+  return null;
 };
