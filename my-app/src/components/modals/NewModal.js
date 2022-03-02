@@ -18,6 +18,10 @@ const fontStyle = {
   color: aoWhite,
 };
 
+const AddNewTrack = () => {
+  return null;
+};
+
 export const NewModal = () => {
   const [sessionTitle, setSessionTitle] = useState("");
   const handleSessionTitle = (titleForm) => {
@@ -33,7 +37,7 @@ export const NewModal = () => {
           {sessionTitle + " "} session. You can always add more later.
           <br />
           <AddCircleOutline
-            onClick={() => console.log("dun dun dun")}
+            onClick={() => console.log("yeah")}
             sx={{ color: aoWhite, mr: 1, my: 0.5, cursor: "pointer" }}
           />
         </Box>
