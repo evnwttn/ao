@@ -10,7 +10,9 @@ export const NewModal = () => {
   };
   const [titleFormCompleted, isFormCompleted] = useState(false);
 
-  if (titleFormCompleted !== true) {
+  if (titleFormCompleted) {
+    return <>We here</>;
+  } else {
     return (
       <>
         <Box
@@ -44,7 +46,5 @@ export const NewModal = () => {
         </Box>
       </>
     );
-  } else {
-    return <>Yo mothafucka</>;
   }
 };
