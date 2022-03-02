@@ -23,14 +23,6 @@ export const LoadModal = () => {
               <ListItemText primary="Session I" />
             </ListItemButton>
           </ListItem>
-          <ListItem disablePadding>
-            <ListItemButton>
-              <ListItemIcon>
-                <ArrowRightIcon />
-              </ListItemIcon>
-              <ListItemText primary="Session II" />
-            </ListItemButton>
-          </ListItem>
         </List>
         <Box>
           <SendIcon sx={{ my: 0.5 }} />

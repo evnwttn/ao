@@ -18,6 +18,21 @@ const fontStyle = {
   color: aoWhite,
 };
 
+const addTrackForm = (trackTitle) => {
+  return (
+    <>
+      <TextField
+        label={trackTitle}
+        variant="standard"
+        size="small"
+        color="divider"
+        margin="normal"
+        value={trackTitle}
+      />
+    </>
+  );
+};
+
 export const NewModal = () => {
   const [sessionTitle, setSessionTitle] = useState("");
   const handleChange = (titleForm) => {
@@ -32,6 +47,10 @@ export const NewModal = () => {
           Enter the titles of tracks you wish to include in the{" "}
           {sessionTitle + " "}
           session. You can always add more later.
+          <AddCircleOutline
+            onClick={() => console.log("shit")}
+            sx={{ color: aoWhite, mr: 1, my: 0.5, cursor: "pointer" }}
+          />
         </Box>
       </>
     );
