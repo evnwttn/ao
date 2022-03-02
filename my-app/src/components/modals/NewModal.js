@@ -18,24 +18,9 @@ const fontStyle = {
   color: aoWhite,
 };
 
-const addTrackForm = (trackTitle) => {
-  return (
-    <>
-      <TextField
-        label={trackTitle}
-        variant="standard"
-        size="small"
-        color="divider"
-        margin="normal"
-        value={trackTitle}
-      />
-    </>
-  );
-};
-
 export const NewModal = () => {
   const [sessionTitle, setSessionTitle] = useState("");
-  const handleChange = (titleForm) => {
+  const handleSessionTitle = (titleForm) => {
     setSessionTitle(titleForm.target.value);
   };
   const [titleFormCompleted, isFormCompleted] = useState(false);
@@ -45,10 +30,10 @@ export const NewModal = () => {
       <>
         <Box sx={{ boxStyle, fontStyle }}>
           Enter the titles of tracks you wish to include in the{" "}
-          {sessionTitle + " "}
-          session. You can always add more later.
+          {sessionTitle + " "} session. You can always add more later.
+          <br />
           <AddCircleOutline
-            onClick={() => console.log("shit")}
+            onClick={() => console.log("dun dun dun")}
             sx={{ color: aoWhite, mr: 1, my: 0.5, cursor: "pointer" }}
           />
         </Box>
@@ -67,7 +52,7 @@ export const NewModal = () => {
             helperText="enter a session title to continue"
             margin="normal"
             value={sessionTitle}
-            onChange={handleChange}
+            onChange={handleSessionTitle}
           />
         </Box>
         <Box>
