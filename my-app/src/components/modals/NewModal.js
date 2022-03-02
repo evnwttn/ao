@@ -28,7 +28,11 @@ export const NewModal = () => {
   if (titleFormCompleted) {
     return (
       <>
-        <Box sx={{ boxStyle, fontStyle }}>Yeah yeah yeah.</Box>
+        <Box sx={{ boxStyle, fontStyle }}>
+          Enter the titles of tracks you wish to include in the{" "}
+          {sessionTitle + " "}
+          session. You can always add more later.
+        </Box>
       </>
     );
   } else {
@@ -41,7 +45,7 @@ export const NewModal = () => {
             variant="standard"
             size="small"
             color="divider"
-            helperText="Please enter a session title to continue"
+            helperText="enter a session title to continue"
             margin="normal"
             value={sessionTitle}
             onChange={handleChange}
