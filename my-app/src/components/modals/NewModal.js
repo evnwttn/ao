@@ -18,9 +18,9 @@ const fontStyle = {
   color: aoWhite,
 };
 
-const AddNewTrack = () => {
-  return null;
-};
+// const AddNewTrack = () => {
+//   return null;
+// };
 
 export const NewModal = () => {
   const [sessionTitle, setSessionTitle] = useState("");
