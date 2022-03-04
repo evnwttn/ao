@@ -9,37 +9,17 @@ export const ModalButton = ({ text }) => {
 
   return (
     <>
-      {text === "New" ? (
-        <Button
-          disableRipple
-          key={text}
-          onClick={handleOpen}
-          variant="text"
-          color="primary"
-        >
-          {text}
-        </Button>
-      ) : text === "Load" ? (
-        <Button
-          disableRipple
-          key={text}
-          onClick={handleOpen}
-          variant="text"
-          color="secondary"
-        >
-          {text}
-        </Button>
-      ) : text === "Contact" || "About" ? (
-        <Button
-          disableRipple
-          key={text}
-          onClick={handleOpen}
-          variant="text"
-          color="inherit"
-        >
-          {text}
-        </Button>
-      ) : null}
+      <Button
+        disableRipple
+        key={text}
+        onClick={handleOpen}
+        variant="text"
+        color={
+          text === "New" ? "primary" : text === "Load" ? "secondary" : "inherit"
+        }
+      >
+        {text}
+      </Button>
 
       <Modal
         open={open}
