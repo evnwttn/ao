@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Box, TextField } from "@mui/material";
 import AddCircleOutline from "@mui/icons-material/AddCircleOutline";
-import { aoWhite } from "../../assets/theme";
+import { palette } from "../../assets/theme";
 
 const boxStyle = {
   display: "flex",
@@ -15,12 +15,8 @@ const fontStyle = {
   lineHeight: "1.66",
   fontFamily: "Noto Sans",
   letterSpacing: "0.03333em",
-  color: aoWhite,
+  color: palette.aoWhite,
 };
-
-// const AddNewTrack = () => {
-//   return null;
-// };
 
 export const NewModal = () => {
   const [sessionTitle, setSessionTitle] = useState("");
@@ -38,7 +34,7 @@ export const NewModal = () => {
           <br />
           <AddCircleOutline
             onClick={() => console.log("yeah")}
-            sx={{ color: aoWhite, mr: 1, my: 0.5, cursor: "pointer" }}
+            sx={{ color: palette.aoWhite, mr: 1, my: 0.5, cursor: "pointer" }}
           />
         </Box>
       </>
@@ -66,7 +62,7 @@ export const NewModal = () => {
                 ? isFormCompleted(true)
                 : console.log("that's not a title");
             }}
-            sx={{ color: aoWhite, mr: 1, my: 0.5, cursor: "pointer" }}
+            sx={{ color: palette.aoWhite, mr: 1, my: 0.5, cursor: "pointer" }}
           />
         </Box>
       </>
