@@ -10,7 +10,7 @@ import {
 import ArrowRightIcon from "@mui/icons-material/ArrowRight";
 import SendIcon from "@mui/icons-material/Send";
 
-export const LoadModal = () => {
+export const LoadModalContent = () => {
   return (
     <Box sx={{ width: "100%" }}>
       <nav aria-label="load session">

@@ -1,7 +1,7 @@
 import { Divider, Box } from "@mui/material";
-import { NewModal } from "./modals/NewModal";
-import { LoadModal } from "./modals/LoadModal";
-import { ContactModal } from "./modals/ContactModal";
+import { NewModalContent } from "./modals/NewModalContent";
+import { LoadModalContent } from "./modals/LoadModalContent";
+import { ContactModalContent } from "./modals/ContactModalContent";
 import { AboutModalContent } from "./modals/AboutModalContent";
 import { palette } from "../assets/theme";
 
@@ -39,13 +39,13 @@ export const ModalText = ({ prompt }) => {
       <br />
       <>
         {prompt === "New" ? (
-          <NewModal />
+          <NewModalContent />
         ) : prompt === "Load" ? (
-          <LoadModal />
+          <LoadModalContent />
         ) : prompt === "About" ? (
           <AboutModalContent />
         ) : prompt === "Contact" ? (
-          <ContactModal />
+          <ContactModalContent />
         ) : null}
       </>
     </Box>

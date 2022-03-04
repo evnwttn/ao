@@ -18,7 +18,7 @@ const fontStyle = {
   color: palette.aoWhite,
 };
 
-export const NewModal = () => {
+export const NewModalContent = () => {
   const [sessionTitle, setSessionTitle] = useState("");
   const handleSessionTitle = (titleForm) => {
     setSessionTitle(titleForm.target.value);

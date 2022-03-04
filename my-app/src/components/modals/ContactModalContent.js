@@ -2,7 +2,7 @@ import { Box, TextField } from "@mui/material";
 import SendIcon from "@mui/icons-material/Send";
 import { palette } from "../../assets/theme";
 
-export const ContactModal = () => {
+export const ContactModalContent = () => {
   return (
     <>
       <Box
