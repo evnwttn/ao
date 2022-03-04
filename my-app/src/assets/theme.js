@@ -10,63 +10,52 @@ export const palette = {
   aoDivider: "#707070",
 };
 
-// palette
-const aoBlack = "#272727";
-const aoWhite = "#F3EFE0";
-const aoBlue = "#7284A8";
-const aoYellow = "#F2BF80";
-const aoRed = "#D93D1A";
-
-// shades
-const aoGrey = "#2D2D2D";
-const aoDivider = "#707070";
-
 const aotheme = createTheme({
   palette: {
     primary: {
-      main: aoBlack,
+      main: palette.aoBlack,
     },
     secondary: {
-      main: aoWhite,
+      main: palette.aoWhite,
     },
     blue: {
-      main: aoBlue,
+      main: palette.aoBlue,
     },
     yellow: {
-      main: aoYellow,
+      main: palette.aoYellow,
     },
     red: {
-      main: aoRed,
+      main: palette.aoRed,
     },
     grey: {
-      main: aoGrey,
+      main: palette.aoGrey,
     },
     divider: {
-      main: aoDivider,
+      main: palette.aoDivider,
     },
   },
   components: {
     MuiFormHelperText: {
       styleOverrides: {
-        root: { color: aoRed, fontFamily: "Noto Sans" },
+        root: { color: palette.aoRed, fontFamily: "Noto Sans" },
       },
     },
     MuiInputLabel: {
       styleOverrides: {
-        root: { color: aoDivider },
+        root: { color: palette.aoDivider },
       },
     },
     MuiInputBase: {
       styleOverrides: {
         input: {
-          color: aoWhite,
+          color: palette.aoWhite,
         },
       },
     },
     MuiButton: {
       styleOverrides: {
         text: {
-          color: aoWhite,
+          color: palette.aoWhite,
           fontFamily: "Noto Sans",
           fontSize: "1.5vw",
           pointerEvents: "all",
@@ -76,7 +65,7 @@ const aotheme = createTheme({
           },
         },
         textSecondary: {
-          color: aoRed,
+          color: palette.aoRed,
         },
         textInherit: {
           fontSize: "1vw",
@@ -88,4 +77,3 @@ const aotheme = createTheme({
 });
 
 export default aotheme;
-export { aoBlack, aoWhite, aoBlue, aoYellow, aoRed, aoGrey, aoDivider };

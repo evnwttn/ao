@@ -3,8 +3,7 @@ import { NewModal } from "./modals/NewModal";
 import { LoadModal } from "./modals/LoadModal";
 import { ContactModal } from "./modals/ContactModal";
 import { AboutModal } from "./modals/AboutModal";
-
-import { aoWhite, aoRed, aoGrey, aoDivider } from "../assets/theme";
+import { palette } from "../assets/theme";
 
 const style = {
   textTransform: "uppercase",
@@ -16,8 +15,8 @@ const style = {
   left: "50vw",
   transform: "translate(-50%, -50%)",
   width: "33vw",
-  bgcolor: aoGrey,
-  color: aoWhite,
+  bgcolor: palette.aoGrey,
+  color: palette.aoWhite,
   boxShadow: "0px 0px 50pt rbg(0 0 0 / 0.16)",
   p: 4,
 };
@@ -30,13 +29,13 @@ export const ModalText = ({ prompt }) => {
           fontSize: "2.5rem",
           fontFamily: "Noto Serif",
           textTransform: "lowercase",
-          color: aoRed,
+          color: palette.aoRed,
           marginLeft: "0.25rem",
         }}
       >
         ꜵ
       </div>
-      <Divider variant="middle" style={{ color: aoDivider }} />
+      <Divider variant="middle" style={{ color: palette.aoDivider }} />
       <br />
       <>
         {prompt === "New" ? (
