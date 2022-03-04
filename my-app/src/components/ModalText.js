@@ -24,8 +24,8 @@ const style = {
 export const ModalText = ({ prompt }) => {
   return (
     <Box sx={style}>
-      <div
-        style={{
+      <Box
+        sx={{
           fontSize: "2.5rem",
           fontFamily: "Noto Serif",
           textTransform: "lowercase",
@@ -34,7 +34,7 @@ export const ModalText = ({ prompt }) => {
         }}
       >
         ꜵ
-      </div>
+      </Box>
       <Divider variant="middle" style={{ color: palette.aoDivider }} />
       <br />
       <>
