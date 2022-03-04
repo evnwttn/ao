@@ -1,6 +1,14 @@
 import { createTheme } from "@mui/material";
 
-// check in with dylan on organizing theme
+export const palette = {
+  aoBlack: "#272727",
+  aoWhite: "#F3EFE0",
+  aoBlue: "#7284A8",
+  aoYellow: "#F2BF80",
+  aoRed: "#D93D1A",
+  aoGrey: "#2D2D2D",
+  aoDivider: "#707070",
+};
 
 // palette
 const aoBlack = "#272727";
