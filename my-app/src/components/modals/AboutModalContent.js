@@ -1,5 +1,5 @@
 import Box from "@mui/material/Box";
 
-export const AboutModal = () => {
+export const AboutModalContent = () => {
   return <Box></Box>;
 };
