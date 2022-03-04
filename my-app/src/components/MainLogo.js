@@ -1,10 +1,10 @@
 import { Box } from "@mui/material";
 import "@fontsource/noto-serif";
-import { aoBlue } from "../assets/theme";
+import { palette } from "../assets/theme";
 
 export const MainLogo = () => {
   const style = {
-    color: aoBlue,
+    color: palette.aoBlue,
     fontFamily: "Noto-Serif",
     fontSize: "13vw",
     marginTop: "-5vh",
