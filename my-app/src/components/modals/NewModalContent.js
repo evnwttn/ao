@@ -25,9 +25,13 @@ export const NewModalContent = () => {
   };
   const [titleFormCompleted, isFormCompleted] = useState(false);
 
-  if (titleFormCompleted) {
-    return null;
-  }
+  return (
+    <>
+      {titleFormCompleted
+        ? console.log("sometimes maybe good")
+        : console.log("Sometimes maybe shit")}
+    </>
+  );
 };
 
 {
