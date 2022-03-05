@@ -2,6 +2,8 @@ import React from "react";
 import { Button, Modal } from "@mui/material";
 import { ModalText } from "./ModalText";
 
+const ModalFunction = () => {};
+
 export const ModalButton = ({ text }) => {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
