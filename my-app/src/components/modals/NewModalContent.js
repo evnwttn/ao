@@ -27,9 +27,19 @@ export const NewModalContent = () => {
 
   return (
     <>
-      {titleFormCompleted
-        ? console.log("sometimes maybe good")
-        : console.log("Sometimes maybe shit")}
+      {titleFormCompleted ? (
+        console.log("Sometimes maybe good")
+      ) : (
+        <Box sx={{ boxStyle, fontStyle }}>
+          Enter the titles of tracks you wish to include in the{" "}
+          {sessionTitle + " "} session. You can always add more later.
+          <br />
+          <AddCircleOutline
+            onClick={() => console.log("yeah")}
+            sx={{ color: palette.aoWhite, mr: 1, my: 0.5, cursor: "pointer" }}
+          />
+        </Box>
+      )}
     </>
   );
 };
