@@ -14,7 +14,7 @@ const style = {
   top: "50vh",
   left: "50vw",
   transform: "translate(-50%, -50%)",
-  width: "33vw",
+  width: "33%",
   bgcolor: palette.aoGrey,
   color: palette.aoWhite,
   boxShadow: "0px 0px 50pt rbg(0 0 0 / 0.16)",
