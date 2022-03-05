@@ -26,46 +26,48 @@ export const NewModalContent = () => {
   const [titleFormCompleted, isFormCompleted] = useState(false);
 
   if (titleFormCompleted) {
-    return (
-      <>
-        <Box sx={{ boxStyle, fontStyle }}>
-          Enter the titles of tracks you wish to include in the{" "}
-          {sessionTitle + " "} session. You can always add more later.
-          <br />
-          <AddCircleOutline
-            onClick={() => console.log("yeah")}
-            sx={{ color: palette.aoWhite, mr: 1, my: 0.5, cursor: "pointer" }}
-          />
-        </Box>
-      </>
-    );
-  } else {
-    return (
-      <>
-        <Box sx={{ boxStyle }}>
-          <TextField
-            required
-            label="New Session"
-            variant="standard"
-            size="small"
-            color="divider"
-            helperText="enter a session title to continue"
-            margin="normal"
-            value={sessionTitle}
-            onChange={handleSessionTitle}
-          />
-        </Box>
-        <Box>
-          <AddCircleOutline
-            onClick={() => {
-              sessionTitle !== ""
-                ? isFormCompleted(true)
-                : console.log("that's not a title");
-            }}
-            sx={{ color: palette.aoWhite, mr: 1, my: 0.5, cursor: "pointer" }}
-          />
-        </Box>
-      </>
-    );
+    return null;
   }
 };
+
+{
+  /* <>
+<Box sx={{ boxStyle, fontStyle }}>
+  Enter the titles of tracks you wish to include in the{" "}
+  {sessionTitle + " "} session. You can always add more later.
+  <br />
+  <AddCircleOutline
+    onClick={() => console.log("yeah")}
+    sx={{ color: palette.aoWhite, mr: 1, my: 0.5, cursor: "pointer" }}
+  />
+</Box>
+</>
+);
+} else {
+return (
+<>
+<Box sx={{ boxStyle }}>
+  <TextField
+    required
+    label="New Session"
+    variant="standard"
+    size="small"
+    color="divider"
+    helperText="enter a session title to continue"
+    margin="normal"
+    value={sessionTitle}
+    onChange={handleSessionTitle}
+  />
+</Box>
+<Box>
+  <AddCircleOutline
+    onClick={() => {
+      sessionTitle !== ""
+        ? isFormCompleted(true)
+        : console.log("that's not a title");
+    }}
+    sx={{ color: palette.aoWhite, mr: 1, my: 0.5, cursor: "pointer" }}
+  />
+</Box>
+</> */
+}
