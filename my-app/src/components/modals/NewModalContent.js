@@ -28,8 +28,6 @@ export const NewModalContent = () => {
   return (
     <>
       {titleFormCompleted ? (
-        console.log("Sometimes maybe good")
-      ) : (
         <Box sx={{ boxStyle, fontStyle }}>
           Enter the titles of tracks you wish to include in the{" "}
           {sessionTitle + " "} session. You can always add more later.
@@ -39,6 +37,32 @@ export const NewModalContent = () => {
             sx={{ color: palette.aoWhite, mr: 1, my: 0.5, cursor: "pointer" }}
           />
         </Box>
+      ) : (
+        <>
+          <Box sx={{ boxStyle }}>
+            <TextField
+              required
+              label="New Session"
+              variant="standard"
+              size="small"
+              color="divider"
+              helperText="enter a session title to continue"
+              margin="normal"
+              value={sessionTitle}
+              onChange={handleSessionTitle}
+            />
+          </Box>
+          <Box>
+            <AddCircleOutline
+              onClick={() => {
+                sessionTitle !== ""
+                  ? isFormCompleted(true)
+                  : console.log("that's not a title");
+              }}
+              sx={{ color: palette.aoWhite, mr: 1, my: 0.5, cursor: "pointer" }}
+            />
+          </Box>
+        </>
       )}
     </>
   );
