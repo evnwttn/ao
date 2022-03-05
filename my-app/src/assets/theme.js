@@ -62,6 +62,7 @@ const aotheme = createTheme({
           letterSpacing: "0.75vw",
           "&:hover": {
             background: "none",
+            opacity: "0.6",
           },
         },
         textSecondary: {
