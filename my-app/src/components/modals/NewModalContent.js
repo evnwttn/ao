@@ -33,7 +33,7 @@ export const NewModalContent = () => {
           {sessionTitle + " "} session. You can always add more later.
           <br />
           <AddCircleOutline
-            onClick={() => console.log("yeah")}
+            onClick={() => console.log(sessionTitle)}
             sx={{ color: palette.aoWhite, mr: 1, my: 0.5, cursor: "pointer" }}
           />
         </Box>
@@ -57,7 +57,7 @@ export const NewModalContent = () => {
               onClick={() => {
                 sessionTitle !== ""
                   ? isFormCompleted(true)
-                  : console.log("that's not a title");
+                  : console.log(sessionTitle);
               }}
               sx={{ color: palette.aoWhite, mr: 1, my: 0.5, cursor: "pointer" }}
             />
