@@ -1,4 +1,5 @@
 import React from "react";
+import { TextField } from "@mui/material";
 import { useForm } from "react-hook-form";
 // import { palette } from "../../assets/theme";
 // import SendIcon from "@mui/icons-material/Send";
@@ -14,7 +15,13 @@ export const ContactModalContent = () => {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
-      <input type="text" placeholder="Name" {...register("Name", {})} />
+      <TextField
+        id="contact-name"
+        placeholder="Name"
+        variant="standard"
+        {...register("Name", {})}
+      />
+
       <input
         type="email"
         placeholder="Email Address"
