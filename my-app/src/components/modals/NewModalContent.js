@@ -31,18 +31,15 @@ export const NewModalContent = () => {
     formState: { errors },
   } = useForm({ defaultValues: { sessionTitle: "New Session" } });
   const onSubmit = (data) => {
-    if (data.sessionTitle !== "") {
-      setTitleFormCompleted(true);
-      setAoSessionTitle(watch("sessionTitle"));
-    } else {
-      console.log(errors);
-    }
+    data.sessionTitle !== ""
+      ? setTitleFormCompleted(true) || setAoSessionTitle(watch("sessionTitle"))
+      : console.log(errors);
   };
 
   return (
     <>
       {titleFormCompleted ? (
-        <Box sx={{ boxStyle, fontStyle }}>
+        <Box component="form" sx={{ boxStyle, fontStyle }}>
           Enter the titles of tracks you wish to include in the {aoSessionTitle}{" "}
           session. You can always add more later.
           <br />
