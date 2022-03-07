@@ -46,7 +46,7 @@ export const ContactModalContent = () => {
         {...register("Message", {})}
       />
       <br />
-      <IconButton sx={{ cursor: "default" }} type="submit">
+      <IconButton disableRipple sx={{ cursor: "default" }} type="submit">
         <SendIcon
           sx={{
             color: palette.aoWhite,
