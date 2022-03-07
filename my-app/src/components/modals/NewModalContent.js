@@ -38,6 +38,7 @@ export const NewModalContent = () => {
 
   return (
     <>
+      {/* see if you can pass in ids to override styling instead of doing it here */}
       {titleFormCompleted ? (
         <Box component="form" sx={{ boxStyle, fontStyle }}>
           Enter the titles of tracks you wish to include in the {aoSessionTitle}{" "}
