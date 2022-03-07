@@ -7,6 +7,7 @@ import { palette } from "../../assets/theme";
 
 export const NewModalContent = () => {
   const [titleFormCompleted, setTitleFormCompleted] = useState(false);
+  const [aoSessionTitle, setSessionTitle] = useState("");
 
   const {
     register,
@@ -15,6 +16,8 @@ export const NewModalContent = () => {
   } = useForm();
   const onSubmit = (data) => {
     if (data.sessionTitle !== "") {
+      setSessionTitle(data.SessionTitle);
+      console.log(aoSessionTitle);
       setTitleFormCompleted(true);
     } else {
       console.log(errors);
@@ -24,7 +27,7 @@ export const NewModalContent = () => {
   return (
     <>
       {titleFormCompleted ? (
-        console.log("yo papi")
+        <>yeah</>
       ) : (
         <>
           <Box component="form" onSubmit={handleSubmit(onSubmit)}>
@@ -32,8 +35,6 @@ export const NewModalContent = () => {
               id="New Session"
               placeholder="New Session"
               variant="standard"
-              size="small"
-              color="divider"
               helperText="enter a session title to continue"
               margin="normal"
               {...register("sessionTitle", { required: true })}
@@ -55,59 +56,28 @@ export const NewModalContent = () => {
   );
 };
 
-{
-  /* <>
-{titleFormCompleted ? (
-  <Box sx={{ boxStyle, fontStyle }}>
-    Enter the titles of tracks you wish to include in the{" "}
-    {sessionTitle + " "} session. You can always add more later.
-    <br />
-    <AddCircleOutline
-      onClick={() => console.log(sessionTitle)}
-      sx={{ color: palette.aoWhite, mr: 1, my: 0.5, cursor: "pointer" }}
-    />
-  </Box>
-) : (
-  <>
-    <Box sx={{ boxStyle }}>
-      <TextField
-        required
-        label="New Session"
-        variant="standard"
-        size="small"
-        color="divider"
-        helperText="enter a session title to continue"
-        margin="normal"
-        value={sessionTitle}
-        onChange={handleSessionTitle}
-      />
-    </Box>
-    <Box>
-      <AddCircleOutline
-        onClick={() => {
-          sessionTitle !== ""
-            ? isFormCompleted(true)
-            : console.log(sessionTitle);
-        }}
-        sx={{ color: palette.aoWhite, mr: 1, my: 0.5, cursor: "pointer" }}
-      />
-    </Box>
-  </>
-)}
-</> */
-}
+// {titleFormCompleted ? (
+//   <Box sx={{ boxStyle, fontStyle }}>
+//     Enter the titles of tracks you wish to include in the{" "}
+//     {sessionTitle + " "} session. You can always add more later.
+//     <br />
+//     <AddCircleOutline
+//       onClick={() => console.log(sessionTitle)}
+//       sx={{ color: palette.aoWhite, mr: 1, my: 0.5, cursor: "pointer" }}
+//     />
+//   </Box>
 
-// const boxStyle = {
-//   display: "flex",
-//   alignItems: "flex-end",
-//   justifyContent: "center",
-// };
+// // const boxStyle = {
+// //   display: "flex",
+// //   alignItems: "flex-end",
+// //   justifyContent: "center",
+// // };
 
-// const fontStyle = {
-//   fontWeight: "400",
-//   fontSize: "0.75rem",
-//   lineHeight: "1.66",
-//   fontFamily: "Noto Sans",
-//   letterSpacing: "0.03333em",
-//   color: palette.aoWhite,
-// };
+// // const fontStyle = {
+// //   fontWeight: "400",
+// //   fontSize: "0.75rem",
+// //   lineHeight: "1.66",
+// //   fontFamily: "Noto Sans",
+// //   letterSpacing: "0.03333em",
+// //   color: palette.aoWhite,
+// // };
