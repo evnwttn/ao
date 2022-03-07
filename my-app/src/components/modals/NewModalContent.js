@@ -44,6 +44,8 @@ export const NewModalContent = () => {
           Enter the titles of tracks you wish to include in the {aoSessionTitle}{" "}
           session. You can always add more later.
           <br />
+          <TextField></TextField>
+          <br />
           <AddCircleOutline
             onClick={() => console.log(aoSessionTitle)}
             sx={{ color: palette.aoWhite, mr: 1, my: 0.5, cursor: "pointer" }}
@@ -53,7 +55,6 @@ export const NewModalContent = () => {
         <>
           <Box component="form" onSubmit={handleSubmit(onSubmit)}>
             <TextField
-              id="New Session"
               variant="standard"
               helperText="enter a session title to continue"
               margin="normal"

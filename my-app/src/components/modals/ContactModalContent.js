@@ -11,7 +11,6 @@ export const ContactModalContent = () => {
     formState: { errors },
   } = useForm();
   const onSubmit = (data) => console.log(data);
-  console.log(errors);
 
   const textFieldStyle = {
     width: "75%",
@@ -20,7 +19,6 @@ export const ContactModalContent = () => {
   return (
     <Box component="form" onSubmit={handleSubmit(onSubmit)}>
       <TextField
-        id="contact-name"
         placeholder="Name"
         variant="standard"
         margin="normal"
@@ -29,7 +27,6 @@ export const ContactModalContent = () => {
       />
       <br />
       <TextField
-        id="contact-email"
         placeholder="Email Address"
         variant="standard"
         margin="normal"
@@ -38,7 +35,6 @@ export const ContactModalContent = () => {
       />
       <br />
       <TextField
-        id="contact-message"
         placeholder="Message"
         variant="standard"
         margin="normal"
