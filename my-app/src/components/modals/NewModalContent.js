@@ -23,6 +23,8 @@ const fontStyle = {
 export const NewModalContent = () => {
   const [titleFormCompleted, setTitleFormCompleted] = useState(false);
   const [aoSessionTitle, setAoSessionTitle] = useState("");
+  let trackNumber = 0;
+  // let parameterNumber = 0;
 
   const {
     register,
@@ -30,30 +32,42 @@ export const NewModalContent = () => {
     watch,
     formState: { errors },
   } = useForm({ defaultValues: { sessionTitle: "New Session" } });
-  const onSubmit = (data) => {
+  const onSubmitTitle = (data) => {
     data.sessionTitle !== ""
       ? setTitleFormCompleted(true) || setAoSessionTitle(watch("sessionTitle"))
       : console.log(errors);
   };
+  const onSubmitTrack = (data) => {
+    console.log(data);
+  };
 
   return (
     <>
-      {/* see if you can pass in ids to override styling instead of doing it here */}
       {titleFormCompleted ? (
-        <Box component="form" sx={{ boxStyle, fontStyle }}>
+        <Box
+          component="form"
+          sx={{ boxStyle, fontStyle }}
+          onSubmit={handleSubmit(onSubmitTrack)}
+        >
           Enter the titles of tracks you wish to include in the {aoSessionTitle}{" "}
           session. You can always add more later.
           <br />
-          <TextField></TextField>
-          <br />
-          <AddCircleOutline
-            onClick={() => console.log(aoSessionTitle)}
-            sx={{ color: palette.aoWhite, mr: 1, my: 0.5, cursor: "pointer" }}
+          <TextField
+            variant="standard"
+            margin="normal"
+            autoComplete="off"
+            {...register(`track${trackNumber}`)}
           />
+          <br />
+          <IconButton disableRipple sx={{ cursor: "default" }} type="submit">
+            <AddCircleOutline
+              sx={{ color: palette.aoWhite, mr: 1, my: 0.5, cursor: "pointer" }}
+            />
+          </IconButton>
         </Box>
       ) : (
         <>
-          <Box component="form" onSubmit={handleSubmit(onSubmit)}>
+          <Box component="form" onSubmit={handleSubmit(onSubmitTitle)}>
             <TextField
               variant="standard"
               helperText="enter a session title to continue"
