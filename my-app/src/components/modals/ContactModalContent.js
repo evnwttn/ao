@@ -1,8 +1,8 @@
 import React from "react";
-import { TextField } from "@mui/material";
+import { TextField, IconButton } from "@mui/material";
 import { useForm } from "react-hook-form";
-// import { palette } from "../../assets/theme";
-// import SendIcon from "@mui/icons-material/Send";
+import { palette } from "../../assets/theme";
+import SendIcon from "@mui/icons-material/Send";
 
 export const ContactModalContent = () => {
   const {
@@ -21,24 +21,21 @@ export const ContactModalContent = () => {
         variant="standard"
         {...register("Name", {})}
       />
-
       <TextField
         id="contact-email"
         placeholder="Email Address"
         variant="standard"
         {...register("Email Address", {})}
       />
-
       <TextField
         id="contact-message"
         placeholder="Message"
         variant="standard"
         {...register("Message", {})}
       />
-
-      <input type="submit" />
+      <IconButton type="submit">
+        <SendIcon sx={{ color: palette.aoWhite, my: 0.5 }} />
+      </IconButton>
     </form>
   );
 };
-
-// <SendIcon sx={{ color: palette.aoWhite, my: 0.5 }} />;
