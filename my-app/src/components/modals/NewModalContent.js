@@ -6,7 +6,7 @@ import SendIcon from "@mui/icons-material/Send";
 import { palette } from "../../assets/theme";
 
 export const NewModalContent = () => {
-  const [hasSessionTitle, setSessionTitle] = useState(false);
+  const [titleFormCompleted, setTitleFormCompleted] = useState(false);
 
   const {
     register,
@@ -15,39 +15,37 @@ export const NewModalContent = () => {
   } = useForm();
   const onSubmit = (data) => {
     if (data.sessionTitle !== "") {
-      setSessionTitle(true);
+      setTitleFormCompleted(true);
     } else {
       console.log(errors);
     }
   };
 
-  if (hasSessionTitle === true) {
-    console.log("my god it's jason bourne");
-  }
-
   return (
-    <Box component="form" onSubmit={handleSubmit(onSubmit)}>
-      <TextField
-        id="New Session"
-        placeholder="New Session"
-        variant="standard"
-        size="small"
-        color="divider"
-        helperText="enter a session title to continue"
-        margin="normal"
-        {...register("sessionTitle", { required: true })}
-      />
-      <br />
-      <IconButton disableRipple sx={{ cursor: "default" }} type="submit">
-        <SendIcon
-          sx={{
-            color: palette.aoWhite,
-            cursor: "pointer",
-            my: 0.5,
-          }}
+    <>
+      <Box component="form" onSubmit={handleSubmit(onSubmit)}>
+        <TextField
+          id="New Session"
+          placeholder="New Session"
+          variant="standard"
+          size="small"
+          color="divider"
+          helperText="enter a session title to continue"
+          margin="normal"
+          {...register("sessionTitle", { required: true })}
         />
-      </IconButton>
-    </Box>
+        <br />
+        <IconButton disableRipple sx={{ cursor: "default" }} type="submit">
+          <SendIcon
+            sx={{
+              color: palette.aoWhite,
+              cursor: "pointer",
+              my: 0.5,
+            }}
+          />
+        </IconButton>
+      </Box>
+    </>
   );
 };
 
