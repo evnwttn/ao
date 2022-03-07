@@ -22,12 +22,19 @@ export const ContactModalContent = () => {
         {...register("Name", {})}
       />
 
-      <input
-        type="email"
+      <TextField
+        id="contact-email"
         placeholder="Email Address"
+        variant="standard"
         {...register("Email Address", {})}
       />
-      <input type="text" placeholder="Message" {...register("Message", {})} />
+
+      <TextField
+        id="contact-message"
+        placeholder="Message"
+        variant="standard"
+        {...register("Message", {})}
+      />
 
       <input type="submit" />
     </form>
