@@ -23,28 +23,34 @@ export const NewModalContent = () => {
 
   return (
     <>
-      <Box component="form" onSubmit={handleSubmit(onSubmit)}>
-        <TextField
-          id="New Session"
-          placeholder="New Session"
-          variant="standard"
-          size="small"
-          color="divider"
-          helperText="enter a session title to continue"
-          margin="normal"
-          {...register("sessionTitle", { required: true })}
-        />
-        <br />
-        <IconButton disableRipple sx={{ cursor: "default" }} type="submit">
-          <SendIcon
-            sx={{
-              color: palette.aoWhite,
-              cursor: "pointer",
-              my: 0.5,
-            }}
-          />
-        </IconButton>
-      </Box>
+      {titleFormCompleted ? (
+        console.log("yo papi")
+      ) : (
+        <>
+          <Box component="form" onSubmit={handleSubmit(onSubmit)}>
+            <TextField
+              id="New Session"
+              placeholder="New Session"
+              variant="standard"
+              size="small"
+              color="divider"
+              helperText="enter a session title to continue"
+              margin="normal"
+              {...register("sessionTitle", { required: true })}
+            />
+            <br />
+            <IconButton disableRipple sx={{ cursor: "default" }} type="submit">
+              <SendIcon
+                sx={{
+                  color: palette.aoWhite,
+                  cursor: "pointer",
+                  my: 0.5,
+                }}
+              />
+            </IconButton>
+          </Box>
+        </>
+      )}
     </>
   );
 };
