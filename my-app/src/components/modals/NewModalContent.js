@@ -2,17 +2,28 @@ import React, { useState } from "react";
 import { Box, TextField, IconButton } from "@mui/material";
 import { useForm } from "react-hook-form";
 import SendIcon from "@mui/icons-material/Send";
-import AddCircleOutline from "@mui/icons-material/AddCircleOutline";
+// import AddCircleOutline from "@mui/icons-material/AddCircleOutline";
 import { palette } from "../../assets/theme";
 
 export const NewModalContent = () => {
+  const [hasSessionTitle, setSessionTitle] = useState(false);
+
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
-  const onSubmit = (data) => console.log(data.sessionTitle);
-  console.log(errors);
+  const onSubmit = (data) => {
+    if (data.sessionTitle !== "") {
+      setSessionTitle(true);
+    } else {
+      console.log(errors);
+    }
+  };
+
+  if (hasSessionTitle === true) {
+    console.log("my god it's jason bourne");
+  }
 
   return (
     <Box component="form" onSubmit={handleSubmit(onSubmit)}>
