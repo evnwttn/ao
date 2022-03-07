@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Box, TextField } from "@mui/material";
+import { useForm } from "react-hook-form";
 import AddCircleOutline from "@mui/icons-material/AddCircleOutline";
 import { palette } from "../../assets/theme";
 
@@ -25,45 +26,55 @@ export const NewModalContent = () => {
   };
   const [titleFormCompleted, isFormCompleted] = useState(false);
 
-  return (
-    <>
-      {titleFormCompleted ? (
-        <Box sx={{ boxStyle, fontStyle }}>
-          Enter the titles of tracks you wish to include in the{" "}
-          {sessionTitle + " "} session. You can always add more later.
-          <br />
-          <AddCircleOutline
-            onClick={() => console.log(sessionTitle)}
-            sx={{ color: palette.aoWhite, mr: 1, my: 0.5, cursor: "pointer" }}
-          />
-        </Box>
-      ) : (
-        <>
-          <Box sx={{ boxStyle }}>
-            <TextField
-              required
-              label="New Session"
-              variant="standard"
-              size="small"
-              color="divider"
-              helperText="enter a session title to continue"
-              margin="normal"
-              value={sessionTitle}
-              onChange={handleSessionTitle}
-            />
-          </Box>
-          <Box>
-            <AddCircleOutline
-              onClick={() => {
-                sessionTitle !== ""
-                  ? isFormCompleted(true)
-                  : console.log(sessionTitle);
-              }}
-              sx={{ color: palette.aoWhite, mr: 1, my: 0.5, cursor: "pointer" }}
-            />
-          </Box>
-        </>
-      )}
-    </>
-  );
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+  const onSubmit = (data) => console.log(data);
+  console.log(errors);
+
+  return <>yEAH</>;
 };
+
+{
+  /* <>
+{titleFormCompleted ? (
+  <Box sx={{ boxStyle, fontStyle }}>
+    Enter the titles of tracks you wish to include in the{" "}
+    {sessionTitle + " "} session. You can always add more later.
+    <br />
+    <AddCircleOutline
+      onClick={() => console.log(sessionTitle)}
+      sx={{ color: palette.aoWhite, mr: 1, my: 0.5, cursor: "pointer" }}
+    />
+  </Box>
+) : (
+  <>
+    <Box sx={{ boxStyle }}>
+      <TextField
+        required
+        label="New Session"
+        variant="standard"
+        size="small"
+        color="divider"
+        helperText="enter a session title to continue"
+        margin="normal"
+        value={sessionTitle}
+        onChange={handleSessionTitle}
+      />
+    </Box>
+    <Box>
+      <AddCircleOutline
+        onClick={() => {
+          sessionTitle !== ""
+            ? isFormCompleted(true)
+            : console.log(sessionTitle);
+        }}
+        sx={{ color: palette.aoWhite, mr: 1, my: 0.5, cursor: "pointer" }}
+      />
+    </Box>
+  </>
+)}
+</> */
+}
