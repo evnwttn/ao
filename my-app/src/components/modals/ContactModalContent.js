@@ -1,5 +1,5 @@
 import React from "react";
-import { TextField, IconButton } from "@mui/material";
+import { TextField, IconButton, Box } from "@mui/material";
 import { useForm } from "react-hook-form";
 import { palette } from "../../assets/theme";
 import SendIcon from "@mui/icons-material/Send";
@@ -14,7 +14,7 @@ export const ContactModalContent = () => {
   console.log(errors);
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
+    <Box component="form" onSubmit={handleSubmit(onSubmit)}>
       <TextField
         id="contact-name"
         placeholder="Name"
@@ -36,6 +36,6 @@ export const ContactModalContent = () => {
       <IconButton type="submit">
         <SendIcon sx={{ color: palette.aoWhite, my: 0.5 }} />
       </IconButton>
-    </form>
+    </Box>
   );
 };
