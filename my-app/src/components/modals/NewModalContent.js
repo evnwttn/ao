@@ -2,24 +2,8 @@ import React, { useState } from "react";
 import { Box, TextField, IconButton } from "@mui/material";
 import { useForm } from "react-hook-form";
 import SendIcon from "@mui/icons-material/Send";
-
 import AddCircleOutline from "@mui/icons-material/AddCircleOutline";
 import { palette } from "../../assets/theme";
-
-// const boxStyle = {
-//   display: "flex",
-//   alignItems: "flex-end",
-//   justifyContent: "center",
-// };
-
-// const fontStyle = {
-//   fontWeight: "400",
-//   fontSize: "0.75rem",
-//   lineHeight: "1.66",
-//   fontFamily: "Noto Sans",
-//   letterSpacing: "0.03333em",
-//   color: palette.aoWhite,
-// };
 
 export const NewModalContent = () => {
   const {
@@ -97,3 +81,18 @@ export const NewModalContent = () => {
 )}
 </> */
 }
+
+// const boxStyle = {
+//   display: "flex",
+//   alignItems: "flex-end",
+//   justifyContent: "center",
+// };
+
+// const fontStyle = {
+//   fontWeight: "400",
+//   fontSize: "0.75rem",
+//   lineHeight: "1.66",
+//   fontFamily: "Noto Sans",
+//   letterSpacing: "0.03333em",
+//   color: palette.aoWhite,
+// };
