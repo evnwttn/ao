@@ -1,31 +1,27 @@
 import React, { useState } from "react";
-import { Box, TextField } from "@mui/material";
+import { Box, TextField, IconButton } from "@mui/material";
 import { useForm } from "react-hook-form";
+import SendIcon from "@mui/icons-material/Send";
+
 import AddCircleOutline from "@mui/icons-material/AddCircleOutline";
 import { palette } from "../../assets/theme";
 
-const boxStyle = {
-  display: "flex",
-  alignItems: "flex-end",
-  justifyContent: "center",
-};
+// const boxStyle = {
+//   display: "flex",
+//   alignItems: "flex-end",
+//   justifyContent: "center",
+// };
 
-const fontStyle = {
-  fontWeight: "400",
-  fontSize: "0.75rem",
-  lineHeight: "1.66",
-  fontFamily: "Noto Sans",
-  letterSpacing: "0.03333em",
-  color: palette.aoWhite,
-};
+// const fontStyle = {
+//   fontWeight: "400",
+//   fontSize: "0.75rem",
+//   lineHeight: "1.66",
+//   fontFamily: "Noto Sans",
+//   letterSpacing: "0.03333em",
+//   color: palette.aoWhite,
+// };
 
 export const NewModalContent = () => {
-  const [sessionTitle, setSessionTitle] = useState("");
-  const handleSessionTitle = (titleForm) => {
-    setSessionTitle(titleForm.target.value);
-  };
-  const [titleFormCompleted, isFormCompleted] = useState(false);
-
   const {
     register,
     handleSubmit,
@@ -34,7 +30,30 @@ export const NewModalContent = () => {
   const onSubmit = (data) => console.log(data);
   console.log(errors);
 
-  return <>yEAH</>;
+  return (
+    <Box component="form" onSubmit={handleSubmit(onSubmit)}>
+      <TextField
+        id="New Session"
+        placeholder="New Session"
+        variant="standard"
+        size="small"
+        color="divider"
+        helperText="enter a session title to continue"
+        margin="normal"
+        {...register("Session Title", { required: true })}
+      />
+      <br />
+      <IconButton disableRipple sx={{ cursor: "default" }} type="submit">
+        <SendIcon
+          sx={{
+            color: palette.aoWhite,
+            cursor: "pointer",
+            my: 0.5,
+          }}
+        />
+      </IconButton>
+    </Box>
+  );
 };
 
 {
