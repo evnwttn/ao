@@ -11,7 +11,7 @@ export const NewModalContent = () => {
     handleSubmit,
     formState: { errors },
   } = useForm();
-  const onSubmit = (data) => console.log(data);
+  const onSubmit = (data) => console.log(data.sessionTitle);
   console.log(errors);
 
   return (
@@ -24,7 +24,7 @@ export const NewModalContent = () => {
         color="divider"
         helperText="enter a session title to continue"
         margin="normal"
-        {...register("Session Title", { required: true })}
+        {...register("sessionTitle", { required: true })}
       />
       <br />
       <IconButton disableRipple sx={{ cursor: "default" }} type="submit">
