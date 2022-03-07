@@ -7,6 +7,7 @@ import { palette } from "../../assets/theme";
 
 export const NewModalContent = () => {
   const [titleFormCompleted, setTitleFormCompleted] = useState(false);
+  const [aoSessionTitle, setAoSessionTitle] = useState("");
 
   const {
     register,
@@ -17,18 +18,16 @@ export const NewModalContent = () => {
   const onSubmit = (data) => {
     if (data.sessionTitle !== "") {
       setTitleFormCompleted(true);
-      console.log(data);
+      setAoSessionTitle(watch("sessionTitle"));
     } else {
       console.log(errors);
     }
   };
 
-  console.log(watch("sessionTitle"));
-
   return (
     <>
       {titleFormCompleted ? (
-        <>yeah</>
+        <>{aoSessionTitle}</>
       ) : (
         <>
           <Box component="form" onSubmit={handleSubmit(onSubmit)}>
@@ -37,6 +36,7 @@ export const NewModalContent = () => {
               variant="standard"
               helperText="enter a session title to continue"
               margin="normal"
+              autoComplete="off"
               {...register("sessionTitle", { required: true })}
             />
             <br />
