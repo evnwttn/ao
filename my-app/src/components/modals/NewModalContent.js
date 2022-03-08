@@ -59,7 +59,6 @@ export const NewModalContent = () => {
             autoComplete="off"
             helperText="Add Track"
             {...register(`track${trackNumber}`)}
-            onClick={console.log("hello")}
           />
           <br />
           <IconButton disableRipple sx={{ cursor: "default" }} type="submit">
