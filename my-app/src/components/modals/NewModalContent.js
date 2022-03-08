@@ -52,6 +52,7 @@ export const NewModalContent = () => {
         helperText="Add Track"
         {...register(`track${trackNumber}`)}
       />
+      // find appendchild react equivalent
     );
   };
 
