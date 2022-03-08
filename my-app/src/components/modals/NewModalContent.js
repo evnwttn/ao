@@ -42,6 +42,19 @@ export const NewModalContent = () => {
     return <>Yolo</>;
   };
 
+  const renderNewTrackField = () => {
+    trackNumber++;
+    return (
+      <TextField
+        variant="standard"
+        margin="normal"
+        autoComplete="off"
+        helperText="Add Track"
+        {...register(`track${trackNumber}`)}
+      />
+    );
+  };
+
   return (
     <>
       {titleFormCompleted ? (
