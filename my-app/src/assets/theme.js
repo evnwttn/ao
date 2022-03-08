@@ -37,7 +37,12 @@ const aotheme = createTheme({
   components: {
     MuiFormHelperText: {
       styleOverrides: {
-        root: { color: palette.aoRed, fontFamily: "Noto Sans" },
+        root: {
+          color: palette.aoRed,
+          fontFamily: "Noto Sans",
+          textAlign: "center",
+          marginTop: 1,
+        },
       },
     },
     MuiInputLabel: {

@@ -57,19 +57,9 @@ export const NewModalContent = () => {
             variant="standard"
             margin="normal"
             autoComplete="off"
+            helperText="Add Track"
             {...register(`track${trackNumber}`)}
-            InputProps={{
-              endAdornment: (
-                <IconButton disableRipple sx={{ cursor: "default" }}>
-                  <AddCircleOutline
-                    sx={{
-                      color: palette.aoWhite,
-                      cursor: "pointer",
-                    }}
-                  />
-                </IconButton>
-              ),
-            }}
+            onClick={console.log("hello")}
           />
           <br />
           <IconButton disableRipple sx={{ cursor: "default" }} type="submit">
