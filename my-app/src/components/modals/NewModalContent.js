@@ -39,6 +39,7 @@ export const NewModalContent = () => {
   };
   const onSubmitTrack = (data) => {
     console.log(data);
+    return <>Yolo</>;
   };
 
   return (
@@ -57,11 +58,27 @@ export const NewModalContent = () => {
             margin="normal"
             autoComplete="off"
             {...register(`track${trackNumber}`)}
+            InputProps={{
+              endAdornment: (
+                <IconButton disableRipple sx={{ cursor: "default" }}>
+                  <AddCircleOutline
+                    sx={{
+                      color: palette.aoWhite,
+                      cursor: "pointer",
+                    }}
+                  />
+                </IconButton>
+              ),
+            }}
           />
           <br />
           <IconButton disableRipple sx={{ cursor: "default" }} type="submit">
-            <AddCircleOutline
-              sx={{ color: palette.aoWhite, mr: 1, my: 0.5, cursor: "pointer" }}
+            <SendIcon
+              sx={{
+                color: palette.aoWhite,
+                my: 0.5,
+                cursor: "pointer",
+              }}
             />
           </IconButton>
         </Box>
