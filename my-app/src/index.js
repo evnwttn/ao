@@ -8,28 +8,6 @@ import "./index.css";
 import { ModalButton } from "./components/ModalButton";
 import { MainLogo } from "./components/MainLogo";
 
-let containerStyle = {
-  marginLeft: "2.5vw",
-  marginRight: "2.5vw",
-  marginTop: "2.5vh",
-  marginBottom: "2.5vh",
-};
-
-let centerStyle = {
-  display: "flex",
-  paddingTop: "28vh",
-  alignContent: "center",
-  flexDirection: "row",
-  justifyContent: "center",
-};
-
-let topRightStyle = {
-  display: "flex",
-  flexDirection: "row",
-  justifyContent: "flex-end",
-  alignItems: "center",
-};
-
 let Home = () => {
   const [open, setOpen] = useState(false);
   const [modalType, setModalType] = useState("");
@@ -41,14 +19,36 @@ let Home = () => {
   const handleClose = () => setOpen(false);
 
   return (
-    <Box sx={containerStyle}>
+    <Box
+      sx={{
+        marginLeft: "2.5vw",
+        marginRight: "2.5vw",
+        marginTop: "2.5vh",
+        marginBottom: "2.5vh",
+      }}
+    >
       <ThemeProvider theme={aotheme}>
-        <Box sx={topRightStyle}>
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "row",
+            justifyContent: "flex-end",
+            alignItems: "center",
+          }}
+        >
           <ModalButton text={"About"} />
           <ModalButton text={"Contact"} />
         </Box>
 
-        <Box sx={centerStyle}>
+        <Box
+          sx={{
+            display: "flex",
+            paddingTop: "28vh",
+            alignContent: "center",
+            flexDirection: "row",
+            justifyContent: "center",
+          }}
+        >
           <ModalButton text={"New"} />
           <MainLogo />
           <ModalButton text={"Load"} />
