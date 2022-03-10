@@ -7,6 +7,7 @@ import "@fontsource/noto-serif";
 import "./index.css";
 import { ModalButton } from "./components/ModalButton";
 import { MainLogo } from "./components/MainLogo";
+import { ModalBase } from "./components/ModalBase";
 
 let Home = () => {
   const [open, setOpen] = useState(false);
@@ -27,6 +28,7 @@ let Home = () => {
         marginBottom: "2.5vh",
       }}
     >
+      <ModalBase open={open} handleClose={handleClose} text={modalType} />
       <ThemeProvider theme={aotheme}>
         <Box
           sx={{
@@ -36,8 +38,11 @@ let Home = () => {
             alignItems: "center",
           }}
         >
-          <ModalButton text={"About"} />
-          <ModalButton text={"Contact"} />
+          <ModalButton text={"About"} handleOpen={(text) => handleOpen(text)} />
+          <ModalButton
+            text={"Contact"}
+            handleOpen={(text) => handleOpen(text)}
+          />
         </Box>
 
         <Box
@@ -49,9 +54,9 @@ let Home = () => {
             justifyContent: "center",
           }}
         >
-          <ModalButton text={"New"} />
+          <ModalButton text={"New"} handleOpen={(text) => handleOpen(text)} />
           <MainLogo />
-          <ModalButton text={"Load"} />
+          <ModalButton text={"Load"} handleOpen={(text) => handleOpen(text)} />
         </Box>
       </ThemeProvider>
     </Box>
