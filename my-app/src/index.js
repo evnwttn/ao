@@ -1,4 +1,4 @@
-import React from "react";
+import { React, useState } from "react";
 import ReactDOM from "react-dom";
 import { ThemeProvider, Box } from "@mui/material";
 import aotheme from "./assets/theme";
@@ -31,6 +31,15 @@ let topRightStyle = {
 };
 
 let Home = () => {
+  const [open, setOpen] = useState(false);
+  const [modalType, setModalType] = useState("");
+  const handleOpen = (text) => {
+    console.log("sup");
+    setModalType(text);
+    setOpen(true);
+  };
+  const handleClose = () => setOpen(false);
+
   return (
     <Box sx={containerStyle}>
       <ThemeProvider theme={aotheme}>
