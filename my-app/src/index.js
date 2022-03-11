@@ -1,4 +1,4 @@
-import { React, useState } from "react";
+import { React, useState, useEffect } from "react";
 import ReactDOM from "react-dom";
 import { ThemeProvider, Box } from "@mui/material";
 import aotheme from "./assets/theme";
@@ -12,12 +12,12 @@ import { ModalBase } from "./components/ModalBase";
 let Home = () => {
   const [open, setOpen] = useState(false);
   const [modalType, setModalType] = useState("");
-  const handleOpen = (text) => {
-    console.log("sup");
-    setModalType(text);
+  const handleOpen = () => {
     setOpen(true);
   };
   const handleClose = () => setOpen(false);
+
+  useEffect(() => console.log("yellow"));
 
   return (
     <Box
@@ -41,6 +41,7 @@ let Home = () => {
           <ModalButton text={"About"} handleOpen={(text) => handleOpen(text)} />
           <ModalButton
             text={"Contact"}
+            onClick={(text) => setModalType(text)}
             handleOpen={(text) => handleOpen(text)}
           />
         </Box>
