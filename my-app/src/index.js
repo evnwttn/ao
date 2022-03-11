@@ -19,6 +19,8 @@ let Home = () => {
 
   useEffect(() => console.log("yellow"));
 
+  // investigate text/modal type handling tomorrow w/ useeffect
+
   return (
     <Box
       sx={{
