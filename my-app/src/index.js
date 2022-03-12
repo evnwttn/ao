@@ -1,4 +1,4 @@
-import { React, useState, useEffect } from "react";
+import { React, useState, useEffect, useReducer } from "react";
 import ReactDOM from "react-dom";
 import { ThemeProvider, Box } from "@mui/material";
 import aotheme from "./assets/theme";
@@ -9,18 +9,26 @@ import { ModalButton } from "./components/ModalButton";
 import { MainLogo } from "./components/MainLogo";
 import { ModalBase } from "./components/ModalBase";
 
+function reducer(state, action) {
+  if (action !== "") {
+    return action;
+  } else {
+    return state;
+  }
+}
+
 let Home = () => {
+  const [state, dispatch] = useReducer(reducer, "");
   const [open, setOpen] = useState(false);
-  const [modalPrompt, setModalPrompt] = useState("");
   const [modalType, setModalType] = useState("");
   const handleOpen = (text) => {
-    setModalPrompt(text);
+    dispatch(text);
     setOpen(true);
   };
 
   useEffect(() => {
-    if (modalPrompt !== "") setModalType(modalPrompt);
-  }, [modalPrompt]);
+    setModalType(state);
+  }, [state]);
 
   const handleClose = () => setOpen(false);
 
