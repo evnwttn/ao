@@ -9,7 +9,7 @@ import { ModalButton } from "./components/ModalButton";
 import { MainLogo } from "./components/MainLogo";
 import { ModalBase } from "./components/ModalBase";
 
-function reducer(state, action) {
+const reducer = (state, action) => {
   switch (action) {
     case "": {
       return state;
@@ -17,7 +17,7 @@ function reducer(state, action) {
     default:
       return action;
   }
-}
+};
 
 let Home = () => {
   const [state, dispatch] = useReducer(reducer, "");
