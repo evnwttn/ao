@@ -1,5 +1,5 @@
 import React from "react";
-import { Modal } from "@mui/material";
+import { Modal, Box } from "@mui/material";
 import { ModalText } from "../components/ModalText";
 
 export const ModalBase = ({ open, handleClose, text }) => {
@@ -10,7 +10,9 @@ export const ModalBase = ({ open, handleClose, text }) => {
       aria-labelledby="modal-modal-title"
       aria-describedby="modal-modal-description"
     >
-      <ModalText prompt={text} />
+      <>
+        <ModalText prompt={text} />
+      </>
     </Modal>
   );
 };
