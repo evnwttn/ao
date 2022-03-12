@@ -8,6 +8,14 @@ export const MainLogo = () => {
     fontFamily: "Noto-Serif",
     fontSize: "13vw",
     marginTop: "-5vh",
+    userSelect: "none",
+    msUserSelect: "none",
+    webkitTouchCallout: "none",
+    webkitUserSelect: "none",
+    khtmlUserSelectNone: "none",
+    mozUserSelectNone: "none",
+    msUserSelectNone: "none",
+    userSelectNone: "none",
   };
 
   return (
