@@ -43,8 +43,9 @@ let Home = () => {
         marginBottom: "2.5vh",
       }}
     >
-      <ModalBase open={open} handleClose={handleClose} text={modalType} />
       <ThemeProvider theme={aotheme}>
+        <ModalBase open={open} handleClose={handleClose} text={modalType} />
+
         <Box
           sx={{
             display: "flex",
