@@ -7,7 +7,7 @@ export const ModalButton = ({ text, handleOpen, prompt }) => {
       <Button
         disableRipple
         key={text}
-        onClick={() => handleOpen(text) || console.log(text)}
+        onClick={() => handleOpen(text)}
         variant="text"
         color={
           text === "New" ? "primary" : text === "Load" ? "secondary" : "inherit"

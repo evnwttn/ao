@@ -1,4 +1,4 @@
-import { React, useState, useEffect } from "react";
+import { React, useState } from "react";
 import ReactDOM from "react-dom";
 import { ThemeProvider, Box } from "@mui/material";
 import aotheme from "./assets/theme";
@@ -13,10 +13,10 @@ let Home = () => {
   const [open, setOpen] = useState(false);
   const [modalType, setModalType] = useState("");
   const handleOpen = (text) => {
+    console.log("test");
+    setModalType(text);
     setOpen(true);
   };
-  useEffect(() => console.log("what"));
-
   const handleClose = () => setOpen(false);
 
   return (
