@@ -8,7 +8,7 @@ export const MainLogo = () => {
     fontFamily: "Noto-Serif",
     fontSize: "13vw",
     marginTop: "-5vh",
-    userSelect: "none",
+    userSelect: "none", // disable selection
     msUserSelect: "none",
     webkitTouchCallout: "none",
     webkitUserSelect: "none",

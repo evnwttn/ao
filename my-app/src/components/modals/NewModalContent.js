@@ -2,13 +2,12 @@ import React, { useState } from "react";
 import { Box, TextField, IconButton } from "@mui/material";
 import { useForm } from "react-hook-form";
 import SendIcon from "@mui/icons-material/Send";
-import AddCircleOutline from "@mui/icons-material/AddCircleOutline";
 import { palette } from "../../assets/theme";
 
 const boxStyle = {
   display: "flex",
-  alignItems: "flex-end",
-  justifyContent: "center",
+  flexDirection: "column",
+  alignItems: "center",
 };
 
 const fontStyle = {
@@ -24,7 +23,6 @@ export const NewModalContent = () => {
   const [titleFormCompleted, setTitleFormCompleted] = useState(false);
   const [aoSessionTitle, setAoSessionTitle] = useState("");
   let trackNumber = 0;
-  // let parameterNumber = 0;
 
   const {
     register,
@@ -42,20 +40,6 @@ export const NewModalContent = () => {
     return <>Yolo</>;
   };
 
-  const renderNewTrackField = () => {
-    trackNumber++;
-    return (
-      <TextField
-        variant="standard"
-        margin="normal"
-        autoComplete="off"
-        helperText="Add Track"
-        {...register(`track${trackNumber}`)}
-      />
-      // find appendchild react equivalent
-    );
-  };
-
   return (
     <>
       {titleFormCompleted ? (
@@ -66,7 +50,6 @@ export const NewModalContent = () => {
         >
           Enter the titles of tracks you wish to include in the {aoSessionTitle}{" "}
           session. You can always add more later.
-          <br />
           <TextField
             variant="standard"
             margin="normal"
@@ -74,20 +57,25 @@ export const NewModalContent = () => {
             helperText="Add Track"
             {...register(`track${trackNumber}`)}
           />
-          <br />
-          <IconButton disableRipple sx={{ cursor: "default" }} type="submit">
-            <SendIcon
-              sx={{
-                color: palette.aoWhite,
-                my: 0.5,
-                cursor: "pointer",
-              }}
-            />
-          </IconButton>
+          <Box>
+            <IconButton disableRipple sx={{ cursor: "default" }} type="submit">
+              <SendIcon
+                sx={{
+                  color: palette.aoWhite,
+                  my: 0.5,
+                  cursor: "pointer",
+                }}
+              />
+            </IconButton>
+          </Box>
         </Box>
       ) : (
         <>
-          <Box component="form" onSubmit={handleSubmit(onSubmitTitle)}>
+          <Box
+            sx={{ boxStyle, fontStyle }}
+            component="form"
+            onSubmit={handleSubmit(onSubmitTitle)}
+          >
             <TextField
               variant="standard"
               helperText="enter a session title to continue"
@@ -95,16 +83,22 @@ export const NewModalContent = () => {
               autoComplete="off"
               {...register("sessionTitle", { required: true })}
             />
-            <br />
-            <IconButton disableRipple sx={{ cursor: "default" }} type="submit">
-              <SendIcon
-                sx={{
-                  color: palette.aoWhite,
-                  cursor: "pointer",
-                  my: 0.5,
-                }}
-              />
-            </IconButton>
+
+            <Box>
+              <IconButton
+                disableRipple
+                sx={{ cursor: "default" }}
+                type="submit"
+              >
+                <SendIcon
+                  sx={{
+                    color: palette.aoWhite,
+                    cursor: "pointer",
+                    my: 0.5,
+                  }}
+                />
+              </IconButton>
+            </Box>
           </Box>
         </>
       )}
