@@ -10,10 +10,12 @@ import { MainLogo } from "./components/MainLogo";
 import { ModalBase } from "./components/ModalBase";
 
 function reducer(state, action) {
-  if (action !== "") {
-    return action;
-  } else {
-    return state;
+  switch (action) {
+    case "": {
+      return state;
+    }
+    default:
+      return action;
   }
 }
 
