@@ -17,7 +17,15 @@ export const ContactModalContent = () => {
   };
 
   return (
-    <Box component="form" onSubmit={handleSubmit(onSubmit)}>
+    <Box
+      component="form"
+      sx={{
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+      }}
+      onSubmit={handleSubmit(onSubmit)}
+    >
       <TextField
         placeholder="Name"
         variant="standard"
@@ -25,7 +33,6 @@ export const ContactModalContent = () => {
         sx={textFieldStyle}
         {...register("Name", {})}
       />
-      <br />
       <TextField
         placeholder="Email Address"
         variant="standard"
@@ -33,7 +40,6 @@ export const ContactModalContent = () => {
         sx={textFieldStyle}
         {...register("Email Address", {})}
       />
-      <br />
       <TextField
         placeholder="Message"
         variant="standard"
@@ -41,7 +47,6 @@ export const ContactModalContent = () => {
         sx={textFieldStyle}
         {...register("Message", {})}
       />
-      <br />
       <IconButton disableRipple sx={{ cursor: "default" }} type="submit">
         <SendIcon
           sx={{
