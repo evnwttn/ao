@@ -1,7 +1,7 @@
 import React from "react";
 import { Button } from "@mui/material";
 
-export const ModalButton = ({ text, handleOpen, prompt }) => {
+export const ModalButton = ({ text, handleOpen }) => {
   return (
     <>
       <Button
