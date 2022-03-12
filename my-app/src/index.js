@@ -12,14 +12,12 @@ import { ModalBase } from "./components/ModalBase";
 let Home = () => {
   const [open, setOpen] = useState(false);
   const [modalType, setModalType] = useState("");
-  const handleOpen = () => {
+  const handleOpen = (text) => {
     setOpen(true);
   };
+  useEffect(() => console.log("what"));
+
   const handleClose = () => setOpen(false);
-
-  useEffect(() => console.log("yellow"));
-
-  // investigate text/modal type handling tomorrow w/ useeffect
 
   return (
     <Box
@@ -43,7 +41,6 @@ let Home = () => {
           <ModalButton text={"About"} handleOpen={(text) => handleOpen(text)} />
           <ModalButton
             text={"Contact"}
-            onClick={(text) => setModalType(text)}
             handleOpen={(text) => handleOpen(text)}
           />
         </Box>
