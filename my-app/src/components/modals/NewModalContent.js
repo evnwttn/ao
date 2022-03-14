@@ -5,13 +5,7 @@ import SendIcon from "@mui/icons-material/Send";
 import AddIcon from "@mui/icons-material/Add";
 import { palette } from "../../assets/theme";
 
-// ask dylan -
-// is it possible to nest forms? google indicates no
-
-// to do
-// consolidate submits
 // eliminate next button also submitting track/parameter
-// might be able to consolidate track & parameter and interchange prompt !!
 
 const boxStyle = {
   display: "flex",
@@ -81,7 +75,7 @@ export const NewModalContent = () => {
                 : handleSubmit(onSubmitTrack)
             }
           >
-            Enter the titles of {formTarget}s you wish to include in the{" "}
+            Enter the names of {formTarget}s you wish to include in the{" "}
             {aoSessionTitle} session. You can always add more later.
             <Box>
               <TextField
@@ -89,7 +83,7 @@ export const NewModalContent = () => {
                 margin="normal"
                 autoComplete="off"
                 helperText={`Add ${formTarget}s`}
-                {...register(`${formTarget}${formNumber}`)}
+                {...register(`${formTarget}.${formNumber}`)}
               />
             </Box>
             <Box>
@@ -127,7 +121,6 @@ export const NewModalContent = () => {
           </Box>
         </>
       ) : (
-        // SESSION TITLE FORM
         <>
           <Box
             sx={{ boxStyle, fontStyle }}
