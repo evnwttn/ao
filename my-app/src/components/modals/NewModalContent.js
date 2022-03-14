@@ -48,7 +48,7 @@ export const NewModalContent = () => {
   };
   const onCompleteTrackForm = (data) => {
     setTrackFormCompleted(true);
-    console.log(trackFormCompleted);
+    console.log(data);
   };
   const onCompleteParameterForm = (data) => {
     setParameterFormCompleted(true);
@@ -58,9 +58,9 @@ export const NewModalContent = () => {
   return (
     <>
       {parameterFormCompleted ? (
-        console.log("parameters done")
+        <Box>Parameter form completed</Box>
       ) : trackFormCompleted ? (
-        console.log("tracks done")
+        <Box>Box form completed</Box>
       ) : titleFormCompleted ? (
         <>
           <Box
