@@ -10,7 +10,7 @@ export const ContactModalContent = () => {
     handleSubmit,
     formState: { errors },
   } = useForm();
-  const onSubmit = (data) => console.log(data);
+  const onSubmit = (data) => console.log(errors);
 
   const textFieldStyle = {
     width: "75%",

@@ -1,5 +1,5 @@
 import React from "react";
-import { Modal, Box } from "@mui/material";
+import { Modal } from "@mui/material";
 import { ModalText } from "../components/ModalText";
 
 export const ModalBase = ({ open, handleClose, text }) => {
