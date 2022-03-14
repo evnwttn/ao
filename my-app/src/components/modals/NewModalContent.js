@@ -63,6 +63,8 @@ export const NewModalContent = () => {
     console.log(data);
   };
 
+  let formTarget = "track";
+
   return (
     <>
       {parameterFormCompleted ? (
