@@ -22,7 +22,7 @@ const fontStyle = {
 export const NewModalContent = () => {
   const [titleFormCompleted, setTitleFormCompleted] = useState(false);
   const [aoSessionTitle, setAoSessionTitle] = useState("");
-  let trackNumber = 0;
+  const [trackNumber, setNextTrackNumber] = useState(0);
 
   const {
     register,
@@ -36,8 +36,8 @@ export const NewModalContent = () => {
       : console.log(errors);
   };
   const onSubmitTrack = (data) => {
-    console.log(data);
-    return <>Yolo</>;
+    setNextTrackNumber(trackNumber + 1);
+    return console.log(data);
   };
 
   return (
