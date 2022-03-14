@@ -57,7 +57,17 @@ const aotheme = createTheme({
         },
       },
     },
-
+    MuiSvgIcon: {
+      styleOverrides: {
+        root: {
+          color: palette.aoWhite,
+          "&:hover": {
+            background: "none",
+            opacity: "0.6",
+          },
+        },
+      },
+    },
     MuiButton: {
       styleOverrides: {
         text: {

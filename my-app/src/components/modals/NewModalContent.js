@@ -95,7 +95,6 @@ export const NewModalContent = () => {
               >
                 <AddIcon
                   sx={{
-                    color: palette.aoWhite,
                     my: 0.5,
                     cursor: "pointer",
                   }}
@@ -111,7 +110,6 @@ export const NewModalContent = () => {
             <IconButton disableRipple sx={{ cursor: "default" }} type="submit">
               <SendIcon
                 sx={{
-                  color: palette.aoWhite,
                   my: 0.5,
                   cursor: "pointer",
                 }}
@@ -146,7 +144,6 @@ export const NewModalContent = () => {
               >
                 <AddIcon
                   sx={{
-                    color: palette.aoWhite,
                     my: 0.5,
                     cursor: "pointer",
                   }}
@@ -162,7 +159,6 @@ export const NewModalContent = () => {
             <IconButton disableRipple sx={{ cursor: "default" }} type="submit">
               <SendIcon
                 sx={{
-                  color: palette.aoWhite,
                   my: 0.5,
                   cursor: "pointer",
                 }}
@@ -194,7 +190,6 @@ export const NewModalContent = () => {
               >
                 <SendIcon
                   sx={{
-                    color: palette.aoWhite,
                     cursor: "pointer",
                     my: 0.5,
                   }}
