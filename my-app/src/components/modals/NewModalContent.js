@@ -126,17 +126,21 @@ export const NewModalContent = () => {
           <Box
             component="form"
             sx={{ boxStyle, fontStyle }}
-            onSubmit={handleSubmit(onSubmitTrack)}
+            onSubmit={
+              trackFormCompleted
+                ? handleSubmit(onSubmitParameter)
+                : handleSubmit(onSubmitTrack)
+            }
           >
-            Enter the titles of tracks you wish to include in the{" "}
+            Enter the titles of {formTarget}s you wish to include in the{" "}
             {aoSessionTitle} session. You can always add more later.
             <Box>
               <TextField
                 variant="standard"
                 margin="normal"
                 autoComplete="off"
-                helperText="Add Track"
-                {...register(`track${formNumber}`)}
+                helperText={`Add ${formTarget}s`}
+                {...register(`${formTarget}${formNumber}`)}
               />
             </Box>
             <Box>
@@ -157,7 +161,11 @@ export const NewModalContent = () => {
           <Box
             component="form"
             sx={{ boxStyle, fontStyle }}
-            onSubmit={handleSubmit(onCompleteTrackForm)}
+            onSubmit={
+              trackFormCompleted
+                ? handleSubmit(onCompleteParameterForm)
+                : handleSubmit(onCompleteTrackForm)
+            }
           >
             <IconButton disableRipple sx={{ cursor: "default" }} type="submit">
               <SendIcon
