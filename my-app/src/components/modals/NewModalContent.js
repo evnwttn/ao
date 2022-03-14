@@ -41,12 +41,24 @@ export const NewModalContent = () => {
   };
   const onSubmitTrack = (data) => {
     setNextTrackNumber(trackNumber + 1);
-    return console.log(data);
+    console.log(data);
+  };
+  const onCompleteTrackForm = (data) => {
+    setTrackFormCompleted(true);
+    console.log(data);
+  };
+  const onCompleteParameterForm = (data) => {
+    setParameterFormCompleted(true);
+    console.log(data);
   };
 
   return (
     <>
-      {titleFormCompleted ? (
+      {parameterFormCompleted ? (
+        console.log("parameters done")
+      ) : trackFormCompleted ? (
+        console.log("tracks done")
+      ) : titleFormCompleted ? (
         <Box
           component="form"
           sx={{ boxStyle, fontStyle }}
