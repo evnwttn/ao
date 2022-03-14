@@ -6,6 +6,7 @@ export const AboutModalContent = () => {
     <Box
       sx={{
         display: "flex",
+        flexDirection: "column",
         alignItems: "center",
         fontWeight: "400",
         fontSize: "0.75rem",
@@ -17,7 +18,10 @@ export const AboutModalContent = () => {
     >
       A VISUAL ALBUM MANAGEMENT TOOLKIT DESIGNED BY &amp; FOR MUSICIANS TO TRACK
       &amp; MONITOR PROGRESS, FOSTER COLLABORATION AND AID IN THE SMASHING OF
-      GOALS. TO BEGIN START A NEW PROJECT.
+      GOALS.
+      <Box sx={{ marginTop: "2%" }}>
+        TO BEGIN START A <b>NEW</b> PROJECT.
+      </Box>
     </Box>
   );
 };
