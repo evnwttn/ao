@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Box, TextField, IconButton } from "@mui/material";
 import { useForm } from "react-hook-form";
 import SendIcon from "@mui/icons-material/Send";
+import AddIcon from "@mui/icons-material/Add";
 import { palette } from "../../assets/theme";
 
 const boxStyle = {
@@ -59,6 +60,15 @@ export const NewModalContent = () => {
           />
           <Box>
             <IconButton disableRipple sx={{ cursor: "default" }} type="submit">
+              <AddIcon
+                sx={{
+                  color: palette.aoWhite,
+                  my: 0.5,
+                  cursor: "pointer",
+                }}
+              />
+            </IconButton>
+            <IconButton disableRipple sx={{ cursor: "default" }}>
               <SendIcon
                 sx={{
                   color: palette.aoWhite,
