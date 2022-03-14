@@ -5,6 +5,9 @@ import SendIcon from "@mui/icons-material/Send";
 import AddIcon from "@mui/icons-material/Add";
 import { palette } from "../../assets/theme";
 
+// ask dylan -
+// is it possible to nest forms? google indicates no
+
 const boxStyle = {
   display: "flex",
   flexDirection: "column",
@@ -59,36 +62,43 @@ export const NewModalContent = () => {
       ) : trackFormCompleted ? (
         console.log("tracks done")
       ) : titleFormCompleted ? (
-        <Box
-          component="form"
-          sx={{ boxStyle, fontStyle }}
-          onSubmit={handleSubmit(onSubmitTrack)}
-        >
-          Enter the titles of tracks you wish to include in the {aoSessionTitle}{" "}
-          session. You can always add more later.
-          <TextField
-            variant="standard"
-            margin="normal"
-            autoComplete="off"
-            helperText="Add Track"
-            {...register(`track${trackNumber}`)}
-          />
-          <Box>
-            <IconButton disableRipple sx={{ cursor: "pointer" }} type="submit">
-              <AddIcon
-                sx={{
-                  color: palette.aoWhite,
-                  my: 0.5,
-                  cursor: "default",
-                }}
-              />
-            </IconButton>
-            <IconButton
-              disableRipple
-              sx={{ cursor: "default" }}
-              onSubmit={handleSubmit(onCompleteTrackForm)}
-              type="submit"
-            >
+        <>
+          <Box
+            component="form"
+            sx={{ boxStyle, fontStyle }}
+            onSubmit={handleSubmit(onSubmitTrack)}
+          >
+            Enter the titles of tracks you wish to include in the{" "}
+            {aoSessionTitle} session. You can always add more later.
+            <TextField
+              variant="standard"
+              margin="normal"
+              autoComplete="off"
+              helperText="Add Track"
+              {...register(`track${trackNumber}`)}
+            />
+            <Box>
+              <IconButton
+                disableRipple
+                sx={{ cursor: "pointer" }}
+                type="submit"
+              >
+                <AddIcon
+                  sx={{
+                    color: palette.aoWhite,
+                    my: 0.5,
+                    cursor: "default",
+                  }}
+                />
+              </IconButton>
+            </Box>
+          </Box>
+          <Box
+            component="form"
+            sx={{ boxStyle, fontStyle }}
+            onSubmit={handleSubmit(onCompleteTrackForm)}
+          >
+            <IconButton disableRipple sx={{ cursor: "default" }} type="submit">
               <SendIcon
                 sx={{
                   color: palette.aoWhite,
@@ -98,7 +108,7 @@ export const NewModalContent = () => {
               />
             </IconButton>
           </Box>
-        </Box>
+        </>
       ) : (
         <>
           <Box
