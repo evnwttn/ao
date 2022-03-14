@@ -78,13 +78,15 @@ export const NewModalContent = () => {
             Enter the parameter names you wish to include in the
             {aoSessionTitle} session (ie. Guitar, Drum Editing). You can always
             add more later.
-            <TextField
-              variant="standard"
-              margin="normal"
-              autoComplete="off"
-              helperText="Add Paramter"
-              {...register(`parameter${parameterNumber}`)}
-            />
+            <Box>
+              <TextField
+                variant="standard"
+                margin="normal"
+                autoComplete="off"
+                helperText="Add Paramter"
+                {...register(`parameter${parameterNumber}`)}
+              />
+            </Box>
             <Box>
               <IconButton
                 disableRipple
@@ -95,7 +97,7 @@ export const NewModalContent = () => {
                   sx={{
                     color: palette.aoWhite,
                     my: 0.5,
-                    cursor: "default",
+                    cursor: "pointer",
                   }}
                 />
               </IconButton>
@@ -127,13 +129,15 @@ export const NewModalContent = () => {
           >
             Enter the titles of tracks you wish to include in the{" "}
             {aoSessionTitle} session. You can always add more later.
-            <TextField
-              variant="standard"
-              margin="normal"
-              autoComplete="off"
-              helperText="Add Track"
-              {...register(`track${trackNumber}`)}
-            />
+            <Box>
+              <TextField
+                variant="standard"
+                margin="normal"
+                autoComplete="off"
+                helperText="Add Track"
+                {...register(`track${trackNumber}`)}
+              />
+            </Box>
             <Box>
               <IconButton
                 disableRipple
@@ -144,7 +148,7 @@ export const NewModalContent = () => {
                   sx={{
                     color: palette.aoWhite,
                     my: 0.5,
-                    cursor: "default",
+                    cursor: "pointer",
                   }}
                 />
               </IconButton>
@@ -185,7 +189,7 @@ export const NewModalContent = () => {
             <Box>
               <IconButton
                 disableRipple
-                sx={{ cursor: "default" }}
+                sx={{ cursor: "pointer" }}
                 type="submit"
               >
                 <SendIcon
