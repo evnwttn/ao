@@ -8,6 +8,10 @@ import { palette } from "../../assets/theme";
 // ask dylan -
 // is it possible to nest forms? google indicates no
 
+// to do
+// consolidate submits
+// might be able to consolidate track & parameter and interchange prompt !!
+
 const boxStyle = {
   display: "flex",
   flexDirection: "column",
@@ -46,6 +50,10 @@ export const NewModalContent = () => {
     setNextTrackNumber(trackNumber + 1);
     console.log(data);
   };
+  const onSubmitParameter = (data) => {
+    setNextParameter(parameterNumber + 1);
+    console.log(data);
+  };
   const onCompleteTrackForm = (data) => {
     setTrackFormCompleted(true);
     console.log(data);
@@ -65,16 +73,17 @@ export const NewModalContent = () => {
           <Box
             component="form"
             sx={{ boxStyle, fontStyle }}
-            onSubmit={handleSubmit(onSubmitTrack)}
+            onSubmit={handleSubmit(onSubmitParameter)}
           >
-            Enter the titles of tracks you wish to include in the{" "}
-            {aoSessionTitle} session. You can always add more later.
+            Enter the parameter names you wish to include in the
+            {aoSessionTitle} session (ie. Guitar, Drum Editing). You can always
+            add more later.
             <TextField
               variant="standard"
               margin="normal"
               autoComplete="off"
-              helperText="Add Track"
-              {...register(`track${trackNumber}`)}
+              helperText="Add Paramter"
+              {...register(`parameter${parameterNumber}`)}
             />
             <Box>
               <IconButton
@@ -95,7 +104,7 @@ export const NewModalContent = () => {
           <Box
             component="form"
             sx={{ boxStyle, fontStyle }}
-            onSubmit={handleSubmit(onCompleteTrackForm)}
+            onSubmit={handleSubmit(onCompleteParameterForm)}
           >
             <IconButton disableRipple sx={{ cursor: "default" }} type="submit">
               <SendIcon
