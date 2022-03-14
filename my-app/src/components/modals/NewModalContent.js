@@ -29,10 +29,11 @@ const fontStyle = {
 };
 
 export const NewModalContent = () => {
+  const [aoSessionTitle, setAoSessionTitle] = useState("");
   const [titleFormCompleted, setTitleFormCompleted] = useState(false);
   const [trackFormCompleted, setTrackFormCompleted] = useState(false);
   const [parameterFormCompleted, setParameterFormCompleted] = useState(false);
-  const [aoSessionTitle, setAoSessionTitle] = useState("");
+  const [formTarget, setFormTarget] = useState("track");
   const [formNumber, setFormNumber] = useState(0);
 
   const {
@@ -57,6 +58,7 @@ export const NewModalContent = () => {
   const onCompleteTrackForm = (data) => {
     setTrackFormCompleted(true);
     setFormNumber(0);
+    setFormTarget("parameter");
     console.log(data);
   };
   const onCompleteParameterForm = (data) => {
@@ -64,64 +66,11 @@ export const NewModalContent = () => {
     console.log(data);
   };
 
-  let formTarget = "track";
-
   return (
     <>
       {parameterFormCompleted ? (
         <Box>Completed</Box>
-      ) : trackFormCompleted ? (
-        // PARAMETERS FORM
-        <>
-          <Box
-            component="form"
-            sx={{ boxStyle, fontStyle }}
-            onSubmit={handleSubmit(onSubmitParameter)}
-          >
-            Enter the parameter names you wish to include in the
-            {aoSessionTitle} session (ie. Guitar, Drum Editing). You can always
-            add more later.
-            <Box>
-              <TextField
-                variant="standard"
-                margin="normal"
-                autoComplete="off"
-                helperText="Add Paramter"
-                {...register(`parameter${formNumber}`)}
-              />
-            </Box>
-            <Box>
-              <IconButton
-                disableRipple
-                sx={{ cursor: "pointer" }}
-                type="submit"
-              >
-                <AddIcon
-                  sx={{
-                    my: 0.5,
-                    cursor: "pointer",
-                  }}
-                />
-              </IconButton>
-            </Box>
-          </Box>
-          <Box
-            component="form"
-            sx={{ boxStyle, fontStyle }}
-            onSubmit={handleSubmit(onCompleteParameterForm)}
-          >
-            <IconButton disableRipple sx={{ cursor: "default" }} type="submit">
-              <SendIcon
-                sx={{
-                  my: 0.5,
-                  cursor: "pointer",
-                }}
-              />
-            </IconButton>
-          </Box>
-        </>
       ) : titleFormCompleted ? (
-        // TRACK TITLES FORM
         <>
           <Box
             component="form"
