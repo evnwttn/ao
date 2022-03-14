@@ -94,7 +94,6 @@ export const NewModalContent = () => {
           </Box>
           <Box
             component="form"
-            sx={{ boxStyle, fontStyle }}
             onSubmit={
               trackFormCompleted
                 ? handleSubmit(onCompleteParameterForm)
