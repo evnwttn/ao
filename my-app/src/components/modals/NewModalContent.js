@@ -58,10 +58,58 @@ export const NewModalContent = () => {
   return (
     <>
       {parameterFormCompleted ? (
-        <Box>Parameter form completed</Box>
+        <Box>Completed</Box>
       ) : trackFormCompleted ? (
-        <Box>Box form completed</Box>
+        // PARAMETERS FORM
+        <>
+          <Box
+            component="form"
+            sx={{ boxStyle, fontStyle }}
+            onSubmit={handleSubmit(onSubmitTrack)}
+          >
+            Enter the titles of tracks you wish to include in the{" "}
+            {aoSessionTitle} session. You can always add more later.
+            <TextField
+              variant="standard"
+              margin="normal"
+              autoComplete="off"
+              helperText="Add Track"
+              {...register(`track${trackNumber}`)}
+            />
+            <Box>
+              <IconButton
+                disableRipple
+                sx={{ cursor: "pointer" }}
+                type="submit"
+              >
+                <AddIcon
+                  sx={{
+                    color: palette.aoWhite,
+                    my: 0.5,
+                    cursor: "default",
+                  }}
+                />
+              </IconButton>
+            </Box>
+          </Box>
+          <Box
+            component="form"
+            sx={{ boxStyle, fontStyle }}
+            onSubmit={handleSubmit(onCompleteTrackForm)}
+          >
+            <IconButton disableRipple sx={{ cursor: "default" }} type="submit">
+              <SendIcon
+                sx={{
+                  color: palette.aoWhite,
+                  my: 0.5,
+                  cursor: "pointer",
+                }}
+              />
+            </IconButton>
+          </Box>
+        </>
       ) : titleFormCompleted ? (
+        // TRACK TITLES FORM
         <>
           <Box
             component="form"
@@ -110,6 +158,7 @@ export const NewModalContent = () => {
           </Box>
         </>
       ) : (
+        // SESSION TITLE FORM
         <>
           <Box
             sx={{ boxStyle, fontStyle }}
