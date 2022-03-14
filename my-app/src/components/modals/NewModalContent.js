@@ -87,17 +87,8 @@ export const NewModalContent = () => {
               />
             </Box>
             <Box>
-              <IconButton
-                disableRipple
-                sx={{ cursor: "pointer" }}
-                type="submit"
-              >
-                <AddIcon
-                  sx={{
-                    my: 0.5,
-                    cursor: "pointer",
-                  }}
-                />
+              <IconButton disableRipple type="submit">
+                <AddIcon sx={{ my: 0.5 }} />
               </IconButton>
             </Box>
           </Box>
@@ -110,13 +101,8 @@ export const NewModalContent = () => {
                 : handleSubmit(onCompleteTrackForm)
             }
           >
-            <IconButton disableRipple sx={{ cursor: "default" }} type="submit">
-              <SendIcon
-                sx={{
-                  my: 0.5,
-                  cursor: "pointer",
-                }}
-              />
+            <IconButton disableRipple type="submit">
+              <SendIcon sx={{ my: 0.5 }} />
             </IconButton>
           </Box>
         </>
@@ -136,14 +122,9 @@ export const NewModalContent = () => {
             />
 
             <Box>
-              <IconButton
-                disableRipple
-                sx={{ cursor: "pointer" }}
-                type="submit"
-              >
+              <IconButton disableRipple type="submit">
                 <SendIcon
                   sx={{
-                    cursor: "pointer",
                     my: 0.5,
                   }}
                 />

@@ -64,6 +64,7 @@ const aotheme = createTheme({
           "&:hover": {
             background: "none",
             opacity: "0.6",
+            cursor: "pointer",
           },
         },
       },
