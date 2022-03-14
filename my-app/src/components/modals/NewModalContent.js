@@ -10,6 +10,7 @@ import { palette } from "../../assets/theme";
 
 // to do
 // consolidate submits
+// eliminate next button also submitting track/parameter
 // might be able to consolidate track & parameter and interchange prompt !!
 
 const boxStyle = {
@@ -32,8 +33,7 @@ export const NewModalContent = () => {
   const [trackFormCompleted, setTrackFormCompleted] = useState(false);
   const [parameterFormCompleted, setParameterFormCompleted] = useState(false);
   const [aoSessionTitle, setAoSessionTitle] = useState("");
-  const [trackNumber, setNextTrackNumber] = useState(0);
-  const [parameterNumber, setNextParameter] = useState(0);
+  const [formNumber, setFormNumber] = useState(0);
 
   const {
     register,
@@ -47,15 +47,16 @@ export const NewModalContent = () => {
       : console.log(errors);
   };
   const onSubmitTrack = (data) => {
-    setNextTrackNumber(trackNumber + 1);
+    setFormNumber(formNumber + 1);
     console.log(data);
   };
   const onSubmitParameter = (data) => {
-    setNextParameter(parameterNumber + 1);
+    setFormNumber(formNumber + 1);
     console.log(data);
   };
   const onCompleteTrackForm = (data) => {
     setTrackFormCompleted(true);
+    setFormNumber(0);
     console.log(data);
   };
   const onCompleteParameterForm = (data) => {
@@ -86,7 +87,7 @@ export const NewModalContent = () => {
                 margin="normal"
                 autoComplete="off"
                 helperText="Add Paramter"
-                {...register(`parameter${parameterNumber}`)}
+                {...register(`parameter${formNumber}`)}
               />
             </Box>
             <Box>
@@ -135,7 +136,7 @@ export const NewModalContent = () => {
                 margin="normal"
                 autoComplete="off"
                 helperText="Add Track"
-                {...register(`track${trackNumber}`)}
+                {...register(`track${formNumber}`)}
               />
             </Box>
             <Box>
