@@ -22,8 +22,11 @@ const fontStyle = {
 
 export const NewModalContent = () => {
   const [titleFormCompleted, setTitleFormCompleted] = useState(false);
+  const [trackFormCompleted, setTrackFormCompleted] = useState(false);
+  const [parameterFormCompleted, setParameterFormCompleted] = useState(false);
   const [aoSessionTitle, setAoSessionTitle] = useState("");
   const [trackNumber, setNextTrackNumber] = useState(0);
+  const [parameterNumber, setNextParameter] = useState(0);
 
   const {
     register,
