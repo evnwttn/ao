@@ -2,7 +2,7 @@
   "name": "my-app",
   "version": "0.1.0",
   "private": true,
-  "homepage": "my-app",
+  "homepage": "https://evnwttn.github.io/ao/",
 
   "dependencies": {
     "@emotion/react": "^11.7.1",
