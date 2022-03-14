@@ -45,7 +45,7 @@ export const NewModalContent = () => {
   };
   const onCompleteTrackForm = (data) => {
     setTrackFormCompleted(true);
-    console.log(data);
+    console.log(trackFormCompleted);
   };
   const onCompleteParameterForm = (data) => {
     setParameterFormCompleted(true);
@@ -74,16 +74,21 @@ export const NewModalContent = () => {
             {...register(`track${trackNumber}`)}
           />
           <Box>
-            <IconButton disableRipple sx={{ cursor: "default" }} type="submit">
+            <IconButton disableRipple sx={{ cursor: "pointer" }} type="submit">
               <AddIcon
                 sx={{
                   color: palette.aoWhite,
                   my: 0.5,
-                  cursor: "pointer",
+                  cursor: "default",
                 }}
               />
             </IconButton>
-            <IconButton disableRipple sx={{ cursor: "default" }}>
+            <IconButton
+              disableRipple
+              sx={{ cursor: "default" }}
+              onSubmit={handleSubmit(onCompleteTrackForm)}
+              type="submit"
+            >
               <SendIcon
                 sx={{
                   color: palette.aoWhite,
