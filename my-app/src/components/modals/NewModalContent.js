@@ -36,19 +36,18 @@ export const NewModalContent = () => {
     watch,
     formState: { errors },
   } = useForm({ defaultValues: { sessionTitle: "New Session" } });
+
   const onSubmitTitle = (data) => {
     data.sessionTitle !== ""
       ? setTitleFormCompleted(true) || setAoSessionTitle(watch("sessionTitle"))
       : console.log(errors);
   };
-  const onSubmitTrack = (data) => {
+
+  const onSubmit = (data) => {
     setFormNumber(formNumber + 1);
     console.log(data);
   };
-  const onSubmitParameter = (data) => {
-    setFormNumber(formNumber + 1);
-    console.log(data);
-  };
+
   const onCompleteTrackForm = (data) => {
     setTrackFormCompleted(true);
     setFormNumber(0);
@@ -69,11 +68,7 @@ export const NewModalContent = () => {
           <Box
             component="form"
             sx={{ boxStyle, fontStyle }}
-            onSubmit={
-              trackFormCompleted
-                ? handleSubmit(onSubmitParameter)
-                : handleSubmit(onSubmitTrack)
-            }
+            onSubmit={handleSubmit(onSubmit)}
           >
             Enter the names of {formTarget}s you wish to include in the{" "}
             {aoSessionTitle} session. You can always add more later.
