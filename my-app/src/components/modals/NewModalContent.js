@@ -45,10 +45,13 @@ export const NewModalContent = () => {
       : console.log(errors);
   };
 
+  const textInput = React.useRef(null);
+
   const onSubmit = (data) => {
     setFormNumber(formNumber + 1);
     textInput.current.value = "";
     console.log(data);
+    console.log(textInput);
   };
 
   const onCompleteTrackForm = (data) => {
@@ -62,8 +65,6 @@ export const NewModalContent = () => {
     setParameterFormCompleted(true);
     console.log(data);
   };
-
-  const textInput = React.useRef(null);
 
   return (
     <>
