@@ -1,4 +1,4 @@
-import { React, useState, useEffect, useReducer } from "react";
+import { React, useState, useEffect } from "react";
 import ReactDOM from "react-dom";
 import { ThemeProvider, Box } from "@mui/material";
 import aotheme from "./assets/theme";
@@ -9,38 +9,15 @@ import { ModalButton } from "./components/ModalButton";
 import { MainLogo } from "./components/MainLogo";
 import { ModalBase } from "./components/ModalBase";
 
-// const reducer = (state, action) => {
-//   switch (action) {
-//     case "": {
-//       return state;
-//     }
-//     default:
-//       return action;
-//   }
-// };
-
 let Home = () => {
-  // const [state, dispatch] = useReducer(reducer, "");
-  // const [open, setOpen] = useState(false);
-  // const [modalType, setModalType] = useState("");
-  // const handleOpen = (text) => {
-  //   dispatch(text);
-  //   setOpen(true);
-  // };
-
-  // useEffect(() => {
-  //   setModalType(state);
-  // }, [state]);
-
   const [open, setOpen] = useState(false);
   const [modalType, setModalType] = useState("");
   const handleOpen = (text) => {
     setModalType(text);
-    console.log(modalType);
   };
 
   useEffect(() => {
-    setOpen(true);
+    modalType !== "" ? setOpen(true) : setOpen(false);
   }, [modalType]);
 
   const handleClose = () => setOpen(false);
