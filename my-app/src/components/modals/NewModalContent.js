@@ -47,6 +47,7 @@ export const NewModalContent = () => {
 
   const onSubmit = (data) => {
     setFormNumber(formNumber + 1);
+    textInput.current.value = "";
     console.log(data);
   };
 
@@ -61,6 +62,8 @@ export const NewModalContent = () => {
     setParameterFormCompleted(true);
     console.log(data);
   };
+
+  const textInput = React.useRef(null);
 
   return (
     <>
@@ -79,6 +82,7 @@ export const NewModalContent = () => {
               <TextField
                 variant="standard"
                 margin="normal"
+                inputRef={textInput}
                 autoComplete="off"
                 helperText={`Add ${formTarget}s`}
                 {...register(`${formTarget}.${formNumber}`)}
