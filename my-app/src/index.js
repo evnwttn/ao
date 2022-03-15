@@ -26,6 +26,7 @@ let Home = () => {
   const handleOpen = (text) => {
     dispatch(text);
     setOpen(true);
+    console.log(text);
   };
 
   useEffect(() => {
