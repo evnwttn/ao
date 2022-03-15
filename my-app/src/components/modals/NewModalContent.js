@@ -50,20 +50,20 @@ export const NewModalContent = () => {
   const onSubmit = (data) => {
     setFormNumber(formNumber + 1);
     textInput.current.value = "";
-    console.log(data);
-    console.log(textInput);
+    const output = {
+      ...data,
+    };
+    console.log(output);
   };
 
-  const onCompleteTrackForm = (data) => {
+  const onCompleteTrackForm = () => {
     setTrackFormCompleted(true);
     setFormNumber(0);
     setFormTarget("parameter");
-    console.log(data);
   };
 
-  const onCompleteParameterForm = (data) => {
+  const onCompleteParameterForm = () => {
     setParameterFormCompleted(true);
-    console.log(data);
   };
 
   return (
