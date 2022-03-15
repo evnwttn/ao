@@ -20,7 +20,10 @@ let Home = () => {
     modalType !== "" ? setOpen(true) : setOpen(false);
   }, [modalType]);
 
-  const handleClose = () => setOpen(false);
+  const handleClose = () => {
+    setOpen(false);
+    setModalType("");
+  };
 
   return (
     <Box
