@@ -9,29 +9,39 @@ import { ModalButton } from "./components/ModalButton";
 import { MainLogo } from "./components/MainLogo";
 import { ModalBase } from "./components/ModalBase";
 
-const reducer = (state, action) => {
-  switch (action) {
-    case "": {
-      return state;
-    }
-    default:
-      return action;
-  }
-};
+// const reducer = (state, action) => {
+//   switch (action) {
+//     case "": {
+//       return state;
+//     }
+//     default:
+//       return action;
+//   }
+// };
 
 let Home = () => {
-  const [state, dispatch] = useReducer(reducer, "");
+  // const [state, dispatch] = useReducer(reducer, "");
+  // const [open, setOpen] = useState(false);
+  // const [modalType, setModalType] = useState("");
+  // const handleOpen = (text) => {
+  //   dispatch(text);
+  //   setOpen(true);
+  // };
+
+  // useEffect(() => {
+  //   setModalType(state);
+  // }, [state]);
+
   const [open, setOpen] = useState(false);
   const [modalType, setModalType] = useState("");
   const handleOpen = (text) => {
-    dispatch(text);
-    setOpen(true);
-    console.log(text);
+    setModalType(text);
+    console.log(modalType);
   };
 
   useEffect(() => {
-    setModalType(state);
-  }, [state]);
+    setOpen(true);
+  }, [modalType]);
 
   const handleClose = () => setOpen(false);
 
