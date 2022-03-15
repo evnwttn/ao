@@ -95,15 +95,15 @@ export const NewModalContent = () => {
               </IconButton>
             </Box>
           </Box>
-          <Box
-            component="form"
-            onSubmit={
-              trackFormCompleted
-                ? handleSubmit(onCompleteParameterForm)
-                : handleSubmit(onCompleteTrackForm)
-            }
-          >
-            <IconButton disableRipple type="submit">
+          <Box>
+            <IconButton
+              disableRipple
+              onClick={() => {
+                trackFormCompleted
+                  ? onCompleteParameterForm()
+                  : onCompleteTrackForm();
+              }}
+            >
               <SendIcon sx={{ my: 0.5 }} />
             </IconButton>
           </Box>
