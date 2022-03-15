@@ -5,7 +5,9 @@ import SendIcon from "@mui/icons-material/Send";
 import AddIcon from "@mui/icons-material/Add";
 import { palette } from "../../assets/theme";
 
-// eliminate next button also submitting track/parameter
+// TO FINISH BEFORE BUILDING OUT CHART COMPONENT
+// INSTRUCTIONS AT BEGINNING OF NEW TO EXPLAIN TRACKS/PARAMTERS
+// ENSURE WHEN SUBMITTING (ARROW) IT DOES NOT ADD TO OBJECT ARRAY, ONLY ON ADD (PLUS)
 
 const boxStyle = {
   display: "flex",
@@ -54,6 +56,7 @@ export const NewModalContent = () => {
     setFormTarget("parameter");
     console.log(data);
   };
+
   const onCompleteParameterForm = (data) => {
     setParameterFormCompleted(true);
     console.log(data);
