@@ -31,6 +31,7 @@ export const NewModalContent = () => {
   const [parameterFormCompleted, setParameterFormCompleted] = useState(false);
   const [formTarget, setFormTarget] = useState("track");
   const [formNumber, setFormNumber] = useState(0);
+  const [aoOutput, setAoOutput] = useState();
 
   const {
     register,
@@ -50,10 +51,8 @@ export const NewModalContent = () => {
   const onSubmit = (data) => {
     setFormNumber(formNumber + 1);
     textInput.current.value = "";
-    const output = {
-      ...data,
-    };
-    console.log(output);
+    setAoOutput({ ...data });
+    console.log(aoOutput);
   };
 
   const onCompleteTrackForm = () => {
