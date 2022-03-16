@@ -10,6 +10,7 @@ import {
 import { useForm } from "react-hook-form";
 import SendIcon from "@mui/icons-material/Send";
 import AddIcon from "@mui/icons-material/Add";
+import ClearIcon from "@mui/icons-material/Clear";
 import { palette } from "../../assets/theme";
 
 // TO FINISH BEFORE BUILDING OUT CHART COMPONENT
@@ -43,6 +44,10 @@ export const NewModalContent = () => {
   useEffect(() => {
     aoOutput !== undefined ? console.log(aoOutput) : console.log(":(");
   }, [aoOutput]);
+
+  useEffect(() => {
+    console.log(formTarget);
+  }, [formTarget]);
 
   const {
     register,
@@ -119,16 +124,16 @@ export const NewModalContent = () => {
           <Box>
             {aoOutput.track !== undefined ? (
               <List sx={{ width: "100%", bgcolor: palette.aoBlack }}>
-                {[1, 2, 3].map((value) => (
+                {aoOutput.track.map((value) => (
                   <ListItem
                     key={value}
                     secondaryAction={
                       <IconButton>
-                        <SendIcon />
+                        <ClearIcon />
                       </IconButton>
                     }
                   >
-                    <ListItemText primary={`Line item ${value}`} />
+                    <ListItemText primary={`${value}`} />
                   </ListItem>
                 ))}
               </List>
