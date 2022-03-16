@@ -117,23 +117,24 @@ export const NewModalContent = () => {
             </IconButton>
           </Box>
           <Box>
-            <List
-              sx={{ width: "100%", maxWidth: 360, bgcolor: "background.paper" }}
-            >
-              {[1, 2, 3].map((value) => (
-                <ListItem
-                  key={value}
-                  disableGutters
-                  secondaryAction={
-                    <IconButton>
-                      <SendIcon />
-                    </IconButton>
-                  }
-                >
-                  <ListItemText primary={`Line item ${value}`} />
-                </ListItem>
-              ))}
-            </List>
+            {aoOutput.track !== undefined ? (
+              <List sx={{ width: "100%", bgcolor: palette.aoBlack }}>
+                {[1, 2, 3].map((value) => (
+                  <ListItem
+                    key={value}
+                    secondaryAction={
+                      <IconButton>
+                        <SendIcon />
+                      </IconButton>
+                    }
+                  >
+                    <ListItemText primary={`Line item ${value}`} />
+                  </ListItem>
+                ))}
+              </List>
+            ) : (
+              console.log(":(")
+            )}
           </Box>
         </>
       ) : (
