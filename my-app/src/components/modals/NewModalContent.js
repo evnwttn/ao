@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Box, TextField, IconButton } from "@mui/material";
 import { useForm } from "react-hook-form";
 import SendIcon from "@mui/icons-material/Send";
@@ -33,6 +33,10 @@ export const NewModalContent = () => {
   const [formNumber, setFormNumber] = useState(0);
   const [aoOutput, setAoOutput] = useState();
 
+  useEffect(() => {
+    console.log(aoOutput);
+  }, [aoOutput]);
+
   const {
     register,
     handleSubmit,
@@ -52,7 +56,6 @@ export const NewModalContent = () => {
     setFormNumber(formNumber + 1);
     textInput.current.value = "";
     setAoOutput({ ...data });
-    console.log(aoOutput);
   };
 
   const onCompleteTrackForm = () => {
