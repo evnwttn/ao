@@ -37,17 +37,9 @@ export const NewModalContent = () => {
   const [titleFormCompleted, setTitleFormCompleted] = useState(false);
   const [trackFormCompleted, setTrackFormCompleted] = useState(false);
   const [parameterFormCompleted, setParameterFormCompleted] = useState(false);
-  const [formTarget, setFormTarget] = useState("track");
+  const [formTarget, setFormTarget] = useState(`track`);
   const [formNumber, setFormNumber] = useState(0);
   const [aoOutput, setAoOutput] = useState([]);
-
-  useEffect(() => {
-    aoOutput !== undefined ? console.log(aoOutput) : console.log(":(");
-  }, [aoOutput]);
-
-  useEffect(() => {
-    console.log(formTarget);
-  }, [formTarget]);
 
   const {
     register,
@@ -73,7 +65,7 @@ export const NewModalContent = () => {
   const onCompleteTrackForm = () => {
     setTrackFormCompleted(true);
     setFormNumber(0);
-    setFormTarget("parameter");
+    setFormTarget(`parameter`);
   };
 
   const onCompleteParameterForm = () => {
@@ -128,7 +120,15 @@ export const NewModalContent = () => {
                   <ListItem
                     key={value}
                     secondaryAction={
-                      <IconButton>
+                      <IconButton
+                        onClick={() => {
+                          for (let i = 0; i < aoOutput.track.length; i++) {
+                            if (aoOutput.track[i] === value) {
+                              console.log(aoOutput.track[i]);
+                            }
+                          }
+                        }}
+                      >
                         <ClearIcon />
                       </IconButton>
                     }
