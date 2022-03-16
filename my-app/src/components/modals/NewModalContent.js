@@ -1,5 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { Box, TextField, IconButton } from "@mui/material";
+import {
+  Box,
+  TextField,
+  IconButton,
+  List,
+  ListItem,
+  ListItemText,
+} from "@mui/material";
 import { useForm } from "react-hook-form";
 import SendIcon from "@mui/icons-material/Send";
 import AddIcon from "@mui/icons-material/Add";
@@ -31,10 +38,10 @@ export const NewModalContent = () => {
   const [parameterFormCompleted, setParameterFormCompleted] = useState(false);
   const [formTarget, setFormTarget] = useState("track");
   const [formNumber, setFormNumber] = useState(0);
-  const [aoOutput, setAoOutput] = useState();
+  const [aoOutput, setAoOutput] = useState([]);
 
   useEffect(() => {
-    console.log(aoOutput);
+    aoOutput !== undefined ? console.log(aoOutput) : console.log(":(");
   }, [aoOutput]);
 
   const {
@@ -108,6 +115,25 @@ export const NewModalContent = () => {
             >
               <SendIcon sx={{ my: 0.5 }} />
             </IconButton>
+          </Box>
+          <Box>
+            <List
+              sx={{ width: "100%", maxWidth: 360, bgcolor: "background.paper" }}
+            >
+              {[1, 2, 3].map((value) => (
+                <ListItem
+                  key={value}
+                  disableGutters
+                  secondaryAction={
+                    <IconButton>
+                      <SendIcon />
+                    </IconButton>
+                  }
+                >
+                  <ListItemText primary={`Line item ${value}`} />
+                </ListItem>
+              ))}
+            </List>
           </Box>
         </>
       ) : (
