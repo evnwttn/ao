@@ -124,7 +124,9 @@ export const NewModalContent = () => {
                         onClick={() => {
                           for (let i = 0; i < aoOutput.track.length; i++) {
                             if (aoOutput.track[i] === value) {
-                              console.log(aoOutput.track[i]);
+                              const toRemove = aoOutput.track[i];
+                              aoOutput.track.splice(toRemove, 1);
+                              console.log(aoOutput);
                             }
                           }
                         }}
