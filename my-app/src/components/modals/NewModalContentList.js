@@ -5,36 +5,35 @@ import { palette } from "../../assets/theme";
 
 export const NewModalContentList = (list) => {
   return (
-    <>{console.log(list.list)}</>
-    // <Box>
-    //   {input.track !== undefined ? (
-    //     <List sx={{ width: "100%", bgcolor: palette.aoBlack }}>
-    //       {input.track.map((value) => (
-    //         <ListItem
-    //           key={value}
-    //           secondaryAction={
-    //             <IconButton
-    //               onClick={() => {
-    //                 for (let i = 0; i < input.track.length; i++) {
-    //                   if (input.track[i] === value) {
-    //                     const toRemove = input.track[i];
-    //                     input.track.splice(toRemove, 1);
-    //                     console.log(input);
-    //                   }
-    //                 }
-    //               }}
-    //             >
-    //               <ClearIcon />
-    //             </IconButton>
-    //           }
-    //         >
-    //           <ListItemText primary={`${value}`} />
-    //         </ListItem>
-    //       ))}
-    //     </List>
-    //   ) : (
-    //     console.log(":(")
-    //   )}
-    // </Box>
+    <Box>
+      {list.list.track !== undefined ? (
+        <List sx={{ width: "100%", bgcolor: palette.aoBlack }}>
+          {list.list.track.map((title) => (
+            <ListItem
+              key={title}
+              secondaryAction={
+                <IconButton
+                  onClick={() => {
+                    for (let i = 0; i < list.list.track.length; i++) {
+                      if (list.list.track[i] === title) {
+                        const toRemove = list.list.track[i];
+                        list.list.track.splice(toRemove, 1);
+                        console.log(list.list);
+                      }
+                    }
+                  }}
+                >
+                  <ClearIcon />
+                </IconButton>
+              }
+            >
+              <ListItemText primary={`${title}`} />
+            </ListItem>
+          ))}
+        </List>
+      ) : (
+        console.log(":(")
+      )}
+    </Box>
   );
 };
