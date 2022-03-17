@@ -1,16 +1,8 @@
 import React, { useState, useEffect } from "react";
-import {
-  Box,
-  TextField,
-  IconButton,
-  List,
-  ListItem,
-  ListItemText,
-} from "@mui/material";
+import { Box, TextField, IconButton } from "@mui/material";
 import { useForm } from "react-hook-form";
 import SendIcon from "@mui/icons-material/Send";
 import AddIcon from "@mui/icons-material/Add";
-import ClearIcon from "@mui/icons-material/Clear";
 import { palette } from "../../assets/theme";
 
 // TO FINISH BEFORE BUILDING OUT CHART COMPONENT
@@ -112,36 +104,6 @@ export const NewModalContent = () => {
             >
               <SendIcon sx={{ my: 0.5 }} />
             </IconButton>
-          </Box>
-          <Box>
-            {aoOutput.track !== undefined ? (
-              <List sx={{ width: "100%", bgcolor: palette.aoBlack }}>
-                {aoOutput.track.map((value) => (
-                  <ListItem
-                    key={value}
-                    secondaryAction={
-                      <IconButton
-                        onClick={() => {
-                          for (let i = 0; i < aoOutput.track.length; i++) {
-                            if (aoOutput.track[i] === value) {
-                              const toRemove = aoOutput.track[i];
-                              aoOutput.track.splice(toRemove, 1);
-                              console.log(aoOutput);
-                            }
-                          }
-                        }}
-                      >
-                        <ClearIcon />
-                      </IconButton>
-                    }
-                  >
-                    <ListItemText primary={`${value}`} />
-                  </ListItem>
-                ))}
-              </List>
-            ) : (
-              console.log(":(")
-            )}
           </Box>
         </>
       ) : (
