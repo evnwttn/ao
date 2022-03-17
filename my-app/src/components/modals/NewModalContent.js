@@ -4,10 +4,7 @@ import { useForm } from "react-hook-form";
 import SendIcon from "@mui/icons-material/Send";
 import AddIcon from "@mui/icons-material/Add";
 import { palette } from "../../assets/theme";
-
-// TO FINISH BEFORE BUILDING OUT CHART COMPONENT
-// INSTRUCTIONS AT BEGINNING OF NEW TO EXPLAIN TRACKS/PARAMTERS
-// ENSURE WHEN SUBMITTING (ARROW) IT DOES NOT ADD TO OBJECT ARRAY, ONLY ON ADD (PLUS)
+import { NewModalContentList } from "./NewModalContentList";
 
 const boxStyle = {
   display: "flex",
@@ -105,6 +102,7 @@ export const NewModalContent = () => {
               <SendIcon sx={{ my: 0.5 }} />
             </IconButton>
           </Box>
+          <NewModalContentList input={aoOutput} />
         </>
       ) : (
         <>
