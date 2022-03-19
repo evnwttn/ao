@@ -26,9 +26,12 @@ export const NewModalContent = () => {
   const [titleFormCompleted, setTitleFormCompleted] = useState(false);
   const [trackFormCompleted, setTrackFormCompleted] = useState(false);
   const [parameterFormCompleted, setParameterFormCompleted] = useState(false);
+  const [aoOutput, setAoOutput] = useState([]);
   const [formTarget, setFormTarget] = useState("track");
   const [formNumber, setFormNumber] = useState(0);
-  const [aoOutput, setAoOutput] = useState([]);
+  const [formObject, setFormObject] = useState();
+  let track;
+  let parameter;
 
   const textInput = React.useRef(null);
 
@@ -101,7 +104,7 @@ export const NewModalContent = () => {
               <SendIcon sx={{ my: 0.5 }} />
             </IconButton>
           </Box>
-          <NewModalContentList list={aoOutput} />
+          <NewModalContentList list={aoOutput} target={formObject} />
         </>
       ) : (
         <>
