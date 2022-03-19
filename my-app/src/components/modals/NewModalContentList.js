@@ -1,8 +1,15 @@
+import { useState, useEffect } from "react";
 import { Box, IconButton, List, ListItem, ListItemText } from "@mui/material";
 import ClearIcon from "@mui/icons-material/Clear";
 import { palette } from "../../assets/theme";
 
 export const NewModalContentList = ({ aoOutput, target }) => {
+  const [toRemove, setToRemove] = useState();
+
+  useEffect(() => {
+    console.log(toRemove);
+  }, [toRemove]);
+
   return (
     <Box>
       {aoOutput.track !== undefined ? (
@@ -11,7 +18,7 @@ export const NewModalContentList = ({ aoOutput, target }) => {
             <ListItem
               key={title}
               secondaryAction={
-                <IconButton onClick={() => console.log(title)}>
+                <IconButton onClick={() => setToRemove(title)}>
                   <ClearIcon />
                 </IconButton>
               }
