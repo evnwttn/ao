@@ -26,7 +26,7 @@ export const NewModalContent = () => {
   const [titleFormCompleted, setTitleFormCompleted] = useState(false);
   const [trackFormCompleted, setTrackFormCompleted] = useState(false);
   const [parameterFormCompleted, setParameterFormCompleted] = useState(false);
-  const [formTarget, setFormTarget] = useState(`track`);
+  const [formTarget, setFormTarget] = useState(track);
   const [formNumber, setFormNumber] = useState(0);
   const [aoOutput, setAoOutput] = useState([]);
 
@@ -102,7 +102,7 @@ export const NewModalContent = () => {
               <SendIcon sx={{ my: 0.5 }} />
             </IconButton>
           </Box>
-          <NewModalContentList list={aoOutput} />
+          <NewModalContentList list={aoOutput} target={formTarget} />
         </>
       ) : (
         <>
