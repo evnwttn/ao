@@ -14,28 +14,20 @@ export const NewModalContentList = ({ aoOutput, target }) => {
     formState: { errors },
   } = useForm();
 
-  console.log(aoOutput);
+  const onSubmit = (data) => {
+    // setAoOutput({ ...data });
+    console.log("hello world");
+  };
 
   return (
-    <Box>
+    <Box component="form" onSubmit={handleSubmit(onSubmit)}>
       {aoOutput.track !== undefined ? (
         <List sx={{ width: "100%", bgcolor: palette.aoBlack }}>
           {aoOutput.track.map((title) => (
             <ListItem
               key={title}
-              secondaryActdion={
-                <IconButton
-                  onClick={() => {
-                    for (let i = 0; i < aoOutput.track.length; i++) {
-                      if (aoOutput.track[i] === title) {
-                        const toRemove = aoOutput.track[i];
-                        aoOutput.track.splice(toRemove, 1);
-                        setAoUpdate(aoOutput);
-                        console.log({ aoUpdate });
-                      }
-                    }
-                  }}
-                >
+              secondaryAction={
+                <IconButton type="submit">
                   <ClearIcon />
                 </IconButton>
               }
@@ -50,3 +42,10 @@ export const NewModalContentList = ({ aoOutput, target }) => {
     </Box>
   );
 };
+
+// for (let i = 0; i < aoOutput.track.length; i++) {
+//   if (aoOutput.track[i] === title) {
+//     const toRemove = aoOutput.track[i];
+//     aoOutput.track.splice(toRemove, 1);
+//     setAoUpdate(aoOutput);
+//     console.log({ aoUpdate });
