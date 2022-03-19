@@ -6,6 +6,8 @@ import { palette } from "../../assets/theme";
 
 export const NewModalContentList = ({ aoOutput, target }) => {
   const [aoUpdate, setAoUpdate] = useState([]);
+  const [formTarget, setFormTarget] = useState(`track`);
+  const [formNumber, setFormNumber] = useState(0);
 
   const {
     register,
@@ -15,8 +17,8 @@ export const NewModalContentList = ({ aoOutput, target }) => {
   } = useForm();
 
   const onSubmit = (data) => {
-    // setAoOutput({ ...data });
-    console.log("hello world");
+    console.log(data);
+    setFormNumber(formNumber + 1);
   };
 
   return (
@@ -27,7 +29,11 @@ export const NewModalContentList = ({ aoOutput, target }) => {
             <ListItem
               key={title}
               secondaryAction={
-                <IconButton type="submit">
+                <IconButton
+                  value={title}
+                  {...register(`${formTarget}.${formNumber}`)}
+                  type="submit"
+                >
                   <ClearIcon />
                 </IconButton>
               }
@@ -49,3 +55,5 @@ export const NewModalContentList = ({ aoOutput, target }) => {
 //     aoOutput.track.splice(toRemove, 1);
 //     setAoUpdate(aoOutput);
 //     console.log({ aoUpdate });
+
+// setAoOutput({ ...data });
