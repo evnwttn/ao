@@ -20,7 +20,8 @@ export const NewModalContentList = (list) => {
                       if (list.list.track[i] === title) {
                         const toRemove = list.list.track[i];
                         list.list.track.splice(toRemove, 1);
-                        console.log(list.list);
+                        setAoUpdate(list.list);
+                        console.log(aoUpdate);
                       }
                     }
                   }}
@@ -34,7 +35,7 @@ export const NewModalContentList = (list) => {
           ))}
         </List>
       ) : (
-        console.log(":(")
+        <>{null}</>
       )}
     </Box>
   );
