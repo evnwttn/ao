@@ -26,9 +26,11 @@ export const NewModalContent = () => {
   const [titleFormCompleted, setTitleFormCompleted] = useState(false);
   const [trackFormCompleted, setTrackFormCompleted] = useState(false);
   const [parameterFormCompleted, setParameterFormCompleted] = useState(false);
-  const [formTarget, setFormTarget] = useState(track);
+  const [formTarget, setFormTarget] = useState("track");
   const [formNumber, setFormNumber] = useState(0);
   const [aoOutput, setAoOutput] = useState([]);
+
+  const textInput = React.useRef(null);
 
   const {
     register,
@@ -43,8 +45,6 @@ export const NewModalContent = () => {
       : console.log(errors);
   };
 
-  const textInput = React.useRef(null);
-
   const onSubmit = (data) => {
     setFormNumber(formNumber + 1);
     textInput.current.value = "";
@@ -54,7 +54,7 @@ export const NewModalContent = () => {
   const onCompleteTrackForm = () => {
     setTrackFormCompleted(true);
     setFormNumber(0);
-    setFormTarget(`parameter`);
+    setFormTarget("parameter");
   };
 
   const onCompleteParameterForm = () => {
@@ -80,7 +80,6 @@ export const NewModalContent = () => {
                 margin="normal"
                 inputRef={textInput}
                 autoComplete="off"
-                helperText={`Add ${formTarget}s`}
                 {...register(`${formTarget}.${formNumber}`)}
               />
             </Box>
@@ -102,7 +101,7 @@ export const NewModalContent = () => {
               <SendIcon sx={{ my: 0.5 }} />
             </IconButton>
           </Box>
-          <NewModalContentList list={aoOutput} target={formTarget} />
+          <NewModalContentList list={aoOutput} />
         </>
       ) : (
         <>
