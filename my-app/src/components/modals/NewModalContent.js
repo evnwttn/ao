@@ -27,11 +27,8 @@ export const NewModalContent = () => {
   const [trackFormCompleted, setTrackFormCompleted] = useState(false);
   const [parameterFormCompleted, setParameterFormCompleted] = useState(false);
   const [aoOutput, setAoOutput] = useState([]);
-  const [formTarget, setFormTarget] = useState("track");
+  const [formTarget, setFormTarget] = useState(`track`);
   const [formNumber, setFormNumber] = useState(0);
-  const [formObject, setFormObject] = useState();
-  let track;
-  let parameter;
 
   const textInput = React.useRef(null);
 
@@ -57,7 +54,7 @@ export const NewModalContent = () => {
   const onCompleteTrackForm = () => {
     setTrackFormCompleted(true);
     setFormNumber(0);
-    setFormTarget("parameter");
+    setFormTarget(`parameter`);
   };
 
   const onCompleteParameterForm = () => {
@@ -104,7 +101,7 @@ export const NewModalContent = () => {
               <SendIcon sx={{ my: 0.5 }} />
             </IconButton>
           </Box>
-          <NewModalContentList list={aoOutput} target={formObject} />
+          <NewModalContentList list={aoOutput} target={formTarget} />
         </>
       ) : (
         <>

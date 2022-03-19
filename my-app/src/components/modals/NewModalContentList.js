@@ -8,18 +8,18 @@ export const NewModalContentList = ({ list, target }) => {
 
   return (
     <Box>
-      {list.target !== undefined ? (
+      {list.track !== undefined ? (
         <List sx={{ width: "100%", bgcolor: palette.aoBlack }}>
-          {list.target.map((title) => (
+          {list.track.map((title) => (
             <ListItem
               key={title}
               secondaryAction={
                 <IconButton
                   onClick={() => {
-                    for (let i = 0; i < list.target.length; i++) {
-                      if (list.target[i] === title) {
-                        const toRemove = list.target[i];
-                        list.target.splice(toRemove, 1);
+                    for (let i = 0; i < list.track.length; i++) {
+                      if (list.track[i] === title) {
+                        const toRemove = list.track[i];
+                        list.track.splice(toRemove, 1);
                         setAoUpdate(list.list);
                         console.log({ aoUpdate });
                       }
