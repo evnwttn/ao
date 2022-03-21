@@ -29,7 +29,7 @@ export const NewModalContentList = ({ input, target, onClick }) => {
               <ListItem
                 key={title}
                 secondaryAction={
-                  <IconButton onClick={onClick}>
+                  <IconButton onClick={() => onClick(title)}>
                     <ClearIcon />
                   </IconButton>
                 }

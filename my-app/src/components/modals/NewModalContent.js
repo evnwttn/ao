@@ -61,8 +61,13 @@ export const NewModalContent = () => {
     setParameterFormCompleted(true);
   };
 
-  const listOnClick = (name) => {
-    console.log(name);
+  const listOnClick = (title) => {
+    for (let i = 0; i < aoOutput.track.length; i++) {
+      if (aoOutput.track[i] === title) {
+        console.log(i);
+      }
+    }
+    // splice this
   };
 
   return (
