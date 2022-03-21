@@ -4,8 +4,12 @@ import ClearIcon from "@mui/icons-material/Clear";
 import { palette } from "../../assets/theme";
 
 export const NewModalContentList = ({ input, target, onClick }) => {
-  console.log(input);
-  return <>Hello</>;
+  if (target === `track`) {
+    console.log(input.track);
+  } else if (target === `parameter`) {
+    console.log(input.parameter);
+  }
+  return <Box></Box>;
 };
 
 // export const NewModalContentList = ({ aoOutput, target }) => {
