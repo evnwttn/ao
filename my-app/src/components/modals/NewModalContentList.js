@@ -7,10 +7,14 @@ export const NewModalContentList = ({ input, target, onClick }) => {
   return (
     <Box>
       {target === `track`
-        ? console.log(`${target} is track amiright`)
+        ? input.track !== undefined
+          ? console.log(input.track)
+          : null
         : target === `parameter`
-        ? console.log(`${target} is parameter amiright`)
-        : console.log("nada")}
+        ? input.parameter !== undefined
+          ? console.log(input.parameter)
+          : null
+        : null}
     </Box>
   );
 };
@@ -27,20 +31,20 @@ export const NewModalContentList = ({ input, target, onClick }) => {
 //   return (
 //     <Box>
 //       {aoOutput.track !== undefined ? (
-//         <List sx={{ width: "100%", bgcolor: palette.aoBlack }}>
-//           {aoOutput.track.map((title) => (
-//             <ListItem
-//               key={title}
-//               secondaryAction={
-//                 <IconButton onClick={() => setToRemove(title)}>
-//                   <ClearIcon />
-//                 </IconButton>
-//               }
-//             >
-//               <ListItemText primary={`${title}`} />
-//             </ListItem>
-//           ))}
-//         </List>
+// <List sx={{ width: "100%", bgcolor: palette.aoBlack }}>
+//   {aoOutput.track.map((title) => (
+//     <ListItem
+//       key={title}
+//       secondaryAction={
+//         <IconButton onClick={() => setToRemove(title)}>
+//           <ClearIcon />
+//         </IconButton>
+//       }
+//     >
+//       <ListItemText primary={`${title}`} />
+//     </ListItem>
+//   ))}
+// </List>
 //       ) : (
 //         <>{null}</>
 //       )}
