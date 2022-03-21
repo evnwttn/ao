@@ -6,11 +6,6 @@ import AddIcon from "@mui/icons-material/Add";
 import { palette } from "../../assets/theme";
 import { NewModalContentList } from "./NewModalContentList";
 
-// todo monday
-// - adjust container/component vibes on newmodalcontentlist/newmodalcontent
-// - once resolved move onto dylans article
-// - start dynamic styling
-
 const boxStyle = {
   display: "flex",
   flexDirection: "column",
@@ -64,6 +59,10 @@ export const NewModalContent = () => {
 
   const onCompleteParameterForm = () => {
     setParameterFormCompleted(true);
+  };
+
+  const listOnClick = () => {
+    console.log(`yolo`);
   };
 
   return (
