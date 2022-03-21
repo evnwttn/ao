@@ -61,14 +61,28 @@ export const NewModalContent = () => {
     setParameterFormCompleted(true);
   };
 
+  const [updateAo, setUpdateAo] = useState([]);
+
   const listOnClick = (title) => {
-    for (let i = 0; i < aoOutput.track.length; i++) {
-      if (aoOutput.track[i] === title) {
-        console.log(i);
-      }
+    switch (formTarget) {
+      case `track`:
+        console.log("tracks be tracks");
+        break;
+      case `parameter`:
+        console.log("parameters be parameters");
+        break;
+      default:
+        console.log(updateAo);
     }
-    // splice this
   };
+
+  // formTarget === `track` ? console.log("tracks") : console.log("parameters");
+  // for (let i = 0; i < aoOutput.track.length; i++) {
+  //   if (aoOutput.track[i] === title) {
+  //     setUpdateAo(aoOutput.track.splice(i, 1));
+  //     console.log(aoOutput);
+  //   }
+  // }
 
   return (
     <>
