@@ -105,7 +105,11 @@ export const NewModalContent = () => {
               <SendIcon sx={{ my: 0.5 }} />
             </IconButton>
           </Box>
-          <NewModalContentList aoOutput={aoOutput} target={formTarget} />
+          <NewModalContentList
+            input={aoOutput}
+            target={formTarget}
+            onClick={listOnClick}
+          />
         </>
       ) : (
         <>
