@@ -61,8 +61,8 @@ export const NewModalContent = () => {
     setParameterFormCompleted(true);
   };
 
-  const listOnClick = () => {
-    console.log(`yolo`);
+  const listOnClick = (name) => {
+    console.log(name);
   };
 
   return (
