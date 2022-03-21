@@ -4,13 +4,18 @@ import ClearIcon from "@mui/icons-material/Clear";
 import { palette } from "../../assets/theme";
 
 export const NewModalContentList = ({ input, target, onClick }) => {
-  if (target === `track`) {
-    console.log(input.track);
-  } else if (target === `parameter`) {
-    console.log(input.parameter);
-  }
-  return <Box></Box>;
+  return (
+    <Box>
+      {target === `track`
+        ? console.log(`${target} is track amiright`)
+        : target === `parameter`
+        ? console.log(`${target} is parameter amiright`)
+        : console.log("nada")}
+    </Box>
+  );
 };
+
+////////////////
 
 // export const NewModalContentList = ({ aoOutput, target }) => {
 //   const [toRemove, setToRemove] = useState();
