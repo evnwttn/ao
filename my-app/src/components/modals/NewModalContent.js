@@ -26,30 +26,34 @@ export const NewModalContent = () => {
   const [titleFormCompleted, setTitleFormCompleted] = useState(false);
   const [trackFormCompleted, setTrackFormCompleted] = useState(false);
   const [parameterFormCompleted, setParameterFormCompleted] = useState(false);
-  const [aoOutput, setAoOutput] = useState([]);
+  const [aoData, setAoData] = useState([]);
   const [formTarget, setFormTarget] = useState(`track`);
   const [formNumber, setFormNumber] = useState(0);
 
   const textInput = React.useRef(null);
 
-  const {
-    register,
-    unregister,
-    handleSubmit,
-    watch,
-    formState: { errors },
-  } = useForm({ defaultValues: { sessionTitle: "New Session" } });
+  const { register, unregister, handleSubmit, watch } = useForm({
+    defaultValues: {
+      sessionTitle: "",
+      track: "",
+      parameter: "",
+    },
+  });
+
+  React.useEffect(() => {
+    console.log("yo");
+  }, [unregister]);
 
   const onSubmitTitle = (data) => {
     data.sessionTitle !== ""
       ? setTitleFormCompleted(true) || setAoSessionTitle(watch("sessionTitle"))
-      : console.log(errors);
+      : console.log("");
   };
 
   const onSubmit = (data) => {
     setFormNumber(formNumber + 1);
     textInput.current.value = "";
-    setAoOutput({ ...data });
+    setAoData({ ...data });
   };
 
   const onCompleteTrackForm = () => {
@@ -65,15 +69,15 @@ export const NewModalContent = () => {
   const listOnClick = (title) => {
     switch (formTarget) {
       case `track`:
-        for (let i = 0; i < aoOutput.track.length; i++) {
-          if (aoOutput.track[i] === title) {
+        for (let i = 0; i < aoData.track.length; i++) {
+          if (aoData.track[i] === title) {
             console.log(title);
           }
         }
         break;
       case `parameter`:
-        for (let i = 0; i < aoOutput.parameter.length; i++) {
-          if (aoOutput.parameter[i] === title) {
+        for (let i = 0; i < aoData.parameter.length; i++) {
+          if (aoData.parameter[i] === title) {
             console.log(title);
           }
         }
@@ -86,7 +90,7 @@ export const NewModalContent = () => {
   return (
     <>
       {parameterFormCompleted ? (
-        <Box>Completed {console.log(aoOutput)};</Box>
+        <Box>Completed {console.log(aoData)};</Box>
       ) : titleFormCompleted ? (
         <>
           <Box
@@ -113,7 +117,7 @@ export const NewModalContent = () => {
           </Box>
           <Box component="form">
             <NewModalContentList
-              input={aoOutput}
+              input={aoData}
               target={formTarget}
               onSubmit={listOnClick}
             />
