@@ -68,7 +68,8 @@ export const NewModalContent = () => {
       case `track`:
         for (let i = 0; i < aoData.track.length; i++) {
           if (data.track[i] === title) {
-            console.log(data.track[i]);
+            register(`track.${i}`, { disabled: true });
+            setAoData({ ...data });
           }
         }
         break;
