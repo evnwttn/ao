@@ -32,7 +32,7 @@ export const NewModalContent = () => {
 
   const textInput = React.useRef(null);
 
-  const { register, unregister, handleSubmit, watch } = useForm({
+  const { register, handleSubmit, watch } = useForm({
     defaultValues: {
       sessionTitle: "",
       track: "",
@@ -70,37 +70,6 @@ export const NewModalContent = () => {
       data.track.splice(remove, 1);
     }
     setAoData({ ...data });
-
-    // if (aoData.track.length >= 1) {
-    //   for (let i = 0; i < aoData.track.length; i++) {
-    //     if (aoData.track[i] === title) {
-    //       unregister(`track.${i}`);
-    //       setAoData({ ...data });
-    //       console.log(aoData);
-    //     }
-    //   }
-    // }
-
-    // switch (formTarget) {
-    //   case `track`:
-    //     for (let i = 0; i < aoData.track.length; i++) {
-    //       if (data.track[i] === title) {
-    //         setRemoveIndex(i);
-    //         setAoData({ ...data });
-    //         console.log(data);
-    //       }
-    //     }
-    //     break;
-    //   case `parameter`:
-    //     for (let i = 0; i < aoData.parameter.length; i++) {
-    //       if (data.parameter[i] === title) {
-    //         console.log(data.parameter.i);
-    //       }
-    //     }
-    //     break;
-    //   default:
-    //     console.log(null);
-    // }
   };
 
   return (
