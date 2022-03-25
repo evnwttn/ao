@@ -34,6 +34,7 @@ export const NewModalContent = () => {
 
   const {
     register,
+    unregister,
     handleSubmit,
     watch,
     formState: { errors },
@@ -67,6 +68,8 @@ export const NewModalContent = () => {
         for (let i = 0; i < aoOutput.track.length; i++) {
           if (aoOutput.track[i] === title) {
             console.log(aoOutput.track[i]);
+            unregister(`track.${i}`);
+            console.log(aoOutput);
           }
         }
         break;
@@ -74,6 +77,7 @@ export const NewModalContent = () => {
         for (let i = 0; i < aoOutput.parameter.length; i++) {
           if (aoOutput.parameter[i] === title) {
             console.log(aoOutput.parameter[i]);
+            console.log(aoOutput);
           }
         }
         break;
@@ -109,6 +113,11 @@ export const NewModalContent = () => {
                 <AddIcon sx={{ my: 0.5 }} />
               </IconButton>
             </Box>
+            <NewModalContentList
+              input={aoOutput}
+              target={formTarget}
+              onClick={listOnClick}
+            />
           </Box>
           <Box>
             <IconButton
@@ -122,11 +131,6 @@ export const NewModalContent = () => {
               <SendIcon sx={{ my: 0.5 }} />
             </IconButton>
           </Box>
-          <NewModalContentList
-            input={aoOutput}
-            target={formTarget}
-            onClick={listOnClick}
-          />
         </>
       ) : (
         <>
