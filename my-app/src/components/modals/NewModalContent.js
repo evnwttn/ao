@@ -32,17 +32,13 @@ export const NewModalContent = () => {
 
   const textInput = React.useRef(null);
 
-  const { register, unregister, handleSubmit, watch } = useForm({
+  const { register, handleSubmit, watch } = useForm({
     defaultValues: {
       sessionTitle: "",
       track: "",
       parameter: "",
     },
   });
-
-  React.useEffect(() => {
-    console.log("yo");
-  }, [unregister]);
 
   const onSubmitTitle = (data) => {
     data.sessionTitle !== ""
@@ -66,25 +62,27 @@ export const NewModalContent = () => {
     setParameterFormCompleted(true);
   };
 
-  const listOnClick = (title) => {
-    switch (formTarget) {
-      case `track`:
-        for (let i = 0; i < aoData.track.length; i++) {
-          if (aoData.track[i] === title) {
-            console.log(title);
-          }
-        }
-        break;
-      case `parameter`:
-        for (let i = 0; i < aoData.parameter.length; i++) {
-          if (aoData.parameter[i] === title) {
-            console.log(title);
-          }
-        }
-        break;
-      default:
-        console.log(null);
-    }
+  const onRemove = (data, title) => {
+    console.log(data.track);
+    console.log(title);
+    // switch (formTarget) {
+    //   case `track`:
+    //     for (let i = 0; i < aoData.track.length; i++) {
+    //       if (aoData.track[i] === title) {
+    //         console.log(title);
+    //       }
+    //     }
+    //     break;
+    //   case `parameter`:
+    //     for (let i = 0; i < aoData.parameter.length; i++) {
+    //       if (aoData.parameter[i] === title) {
+    //         console.log(title);
+    //       }
+    //     }
+    //     break;
+    //   default:
+    //     console.log(null);
+    // }
   };
 
   return (
@@ -119,7 +117,7 @@ export const NewModalContent = () => {
             <NewModalContentList
               input={aoData}
               target={formTarget}
-              onSubmit={listOnClick}
+              onSubmit={handleSubmit(onRemove)}
             />
           </Box>
           <Box>
