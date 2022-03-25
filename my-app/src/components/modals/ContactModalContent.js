@@ -52,8 +52,7 @@ export const ContactModalContent = () => {
           sx={{
             color: palette.aoWhite,
             cursor: "pointer",
-            my: 0.5,
-            ml: "16vw",
+            ml: "1125%",
           }}
         />
       </IconButton>

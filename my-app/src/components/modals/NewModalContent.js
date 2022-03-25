@@ -17,7 +17,7 @@ const fontStyle = {
   fontSize: "0.75rem",
   lineHeight: "1.66",
   fontFamily: "Noto Sans",
-  letterSpacing: "0.03333em",
+  letterSpacing: "0.03333rem",
   color: palette.aoWhite,
 };
 
