@@ -67,17 +67,14 @@ export const NewModalContent = () => {
       case `track`:
         for (let i = 0; i < aoOutput.track.length; i++) {
           if (aoOutput.track[i] === title) {
-            console.log(aoOutput.track[i]);
-            unregister(`track.${i}`);
-            console.log(aoOutput);
+            console.log(title);
           }
         }
         break;
       case `parameter`:
         for (let i = 0; i < aoOutput.parameter.length; i++) {
           if (aoOutput.parameter[i] === title) {
-            console.log(aoOutput.parameter[i]);
-            console.log(aoOutput);
+            console.log(title);
           }
         }
         break;
@@ -113,10 +110,12 @@ export const NewModalContent = () => {
                 <AddIcon sx={{ my: 0.5 }} />
               </IconButton>
             </Box>
+          </Box>
+          <Box component="form">
             <NewModalContentList
               input={aoOutput}
               target={formTarget}
-              onClick={listOnClick}
+              onSubmit={listOnClick}
             />
           </Box>
           <Box>

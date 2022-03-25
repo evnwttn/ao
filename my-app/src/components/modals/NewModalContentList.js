@@ -2,7 +2,7 @@ import { Box, IconButton, List, ListItem, ListItemText } from "@mui/material";
 import ClearIcon from "@mui/icons-material/Clear";
 import { palette } from "../../assets/theme";
 
-export const NewModalContentList = ({ input, target, onClick }) => {
+export const NewModalContentList = ({ input, target, onSubmit }) => {
   return (
     <Box>
       {target === `track` ? (
@@ -12,7 +12,7 @@ export const NewModalContentList = ({ input, target, onClick }) => {
               <ListItem
                 key={title}
                 secondaryAction={
-                  <IconButton onClick={() => onClick(title)}>
+                  <IconButton onClick={() => onSubmit(title)}>
                     <ClearIcon />
                   </IconButton>
                 }
@@ -29,7 +29,7 @@ export const NewModalContentList = ({ input, target, onClick }) => {
               <ListItem
                 key={title}
                 secondaryAction={
-                  <IconButton onClick={() => onClick(title)}>
+                  <IconButton onClick={() => onSubmit(title)}>
                     <ClearIcon />
                   </IconButton>
                 }
