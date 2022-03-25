@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Box, TextField, IconButton } from "@mui/material";
 import { useForm } from "react-hook-form";
 import SendIcon from "@mui/icons-material/Send";
@@ -32,7 +32,7 @@ export const NewModalContent = () => {
 
   const textInput = React.useRef(null);
 
-  const { register, handleSubmit, watch } = useForm({
+  const { register, unregister, handleSubmit, watch } = useForm({
     defaultValues: {
       sessionTitle: "",
       track: "",
@@ -63,26 +63,34 @@ export const NewModalContent = () => {
   };
 
   const onRemove = (data, title) => {
-    console.log(data.track);
-    switch (formTarget) {
-      case `track`:
-        for (let i = 0; i < aoData.track.length; i++) {
-          if (data.track[i] === title) {
-            register(`track.${i}`, { disabled: true });
-            setAoData({ ...data });
-          }
-        }
-        break;
-      case `parameter`:
-        for (let i = 0; i < aoData.parameter.length; i++) {
-          if (data.parameter[i] === title) {
-            console.log(data.parameter.i);
-          }
-        }
-        break;
-      default:
-        console.log(null);
+    for (let i = 0; i < aoData.track.length; i++) {
+      if (aoData.track[i] === title) {
+        unregister(`track.${i}`);
+        setAoData({ ...data });
+        console.log(aoData);
+      }
     }
+
+    // switch (formTarget) {
+    //   case `track`:
+    //     for (let i = 0; i < aoData.track.length; i++) {
+    //       if (data.track[i] === title) {
+    //         setRemoveIndex(i);
+    //         setAoData({ ...data });
+    //         console.log(data);
+    //       }
+    //     }
+    //     break;
+    //   case `parameter`:
+    //     for (let i = 0; i < aoData.parameter.length; i++) {
+    //       if (data.parameter[i] === title) {
+    //         console.log(data.parameter.i);
+    //       }
+    //     }
+    //     break;
+    //   default:
+    //     console.log(null);
+    // }
   };
 
   return (
