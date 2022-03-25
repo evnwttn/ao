@@ -64,12 +64,11 @@ export const NewModalContent = () => {
 
   const [remove, setRemove] = useState(0);
 
-  useEffect(() => {
-    unregister(`track.${remove}`);
-  }, [remove, unregister]);
-
   const onRemove = (data, title) => {
     setRemove(data.track.indexOf(title));
+    if (remove !== -1) {
+      data.track.splice(remove, 1);
+    }
     setAoData({ ...data });
 
     // if (aoData.track.length >= 1) {
