@@ -62,14 +62,25 @@ export const NewModalContent = () => {
     setParameterFormCompleted(true);
   };
 
+  const [remove, setRemove] = useState(0);
+
+  useEffect(() => {
+    unregister(`track.${remove}`);
+  }, [remove, unregister]);
+
   const onRemove = (data, title) => {
-    for (let i = 0; i < aoData.track.length; i++) {
-      if (aoData.track[i] === title) {
-        unregister(`track.${i}`);
-        setAoData({ ...data });
-        console.log(aoData);
-      }
-    }
+    setRemove(data.track.indexOf(title));
+    setAoData({ ...data });
+
+    // if (aoData.track.length >= 1) {
+    //   for (let i = 0; i < aoData.track.length; i++) {
+    //     if (aoData.track[i] === title) {
+    //       unregister(`track.${i}`);
+    //       setAoData({ ...data });
+    //       console.log(aoData);
+    //     }
+    //   }
+    // }
 
     // switch (formTarget) {
     //   case `track`:
