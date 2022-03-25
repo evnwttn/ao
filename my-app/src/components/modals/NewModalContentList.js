@@ -43,10 +43,3 @@ export const NewModalContentList = ({ input, target, onClick }) => {
     </Box>
   );
 };
-
-// for (let i = 0; i < aoOutput.track.length; i++) {
-//   if (aoOutput.track[i] === title) {
-//     const toRemove = aoOutput.track[i];
-//     aoOutput.track.splice(toRemove, 1);
-//     setAoUpdate(aoOutput);
-//     console.log({ aoUpdate });

@@ -61,35 +61,31 @@ export const NewModalContent = () => {
     setParameterFormCompleted(true);
   };
 
-  const [removeInput, setRemoveInput] = useState([]);
-
   const listOnClick = (title) => {
     switch (formTarget) {
       case `track`:
         for (let i = 0; i < aoOutput.track.length; i++) {
           if (aoOutput.track[i] === title) {
-            setRemoveInput(aoOutput.track.splice(i, 1));
-            console.log(aoOutput);
+            console.log(aoOutput.track[i]);
           }
         }
         break;
       case `parameter`:
         for (let i = 0; i < aoOutput.parameter.length; i++) {
           if (aoOutput.parameter[i] === title) {
-            setRemoveInput(aoOutput.parameter.splice(i, 1));
-            console.log(aoOutput);
+            console.log(aoOutput.parameter[i]);
           }
         }
         break;
       default:
-        console.log(removeInput);
+        console.log(null);
     }
   };
 
   return (
     <>
       {parameterFormCompleted ? (
-        <Box>Completed</Box>
+        <Box>Completed {console.log(aoOutput)};</Box>
       ) : titleFormCompleted ? (
         <>
           <Box
