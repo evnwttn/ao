@@ -64,25 +64,24 @@ export const NewModalContent = () => {
 
   const onRemove = (data, title) => {
     console.log(data.track);
-    console.log(title);
-    // switch (formTarget) {
-    //   case `track`:
-    //     for (let i = 0; i < aoData.track.length; i++) {
-    //       if (aoData.track[i] === title) {
-    //         console.log(title);
-    //       }
-    //     }
-    //     break;
-    //   case `parameter`:
-    //     for (let i = 0; i < aoData.parameter.length; i++) {
-    //       if (aoData.parameter[i] === title) {
-    //         console.log(title);
-    //       }
-    //     }
-    //     break;
-    //   default:
-    //     console.log(null);
-    // }
+    switch (formTarget) {
+      case `track`:
+        for (let i = 0; i < aoData.track.length; i++) {
+          if (data.track[i] === title) {
+            console.log(data.track[i]);
+          }
+        }
+        break;
+      case `parameter`:
+        for (let i = 0; i < aoData.parameter.length; i++) {
+          if (data.parameter[i] === title) {
+            console.log(data.parameter.i);
+          }
+        }
+        break;
+      default:
+        console.log(null);
+    }
   };
 
   return (
