@@ -1,5 +1,17 @@
 import { createTheme } from "@mui/material";
 
+export const logoSx = {
+  fontFamily: "Noto-Serif",
+  userSelect: "none",
+  msUserSelect: "none",
+  webkitTouchCallout: "none",
+  webkitUserSelect: "none",
+  khtmlUserSelectNone: "none",
+  mozUserSelectNone: "none",
+  msUserSelectNone: "none",
+  userSelectNone: "none",
+};
+
 export const palette = {
   aoBlack: "#272727",
   aoWhite: "#F3EFE0",
