@@ -111,10 +111,16 @@ export const logoSx = {
 
 export const modalFontSx = {
   textTransform: "uppercase",
-  fontSize: "1vw",
+  fontSize: "0.75rem",
   letterSpacing: "0.03333vw",
   fontFamily: "Noto Sans",
   fontWeight: "400",
   lineHeight: "1.66",
   color: palette.aoWhite,
+};
+
+export const modalCenteredSx = {
+  display: "flex",
+  flexDirection: "column",
+  alignItems: "center",
 };

@@ -3,23 +3,8 @@ import { Box, TextField, IconButton } from "@mui/material";
 import { useForm } from "react-hook-form";
 import SendIcon from "@mui/icons-material/Send";
 import AddIcon from "@mui/icons-material/Add";
-import { palette } from "../../assets/theme";
 import { NewModalContentList } from "./NewModalContentList";
-
-const boxStyle = {
-  display: "flex",
-  flexDirection: "column",
-  alignItems: "center",
-};
-
-const fontStyle = {
-  fontWeight: "400",
-  fontSize: "0.75rem",
-  lineHeight: "1.66",
-  fontFamily: "Noto Sans",
-  letterSpacing: "0.03333rem",
-  color: palette.aoWhite,
-};
+import { modalCenteredSx } from "../../assets/theme";
 
 export const NewModalContent = () => {
   const [aoSessionTitle, setAoSessionTitle] = useState("");
@@ -80,7 +65,9 @@ export const NewModalContent = () => {
         <>
           <Box
             component="form"
-            sx={{ boxStyle, fontStyle }}
+            sx={{
+              ...modalCenteredSx,
+            }}
             onSubmit={handleSubmit(onSubmit)}
           >
             Enter the names of {formTarget}s you wish to include in the{" "}
@@ -123,7 +110,9 @@ export const NewModalContent = () => {
       ) : (
         <>
           <Box
-            sx={{ boxStyle, fontStyle }}
+            sx={{
+              ...modalCenteredSx,
+            }}
             component="form"
             onSubmit={handleSubmit(onSubmitTitle)}
           >

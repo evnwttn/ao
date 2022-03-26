@@ -1,13 +1,11 @@
 import Box from "@mui/material/Box";
+import { modalCenteredSx } from "../../assets/theme";
 
 export const AboutModalContent = () => {
   return (
     <Box
       sx={{
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        fontSize: "0.75rem",
+        ...modalCenteredSx,
       }}
     >
       A VISUAL ALBUM MANAGEMENT TOOLKIT DESIGNED BY &amp; FOR MUSICIANS TO TRACK
