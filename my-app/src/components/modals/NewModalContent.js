@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Box, TextField, IconButton } from "@mui/material";
 import { useForm } from "react-hook-form";
 import SendIcon from "@mui/icons-material/Send";
