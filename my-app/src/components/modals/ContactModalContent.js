@@ -1,8 +1,8 @@
 import React from "react";
 import { TextField, IconButton, Box } from "@mui/material";
 import { useForm } from "react-hook-form";
-import { palette } from "../../assets/theme";
 import SendIcon from "@mui/icons-material/Send";
+import { modalCenteredSx } from "../../assets/theme";
 
 export const ContactModalContent = () => {
   const {
@@ -12,17 +12,11 @@ export const ContactModalContent = () => {
   } = useForm();
   const onSubmit = (data) => console.log(errors);
 
-  const textFieldStyle = {
-    width: "75%",
-  };
-
   return (
     <Box
       component="form"
       sx={{
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
+        ...modalCenteredSx,
       }}
       onSubmit={handleSubmit(onSubmit)}
     >
@@ -30,28 +24,26 @@ export const ContactModalContent = () => {
         placeholder="Name"
         variant="standard"
         margin="normal"
-        sx={textFieldStyle}
+        sx={{ width: "75%" }}
         {...register("Name", {})}
       />
       <TextField
         placeholder="Email Address"
         variant="standard"
         margin="normal"
-        sx={textFieldStyle}
+        sx={{ width: "75%" }}
         {...register("Email Address", {})}
       />
       <TextField
         placeholder="Message"
         variant="standard"
         margin="normal"
-        sx={textFieldStyle}
+        sx={{ width: "75%" }}
         {...register("Message", {})}
       />
       <IconButton disableRipple sx={{ cursor: "default" }} type="submit">
         <SendIcon
           sx={{
-            color: palette.aoWhite,
-            cursor: "pointer",
             ml: "1125%",
           }}
         />
