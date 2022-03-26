@@ -77,10 +77,11 @@ export const NewModalContent = () => {
                 p: "2px 4px",
                 display: "flex",
                 alignItems: "center",
-                width: 400,
+                width: 500,
               }}
             >
               <TextField
+                sx={{ ml: 13 }}
                 variant="standard"
                 margin="normal"
                 inputRef={textInput}
