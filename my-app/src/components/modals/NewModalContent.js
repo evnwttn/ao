@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import { Box, TextField, IconButton } from "@mui/material";
+import { Box, TextField, IconButton, Divider } from "@mui/material";
 import { useForm } from "react-hook-form";
-import SendIcon from "@mui/icons-material/Send";
-import AddIcon from "@mui/icons-material/Add";
+import CheckCircleIcon from "@mui/icons-material/CheckCircle";
+import AddCircleIcon from "@mui/icons-material/AddCircle";
 import { NewModalContentList } from "./NewModalContentList";
 import { modalCenteredSx } from "../../assets/theme";
 
@@ -72,7 +72,14 @@ export const NewModalContent = () => {
           >
             Enter the names of {formTarget}s you wish to include in the{" "}
             {aoSessionTitle} session. You can always add more later.
-            <Box>
+            <Box
+              sx={{
+                p: "2px 4px",
+                display: "flex",
+                alignItems: "center",
+                width: 400,
+              }}
+            >
               <TextField
                 variant="standard"
                 margin="normal"
@@ -80,10 +87,20 @@ export const NewModalContent = () => {
                 autoComplete="off"
                 {...register(`${formTarget}.${formNumber}`)}
               />
-            </Box>
-            <Box>
               <IconButton disableRipple type="submit">
-                <AddIcon sx={{ my: 0.5 }} />
+                <AddCircleIcon sx={{ mr: 1 }} />
+              </IconButton>
+              <Divider sx={{ height: 28, m: 0.5 }} orientation="vertical" />
+              <IconButton
+                disableRipple
+                sx={{ p: "10px", ml: 1 }}
+                onClick={() => {
+                  trackFormCompleted
+                    ? onCompleteParameterForm()
+                    : onCompleteTrackForm();
+                }}
+              >
+                <CheckCircleIcon />
               </IconButton>
             </Box>
           </Box>
@@ -93,18 +110,6 @@ export const NewModalContent = () => {
               target={formTarget}
               onSubmit={handleSubmit(onRemove)}
             />
-          </Box>
-          <Box>
-            <IconButton
-              disableRipple
-              onClick={() => {
-                trackFormCompleted
-                  ? onCompleteParameterForm()
-                  : onCompleteTrackForm();
-              }}
-            >
-              <SendIcon sx={{ my: 0.5 }} />
-            </IconButton>
           </Box>
         </>
       ) : (
@@ -126,7 +131,7 @@ export const NewModalContent = () => {
 
             <Box>
               <IconButton disableRipple type="submit">
-                <SendIcon
+                <CheckCircleIcon
                   sx={{
                     my: 0.5,
                   }}
