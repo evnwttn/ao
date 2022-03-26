@@ -112,6 +112,9 @@ export const logoSx = {
 export const modalFontSx = {
   textTransform: "uppercase",
   fontSize: "1vw",
-  letterSpacing: "0.08vw",
+  letterSpacing: "0.03333vw",
+  fontFamily: "Noto Sans",
+  fontWeight: "400",
+  lineHeight: "1.66",
   color: palette.aoWhite,
 };
