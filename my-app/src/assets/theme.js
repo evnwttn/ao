@@ -1,17 +1,5 @@
 import { createTheme } from "@mui/material";
 
-export const logoSx = {
-  fontFamily: "Noto-Serif",
-  userSelect: "none",
-  msUserSelect: "none",
-  webkitTouchCallout: "none",
-  webkitUserSelect: "none",
-  khtmlUserSelectNone: "none",
-  mozUserSelectNone: "none",
-  msUserSelectNone: "none",
-  userSelectNone: "none",
-};
-
 export const palette = {
   aoBlack: "#272727",
   aoWhite: "#F3EFE0",
@@ -107,3 +95,23 @@ const aotheme = createTheme({
 });
 
 export default aotheme;
+
+export const logoSx = {
+  fontFamily: "Noto-Serif",
+  textTransform: "lowercase",
+  userSelect: "none",
+  msUserSelect: "none",
+  webkitTouchCallout: "none",
+  webkitUserSelect: "none",
+  khtmlUserSelectNone: "none",
+  mozUserSelectNone: "none",
+  msUserSelectNone: "none",
+  userSelectNone: "none",
+};
+
+export const modalFontSx = {
+  textTransform: "uppercase",
+  fontSize: "1vw",
+  letterSpacing: "0.08vw",
+  color: palette.aoWhite,
+};

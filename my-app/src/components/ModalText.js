@@ -3,34 +3,30 @@ import { NewModalContent } from "./modals/NewModalContent";
 import { LoadModalContent } from "./modals/LoadModalContent";
 import { ContactModalContent } from "./modals/ContactModalContent";
 import { AboutModalContent } from "./modals/AboutModalContent";
-import { palette } from "../assets/theme";
-
-const style = {
-  textTransform: "uppercase",
-  fontSize: "1vw",
-  letterSpacing: "0.08vw",
-  textAlign: "center",
-  position: "absolute",
-  top: "50vh",
-  left: "50vw",
-  transform: "translate(-50%, -50%)",
-  width: "33%",
-  bgcolor: palette.aoGrey,
-  color: palette.aoWhite,
-  boxShadow: "0px 0px 50pt rbg(0 0 0 / 0.16)",
-  p: 4,
-};
+import { palette, logoSx, modalFontSx } from "../assets/theme";
 
 export const ModalText = ({ prompt }) => {
   return (
-    <Box sx={style}>
+    <Box
+      sx={{
+        ...modalFontSx,
+        textAlign: "center",
+        position: "absolute",
+        top: "50%",
+        left: "50%",
+        transform: "translate(-50%, -50%)",
+        width: "33%",
+        bgcolor: palette.aoGrey,
+        boxShadow: "0px 0px 50pt rbg(0 0 0 / 0.16)",
+        p: 4,
+      }}
+    >
       <Box
         sx={{
-          fontSize: "2.5rem",
-          fontFamily: "Noto Serif",
-          textTransform: "lowercase",
+          ...logoSx,
           color: palette.aoRed,
-          marginLeft: "0.25rem",
+          fontSize: "2.5rem",
+          my: 0.5,
         }}
       >
         ꜵ
