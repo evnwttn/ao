@@ -1,13 +1,14 @@
 import { Box, IconButton, List, ListItem, ListItemText } from "@mui/material";
 import ClearIcon from "@mui/icons-material/Clear";
 import { palette } from "../../assets/theme";
+import { modalCenteredSx } from "../../assets/theme";
 
 export const NewModalContentList = ({ input, target, onSubmit }) => {
   return (
-    <Box>
+    <Box sx={{ ...modalCenteredSx, my: 1 }}>
       {target === `track` ? (
         input.track !== undefined ? (
-          <List sx={{ width: "100%", bgcolor: palette.aoBlack }}>
+          <List sx={{ width: "75%", bgcolor: palette.aoBlack }}>
             {input.track.map((title) => (
               <ListItem
                 key={title}
