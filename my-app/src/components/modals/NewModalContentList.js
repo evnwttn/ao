@@ -8,7 +8,7 @@ export const NewModalContentList = ({ input, target, onSubmit }) => {
     <Box sx={{ ...modalCenteredSx, my: 1 }}>
       {target === `track` ? (
         input.track !== undefined ? (
-          <List sx={{ width: "75%", bgcolor: palette.aoBlack }}>
+          <List sx={{ width: "85%", bgcolor: palette.aoBlack }}>
             {input.track.map((title) => (
               <ListItem
                 key={title}
@@ -25,7 +25,7 @@ export const NewModalContentList = ({ input, target, onSubmit }) => {
         ) : null
       ) : target === `parameter` ? (
         input.parameter !== `` ? (
-          <List sx={{ width: "100%", bgcolor: palette.aoBlack }}>
+          <List sx={{ width: "85%", bgcolor: palette.aoBlack }}>
             {input.parameter.map((title) => (
               <ListItem
                 key={title}
