@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Box, TextField, IconButton, Divider } from "@mui/material";
 import { useForm } from "react-hook-form";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
@@ -47,22 +47,32 @@ export const NewModalContent = () => {
     setParameterFormCompleted(true);
   };
 
-  const [remove, setRemove] = useState(0);
+  // const [remove, setRemove] = useState(0);
+
+  // const onRemove = (data, title) => {
+  //   setRemove(data.track.indexOf(title));
+  //   if (remove !== -1) {
+  //     data.track.splice(remove, 1);
+  //   }
+  //   setAoData({ ...data });
+  // };
 
   const onRemove = (data, title) => {
-    setRemove(data.track.indexOf(title));
-    // if (remove !== -1) {
-    //   data.track.splice(remove, 1);
-    // }
-    // setAoData({ ...data });
+    let array = [...data.track];
+    let index = array.indexOf(title);
+    console.log(array);
+    console.log(index);
+    // let index = array.indexOf(title);
   };
 
-  useEffect(() => {
-    if (remove !== -1) {
-      aoData.track.splice(remove, 1);
-    }
-    console.log(aoData);
-  }, [remove, aoData]);
+  // removePeople(e) {
+  //   var array = [...this.state.people]; // make a separate copy of the array
+  //   var index = array.indexOf(e.target.value)
+  //   if (index !== -1) {
+  //     array.splice(index, 1);
+  //     this.setState({people: array});
+  //   }
+  // },
 
   return (
     <>
