@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Box, TextField, IconButton, Divider } from "@mui/material";
 import { useForm } from "react-hook-form";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
@@ -51,11 +51,18 @@ export const NewModalContent = () => {
 
   const onRemove = (data, title) => {
     setRemove(data.track.indexOf(title));
-    if (remove !== -1) {
-      data.track.splice(remove, 1);
-    }
-    setAoData({ ...data });
+    // if (remove !== -1) {
+    //   data.track.splice(remove, 1);
+    // }
+    // setAoData({ ...data });
   };
+
+  useEffect(() => {
+    if (remove !== -1) {
+      aoData.track.splice(remove, 1);
+    }
+    console.log(aoData);
+  }, [remove, aoData]);
 
   return (
     <>
