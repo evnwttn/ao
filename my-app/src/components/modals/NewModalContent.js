@@ -49,10 +49,8 @@ export const NewModalContent = () => {
 
   const onRemove = (data, title) => {
     setAoData({
-      track: data.track.filter(function (e) {
-        if (e !== title) {
-          return e;
-        }
+      track: data.track.filter((e) => {
+        return e !== title ? e : null;
       }),
     });
   };
