@@ -47,16 +47,6 @@ export const NewModalContent = () => {
     setParameterFormCompleted(true);
   };
 
-  // const [remove, setRemove] = useState(0);
-
-  // const onRemove = (data, title) => {
-  //   setRemove(data.track.indexOf(title));
-  //   if (remove !== -1) {
-  //     data.track.splice(remove, 1);
-  //   }
-  //   setAoData({ ...data });
-  // };
-
   const onRemove = (data, title) => {
     let array = [...data.track];
     let index = array.indexOf(title);
@@ -66,15 +56,6 @@ export const NewModalContent = () => {
     }
     console.log(aoData.track);
   };
-
-  // removePeople(e) {
-  //   var array = [...this.state.people]; // make a separate copy of the array
-  //   var index = array.indexOf(e.target.value)
-  //   if (index !== -1) {
-  //     array.splice(index, 1);
-  //     this.setState({people: array});
-  //   }
-  // },
 
   return (
     <>
