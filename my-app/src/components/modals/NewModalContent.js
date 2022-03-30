@@ -48,13 +48,13 @@ export const NewModalContent = () => {
   };
 
   const onRemove = (data, title) => {
-    let array = [...data.track];
-    let index = array.indexOf(title);
-    if (index !== -1) {
-      array.splice(index, 1);
-      setAoData({ track: array });
-    }
-    console.log(aoData.track);
+    setAoData({
+      track: data.track.filter(function (e) {
+        if (e !== title) {
+          return e;
+        }
+      }),
+    });
   };
 
   return (
