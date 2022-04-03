@@ -48,6 +48,8 @@ export const NewModalContent = () => {
   };
 
   const onRemove = (data, title) => {
+    // add conditional here, or find a method to render through both track & parameter
+    // then save array somewhere to be used for aochart
     setAoData({
       track: aoData.track.filter((e) => {
         return e !== title ? e : null;
