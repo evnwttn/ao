@@ -57,7 +57,11 @@ export const NewModalContent = () => {
 
   const onRemove = (data, title) => {
     formTarget === "track"
-      ? console.log(`${formTarget} + track`)
+      ? setAoData({
+          track: aoData.track.filter((e) => {
+            return e !== title ? e : null;
+          }),
+        })
       : formTarget === "parameter"
       ? console.log(`${formTarget} + parameter`)
       : console.log("");
