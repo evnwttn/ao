@@ -1,4 +1,5 @@
 import React from "react";
+import { Box, Grid } from "@mui/material/";
 
 const arr = {
   sessionTitle: "the dark side of the moon",
@@ -29,5 +30,17 @@ const arr = {
 };
 
 export const AOGrid = () => {
-  return <>{console.log(arr)}</>;
+  return (
+    <Box>
+      {console.log(arr)}
+      <Grid
+        container
+        direction="row"
+        justifyContent="center"
+        alignItems="center"
+      >
+        Yeah
+      </Grid>
+    </Box>
+  );
 };
