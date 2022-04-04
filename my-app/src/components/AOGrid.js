@@ -1,5 +1,6 @@
 import React from "react";
 import { Box, Grid } from "@mui/material/";
+import { palette } from "../assets/theme";
 
 const arr = {
   sessionTitle: "the dark side of the moon",
@@ -32,14 +33,16 @@ const arr = {
 export const AOGrid = () => {
   return (
     <Box>
-      {console.log(arr)}
       <Grid
         container
+        spacing={2}
         direction="row"
         justifyContent="center"
         alignItems="center"
       >
-        Yeah
+        {[arr].map((cell) => {
+          return console.log(cell);
+        })}
       </Grid>
     </Box>
   );
