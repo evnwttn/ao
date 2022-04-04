@@ -47,27 +47,19 @@ export const NewModalContent = () => {
     setParameterFormCompleted(true);
   };
 
-  // const onRemove = (data, title) => {
-  //   setAoData({
-  //     track: aoData.track.filter((e) => {
-  //       return e !== title ? e : null;
-  //     }),
-  //   });
-  // };
-
   const onRemove = (data, title) => {
     formTarget === "track"
       ? setAoData({
           track: aoData.track.filter((e) => {
             return e !== title ? e : null;
           }),
-        })
+        }) || console.log(aoData)
       : formTarget === "parameter"
       ? setAoData({
           parameter: aoData.parameter.filter((e) => {
             return e !== title ? e : null;
           }),
-        })
+        }) || console.log(aoData)
       : console.log("");
   };
 

@@ -24,7 +24,7 @@ export const NewModalContentList = ({ input, target, onSubmit }) => {
           </List>
         ) : null
       ) : target === `parameter` ? (
-        input.parameter !== `` ? (
+        input.parameter !== `` && undefined ? (
           <List sx={{ width: "85%", bgcolor: palette.aoBlack }}>
             {input.parameter.map((title) => (
               <ListItem
