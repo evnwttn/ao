@@ -24,23 +24,28 @@ export const NewModalContentList = ({ input, target, onSubmit }) => {
           </List>
         ) : null
       ) : target === `parameter` ? (
-        input.parameter !== `` && undefined ? (
-          <List sx={{ width: "85%", bgcolor: palette.aoBlack }}>
-            {input.parameter.map((title) => (
-              <ListItem
-                key={title}
-                secondaryAction={
-                  <IconButton onClick={() => onSubmit(title)}>
-                    <ClearIcon />
-                  </IconButton>
-                }
-              >
-                <ListItemText primary={`${title}`} />
-              </ListItem>
-            ))}
-          </List>
-        ) : null
-      ) : null}
+        input.parameter === `` || undefined ? null : (
+          console.log(input.parameter)
+        )
+      ) : // (
+      //   input.parameter !== `` && undefined ? (
+      // <List sx={{ width: "85%", bgcolor: palette.aoBlack }}>
+      //   {input.parameter.map((title) => (
+      //     <ListItem
+      //       key={title}
+      //       secondaryAction={
+      //         <IconButton onClick={() => onSubmit(title)}>
+      //           <ClearIcon />
+      //         </IconButton>
+      //       }
+      //     >
+      //       <ListItemText primary={`${title}`} />
+      //     </ListItem>
+      //   ))}
+      // </List>
+      //   ) : null
+      // )
+      null}
     </Box>
   );
 };
