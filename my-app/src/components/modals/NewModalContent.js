@@ -63,7 +63,11 @@ export const NewModalContent = () => {
           }),
         })
       : formTarget === "parameter"
-      ? console.log(`${formTarget} + parameter`)
+      ? setAoData({
+          parameter: aoData.parameter.filter((e) => {
+            return e !== title ? e : null;
+          }),
+        })
       : console.log("");
   };
 
