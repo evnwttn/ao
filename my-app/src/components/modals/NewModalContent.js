@@ -47,14 +47,20 @@ export const NewModalContent = () => {
     setParameterFormCompleted(true);
   };
 
+  // const onRemove = (data, title) => {
+  //   setAoData({
+  //     track: aoData.track.filter((e) => {
+  //       return e !== title ? e : null;
+  //     }),
+  //   });
+  // };
+
   const onRemove = (data, title) => {
-    // add conditional here, or find a method to render through both track & parameter
-    // then save array somewhere to be used for aochart
-    setAoData({
-      track: aoData.track.filter((e) => {
-        return e !== title ? e : null;
-      }),
-    });
+    formTarget === "track"
+      ? console.log(`${formTarget} + track`)
+      : formTarget === "parameter"
+      ? console.log(`${formTarget} + parameter`)
+      : console.log("");
   };
 
   return (
