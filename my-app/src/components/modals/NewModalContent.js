@@ -20,8 +20,6 @@ export const NewModalContent = () => {
   const { register, handleSubmit, watch } = useForm({
     defaultValues: {
       sessionTitle: "",
-      track: "",
-      parameter: "",
     },
   });
 
