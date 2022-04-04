@@ -14,7 +14,7 @@ export const NewModalContentList = ({ input, target, onSubmit }) => {
                   <ListItem
                     key={value}
                     secondaryAction={
-                      <IconButton onClick={() => console.log(value)}>
+                      <IconButton onClick={() => onSubmit(value)}>
                         <ClearIcon />
                       </IconButton>
                     }
@@ -30,7 +30,7 @@ export const NewModalContentList = ({ input, target, onSubmit }) => {
                 <ListItem
                   key={value}
                   secondaryAction={
-                    <IconButton onClick={() => console.log(value)}>
+                    <IconButton onClick={() => onSubmit(value)}>
                       <ClearIcon />
                     </IconButton>
                   }
@@ -44,63 +44,3 @@ export const NewModalContentList = ({ input, target, onSubmit }) => {
     </Box>
   );
 };
-
-// export const NewModalContentList = ({ input, target, onSubmit }) => {
-//   return (
-//     <Box sx={{ ...modalCenteredSx, my: 1 }}>
-//       {target === `track` ? (
-//         input.track !== undefined ? (
-//           <List sx={{ width: "85%", bgcolor: palette.aoBlack }}>
-//             {input.track.map((title) => (
-//               <ListItem
-//                 key={title}
-//                 secondaryAction={
-//                   <IconButton onClick={() => onSubmit(title)}>
-//                     <ClearIcon />
-//                   </IconButton>
-//                 }
-//               >
-//                 <ListItemText primary={`${title}`} />
-//               </ListItem>
-//             ))}
-//           </List>
-//         ) : null
-//       ) : target === `parameter` ? (
-//         input.parameter === `` || undefined ? null : (
-//           <List sx={{ width: "85%", bgcolor: palette.aoBlack }}>
-//             {input.parameter.map((title) => (
-//               <ListItem
-//                 key={title}
-//                 secondaryAction={
-//                   <IconButton onClick={() => onSubmit(title)}>
-//                     <ClearIcon />
-//                   </IconButton>
-//                 }
-//               >
-//                 <ListItemText primary={`${title}`} />
-//               </ListItem>
-//             ))}
-//           </List>
-//         )
-//       ) : // (
-//       //   input.parameter !== `` && undefined ? (
-//       // <List sx={{ width: "85%", bgcolor: palette.aoBlack }}>
-//       //   {input.parameter.map((title) => (
-//       //     <ListItem
-//       //       key={title}
-//       //       secondaryAction={
-//       //         <IconButton onClick={() => onSubmit(title)}>
-//       //           <ClearIcon />
-//       //         </IconButton>
-//       //       }
-//       //     >
-//       //       <ListItemText primary={`${title}`} />
-//       //     </ListItem>
-//       //   ))}
-//       // </List>
-//       //   ) : null
-//       // )
-//       null}
-//     </Box>
-//   );
-// };

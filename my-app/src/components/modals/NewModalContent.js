@@ -51,20 +51,20 @@ export const NewModalContent = () => {
           track: aoData.track.filter((e) => {
             return e !== title ? e : null;
           }),
-        }) || console.log(aoData)
+        })
       : formTarget === "parameter"
       ? setAoData({
           parameter: aoData.parameter.filter((e) => {
             return e !== title ? e : null;
           }),
-        }) || console.log(aoData)
+        })
       : console.log("");
   };
 
   return (
     <>
       {parameterFormCompleted ? (
-        <Box>Completed {console.log(aoData)};</Box>
+        <Box>{console.log(aoData)}</Box>
       ) : titleFormCompleted ? (
         <>
           <Box
