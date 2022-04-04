@@ -5,6 +5,7 @@ import aotheme from "./assets/theme";
 import "@fontsource/noto-sans";
 import "@fontsource/noto-serif";
 import "./index.css";
+import Button from "@mui/material/Button";
 import { ModalButton } from "./components/ModalButton";
 import { MainLogo } from "./components/MainLogo";
 import { ModalBase } from "./components/ModalBase";
@@ -26,6 +27,10 @@ let Home = () => {
     setModalType("");
   };
 
+  //GRID STUFF
+
+  const [gridOpen, setGridOpen] = useState(true);
+
   return (
     <Box
       sx={{
@@ -36,36 +41,64 @@ let Home = () => {
       }}
     >
       <ThemeProvider theme={aotheme}>
-        <ModalBase open={open} handleClose={handleClose} text={modalType} />
+        {gridOpen !== true ? (
+          <>
+            <ModalBase open={open} handleClose={handleClose} text={modalType} />
+            <Button
+              sx={{ position: "fixed" }}
+              onClick={() => setGridOpen(true)}
+            >
+              Toggle Grid
+            </Button>
+            <Box
+              sx={{
+                display: "flex",
+                flexDirection: "row",
+                justifyContent: "flex-end",
+                alignItems: "center",
+              }}
+            >
+              <ModalButton
+                text={"About"}
+                handleOpen={(text) => handleOpen(text)}
+              />
+              <ModalButton
+                text={"Contact"}
+                handleOpen={(text) => handleOpen(text)}
+              />
+            </Box>
 
-        <Box
-          sx={{
-            display: "flex",
-            flexDirection: "row",
-            justifyContent: "flex-end",
-            alignItems: "center",
-          }}
-        >
-          <ModalButton text={"About"} handleOpen={(text) => handleOpen(text)} />
-          <ModalButton
-            text={"Contact"}
-            handleOpen={(text) => handleOpen(text)}
-          />
-        </Box>
-
-        <Box
-          sx={{
-            display: "flex",
-            paddingTop: "28vh",
-            alignContent: "center",
-            flexDirection: "row",
-            justifyContent: "center",
-          }}
-        >
-          <ModalButton text={"New"} handleOpen={(text) => handleOpen(text)} />
-          <MainLogo />
-          <ModalButton text={"Load"} handleOpen={(text) => handleOpen(text)} />
-        </Box>
+            <Box
+              sx={{
+                display: "flex",
+                paddingTop: "28vh",
+                alignContent: "center",
+                flexDirection: "row",
+                justifyContent: "center",
+              }}
+            >
+              <ModalButton
+                text={"New"}
+                handleOpen={(text) => handleOpen(text)}
+              />
+              <MainLogo />
+              <ModalButton
+                text={"Load"}
+                handleOpen={(text) => handleOpen(text)}
+              />
+            </Box>
+          </>
+        ) : (
+          <>
+            <Button
+              sx={{ position: "fixed" }}
+              onClick={() => setGridOpen(false)}
+            >
+              Toggle Grid
+            </Button>
+            <AOGrid />
+          </>
+        )}
       </ThemeProvider>
     </Box>
   );
@@ -75,7 +108,6 @@ let AO = () => {
   return (
     <>
       <Home />
-      <AOGrid />
     </>
   );
 };
