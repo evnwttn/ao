@@ -7,19 +7,29 @@ export const NewModalContentList = ({ input, target, onSubmit }) => {
   return (
     <Box sx={{ ...modalCenteredSx, my: 1 }}>
       <List sx={{ width: "85%", bgcolor: palette.aoBlack }}>
-        <ListItem
-          secondaryAction={
-            <IconButton onClick={() => console.log("yo")}>
-              <ClearIcon />
-            </IconButton>
-          }
-        >
-          <ListItemText primary={`Hello`} />
-        </ListItem>
+        {target !== "parameter"
+          ? input.track !== undefined
+            ? [input.track].map((title) => console.log(title))
+            : null
+          : input.parameter !== undefined
+          ? [input.parameter].map((title) => console.log(title))
+          : null}
       </List>
     </Box>
   );
 };
+
+{
+  /* <ListItem
+secondaryAction={
+  <IconButton onClick={() => console.log(input)}>
+    <ClearIcon />
+  </IconButton>
+}
+>
+<ListItemText primary={`Hello`} />
+</ListItem> */
+}
 
 // export const NewModalContentList = ({ input, target, onSubmit }) => {
 //   return (
