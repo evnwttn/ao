@@ -8,6 +8,7 @@ import "./index.css";
 import { ModalButton } from "./components/ModalButton";
 import { MainLogo } from "./components/MainLogo";
 import { ModalBase } from "./components/ModalBase";
+import { AOGrid } from "./components/AOGrid";
 
 let Home = () => {
   const [open, setOpen] = useState(false);
@@ -70,15 +71,11 @@ let Home = () => {
   );
 };
 
-let AOChart = () => {
-  return null;
-};
-
 let AO = () => {
   return (
     <>
       <Home />
-      <AOChart />
+      <AOGrid />
     </>
   );
 };
