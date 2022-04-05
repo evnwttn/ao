@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Grid } from "@mui/material/";
+import { Box } from "@mui/material/";
 // import { palette } from "../assets/theme";
 
 const data = {
@@ -33,25 +33,11 @@ const data = {
 export const AOGrid = () => {
   return (
     <Box>
-      <Grid
-        container
-        spacing={2}
-        direction="row"
-        justifyContent="center"
-        alignItems="center"
-      >
-        {[data].map((cell) => {
-          return (
-            cell.track.map((track) => {
-              return console.log(`track: ${track}`);
-            }),
-            cell.parameter.map((parameter) => {
-              return console.log(`parameter: ${parameter}`);
-            }),
-            console.log(`session title: ${cell.sessionTitle}`)
-          );
-        })}
-      </Grid>
+      {[data].map((cell) => {
+        return cell.track.map((track) => {
+          return <Box key={track}>{track}</Box>;
+        });
+      })}
     </Box>
   );
 };
