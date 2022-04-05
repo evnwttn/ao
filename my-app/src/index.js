@@ -27,7 +27,7 @@ let Home = () => {
     setModalType("");
   };
 
-  const [gridOpen, setGridOpen] = useState(false);
+  const [gridOpen, setGridOpen] = useState(true);
 
   return (
     <Box
