@@ -42,10 +42,13 @@ export const AOGrid = () => {
       >
         {[data].map((cell) => {
           return (
-            console.log(cell.track) ||
-            console.log(cell.parameter) ||
-            console.log(cell.sessionTitle) ||
-            console.log(cell)
+            cell.track.map((track) => {
+              return console.log(`track: ${track}`);
+            }),
+            cell.parameter.map((parameter) => {
+              return console.log(`parameter: ${parameter}`);
+            }),
+            console.log(`session title: ${cell.sessionTitle}`)
           );
         })}
       </Grid>
