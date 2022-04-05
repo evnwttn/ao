@@ -34,11 +34,11 @@ export const AOGrid = () => {
   return (
     <Box>
       {data.sessionTitle}
-      {data.track.map((track) => {
-        return <Box key={track}>{track}</Box>;
-      })}
       {data.parameter.map((parameter) => {
         return <Box key={parameter}>{parameter}</Box>;
+      })}
+      {data.track.map((track) => {
+        return <Box key={track}>{track}</Box>;
       })}
     </Box>
   );
