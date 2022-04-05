@@ -2,6 +2,10 @@ import React from "react";
 import { Box, Grid } from "@mui/material/";
 import { palette } from "../assets/theme";
 
+const styling = {
+  cell: { backgroundColor: palette.aoBlack, padding: 1 },
+};
+
 const data = {
   sessionTitle: "the dark side of the moon",
   track: [
@@ -40,9 +44,7 @@ export const AOGrid = () => {
           {data.parameter.map((parameter) => {
             return (
               <Grid item sm={1} key={parameter}>
-                <Box sx={{ backgroundColor: palette.aoBlack, padding: 1 }}>
-                  {parameter}
-                </Box>
+                <Box sx={styling.cell}>{parameter}</Box>
               </Grid>
             );
           })}
@@ -51,9 +53,7 @@ export const AOGrid = () => {
           {data.track.map((track) => {
             return (
               <Grid item key={track}>
-                <Box sx={{ backgroundColor: palette.aoBlack, padding: 1 }}>
-                  {track}
-                </Box>
+                <Box sx={styling.cell}>{track}</Box>
               </Grid>
             );
           })}
