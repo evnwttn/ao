@@ -17,6 +17,7 @@ const data = {
     "eclipse",
   ],
   parameter: [
+    "tracks",
     "vocals",
     "guitar",
     "bass",
@@ -34,21 +35,29 @@ export const AOGrid = () => {
   return (
     <Box>
       {data.sessionTitle}
-      <Grid container>
-        {data.parameter.map((parameter) => {
-          return (
-            <Grid item key={parameter}>
-              <Box sx={{ backgroundColor: palette.aoBlack }}>{parameter}</Box>
-            </Grid>
-          );
-        })}
-        {data.track.map((track) => {
-          return (
-            <Grid item key={track}>
-              <Box sx={{ backgroundColor: palette.aoBlack }}>{track}</Box>
-            </Grid>
-          );
-        })}
+      <Grid container rowSpacing={1} columnSpacing={1}>
+        <Grid container direction="row">
+          {data.parameter.map((parameter) => {
+            return (
+              <Grid item sm={1} key={parameter}>
+                <Box sx={{ backgroundColor: palette.aoBlack, padding: 1 }}>
+                  {parameter}
+                </Box>
+              </Grid>
+            );
+          })}
+        </Grid>
+        <Grid container direction="column">
+          {data.track.map((track) => {
+            return (
+              <Grid item key={track}>
+                <Box sx={{ backgroundColor: palette.aoBlack, padding: 1 }}>
+                  {track}
+                </Box>
+              </Grid>
+            );
+          })}
+        </Grid>
       </Grid>
     </Box>
   );
