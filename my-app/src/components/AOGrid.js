@@ -33,10 +33,12 @@ const data = {
 export const AOGrid = () => {
   return (
     <Box>
-      {[data].map((cell) => {
-        return cell.track.map((track) => {
-          return <Box key={track}>{track}</Box>;
-        });
+      {data.sessionTitle}
+      {data.track.map((track) => {
+        return <Box key={track}>{track}</Box>;
+      })}
+      {data.parameter.map((parameter) => {
+        return <Box key={parameter}>{parameter}</Box>;
       })}
     </Box>
   );
