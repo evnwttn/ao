@@ -40,8 +40,13 @@ export const AOGrid = () => {
         justifyContent="center"
         alignItems="center"
       >
-        {data.track.map((cell) => {
-          return console.log(cell);
+        {[data].map((cell) => {
+          return (
+            console.log(cell.track) ||
+            console.log(cell.parameter) ||
+            console.log(cell.sessionTitle) ||
+            console.log(cell)
+          );
         })}
       </Grid>
     </Box>
