@@ -37,10 +37,10 @@ const data = {
 
 export const AOGrid = () => {
   return (
-    <Box>
+    <Box sx={{ flexGrow: 1 }}>
       {data.sessionTitle}
       <Grid container rowSpacing={1} columnSpacing={1}>
-        <Grid container direction="row">
+        <Grid container spacing={2} direction="row">
           {data.parameter.map((parameter) => {
             return (
               <Grid item sm={1} key={parameter}>
@@ -49,7 +49,7 @@ export const AOGrid = () => {
             );
           })}
         </Grid>
-        <Grid container direction="column">
+        <Grid container spacing={2} direction="column">
           {data.track.map((track) => {
             return (
               <Grid item key={track}>
