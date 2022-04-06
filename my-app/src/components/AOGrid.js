@@ -3,7 +3,7 @@ import { Box, Grid } from "@mui/material/";
 import { palette } from "../assets/theme";
 
 const styling = {
-  cell: { backgroundColor: palette.aoBlack, padding: 1 },
+  cell: { backgroundColor: palette.aoBlue, padding: 1 },
 };
 
 const data = {
@@ -51,15 +51,19 @@ export const AOGrid = () => {
           })}
         </Grid>
         {/* CELLS */}
-        <Grid container spacing={2} direction="row">
-          {data.parameter.map((cells) => {
-            return (
-              <Grid item sm={1} key={cells}>
-                <Box sx={styling.cell}></Box>
-              </Grid>
-            );
-          })}
-        </Grid>
+        {data.track.map((tracks) => {
+          return (
+            <Grid container spacing={2} direction="row">
+              {data.parameter.map((cells) => {
+                return (
+                  <Grid item sm={1} sx={{ my: 2 }} key={cells}>
+                    <Box sx={styling.cell}></Box>
+                  </Grid>
+                );
+              })}
+            </Grid>
+          );
+        })}
       </Grid>
     </Box>
   );
