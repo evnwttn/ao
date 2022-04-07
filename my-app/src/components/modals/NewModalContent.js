@@ -10,7 +10,7 @@ export const NewModalContent = () => {
   const [aoSessionTitle, setAoSessionTitle] = useState("");
   const [titleFormCompleted, setTitleFormCompleted] = useState(false);
   const [tracksFormCompleted, setTracksFormCompleted] = useState(false);
-  const [parameterFormCompleted, setParameterFormCompleted] = useState(false);
+  const [parametersFormCompleted, setParametersFormCompleted] = useState(false);
   const [aoData, setAoData] = useState([]);
   const [formTarget, setFormTarget] = useState(`tracks`);
   const [formNumber, setFormNumber] = useState(0);
@@ -38,11 +38,11 @@ export const NewModalContent = () => {
   const onCompleteTracksForm = () => {
     setTracksFormCompleted(true);
     setFormNumber(0);
-    setFormTarget(`parameter`);
+    setFormTarget(`parameters`);
   };
 
-  const onCompleteParameterForm = () => {
-    setParameterFormCompleted(true);
+  const onCompleteParametersForm = () => {
+    setParametersFormCompleted(true);
   };
 
   const onRemove = (data, title) => {
@@ -52,9 +52,9 @@ export const NewModalContent = () => {
             return e !== title ? e : null;
           }),
         })
-      : formTarget === "parameter"
+      : formTarget === "parameters"
       ? setAoData({
-          parameter: aoData.parameter.filter((e) => {
+          parameters: aoData.parameters.filter((e) => {
             return e !== title ? e : null;
           }),
         })
@@ -63,7 +63,7 @@ export const NewModalContent = () => {
 
   return (
     <>
-      {parameterFormCompleted ? (
+      {parametersFormCompleted ? (
         <Box>{console.log(aoData)}</Box>
       ) : titleFormCompleted ? (
         <>
@@ -101,7 +101,7 @@ export const NewModalContent = () => {
                 sx={{ p: "10px", ml: 1 }}
                 onClick={() => {
                   tracksFormCompleted
-                    ? onCompleteParameterForm()
+                    ? onCompleteParametersForm()
                     : onCompleteTracksForm();
                 }}
               >
