@@ -48,13 +48,13 @@ export const NewModalContent = () => {
     formTarget === "tracks"
       ? setAoData({
           tracks: aoData.tracks.filter((e) => {
-            return e !== title ? e : null;
+            return e !== title && e;
           }),
         })
       : formTarget === "parameters" &&
         setAoData({
           parameters: aoData.parameters.filter((e) => {
-            return e !== title ? e : null;
+            return e !== title && e;
           }),
         });
   };
@@ -62,7 +62,7 @@ export const NewModalContent = () => {
   return (
     <>
       {parametersFormCompleted ? (
-        <Box>{console.log(aoData)}</Box>
+        <Box></Box>
       ) : titleFormCompleted ? (
         <>
           <Box
