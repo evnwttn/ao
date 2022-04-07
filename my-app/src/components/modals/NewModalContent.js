@@ -51,19 +51,18 @@ export const NewModalContent = () => {
             return e !== title ? e : null;
           }),
         })
-      : formTarget === "parameters"
-      ? setAoData({
+      : formTarget === "parameters" &&
+        setAoData({
           parameters: aoData.parameters.filter((e) => {
             return e !== title ? e : null;
           }),
-        })
-      : console.log("");
+        });
   };
 
   return (
     <>
       {parametersFormCompleted ? (
-        <Box></Box>
+        <Box>{console.log(aoData)}</Box>
       ) : titleFormCompleted ? (
         <>
           <Box
