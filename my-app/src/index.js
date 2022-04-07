@@ -39,15 +39,16 @@ let Home = () => {
       }}
     >
       <ThemeProvider theme={aotheme}>
-        {gridOpen !== true ? (
+        <Button
+          sx={{ position: "fixed" }}
+          onClick={() => setGridOpen(!gridOpen)}
+        >
+          Toggle Grid
+        </Button>
+        {gridOpen === false ? (
           <>
             <ModalBase open={open} handleClose={handleClose} text={modalType} />
-            <Button
-              sx={{ position: "fixed" }}
-              onClick={() => setGridOpen(true)}
-            >
-              Toggle Grid
-            </Button>
+
             <Box
               sx={{
                 display: "flex",
@@ -88,12 +89,6 @@ let Home = () => {
           </>
         ) : (
           <>
-            <Button
-              sx={{ position: "fixed" }}
-              onClick={() => setGridOpen(false)}
-            >
-              Toggle Grid
-            </Button>
             <AOGrid />
           </>
         )}
