@@ -74,7 +74,7 @@ export const NewModalContent = () => {
             }}
             onSubmit={handleSubmit(onSubmit)}
           >
-            Enter the names of {formTarget}s you wish to include in the{" "}
+            Enter the names of {formTarget} you wish to include in the{" "}
             {aoSessionTitle} session. You can always add more later.
             <Box
               sx={{

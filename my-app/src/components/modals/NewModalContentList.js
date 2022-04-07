@@ -24,7 +24,7 @@ export const NewModalContentList = ({ input, target, onSubmit }) => {
                 );
               })
             : null
-          : input.parameters !== undefined
+          : input.parameters
           ? input.parameters.map((parameter) => {
               return (
                 <ListItem
