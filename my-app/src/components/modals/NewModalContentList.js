@@ -8,18 +8,18 @@ export const NewModalContentList = ({ input, target, onSubmit }) => {
     <Box sx={{ ...modalCenteredSx, my: 1 }}>
       <List sx={{ width: "85%", bgcolor: palette.aoBlack }}>
         {target !== `parameter`
-          ? input.track !== undefined
-            ? input.track.map((value) => {
+          ? input.tracks
+            ? input.tracks.map((track) => {
                 return (
                   <ListItem
-                    key={value}
+                    key={track}
                     secondaryAction={
-                      <IconButton onClick={() => onSubmit(value)}>
+                      <IconButton onClick={() => onSubmit(track)}>
                         <ClearIcon />
                       </IconButton>
                     }
                   >
-                    <ListItemText primary={value} />
+                    <ListItemText primary={track} />
                   </ListItem>
                 );
               })

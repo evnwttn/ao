@@ -9,10 +9,10 @@ import { modalCenteredSx } from "../../assets/theme";
 export const NewModalContent = () => {
   const [aoSessionTitle, setAoSessionTitle] = useState("");
   const [titleFormCompleted, setTitleFormCompleted] = useState(false);
-  const [trackFormCompleted, setTrackFormCompleted] = useState(false);
+  const [tracksFormCompleted, setTracksFormCompleted] = useState(false);
   const [parameterFormCompleted, setParameterFormCompleted] = useState(false);
   const [aoData, setAoData] = useState([]);
-  const [formTarget, setFormTarget] = useState(`track`);
+  const [formTarget, setFormTarget] = useState(`tracks`);
   const [formNumber, setFormNumber] = useState(0);
 
   const textInput = React.useRef(null);
@@ -35,8 +35,8 @@ export const NewModalContent = () => {
     setAoData({ ...data });
   };
 
-  const onCompleteTrackForm = () => {
-    setTrackFormCompleted(true);
+  const onCompleteTracksForm = () => {
+    setTracksFormCompleted(true);
     setFormNumber(0);
     setFormTarget(`parameter`);
   };
@@ -46,9 +46,9 @@ export const NewModalContent = () => {
   };
 
   const onRemove = (data, title) => {
-    formTarget === "track"
+    formTarget === "tracks"
       ? setAoData({
-          track: aoData.track.filter((e) => {
+          tracks: aoData.tracks.filter((e) => {
             return e !== title ? e : null;
           }),
         })
@@ -100,9 +100,9 @@ export const NewModalContent = () => {
                 disableRipple
                 sx={{ p: "10px", ml: 1 }}
                 onClick={() => {
-                  trackFormCompleted
+                  tracksFormCompleted
                     ? onCompleteParameterForm()
-                    : onCompleteTrackForm();
+                    : onCompleteTracksForm();
                 }}
               >
                 <CheckCircleIcon />
