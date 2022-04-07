@@ -7,7 +7,7 @@ export const NewModalContentList = ({ input, target, onSubmit }) => {
   return (
     <Box sx={{ ...modalCenteredSx, my: 1 }}>
       <List sx={{ width: "85%", bgcolor: palette.aoBlack }}>
-        {target !== `parameter`
+        {target !== `parameters`
           ? input.tracks
             ? input.tracks.map((track) => {
                 return (
@@ -24,18 +24,18 @@ export const NewModalContentList = ({ input, target, onSubmit }) => {
                 );
               })
             : null
-          : input.parameter !== undefined
-          ? input.parameter.map((value) => {
+          : input.parameters !== undefined
+          ? input.parameters.map((parameter) => {
               return (
                 <ListItem
-                  key={value}
+                  key={parameter}
                   secondaryAction={
-                    <IconButton onClick={() => onSubmit(value)}>
+                    <IconButton onClick={() => onSubmit(parameter)}>
                       <ClearIcon />
                     </IconButton>
                   }
                 >
-                  <ListItemText primary={value} />
+                  <ListItemText primary={parameter} />
                 </ListItem>
               );
             })
