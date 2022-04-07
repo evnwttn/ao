@@ -24,9 +24,8 @@ export const NewModalContent = () => {
   });
 
   const onSubmitTitle = (data) => {
-    data.sessionTitle !== ""
-      ? setTitleFormCompleted(true) || setAoSessionTitle(watch("sessionTitle"))
-      : console.log("");
+    (data.sessionTitle && setTitleFormCompleted(true)) ||
+      setAoSessionTitle(watch("sessionTitle"));
   };
 
   const onSubmit = (data) => {
@@ -64,7 +63,7 @@ export const NewModalContent = () => {
   return (
     <>
       {parametersFormCompleted ? (
-        <Box>{console.log(aoData)}</Box>
+        <Box></Box>
       ) : titleFormCompleted ? (
         <>
           <Box
