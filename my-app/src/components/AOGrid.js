@@ -8,7 +8,7 @@ const styling = {
 
 const data = {
   sessionTitle: "the dark side of the moon",
-  track: [
+  tracks: [
     "speak to me",
     "breathe (in the air)",
     "on the run",
@@ -20,7 +20,7 @@ const data = {
     "brain damage",
     "eclipse",
   ],
-  parameter: [
+  parameters: [
     "tracks",
     "vocals",
     "guitar",
@@ -42,7 +42,7 @@ export const AOGrid = () => {
       {/* PARAMETERS */}
       <Grid container>
         <Grid container spacing={2} direction="row">
-          {data.parameter.map((parameter) => {
+          {data.parameters.map((parameter) => {
             return (
               <Grid item sm={1} key={parameter}>
                 <Box sx={styling.cell}>{parameter}</Box>
@@ -51,12 +51,12 @@ export const AOGrid = () => {
           })}
         </Grid>
         {/* CELLS */}
-        {data.track.map((tracks) => {
+        {data.tracks.map((track) => {
           return (
-            <Grid container spacing={2} direction="row">
-              {data.parameter.map((cells) => {
+            <Grid container key={track} spacing={2} direction="row">
+              {data.parameters.map((cell) => {
                 return (
-                  <Grid item sm={1} sx={{ my: 2 }} key={cells}>
+                  <Grid item sm={1} sx={{ my: 2 }} key={cell}>
                     <Box sx={styling.cell}></Box>
                   </Grid>
                 );
