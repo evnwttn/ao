@@ -39,7 +39,6 @@ export const AOGrid = () => {
   return (
     <Box sx={{ flexGrow: 1 }}>
       {data.sessionTitle}
-      {/* PARAMETERS */}
       <Grid container>
         <Grid container spacing={2} direction="row">
           {data.parameters.map((parameter) => {
@@ -50,7 +49,6 @@ export const AOGrid = () => {
             );
           })}
         </Grid>
-        {/* CELLS */}
         {data.tracks.map((track) => {
           return (
             <Grid container key={track} spacing={2} direction="row">
