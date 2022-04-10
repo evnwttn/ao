@@ -3,6 +3,11 @@ import { Box, Grid } from "@mui/material/";
 import { palette } from "../assets/theme";
 import { data } from "../assets/TestData";
 
+// tomorrow:
+// build out grid/cells
+// once styling established shift to theme.js
+// if time, be mindful of onClick colourwheel
+
 const styling = {
   cell: { backgroundColor: palette.aoBlue, padding: 1 },
 };
