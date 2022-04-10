@@ -1,38 +1,10 @@
 import React from "react";
 import { Box, Grid } from "@mui/material/";
 import { palette } from "../assets/theme";
+import { data } from "../assets/TestData";
 
 const styling = {
   cell: { backgroundColor: palette.aoBlue, padding: 1 },
-};
-
-const data = {
-  sessionTitle: "the dark side of the moon",
-  tracks: [
-    "speak to me",
-    "breathe (in the air)",
-    "on the run",
-    "time",
-    "the great gig in the sky",
-    "money",
-    "us and them",
-    "any colour you like",
-    "brain damage",
-    "eclipse",
-  ],
-  parameters: [
-    "tracks",
-    "vocals",
-    "guitar",
-    "bass",
-    "drums",
-    "piano",
-    "guest players",
-    "guest vocals",
-    "fx",
-    "mix",
-    "master",
-  ],
 };
 
 export const AOGrid = () => {
