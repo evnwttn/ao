@@ -12,7 +12,7 @@ const styling = {
   cell: { backgroundColor: palette.aoBlue, padding: 1 },
 };
 
-const clickShit = (input) => {
+const logCell = (input) => {
   console.log(input);
 };
 
@@ -25,7 +25,7 @@ export const AOGrid = () => {
           {data.parameters.map((parameter) => {
             return (
               <Grid item sm={1} key={parameter}>
-                <Box sx={styling.cell} onClick={() => clickShit(parameter)}>
+                <Box sx={styling.cell} onClick={() => logCell(parameter)}>
                   {parameter}
                 </Box>
               </Grid>
@@ -40,7 +40,7 @@ export const AOGrid = () => {
                   <Grid item sm={1} sx={{ my: 2 }} key={cell}>
                     <Box
                       sx={styling.cell}
-                      onClick={() => clickShit(cell)}
+                      onClick={() => logCell(`${track} + ${cell}`)}
                     ></Box>
                   </Grid>
                 );
