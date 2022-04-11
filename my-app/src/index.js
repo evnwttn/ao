@@ -72,6 +72,8 @@ let Home = () => {
                 display: "flex",
                 paddingTop: "28vh",
                 flexDirection: "row",
+                alignContent: "center",
+                justifyContent: "center",
               }}
             >
               <ModalButton

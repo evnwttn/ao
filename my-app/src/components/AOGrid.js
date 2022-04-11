@@ -28,8 +28,8 @@ export const AOGrid = () => {
       <Box
         sx={{
           display: "flex",
-          flexDirection: "column",
-          justifyContent: "center",
+          fontFamily: "Noto Sans",
+          textTransform: "uppercase",
           flexGrow: 1,
         }}
       >
