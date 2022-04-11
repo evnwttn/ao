@@ -11,6 +11,7 @@ export const palette = {
 };
 
 const aotheme = createTheme({
+  fonts: {},
   palette: {
     primary: {
       main: palette.aoBlack,

@@ -29,6 +29,9 @@ export const AOGrid = () => {
         sx={{
           display: "flex",
           fontFamily: "Noto Sans",
+          fontSize: "0.8vw",
+          letterSpacing: "0.125vw",
+          textAlign: "center",
           textTransform: "uppercase",
           flexGrow: 1,
         }}
