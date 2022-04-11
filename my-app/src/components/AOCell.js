@@ -6,12 +6,11 @@ export const AOCell = (cell) => {
   const [cellColour, toggleCellColour] = useState("transparent");
 
   const handleCellClick = (input) => {
-    {
-      cellColour === palette.aoBlue && toggleCellColour("transparent");
-      cellColour === "transparent" && toggleCellColour(palette.aoGrey);
-      cellColour === palette.aoGrey && toggleCellColour(palette.aoYellow);
-      cellColour === palette.aoYellow && toggleCellColour(palette.aoBlue);
-    }
+    cellColour === palette.aoBlue && toggleCellColour("transparent");
+    cellColour === "transparent" && toggleCellColour(palette.aoGrey);
+    cellColour === palette.aoGrey && toggleCellColour(palette.aoYellow);
+    cellColour === palette.aoYellow && toggleCellColour(palette.aoBlue);
+
     console.log(input);
   };
 
@@ -22,7 +21,12 @@ export const AOCell = (cell) => {
           ...cellSx.cell,
           backgroundColor: cellColour,
           "&:hover": {
-            border: cellColour === "transparent" && "dashed red",
+            backgroundColor: palette.aoGrey,
+            opacity: "0.4",
+            cursor: "pointer",
+            // boxShadow:
+            //   cellColour === "transparent" &&
+            //   `-1px 1px 0px 1px ${palette.aoWhite} inset`,
           },
         }}
       ></Box>

@@ -158,9 +158,5 @@ export const cellSx = {
   cell: {
     my: "0.75vh",
     padding: "3.5vh",
-    "&:hover": {
-      opacity: "0.6",
-      cursor: "pointer",
-    },
   },
 };
