@@ -141,6 +141,11 @@ export const gridDomSx = {
 export const cellSx = {
   paraCell: {
     color: palette.aoWhite,
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    height: 1,
+    padding: 1,
   },
   titleCell: {
     color: palette.aoYellow,
