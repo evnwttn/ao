@@ -12,7 +12,7 @@ const styling = {
   },
   titleCell: {
     backgroundColor: palette.aoGrey,
-    color: palette.aoWhite,
+    color: palette.aoYellow,
     padding: 1,
   },
   cell: { backgroundColor: palette.aoBlue, padding: 1 },
