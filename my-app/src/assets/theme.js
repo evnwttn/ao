@@ -149,7 +149,10 @@ export const cellSx = {
   },
   titleCell: {
     color: palette.aoYellow,
-    my: 1,
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    height: 1,
   },
   cell: {
     backgroundColor: palette.aoBlue, //temporary
