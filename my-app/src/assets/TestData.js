@@ -5,7 +5,7 @@ export const data = {
     "breathe (in the air)",
     "on the run",
     "time",
-    "the great gig in the sky",
+    "tggits",
     "money",
     "us and them",
     "any colour you like",

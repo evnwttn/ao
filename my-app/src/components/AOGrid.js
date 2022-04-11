@@ -8,15 +8,15 @@ const styling = {
   paraCell: {
     backgroundColor: palette.aoGrey, //temporary
     color: palette.aoWhite,
-    margin: 0.5,
   },
   titleCell: {
     backgroundColor: palette.aoGrey, //temporary
     color: palette.aoYellow,
-    margin: 0.5,
+    my: 1,
   },
   cell: {
     backgroundColor: palette.aoBlue, //temporary
+    my: 1,
     padding: 2,
   },
 };
