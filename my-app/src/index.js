@@ -10,6 +10,7 @@ import { ModalButton } from "./components/ModalButton";
 import { MainLogo } from "./components/MainLogo";
 import { ModalBase } from "./components/ModalBase";
 import { AOGrid } from "./components/AOGrid";
+import TableViewIcon from "@mui/icons-material/TableView";
 
 let Home = () => {
   const [open, setOpen] = useState(false);
@@ -43,7 +44,7 @@ let Home = () => {
           sx={{ position: "fixed" }}
           onClick={() => setGridOpen(!gridOpen)}
         >
-          Toggle Grid
+          <TableViewIcon />
         </Button>
         {gridOpen === false ? (
           <>
