@@ -39,7 +39,7 @@ export const AOGrid = () => {
             </Grid>
             {data.tracks.map((track) => {
               return (
-                <Grid container key={track} spacing={1}>
+                <Grid container key={track} spacing={"0.75vw"}>
                   {data.parameters.map((cell) => {
                     return cell === `title` ? (
                       <Grid item sm={1} key={cell}>
