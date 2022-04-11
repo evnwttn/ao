@@ -9,8 +9,8 @@ export const AOGrid = () => {
 
   const handleCellClick = (input) => {
     {
-      cellColour === palette.aoBlue && toggleCellColour(palette.aoBlack);
-      cellColour === palette.aoBlack && toggleCellColour(palette.aoGrey);
+      cellColour === palette.aoBlue && toggleCellColour("transparent");
+      cellColour === "transparent" && toggleCellColour(palette.aoGrey);
       cellColour === palette.aoGrey && toggleCellColour(palette.aoYellow);
       cellColour === palette.aoYellow && toggleCellColour(palette.aoBlue);
     }
