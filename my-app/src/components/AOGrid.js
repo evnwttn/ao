@@ -1,25 +1,8 @@
 import React from "react";
 import { Box, Grid, ThemeProvider } from "@mui/material/";
 import aotheme from "../assets/theme";
-import { palette } from "../assets/theme";
+import { palette, gridDomSx, cellSx } from "../assets/theme";
 import { data } from "../assets/TestData";
-
-const styling = {
-  paraCell: {
-    backgroundColor: palette.aoGrey, //temporary
-    color: palette.aoWhite,
-  },
-  titleCell: {
-    backgroundColor: palette.aoGrey, //temporary
-    color: palette.aoYellow,
-    my: 1,
-  },
-  cell: {
-    backgroundColor: palette.aoBlue, //temporary
-    my: 1,
-    padding: 2,
-  },
-};
 
 const logCell = (input) => {
   console.log(input);
@@ -28,26 +11,16 @@ const logCell = (input) => {
 export const AOGrid = () => {
   return (
     <ThemeProvider theme={aotheme}>
-      <Box
-        sx={{
-          display: "flex",
-          fontFamily: "Noto Sans",
-          fontSize: "0.8vw",
-          letterSpacing: "0.125vw",
-          textAlign: "center",
-          textTransform: "uppercase",
-          flexGrow: 1,
-        }}
-      >
+      <Box sx={gridDomSx}>
         <Grid container>
           <Grid container spacing={1}>
             {data.parameters.map((parameter) => {
               return (
                 <Grid item sm={1} key={parameter}>
-                  <Box sx={styling.paraCell} onClick={() => logCell(parameter)}>
+                  <Box sx={cellSx.paraCell} onClick={() => logCell(parameter)}>
                     {parameter}
                   </Box>
-                </Grid> // SPACING FINE
+                </Grid>
               );
             })}
           </Grid>
@@ -57,12 +30,12 @@ export const AOGrid = () => {
                 {data.parameters.map((cell) => {
                   return cell === `title` ? (
                     <Grid item sm={1} key={cell}>
-                      <Box sx={styling.titleCell}>{track}</Box>
-                    </Grid> // SPACING FINE
+                      <Box sx={cellSx.titleCell}>{track}</Box>
+                    </Grid>
                   ) : (
                     <Grid item sm={1} key={cell}>
                       <Box
-                        sx={styling.cell}
+                        sx={cellSx.cell}
                         onClick={() => logCell(`${track} + ${cell}`)}
                       ></Box>
                     </Grid>

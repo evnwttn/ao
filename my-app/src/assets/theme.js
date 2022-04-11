@@ -125,3 +125,30 @@ export const modalCenteredSx = {
   flexDirection: "column",
   alignItems: "center",
 };
+
+// AO GRID
+
+export const gridDomSx = {
+  display: "flex",
+  fontFamily: "Noto Sans",
+  fontSize: "0.8vw",
+  letterSpacing: "0.125vw",
+  textAlign: "center",
+  textTransform: "uppercase",
+  flexGrow: 1,
+};
+
+export const cellSx = {
+  paraCell: {
+    color: palette.aoWhite,
+  },
+  titleCell: {
+    color: palette.aoYellow,
+    my: 1,
+  },
+  cell: {
+    backgroundColor: palette.aoBlue, //temporary
+    my: 1,
+    padding: 2,
+  },
+};
