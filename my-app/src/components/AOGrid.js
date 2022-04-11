@@ -46,10 +46,14 @@ export const AOGrid = () => {
                         <Box sx={{ ...cellSx.titleCell }}>{track}</Box>
                       </Grid>
                     ) : (
-                      <Grid item sm={1} key={cell}>
+                      <Grid
+                        item
+                        sm={1}
+                        key={cell}
+                        onClick={() => handleCellClick(`${track} + ${cell}`)}
+                      >
                         <Box
                           sx={{ ...cellSx.cell, backgroundColor: cellColour }}
-                          onClick={() => handleCellClick(`${track} + ${cell}`)}
                         ></Box>
                       </Grid>
                     );
