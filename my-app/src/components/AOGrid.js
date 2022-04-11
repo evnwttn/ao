@@ -1,7 +1,7 @@
 import React from "react";
 import { Box, Grid, ThemeProvider } from "@mui/material/";
 import aotheme from "../assets/theme";
-import { palette, gridDomSx, cellSx } from "../assets/theme";
+import { gridDomSx, cellSx } from "../assets/theme";
 import { data } from "../assets/TestData";
 
 const logCell = (input) => {
