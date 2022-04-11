@@ -24,5 +24,6 @@ export const data = {
     "fx",
     "mix",
     "master",
+    "done",
   ],
 };

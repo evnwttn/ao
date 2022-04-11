@@ -71,9 +71,7 @@ let Home = () => {
               sx={{
                 display: "flex",
                 paddingTop: "28vh",
-                alignContent: "center",
                 flexDirection: "row",
-                justifyContent: "center",
               }}
             >
               <ModalButton
