@@ -6,17 +6,17 @@ import { data } from "../assets/TestData";
 
 const styling = {
   paraCell: {
-    backgroundColor: palette.aoGrey,
+    backgroundColor: palette.aoGrey, //temporary
     color: palette.aoWhite,
     margin: 0.5,
   },
   titleCell: {
-    backgroundColor: palette.aoGrey,
+    backgroundColor: palette.aoGrey, //temporary
     color: palette.aoYellow,
     margin: 0.5,
   },
   cell: {
-    backgroundColor: palette.aoBlue,
+    backgroundColor: palette.aoBlue, //temporary
     padding: 2,
   },
 };
@@ -40,30 +40,25 @@ export const AOGrid = () => {
         }}
       >
         <Grid container>
-          <Grid container spacing={1.5}>
+          <Grid container spacing={1}>
             {data.parameters.map((parameter) => {
               return (
                 <Grid item sm={1} key={parameter}>
                   <Box sx={styling.paraCell} onClick={() => logCell(parameter)}>
                     {parameter}
                   </Box>
-                </Grid>
+                </Grid> // SPACING FINE
               );
             })}
           </Grid>
           {data.tracks.map((track) => {
             return (
-              <Grid container key={track} spacing={1.5}>
+              <Grid container key={track} spacing={1}>
                 {data.parameters.map((cell) => {
                   return cell === `title` ? (
                     <Grid item sm={1} key={cell}>
-                      <Box
-                        sx={styling.titleCell}
-                        onClick={() => logCell(`${track} + ${cell}`)}
-                      >
-                        {track}
-                      </Box>
-                    </Grid>
+                      <Box sx={styling.titleCell}>{track}</Box>
+                    </Grid> // SPACING FINE
                   ) : (
                     <Grid item sm={1} key={cell}>
                       <Box
