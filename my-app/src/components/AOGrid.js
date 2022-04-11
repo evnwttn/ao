@@ -36,7 +36,16 @@ export const AOGrid = () => {
           return (
             <Grid container key={track} spacing={2} direction="row">
               {data.parameters.map((cell) => {
-                return (
+                return cell === `tracks` ? (
+                  <Grid item sm={1} sx={{ my: 2 }} key={cell}>
+                    <Box
+                      sx={styling.cell}
+                      onClick={() => logCell(`${track} + ${cell}`)}
+                    >
+                      {track}
+                    </Box>
+                  </Grid>
+                ) : (
                   <Grid item sm={1} sx={{ my: 2 }} key={cell}>
                     <Box
                       sx={styling.cell}
