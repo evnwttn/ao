@@ -1,7 +1,5 @@
-import { useState } from "react";
 import { Box, Grid, ThemeProvider } from "@mui/material/";
-import aotheme from "../assets/theme";
-import { palette, gridDomSx, cellSx } from "../assets/theme";
+import { gridDomSx, cellSx } from "../assets/theme";
 import { AOCell } from "./AOCell";
 import { data } from "../assets/TestData";
 
@@ -14,40 +12,38 @@ export const AOGrid = () => {
         marginTop: "2.5vh",
       }}
     >
-      <ThemeProvider theme={aotheme}>
-        <Box sx={{ ...gridDomSx }}>
-          <Grid container>
-            <Grid container spacing={1}>
-              {data.parameters.map((parameterTitle) => {
-                return (
-                  <Grid item sm={1} key={parameterTitle}>
-                    <Box sx={{ ...cellSx.paraCell }}>{parameterTitle}</Box>
-                  </Grid>
-                );
-              })}
-            </Grid>
-            {data.tracks.map((track) => {
+      <Box sx={{ ...gridDomSx }}>
+        <Grid container>
+          <Grid container spacing={1}>
+            {data.parameters.map((parameterTitle) => {
               return (
-                <Grid container key={track} spacing={"0.75vw"}>
-                  {data.parameters.map((parameter) => {
-                    return parameter === `title` ? (
-                      <Grid item sm={1} key={parameter}>
-                        <Box sx={{ ...cellSx.titleCell }}>{track}</Box>
-                      </Grid>
-                    ) : (
-                      <AOCell
-                        key={parameter}
-                        parameter={parameter}
-                        track={track}
-                      />
-                    );
-                  })}
+                <Grid item sm={1} key={parameterTitle}>
+                  <Box sx={{ ...cellSx.paraCell }}>{parameterTitle}</Box>
                 </Grid>
               );
             })}
           </Grid>
-        </Box>
-      </ThemeProvider>
+          {data.tracks.map((track) => {
+            return (
+              <Grid container key={track} spacing={"0.75vw"}>
+                {data.parameters.map((parameter) => {
+                  return parameter === `title` ? (
+                    <Grid item sm={1} key={parameter}>
+                      <Box sx={{ ...cellSx.titleCell }}>{track}</Box>
+                    </Grid>
+                  ) : (
+                    <AOCell
+                      key={parameter}
+                      parameter={parameter}
+                      track={track}
+                    />
+                  );
+                })}
+              </Grid>
+            );
+          })}
+        </Grid>
+      </Box>
     </Box>
   );
 };
