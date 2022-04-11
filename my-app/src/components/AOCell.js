@@ -14,9 +14,18 @@ export const AOCell = (cell) => {
     }
     console.log(input);
   };
+
   return (
     <Grid item sm={1} onClick={() => handleCellClick(cell)}>
-      <Box sx={{ ...cellSx.cell, backgroundColor: cellColour }}></Box>
+      <Box
+        sx={{
+          ...cellSx.cell,
+          backgroundColor: cellColour,
+          "&:hover": {
+            border: cellColour === "transparent" && "dashed red",
+          },
+        }}
+      ></Box>
     </Grid>
   );
 };

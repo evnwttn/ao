@@ -1,4 +1,4 @@
-import { Box, Grid, ThemeProvider } from "@mui/material/";
+import { Box, Grid } from "@mui/material/";
 import { gridDomSx, cellSx } from "../assets/theme";
 import { AOCell } from "./AOCell";
 import { data } from "../assets/TestData";
@@ -14,7 +14,7 @@ export const AOGrid = () => {
     >
       <Box sx={{ ...gridDomSx }}>
         <Grid container>
-          <Grid container spacing={1}>
+          <Grid container spacing={"0.75vw"}>
             {data.parameters.map((parameterTitle) => {
               return (
                 <Grid item sm={1} key={parameterTitle}>
