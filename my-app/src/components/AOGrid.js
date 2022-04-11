@@ -8,14 +8,17 @@ const styling = {
   paraCell: {
     backgroundColor: palette.aoGrey,
     color: palette.aoWhite,
-    padding: 1,
+    margin: 0.5,
   },
   titleCell: {
     backgroundColor: palette.aoGrey,
     color: palette.aoYellow,
-    padding: 1,
+    margin: 0.5,
   },
-  cell: { backgroundColor: palette.aoBlue, padding: 1 },
+  cell: {
+    backgroundColor: palette.aoBlue,
+    padding: 2,
+  },
 };
 
 const logCell = (input) => {
