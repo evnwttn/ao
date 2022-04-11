@@ -156,7 +156,6 @@ export const cellSx = {
     mx: 1,
   },
   cell: {
-    backgroundColor: palette.aoBlue, //temporary
     my: 0.5,
     padding: 2.5,
   },

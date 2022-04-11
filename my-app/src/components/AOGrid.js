@@ -5,13 +5,15 @@ import { palette, gridDomSx, cellSx } from "../assets/theme";
 import { data } from "../assets/TestData";
 
 export const AOGrid = () => {
-  const logCell = (input) => {
-    console.log(input);
-  };
-
-  const [toggleColour, setToggleColour] = useState();
+  const [cellColour, toggleCellColour] = useState(palette.aoBlue);
 
   const handleCellClick = (input) => {
+    {
+      cellColour === palette.aoBlue && toggleCellColour(palette.aoBlack);
+      cellColour === palette.aoBlack && toggleCellColour(palette.aoGrey);
+      cellColour === palette.aoGrey && toggleCellColour(palette.aoYellow);
+      cellColour === palette.aoYellow && toggleCellColour(palette.aoBlue);
+    }
     console.log(input);
   };
 
@@ -46,7 +48,7 @@ export const AOGrid = () => {
                     ) : (
                       <Grid item sm={1} key={cell}>
                         <Box
-                          sx={{ ...cellSx.cell }}
+                          sx={{ ...cellSx.cell, backgroundColor: cellColour }}
                           onClick={() => handleCellClick(`${track} + ${cell}`)}
                         ></Box>
                       </Grid>
