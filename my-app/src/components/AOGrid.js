@@ -28,7 +28,7 @@ export const AOGrid = () => {
       <Box sx={{ flexGrow: 2 }}>
         {data.sessionTitle}
         <Grid container>
-          <Grid container spacing={1.25} direction="row">
+          <Grid container spacing={1.5} direction="row">
             {data.parameters.map((parameter) => {
               return (
                 <Grid item sm={1} key={parameter}>
@@ -41,10 +41,10 @@ export const AOGrid = () => {
           </Grid>
           {data.tracks.map((track) => {
             return (
-              <Grid container key={track} spacing={1.25} direction="row">
+              <Grid container key={track} spacing={1.5} direction="row">
                 {data.parameters.map((cell) => {
                   return cell === `title` ? (
-                    <Grid item sm={1} sx={{ my: 2 }} key={cell}>
+                    <Grid item sm={1} key={cell}>
                       <Box
                         sx={styling.titleCell}
                         onClick={() => logCell(`${track} + ${cell}`)}
@@ -53,7 +53,7 @@ export const AOGrid = () => {
                       </Box>
                     </Grid>
                   ) : (
-                    <Grid item sm={1} sx={{ my: 2 }} key={cell}>
+                    <Grid item sm={1} key={cell}>
                       <Box
                         sx={styling.cell}
                         onClick={() => logCell(`${track} + ${cell}`)}
