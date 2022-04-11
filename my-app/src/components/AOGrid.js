@@ -17,6 +17,14 @@ export const AOGrid = () => {
     console.log(input);
   };
 
+  const AOCell = (cell) => {
+    return (
+      <Grid item sm={1} onClick={() => handleCellClick(cell)}>
+        <Box sx={{ ...cellSx.cell, backgroundColor: cellColour }}></Box>
+      </Grid>
+    );
+  };
+
   return (
     <Box
       sx={{
@@ -29,10 +37,10 @@ export const AOGrid = () => {
         <Box sx={{ ...gridDomSx }}>
           <Grid container>
             <Grid container spacing={1}>
-              {data.parameters.map((parameter) => {
+              {data.parameters.map((parameterTitle) => {
                 return (
-                  <Grid item sm={1} key={parameter}>
-                    <Box sx={{ ...cellSx.paraCell }}>{parameter}</Box>
+                  <Grid item sm={1} key={parameterTitle}>
+                    <Box sx={{ ...cellSx.paraCell }}>{parameterTitle}</Box>
                   </Grid>
                 );
               })}
@@ -40,22 +48,17 @@ export const AOGrid = () => {
             {data.tracks.map((track) => {
               return (
                 <Grid container key={track} spacing={"0.75vw"}>
-                  {data.parameters.map((cell) => {
-                    return cell === `title` ? (
-                      <Grid item sm={1} key={cell}>
+                  {data.parameters.map((parameter) => {
+                    return parameter === `title` ? (
+                      <Grid item sm={1} key={parameter}>
                         <Box sx={{ ...cellSx.titleCell }}>{track}</Box>
                       </Grid>
                     ) : (
-                      <Grid
-                        item
-                        sm={1}
-                        key={cell}
-                        onClick={() => handleCellClick(`${track} + ${cell}`)}
-                      >
-                        <Box
-                          sx={{ ...cellSx.cell, backgroundColor: cellColour }}
-                        ></Box>
-                      </Grid>
+                      <AOCell
+                        key={parameter}
+                        parameter={parameter}
+                        track={track}
+                      />
                     );
                   })}
                 </Grid>
