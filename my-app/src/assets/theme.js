@@ -145,6 +145,7 @@ export const cellSx = {
     alignItems: "center",
     height: 1,
     padding: 1,
+    marginBottom: 1,
   },
   titleCell: {
     color: palette.aoYellow,
@@ -152,10 +153,11 @@ export const cellSx = {
     justifyContent: "center",
     alignItems: "center",
     height: 1,
+    mx: 1,
   },
   cell: {
     backgroundColor: palette.aoBlue, //temporary
-    my: 1,
-    padding: 2,
+    my: 0.5,
+    padding: 2.5,
   },
 };
