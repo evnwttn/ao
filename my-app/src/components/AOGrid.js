@@ -1,14 +1,20 @@
-import React from "react";
+import { useState } from "react";
 import { Box, Grid, ThemeProvider } from "@mui/material/";
 import aotheme from "../assets/theme";
-import { gridDomSx, cellSx } from "../assets/theme";
+import { palette, gridDomSx, cellSx } from "../assets/theme";
 import { data } from "../assets/TestData";
 
-const logCell = (input) => {
-  console.log(input);
-};
-
 export const AOGrid = () => {
+  const logCell = (input) => {
+    console.log(input);
+  };
+
+  const [toggleColour, setToggleColour] = useState();
+
+  const handleCellClick = (input) => {
+    console.log(input);
+  };
+
   return (
     <Box
       sx={{
@@ -18,18 +24,13 @@ export const AOGrid = () => {
       }}
     >
       <ThemeProvider theme={aotheme}>
-        <Box sx={gridDomSx}>
+        <Box sx={{ ...gridDomSx }}>
           <Grid container>
             <Grid container spacing={1}>
               {data.parameters.map((parameter) => {
                 return (
                   <Grid item sm={1} key={parameter}>
-                    <Box
-                      sx={cellSx.paraCell}
-                      onClick={() => logCell(parameter)}
-                    >
-                      {parameter}
-                    </Box>
+                    <Box sx={{ ...cellSx.paraCell }}>{parameter}</Box>
                   </Grid>
                 );
               })}
@@ -40,13 +41,13 @@ export const AOGrid = () => {
                   {data.parameters.map((cell) => {
                     return cell === `title` ? (
                       <Grid item sm={1} key={cell}>
-                        <Box sx={cellSx.titleCell}>{track}</Box>
+                        <Box sx={{ ...cellSx.titleCell }}>{track}</Box>
                       </Grid>
                     ) : (
                       <Grid item sm={1} key={cell}>
                         <Box
-                          sx={cellSx.cell}
-                          onClick={() => logCell(`${track} + ${cell}`)}
+                          sx={{ ...cellSx.cell }}
+                          onClick={() => handleCellClick(`${track} + ${cell}`)}
                         ></Box>
                       </Grid>
                     );
