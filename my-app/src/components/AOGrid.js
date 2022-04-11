@@ -12,6 +12,10 @@ const styling = {
   cell: { backgroundColor: palette.aoBlue, padding: 1 },
 };
 
+const clickShit = (input) => {
+  console.log(input);
+};
+
 export const AOGrid = () => {
   return (
     <Box sx={{ flexGrow: 1 }}>
@@ -21,7 +25,9 @@ export const AOGrid = () => {
           {data.parameters.map((parameter) => {
             return (
               <Grid item sm={1} key={parameter}>
-                <Box sx={styling.cell}>{parameter}</Box>
+                <Box sx={styling.cell} onClick={() => clickShit(parameter)}>
+                  {parameter}
+                </Box>
               </Grid>
             );
           })}
@@ -32,7 +38,10 @@ export const AOGrid = () => {
               {data.parameters.map((cell) => {
                 return (
                   <Grid item sm={1} sx={{ my: 2 }} key={cell}>
-                    <Box sx={styling.cell}></Box>
+                    <Box
+                      sx={styling.cell}
+                      onClick={() => clickShit(cell)}
+                    ></Box>
                   </Grid>
                 );
               })}
