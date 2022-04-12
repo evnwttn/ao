@@ -20,6 +20,7 @@ export const NewModalContent = () => {
   const { register, handleSubmit, watch } = useForm({
     defaultValues: {
       sessionTitle: "",
+      parameters: ["title"],
     },
   });
 
@@ -36,7 +37,7 @@ export const NewModalContent = () => {
 
   const onCompleteTracksForm = () => {
     setTracksFormCompleted(true);
-    setFormNumber(0);
+    setFormNumber(1);
     setFormTarget(`parameters`);
   };
 
@@ -62,7 +63,7 @@ export const NewModalContent = () => {
   return (
     <>
       {parametersFormCompleted ? (
-        <Box></Box>
+        <Box>{console.log(aoData)}</Box>
       ) : titleFormCompleted ? (
         <>
           <Box
