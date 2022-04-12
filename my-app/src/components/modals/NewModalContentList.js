@@ -30,6 +30,7 @@ export const NewModalContentList = ({ input, target, onSubmit }) => {
                 parameter !== "title" && (
                   <ListItem
                     key={parameter}
+                    sx={{ bgcolor: palette.aoBlack }}
                     secondaryAction={
                       <IconButton onClick={() => onSubmit(parameter)}>
                         <ClearIcon />
