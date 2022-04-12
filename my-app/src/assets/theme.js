@@ -40,8 +40,11 @@ const aotheme = createTheme({
         root: {
           color: palette.aoRed,
           fontFamily: "Noto Sans",
-          textAlign: "center",
-          marginTop: 1,
+          fontSize: "0.8vw",
+          letterSpacing: "0.125vw",
+          textTransform: "uppercase",
+          fontWeight: "800",
+          lineHeight: "1.66",
         },
       },
     },

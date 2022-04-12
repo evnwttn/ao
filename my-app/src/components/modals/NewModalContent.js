@@ -90,13 +90,12 @@ export const NewModalContent = () => {
               )) ||
                 (formTarget === "parameters" && (
                   <>
-                    Enter the <b sx={{ color: "pink" }}>track parameters</b>
-                    (ie. guitar, bass, mixing) you wish to include in the{" "}
-                    {aoSessionTitle} session. You can always add more later.
+                    Enter the <b>track parameters</b> (ie. guitar, bass, mixing)
+                    you wish to include in the {aoSessionTitle} session. You can
+                    always add more later.
                   </>
                 ))}
             </Box>
-
             <Box
               sx={{
                 p: "2px 4px",
