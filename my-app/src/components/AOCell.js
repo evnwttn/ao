@@ -22,11 +22,8 @@ export const AOCell = (cell) => {
           backgroundColor: cellColour,
           "&:hover": {
             backgroundColor: cellColour === "transparent" && palette.aoGrey,
-            opacity: "0.4",
+            opacity: "0.6",
             cursor: "pointer",
-            // boxShadow:
-            //   cellColour === "transparent" &&
-            //   `-1px 1px 0px 1px ${palette.aoWhite} inset`,
           },
         }}
       ></Box>
