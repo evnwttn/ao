@@ -8,10 +8,9 @@ export const AboutModalContent = () => {
         ...modalCenteredSx,
       }}
     >
-      A VISUAL ALBUM MANAGEMENT TOOLKIT DESIGNED BY &amp; FOR MUSICIANS TO TRACK
-      &amp; MONITOR PROGRESS, FOSTER COLLABORATION AND AID IN THE SMASHING OF
-      GOALS.
-      <Box sx={{ mt: "2rem" }}>
+      A VISUAL ALBUM MANAGEMENT TOOLKIT DESIGNED TO TRACK &amp; MONITOR
+      PROGRESS, FOSTER COLLABORATION AND AID IN THE SMASHING OF GOALS.
+      <Box sx={{ mt: 2 }}>
         TO BEGIN START A <b>NEW</b> PROJECT.
       </Box>
     </Box>

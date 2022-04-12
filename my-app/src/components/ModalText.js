@@ -18,15 +18,15 @@ export const ModalText = ({ prompt }) => {
         transform: "translate(-50%, -50%)",
         width: "33%",
         boxShadow: "0px 0px 50pt rbg(0 0 0 / 0.16)",
-        p: 4,
+        p: "2.75vw",
       }}
     >
       <Box
         sx={{
           ...logoSx,
           color: palette.aoRed,
-          fontSize: "2.5rem",
-          my: 0.5,
+          fontSize: "3vw",
+          mb: 0.5,
         }}
       >
         ꜵ

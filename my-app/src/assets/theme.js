@@ -110,10 +110,10 @@ export const logoSx = {
 };
 
 export const modalFontSx = {
-  textTransform: "uppercase",
-  fontSize: "0.75rem",
-  letterSpacing: "0.03333vw",
   fontFamily: "Noto Sans",
+  fontSize: "0.8vw",
+  letterSpacing: "0.125vw",
+  textTransform: "uppercase",
   fontWeight: "400",
   lineHeight: "1.66",
   color: palette.aoWhite,
