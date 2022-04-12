@@ -26,16 +26,18 @@ export const NewModalContentList = ({ input, target, onSubmit }) => {
           : input.parameters &&
             input.parameters.map((parameter) => {
               return (
-                <ListItem
-                  key={parameter}
-                  secondaryAction={
-                    <IconButton onClick={() => onSubmit(parameter)}>
-                      <ClearIcon />
-                    </IconButton>
-                  }
-                >
-                  <ListItemText primary={parameter} />
-                </ListItem>
+                parameter !== "title" && (
+                  <ListItem
+                    key={parameter}
+                    secondaryAction={
+                      <IconButton onClick={() => onSubmit(parameter)}>
+                        <ClearIcon />
+                      </IconButton>
+                    }
+                  >
+                    <ListItemText primary={parameter} />
+                  </ListItem>
+                )
               );
             })}
       </List>
