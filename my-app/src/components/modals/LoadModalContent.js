@@ -8,26 +8,30 @@ import {
   ListItemText,
 } from "@mui/material";
 import ArrowRightIcon from "@mui/icons-material/ArrowRight";
-import SendIcon from "@mui/icons-material/Send";
 
 export const LoadModalContent = () => {
   return (
-    <Box sx={{ width: "100%" }}>
-      <nav aria-label="load session">
-        <List>
-          <ListItem disablePadding>
-            <ListItemButton>
-              <ListItemIcon>
-                <ArrowRightIcon />
-              </ListItemIcon>
-              <ListItemText primary="Session I" />
-            </ListItemButton>
-          </ListItem>
-        </List>
-        <Box>
-          <SendIcon sx={{ my: 0.5 }} />
-        </Box>
-      </nav>
+    <Box sx={{ mx: 2, width: "85%" }}>
+      <List>
+        <ListItem disablePadding>
+          <ListItemButton
+            sx={{
+              "&:hover": {
+                background: "transparent",
+                opacity: "0.6",
+                cursor: "pointer",
+              },
+            }}
+            disableRipple
+          >
+            <ListItemIcon>
+              <ArrowRightIcon />
+            </ListItemIcon>
+            <ListItemText primary="Session I" />
+          </ListItemButton>
+        </ListItem>
+      </List>
+      <Box></Box>
     </Box>
   );
 };
