@@ -5,12 +5,8 @@ import SendIcon from "@mui/icons-material/Send";
 import { modalCenteredSx } from "../../assets/theme";
 
 export const ContactModalContent = () => {
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm();
-  const onSubmit = (data) => console.log(errors);
+  const { register, handleSubmit } = useForm();
+  const onSubmit = (data) => console.log(data);
 
   return (
     <Box
@@ -24,27 +20,28 @@ export const ContactModalContent = () => {
         placeholder="Name"
         variant="standard"
         margin="normal"
-        sx={{ width: "75%" }}
+        sx={{ width: "85%" }}
         {...register("Name", {})}
       />
       <TextField
         placeholder="Email Address"
         variant="standard"
         margin="normal"
-        sx={{ width: "75%" }}
+        sx={{ width: "85%" }}
         {...register("Email Address", {})}
       />
       <TextField
         placeholder="Message"
         variant="standard"
         margin="normal"
-        sx={{ width: "75%" }}
+        sx={{ width: "85%" }}
         {...register("Message", {})}
       />
       <IconButton disableRipple sx={{ cursor: "default" }} type="submit">
         <SendIcon
           sx={{
-            ml: "1125%",
+            ml: "25vw",
+            mt: "1vh",
           }}
         />
       </IconButton>
