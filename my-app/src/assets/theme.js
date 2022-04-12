@@ -44,7 +44,6 @@ const aotheme = createTheme({
           letterSpacing: "0.125vw",
           textTransform: "uppercase",
           fontWeight: "800",
-          lineHeight: "1.66",
         },
       },
     },
