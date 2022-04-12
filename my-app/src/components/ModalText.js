@@ -32,18 +32,12 @@ export const ModalText = ({ prompt }) => {
         ꜵ
       </Box>
       <Divider variant="middle" style={{ color: palette.aoDivider }} />
-      <br />
-      <>
-        {prompt === "New" ? (
-          <NewModalContent />
-        ) : prompt === "Load" ? (
-          <LoadModalContent />
-        ) : prompt === "About" ? (
-          <AboutModalContent />
-        ) : prompt === "Contact" ? (
-          <ContactModalContent />
-        ) : null}
-      </>
+      <Box sx={{ mt: "5vh" }}>
+        {(prompt === "New" && <NewModalContent />) ||
+          (prompt === "Load" && <LoadModalContent />) ||
+          (prompt === "About" && <AboutModalContent />) ||
+          (prompt === "Contact" && <ContactModalContent />)}
+      </Box>
     </Box>
   );
 };
