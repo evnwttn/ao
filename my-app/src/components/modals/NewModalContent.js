@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Box, TextField, IconButton, Divider } from "@mui/material";
 import { useForm } from "react-hook-form";
+import { palette } from "../../assets/theme";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import AddCircleIcon from "@mui/icons-material/AddCircle";
 import { NewModalContentList } from "./NewModalContentList";
@@ -73,8 +74,29 @@ export const NewModalContent = () => {
             }}
             onSubmit={handleSubmit(onSubmit)}
           >
-            Enter the names of {formTarget} you wish to include in the{" "}
-            {aoSessionTitle} session. You can always add more later.
+            <Box
+              sx={{
+                flexDirection: "row",
+                "b, strong": {
+                  color: palette.aoRed,
+                },
+              }}
+            >
+              {(formTarget === "tracks" && (
+                <>
+                  Enter the <b>track titles</b> you wish to include in the{" "}
+                  {aoSessionTitle} session. You can always add more later.
+                </>
+              )) ||
+                (formTarget === "parameters" && (
+                  <>
+                    Enter the <b sx={{ color: "pink" }}>track parameters</b>
+                    (ie. guitar, bass, mixing) you wish to include in the{" "}
+                    {aoSessionTitle} session. You can always add more later.
+                  </>
+                ))}
+            </Box>
+
             <Box
               sx={{
                 p: "2px 4px",
