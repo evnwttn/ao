@@ -6,13 +6,14 @@ import { modalCenteredSx } from "../../assets/theme";
 export const NewModalContentList = ({ input, target, onSubmit }) => {
   return (
     <Box sx={{ ...modalCenteredSx, my: 1 }}>
-      <List sx={{ width: "85%", bgcolor: palette.aoBlack }}>
+      <List sx={{ width: "85%" }}>
         {target !== `parameters`
           ? input.tracks &&
             input.tracks.map((track) => {
               return (
                 <ListItem
                   key={track}
+                  sx={{ bgcolor: palette.aoBlack }}
                   secondaryAction={
                     <IconButton onClick={() => onSubmit(track)}>
                       <ClearIcon />
