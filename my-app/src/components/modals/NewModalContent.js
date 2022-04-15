@@ -42,10 +42,6 @@ export const NewModalContent = () => {
     setFormTarget(`parameters`);
   };
 
-  const onCompleteParametersForm = () => {
-    setParametersFormCompleted(true);
-  };
-
   const onRemove = (data, title) => {
     formTarget === "tracks"
       ? setAoData({
@@ -121,7 +117,7 @@ export const NewModalContent = () => {
                 sx={{ p: "10px", ml: 1 }}
                 onClick={() => {
                   tracksFormCompleted
-                    ? onCompleteParametersForm()
+                    ? setParametersFormCompleted(true)
                     : onCompleteTracksForm();
                 }}
               >
