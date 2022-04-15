@@ -78,19 +78,18 @@ export const NewModalContent = () => {
                 },
               }}
             >
-              {(formTarget === "tracks" && (
+              {formTarget === "tracks" ? (
                 <>
                   Enter the <b>track titles</b> you wish to include in the{" "}
                   {aoSessionTitle} session. You can always add more later.
                 </>
-              )) ||
-                (formTarget === "parameters" && (
-                  <>
-                    Enter the <b>track parameters</b> (ie. guitar, bass, mixing)
-                    you wish to include in the {aoSessionTitle} session. You can
-                    always add more later.
-                  </>
-                ))}
+              ) : (
+                <>
+                  Enter the <b>session parameters</b> (ie. guitar, bass, mixing)
+                  you wish to include in the {aoSessionTitle} session. You can
+                  always add more later.
+                </>
+              )}
             </Box>
             <Box
               sx={{
