@@ -45,14 +45,14 @@ export const NewModalContent = () => {
   const onRemove = (data, title) => {
     formTarget === "tracks"
       ? setAoData({
-          tracks: aoData.tracks.filter((e) => {
-            return e !== title && e;
+          tracks: aoData.tracks.filter((parameter) => {
+            return parameter !== title && parameter;
           }),
         })
       : formTarget === "parameters" &&
         setAoData({
-          parameters: aoData.parameters.filter((e) => {
-            return e !== title && e;
+          parameters: aoData.parameters.filter((parameter) => {
+            return parameter !== title && parameter;
           }),
         });
   };
