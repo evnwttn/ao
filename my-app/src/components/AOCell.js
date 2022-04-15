@@ -6,12 +6,21 @@ export const AOCell = (cell) => {
   const [cellColour, toggleCellColour] = useState("transparent");
 
   const handleCellClick = (input) => {
-    cellColour === palette.aoBlue && toggleCellColour("transparent");
-    cellColour === "transparent" && toggleCellColour(palette.aoGrey);
-    cellColour === palette.aoGrey && toggleCellColour(palette.aoYellow);
-    cellColour === palette.aoYellow && toggleCellColour(palette.aoBlue);
-
-    console.log(input);
+    switch (cellColour) {
+      case palette.aoBlue:
+        toggleCellColour("transparent");
+        break;
+      case "transparent":
+        toggleCellColour(palette.aoGrey);
+        break;
+      case palette.aoGrey:
+        toggleCellColour(palette.aoYellow);
+        break;
+      case palette.aoYellow:
+        toggleCellColour(palette.aoBlue);
+        break;
+      default:
+    }
   };
 
   return (
