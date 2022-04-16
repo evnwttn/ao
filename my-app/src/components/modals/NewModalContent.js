@@ -42,6 +42,10 @@ export const NewModalContent = () => {
     setFormTarget(`parameters`);
   };
 
+  // onRemove filters through, and removes an element from
+  // the track title or session parameter arrays generated
+  // by user input (AoData.tracks/parameters)
+
   const onRemove = (data, title) => {
     formTarget === "tracks"
       ? setAoData({
