@@ -7,7 +7,7 @@ export const NewModalContentList = ({ input, target, onSubmit }) => {
   return (
     <Box sx={{ ...modalCenteredSx, my: 1 }}>
       <List sx={{ width: "85%" }}>
-        {target !== `parameters`
+        {target === `tracks`
           ? input.tracks &&
             input.tracks.map((track) => {
               return (
