@@ -35,6 +35,14 @@ const aotheme = createTheme({
     },
   },
   components: {
+    MuiPopover: {
+      styleOverrides: {
+        paper: {
+          background: "none",
+          boxShadow: "none",
+        },
+      },
+    },
     MuiFormHelperText: {
       styleOverrides: {
         root: {
