@@ -1,5 +1,4 @@
 import { Box } from "@mui/system";
-import { palette } from "../assets/theme";
 
 export const AOColourWheel = (cellColour) => {
   return (
