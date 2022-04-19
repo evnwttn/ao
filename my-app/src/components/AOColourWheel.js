@@ -7,10 +7,7 @@ const Wheel = (props) => {
       {/* TOP LEFT // YELLOW */}
       <SvgIcon
         sx={{
-          width: "10vw",
-          height: "10vw",
           transform: "rotate(270deg)",
-          transformOrigin: "150% 150%",
         }}
       >
         <svg color={palette.aoYellow} preserveAspectRatio="none">
@@ -18,7 +15,7 @@ const Wheel = (props) => {
         </svg>
       </SvgIcon>
       {/* TOP RIGHT // BLUE */}
-      <SvgIcon sx={{ width: "10vw", height: "10vw" }}>
+      <SvgIcon>
         <svg color={palette.aoBlue} preserveAspectRatio="none">
           <path d="M21.95,11L19.938,11C19.482,7.386 16.614,4.518 13,4.062L13,2.049C17.714,2.524 21.476,6.286 21.95,11Z" />
         </svg>
