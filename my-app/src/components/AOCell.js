@@ -5,7 +5,7 @@ import { palette, cellSx } from "../assets/theme";
 export const AOCell = (cell) => {
   const [cellColour, toggleCellColour] = useState("transparent");
 
-  const handleCellClick = (input) => {
+  const handleCellClick = () => {
     switch (cellColour) {
       case palette.aoBlue:
         toggleCellColour("transparent");
