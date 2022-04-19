@@ -55,11 +55,17 @@ export const AOCell = (cell) => {
         anchorEl={anchorEl}
         onClose={handleClose}
         anchorOrigin={{
-          vertical: "bottom",
-          horizontal: "left",
+          vertical: "center",
+          horizontal: "center",
+        }}
+        transformOrigin={{
+          vertical: "center",
+          horizontal: "center",
         }}
       >
-        <Box sx={{ backgroundColor: cellColour }}>YOYO</Box>
+        <Box
+          sx={{ width: "50px", height: "50px", backgroundColor: cellColour }}
+        ></Box>
       </Popover>
     </>
   );
