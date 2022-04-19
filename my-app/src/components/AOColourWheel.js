@@ -10,6 +10,7 @@ const Wheel = (props) => {
           width: "10vw",
           height: "10vw",
           transform: "rotate(270deg)",
+          transformOrigin: "150% 150%",
         }}
       >
         <svg color={palette.aoYellow} preserveAspectRatio="none">
