@@ -14,7 +14,13 @@ const Wheel = (props) => {
 export const AOColourWheel = (cellColour) => {
   return (
     <>
-      <Wheel sx={{ color: cellColour.cellColour }} />
+      <Wheel
+        sx={{
+          color: cellColour.cellColour,
+          background: "green",
+          height: "100%",
+        }}
+      />
     </>
   );
 };
