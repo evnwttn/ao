@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+import { AOColourWheel } from "./AOColourWheel";
 import { Box, Grid, Popover } from "@mui/material/";
 import { palette, cellSx } from "../assets/theme";
 
@@ -63,9 +64,7 @@ export const AOCell = (cell) => {
           horizontal: "center",
         }}
       >
-        <Box
-          sx={{ width: "50px", height: "50px", backgroundColor: cellColour }}
-        ></Box>
+        <AOColourWheel cellColour={cellColour} />
       </Popover>
     </>
   );
