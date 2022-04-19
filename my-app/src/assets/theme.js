@@ -71,6 +71,7 @@ const aotheme = createTheme({
     MuiSvgIcon: {
       styleOverrides: {
         root: {
+          display: "inline-flex",
           color: palette.aoWhite,
           "&:hover": {
             background: "none",
