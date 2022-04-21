@@ -13,24 +13,24 @@ const wheelData = {
   ],
 };
 
-const Build = () => {
+const Wheel = () => {
   return (
     <>
       {
         (wheelData.topRow &&
           wheelData.topRow.map((row) => {
-            return <Box>{console.log(`top row : ${row}`)}</Box>;
+            return <Box>{console.log(row)}</Box>;
           }),
         wheelData.bottomRow &&
           wheelData.bottomRow.map((row) => {
-            return <Box>{console.log(`bottom row : ${row}`)}</Box>;
+            return <Box>{console.log(row)}</Box>;
           }))
       }
     </>
   );
 };
 
-const Wheel = () => {
+const OGBuild = () => {
   return (
     <>
       <Box>
