@@ -2,14 +2,25 @@ import SvgIcon from "@mui/material/SvgIcon";
 import { Box } from "@mui/system";
 import { palette } from "../assets/theme";
 
-const wheelData = [
-  [
+const wheelData = {
+  topRow: [
     { id: "yellow", color: palette.aoYellow, rotate: "rotate(270deg)" },
     { id: "blue", color: palette.aoBlue },
+  ],
+  bottomRow: [
     { id: "grey", color: palette.aoGrey, rotate: "rotate(180deg)" },
     { id: "empty", color: "transparent", rotate: "rotate(90deg)" },
   ],
-];
+};
+
+const Build = () => {
+  return (
+    <>
+      <Box></Box>
+      <Box></Box>
+    </>
+  );
+};
 
 const Wheel = () => {
   return (
