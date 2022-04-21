@@ -16,10 +16,16 @@ const wheelData = {
 const Build = () => {
   return (
     <>
-      {wheelData.topRow &&
-        wheelData.topRow.map((row) => {
-          return <Box>{console.log(row)}</Box>;
-        })}
+      {
+        (wheelData.topRow &&
+          wheelData.topRow.map((row) => {
+            return <Box>{console.log(`top row : ${row}`)}</Box>;
+          }),
+        wheelData.bottomRow &&
+          wheelData.bottomRow.map((row) => {
+            return <Box>{console.log(`bottom row : ${row}`)}</Box>;
+          }))
+      }
     </>
   );
 };
