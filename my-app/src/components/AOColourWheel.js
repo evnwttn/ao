@@ -2,7 +2,7 @@ import SvgIcon from "@mui/material/SvgIcon";
 import { Box } from "@mui/system";
 import { palette } from "../assets/theme";
 
-const Wheel = (props) => {
+const Wheel = () => {
   return (
     <>
       <Box>
@@ -10,7 +10,8 @@ const Wheel = (props) => {
           id="yellow"
           viewBox="10 -10 24 24"
           sx={{
-            backgroundColor: "black",
+            height: "10vw",
+            width: "10vw",
             transform: "rotate(270deg)",
             color: palette.aoYellow,
           }}
@@ -22,7 +23,11 @@ const Wheel = (props) => {
         <SvgIcon
           id="blue"
           viewBox="10 -10 24 24"
-          sx={{ backgroundColor: "black", color: palette.aoBlue }}
+          sx={{
+            color: palette.aoBlue,
+            height: "10vw",
+            width: "10vw",
+          }}
         >
           <svg>
             <path d="M5.95,11L19.938,11C19.482,7.386 16.614,4.518 13,4.062L13,2.049C17.714,2.524 21.476,6.286 21.95,11Z" />
@@ -35,8 +40,9 @@ const Wheel = (props) => {
           viewBox="10 -10 24 24"
           sx={{
             transform: "rotate(180deg)",
-            backgroundColor: "black",
             color: palette.aoGrey,
+            height: "10vw",
+            width: "10vw",
           }}
         >
           <svg>
@@ -48,8 +54,9 @@ const Wheel = (props) => {
           viewBox="10 -10 24 24"
           sx={{
             transform: "rotate(90deg)",
-            backgroundColor: "black",
             color: "transparent",
+            height: "10vw",
+            width: "10vw",
           }}
         >
           <svg>
