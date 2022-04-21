@@ -19,11 +19,23 @@ const Wheel = () => {
       {
         (wheelData.topRow &&
           wheelData.topRow.map((row) => {
-            return <Box>{console.log(row)}</Box>;
+            return (
+              <Box>
+                {[row].map((spoke) => {
+                  return console.log(spoke);
+                })}
+              </Box>
+            );
           }),
         wheelData.bottomRow &&
           wheelData.bottomRow.map((row) => {
-            return <Box>{console.log(row)}</Box>;
+            return (
+              <Box>
+                {[row].map((spoke) => {
+                  return console.log(spoke);
+                })}
+              </Box>
+            );
           }))
       }
     </>
