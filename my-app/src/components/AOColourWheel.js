@@ -2,6 +2,15 @@ import SvgIcon from "@mui/material/SvgIcon";
 import { Box } from "@mui/system";
 import { palette } from "../assets/theme";
 
+const wheelData = [
+  [
+    { colour: "yellow", classes: "" },
+    { colour: "blue", classes: "" },
+    { colour: "grey", classes: "" },
+    { colour: "empty", classes: "" },
+  ],
+];
+
 const Wheel = () => {
   return (
     <>
