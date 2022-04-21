@@ -6,27 +6,32 @@ const Wheel = (props) => {
   return (
     <>
       <Box>
-        {/* TOP LEFT // YELLOW */}
         <SvgIcon
+          id="yellow"
+          viewBox="10 -10 24 24"
           sx={{
             backgroundColor: "black",
             transform: "rotate(270deg)",
+            color: palette.aoYellow,
           }}
         >
-          <svg viewBox="10 -10 24 24" color={palette.aoYellow}>
+          <svg>
             <path d="M5.95 11h13.988A8.023 8.023 0 0 0 13 4.062V2.049c4.714.475 8.476 4.237 8.95 8.951Z" />
           </svg>
         </SvgIcon>
-        {/* TOP RIGHT // BLUE */}
-        <SvgIcon sx={{ backgroundColor: "black" }}>
-          <svg viewBox="10 -10 24 24" color={palette.aoBlue}>
+        <SvgIcon
+          id="blue"
+          viewBox="10 -10 24 24"
+          sx={{ backgroundColor: "black", color: palette.aoBlue }}
+        >
+          <svg>
             <path d="M21.95,11L19.938,11C19.482,7.386 16.614,4.518 13,4.062L13,2.049C17.714,2.524 21.476,6.286 21.95,11Z" />
           </svg>
         </SvgIcon>
       </Box>
       <Box>
         <SvgIcon
-          id="bottom-left-grey"
+          id="grey"
           viewBox="10 -10 24 24"
           sx={{
             transform: "rotate(180deg)",
@@ -39,7 +44,7 @@ const Wheel = (props) => {
           </svg>
         </SvgIcon>
         <SvgIcon
-          id="bottom-right-transparent"
+          id="transparent"
           viewBox="10 -10 24 24"
           sx={{
             transform: "rotate(90deg)",
