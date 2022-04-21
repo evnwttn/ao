@@ -4,12 +4,12 @@ import { palette } from "../assets/theme";
 
 const wheelData = {
   topRow: [
-    { id: "yellow", color: palette.aoYellow, rotate: "rotate(270deg)" },
-    { id: "blue", color: palette.aoBlue },
+    { key: "yellow", color: palette.aoYellow, rotate: "rotate(270deg)" },
+    { key: "blue", color: palette.aoBlue },
   ],
   bottomRow: [
-    { id: "grey", color: palette.aoGrey, rotate: "rotate(180deg)" },
-    { id: "empty", color: "transparent", rotate: "rotate(90deg)" },
+    { key: "grey", color: palette.aoGrey, rotate: "rotate(180deg)" },
+    { key: "empty", color: "transparent", rotate: "rotate(90deg)" },
   ],
 };
 
@@ -19,23 +19,11 @@ const Wheel = () => {
       {
         (wheelData.topRow &&
           wheelData.topRow.map((row) => {
-            return (
-              <Box>
-                {[row].map((spoke) => {
-                  return console.log(spoke);
-                })}
-              </Box>
-            );
+            return console.log(row);
           }),
         wheelData.bottomRow &&
           wheelData.bottomRow.map((row) => {
-            return (
-              <Box>
-                {[row].map((spoke) => {
-                  return console.log(spoke);
-                })}
-              </Box>
-            );
+            return console.log(row);
           }))
       }
     </>
