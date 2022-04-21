@@ -17,8 +17,8 @@ const Build = () => {
   return (
     <>
       {wheelData.topRow &&
-        wheelData.topRow.map((spoke) => {
-          return <>{console.log(spoke)}</>;
+        wheelData.topRow.map((row) => {
+          return <Box>{console.log(row)}</Box>;
         })}
     </>
   );
