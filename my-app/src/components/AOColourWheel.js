@@ -28,9 +28,20 @@ const Wheel = (props) => {
         <SvgIcon
           sx={{
             transform: "rotate(180deg)",
+            backgroundColor: "black",
           }}
         >
-          <svg color={palette.aoRed}>
+          <svg color={palette.aoGrey}>
+            <path d="M5.95 11h13.988A8.023 8.023 0 0 0 13 4.062V2.049c4.714.475 8.476 4.237 8.95 8.951Z" />
+          </svg>
+        </SvgIcon>
+        <SvgIcon
+          sx={{
+            transform: "rotate(90deg)",
+            backgroundColor: "black",
+          }}
+        >
+          <svg color="transparent">
             <path d="M5.95 11h13.988A8.023 8.023 0 0 0 13 4.062V2.049c4.714.475 8.476 4.237 8.95 8.951Z" />
           </svg>
         </SvgIcon>
