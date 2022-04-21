@@ -4,10 +4,10 @@ import { palette } from "../assets/theme";
 
 const wheelData = [
   [
-    { colour: "yellow", classes: "" },
-    { colour: "blue", classes: "" },
-    { colour: "grey", classes: "" },
-    { colour: "empty", classes: "" },
+    { id: "yellow", color: palette.aoYellow, rotate: "rotate(270deg)" },
+    { id: "blue", color: palette.aoBlue },
+    { id: "grey", color: palette.aoGrey, rotate: "rotate(180deg)" },
+    { id: "empty", color: "transparent", rotate: "rotate(90deg)" },
   ],
 ];
 
