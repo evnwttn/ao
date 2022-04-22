@@ -2,31 +2,33 @@ import SvgIcon from "@mui/material/SvgIcon";
 import { Box } from "@mui/system";
 import { palette } from "../assets/theme";
 
-const wheelData = {
-  topRow: [
-    { key: "yellow", color: palette.aoYellow, rotate: "rotate(270deg)" },
-    { key: "blue", color: palette.aoBlue },
-  ],
-  bottomRow: [
-    { key: "grey", color: palette.aoGrey, rotate: "rotate(180deg)" },
-    { key: "empty", color: "transparent", rotate: "rotate(90deg)" },
-  ],
-};
+// const wheelData = {
+//   topRow: [
+//     { key: "yellow", color: palette.aoYellow, rotate: "rotate(270deg)" },
+//     { key: "blue", color: palette.aoBlue },
+//   ],
+//   bottomRow: [
+//     { key: "grey", color: palette.aoGrey, rotate: "rotate(180deg)" },
+//     { key: "empty", color: "transparent", rotate: "rotate(90deg)" },
+//   ],
+// };
 
-const Wheel = () => {
+const Spoke = (spoke, color, transform) => {
   return (
-    <>
-      {
-        (wheelData.topRow &&
-          wheelData.topRow.map((row) => {
-            return console.log(row);
-          }),
-        wheelData.bottomRow &&
-          wheelData.bottomRow.map((row) => {
-            return console.log(row);
-          }))
-      }
-    </>
+    <SvgIcon
+      key={spoke}
+      viewBox="10 -10 24 24"
+      sx={{
+        height: "10vw",
+        width: "10vw",
+        transform: transform,
+        color: color,
+      }}
+    >
+      <svg>
+        <path d="M5.95 11h13.988A8.023 8.023 0 0 0 13 4.062V2.049c4.714.475 8.476 4.237 8.95 8.951Z" />
+      </svg>
+    </SvgIcon>
   );
 };
 
