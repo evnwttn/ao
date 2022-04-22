@@ -1,7 +1,6 @@
 import SvgIcon from "@mui/material/SvgIcon";
-import { palette } from "../assets/theme";
 
-const Spoke = (spoke) => {
+export const AOSpoke = (spoke) => {
   return (
     <SvgIcon
       id={spoke.id}
