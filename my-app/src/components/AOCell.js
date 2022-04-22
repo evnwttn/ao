@@ -10,21 +10,6 @@ export const AOCell = (cell) => {
 
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
-    switch (cellColour) {
-      case palette.aoBlue:
-        toggleCellColour("transparent");
-        break;
-      case "transparent":
-        toggleCellColour(palette.aoGrey);
-        break;
-      case palette.aoGrey:
-        toggleCellColour(palette.aoYellow);
-        break;
-      case palette.aoYellow:
-        toggleCellColour(palette.aoBlue);
-        break;
-      default:
-    }
   };
 
   const handleClose = () => {

@@ -2,7 +2,7 @@ import { Box } from "@mui/system";
 import { palette } from "../assets/theme";
 import { AOSpoke } from "./AOSpoke";
 
-export const AOColourWheel = () => {
+export const AOColourWheel = (cellColour) => {
   return (
     <>
       <Box>
