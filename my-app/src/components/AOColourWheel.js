@@ -16,13 +16,13 @@ import { palette } from "../assets/theme";
 const Spoke = (spoke, color, transform) => {
   return (
     <SvgIcon
-      key={spoke}
+      key={spoke.spoke}
       viewBox="10 -10 24 24"
       sx={{
         height: "10vw",
         width: "10vw",
-        transform: transform,
-        color: color,
+        transform: spoke.transform,
+        color: spoke.color,
       }}
     >
       <svg>
@@ -32,68 +32,17 @@ const Spoke = (spoke, color, transform) => {
   );
 };
 
-const OGBuild = () => {
+const Wheel = () => {
   return (
     <>
       <Box>
-        <SvgIcon
-          id="yellow"
-          viewBox="10 -10 24 24"
-          sx={{
-            height: "10vw",
-            width: "10vw",
-            transform: "rotate(270deg)",
-            color: palette.aoYellow,
-          }}
-        >
-          <svg>
-            <path d="M5.95 11h13.988A8.023 8.023 0 0 0 13 4.062V2.049c4.714.475 8.476 4.237 8.95 8.951Z" />
-          </svg>
-        </SvgIcon>
-        <SvgIcon
-          id="blue"
-          viewBox="10 -10 24 24"
-          sx={{
-            color: palette.aoBlue,
-            height: "10vw",
-            width: "10vw",
-          }}
-        >
-          <svg>
-            <path d="M5.95,11L19.938,11C19.482,7.386 16.614,4.518 13,4.062L13,2.049C17.714,2.524 21.476,6.286 21.95,11Z" />
-          </svg>
-        </SvgIcon>
+        <Spoke
+          spoke="yellow"
+          color={palette.aoYellow}
+          transform="rotate(270deg)"
+        />
       </Box>
-      <Box>
-        <SvgIcon
-          id="grey"
-          viewBox="10 -10 24 24"
-          sx={{
-            transform: "rotate(180deg)",
-            color: palette.aoGrey,
-            height: "10vw",
-            width: "10vw",
-          }}
-        >
-          <svg>
-            <path d="M5.95 11h13.988A8.023 8.023 0 0 0 13 4.062V2.049c4.714.475 8.476 4.237 8.95 8.951Z" />
-          </svg>
-        </SvgIcon>
-        <SvgIcon
-          id="transparent"
-          viewBox="10 -10 24 24"
-          sx={{
-            transform: "rotate(90deg)",
-            color: "transparent",
-            height: "10vw",
-            width: "10vw",
-          }}
-        >
-          <svg>
-            <path d="M5.95 11h13.988A8.023 8.023 0 0 0 13 4.062V2.049c4.714.475 8.476 4.237 8.95 8.951Z" />
-          </svg>
-        </SvgIcon>
-      </Box>
+      <Box></Box>
     </>
   );
 };
@@ -101,3 +50,69 @@ const OGBuild = () => {
 export const AOColourWheel = (cellColour) => {
   return <Wheel />;
 };
+
+// const OGBuild = () => {
+//   return (
+//     <>
+//       <Box>
+//         <SvgIcon
+//           id="yellow"
+//           viewBox="10 -10 24 24"
+//           sx={{
+//             height: "10vw",
+//             width: "10vw",
+//             transform: "rotate(270deg)",
+//             color: palette.aoYellow,
+//           }}
+//         >
+//           <svg>
+//             <path d="M5.95 11h13.988A8.023 8.023 0 0 0 13 4.062V2.049c4.714.475 8.476 4.237 8.95 8.951Z" />
+//           </svg>
+//         </SvgIcon>
+//         <SvgIcon
+//           id="blue"
+//           viewBox="10 -10 24 24"
+//           sx={{
+//             color: palette.aoBlue,
+//             height: "10vw",
+//             width: "10vw",
+//           }}
+//         >
+//           <svg>
+//             <path d="M5.95,11L19.938,11C19.482,7.386 16.614,4.518 13,4.062L13,2.049C17.714,2.524 21.476,6.286 21.95,11Z" />
+//           </svg>
+//         </SvgIcon>
+//       </Box>
+//       <Box>
+//         <SvgIcon
+//           id="grey"
+//           viewBox="10 -10 24 24"
+//           sx={{
+//             transform: "rotate(180deg)",
+//             color: palette.aoGrey,
+//             height: "10vw",
+//             width: "10vw",
+//           }}
+//         >
+//           <svg>
+//             <path d="M5.95 11h13.988A8.023 8.023 0 0 0 13 4.062V2.049c4.714.475 8.476 4.237 8.95 8.951Z" />
+//           </svg>
+//         </SvgIcon>
+//         <SvgIcon
+//           id="transparent"
+//           viewBox="10 -10 24 24"
+//           sx={{
+//             transform: "rotate(90deg)",
+//             color: "transparent",
+//             height: "10vw",
+//             width: "10vw",
+//           }}
+//         >
+//           <svg>
+//             <path d="M5.95 11h13.988A8.023 8.023 0 0 0 13 4.062V2.049c4.714.475 8.476 4.237 8.95 8.951Z" />
+//           </svg>
+//         </SvgIcon>
+//       </Box>
+//     </>
+//   );
+// };
