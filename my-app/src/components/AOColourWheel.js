@@ -5,6 +5,7 @@ import { palette } from "../assets/theme";
 const Spoke = (spoke) => {
   return (
     <SvgIcon
+      id={spoke.id}
       viewBox="10 -10 24 24"
       sx={{
         height: "10vw",
@@ -24,12 +25,16 @@ export const AOColourWheel = () => {
   return (
     <>
       <Box>
-        <Spoke color={palette.aoYellow} transform="rotate(270deg)" />
-        <Spoke color={palette.aoBlue} transform="none" />
+        <Spoke
+          id="yellow"
+          color={palette.aoYellow}
+          transform="rotate(270deg)"
+        />
+        <Spoke id="blue" color={palette.aoBlue} transform="none" />
       </Box>
       <Box>
-        <Spoke color={palette.aoGrey} transform="rotate(180deg)" />
-        <Spoke color="transparent" transform="rotate(90deg)" />
+        <Spoke id="grey" color={palette.aoGrey} transform="rotate(180deg)" />
+        <Spoke id="empty" color="transparent" transform="rotate(90deg)" />
       </Box>
     </>
   );
