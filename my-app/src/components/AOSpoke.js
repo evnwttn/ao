@@ -6,11 +6,13 @@ export const AOSpoke = (spoke) => {
       sx={{
         display: "inline-flex",
         svg: {
-          pointerEvents: "auto",
-          "&:hover": {
-            background: "none",
-            opacity: "0.6",
-            cursor: "pointer",
+          pointerEvents: "none",
+          path: {
+            pointerEvents: "auto",
+            "&:hover": {
+              opacity: "0.6",
+              cursor: "pointer",
+            },
           },
         },
       }}
