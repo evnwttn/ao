@@ -8,7 +8,6 @@ export const AOSpoke = (spoke) => {
       }}
     >
       <svg
-        height="10em"
         width="10em"
         fill={spoke.color}
         transform={spoke.transform}

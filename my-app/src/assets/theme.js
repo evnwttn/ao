@@ -38,8 +38,15 @@ const aotheme = createTheme({
     MuiPopover: {
       styleOverrides: {
         paper: {
-          background: "none",
+          backgroundColor: "pink",
+          color: "none",
           boxShadow: "none",
+          minHeight: "none",
+          minWidth: "none",
+          maxheight: "none",
+          maxWidth: "none",
+          borderRadius: "none",
+          pointerEvents: "none",
         },
       },
     },
