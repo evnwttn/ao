@@ -1,11 +1,10 @@
 import React from "react";
-import { useState } from "react";
 import { AOColourWheel } from "./AOColourWheel";
 import { Box, Grid, Popover } from "@mui/material/";
 import { palette, cellSx } from "../assets/theme";
 
 export const AOCell = (cell) => {
-  const [cellColour, toggleCellColour] = useState("transparent");
+  const cellColour = "transparent";
   const [anchorEl, setAnchorEl] = React.useState(null);
 
   const handleClick = (event) => {
