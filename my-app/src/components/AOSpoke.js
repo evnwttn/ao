@@ -5,14 +5,12 @@ export const AOSpoke = (spoke) => {
     <Box
       sx={{
         display: "inline-flex",
-        svg: {
-          fill: spoke.color,
-        },
       }}
     >
       <svg
         height="10em"
         width="10em"
+        fill={spoke.color}
         transform={spoke.transform}
         viewBox="10 -10 24 24"
       >
