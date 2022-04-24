@@ -2,8 +2,8 @@ import { Box } from "@mui/system";
 import { palette } from "../assets/theme";
 import { AOSpoke } from "./AOSpoke";
 
-const handleClick = () => {
-  console.log("hello wr0ld");
+const handleClick = (spoke) => {
+  console.log(spoke);
 };
 
 export const AOColourWheel = (cellColour) => {
@@ -16,11 +16,25 @@ export const AOColourWheel = (cellColour) => {
           transform="rotate(270)"
           handleClick={(spoke) => handleClick(spoke)}
         />
-        <AOSpoke id="blue" color={palette.aoBlue} />
+        <AOSpoke
+          spoke={"blue"}
+          color={palette.aoBlue}
+          handleClick={(spoke) => handleClick(spoke)}
+        />
       </Box>
       <Box>
-        <AOSpoke id="grey" color={palette.aoGrey} transform="rotate(180)" />
-        <AOSpoke id="empty" color="transparent" transform="rotate(90)" />
+        <AOSpoke
+          spoke={"grey"}
+          color={palette.aoGrey}
+          transform="rotate(180)"
+          handleClick={(spoke) => handleClick(spoke)}
+        />
+        <AOSpoke
+          spoke={"empty"}
+          color="transparent"
+          transform="rotate(90)"
+          handleClick={(spoke) => handleClick(spoke)}
+        />
       </Box>
     </>
   );
