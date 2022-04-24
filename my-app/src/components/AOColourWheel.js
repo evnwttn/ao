@@ -7,6 +7,7 @@ const handleClick = (spoke) => {
 };
 
 export const AOColourWheel = (cellColour) => {
+  console.log(cellColour);
   return (
     <>
       <Box>
