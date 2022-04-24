@@ -6,16 +6,12 @@ export const AOColourWheel = (cellColour) => {
   return (
     <>
       <Box>
-        <AOSpoke
-          id="yellow"
-          color={palette.aoYellow}
-          transform="rotate(270deg)"
-        />
-        <AOSpoke id="blue" color={palette.aoBlue} transform="none" />
+        <AOSpoke id="yellow" color={palette.aoYellow} transform="rotate(270)" />
+        <AOSpoke id="blue" color={palette.aoBlue} />
       </Box>
       <Box>
-        <AOSpoke id="grey" color={palette.aoGrey} transform="rotate(180deg)" />
-        <AOSpoke id="empty" color="transparent" transform="rotate(90deg)" />
+        <AOSpoke id="grey" color={palette.aoGrey} transform="rotate(180)" />
+        <AOSpoke id="empty" color="transparent" transform="rotate(90)" />
       </Box>
     </>
   );
