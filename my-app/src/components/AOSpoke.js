@@ -5,6 +5,14 @@ export const AOSpoke = (spoke) => {
     <Box
       sx={{
         display: "inline-flex",
+        svg: {
+          pointerEvents: "auto",
+          "&:hover": {
+            background: "none",
+            opacity: "0.6",
+            cursor: "pointer",
+          },
+        },
       }}
     >
       <svg

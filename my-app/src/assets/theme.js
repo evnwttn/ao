@@ -38,7 +38,7 @@ const aotheme = createTheme({
     MuiPopover: {
       styleOverrides: {
         paper: {
-          backgroundColor: "pink",
+          background: "none",
           color: "none",
           boxShadow: "none",
           minHeight: "none",
