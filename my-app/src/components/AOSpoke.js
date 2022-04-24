@@ -1,6 +1,6 @@
 import { Box } from "@mui/system";
 
-export const AOSpoke = (spoke, onClick) => {
+export const AOSpoke = ({ spoke, color, transform, handleClick }) => {
   return (
     <Box
       sx={{
@@ -19,13 +19,12 @@ export const AOSpoke = (spoke, onClick) => {
     >
       <svg
         width="10em"
-        fill={spoke.color}
-        transform={spoke.transform}
+        fill={color}
+        transform={transform}
         viewBox="10 -10 24 24"
       >
         <path
-          id={spoke.id}
-          onClick={(id) => onClick(id)}
+          onClick={() => handleClick(spoke)}
           d="M5.95 11h13.988A8.023 8.023 0 0 0 13 4.062V2.049c4.714.475 8.476 4.237 8.95 8.951Z"
         />
       </svg>
