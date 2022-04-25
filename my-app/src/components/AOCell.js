@@ -17,7 +17,7 @@ export const AOCell = (cell) => {
     setAnchorEl(null);
   };
 
-  const [cellColor, setCellColor] = useState("transparent");
+  const [cellColor, setCellColor] = useState(palette.aoBlack);
 
   return (
     <>
@@ -28,7 +28,7 @@ export const AOCell = (cell) => {
             ...cellSx.cell,
             backgroundColor: cellColor,
             "&:hover": {
-              backgroundColor: cellColor === "transparent" && palette.aoGrey,
+              backgroundColor: cellColor === palette.aoBlack && palette.aoGrey,
               opacity: "0.6",
               cursor: "pointer",
             },
