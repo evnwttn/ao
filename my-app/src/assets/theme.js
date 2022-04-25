@@ -190,7 +190,7 @@ export const spokeSx = {
   display: "inline-flex",
   svg: {
     pointerEvents: "none",
-    filter: "drop-shadow(0 0 2.5vw #000000)",
+    filter: "drop-shadow(0 0 0.75vw rgb(0, 0, 0, 0.25))",
     path: {
       pointerEvents: "auto",
       "&:hover": {
