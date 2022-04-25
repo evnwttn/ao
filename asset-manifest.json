@@ -1,8 +1,7 @@
 {
   "files": {
-    "main.css": "/ao/static/css/main.a5ade3da.css",
-    "main.js": "/ao/static/js/main.f55ea5e3.js",
-    "static/media/highlight.png": "/ao/static/media/highlight.4ba0c8b89aeb79505f8d.png",
+    "main.css": "/ao/static/css/main.43eb339d.css",
+    "main.js": "/ao/static/js/main.2afff5dc.js",
     "static/media/noto-serif-all-400-normal.woff": "/ao/static/media/noto-serif-all-400-normal.cc8d505e17e9106c7bb6.woff",
     "static/media/noto-sans-all-400-normal.woff": "/ao/static/media/noto-sans-all-400-normal.afb599a90ed7f59170de.woff",
     "static/media/noto-serif-latin-ext-400-normal.woff2": "/ao/static/media/noto-serif-latin-ext-400-normal.dacb5b2801ec86ed9cd4.woff2",
@@ -21,11 +20,11 @@
     "static/media/noto-sans-greek-ext-400-normal.woff2": "/ao/static/media/noto-sans-greek-ext-400-normal.58f04cb6d3d3957099d7.woff2",
     "static/media/noto-sans-vietnamese-400-normal.woff2": "/ao/static/media/noto-sans-vietnamese-400-normal.91167afb324428555ec5.woff2",
     "index.html": "/ao/index.html",
-    "main.a5ade3da.css.map": "/ao/static/css/main.a5ade3da.css.map",
-    "main.f55ea5e3.js.map": "/ao/static/js/main.f55ea5e3.js.map"
+    "main.43eb339d.css.map": "/ao/static/css/main.43eb339d.css.map",
+    "main.2afff5dc.js.map": "/ao/static/js/main.2afff5dc.js.map"
   },
   "entrypoints": [
-    "static/css/main.a5ade3da.css",
-    "static/js/main.f55ea5e3.js"
+    "static/css/main.43eb339d.css",
+    "static/js/main.2afff5dc.js"
   ]
 }
