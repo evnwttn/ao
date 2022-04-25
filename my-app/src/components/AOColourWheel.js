@@ -10,12 +10,12 @@ export const AOColourWheel = ({ handleClick }) => {
           spoke={"yellow"}
           color={palette.aoYellow}
           transform="rotate(270)"
-          handleClick={(spoke) => handleClick(spoke)}
+          handleClick={(color) => handleClick(color)}
         />
         <AOSpoke
           spoke={"blue"}
           color={palette.aoBlue}
-          handleClick={(spoke) => handleClick(spoke)}
+          handleClick={(color) => handleClick(color)}
         />
       </Box>
       <Box>
@@ -23,13 +23,13 @@ export const AOColourWheel = ({ handleClick }) => {
           spoke={"grey"}
           color={palette.aoGrey}
           transform="rotate(180)"
-          handleClick={(spoke) => handleClick(spoke)}
+          handleClick={(color) => handleClick(color)}
         />
         <AOSpoke
           spoke={"empty"}
           color="transparent"
           transform="rotate(90)"
-          handleClick={(spoke) => handleClick(spoke)}
+          handleClick={(color) => handleClick(color)}
         />
       </Box>
     </>

@@ -1,11 +1,11 @@
 import React from "react";
+import { useState } from "react";
 import { AOColourWheel } from "./AOColourWheel";
 import { Box, Grid, Popover } from "@mui/material/";
 import { palette, cellSx } from "../assets/theme";
 
 export const AOCell = (cell) => {
   const [anchorEl, setAnchorEl] = React.useState(null);
-  const cellColour = "transparent";
   const open = Boolean(anchorEl);
   const id = open ? "simple-popover" : undefined;
 
@@ -17,8 +17,10 @@ export const AOCell = (cell) => {
     setAnchorEl(null);
   };
 
-  const handleSpokeClick = (spoke) => {
-    console.log(spoke);
+  const [cellColor, setCellColor] = useState("transparent");
+
+  const handleColorChange = (spoke) => {
+    setCellColor(spoke);
   };
 
   return (
@@ -28,9 +30,9 @@ export const AOCell = (cell) => {
           aria-describedby={cell}
           sx={{
             ...cellSx.cell,
-            backgroundColor: cellColour,
+            backgroundColor: cellColor,
             "&:hover": {
-              backgroundColor: cellColour === "transparent" && palette.aoGrey,
+              backgroundColor: cellColor === "transparent" && palette.aoGrey,
               opacity: "0.6",
               cursor: "pointer",
             },
@@ -52,7 +54,7 @@ export const AOCell = (cell) => {
           horizontal: "center",
         }}
       >
-        <AOColourWheel handleClick={(spoke) => handleSpokeClick(spoke)} />
+        <AOColourWheel handleClick={(color) => handleColorChange(color)} />
       </Popover>
     </>
   );
