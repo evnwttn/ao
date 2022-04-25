@@ -2,11 +2,7 @@ import { Box } from "@mui/system";
 import { palette } from "../assets/theme";
 import { AOSpoke } from "./AOSpoke";
 
-const handleClick = (spoke) => {
-  console.log(spoke);
-};
-
-export const AOColourWheel = () => {
+export const AOColourWheel = ({ handleClick }) => {
   return (
     <>
       <Box>

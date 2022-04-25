@@ -4,8 +4,10 @@ import { Box, Grid, Popover } from "@mui/material/";
 import { palette, cellSx } from "../assets/theme";
 
 export const AOCell = (cell) => {
-  const cellColour = "transparent";
   const [anchorEl, setAnchorEl] = React.useState(null);
+  const cellColour = "transparent";
+  const open = Boolean(anchorEl);
+  const id = open ? "simple-popover" : undefined;
 
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
@@ -15,8 +17,9 @@ export const AOCell = (cell) => {
     setAnchorEl(null);
   };
 
-  const open = Boolean(anchorEl);
-  const id = open ? "simple-popover" : undefined;
+  const handleSpokeClick = (spoke) => {
+    console.log(spoke);
+  };
 
   return (
     <>
@@ -49,7 +52,7 @@ export const AOCell = (cell) => {
           horizontal: "center",
         }}
       >
-        <AOColourWheel />
+        <AOColourWheel handleClick={(spoke) => handleSpokeClick(spoke)} />
       </Popover>
     </>
   );
