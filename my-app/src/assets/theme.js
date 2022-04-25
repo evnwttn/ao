@@ -115,6 +115,8 @@ const aotheme = createTheme({
 
 export default aotheme;
 
+// LOGO
+
 export const logoSx = {
   fontFamily: "Noto-Serif",
   textTransform: "lowercase",
@@ -127,6 +129,8 @@ export const logoSx = {
   msUserSelectNone: "none",
   userSelectNone: "none",
 };
+
+// MODALS
 
 export const modalFontSx = {
   fontFamily: "Noto Sans",
@@ -177,5 +181,21 @@ export const cellSx = {
   cell: {
     my: "0.75vh",
     padding: "3.5vh",
+  },
+};
+
+// COLOUR WHEEL
+
+export const spokeSx = {
+  display: "inline-flex",
+  svg: {
+    pointerEvents: "none",
+    path: {
+      pointerEvents: "auto",
+      "&:hover": {
+        opacity: "0.6",
+        cursor: "pointer",
+      },
+    },
   },
 };

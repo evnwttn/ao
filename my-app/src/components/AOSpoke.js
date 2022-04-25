@@ -1,22 +1,9 @@
 import { Box } from "@mui/system";
+import { spokeSx } from "../assets/theme";
 
 export const AOSpoke = ({ spoke, color, transform, handleClick }) => {
   return (
-    <Box
-      sx={{
-        display: "inline-flex",
-        svg: {
-          pointerEvents: "none",
-          path: {
-            pointerEvents: "auto",
-            "&:hover": {
-              opacity: "0.6",
-              cursor: "pointer",
-            },
-          },
-        },
-      }}
-    >
+    <Box sx={{ ...spokeSx }}>
       <svg
         width="10em"
         fill={color}
