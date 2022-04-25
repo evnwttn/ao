@@ -36,7 +36,9 @@ export const AOCell = (cell) => {
         ></Box>
       </Grid>
       <Popover
-        sx={{ backdropFilter: "blur(1.5px)" }}
+        sx={{
+          backdropFilter: "blur(1.5px)",
+        }}
         id={id}
         open={open}
         anchorEl={anchorEl}
