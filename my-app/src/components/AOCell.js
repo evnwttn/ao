@@ -49,7 +49,7 @@ export const AOCell = (cell) => {
           horizontal: "center",
         }}
       >
-        <AOColourWheel cellColour={cellColour} />
+        <AOColourWheel />
       </Popover>
     </>
   );
