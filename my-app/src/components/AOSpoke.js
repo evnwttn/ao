@@ -1,7 +1,7 @@
 import { Box } from "@mui/system";
 import { spokeSx } from "../assets/theme";
 
-export const AOSpoke = ({ spoke, color, transform, handleClick }) => {
+export const AOSpoke = ({ color, transform, handleClick }) => {
   return (
     <Box sx={{ ...spokeSx }}>
       <svg
