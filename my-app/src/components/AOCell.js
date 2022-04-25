@@ -19,10 +19,6 @@ export const AOCell = (cell) => {
 
   const [cellColor, setCellColor] = useState("transparent");
 
-  const handleColorChange = (spoke) => {
-    setCellColor(spoke);
-  };
-
   return (
     <>
       <Grid item sm={1} onClick={handleClick}>
@@ -54,7 +50,7 @@ export const AOCell = (cell) => {
           horizontal: "center",
         }}
       >
-        <AOColourWheel handleClick={(color) => handleColorChange(color)} />
+        <AOColourWheel handleClick={(color) => setCellColor(color)} />
       </Popover>
     </>
   );
