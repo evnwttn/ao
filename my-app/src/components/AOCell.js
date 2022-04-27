@@ -5,6 +5,9 @@ import { Box, Grid, Popover } from "@mui/material/";
 import { palette, cellSx } from "../assets/theme";
 
 export const AOCell = (cell) => {
+  const [cellColor, setCellColor] = useState(palette.aoBlack);
+
+  // FOR POPOVER
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
   const id = open ? "simple-popover" : undefined;
@@ -16,8 +19,6 @@ export const AOCell = (cell) => {
   const handleClose = () => {
     setAnchorEl(null);
   };
-
-  const [cellColor, setCellColor] = useState(palette.aoBlack);
 
   return (
     <>
