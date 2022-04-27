@@ -12,6 +12,7 @@ export const AOSpoke = ({ color, transform, handleClick }) => {
       >
         <path
           onClick={() => handleClick(color)}
+          // RENDER SEMI CIRCLE
           d="M5.95 11h13.988A8.023 8.023 0 0 0 13 4.062V2.049c4.714.475 8.476 4.237 8.95 8.951Z"
         />
       </svg>
