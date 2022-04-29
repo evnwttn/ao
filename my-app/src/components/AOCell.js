@@ -7,7 +7,7 @@ import { palette, cellSx } from "../assets/theme";
 export const AOCell = (cell) => {
   const [cellColor, setCellColor] = useState(palette.aoBlack);
 
-  // FOR POPOVER
+  // HANDLES COLOURWHEEL POPOVER
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
   const id = open ? "simple-popover" : undefined;
