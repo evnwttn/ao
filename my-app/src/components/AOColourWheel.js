@@ -1,10 +1,12 @@
 import { Box } from "@mui/system";
 import { palette } from "../assets/theme";
 import { AOSpoke } from "./AOSpoke";
+import { AOPopoverRadio } from "./AOPopoverRadio";
 
 export const AOColourWheel = ({ handleClick }) => {
   return (
     <>
+      <AOPopoverRadio />
       <Box>
         <AOSpoke
           color={palette.aoYellow}
