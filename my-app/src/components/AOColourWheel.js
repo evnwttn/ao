@@ -5,7 +5,7 @@ import { palette } from "../assets/theme";
 import { AOSpoke } from "./AOSpoke";
 
 export const AOColourWheel = ({ handleClick }) => {
-  const [selectedValue, setSelectedValue] = useState("a");
+  const [selectedValue, setSelectedValue] = useState("1");
 
   const handleChange = (event) => {
     setSelectedValue(event.target.value);
@@ -20,18 +20,14 @@ export const AOColourWheel = ({ handleClick }) => {
         }}
       >
         <Radio
-          checked={selectedValue === "a"}
+          checked={selectedValue === "1"}
           onChange={handleChange}
-          value="a"
-          name="radio-buttons"
-          inputProps={{ "aria-label": "A" }}
+          value="1"
         />
         <Radio
-          checked={selectedValue === "b"}
+          checked={selectedValue === "2"}
           onChange={handleChange}
-          value="b"
-          name="radio-buttons"
-          inputProps={{ "aria-label": "B" }}
+          value="2"
         />
       </Box>
       <Box>
