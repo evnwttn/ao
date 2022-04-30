@@ -1,10 +1,34 @@
+import { useState } from "react";
 import { Box } from "@mui/system";
+import { Radio } from "@mui/material";
 import { palette } from "../assets/theme";
 import { AOSpoke } from "./AOSpoke";
 
 export const AOColourWheel = ({ handleClick }) => {
+  const [selectedValue, setSelectedValue] = useState("a");
+
+  const handleChange = (event) => {
+    setSelectedValue(event.target.value);
+  };
+
   return (
     <>
+      <Box>
+        <Radio
+          checked={selectedValue === "a"}
+          onChange={handleChange}
+          value="a"
+          name="radio-buttons"
+          inputProps={{ "aria-label": "A" }}
+        />
+        <Radio
+          checked={selectedValue === "b"}
+          onChange={handleChange}
+          value="b"
+          name="radio-buttons"
+          inputProps={{ "aria-label": "B" }}
+        />
+      </Box>
       <Box>
         <AOSpoke
           color={palette.aoYellow}
