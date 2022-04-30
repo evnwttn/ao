@@ -1,7 +1,7 @@
 import { AOPopoverRadio } from "./AOPopoverRadio";
 import { AOColorWheel } from "./AOColorWheel";
 
-export const AOColourWheel = ({ handleClick }) => {
+export const AOPopover = ({ handleClick }) => {
   return (
     <>
       <AOPopoverRadio />

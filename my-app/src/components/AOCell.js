@@ -1,8 +1,8 @@
 import React from "react";
 import { useState } from "react";
-import { AOColourWheel } from "./AOColourWheel";
 import { Box, Grid, Popover } from "@mui/material/";
 import { palette, cellSx } from "../assets/theme";
+import { AOPopover } from "./AOPopover";
 
 export const AOCell = (cell) => {
   const [cellColor, setCellColor] = useState(palette.aoBlack);
@@ -55,7 +55,7 @@ export const AOCell = (cell) => {
           horizontal: "center",
         }}
       >
-        <AOColourWheel handleClick={(color) => setCellColor(color)} />
+        <AOPopover handleClick={(color) => setCellColor(color)} />
       </Popover>
     </>
   );
