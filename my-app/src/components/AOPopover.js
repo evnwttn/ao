@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Box } from "@mui/system";
 import { AOPopoverRadio } from "./AOPopoverRadio";
 import { AOColorWheel } from "./AOColorWheel";
 
@@ -10,9 +11,9 @@ export const AOPopover = ({ handleClick }) => {
   };
 
   return (
-    <>
+    <Box>
       <AOPopoverRadio onChange={handleChange} selectedValue={selectedValue} />
       <AOColorWheel handleClick={(color) => handleClick(color)} />
-    </>
+    </Box>
   );
 };
