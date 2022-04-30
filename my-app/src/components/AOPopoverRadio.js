@@ -1,10 +1,10 @@
 import { Radio, Box } from "@mui/material";
 
 export const AOPopoverRadio = ({ onChange, selectedValue }) => {
-  console.log(selectedValue);
   return (
     <Box
       sx={{
+        position: "fixed",
         pointerEvents: "auto",
         "&:hover": { opacity: "0.8", cursor: "pointer" },
       }}

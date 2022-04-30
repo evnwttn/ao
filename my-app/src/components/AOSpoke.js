@@ -6,7 +6,7 @@ export const AOSpoke = ({ color, transform, handleClick }) => {
   return (
     <Box sx={{ ...spokeSx }}>
       <svg
-        width="10em"
+        width="12vw"
         fill={color}
         transform={transform}
         viewBox="10 -10 24 24"
