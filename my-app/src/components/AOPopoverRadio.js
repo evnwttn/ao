@@ -1,31 +1,16 @@
 import { Radio, Box } from "@mui/material";
-import { useState } from "react";
 
-export const AOPopoverRadio = () => {
-  const [selectedValue, setSelectedValue] = useState("1");
-
-  const handleChange = (event) => {
-    setSelectedValue(event.target.value);
-    console.log(selectedValue);
-  };
-
+export const AOPopoverRadio = ({ onChange, selectedValue }) => {
+  console.log(selectedValue);
   return (
     <Box
       sx={{
         pointerEvents: "auto",
-        "&:hover": { opacity: "0.6", cursor: "pointer" },
+        "&:hover": { opacity: "0.8", cursor: "pointer" },
       }}
     >
-      <Radio
-        checked={selectedValue === "1"}
-        onChange={handleChange}
-        value="1"
-      />
-      <Radio
-        checked={selectedValue === "2"}
-        onChange={handleChange}
-        value="2"
-      />
+      <Radio checked={selectedValue === "1"} onChange={onChange} value="1" />
+      <Radio checked={selectedValue === "2"} onChange={onChange} value="2" />
     </Box>
   );
 };
