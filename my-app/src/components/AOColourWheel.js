@@ -13,7 +13,12 @@ export const AOColourWheel = ({ handleClick }) => {
 
   return (
     <>
-      <Box>
+      <Box
+        sx={{
+          pointerEvents: "auto",
+          "&:hover": { opacity: "0.6", cursor: "pointer" },
+        }}
+      >
         <Radio
           checked={selectedValue === "a"}
           onChange={handleChange}
