@@ -37,7 +37,9 @@ const aotheme = createTheme({
   components: {
     MuiRadio: {
       styleOverrides: {
-        root: { padding: "0px" },
+        root: {
+          span: { paddingBottom: "0px", paddingTop: "0px", border: "none" },
+        },
       },
     },
     MuiPopover: {
