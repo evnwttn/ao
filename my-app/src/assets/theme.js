@@ -40,8 +40,10 @@ const aotheme = createTheme({
         root: {
           paddingBottom: "0px",
           paddingTop: "0px",
-          justifyContent: "center",
-          span: { textAlign: "center" },
+          "& svg": {
+            width: "0.5vw",
+            height: "0.5vw",
+          },
         },
       },
     },
