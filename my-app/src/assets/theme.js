@@ -35,6 +35,11 @@ const aotheme = createTheme({
     },
   },
   components: {
+    MuiRadio: {
+      styleOverrides: {
+        root: { padding: "0px" },
+      },
+    },
     MuiPopover: {
       styleOverrides: {
         paper: {
@@ -50,7 +55,6 @@ const aotheme = createTheme({
         },
       },
     },
-
     MuiFormHelperText: {
       styleOverrides: {
         root: {

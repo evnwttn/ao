@@ -4,7 +4,6 @@ export const AOPopoverRadio = ({ onChange, selectedValue }) => {
   return (
     <Box
       sx={{
-        position: "fixed",
         pointerEvents: "auto",
         "&:hover": { opacity: "0.8", cursor: "pointer" },
       }}
