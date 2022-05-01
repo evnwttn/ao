@@ -40,9 +40,14 @@ const aotheme = createTheme({
         root: {
           paddingBottom: "0px",
           paddingTop: "0px",
+          paddingLeft: "0px",
+          paddingRight: "0px",
+          left: "8.9vw",
+          right: "10vw",
+          top: "3.67vw",
           "& svg": {
-            width: "0.5vw",
-            height: "0.5vw",
+            width: "1.67vw",
+            height: "1.67vw",
           },
         },
       },
