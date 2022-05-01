@@ -38,7 +38,10 @@ const aotheme = createTheme({
     MuiRadio: {
       styleOverrides: {
         root: {
-          span: { paddingBottom: "0px", paddingTop: "0px", border: "none" },
+          paddingBottom: "0px",
+          paddingTop: "0px",
+          justifyContent: "center",
+          span: { textAlign: "center" },
         },
       },
     },
