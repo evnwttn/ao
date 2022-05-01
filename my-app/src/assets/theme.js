@@ -38,16 +38,19 @@ const aotheme = createTheme({
     MuiRadio: {
       styleOverrides: {
         root: {
+          pointerEvents: "auto",
           paddingBottom: "0px",
           paddingTop: "0px",
           paddingLeft: "0px",
           paddingRight: "0px",
-          left: "8.9vw",
-          right: "10vw",
-          top: "3.67vw",
+          left: "8.34vw",
+          top: "5.34vw",
+          "&:hover": { opacity: "0.7" },
           "& svg": {
+            padding: "1vw",
             width: "1.67vw",
             height: "1.67vw",
+            color: palette.aoWhite,
           },
         },
       },
