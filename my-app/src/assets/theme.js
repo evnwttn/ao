@@ -38,7 +38,7 @@ const aotheme = createTheme({
     MuiRadio: {
       styleOverrides: {
         root: {
-          display: "flex",
+          display: "inline-flex",
           pointerEvents: "auto",
           paddingBottom: "0px",
           paddingTop: "0px",
