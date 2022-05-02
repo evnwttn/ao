@@ -13,12 +13,10 @@ export const AOPopover = ({ handleClick }) => {
   return (
     <Box>
       <AOPopoverRadio onChange={handleChange} radioValue={radioValue} />
-      {radioValue === "1" ? (
-        <AOColorWheel handleClick={(color) => handleClick(color)} />
-      ) : (
-        // COMMENTS COMPONENT WILL RENDER HERE
-        <AOColorWheel handleClick={(color) => handleClick(color)} />
-      )}
+      <AOColorWheel handleClick={(color) => handleClick(color)} />
+      {radioValue === "1"
+        ? console.log("do not show comments")
+        : console.log("show comments")}
     </Box>
   );
 };
