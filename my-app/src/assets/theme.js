@@ -48,7 +48,7 @@ const aotheme = createTheme({
           "&:hover": { opacity: "0.7" },
           "& svg": {
             padding: "0.75vw",
-            paddingBottom: "1.05vw",
+            paddingBottom: "1vw",
             width: "1.5vw",
             height: "1.5vw",
             color: palette.aoWhite,

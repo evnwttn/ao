@@ -1,6 +1,6 @@
 import { Radio, Box } from "@mui/material";
 
-export const AOPopoverRadio = ({ onChange, selectedValue }) => {
+export const AOPopoverRadio = ({ onChange, radioValue }) => {
   return (
     <Box
       sx={{
@@ -9,8 +9,8 @@ export const AOPopoverRadio = ({ onChange, selectedValue }) => {
         justifyContent: "center",
       }}
     >
-      <Radio checked={selectedValue === "1"} onChange={onChange} value="1" />
-      <Radio checked={selectedValue === "2"} onChange={onChange} value="2" />
+      <Radio checked={radioValue === "1"} onChange={onChange} value="1" />
+      <Radio checked={radioValue === "2"} onChange={onChange} value="2" />
     </Box>
   );
 };

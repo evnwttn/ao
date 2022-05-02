@@ -4,15 +4,16 @@ import { AOPopoverRadio } from "./AOPopoverRadio";
 import { AOColorWheel } from "./AOColorWheel";
 
 export const AOPopover = ({ handleClick }) => {
-  const [selectedValue, setSelectedValue] = useState("1");
+  const [radioValue, setRadioValue] = useState("1");
 
   const handleChange = (event) => {
-    setSelectedValue(event.target.value);
+    setRadioValue(event.target.value);
+    radioValue === "1" ? console.log("comments") : console.log("colourwheel");
   };
 
   return (
     <Box>
-      <AOPopoverRadio onChange={handleChange} selectedValue={selectedValue} />
+      <AOPopoverRadio onChange={handleChange} radioValue={radioValue} />
       <AOColorWheel handleClick={(color) => handleClick(color)} />
     </Box>
   );
