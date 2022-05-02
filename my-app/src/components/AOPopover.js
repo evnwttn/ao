@@ -8,13 +8,17 @@ export const AOPopover = ({ handleClick }) => {
 
   const handleChange = (event) => {
     setRadioValue(event.target.value);
-    radioValue === "1" ? console.log("comments") : console.log("colourwheel");
   };
 
   return (
     <Box>
       <AOPopoverRadio onChange={handleChange} radioValue={radioValue} />
-      <AOColorWheel handleClick={(color) => handleClick(color)} />
+      {radioValue === "1" ? (
+        <AOColorWheel handleClick={(color) => handleClick(color)} />
+      ) : (
+        // COMMENTS COMPONENT WILL RENDER HERE
+        <AOColorWheel handleClick={(color) => handleClick(color)} />
+      )}
     </Box>
   );
 };
