@@ -4,7 +4,7 @@ import { palette } from "../assets/theme";
 
 export const AOColorWheel = ({ handleClick }) => {
   return (
-    <>
+    <Box>
       <Box>
         <AOSpoke
           color={palette.aoYellow}
@@ -28,6 +28,6 @@ export const AOColorWheel = ({ handleClick }) => {
           handleClick={(color) => handleClick(color)}
         />
       </Box>
-    </>
+    </Box>
   );
 };

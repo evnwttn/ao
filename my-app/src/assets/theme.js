@@ -39,6 +39,7 @@ const aotheme = createTheme({
       styleOverrides: {
         root: {
           display: "inline-flex",
+          top: "6vw",
           pointerEvents: "auto",
           paddingBottom: "0px",
           paddingTop: "0px",
@@ -46,9 +47,10 @@ const aotheme = createTheme({
           paddingRight: "0px",
           "&:hover": { opacity: "0.7" },
           "& svg": {
-            padding: "1vw",
-            width: "1.67vw",
-            height: "1.67vw",
+            padding: "0.75vw",
+            paddingBottom: "1.05vw",
+            width: "1.5vw",
+            height: "1.5vw",
             color: palette.aoWhite,
           },
         },

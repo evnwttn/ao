@@ -9,7 +9,7 @@ export const AOSpoke = ({ color, transform, handleClick }) => {
         width="12vw"
         fill={color}
         transform={transform}
-        viewBox="10 -10 24 24"
+        viewBox="11 -11 24 24"
       >
         <path onClick={() => handleClick(color)} d={quarterCircle.svg} />
       </svg>
