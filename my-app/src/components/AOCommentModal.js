@@ -1,5 +1,6 @@
 import React from "react";
 import { Modal } from "@mui/material";
+import { AOCommentContent } from "./modals/AOCommentContent";
 
 export const AOCommentModal = ({ open, handleClose }) => {
   return (
@@ -9,7 +10,7 @@ export const AOCommentModal = ({ open, handleClose }) => {
       aria-labelledby="modal-modal-title"
       aria-describedby="modal-modal-description"
     >
-      <>Hello.</>
+      <AOCommentContent />
     </Modal>
   );
 };
