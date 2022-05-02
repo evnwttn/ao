@@ -15,6 +15,8 @@ import TableViewIcon from "@mui/icons-material/TableView";
 let Home = () => {
   const [open, setOpen] = useState(false);
   const [modalType, setModalType] = useState("");
+  const [gridOpen, setGridOpen] = useState(true);
+
   const handleOpen = (text) => {
     setModalType(text);
   };
@@ -27,8 +29,6 @@ let Home = () => {
     setOpen(false);
     setModalType("");
   };
-
-  const [gridOpen, setGridOpen] = useState(true);
 
   return (
     <Box
