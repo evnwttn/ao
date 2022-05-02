@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Box } from "@mui/system";
 import { AOPopoverRadio } from "./AOPopoverRadio";
 import { AOColorWheel } from "./AOColorWheel";
+import { AOCommentModal } from "./AOCommentModal";
 
 export const AOPopover = ({ handleClick }) => {
   const [open, setOpen] = useState(false);
@@ -21,11 +22,9 @@ export const AOPopover = ({ handleClick }) => {
 
   return (
     <Box>
+      <AOCommentModal open={open} handleClose={handleClose} />
       <AOPopoverRadio onChange={handleChange} radioValue={radioValue} />
       <AOColorWheel handleClick={(color) => handleClick(color)} />
-      {radioValue === "1"
-        ? console.log("do not show comments")
-        : console.log("show comments")}
     </Box>
   );
 };
