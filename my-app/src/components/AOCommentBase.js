@@ -10,7 +10,9 @@ export const AOCommentBase = ({ open, handleClose }) => {
       aria-labelledby="modal-modal-title"
       aria-describedby="modal-modal-description"
     >
-      <AOCommentModal />
+      <>
+        <AOCommentModal />
+      </>
     </Modal>
   );
 };
