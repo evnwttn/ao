@@ -15,9 +15,14 @@ export const AOCommentContent = ({ cell }) => {
         <Box sx={{ pr: 1, fontWeight: "bold", color: palette.aoRed }}>
           {cell.track}
         </Box>
-        |<Box sx={{ pl: 1 }}>{cell.parameter}</Box>
+        <Divider
+          orientation="vertical"
+          flexItem
+          sx={{ color: palette.aoDivider }}
+        />
+        <Box sx={{ pl: 1 }}>{cell.parameter}</Box>
       </Box>
-      <Divider variant="middle" style={{ color: palette.aoDivider }} />
+      <Divider variant="middle" sx={{ color: palette.aoDivider }} />
       <Box sx={{ mt: 3 }}>Comments</Box>
     </>
   );
