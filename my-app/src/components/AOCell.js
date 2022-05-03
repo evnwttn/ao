@@ -55,7 +55,7 @@ export const AOCell = (cell) => {
           horizontal: "center",
         }}
       >
-        <AOPopover handleClick={(color) => setCellColor(color)} />
+        <AOPopover cell={cell} handleClick={(color) => setCellColor(color)} />
       </Popover>
     </>
   );

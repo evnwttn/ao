@@ -4,7 +4,8 @@ import { AOPopoverRadio } from "./AOPopoverRadio";
 import { AOColorWheel } from "./AOColorWheel";
 import { AOCommentBase } from "./AOCommentBase";
 
-export const AOPopover = ({ handleClick }) => {
+export const AOPopover = ({ cell, handleClick }) => {
+  console.log(cell);
   const [open, setOpen] = useState(false);
   const [radioValue, setRadioValue] = useState("1");
 
