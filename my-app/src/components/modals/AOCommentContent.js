@@ -12,7 +12,10 @@ export const AOCommentContent = ({ cell }) => {
           mb: 1,
         }}
       >
-        <Box sx={{}}>{cell.track}</Box> | <Box sx={{}}>{cell.parameter}</Box>
+        <Box sx={{ pr: 1, fontWeight: "bold", color: palette.aoRed }}>
+          {cell.track}
+        </Box>
+        |<Box sx={{ pl: 1 }}>{cell.parameter}</Box>
       </Box>
       <Divider variant="middle" style={{ color: palette.aoDivider }} />
       <Box sx={{ mt: 3 }}>Comments</Box>
