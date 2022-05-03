@@ -2,7 +2,7 @@ import React from "react";
 import { Modal } from "@mui/material";
 import { AOCommentModal } from "./AOCommentModal";
 
-export const AOCommentBase = ({ open, handleClose }) => {
+export const AOCommentBase = ({ cell, open, handleClose }) => {
   return (
     <Modal
       open={open}
@@ -11,7 +11,7 @@ export const AOCommentBase = ({ open, handleClose }) => {
       aria-describedby="modal-modal-description"
     >
       <>
-        <AOCommentModal />
+        <AOCommentModal cell={cell} />
       </>
     </Modal>
   );

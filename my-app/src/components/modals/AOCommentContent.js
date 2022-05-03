@@ -2,7 +2,8 @@ import { Box } from "@mui/system";
 import { Divider } from "@mui/material";
 import { palette, modalFontSx } from "../../assets/theme";
 
-export const AOCommentContent = () => {
+export const AOCommentContent = ({ cell }) => {
+  console.log(cell);
   return (
     <>
       <Box

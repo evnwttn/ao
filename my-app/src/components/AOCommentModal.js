@@ -2,7 +2,7 @@ import { Box } from "@mui/system";
 import { AOCommentContent } from "./modals/AOCommentContent";
 import { modalFontSx, modalBoxStyling } from "../assets/theme";
 
-export const AOCommentModal = () => {
+export const AOCommentModal = ({ cell }) => {
   return (
     <Box
       sx={{
@@ -10,7 +10,7 @@ export const AOCommentModal = () => {
         ...modalBoxStyling,
       }}
     >
-      <AOCommentContent />
+      <AOCommentContent cell={cell} />
     </Box>
   );
 };
