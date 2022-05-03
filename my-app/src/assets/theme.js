@@ -162,6 +162,18 @@ export const modalFontSx = {
   color: palette.aoWhite,
 };
 
+export const modalBoxStyling = {
+  bgcolor: palette.aoGrey,
+  textAlign: "center",
+  position: "absolute",
+  top: "50%",
+  left: "50%",
+  transform: "translate(-50%, -50%)",
+  width: "33%",
+  boxShadow: "0px 0px 50pt rbg(0 0 0 / 0.16)",
+  p: "2.75vw",
+};
+
 export const modalCenteredSx = {
   display: "flex",
   flexDirection: "column",
