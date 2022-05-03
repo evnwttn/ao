@@ -23,7 +23,7 @@ export const ModalText = ({ prompt }) => {
       >
         ꜵ
       </Box>
-      <Divider variant="middle" style={{ color: palette.aoDivider }} />
+      <Divider variant="middle" sx={{ color: palette.aoDivider }} />
       <Box sx={{ mt: "5vh" }}>
         {(prompt === "New" && <NewModalContent />) ||
           (prompt === "Load" && <LoadModalContent />) ||
