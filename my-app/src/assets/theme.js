@@ -102,7 +102,7 @@ const aotheme = createTheme({
           color: palette.aoWhite,
           "&:hover": {
             background: "none",
-            opacity: "0.6",
+            opacity: "0.7",
             cursor: "pointer",
           },
         },
@@ -118,7 +118,7 @@ const aotheme = createTheme({
           letterSpacing: "0.75vw",
           "&:hover": {
             background: "none",
-            opacity: "0.6",
+            opacity: "0.7",
           },
         },
         textSecondary: {
@@ -230,7 +230,7 @@ export const spokeSx = {
     path: {
       pointerEvents: "auto",
       "&:hover": {
-        opacity: "0.6",
+        opacity: "0.7",
         cursor: "pointer",
       },
     },
