@@ -14,6 +14,7 @@ export const AOPopover = ({ handleClick }) => {
 
   const handleClose = () => {
     setOpen(false);
+    setRadioValue("1");
   };
 
   const handleChange = (event) => {
