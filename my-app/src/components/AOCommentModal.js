@@ -1,16 +1,33 @@
-import React from "react";
-import { Modal } from "@mui/material";
-import { AOCommentContent } from "./modals/AOCommentContent";
+import { Box } from "@mui/system";
+import { Divider } from "@mui/material";
+import { modalFontSx, palette } from "../assets/theme";
 
-export const AOCommentModal = ({ open, handleClose }) => {
+export const AOCommentModal = () => {
   return (
-    <Modal
-      open={open}
-      onClose={handleClose}
-      aria-labelledby="modal-modal-title"
-      aria-describedby="modal-modal-description"
+    <Box
+      sx={{
+        ...modalFontSx,
+        bgcolor: palette.aoGrey,
+        textAlign: "center",
+        position: "absolute",
+        top: "50%",
+        left: "50%",
+        transform: "translate(-50%, -50%)",
+        width: "33%",
+        boxShadow: "0px 0px 50pt rbg(0 0 0 / 0.16)",
+        p: "2.75vw",
+      }}
     >
-      <AOCommentContent />
-    </Modal>
+      <Box
+        sx={{
+          ...modalFontSx,
+          mb: 1,
+        }}
+      >
+        track title | parameter
+      </Box>
+      <Divider variant="middle" style={{ color: palette.aoDivider }} />
+      <Box sx={{ mt: 3 }}>Comments</Box>
+    </Box>
   );
 };
