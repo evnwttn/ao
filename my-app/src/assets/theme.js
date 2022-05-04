@@ -227,7 +227,6 @@ export const spokeSx = {
   display: "inline-flex",
   svg: {
     pointerEvents: "none",
-    // filter: "drop-shadow(0 0 0.5vw rgb(0, 0, 0, 0.25))",
     rect: {
       pointerEvents: "auto",
       "&:hover": {

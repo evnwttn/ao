@@ -29,3 +29,5 @@ export const AOSpoke = ({ color, transform, handleClick }) => {
     </Box>
   );
 };
+
+// filter:"drop-shadow(0 0 0.5vw rgb(0, 0, 0, 0.25))
