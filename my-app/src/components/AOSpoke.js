@@ -11,7 +11,14 @@ export const AOSpoke = ({ color, transform, handleClick }) => {
         transform={transform}
         viewBox="11 -11 24 24"
       >
-        <path onClick={() => handleClick(color)} d={svgShapes.quarterCircle} />
+        {color === "transparent" ? (
+          console.log("color")
+        ) : (
+          <path
+            onClick={() => handleClick(color)}
+            d={svgShapes.quarterCircle}
+          />
+        )}
       </svg>
     </Box>
   );
