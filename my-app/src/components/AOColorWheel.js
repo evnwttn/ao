@@ -23,7 +23,7 @@ export const AOColorWheel = ({ handleClick }) => {
           handleClick={(color) => handleClick(color)}
         />
         <AOSpoke
-          color={palette.aoBlack}
+          color="transparent"
           transform="rotate(90)"
           handleClick={(color) => handleClick(color)}
         />

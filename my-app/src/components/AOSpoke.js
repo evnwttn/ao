@@ -1,13 +1,13 @@
 import { Box } from "@mui/system";
-import { palette, spokeSx } from "../assets/theme";
+import { spokeSx } from "../assets/theme";
 import { svgShapes } from "../assets/theme";
 
 export const AOSpoke = ({ color, transform, handleClick }) => {
-  return color === palette.aoBlack ? (
+  return color === "transparent" ? (
     <Box sx={{ ...spokeSx }}>
       <svg
         width="12vw"
-        fill={color}
+        fill="transparent"
         transform={transform}
         viewBox="11 -11 24 24"
       >
