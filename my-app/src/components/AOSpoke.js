@@ -1,5 +1,5 @@
 import { Box } from "@mui/system";
-import { spokeSx } from "../assets/theme";
+import { palette, spokeSx } from "../assets/theme";
 import { svgShapes } from "../assets/theme";
 
 export const AOSpoke = ({ color, transform, handleClick }) => {
@@ -11,8 +11,14 @@ export const AOSpoke = ({ color, transform, handleClick }) => {
         transform={transform}
         viewBox="11 -11 24 24"
       >
-        {color === "transparent" ? (
-          console.log("color")
+        {color === palette.aoBlack ? (
+          <rect
+            onClick={() => {
+              handleClick(color);
+            }}
+            width="24"
+            height="24"
+          />
         ) : (
           <path
             onClick={() => handleClick(color)}
