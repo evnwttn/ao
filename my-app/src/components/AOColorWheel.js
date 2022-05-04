@@ -13,6 +13,7 @@ export const AOColorWheel = ({ handleClick }) => {
         />
         <AOSpoke
           color={palette.aoBlue}
+          render="spoke"
           handleClick={(color) => handleClick(color)}
         />
       </Box>
