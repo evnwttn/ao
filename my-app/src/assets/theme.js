@@ -223,22 +223,31 @@ export const svgShapes = {
     "M5.95 11h13.988A8.023 8.023 0 0 0 13 4.062V2.049c4.714.475 8.476 4.237 8.95 8.951Z",
 };
 
-export const spokeSx = {
-  display: "inline-flex",
-  svg: {
-    pointerEvents: "none",
-    rect: {
-      pointerEvents: "auto",
-      "&:hover": {
-        opacity: "0.7",
-        cursor: "pointer",
+export const wheelSx = {
+  transparent: {
+    display: "inline-flex",
+    svg: {
+      pointerEvents: "none",
+      rect: {
+        pointerEvents: "auto",
+        "&:hover": {
+          opacity: "0.7",
+          cursor: "pointer",
+        },
       },
     },
-    path: {
-      pointerEvents: "auto",
-      "&:hover": {
-        opacity: "0.7",
-        cursor: "pointer",
+  },
+  spoke: {
+    display: "inline-flex",
+    filter: "drop-shadow(0 0 0.5vw rgb(0, 0, 0, 0.25))",
+    svg: {
+      pointerEvents: "none",
+      path: {
+        pointerEvents: "auto",
+        "&:hover": {
+          opacity: "0.7",
+          cursor: "pointer",
+        },
       },
     },
   },

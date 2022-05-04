@@ -1,10 +1,10 @@
 import { Box } from "@mui/system";
-import { spokeSx } from "../assets/theme";
+import { wheelSx } from "../assets/theme";
 import { svgShapes } from "../assets/theme";
 
 export const AOSpoke = ({ color, transform, handleClick }) => {
   return color === "transparent" ? (
-    <Box sx={{ ...spokeSx }}>
+    <Box sx={{ ...wheelSx.transparent }}>
       <svg
         width="12vw"
         fill="transparent"
@@ -21,12 +21,11 @@ export const AOSpoke = ({ color, transform, handleClick }) => {
       </svg>
     </Box>
   ) : (
-    <Box sx={{ ...spokeSx }}>
+    <Box sx={{ ...wheelSx.spoke }}>
       <svg
         width="12vw"
         fill={color}
         transform={transform}
-        filter="drop-shadow(0 0 0.5vw rgb(0, 0, 0, 0.25))"
         viewBox="11 -11 24 24"
       >
         <path onClick={() => handleClick(color)} d={svgShapes.quarterCircle} />
