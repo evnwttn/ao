@@ -1,6 +1,6 @@
 import { Box } from "@mui/system";
 import { spokeSx } from "../assets/theme";
-import { quarterCircle } from "../assets/theme";
+import { svgShapes } from "../assets/theme";
 
 export const AOSpoke = ({ color, transform, handleClick }) => {
   return (
@@ -11,7 +11,7 @@ export const AOSpoke = ({ color, transform, handleClick }) => {
         transform={transform}
         viewBox="11 -11 24 24"
       >
-        <path onClick={() => handleClick(color)} d={quarterCircle.svg} />
+        <path onClick={() => handleClick(color)} d={svgShapes.quarterCircle} />
       </svg>
     </Box>
   );
