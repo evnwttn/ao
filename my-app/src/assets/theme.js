@@ -262,16 +262,18 @@ export const wheelSx = {
 
 export const commentSx = {
   inputProps: {
-    backgroundColor: palette.aoWhite,
-    color: palette.aoBlack,
-    fontFamily: "Noto-Serif",
-    letterSpacing: "0.05vw",
-    lineHeight: "1.75vw",
-    fontSize: "1.05vw",
-    paddingTop: "1vw",
-    paddingLeft: "1.5vw",
-    paddingRight: "1.5vw",
-    paddingBottom: "1vw",
+    sx: {
+      backgroundColor: palette.aoWhite,
+      color: palette.aoBlack,
+      fontFamily: "Noto-Serif",
+      letterSpacing: "0.05vw",
+      lineHeight: "1.75vw",
+      fontSize: "1.05vw",
+      paddingTop: "1vw",
+      paddingLeft: "1.5vw",
+      paddingRight: "1.5vw",
+      paddingBottom: "1vw",
+    },
   },
   textField: { paddingTop: "0.75vw", width: "87%" },
 };
