@@ -275,5 +275,8 @@ export const commentSx = {
       paddingBottom: "1vw",
     },
   },
-  textField: { paddingTop: "0.75vw", width: "87%" },
+  textField: {
+    paddingTop: "0.75vw",
+    width: "87%",
+  },
 };
