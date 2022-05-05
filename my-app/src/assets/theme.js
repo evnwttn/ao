@@ -35,6 +35,11 @@ const aotheme = createTheme({
     },
   },
   components: {
+    MuiFilledInput: {
+      styleOverrides: {
+        root: { padding: "0 0 0" },
+      },
+    },
     MuiRadio: {
       styleOverrides: {
         root: {
