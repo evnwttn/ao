@@ -220,7 +220,8 @@ export const cellSx = {
 
 export const svgShapes = {
   quarterCircle:
-    "M5.95 11h13.988A8.023 8.023 0 0 0 13 4.062V2.049c4.714.475 8.476 4.237 8.95 8.951Z",
+    "M 6 11 h 14 A 8 8 90 0 0 13 4.1 V 2 c 4.7 0.5 8.5 4.2 8.9 9 Z",
+  quarterCircleThin: "M 6 11 h 14 A 8 8 90 0 0 13 4.1 V 3 c 4 0 8 4 8 8 Z",
 };
 
 export const wheelSx = {
