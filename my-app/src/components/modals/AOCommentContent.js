@@ -1,11 +1,11 @@
 import { Box } from "@mui/system";
 import { TextField } from "@mui/material";
 
-export const AOCommentContent = () => {
+export const AOCommentContent = ({ cell }) => {
   return (
     <Box sx={{ mt: 3 }}>
       <Box>
-        <TextField id="filled-basic" label="Filled" variant="filled" />
+        <TextField id={`${cell.track}.${cell.parameter}`} variant="filled" />
       </Box>
     </Box>
   );
