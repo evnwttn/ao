@@ -8,8 +8,6 @@ export const ModalBase = ({ open, handleClose, text }) => {
       open={open}
       onClose={handleClose}
       sx={{ backdropFilter: "blur(1.5px)" }}
-      aria-labelledby="modal-modal-title"
-      aria-describedby="modal-modal-description"
     >
       <>
         <ModalText prompt={text} />
