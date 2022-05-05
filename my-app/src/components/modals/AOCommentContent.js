@@ -6,6 +6,10 @@ const inputProps = {
   sx: {
     color: palette.aoBlack,
     fontSize: "1vw",
+    paddingTop: "1vw",
+    paddingLeft: "1.5vw",
+    paddingRight: "1.5vw",
+    paddingBottom: "1vw",
     backgroundColor: palette.aoWhite,
   },
 };
@@ -24,7 +28,7 @@ export const AOCommentContent = ({ cell }) => {
           margin="normal"
           variant="filled"
           multiline
-          rows={4}
+          rows={6}
         />
       </Box>
     </Box>
