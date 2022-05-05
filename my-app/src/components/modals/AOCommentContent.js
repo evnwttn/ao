@@ -9,7 +9,6 @@ const inputProps = {
     fontSize: "1vw",
     fontWeight: "400",
     backgroundColor: palette.aoWhite,
-    height: "10vw",
   },
 };
 
@@ -23,6 +22,8 @@ export const AOCommentContent = ({ cell }) => {
           sx={{ paddingTop: "0.5vw", width: "87%" }}
           margin="normal"
           variant="filled"
+          multiline
+          rows={4}
         />
       </Box>
     </Box>
