@@ -6,6 +6,9 @@ import SaveRoundedIcon from "@mui/icons-material/SaveRounded";
 
 export const AOCommentContent = ({ cell }) => {
   const [comment, setComment] = useState("");
+  const handleCommentChange = (textField) => {
+    setComment(textField.target.value);
+  };
 
   return (
     <Box>
@@ -21,6 +24,7 @@ export const AOCommentContent = ({ cell }) => {
           multiline
           rows={6}
           value={comment}
+          onChange={handleCommentChange}
         />
       </Box>
       <SaveRoundedIcon onClick={() => console.log(comment)} />
