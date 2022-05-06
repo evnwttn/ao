@@ -27,7 +27,13 @@ export const AOCommentContent = ({ cell }) => {
           onChange={handleCommentChange}
         />
       </Box>
-      <SaveRoundedIcon onClick={() => console.log(comment)} />
+      <SaveRoundedIcon
+        sx={{
+          ml: "25vw",
+          mt: "1vh",
+        }}
+        onClick={() => console.log(comment)}
+      />
     </Box>
   );
 };
