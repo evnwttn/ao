@@ -273,6 +273,8 @@ export const commentSx = {
       paddingLeft: "1.5vw",
       paddingRight: "1.5vw",
       paddingBottom: "1vw",
+      scrollbarWidth: "none",
+      "&::-webkit-scrollbar": { width: 0 },
     },
   },
   textField: {
