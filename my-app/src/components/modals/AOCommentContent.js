@@ -1,9 +1,12 @@
+import { useState } from "react";
 import { Box } from "@mui/system";
 import { commentSx } from "../../assets/theme";
 import { TextField } from "@mui/material";
 import SaveRoundedIcon from "@mui/icons-material/SaveRounded";
 
 export const AOCommentContent = ({ cell }) => {
+  const [comment, setComment] = useState("");
+
   return (
     <Box>
       <Box>
@@ -17,9 +20,10 @@ export const AOCommentContent = ({ cell }) => {
           variant="filled"
           multiline
           rows={6}
+          value={comment}
         />
       </Box>
-      <SaveRoundedIcon />
+      <SaveRoundedIcon onClick={() => console.log(comment)} />
     </Box>
   );
 };
