@@ -1,6 +1,7 @@
 import { Box } from "@mui/system";
 import { commentSx } from "../../assets/theme";
 import { TextField } from "@mui/material";
+import SaveRoundedIcon from "@mui/icons-material/SaveRounded";
 
 export const AOCommentContent = ({ cell }) => {
   return (
@@ -18,6 +19,7 @@ export const AOCommentContent = ({ cell }) => {
           rows={6}
         />
       </Box>
+      <SaveRoundedIcon />
     </Box>
   );
 };
