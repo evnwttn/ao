@@ -64,9 +64,9 @@ export const AOCell = (cell) => {
       >
         <AOPopover
           comment={comment}
-          onChange={handleCommentChange}
           cell={cell}
           handleClick={(color) => setCellColor(color)}
+          onCommentChange={handleCommentChange}
         />
       </Popover>
     </>

@@ -3,7 +3,7 @@ import { commentSx } from "../../assets/theme";
 import { TextField } from "@mui/material";
 import SaveRoundedIcon from "@mui/icons-material/SaveRounded";
 
-export const AOCommentContent = ({ onChange, comment, cell }) => {
+export const AOCommentContent = ({ onCommentChange, comment, cell }) => {
   return (
     <Box>
       <Box>
@@ -17,7 +17,7 @@ export const AOCommentContent = ({ onChange, comment, cell }) => {
           variant="filled"
           multiline
           rows={6}
-          onChange={onChange}
+          onChange={onCommentChange}
         />
       </Box>
       <SaveRoundedIcon

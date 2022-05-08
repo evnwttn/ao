@@ -4,7 +4,7 @@ import { AOPopoverRadio } from "./AOPopoverRadio";
 import { AOColorWheel } from "./AOColorWheel";
 import { AOCommentBase } from "./AOCommentBase";
 
-export const AOPopover = ({ cell, handleClick, onChange, comment }) => {
+export const AOPopover = ({ cell, handleClick, onCommentChange, comment }) => {
   // POPOVER
 
   const [open, setOpen] = useState(false);
@@ -33,7 +33,7 @@ export const AOPopover = ({ cell, handleClick, onChange, comment }) => {
         open={open}
         handleClose={handleClose}
         comment={comment}
-        onChange={onChange}
+        onCommentChange={onCommentChange}
       />
       <AOPopoverRadio onChange={handleChange} radioValue={radioValue} />
       <AOColorWheel handleClick={(color) => handleClick(color)} />

@@ -7,12 +7,16 @@ export const AOCommentBase = ({
   open,
   handleClose,
   comment,
-  onChange,
+  onCommentChange,
 }) => {
   return (
     <Modal open={open} onClose={handleClose}>
       <>
-        <AOCommentModal onChange={onChange} comment={comment} cell={cell} />
+        <AOCommentModal
+          onCommentChange={onCommentChange}
+          comment={comment}
+          cell={cell}
+        />
       </>
     </Modal>
   );
