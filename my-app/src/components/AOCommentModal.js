@@ -1,9 +1,19 @@
+import { useState } from "react";
 import { Box } from "@mui/system";
 import { Divider } from "@mui/material";
 import { AOCommentContent } from "./modals/AOCommentContent";
 import { modalFontSx, modalBoxStyling, palette } from "../assets/theme";
 
 export const AOCommentModal = ({ cell }) => {
+  const [comment, setComment] = useState("");
+  const handleChange = (event) => {
+    setComment(event.target.value);
+  };
+
+  const iconClick = () => {
+    console.log(comment);
+  };
+
   return (
     <Box
       sx={{
@@ -29,7 +39,12 @@ export const AOCommentModal = ({ cell }) => {
         <Box sx={{ pl: 1 }}>{cell.parameter}</Box>
       </Box>
       <Divider variant="middle" sx={{ color: palette.aoDivider }} />
-      <AOCommentContent cell={cell} />
+      <AOCommentContent
+        onChange={handleChange}
+        iconClick={iconClick}
+        comment={comment}
+        cell={cell}
+      />
     </Box>
   );
 };
