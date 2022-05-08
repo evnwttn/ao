@@ -20,6 +20,13 @@ export const AOCell = (cell) => {
     setAnchorEl(null);
   };
 
+  // HANDLES COMMENTS
+
+  const [comment, setComment] = useState("");
+  const handleCommentChange = (event) => {
+    setComment(event.target.value);
+  };
+
   return (
     <>
       <Grid item sm={1} onClick={handleClick}>
@@ -55,7 +62,12 @@ export const AOCell = (cell) => {
           horizontal: "center",
         }}
       >
-        <AOPopover cell={cell} handleClick={(color) => setCellColor(color)} />
+        <AOPopover
+          comment={comment}
+          onChange={handleCommentChange}
+          cell={cell}
+          handleClick={(color) => setCellColor(color)}
+        />
       </Popover>
     </>
   );

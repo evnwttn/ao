@@ -4,7 +4,7 @@ import { AOPopoverRadio } from "./AOPopoverRadio";
 import { AOColorWheel } from "./AOColorWheel";
 import { AOCommentBase } from "./AOCommentBase";
 
-export const AOPopover = ({ cell, handleClick }) => {
+export const AOPopover = ({ cell, handleClick, onChange, comment }) => {
   // POPOVER
 
   const [open, setOpen] = useState(false);
@@ -26,13 +26,6 @@ export const AOPopover = ({ cell, handleClick }) => {
     radioValue !== "1" ? setOpen(true) : setOpen(false);
   }, [radioValue]);
 
-  // COMMENTS
-
-  const [comment, setComment] = useState("");
-  const handleCommentChange = (event) => {
-    setComment(event.target.value);
-  };
-
   return (
     <Box>
       <AOCommentBase
@@ -40,7 +33,7 @@ export const AOPopover = ({ cell, handleClick }) => {
         open={open}
         handleClose={handleClose}
         comment={comment}
-        onChange={handleCommentChange}
+        onChange={onChange}
       />
       <AOPopoverRadio onChange={handleChange} radioValue={radioValue} />
       <AOColorWheel handleClick={(color) => handleClick(color)} />
