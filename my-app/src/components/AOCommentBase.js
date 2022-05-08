@@ -5,14 +5,18 @@ import { AOCommentModal } from "./AOCommentModal";
 
 export const AOCommentBase = ({ cell, open, handleClose }) => {
   const [comment, setComment] = useState("");
-  const handleChange = (event) => {
+  const handleCommentChange = (event) => {
     setComment(event.target.value);
   };
 
   return (
     <Modal open={open} onClose={handleClose}>
       <>
-        <AOCommentModal onChange={handleChange} comment={comment} cell={cell} />
+        <AOCommentModal
+          onChange={handleCommentChange}
+          comment={comment}
+          cell={cell}
+        />
       </>
     </Modal>
   );
