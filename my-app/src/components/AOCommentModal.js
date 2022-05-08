@@ -10,10 +10,6 @@ export const AOCommentModal = ({ cell }) => {
     setComment(event.target.value);
   };
 
-  const iconClick = () => {
-    console.log(comment);
-  };
-
   return (
     <Box
       sx={{
@@ -39,12 +35,7 @@ export const AOCommentModal = ({ cell }) => {
         <Box sx={{ pl: 1 }}>{cell.parameter}</Box>
       </Box>
       <Divider variant="middle" sx={{ color: palette.aoDivider }} />
-      <AOCommentContent
-        onChange={handleChange}
-        iconClick={iconClick}
-        comment={comment}
-        cell={cell}
-      />
+      <AOCommentContent onChange={handleChange} comment={comment} cell={cell} />
     </Box>
   );
 };
