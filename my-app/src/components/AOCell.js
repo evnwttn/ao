@@ -24,7 +24,10 @@ export const AOCell = (cell) => {
   // HANDLES COMMENTS
 
   const { register, handleSubmit } = useForm();
-  const onSubmit = (data) => console.log(data);
+  const [cellComment, setCellComment] = useState("");
+  const onSubmit = (data) => setCellComment(data.comment);
+
+  console.log(cellComment);
 
   return (
     <>
