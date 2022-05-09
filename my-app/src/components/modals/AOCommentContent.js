@@ -1,13 +1,15 @@
 import { Box } from "@mui/system";
-import { useForm } from "react-hook-form";
 import { commentSx } from "../../assets/theme";
 import { TextField, IconButton } from "@mui/material";
 import SaveRoundedIcon from "@mui/icons-material/SaveRounded";
 
-export const AOCommentContent = ({ onCommentChange, comment, cell }) => {
-  const { register, handleSubmit } = useForm();
-  const onSubmit = (data) => console.log(data);
-
+export const AOCommentContent = ({
+  onCommentChange,
+  cell,
+  handleSubmit,
+  onSubmit,
+  register,
+}) => {
   return (
     <Box>
       <Box component="form" onSubmit={handleSubmit(onSubmit)}>

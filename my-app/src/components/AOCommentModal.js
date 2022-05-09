@@ -1,9 +1,13 @@
 import { Box } from "@mui/system";
+import { useForm } from "react-hook-form";
 import { Divider } from "@mui/material";
 import { AOCommentContent } from "./modals/AOCommentContent";
 import { modalFontSx, modalBoxStyling, palette } from "../assets/theme";
 
 export const AOCommentModal = ({ onCommentChange, comment, cell }) => {
+  const { register, handleSubmit } = useForm();
+  const onSubmit = (data) => console.log(data);
+
   return (
     <Box
       sx={{
@@ -31,8 +35,10 @@ export const AOCommentModal = ({ onCommentChange, comment, cell }) => {
       <Divider variant="middle" sx={{ color: palette.aoDivider }} />
       <AOCommentContent
         onCommentChange={onCommentChange}
-        comment={comment}
         cell={cell}
+        register={register}
+        handleSubmit={handleSubmit}
+        onSubmit={onSubmit}
       />
     </Box>
   );
