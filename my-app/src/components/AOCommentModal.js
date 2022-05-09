@@ -3,13 +3,7 @@ import { Divider } from "@mui/material";
 import { AOCommentContent } from "./modals/AOCommentContent";
 import { modalFontSx, modalBoxStyling, palette } from "../assets/theme";
 
-export const AOCommentModal = ({
-  onCommentChange,
-  register,
-  handleSubmit,
-  onSubmit,
-  cell,
-}) => {
+export const AOCommentModal = ({ register, handleSubmit, onSubmit, cell }) => {
   return (
     <Box
       sx={{
@@ -36,7 +30,6 @@ export const AOCommentModal = ({
       </Box>
       <Divider variant="middle" sx={{ color: palette.aoDivider }} />
       <AOCommentContent
-        onCommentChange={onCommentChange}
         cell={cell}
         register={register}
         handleSubmit={handleSubmit}

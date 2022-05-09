@@ -4,7 +4,6 @@ import { TextField, IconButton } from "@mui/material";
 import SaveRoundedIcon from "@mui/icons-material/SaveRounded";
 
 export const AOCommentContent = ({
-  onCommentChange,
   cell,
   handleSubmit,
   onSubmit,
@@ -24,7 +23,6 @@ export const AOCommentContent = ({
           multiline
           rows={6}
           {...register("comment", {})}
-          onChange={onCommentChange}
         />
         <IconButton disableRipple sx={{ cursor: "default" }} type="submit">
           <SaveRoundedIcon

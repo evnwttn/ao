@@ -6,8 +6,6 @@ export const AOCommentBase = ({
   cell,
   open,
   handleClose,
-  comment,
-  onCommentChange,
   register,
   handleSubmit,
   onSubmit,
@@ -16,7 +14,6 @@ export const AOCommentBase = ({
     <Modal open={open} onClose={handleClose}>
       <>
         <AOCommentModal
-          onCommentChange={onCommentChange}
           cell={cell}
           register={register}
           handleSubmit={handleSubmit}

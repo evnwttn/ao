@@ -23,11 +23,6 @@ export const AOCell = (cell) => {
 
   // HANDLES COMMENTS
 
-  const [comment, setComment] = useState("");
-  const handleCommentChange = (event) => {
-    setComment(event.target.value);
-  };
-
   const { register, handleSubmit } = useForm();
   const onSubmit = (data) => console.log(data);
 
@@ -67,10 +62,8 @@ export const AOCell = (cell) => {
         }}
       >
         <AOPopover
-          comment={comment}
           cell={cell}
           handleClick={(color) => setCellColor(color)}
-          onCommentChange={handleCommentChange}
           register={register}
           handleSubmit={handleSubmit}
           onSubmit={onSubmit}

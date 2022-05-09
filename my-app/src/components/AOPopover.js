@@ -7,8 +7,6 @@ import { AOCommentBase } from "./AOCommentBase";
 export const AOPopover = ({
   cell,
   handleClick,
-  onCommentChange,
-  comment,
   register,
   handleSubmit,
   onSubmit,
@@ -40,8 +38,6 @@ export const AOPopover = ({
         cell={cell}
         open={open}
         handleClose={handleClose}
-        comment={comment}
-        onCommentChange={onCommentChange}
         register={register}
         handleSubmit={handleSubmit}
         onSubmit={onSubmit}
