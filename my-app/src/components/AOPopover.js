@@ -1,15 +1,18 @@
 import { useState, useEffect } from "react";
-import { useForm } from "react-hook-form";
-
 import { Box } from "@mui/system";
 import { AOPopoverRadio } from "./AOPopoverRadio";
 import { AOColorWheel } from "./AOColorWheel";
 import { AOCommentBase } from "./AOCommentBase";
 
-export const AOPopover = ({ cell, handleClick, onCommentChange, comment }) => {
-  const { register, handleSubmit } = useForm();
-  const onSubmit = (data) => console.log(data);
-
+export const AOPopover = ({
+  cell,
+  handleClick,
+  onCommentChange,
+  comment,
+  register,
+  handleSubmit,
+  onSubmit,
+}) => {
   // POPOVER
 
   const [open, setOpen] = useState(false);

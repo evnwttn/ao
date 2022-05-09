@@ -1,4 +1,5 @@
 import React from "react";
+import { useForm } from "react-hook-form";
 import { useState } from "react";
 import { Box, Grid, Popover } from "@mui/material/";
 import { palette, cellSx } from "../assets/theme";
@@ -26,6 +27,9 @@ export const AOCell = (cell) => {
   const handleCommentChange = (event) => {
     setComment(event.target.value);
   };
+
+  const { register, handleSubmit } = useForm();
+  const onSubmit = (data) => console.log(data);
 
   return (
     <>
@@ -67,6 +71,9 @@ export const AOCell = (cell) => {
           cell={cell}
           handleClick={(color) => setCellColor(color)}
           onCommentChange={handleCommentChange}
+          register={register}
+          handleSubmit={handleSubmit}
+          onSubmit={onSubmit}
         />
       </Popover>
     </>
