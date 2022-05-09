@@ -6,6 +6,7 @@ import { palette, cellSx } from "../assets/theme";
 import { AOPopover } from "./AOPopover";
 
 export const AOCell = (cell) => {
+  // HANDLES COLOUR CHANGE
   const [cellColor, setCellColor] = useState(palette.aoBlack);
 
   // HANDLES COLOURWHEEL POPOVER
@@ -22,12 +23,9 @@ export const AOCell = (cell) => {
   };
 
   // HANDLES COMMENTS
-
   const { register, handleSubmit } = useForm();
   const [cellComment, setCellComment] = useState("");
   const onSubmit = (data) => setCellComment(data.comment);
-
-  console.log(cellComment);
 
   return (
     <>
@@ -70,6 +68,7 @@ export const AOCell = (cell) => {
           register={register}
           handleSubmit={handleSubmit}
           onSubmit={onSubmit}
+          cellComment={cellComment}
         />
       </Popover>
     </>
