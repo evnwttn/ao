@@ -1,10 +1,15 @@
 import { useState, useEffect } from "react";
+import { useForm } from "react-hook-form";
+
 import { Box } from "@mui/system";
 import { AOPopoverRadio } from "./AOPopoverRadio";
 import { AOColorWheel } from "./AOColorWheel";
 import { AOCommentBase } from "./AOCommentBase";
 
 export const AOPopover = ({ cell, handleClick, onCommentChange, comment }) => {
+  const { register, handleSubmit } = useForm();
+  const onSubmit = (data) => console.log(data);
+
   // POPOVER
 
   const [open, setOpen] = useState(false);
@@ -34,6 +39,9 @@ export const AOPopover = ({ cell, handleClick, onCommentChange, comment }) => {
         handleClose={handleClose}
         comment={comment}
         onCommentChange={onCommentChange}
+        register={register}
+        handleSubmit={handleSubmit}
+        onSubmit={onSubmit}
       />
       <AOPopoverRadio onChange={handleChange} radioValue={radioValue} />
       <AOColorWheel handleClick={(color) => handleClick(color)} />

@@ -1,5 +1,4 @@
 import React from "react";
-import { useForm } from "react-hook-form";
 import { Modal } from "@mui/material";
 import { AOCommentModal } from "./AOCommentModal";
 
@@ -9,10 +8,10 @@ export const AOCommentBase = ({
   handleClose,
   comment,
   onCommentChange,
+  register,
+  handleSubmit,
+  onSubmit,
 }) => {
-  const { register, handleSubmit } = useForm();
-  const onSubmit = (data) => console.log(data);
-
   return (
     <Modal open={open} onClose={handleClose}>
       <>
