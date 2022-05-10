@@ -6,10 +6,10 @@ import { palette, cellSx } from "../assets/theme";
 import { AOPopover } from "./AOPopover";
 
 export const AOCell = (cell) => {
-  // HANDLES COLOUR CHANGE
+  // HANDLES CELL COLOUR
   const [cellColor, setCellColor] = useState(palette.aoBlack);
 
-  // HANDLES COLOURWHEEL POPOVER
+  // HANDLES POPOVER
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
   const id = open ? "simple-popover" : undefined;
@@ -22,10 +22,11 @@ export const AOCell = (cell) => {
     setAnchorEl(null);
   };
 
-  // HANDLES COMMENTS
+  // HANDLES COMMENT STORAGE
   const { register, handleSubmit } = useForm();
   const [cellComment, setCellComment] = useState("");
   const onSubmit = (data) => setCellComment(data.comment);
+  cellComment !== "" && console.log(`${cell} + ${cellComment}`);
 
   return (
     <>
@@ -68,7 +69,6 @@ export const AOCell = (cell) => {
           register={register}
           handleSubmit={handleSubmit}
           onSubmit={onSubmit}
-          cellComment={cellComment}
         />
       </Popover>
     </>
