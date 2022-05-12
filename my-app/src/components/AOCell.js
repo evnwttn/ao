@@ -35,6 +35,7 @@ export const AOCell = (cell) => {
           sx={{
             backgroundColor: cellColor,
             ...cellSx.cell,
+            ...(cellComment !== "" && cellSx.comment),
             "&:hover": {
               backgroundColor: cellColor === palette.aoBlack && palette.aoGrey,
               opacity: "0.6",
