@@ -26,8 +26,8 @@ export const AOCell = (cell) => {
   const { register, handleSubmit } = useForm();
   const [cellComment, setCellComment] = useState("");
   const onSubmit = (data) => setCellComment(data.comment);
-  cellComment !== "" &&
-    console.log(`${cell.track} | ${cell.parameter} | "${cellComment}"`);
+
+  cellComment !== "" && console.log(`this is where the has comment will g000`);
 
   return (
     <>
