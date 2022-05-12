@@ -28,8 +28,6 @@ export const AOCell = (cell) => {
   const [cellComment, setCellComment] = useState("");
   const onSubmit = (data) => setCellComment(data.comment);
 
-  cellComment !== "" && console.log(`this is where the has comment will g000`);
-
   return (
     <>
       <Grid item sm={1} onClick={handleClick}>
@@ -38,6 +36,7 @@ export const AOCell = (cell) => {
           sx={{
             ...cellSx.cell,
             backgroundColor: cellColor,
+            backgroundImage: cellComment !== "" && `url(${commentFx})`,
             "&:hover": {
               backgroundColor: cellColor === palette.aoBlack && palette.aoGrey,
               opacity: "0.6",
