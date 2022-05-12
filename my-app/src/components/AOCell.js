@@ -37,8 +37,9 @@ export const AOCell = (cell) => {
             ...cellSx.cell,
             backgroundColor: cellColor,
             backgroundImage: cellComment !== "" && `url(${commentFx})`,
+            backgroundSize: "47.5%",
             backgroundRepeat: "no-repeat",
-            backgroundPosition: "90% 10%",
+            backgroundPosition: "95% 10%",
 
             "&:hover": {
               backgroundColor: cellColor === palette.aoBlack && palette.aoGrey,
