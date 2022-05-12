@@ -1,4 +1,5 @@
 import { createTheme } from "@mui/material";
+import commentFx from "./img/commentfx.png";
 
 export const palette = {
   aoBlack: "#272727",
@@ -218,6 +219,12 @@ export const cellSx = {
   cell: {
     my: "0.75vh",
     padding: "3.5vh",
+  },
+  comment: {
+    backgroundImage: `url(${commentFx})`,
+    backgroundSize: "47.5%",
+    backgroundRepeat: "no-repeat",
+    backgroundPosition: "95% 10%",
   },
 };
 

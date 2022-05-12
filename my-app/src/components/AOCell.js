@@ -4,7 +4,6 @@ import { useState } from "react";
 import { Box, Grid, Popover } from "@mui/material/";
 import { palette, cellSx } from "../assets/theme";
 import { AOPopover } from "./AOPopover";
-import commentFx from "../assets/img/commentfx.png";
 
 export const AOCell = (cell) => {
   // HANDLES CELL COLOUR
@@ -34,13 +33,8 @@ export const AOCell = (cell) => {
         <Box
           aria-describedby={cell}
           sx={{
-            ...cellSx.cell,
             backgroundColor: cellColor,
-            backgroundImage: cellComment !== "" && `url(${commentFx})`,
-            backgroundSize: "47.5%",
-            backgroundRepeat: "no-repeat",
-            backgroundPosition: "95% 10%",
-
+            ...cellSx.cell,
             "&:hover": {
               backgroundColor: cellColor === palette.aoBlack && palette.aoGrey,
               opacity: "0.6",
