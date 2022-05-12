@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Box, Grid, Popover } from "@mui/material/";
 import { palette, cellSx } from "../assets/theme";
 import { AOPopover } from "./AOPopover";
+import commentFx from "../assets/img/commentfx.png";
 
 export const AOCell = (cell) => {
   // HANDLES CELL COLOUR
