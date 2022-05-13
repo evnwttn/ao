@@ -1,5 +1,6 @@
 import { createTheme } from "@mui/material";
 import commentFx from "./img/commentfx.png";
+import commentFxInverse from "./img/commentfxinverse.png";
 
 export const palette = {
   aoBlack: "#272727",
@@ -222,6 +223,12 @@ export const cellSx = {
   },
   comment: {
     backgroundImage: `url(${commentFx})`,
+    backgroundSize: "47.5%",
+    backgroundRepeat: "no-repeat",
+    backgroundPosition: "95% 10%",
+  },
+  commentInverse: {
+    backgroundImage: `url(${commentFxInverse})`,
     backgroundSize: "47.5%",
     backgroundRepeat: "no-repeat",
     backgroundPosition: "95% 10%",
