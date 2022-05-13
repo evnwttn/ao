@@ -262,6 +262,7 @@ export const wheelSx = {
     display: "inline-flex",
     stroke: palette.aoWhite,
     strokeWidth: 0.2,
+    strokeOpacity: 0.5,
     filter: "drop-shadow(0 0 0.5vw rgb(0, 0, 0, 0.25))",
     svg: {
       pointerEvents: "none",
