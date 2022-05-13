@@ -233,8 +233,6 @@ export const cellSx = {
 export const svgShapes = {
   quarterCircle:
     "M 6 11 h 14 A 8 8 90 0 0 13 4.1 V 2 c 4.7 0.5 8.5 4.2 8.9 9 Z",
-  quarterCircleFlip:
-    "M17.9,22L3.9,22C4.377,18.381 7.274,15.525 10.9,15.1L10.9,13C6.2,13.5 2.4,17.2 2,22L17.9,22Z",
 };
 
 export const wheelSx = {
