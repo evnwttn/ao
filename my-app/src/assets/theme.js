@@ -239,6 +239,8 @@ export const cellSx = {
 
 export const svgShapes = {
   quarterCircle:
+    "m 20 11 H 20 A 8 8 90 0 0 13 4.1 V 2 c 4.7 0.5 8.5 4.2 8.9 9 Z",
+  quarterCircleOG:
     "M 6 11 h 14 A 8 8 90 0 0 13 4.1 V 2 c 4.7 0.5 8.5 4.2 8.9 9 Z",
 };
 
