@@ -2,6 +2,8 @@ import React from "react";
 import { Modal } from "@mui/material";
 import { AOCommentModal } from "./AOCommentModal";
 
+// the fragment prevents a MUI related bug
+
 export const AOCommentBase = ({
   cell,
   open,
