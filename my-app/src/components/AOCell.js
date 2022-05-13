@@ -35,7 +35,7 @@ export const AOCell = (cell) => {
           sx={{
             backgroundColor: cellColor,
             ...cellSx.cell,
-            ...(cellColor !== palette.aoGrey
+            ...(cellColor !== palette.aoGrey // inverts effect on grey for visibility
               ? cellComment !== "" && cellSx.comment
               : cellComment !== "" && cellSx.commentInverse),
             "&:hover": {
