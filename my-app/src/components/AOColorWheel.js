@@ -11,13 +11,13 @@ export const AOColorWheel = ({ handleClick }) => {
           transform="rotate(270)"
           handleClick={(color) => handleClick(color)}
           toolTip="In Progress"
-          placement="top-start"
+          placement="left-start"
         />
         <AOSpoke
           color={palette.aoBlue}
           handleClick={(color) => handleClick(color)}
           toolTip="Completed"
-          placement="top-end"
+          placement="right-start"
         />
       </Box>
       <Box>
@@ -26,14 +26,14 @@ export const AOColorWheel = ({ handleClick }) => {
           transform="rotate(180)"
           handleClick={(color) => handleClick(color)}
           toolTip="Set Task"
-          placement="bottom-start"
+          placement="left-end"
         />
         <AOSpoke
           color="transparent"
           transform="rotate(90)"
           handleClick={(color) => handleClick(color)}
           toolTip="Remove Task"
-          placement="bottom-end"
+          placement="right-end"
         />
       </Box>
     </Box>
