@@ -37,6 +37,9 @@ const aotheme = createTheme({
     },
   },
   components: {
+    MuiTooltip: {
+      styleOverrides: {},
+    },
     MuiFilledInput: {
       styleOverrides: {
         root: { padding: "0 0 0" },

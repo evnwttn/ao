@@ -33,7 +33,7 @@ export const AOSpoke = ({
           componentsProps={{
             tooltip: {
               sx: {
-                bgcolor: palette.aoBlack,
+                // bgcolor: palette.aoBlack,
                 color: palette.aoWhite,
                 border: `solid 1px ${palette.aoWhite}`,
               },
