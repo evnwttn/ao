@@ -20,13 +20,13 @@ export const AOSpoke = ({ color, transform, handleClick, toolTip }) => {
         transform={transform}
         viewBox="11 -11 24 24"
       >
-        {color === "transparent" ? (
-          <rect width="24" height="24" />
-        ) : (
-          <Tooltip title={toolTip}>
+        <Tooltip title={toolTip}>
+          {color === "transparent" ? (
+            <rect width="24" height="24" />
+          ) : (
             <path d={svgShapes.quarterCircle} />
-          </Tooltip>
-        )}
+          )}
+        </Tooltip>
       </svg>
     </Box>
   );

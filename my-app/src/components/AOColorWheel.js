@@ -29,7 +29,7 @@ export const AOColorWheel = ({ handleClick }) => {
           color="transparent"
           transform="rotate(90)"
           handleClick={(color) => handleClick(color)}
-          toolTip="N/A"
+          toolTip="Remove"
         />
       </Box>
     </Box>
