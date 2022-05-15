@@ -1,6 +1,7 @@
 import { Box } from "@mui/system";
 import { wheelSx } from "../assets/theme";
 import { svgShapes } from "../assets/theme";
+import { Tooltip } from "@mui/material/";
 
 export const AOSpoke = ({ color, transform, handleClick }) => {
   return (
