@@ -23,13 +23,13 @@ export const AOColorWheel = ({ handleClick }) => {
           color={palette.aoGrey}
           transform="rotate(180)"
           handleClick={(color) => handleClick(color)}
-          toolTip="Task"
+          toolTip="Set Task"
         />
         <AOSpoke
           color="transparent"
           transform="rotate(90)"
           handleClick={(color) => handleClick(color)}
-          toolTip="Remove"
+          toolTip="Remove Task"
         />
       </Box>
     </Box>
