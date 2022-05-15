@@ -2,7 +2,13 @@ import { Box } from "@mui/system";
 import { wheelSx, svgShapes } from "../assets/theme";
 import { Tooltip } from "@mui/material/";
 
-export const AOSpoke = ({ color, transform, handleClick, toolTip }) => {
+export const AOSpoke = ({
+  color,
+  transform,
+  handleClick,
+  toolTip,
+  placement,
+}) => {
   return (
     <Box
       sx={
@@ -20,7 +26,7 @@ export const AOSpoke = ({ color, transform, handleClick, toolTip }) => {
         transform={transform}
         viewBox="11 -11 24 24"
       >
-        <Tooltip title={toolTip}>
+        <Tooltip title={toolTip} placement={placement}>
           {color === "transparent" ? (
             <rect width="24" height="24" />
           ) : (
