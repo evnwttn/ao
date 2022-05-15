@@ -30,12 +30,12 @@ export const AOSpoke = ({
         <Tooltip
           title={toolTip}
           placement={placement}
-          arrow
-          sx={{ backgroundColor: "red" }}
           componentsProps={{
             tooltip: {
               sx: {
+                bgcolor: palette.aoBlack,
                 color: palette.aoWhite,
+                border: `solid 1px ${palette.aoWhite}`,
               },
             },
           }}
