@@ -1,10 +1,19 @@
+import { useState } from "react";
 import { Box } from "@mui/system";
 import { wheelSx, svgShapes, palette } from "../assets/theme";
 import { Tooltip } from "@mui/material/";
 
 export const AOSpoke = ({ color, transform, handleClick }) => {
+  const [toolTip, setToolTip] = useState("yo");
+
+  // color === palette.aoBlue
+  //   ? setToolTip("Completed")
+  //   : color === palette.aoYellow
+  //   ? setToolTip("In Progress")
+  //   : color === palette.aoGrey && setToolTip("Task");
+
   return (
-    <Tooltip title="Delete">
+    <Tooltip title={toolTip}>
       <Box
         sx={
           color === "transparent"
