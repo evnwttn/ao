@@ -26,7 +26,7 @@ export const AOSpoke = ({
         transform={transform}
         viewBox="11 -11 24 24"
       >
-        <Tooltip title={toolTip} placement={placement}>
+        <Tooltip title={toolTip} placement={placement} arrow>
           {color === "transparent" ? (
             <rect width="24" height="24" />
           ) : (
