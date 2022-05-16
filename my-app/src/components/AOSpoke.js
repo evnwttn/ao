@@ -1,7 +1,6 @@
 import { Box } from "@mui/system";
 import { wheelSx, svgShapes } from "../assets/theme";
 import { Tooltip } from "@mui/material/";
-import { palette } from "../assets/theme";
 
 export const AOSpoke = ({
   color,
@@ -27,19 +26,7 @@ export const AOSpoke = ({
         transform={transform}
         viewBox="11 -11 24 24"
       >
-        <Tooltip
-          title={toolTip}
-          placement={placement}
-          componentsProps={{
-            tooltip: {
-              sx: {
-                // bgcolor: palette.aoBlack,
-                color: palette.aoWhite,
-                border: `solid 1px ${palette.aoWhite}`,
-              },
-            },
-          }}
-        >
+        <Tooltip title={toolTip} placement={placement}>
           {color === "transparent" ? (
             <rect width="24" height="24" />
           ) : (

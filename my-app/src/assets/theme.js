@@ -38,7 +38,17 @@ const aotheme = createTheme({
   },
   components: {
     MuiTooltip: {
-      styleOverrides: {},
+      styleOverrides: {
+        tooltip: {
+          fontFamily: "Noto Sans",
+          fontSize: "0.75vw",
+          letterSpacing: "0.125vw",
+          textTransform: "uppercase",
+          color: palette.aoWhite,
+          backgroundColor: palette.aoBlack,
+          border: `solid 1px ${palette.aoWhite}`,
+        },
+      },
     },
     MuiFilledInput: {
       styleOverrides: {
