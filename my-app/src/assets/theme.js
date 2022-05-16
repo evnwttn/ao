@@ -48,6 +48,10 @@ const aotheme = createTheme({
           color: palette.aoWhite,
           border: `solid 1px ${palette.aoWhite}`,
         },
+        popper: {
+          transform: "unset",
+          inset: "unset",
+        },
       },
     },
     MuiFilledInput: {

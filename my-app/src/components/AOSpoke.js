@@ -27,16 +27,9 @@ export const AOSpoke = ({
         viewBox="11 -11 24 24"
       >
         <Tooltip
-          PopperProps={{
-            sx: {
-              width: color === "transparent" && "9vw",
-              height: color === "transparent" && "1vw",
-              marginLeft: color === "transparent" && "-5vw !important",
-              marginBottom: color === "transparent" && "2.5vw !important",
-            },
-          }}
           title={toolTip}
           placement={placement}
+          PopperProps={{ keepMounted: true }}
         >
           {color === "transparent" ? (
             <rect width="24" height="24" />
