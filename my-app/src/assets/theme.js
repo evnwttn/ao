@@ -48,9 +48,12 @@ const aotheme = createTheme({
           color: palette.aoWhite,
           border: `solid 1px ${palette.aoWhite}`,
         },
-        tooltipPlacementRight: {
-          marginTop: "-5vw",
-        },
+        // popper: {
+        //   position: "fixed",
+        //   height: "1vw",
+        //   width: "6.4vw",
+        //   marginLeft: "-5vw",
+        // },
       },
     },
     MuiFilledInput: {
