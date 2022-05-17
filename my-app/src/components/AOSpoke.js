@@ -29,7 +29,13 @@ export const AOSpoke = ({
         <Tooltip
           title={toolTip}
           placement={placement}
-          PopperProps={{ keepMounted: true }}
+          PopperProps={{
+            sx: {
+              "& .MuiTooltip-tooltip": {
+                inset: "-25px auto 0px auto",
+              },
+            },
+          }}
         >
           {color === "transparent" ? (
             <rect width="24" height="24" />
