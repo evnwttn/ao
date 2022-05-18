@@ -3,6 +3,7 @@ import { Box } from "@mui/system";
 import { AOPopoverRadio } from "./AOPopoverRadio";
 import { AOColorWheel } from "./AOColorWheel";
 import { AOCommentBase } from "./AOCommentBase";
+import HighlightOffIcon from "@mui/icons-material/HighlightOff";
 
 export const AOPopover = ({
   cell,
@@ -42,8 +43,11 @@ export const AOPopover = ({
         handleSubmit={handleSubmit}
         onSubmit={onSubmit}
       />
-      <AOPopoverRadio onChange={handleChange} radioValue={radioValue} />
       <AOColorWheel handleClick={(color) => handleClick(color)} />
+      <HighlightOffIcon
+        sx={{ pointerEvents: "auto" }}
+        onClick={() => handleClick("transparent")}
+      />
     </Box>
   );
 };

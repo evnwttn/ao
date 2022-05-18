@@ -1,4 +1,5 @@
 import { Radio, Box } from "@mui/material";
+import HighlightOffIcon from "@mui/icons-material/HighlightOff";
 
 export const AOPopoverRadio = ({ onChange, radioValue }) => {
   return (
@@ -9,8 +10,7 @@ export const AOPopoverRadio = ({ onChange, radioValue }) => {
         justifyContent: "center",
       }}
     >
-      <Radio checked={radioValue === "1"} onChange={onChange} value="1" />
-      <Radio checked={radioValue === "2"} onChange={onChange} value="2" />
+      <HighlightOffIcon />
     </Box>
   );
 };

@@ -50,7 +50,7 @@ export const AOCell = (cell) => {
         sx={{
           backdropFilter: "blur(1.5px)",
           left: "0.35vw",
-          top: "-1.15vw",
+          top: "1.5vw",
         }}
         id={id}
         open={open}
