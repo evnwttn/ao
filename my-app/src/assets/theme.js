@@ -55,27 +55,6 @@ const aotheme = createTheme({
         root: { padding: "0 0 0" },
       },
     },
-    MuiRadio: {
-      styleOverrides: {
-        root: {
-          display: "inline-flex",
-          top: "6vw",
-          pointerEvents: "auto",
-          paddingBottom: "0px",
-          paddingTop: "0px",
-          paddingLeft: "0px",
-          paddingRight: "0px",
-          "&:hover": { opacity: "0.7" },
-          "& svg": {
-            padding: "0.75vw",
-            paddingBottom: "1vw",
-            width: "1.5vw",
-            height: "1.5vw",
-            color: palette.aoWhite,
-          },
-        },
-      },
-    },
     MuiPopover: {
       styleOverrides: {
         paper: {
@@ -253,11 +232,17 @@ export const cellSx = {
 export const svgShapes = {
   quarterCircle:
     "m 20 11 H 20 A 8 8 90 0 0 13 4.1 V 2 c 4.7 0.5 8.5 4.2 8.9 9 Z",
-  quarterCircleOG:
-    "M 6 11 h 14 A 8 8 90 0 0 13 4.1 V 2 c 4.7 0.5 8.5 4.2 8.9 9 Z",
 };
 
 export const wheelSx = {
+  remove: {
+    alignItems: "center",
+    justifyContent: "center",
+    display: "flex",
+    position: "relative",
+    bottom: "5.75vw",
+    pointerEvents: "auto",
+  },
   transparent: {
     display: "inline-flex",
     svg: {

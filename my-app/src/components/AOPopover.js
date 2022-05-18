@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Box } from "@mui/system";
 import { AOColorWheel } from "./AOColorWheel";
 import { AOCommentBase } from "./AOCommentBase";
+import { wheelSx } from "../assets/theme";
 import HighlightOffIcon from "@mui/icons-material/HighlightOff";
 
 export const AOPopover = ({
@@ -44,9 +45,7 @@ export const AOPopover = ({
       />
       <Box
         sx={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
+          ...wheelSx.remove,
         }}
       >
         <HighlightOffIcon
