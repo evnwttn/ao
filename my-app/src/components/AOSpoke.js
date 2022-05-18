@@ -32,7 +32,7 @@ export const AOSpoke = ({
           PopperProps={{
             sx: {
               "& .MuiTooltip-tooltip": {
-                inset: "-25px auto 0px auto",
+                marginTop: "-6vw",
               },
             },
           }}
