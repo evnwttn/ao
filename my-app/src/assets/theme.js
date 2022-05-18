@@ -262,6 +262,7 @@ export const wheelSx = {
     display: "inline-flex",
     svg: {
       pointerEvents: "none",
+      fill: "pink",
       rect: {
         pointerEvents: "auto",
         "&:hover": {

@@ -18,7 +18,7 @@ export const AOSpoke = ({
       }
     >
       <svg
-        width={color === "transparent" ? "6vw" : "12vw"}
+        width="12vw"
         fill={color}
         onClick={() => {
           handleClick(color);
@@ -32,13 +32,13 @@ export const AOSpoke = ({
           PopperProps={{
             sx: {
               "& .MuiTooltip-tooltip": color === "transparent" && {
-                marginTop: "-3vw",
+                marginTop: "-5vw",
               },
             },
           }}
         >
           {color === "transparent" ? (
-            <rect width="24" height="24" fill="pink" />
+            <rect width="24" height="24" />
           ) : (
             <path d={svgShapes.quarterCircle} />
           )}
