@@ -15,6 +15,31 @@ export const AOSpoke = ({
     y: 0,
   });
 
+  const popperRef = React.useRef(null);
+  const areaRef = React.useRef(null);
+
+  const handleMouseMove = (event) => {
+    positionRef.current = { x: event.clientX, y: event.clientY };
+
+    if (popperRef.current != null) {
+      popperRef.current.update();
+    }
+  };
+
+  const transProps = {
+    popperRef,
+    anchorEl: {
+      getBoundingClientRect: () => {
+        return new DOMRect(
+          positionRef.current.x,
+          areaRef.current.getBoundingClientRect().y,
+          0,
+          0
+        );
+      },
+    },
+  };
+
   return (
     <Box
       sx={
@@ -32,11 +57,28 @@ export const AOSpoke = ({
         transform={transform}
         viewBox="11 -11 24 24"
       >
-        <Tooltip title={toolTip} placement={placement}>
+        <Tooltip
+          title={toolTip}
+          placement={placement}
+          PopperProps={
+            color === "transparent" && {
+              ...transProps,
+            }
+          }
+        >
           {color === "transparent" ? (
-            <rect width="24" height="24" />
+            <rect
+              width="24"
+              height="24"
+              ref={areaRef}
+              onMouseMove={handleMouseMove}
+            />
           ) : (
-            <path d={svgShapes.quarterCircle} />
+            <path
+              d={svgShapes.quarterCircle}
+              ref={areaRef}
+              onMouseMove={handleMouseMove}
+            />
           )}
         </Tooltip>
       </svg>
