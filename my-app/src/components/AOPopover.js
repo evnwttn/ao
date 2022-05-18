@@ -17,20 +17,20 @@ export const AOPopover = ({
 
   const handleClose = () => {
     setOpen(false);
-    setRadioValue("1");
+    setSwitchValue("1");
   };
 
-  // RADIO SWITCH
+  // COMMENT SWITCH
 
-  const [radioValue, setRadioValue] = useState("1");
+  const [switchValue, setSwitchValue] = useState("1");
 
   const handleChange = (event) => {
-    setRadioValue(event.value);
+    setSwitchValue(event.value);
   };
 
   useEffect(() => {
-    radioValue !== "1" ? setOpen(true) : setOpen(false);
-  }, [radioValue]);
+    switchValue !== "1" ? setOpen(true) : setOpen(false);
+  }, [switchValue]);
 
   return (
     <Box>
