@@ -30,11 +30,10 @@ export const AOColorWheel = ({ handleClick, openComment }) => {
         />
         <AOSpoke
           color={palette.aoBlack}
-          value="1"
           transform="rotate(90)"
           toolTip="Comments"
           placement="right-end"
-          handleClick={(value) => openComment(value)}
+          handleClick={openComment}
         />
       </Box>
     </Box>

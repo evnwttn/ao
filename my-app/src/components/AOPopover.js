@@ -24,10 +24,6 @@ export const AOPopover = ({
 
   const [switchValue, setSwitchValue] = useState("1");
 
-  const handleChange = (event) => {
-    setSwitchValue(event.value);
-  };
-
   useEffect(() => {
     switchValue !== "1" ? setOpen(true) : setOpen(false);
   }, [switchValue]);
@@ -44,7 +40,7 @@ export const AOPopover = ({
       />
       <AOColorWheel
         handleClick={(color) => handleClick(color)}
-        openComment={handleChange}
+        openComment={() => setSwitchValue("2")}
       />
       <Box
         sx={{
