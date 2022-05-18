@@ -1,3 +1,4 @@
+import React from "react";
 import { Box } from "@mui/system";
 import { wheelSx, svgShapes } from "../assets/theme";
 import { Tooltip } from "@mui/material/";
@@ -9,6 +10,11 @@ export const AOSpoke = ({
   toolTip,
   placement,
 }) => {
+  const positionRef = React.useRef({
+    x: 0,
+    y: 0,
+  });
+
   return (
     <Box
       sx={
@@ -26,17 +32,7 @@ export const AOSpoke = ({
         transform={transform}
         viewBox="11 -11 24 24"
       >
-        <Tooltip
-          title={toolTip}
-          placement={placement}
-          PopperProps={{
-            sx: {
-              "& .MuiTooltip-tooltip": color === "transparent" && {
-                marginTop: "-5vw",
-              },
-            },
-          }}
-        >
+        <Tooltip title={toolTip} placement={placement}>
           {color === "transparent" ? (
             <rect width="24" height="24" />
           ) : (

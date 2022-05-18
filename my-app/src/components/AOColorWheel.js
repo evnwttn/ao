@@ -33,7 +33,7 @@ export const AOColorWheel = ({ handleClick }) => {
           transform="rotate(90)"
           handleClick={(color) => handleClick(color)}
           toolTip="Remove Task"
-          placement="right-end"
+          placement="right"
         />
       </Box>
     </Box>
