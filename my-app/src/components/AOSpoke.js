@@ -31,8 +31,9 @@ export const AOSpoke = ({
           placement={placement}
           PopperProps={{
             sx: {
-              "& .MuiTooltip-tooltip": {
+              "& .MuiTooltip-tooltip": color === "transparent" && {
                 marginTop: "-6vw",
+                marginRight: "2vw",
               },
             },
           }}
