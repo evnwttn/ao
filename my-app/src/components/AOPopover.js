@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { Box } from "@mui/system";
-import { AOPopoverRadio } from "./AOPopoverRadio";
 import { AOColorWheel } from "./AOColorWheel";
 import { AOCommentBase } from "./AOCommentBase";
 import HighlightOffIcon from "@mui/icons-material/HighlightOff";
@@ -44,10 +43,18 @@ export const AOPopover = ({
         onSubmit={onSubmit}
       />
       <AOColorWheel handleClick={(color) => handleClick(color)} />
-      <HighlightOffIcon
-        sx={{ pointerEvents: "auto" }}
-        onClick={() => handleClick("transparent")}
-      />
+      <Box
+        sx={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
+        <HighlightOffIcon
+          sx={{ pointerEvents: "auto" }}
+          onClick={() => handleClick("transparent")}
+        />
+      </Box>
     </Box>
   );
 };
