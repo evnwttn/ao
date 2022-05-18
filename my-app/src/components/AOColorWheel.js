@@ -29,7 +29,7 @@ export const AOColorWheel = ({ handleClick, openComment }) => {
           placement="left-end"
         />
         <AOSpoke
-          color="transparent"
+          color={palette.aoBlack}
           value="1"
           transform="rotate(90)"
           toolTip="Comments"
