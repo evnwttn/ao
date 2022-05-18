@@ -3,6 +3,10 @@ import { Box } from "@mui/system";
 import { wheelSx, svgShapes } from "../assets/theme";
 import { Tooltip } from "@mui/material/";
 
+// switch comments to bottom right
+// delete as icon below
+// remove radio switch
+
 export const AOSpoke = ({
   color,
   transform,
@@ -18,6 +22,14 @@ export const AOSpoke = ({
   const popperRef = React.useRef(null);
   const areaRef = React.useRef(null);
 
+  const handleMouseMove = (event) => {
+    positionRef.current = { x: event.clientX, y: event.clientY };
+
+    if (popperRef.current != null) {
+      popperRef.current.update();
+    }
+  };
+
   const transProps = {
     popperRef,
     anchorEl: {
@@ -25,8 +37,8 @@ export const AOSpoke = ({
         return new DOMRect(
           positionRef.current.x,
           areaRef.current.getBoundingClientRect().y,
-          0,
-          0
+          -30,
+          100
         );
       },
     },
@@ -59,9 +71,14 @@ export const AOSpoke = ({
           }
         >
           {color === "transparent" ? (
-            <rect width="24" height="24" ref={areaRef} />
+            <rect
+              width="24"
+              height="24"
+              ref={areaRef}
+              onMouseMove={handleMouseMove}
+            />
           ) : (
-            <path d={svgShapes.quarterCircle} />
+            <path d={svgShapes.quarterCircle} ref={areaRef} />
           )}
         </Tooltip>
       </svg>
