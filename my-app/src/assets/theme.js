@@ -242,6 +242,9 @@ export const wheelSx = {
     position: "relative",
     bottom: "5.75vw",
     pointerEvents: "auto",
+    svg: {
+      fontSize: "1.75vw",
+    },
   },
   transparent: {
     display: "inline-flex",

@@ -48,10 +48,7 @@ export const AOPopover = ({
           ...wheelSx.remove,
         }}
       >
-        <HighlightOffIcon
-          sx={{ pointerEvents: "auto", fontSize: "1.75vw" }}
-          onClick={() => handleClick("transparent")}
-        />
+        <HighlightOffIcon onClick={() => handleClick("transparent")} />
       </Box>
     </Box>
   );
