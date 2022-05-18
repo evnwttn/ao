@@ -49,7 +49,7 @@ export const AOPopover = ({
         }}
       >
         <HighlightOffIcon
-          sx={{ pointerEvents: "auto" }}
+          sx={{ pointerEvents: "auto", fontSize: "1.75vw" }}
           onClick={() => handleClick("transparent")}
         />
       </Box>

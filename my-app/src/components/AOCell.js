@@ -1,6 +1,6 @@
 import React from "react";
 import { useForm } from "react-hook-form";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Box, Grid, Popover } from "@mui/material/";
 import { palette, cellSx } from "../assets/theme";
 import { AOPopover } from "./AOPopover";
@@ -8,6 +8,13 @@ import { AOPopover } from "./AOPopover";
 export const AOCell = (cell) => {
   // HANDLES CELL COLOUR
   const [cellColor, setCellColor] = useState(palette.aoBlack);
+
+  // HANDLES CELL HIGHLIGHT
+  const [cellHover, setCellHover] = useState({});
+
+  useEffect(() => {
+    console.log(cellHover);
+  }, [cellHover]);
 
   // HANDLES POPOVER
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -32,6 +39,7 @@ export const AOCell = (cell) => {
       <Grid item sm={1} onClick={handleClick}>
         <Box
           aria-describedby={cell}
+          onMouseEnter={() => setCellHover(cell)}
           sx={{
             backgroundColor: cellColor,
             ...cellSx.cell,
