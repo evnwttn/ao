@@ -18,14 +18,6 @@ export const AOSpoke = ({
   const popperRef = React.useRef(null);
   const areaRef = React.useRef(null);
 
-  const handleMouseMove = (event) => {
-    positionRef.current = { x: event.clientX, y: event.clientY };
-
-    if (popperRef.current != null) {
-      popperRef.current.update();
-    }
-  };
-
   const transProps = {
     popperRef,
     anchorEl: {
@@ -67,18 +59,9 @@ export const AOSpoke = ({
           }
         >
           {color === "transparent" ? (
-            <rect
-              width="24"
-              height="24"
-              ref={areaRef}
-              onMouseMove={handleMouseMove}
-            />
+            <rect width="24" height="24" ref={areaRef} />
           ) : (
-            <path
-              d={svgShapes.quarterCircle}
-              ref={areaRef}
-              onMouseMove={handleMouseMove}
-            />
+            <path d={svgShapes.quarterCircle} />
           )}
         </Tooltip>
       </svg>
