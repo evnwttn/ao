@@ -25,7 +25,7 @@ export const AOPopover = ({
   const [radioValue, setRadioValue] = useState("1");
 
   const handleChange = (event) => {
-    setRadioValue(event.target.value);
+    setRadioValue(event.value);
   };
 
   useEffect(() => {
@@ -42,7 +42,10 @@ export const AOPopover = ({
         handleSubmit={handleSubmit}
         onSubmit={onSubmit}
       />
-      <AOColorWheel handleClick={(color) => handleClick(color)} />
+      <AOColorWheel
+        handleClick={(color) => handleClick(color)}
+        openComment={handleChange}
+      />
       <Box
         sx={{
           display: "flex",

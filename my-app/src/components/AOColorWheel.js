@@ -2,7 +2,7 @@ import { Box } from "@mui/system";
 import { AOSpoke } from "./AOSpoke";
 import { palette } from "../assets/theme";
 
-export const AOColorWheel = ({ handleClick }) => {
+export const AOColorWheel = ({ handleClick, openComment }) => {
   return (
     <Box>
       <Box>
@@ -30,10 +30,11 @@ export const AOColorWheel = ({ handleClick }) => {
         />
         <AOSpoke
           color="transparent"
+          value="1"
           transform="rotate(90)"
-          handleClick={(color) => handleClick(color)}
-          toolTip="Remove Task"
-          placement="right"
+          toolTip="Comments"
+          placement="right-end"
+          handleClick={(value) => openComment(value)}
         />
       </Box>
     </Box>
