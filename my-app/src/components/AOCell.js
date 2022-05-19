@@ -12,8 +12,14 @@ export const AOCell = ({ cell, track, parameter }) => {
   // HANDLES CELL HIGHLIGHT (INCOMPLETE)
   const [cellHover, setCellHover] = useState();
 
+  const handleHover = (elm) => {
+    console.log(elm);
+    console.log(track);
+    console.log(parameter);
+  };
+
   useEffect(() => {
-    cellHover && console.log(cellHover);
+    cellHover && handleHover(cellHover);
   }, [cellHover]);
 
   // HANDLES POPOVER
