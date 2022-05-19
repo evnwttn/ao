@@ -10,10 +10,10 @@ export const AOCell = (cell) => {
   const [cellColor, setCellColor] = useState(palette.aoBlack);
 
   // HANDLES CELL HIGHLIGHT
-  const [cellHover, setCellHover] = useState({});
+  const [cellHover, setCellHover] = useState();
 
   useEffect(() => {
-    console.log(cellHover);
+    cellHover && console.log(cellHover);
   }, [cellHover]);
 
   // HANDLES POPOVER
