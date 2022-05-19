@@ -12,8 +12,12 @@ export const AOCell = (cell) => {
   // HANDLES CELL HIGHLIGHT
   const [cellHover, setCellHover] = useState();
 
+  const handleHover = (cellHover) => {
+    console.log(cellHover);
+  };
+
   useEffect(() => {
-    cellHover && console.log(cellHover);
+    cellHover && handleHover(cellHover);
   }, [cellHover]);
 
   // HANDLES POPOVER
@@ -23,7 +27,6 @@ export const AOCell = (cell) => {
 
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
-    cell.track === cellHover.track && console.log("it's a match mf");
   };
 
   const handleClose = () => {
