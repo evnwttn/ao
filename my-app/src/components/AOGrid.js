@@ -1,17 +1,9 @@
 import { Box, Grid } from "@mui/material/";
-import { useState, useEffect } from "react";
 import { gridDomSx, cellSx } from "../assets/theme";
 import { AOCell } from "./AOCell";
 import { data } from "../assets/TestData";
 
 export const AOGrid = () => {
-  const [hovered, setHovered] = useState(false);
-  const toggleHover = () => setHovered(!hovered);
-
-  useEffect(() => {
-    console.log(hovered);
-  }, [hovered]);
-
   return (
     <Box
       sx={{
@@ -39,13 +31,7 @@ export const AOGrid = () => {
           </Grid>
           {data.tracks.map((track) => {
             return (
-              <Grid
-                container
-                key={track}
-                spacing={"0.75vw"}
-                onMouseEnter={toggleHover}
-                onMouseLeave={toggleHover}
-              >
+              <Grid container key={track} spacing={"0.75vw"}>
                 {data.parameters.map((parameter) => {
                   return parameter === `title` ? (
                     <Grid item sm={1} key={parameter}>
@@ -60,8 +46,8 @@ export const AOGrid = () => {
                   ) : (
                     <AOCell
                       key={parameter}
-                      track={track}
-                      parameter={parameter}
+                      cell={{ track, parameter }}
+                      data={data}
                     />
                   );
                 })}
