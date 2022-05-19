@@ -23,6 +23,7 @@ export const AOCell = (cell) => {
 
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
+    cell.track === cellHover.track && console.log("it's a match mf");
   };
 
   const handleClose = () => {
