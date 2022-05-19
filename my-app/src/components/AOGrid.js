@@ -1,28 +1,16 @@
 import { Box, Grid } from "@mui/material/";
+import { useState, useEffect } from "react";
 import { gridDomSx, cellSx } from "../assets/theme";
 import { AOCell } from "./AOCell";
 import { data } from "../assets/TestData";
 
 export const AOGrid = () => {
-  // HANDLES CELL HIGHLIGHT (INCOMPLETE)
-  // const [cellHover, setCellHover] = useState();
-  // const [trackHighlight, setTrackHighlight] = useState();
+  const [hovered, setHovered] = useState(false);
+  const toggleHover = () => setHovered(!hovered);
 
-  // useEffect(() => {
-  //   cellHover && cell.track === cellHover.track
-  //     ? setTrackHighlight(cellHover.track)
-  //     : console.log("poo");
-  // }, [cellHover, cell.track]);
-
-  // useEffect(() => {
-  //   if (cell.track === cellHover.track) {
-  //     console.log(cell);
-  //   }
-  // }, [cellHover]);
-
-  const handleHover = (elm) => {
-    console.log(elm.target);
-  };
+  useEffect(() => {
+    console.log(hovered);
+  }, [hovered]);
 
   return (
     <Box
@@ -38,7 +26,13 @@ export const AOGrid = () => {
             {data.parameters.map((parameterTitle) => {
               return (
                 <Grid item sm={1} key={parameterTitle}>
-                  <Box sx={{ ...cellSx.paraCell }}>{parameterTitle}</Box>
+                  <Box
+                    sx={{
+                      ...cellSx.paraCell,
+                    }}
+                  >
+                    {parameterTitle}
+                  </Box>
                 </Grid>
               );
             })}
@@ -49,12 +43,19 @@ export const AOGrid = () => {
                 container
                 key={track}
                 spacing={"0.75vw"}
-                onMouseEnter={(key) => handleHover(key)}
+                onMouseEnter={toggleHover}
+                onMouseLeave={toggleHover}
               >
                 {data.parameters.map((parameter) => {
                   return parameter === `title` ? (
                     <Grid item sm={1} key={parameter}>
-                      <Box sx={{ ...cellSx.titleCell }}>{track}</Box>
+                      <Box
+                        sx={{
+                          ...cellSx.titleCell,
+                        }}
+                      >
+                        {track}
+                      </Box>
                     </Grid>
                   ) : (
                     <AOCell
