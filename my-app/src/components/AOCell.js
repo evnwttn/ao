@@ -9,20 +9,12 @@ export const AOCell = ({ cell, track, parameter }) => {
   // HANDLES CELL COLOUR
   const [cellColor, setCellColor] = useState(palette.aoBlack);
 
-  console.log(cell);
-
   // HANDLES CELL HIGHLIGHT (INCOMPLETE)
-  // const [cellHover, setCellHover] = useState();
-  // const [cellHighlight, setCellHighlight] = useState("");
+  const [cellHover, setCellHover] = useState();
 
-  // const handleHover = (cellHover, cell) => {
-  //   cellHover.track === cell.track && setCellHighlight("1");
-  //   console.log(cellHighlight);
-  // };
-
-  // useEffect(() => {
-  //   cellHover && handleHover(cellHover, cell);
-  // }, [cellHover, cell]);
+  useEffect(() => {
+    cellHover && console.log(cellHover);
+  }, [cellHover]);
 
   // HANDLES POPOVER
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -47,7 +39,7 @@ export const AOCell = ({ cell, track, parameter }) => {
       <Grid item sm={1} onClick={handleClick}>
         <Box
           aria-describedby={cell}
-          // onMouseEnter={() => setCellHover(cell)}
+          onMouseEnter={() => setCellHover(cell)}
           sx={{
             backgroundColor: cellColor,
             ...cellSx.cell,
