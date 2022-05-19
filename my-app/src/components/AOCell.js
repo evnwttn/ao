@@ -5,9 +5,11 @@ import { Box, Grid, Popover } from "@mui/material/";
 import { palette, cellSx } from "../assets/theme";
 import { AOPopover } from "./AOPopover";
 
-export const AOCell = (cell) => {
+export const AOCell = ({ cell, track, parameter }) => {
   // HANDLES CELL COLOUR
   const [cellColor, setCellColor] = useState(palette.aoBlack);
+
+  console.log(cell);
 
   // HANDLES CELL HIGHLIGHT (INCOMPLETE)
   // const [cellHover, setCellHover] = useState();
