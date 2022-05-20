@@ -1,11 +1,15 @@
 import React from "react";
 import { useForm } from "react-hook-form";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Box, Grid, Popover } from "@mui/material/";
 import { palette, cellSx } from "../assets/theme";
 import { AOPopover } from "./AOPopover";
 
-export const AOCell = ({ cell, toggleHovered, setHoverCell }) => {
+export const AOCell = ({ cell, toggleHovered, setHoverCell, hoverCell }) => {
+  useEffect(() => {
+    hoverCell && console.log(hoverCell);
+  }, [hoverCell]);
+
   // HANDLES CELL COLOUR
   const [cellColor, setCellColor] = useState(palette.aoBlack);
 
