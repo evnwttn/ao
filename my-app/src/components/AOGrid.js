@@ -1,9 +1,18 @@
+import { useState, useEffect } from "react";
 import { Box, Grid } from "@mui/material/";
 import { gridDomSx, cellSx } from "../assets/theme";
 import { AOCell } from "./AOCell";
 import { data } from "../assets/TestData";
 
 export const AOGrid = () => {
+  const [hovered, setHovered] = useState(false);
+  const [hoverCell, setHoverCell] = useState();
+  const toggleHovered = () => setHovered(!hovered);
+
+  useEffect(() => {
+    hovered && hoverCell && console.log(hoverCell);
+  }, [hovered, hoverCell]);
+
   return (
     <Box
       sx={{
@@ -47,7 +56,8 @@ export const AOGrid = () => {
                     <AOCell
                       key={parameter}
                       cell={{ track, parameter }}
-                      highlight={false}
+                      toggleHovered={toggleHovered}
+                      setHoverCell={setHoverCell}
                     />
                   );
                 })}

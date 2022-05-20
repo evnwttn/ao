@@ -1,27 +1,11 @@
 import React from "react";
 import { useForm } from "react-hook-form";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Box, Grid, Popover } from "@mui/material/";
 import { palette, cellSx } from "../assets/theme";
 import { AOPopover } from "./AOPopover";
 
-export const AOCell = ({ cell, highlight }) => {
-  //
-  const [cellHover, setCellHover] = useState("poop");
-  const [hovered, setHovered] = useState(false);
-  const toggleHover = () => setHovered(!hovered);
-
-  console.log(highlight);
-
-  const handleHover = (cellHover) => {
-    hovered && console.log(cellHover.track);
-  };
-
-  useEffect(() => {
-    hovered && setCellHover(cell);
-    cellHover && handleHover(cellHover);
-  }, [hovered, cell, cellHover]);
-
+export const AOCell = ({ cell, toggleHovered, setHoverCell }) => {
   // HANDLES CELL COLOUR
   const [cellColor, setCellColor] = useState(palette.aoBlack);
 
@@ -43,18 +27,14 @@ export const AOCell = ({ cell, highlight }) => {
   const [cellComment, setCellComment] = useState("");
   const onSubmit = (data) => setCellComment(data.comment);
 
-  // in return
-  // if cell.track === elm.track
-  // return highlight TEST
-
   return (
     <>
       <Grid
         item
         sm={1}
         onClick={handleClick}
-        onMouseEnter={() => toggleHover()}
-        onMouseLeave={toggleHover}
+        onMouseEnter={() => setHoverCell(cell)}
+        onMouseLeave={toggleHovered}
       >
         <Box
           aria-describedby={cell}
