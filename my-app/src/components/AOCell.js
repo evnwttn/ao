@@ -5,14 +5,14 @@ import { Box, Grid, Popover } from "@mui/material/";
 import { palette, cellSx } from "../assets/theme";
 import { AOPopover } from "./AOPopover";
 
-export const AOCell = ({ cell, data }) => {
+export const AOCell = ({ cell }) => {
   //
   const [cellHover, setCellHover] = useState();
   const [hovered, setHovered] = useState(false);
   const toggleHover = () => setHovered(!hovered);
 
-  const handleHover = (elm) => {
-    console.log(elm);
+  const handleHover = (cellHover) => {
+    console.log(cellHover.track);
   };
 
   useEffect(() => {
@@ -41,6 +41,10 @@ export const AOCell = ({ cell, data }) => {
   const [cellComment, setCellComment] = useState("");
   const onSubmit = (data) => setCellComment(data.comment);
 
+  // in return
+  // if cell.track === elm.track
+  // return highlight TEST
+
   return (
     <>
       <Grid
@@ -53,7 +57,10 @@ export const AOCell = ({ cell, data }) => {
         <Box
           aria-describedby={cell}
           sx={{
-            backgroundColor: cellColor,
+            backgroundColor:
+              cellHover && hovered && cell.track === cellHover.track
+                ? "pink"
+                : cellColor,
             ...cellSx.cell,
             ...(cellColor !== palette.aoGrey // inverts effect on grey for visibility
               ? cellComment !== "" && cellSx.comment
