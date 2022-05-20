@@ -43,7 +43,8 @@ export const AOCell = ({ cell, toggleHovered, setHoverCell, hoverCell }) => {
         <Box
           aria-describedby={cell}
           sx={{
-            backgroundColor: cellColor,
+            backgroundColor:
+              hoverCell && hoverCell.track === cell.track ? "pink" : cellColor,
             ...cellSx.cell,
             ...(cellColor !== palette.aoGrey // inverts effect on grey for visibility
               ? cellComment !== "" && cellSx.comment
