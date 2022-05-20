@@ -8,15 +8,13 @@ import { AOPopover } from "./AOPopover";
 export const AOCell = ({ cell, data }) => {
   //
   const [cellHover, setCellHover] = useState();
-
   const [hovered, setHovered] = useState(false);
   const toggleHover = () => setHovered(!hovered);
 
   useEffect(() => {
-    cellHover && console.log(cellHover);
-  }, [cellHover]);
-
-  // console.log(data);
+    hovered && setCellHover(cell);
+    console.log(cellHover);
+  }, [hovered, cell]);
 
   // HANDLES CELL COLOUR
   const [cellColor, setCellColor] = useState(palette.aoBlack);
@@ -45,7 +43,7 @@ export const AOCell = ({ cell, data }) => {
         item
         sm={1}
         onClick={handleClick}
-        onMouseEnter={() => setCellHover(cell)}
+        onMouseEnter={() => toggleHover()}
         onMouseLeave={toggleHover}
       >
         <Box
