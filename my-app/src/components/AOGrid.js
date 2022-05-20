@@ -6,12 +6,18 @@ import { data } from "../assets/TestData";
 
 export const AOGrid = () => {
   const [hovered, setHovered] = useState(false);
-  const [hoverCell, setHoverCell] = useState();
   const toggleHovered = () => setHovered(!hovered);
+  const [hoverCell, setHoverCell] = useState();
+  const [hoverParameter, setHoverParameter] = useState();
+  const [hoverTrack, setHoverTrack] = useState();
 
   useEffect(() => {
-    hovered && hoverCell && console.log(hoverCell);
-  }, [hovered, hoverCell]);
+    const handleHover = (hoverCell) => {
+      setHoverParameter(hoverCell.parameter);
+      setHoverTrack(hoverCell.track);
+    };
+    hovered && hoverCell && handleHover(hoverCell);
+  }, [hoverCell, hovered]);
 
   return (
     <Box
