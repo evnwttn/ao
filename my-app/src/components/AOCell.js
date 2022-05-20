@@ -5,14 +5,16 @@ import { Box, Grid, Popover } from "@mui/material/";
 import { palette, cellSx } from "../assets/theme";
 import { AOPopover } from "./AOPopover";
 
-export const AOCell = ({ cell }) => {
+export const AOCell = ({ cell, highlight }) => {
   //
-  const [cellHover, setCellHover] = useState();
+  const [cellHover, setCellHover] = useState("poop");
   const [hovered, setHovered] = useState(false);
   const toggleHover = () => setHovered(!hovered);
 
+  console.log(highlight);
+
   const handleHover = (cellHover) => {
-    console.log(cellHover.track);
+    hovered && console.log(cellHover.track);
   };
 
   useEffect(() => {
@@ -59,10 +61,6 @@ export const AOCell = ({ cell }) => {
           sx={{
             backgroundColor: cellColor,
             ...cellSx.cell,
-            ...(cellHover &&
-              hovered &&
-              cell.track === cellHover.track &&
-              cellSx.cellHighlight),
             ...(cellColor !== palette.aoGrey // inverts effect on grey for visibility
               ? cellComment !== "" && cellSx.comment
               : cellComment !== "" && cellSx.commentInverse),

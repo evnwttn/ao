@@ -47,7 +47,7 @@ export const AOGrid = () => {
                     <AOCell
                       key={parameter}
                       cell={{ track, parameter }}
-                      data={data}
+                      highlight={false}
                     />
                   );
                 })}
