@@ -1,15 +1,11 @@
 import React from "react";
 import { useForm } from "react-hook-form";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Box, Grid, Popover } from "@mui/material/";
 import { palette, cellSx } from "../assets/theme";
 import { AOPopover } from "./AOPopover";
 
 export const AOCell = ({ cell, toggleHovered, setHoverCell, hoverCell }) => {
-  useEffect(() => {
-    hoverCell && console.log(hoverCell);
-  }, [hoverCell]);
-
   // HANDLES CELL COLOUR
   const [cellColor, setCellColor] = useState(palette.aoBlack);
 
@@ -43,9 +39,13 @@ export const AOCell = ({ cell, toggleHovered, setHoverCell, hoverCell }) => {
         <Box
           aria-describedby={cell}
           sx={{
-            backgroundColor:
-              hoverCell && hoverCell.track === cell.track ? "pink" : cellColor,
+            backgroundColor: cellColor,
             ...cellSx.cell,
+            boxShadow:
+              (hoverCell && hoverCell.track === cell.track) ||
+              hoverCell.parameter === cell.parameter
+                ? `0 0 1px 1px ${palette.aoWhite}`
+                : ``,
             ...(cellColor !== palette.aoGrey // inverts effect on grey for visibility
               ? cellComment !== "" && cellSx.comment
               : cellComment !== "" && cellSx.commentInverse),
