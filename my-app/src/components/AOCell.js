@@ -11,10 +11,14 @@ export const AOCell = ({ cell, data }) => {
   const [hovered, setHovered] = useState(false);
   const toggleHover = () => setHovered(!hovered);
 
+  const handleHover = (elm) => {
+    console.log(elm);
+  };
+
   useEffect(() => {
     hovered && setCellHover(cell);
-    console.log(cellHover);
-  }, [hovered, cell]);
+    cellHover && handleHover(cellHover);
+  }, [hovered, cell, cellHover]);
 
   // HANDLES CELL COLOUR
   const [cellColor, setCellColor] = useState(palette.aoBlack);
