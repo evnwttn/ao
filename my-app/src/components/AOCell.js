@@ -43,7 +43,7 @@ export const AOCell = ({ cell, toggleHovered, setHoverCell, hoverCell }) => {
             ...cellSx.cell,
             boxShadow:
               (hoverCell && hoverCell.track === cell.track) ||
-              hoverCell.parameter === cell.parameter
+              (hoverCell && hoverCell.parameter === cell.parameter)
                 ? `0 0 1px 1px ${palette.aoWhite}`
                 : ``,
             ...(cellColor !== palette.aoGrey // inverts effect on grey for visibility
