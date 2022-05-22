@@ -21,7 +21,6 @@ export const AOCommentModal = ({ register, handleSubmit, onSubmit, cell }) => {
         <Box
           sx={{
             pr: 1,
-            fontSize: "0.81vw",
             fontWeight: "800",
             color: palette.aoRed,
           }}
