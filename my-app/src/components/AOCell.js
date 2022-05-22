@@ -42,9 +42,10 @@ export const AOCell = ({ cell, toggleHovered, setHoverCell, hoverCell }) => {
             backgroundColor: cellColor,
             ...cellSx.cell,
             boxShadow:
+              // triggers cell hover effects
               (hoverCell && hoverCell.track === cell.track) ||
               (hoverCell && hoverCell.parameter === cell.parameter)
-                ? `0 0 1px 1px ${palette.aoWhite}`
+                ? `0 0 0.45vw 0.5vw rgb(243, 239, 224, 0.1)`
                 : ``,
             ...(cellColor !== palette.aoGrey && cellColor !== "transparent"
               ? cellComment !== "" && cellSx.comment

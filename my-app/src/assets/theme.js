@@ -213,9 +213,6 @@ export const cellSx = {
     my: "0.75vh",
     padding: "3.5vh",
   },
-  cellHighlight: {
-    border: "solid 3px #0F7391",
-  },
   comment: {
     backgroundImage: `url(${commentFx})`,
     backgroundSize: "47.5%",
