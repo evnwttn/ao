@@ -18,7 +18,14 @@ export const AOCommentModal = ({ register, handleSubmit, onSubmit, cell }) => {
           mb: 1,
         }}
       >
-        <Box sx={{ pr: 1, fontWeight: "bold", color: palette.aoRed }}>
+        <Box
+          sx={{
+            pr: 1,
+            fontSize: "0.81vw",
+            fontWeight: "800",
+            color: palette.aoRed,
+          }}
+        >
           {cell.track}
         </Box>
         <Divider
