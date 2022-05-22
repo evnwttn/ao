@@ -46,7 +46,7 @@ export const AOCell = ({ cell, toggleHovered, setHoverCell, hoverCell }) => {
               (hoverCell && hoverCell.parameter === cell.parameter)
                 ? `0 0 1px 1px ${palette.aoWhite}`
                 : ``,
-            ...(cellColor !== palette.aoGrey // inverts effect on grey for visibility
+            ...(cellColor !== palette.aoGrey && cellColor !== "transparent"
               ? cellComment !== "" && cellSx.comment
               : cellComment !== "" && cellSx.commentInverse),
             "&:hover": {
