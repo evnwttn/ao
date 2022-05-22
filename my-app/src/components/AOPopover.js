@@ -3,6 +3,7 @@ import { Box } from "@mui/system";
 import { AOColorWheel } from "./AOColorWheel";
 import { AOCommentBase } from "./AOCommentBase";
 import { wheelSx } from "../assets/theme";
+import { Tooltip } from "@mui/material/";
 import HighlightOffIcon from "@mui/icons-material/HighlightOff";
 
 export const AOPopover = ({
@@ -48,7 +49,9 @@ export const AOPopover = ({
           ...wheelSx.remove,
         }}
       >
-        <HighlightOffIcon onClick={() => handleClick("transparent")} />
+        <Tooltip title="Delete Task" placement="right-end">
+          <HighlightOffIcon onClick={() => handleClick("transparent")} />
+        </Tooltip>
       </Box>
     </Box>
   );
