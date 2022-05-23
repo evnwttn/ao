@@ -89,7 +89,7 @@ render(
   <BrowserRouter>
     <Routes>
       <Route path="/ao" element={<AO />} />
-      <Route path="/AOGrid" element={<AOGrid />} />
+      <Route path="/aogrid" element={<AOGrid />} />
     </Routes>
   </BrowserRouter>,
   rootElement
