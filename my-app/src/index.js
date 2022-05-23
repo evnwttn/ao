@@ -1,18 +1,17 @@
 import { React, useState, useEffect } from "react";
-import ReactDOM from "react-dom";
-import { ThemeProvider, Box } from "@mui/material";
-import aotheme from "./assets/theme";
-import "@fontsource/noto-sans";
-import "@fontsource/noto-serif";
-import "./index.css";
-import Button from "@mui/material/Button";
+import ReactDOM, { render } from "react-dom";
 import { ModalButton } from "./components/ModalButton";
 import { MainLogo } from "./components/MainLogo";
 import { ModalBase } from "./components/ModalBase";
 import { AOGrid } from "./components/AOGrid";
+import { ThemeProvider, Box, Button } from "@mui/material";
 import TableViewIcon from "@mui/icons-material/TableView";
+import aotheme from "./assets/theme";
+import "@fontsource/noto-sans";
+import "@fontsource/noto-serif";
+import "./index.css";
 
-let Home = () => {
+export const Home = () => {
   const [open, setOpen] = useState(false);
   const [modalType, setModalType] = useState("");
   const [gridOpen, setGridOpen] = useState(true);
