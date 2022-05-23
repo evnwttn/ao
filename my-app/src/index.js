@@ -38,59 +38,39 @@ const Home = () => {
       }}
     >
       <ThemeProvider theme={aotheme}>
-        <Button
-          sx={{ position: "fixed" }}
-          onClick={() => setGridOpen(!gridOpen)}
-        >
-          <TableViewIcon />
+        <Button sx={{ position: "fixed" }}>
+          <Link to="/aogrid">
+            <TableViewIcon />
+          </Link>
         </Button>
-        {gridOpen === false ? (
-          <>
-            <ModalBase open={open} handleClose={handleClose} text={modalType} />
-
-            <Box
-              sx={{
-                display: "flex",
-                flexDirection: "row",
-                justifyContent: "flex-end",
-                alignItems: "center",
-              }}
-            >
-              <ModalButton
-                text={"About"}
-                handleOpen={(text) => handleOpen(text)}
-              />
-              <ModalButton
-                text={"Contact"}
-                handleOpen={(text) => handleOpen(text)}
-              />
-            </Box>
-
-            <Box
-              sx={{
-                display: "flex",
-                paddingTop: "28vh",
-                flexDirection: "row",
-                alignContent: "center",
-                justifyContent: "center",
-              }}
-            >
-              <ModalButton
-                text={"New"}
-                handleOpen={(text) => handleOpen(text)}
-              />
-              <MainLogo />
-              <ModalButton
-                text={"Load"}
-                handleOpen={(text) => handleOpen(text)}
-              />
-            </Box>
-          </>
-        ) : (
-          <>
-            <AOGrid />
-          </>
-        )}
+        <ModalBase open={open} handleClose={handleClose} text={modalType} />
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "row",
+            justifyContent: "flex-end",
+            alignItems: "center",
+          }}
+        >
+          <ModalButton text={"About"} handleOpen={(text) => handleOpen(text)} />
+          <ModalButton
+            text={"Contact"}
+            handleOpen={(text) => handleOpen(text)}
+          />
+        </Box>
+        <Box
+          sx={{
+            display: "flex",
+            paddingTop: "28vh",
+            flexDirection: "row",
+            alignContent: "center",
+            justifyContent: "center",
+          }}
+        >
+          <ModalButton text={"New"} handleOpen={(text) => handleOpen(text)} />
+          <MainLogo />
+          <ModalButton text={"Load"} handleOpen={(text) => handleOpen(text)} />
+        </Box>
       </ThemeProvider>
     </Box>
   );
@@ -108,9 +88,8 @@ const rootElement = document.getElementById("root");
 render(
   <BrowserRouter>
     <Routes>
-      <Route path="/ao" element={<AO />}>
-        <Route path="/aogrid" element={<AOGrid />} />
-      </Route>
+      <Route path="/ao" element={<AO />} />
+      <Route path="/AOGrid" element={<AOGrid />} />
     </Routes>
   </BrowserRouter>,
   rootElement
