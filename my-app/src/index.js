@@ -1,5 +1,5 @@
 import { React, useState, useEffect } from "react";
-import ReactDOM, { render } from "react-dom";
+import { render } from "react-dom";
 import { ModalButton } from "./components/ModalButton";
 import { MainLogo } from "./components/MainLogo";
 import { ModalBase } from "./components/ModalBase";
@@ -11,7 +11,7 @@ import "@fontsource/noto-sans";
 import "@fontsource/noto-serif";
 import "./index.css";
 
-export const Home = () => {
+const Home = () => {
   const [open, setOpen] = useState(false);
   const [modalType, setModalType] = useState("");
   const [gridOpen, setGridOpen] = useState(true);
@@ -97,7 +97,7 @@ export const Home = () => {
   );
 };
 
-let AO = () => {
+export const AO = () => {
   return (
     <>
       <Home />
@@ -105,4 +105,5 @@ let AO = () => {
   );
 };
 
-ReactDOM.render(AO(), document.getElementById("root"));
+const rootElement = document.getElementById("root");
+render(<AO />, rootElement);
