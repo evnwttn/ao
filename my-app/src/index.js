@@ -8,6 +8,7 @@ import { AOGrid } from "./components/AOGrid";
 import { ThemeProvider, Box, Button } from "@mui/material";
 import TableViewIcon from "@mui/icons-material/TableView";
 import aotheme from "./assets/theme";
+import { homeSx } from "./assets/theme";
 import "./index.css";
 
 const Home = () => {
@@ -30,10 +31,7 @@ const Home = () => {
   return (
     <Box
       sx={{
-        marginLeft: "2.5vw",
-        marginRight: "2.5vw",
-        marginTop: "2.5vh",
-        marginBottom: "2.5vh",
+        ...homeSx.mainDiv,
       }}
     >
       <ThemeProvider theme={aotheme}>
@@ -45,10 +43,7 @@ const Home = () => {
         <ModalBase open={open} handleClose={handleClose} text={modalType} />
         <Box
           sx={{
-            display: "flex",
-            flexDirection: "row",
-            justifyContent: "flex-end",
-            alignItems: "center",
+            ...homeSx.cornerDiv,
           }}
         >
           <ModalButton text={"About"} handleOpen={(text) => handleOpen(text)} />
@@ -59,11 +54,7 @@ const Home = () => {
         </Box>
         <Box
           sx={{
-            display: "flex",
-            paddingTop: "28vh",
-            flexDirection: "row",
-            alignContent: "center",
-            justifyContent: "center",
+            ...homeSx.centerDiv,
           }}
         >
           <ModalButton text={"New"} handleOpen={(text) => handleOpen(text)} />

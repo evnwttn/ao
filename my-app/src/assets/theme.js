@@ -151,6 +151,30 @@ export const logoSx = {
   userSelectNone: "none",
 };
 
+// HOME
+
+export const homeSx = {
+  mainDiv: {
+    marginLeft: "2.5vw",
+    marginRight: "2.5vw",
+    marginTop: "2.5vh",
+    marginBottom: "2.5vh",
+  },
+  cornerDiv: {
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "flex-end",
+    alignItems: "center",
+  },
+  centerDiv: {
+    display: "flex",
+    paddingTop: "28vh",
+    flexDirection: "row",
+    alignContent: "center",
+    justifyContent: "center",
+  },
+};
+
 // MODALS
 
 export const modalFontSx = {
