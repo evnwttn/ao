@@ -1,6 +1,6 @@
 import { React, useState, useEffect } from "react";
 import { render } from "react-dom";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import { ModalButton } from "./components/ModalButton";
 import { MainLogo } from "./components/MainLogo";
 import { ModalBase } from "./components/ModalBase";
@@ -108,7 +108,9 @@ const rootElement = document.getElementById("root");
 render(
   <BrowserRouter>
     <Routes>
-      <Route path="/ao" element={<AO />}></Route>
+      <Route path="/ao" element={<AO />}>
+        <Route path="/aogrid" element={<AOGrid />} />
+      </Route>
     </Routes>
   </BrowserRouter>,
   rootElement
