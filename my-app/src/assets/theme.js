@@ -1,4 +1,6 @@
 import { createTheme } from "@mui/material";
+import "@fontsource/noto-sans";
+import "@fontsource/noto-serif";
 import commentFx from "./img/commentfx.png";
 import commentFxInverse from "./img/commentfxinverse.png";
 

@@ -1,6 +1,6 @@
 import { React, useState, useEffect } from "react";
 import { render } from "react-dom";
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ModalButton } from "./components/ModalButton";
 import { MainLogo } from "./components/MainLogo";
 import { ModalBase } from "./components/ModalBase";
@@ -8,8 +8,6 @@ import { AOGrid } from "./components/AOGrid";
 import { ThemeProvider, Box, Button } from "@mui/material";
 import TableViewIcon from "@mui/icons-material/TableView";
 import aotheme from "./assets/theme";
-import "@fontsource/noto-sans";
-import "@fontsource/noto-serif";
 import "./index.css";
 
 const Home = () => {
@@ -109,7 +107,9 @@ export const AO = () => {
 const rootElement = document.getElementById("root");
 render(
   <BrowserRouter>
-    <AO />
+    <Routes>
+      <Route path="/ao" element={<AO />}></Route>
+    </Routes>
   </BrowserRouter>,
   rootElement
 );
