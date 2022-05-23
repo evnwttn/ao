@@ -1,5 +1,6 @@
 import { React, useState, useEffect } from "react";
 import { render } from "react-dom";
+import { BrowserRouter } from "react-router-dom";
 import { ModalButton } from "./components/ModalButton";
 import { MainLogo } from "./components/MainLogo";
 import { ModalBase } from "./components/ModalBase";
@@ -106,4 +107,9 @@ export const AO = () => {
 };
 
 const rootElement = document.getElementById("root");
-render(<AO />, rootElement);
+render(
+  <BrowserRouter>
+    <AO />
+  </BrowserRouter>,
+  rootElement
+);
