@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { modalFontSx } from "../../assets/theme";
 import {
   Box,
   List,
@@ -15,7 +16,7 @@ export const LoadModalContent = () => {
     <Box sx={{ mx: 2, width: "85%" }}>
       <List>
         <ListItem disablePadding>
-          <Link to="/aogrid">
+          <Link to="/aogrid" style={{ textDecoration: "none", ...modalFontSx }}>
             <ListItemButton
               sx={{
                 "&:hover": {
