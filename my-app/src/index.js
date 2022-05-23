@@ -13,7 +13,6 @@ import "./index.css";
 const Home = () => {
   const [open, setOpen] = useState(false);
   const [modalType, setModalType] = useState("");
-  const [gridOpen, setGridOpen] = useState(true);
 
   const handleOpen = (text) => {
     setModalType(text);
