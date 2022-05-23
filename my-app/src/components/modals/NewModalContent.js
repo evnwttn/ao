@@ -1,11 +1,10 @@
 import React, { useState } from "react";
-import { Box, TextField, IconButton, Divider } from "@mui/material";
 import { useForm } from "react-hook-form";
-import { palette } from "../../assets/theme";
+import { NewModalContentList } from "./NewModalContentList";
+import { modalCenteredSx, palette } from "../../assets/theme";
+import { Box, TextField, IconButton, Divider } from "@mui/material";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import AddCircleIcon from "@mui/icons-material/AddCircle";
-import { NewModalContentList } from "./NewModalContentList";
-import { modalCenteredSx } from "../../assets/theme";
 
 export const NewModalContent = () => {
   const [aoSessionTitle, setAoSessionTitle] = useState("");
