@@ -33,8 +33,8 @@ export const data = {
 export const dummyData = {
   id: "album",
   author: "evan123",
-  tracks: {
-    "speak to me": {
+  tracks: [
+    {
       title: "speak to me",
       vocals: { colour: palette.aoGrey },
       guitar: { colour: palette.aoGrey },
@@ -48,7 +48,7 @@ export const dummyData = {
       master: { colour: palette.aoGrey },
       done: { colour: palette.aoGrey },
     },
-    "breathe (in the air)": {
+    {
       title: "breathe (in the air)",
       vocals: { colour: palette.aoGrey },
       guitar: { colour: palette.aoGrey },
@@ -62,7 +62,7 @@ export const dummyData = {
       master: { colour: palette.aoGrey },
       done: { colour: palette.aoGrey },
     },
-    "on the run": {
+    {
       title: "on the run",
       vocals: { colour: palette.aoGrey },
       guitar: { colour: palette.aoGrey },
@@ -76,7 +76,7 @@ export const dummyData = {
       master: { colour: palette.aoGrey },
       done: { colour: palette.aoGrey },
     },
-    time: {
+    {
       title: "time",
       vocals: { colour: palette.aoGrey },
       guitar: { colour: palette.aoGrey },
@@ -90,7 +90,7 @@ export const dummyData = {
       master: { colour: palette.aoGrey },
       done: { colour: palette.aoGrey },
     },
-    "the great gig in the sky": {
+    {
       title: "the great gig in the sky",
       vocals: { colour: palette.aoGrey },
       guitar: { colour: palette.aoGrey },
@@ -104,7 +104,7 @@ export const dummyData = {
       master: { colour: palette.aoGrey },
       done: { colour: palette.aoGrey },
     },
-    money: {
+    {
       title: "money",
       vocals: { colour: palette.aoGrey },
       guitar: { colour: palette.aoGrey },
@@ -118,7 +118,7 @@ export const dummyData = {
       master: { colour: palette.aoGrey },
       done: { colour: palette.aoGrey },
     },
-    "us and them": {
+    {
       title: "us and them",
       vocals: { colour: palette.aoGrey },
       guitar: { colour: palette.aoGrey },
@@ -132,7 +132,7 @@ export const dummyData = {
       master: { colour: palette.aoGrey },
       done: { colour: palette.aoGrey },
     },
-    "any colour you like": {
+    {
       title: "any colour you like",
       vocals: { colour: palette.aoGrey },
       guitar: { colour: palette.aoGrey },
@@ -146,7 +146,7 @@ export const dummyData = {
       master: { colour: palette.aoGrey },
       done: { colour: palette.aoGrey },
     },
-    "brain damage": {
+    {
       title: "brain damage",
       vocals: { colour: palette.aoGrey },
       guitar: { colour: palette.aoGrey },
@@ -160,7 +160,7 @@ export const dummyData = {
       master: { colour: palette.aoGrey },
       done: { colour: palette.aoGrey },
     },
-    eclipse: {
+    {
       title: "eclipse",
       vocals: { colour: palette.aoGrey },
       guitar: { colour: palette.aoGrey },
@@ -174,5 +174,5 @@ export const dummyData = {
       master: { colour: palette.aoGrey },
       done: { colour: palette.aoGrey },
     },
-  },
+  ],
 };
