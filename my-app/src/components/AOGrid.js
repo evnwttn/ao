@@ -27,7 +27,7 @@ export const AOGrid = () => {
         <Box sx={{ ...gridDomSx }}>
           <Grid container>
             <Grid container spacing={"0.75vw"}>
-              {data.parameters.map((parameterTitle) => {
+              {sampleData.parameters.map((parameterTitle) => {
                 return (
                   <Grid item sm={1} key={parameterTitle}>
                     <Box
