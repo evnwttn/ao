@@ -1,3 +1,5 @@
+import { palette } from "./theme";
+
 export const data = {
   sessionTitle: "the dark side of the moon",
   tracks: [
@@ -26,4 +28,25 @@ export const data = {
     "master",
     "done",
   ],
+};
+
+export const dummyData = {
+  id: "album",
+  author: "evan123",
+  tracks: {
+    "speak to me": {
+      title: "speak to me",
+      vocals: { colour: palette.aoGrey },
+      guitar: { colour: palette.aoGrey },
+      bass: { colour: palette.aoGrey },
+      drums: { colour: palette.aoGrey },
+      piano: { colour: palette.aoGrey },
+      guestPlayers: { colour: palette.aoGrey },
+      guestVocals: { colour: palette.aoGrey },
+      fx: { colour: palette.aoGrey },
+      mix: { colour: palette.aoGrey },
+      master: { colour: palette.aoGrey },
+      done: { colour: palette.aoGrey },
+    },
+  },
 };
