@@ -3,12 +3,7 @@ import { Box, Grid, ThemeProvider } from "@mui/material/";
 import { gridDomSx, cellSx } from "../assets/theme";
 import aotheme from "../assets/theme";
 import { AOCell } from "./AOCell";
-import { data } from "../assets/TestData";
 import { sampleData } from "../assets/TestData";
-
-console.log(sampleData);
-
-console.log(data);
 
 export const AOGrid = () => {
   const [hovered, setHovered] = useState(false);
@@ -41,10 +36,10 @@ export const AOGrid = () => {
                 );
               })}
             </Grid>
-            {data.tracks.map((track) => {
+            {sampleData.tracks.map((track, parameter) => {
               return (
-                <Grid container key={track} spacing={"0.75vw"}>
-                  {data.parameters.map((parameter) => {
+                <Grid container key={track.title} spacing={"0.75vw"}>
+                  {sampleData.parameters.map((parameter) => {
                     return parameter === `title` ? (
                       <Grid item sm={1} key={parameter}>
                         <Box
@@ -52,7 +47,7 @@ export const AOGrid = () => {
                             ...cellSx.titleCell,
                           }}
                         >
-                          {track}
+                          {track.title}
                         </Box>
                       </Grid>
                     ) : (

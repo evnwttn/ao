@@ -1,35 +1,5 @@
 import { palette } from "./theme";
 
-export const data = {
-  sessionTitle: "the dark side of the moon",
-  tracks: [
-    "speak to me",
-    "breathe (in the air)",
-    "on the run",
-    "time",
-    "the great gig in the sky",
-    "money",
-    "us and them",
-    "any colour you like",
-    "brain damage",
-    "eclipse",
-  ],
-  parameters: [
-    "title",
-    "vocals",
-    "guitar",
-    "bass",
-    "drums",
-    "piano",
-    "guest players",
-    "guest vocals",
-    "fx",
-    "mix",
-    "master",
-    "done",
-  ],
-};
-
 export const sampleData = {
   id: "the dark side of the moon",
   author: "pink floyd",
@@ -190,3 +160,33 @@ export const sampleData = {
     "done",
   ],
 };
+
+// export const data = {
+//   sessionTitle: "the dark side of the moon",
+//   tracks: [
+//     "speak to me",
+//     "breathe (in the air)",
+//     "on the run",
+//     "time",
+//     "the great gig in the sky",
+//     "money",
+//     "us and them",
+//     "any colour you like",
+//     "brain damage",
+//     "eclipse",
+//   ],
+//   parameters: [
+//     "title",
+//     "vocals",
+//     "guitar",
+//     "bass",
+//     "drums",
+//     "piano",
+//     "guest players",
+//     "guest vocals",
+//     "fx",
+//     "mix",
+//     "master",
+//     "done",
+//   ],
+// };

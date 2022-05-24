@@ -25,7 +25,7 @@ export const AOCommentModal = ({ register, handleSubmit, onSubmit, cell }) => {
             color: palette.aoRed,
           }}
         >
-          {cell.track}
+          {cell.track.title}
         </Box>
         <Divider
           orientation="vertical"
