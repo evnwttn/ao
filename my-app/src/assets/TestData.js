@@ -1,5 +1,28 @@
 import { palette } from "./theme";
 
+const data2 = {
+  id: "album 123",
+  author: "ev 123",
+  tracks: [
+    {
+      title: "song 1",
+      parameters: [
+        { parameter: "vocals", colour: palette.aoGrey },
+        { parameter: "guitars", colour: palette.aoGrey },
+        { parameter: "bass", colour: palette.aoGrey },
+        { parameter: "drums", colour: palette.aoGrey },
+        { parameter: "piano", colour: palette.aoGrey },
+        { parameter: "guest players", colour: palette.aoGrey },
+        { parameter: "guest vocals", colour: palette.aoGrey },
+        { parameter: "fx", colour: palette.aoGrey },
+        { parameter: "mix", colour: palette.aoGrey },
+        { parameter: "master", colour: palette.aoGrey },
+        { parameter: "done", colour: palette.aoGrey },
+      ],
+    },
+  ],
+};
+
 export const sampleData = {
   id: "the dark side of the moon",
   author: "pink floyd",
