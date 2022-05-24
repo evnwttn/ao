@@ -7,7 +7,7 @@ import { AOPopover } from "./AOPopover";
 
 export const AOCell = ({ cell, toggleHovered, setHoverCell, hoverCell }) => {
   // HANDLES CELL COLOUR
-  const [cellColor, setCellColor] = useState(palette.aoBlack);
+  const [cellColor, setCellColor] = useState("transparent");
 
   // HANDLES POPOVER
   const [anchorEl, setAnchorEl] = React.useState(null);
