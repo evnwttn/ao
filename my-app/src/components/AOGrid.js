@@ -4,6 +4,11 @@ import { gridDomSx, cellSx } from "../assets/theme";
 import aotheme from "../assets/theme";
 import { AOCell } from "./AOCell";
 import { data } from "../assets/TestData";
+import { sampleData } from "../assets/TestData";
+
+console.log(sampleData);
+
+console.log(data);
 
 export const AOGrid = () => {
   const [hovered, setHovered] = useState(false);
