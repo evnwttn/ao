@@ -1,13 +1,14 @@
 import { useState } from "react";
+import { useLocation } from "react-router-dom";
 import { Box, Grid, ThemeProvider } from "@mui/material/";
 import { gridDomSx, cellSx } from "../assets/theme";
 import aotheme from "../assets/theme";
 import { AOCell } from "./AOCell";
 import { sampleData } from "../assets/TestData";
 
-export const AOGrid = ({ data }) => {
-  const [gridData, setGridData] = useState(sampleData);
-  data && setGridData(data);
+export const AOGrid = () => {
+  const location = useLocation();
+  const { from } = location.state;
 
   const [hovered, setHovered] = useState(false);
   const toggleHovered = () => setHovered(!hovered);
@@ -25,7 +26,7 @@ export const AOGrid = ({ data }) => {
         <Box sx={{ ...gridDomSx }}>
           <Grid container>
             <Grid container spacing={"0.75vw"}>
-              {gridData.parameters.map((parameterTitle) => {
+              {sampleData.parameters.map((parameterTitle) => {
                 return (
                   <Grid item sm={1} key={parameterTitle}>
                     <Box
@@ -39,10 +40,10 @@ export const AOGrid = ({ data }) => {
                 );
               })}
             </Grid>
-            {gridData.tracks.map((track, parameter) => {
+            {sampleData.tracks.map((track, parameter) => {
               return (
                 <Grid container key={track.title} spacing={"0.75vw"}>
-                  {gridData.parameters.map((parameter) => {
+                  {sampleData.parameters.map((parameter) => {
                     return parameter === `title` ? (
                       <Grid item sm={1} key={parameter}>
                         <Box

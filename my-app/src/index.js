@@ -36,7 +36,7 @@ const Home = () => {
     >
       <ThemeProvider theme={aotheme}>
         <Button sx={{ position: "fixed" }}>
-          <Link to="/aogrid">
+          <Link to="/aogrid" state={{ from: "home" }}>
             <TableViewIcon />
           </Link>
         </Button>
