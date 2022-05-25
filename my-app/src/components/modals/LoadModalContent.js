@@ -10,13 +10,18 @@ import {
   ListItemText,
 } from "@mui/material";
 import ArrowRightIcon from "@mui/icons-material/ArrowRight";
+import { loadSampleData } from "../../assets/LoadSample";
 
 export const LoadModalContent = () => {
   return (
     <Box sx={{ mx: 2, width: "85%" }}>
       <List>
         <ListItem disablePadding>
-          <Link to="/aogrid" style={{ textDecoration: "none", ...modalFontSx }}>
+          <Link
+            to="/aogrid"
+            data={loadSampleData}
+            style={{ textDecoration: "none", ...modalFontSx }}
+          >
             <ListItemButton
               sx={{
                 "&:hover": {

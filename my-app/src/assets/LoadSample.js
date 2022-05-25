@@ -1,6 +1,6 @@
 import { palette } from "./theme";
 
-export const sampleData = {
+export const loadSampleData = {
   id: "the dark side of the moon",
   author: "pink floyd",
   tracks: [

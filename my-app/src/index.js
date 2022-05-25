@@ -10,7 +10,6 @@ import { ThemeProvider, Box, Button } from "@mui/material";
 import TableViewIcon from "@mui/icons-material/TableView";
 import aotheme from "./assets/theme";
 import { homeSx } from "./assets/theme";
-import { sampleData } from "./assets/TestData";
 
 const Home = () => {
   const [open, setOpen] = useState(false);
@@ -72,7 +71,7 @@ render(
   <BrowserRouter>
     <Routes>
       <Route path="/ao" element={<Home />} />
-      <Route path="/aogrid" element={<AOGrid data={sampleData} />} />
+      <Route path="/aogrid" element={<AOGrid />} />
     </Routes>
   </BrowserRouter>,
   rootElement
