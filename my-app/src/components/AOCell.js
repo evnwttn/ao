@@ -23,11 +23,9 @@ export const AOCell = ({
 
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
-    for (let i = 0; i < track.parameters.length; i++) {
-      if (track.parameters[i].parameter === parameter) {
-        console.log(track.parameters[i].colour);
-      }
-    }
+    track.parameters.map(
+      (para) => para.parameter === parameter && console.log(para.colour)
+    );
   };
 
   const handleClose = () => {
