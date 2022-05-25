@@ -1,14 +1,23 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { Box, Grid, ThemeProvider } from "@mui/material/";
 import { gridDomSx, cellSx } from "../assets/theme";
 import aotheme from "../assets/theme";
 import { AOCell } from "./AOCell";
-import { sampleData, loadSampleData } from "../assets/TestData";
+import { sampleData } from "../assets/TestData";
+import { darkSide } from "../assets/DarkSide";
 
 export const AOGrid = () => {
+  // HANDLES LOADING GRID DATA
   const location = useLocation();
-  const { from } = location.state;
+  const [gridData, setGridData] = useState(sampleData);
+
+  useEffect(() => {
+    const { from } = location.state;
+    from === "load" && setGridData(darkSide);
+  }, [location.state]);
+
+  // HANDLES CELL HOVERING FX
 
   const [hovered, setHovered] = useState(false);
   const toggleHovered = () => setHovered(!hovered);
@@ -26,7 +35,7 @@ export const AOGrid = () => {
         <Box sx={{ ...gridDomSx }}>
           <Grid container>
             <Grid container spacing={"0.75vw"}>
-              {sampleData.parameters.map((parameterTitle) => {
+              {gridData.parameters.map((parameterTitle) => {
                 return (
                   <Grid item sm={1} key={parameterTitle}>
                     <Box
@@ -40,10 +49,10 @@ export const AOGrid = () => {
                 );
               })}
             </Grid>
-            {sampleData.tracks.map((track, parameter) => {
+            {gridData.tracks.map((track, parameter) => {
               return (
                 <Grid container key={track.title} spacing={"0.75vw"}>
-                  {sampleData.parameters.map((parameter) => {
+                  {gridData.parameters.map((parameter) => {
                     return parameter === `title` ? (
                       <Grid item sm={1} key={parameter}>
                         <Box
