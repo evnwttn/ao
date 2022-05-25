@@ -1,3 +1,4 @@
+import "./index.css";
 import { React, useState, useEffect } from "react";
 import { render } from "react-dom";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
@@ -9,7 +10,7 @@ import { ThemeProvider, Box, Button } from "@mui/material";
 import TableViewIcon from "@mui/icons-material/TableView";
 import aotheme from "./assets/theme";
 import { homeSx } from "./assets/theme";
-import "./index.css";
+import { sampleData } from "./assets/TestData";
 
 const Home = () => {
   const [open, setOpen] = useState(false);
@@ -66,19 +67,11 @@ const Home = () => {
   );
 };
 
-export const AO = () => {
-  return (
-    <>
-      <Home />
-    </>
-  );
-};
-
 const rootElement = document.getElementById("root");
 render(
   <BrowserRouter>
     <Routes>
-      <Route path="/ao" element={<AO />} />
+      <Route path="/ao" element={<Home />} />
       <Route path="/aogrid" element={<AOGrid />} />
     </Routes>
   </BrowserRouter>,
