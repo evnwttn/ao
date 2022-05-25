@@ -72,7 +72,7 @@ render(
   <BrowserRouter>
     <Routes>
       <Route path="/ao" element={<Home />} />
-      <Route path="/aogrid" element={<AOGrid />} />
+      <Route path="/aogrid" element={<AOGrid data={sampleData} />} />
     </Routes>
   </BrowserRouter>,
   rootElement
