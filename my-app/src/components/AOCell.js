@@ -24,7 +24,7 @@ export const AOCell = ({
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
     track.parameters.map(
-      (para) => para.parameter === parameter && console.log(para.colour)
+      (cell) => cell.parameter === parameter && console.log(cell.colour)
     );
   };
 
