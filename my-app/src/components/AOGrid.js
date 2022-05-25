@@ -4,7 +4,7 @@ import { Box, Grid, ThemeProvider } from "@mui/material/";
 import { gridDomSx, cellSx } from "../assets/theme";
 import aotheme from "../assets/theme";
 import { AOCell } from "./AOCell";
-import { sampleData } from "../assets/TestData";
+import { sampleData, loadSampleData } from "../assets/TestData";
 
 export const AOGrid = () => {
   const location = useLocation();
