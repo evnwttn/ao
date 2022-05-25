@@ -5,7 +5,7 @@ import { gridDomSx, cellSx } from "../assets/theme";
 import aotheme from "../assets/theme";
 import { AOCell } from "./AOCell";
 import { sampleData } from "../assets/TestData";
-import { darkSide } from "../assets/DarkSide";
+import { darkSideOfTheMoon } from "../assets/LoadSample";
 
 export const AOGrid = () => {
   // HANDLES LOADING GRID DATA
@@ -14,7 +14,7 @@ export const AOGrid = () => {
 
   useEffect(() => {
     const { from } = location.state;
-    from === "load" && setGridData(darkSide);
+    from === "load" && setGridData(darkSideOfTheMoon);
   }, [location.state]);
 
   // HANDLES CELL HOVERING FX

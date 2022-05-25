@@ -1,6 +1,6 @@
 import { palette } from "./theme";
 
-export const loadSampleData = {
+export const darkSideOfTheMoon = {
   id: "the dark side of the moon",
   author: "pink floyd",
   tracks: [
@@ -8,7 +8,7 @@ export const loadSampleData = {
       title: "speak to me",
       parameters: [
         { parameter: "vocals", colour: palette.aoGrey },
-        { parameter: "guitars", colour: palette.aoGrey },
+        { parameter: "guitar", colour: palette.aoGrey },
         { parameter: "bass", colour: palette.aoYellow },
         { parameter: "drums", colour: palette.aoBlue },
         { parameter: "piano", colour: palette.aoGrey },
@@ -24,7 +24,7 @@ export const loadSampleData = {
       title: "breathe (in the air)",
       parameters: [
         { parameter: "vocals", colour: palette.aoGrey },
-        { parameter: "guitars", colour: palette.aoGrey },
+        { parameter: "guitar", colour: palette.aoGrey },
         { parameter: "bass", colour: palette.aoYellow },
         { parameter: "drums", colour: palette.aoBlue },
         { parameter: "piano", colour: palette.aoGrey },
@@ -40,7 +40,7 @@ export const loadSampleData = {
       title: "on the run",
       parameters: [
         { parameter: "vocals", colour: palette.aoGrey },
-        { parameter: "guitars", colour: palette.aoGrey },
+        { parameter: "guitar", colour: palette.aoGrey },
         { parameter: "bass", colour: palette.aoYellow },
         { parameter: "drums", colour: palette.aoBlue },
         { parameter: "piano", colour: palette.aoGrey },
@@ -56,7 +56,7 @@ export const loadSampleData = {
       title: "time",
       parameters: [
         { parameter: "vocals", colour: palette.aoGrey },
-        { parameter: "guitars", colour: palette.aoGrey },
+        { parameter: "guitar", colour: palette.aoGrey },
         { parameter: "bass", colour: palette.aoYellow },
         { parameter: "drums", colour: palette.aoBlue },
         { parameter: "piano", colour: palette.aoGrey },
@@ -72,7 +72,7 @@ export const loadSampleData = {
       title: "the great gig in the sky",
       parameters: [
         { parameter: "vocals", colour: palette.aoGrey },
-        { parameter: "guitars", colour: palette.aoGrey },
+        { parameter: "guitar", colour: palette.aoGrey },
         { parameter: "bass", colour: palette.aoYellow },
         { parameter: "drums", colour: palette.aoBlue },
         { parameter: "piano", colour: palette.aoGrey },
@@ -88,7 +88,7 @@ export const loadSampleData = {
       title: "money",
       parameters: [
         { parameter: "vocals", colour: palette.aoGrey },
-        { parameter: "guitars", colour: palette.aoGrey },
+        { parameter: "guitar", colour: palette.aoGrey },
         { parameter: "bass", colour: palette.aoYellow },
         { parameter: "drums", colour: palette.aoBlue },
         { parameter: "piano", colour: palette.aoGrey },
@@ -104,7 +104,7 @@ export const loadSampleData = {
       title: "us and them",
       parameters: [
         { parameter: "vocals", colour: palette.aoGrey },
-        { parameter: "guitars", colour: palette.aoGrey },
+        { parameter: "guitar", colour: palette.aoGrey },
         { parameter: "bass", colour: palette.aoYellow },
         { parameter: "drums", colour: palette.aoBlue },
         { parameter: "piano", colour: palette.aoGrey },
@@ -120,7 +120,7 @@ export const loadSampleData = {
       title: "any colour you like",
       parameters: [
         { parameter: "vocals", colour: palette.aoGrey },
-        { parameter: "guitars", colour: palette.aoGrey },
+        { parameter: "guitar", colour: palette.aoGrey },
         { parameter: "bass", colour: palette.aoYellow },
         { parameter: "drums", colour: palette.aoBlue },
         { parameter: "piano", colour: palette.aoGrey },
@@ -136,7 +136,7 @@ export const loadSampleData = {
       title: "brain damage",
       parameters: [
         { parameter: "vocals", colour: palette.aoGrey },
-        { parameter: "guitars", colour: palette.aoGrey },
+        { parameter: "guitar", colour: palette.aoGrey },
         { parameter: "bass", colour: palette.aoYellow },
         { parameter: "drums", colour: palette.aoBlue },
         { parameter: "piano", colour: palette.aoGrey },
@@ -152,7 +152,7 @@ export const loadSampleData = {
       title: "eclipse",
       parameters: [
         { parameter: "vocals", colour: palette.aoGrey },
-        { parameter: "guitars", colour: palette.aoGrey },
+        { parameter: "guitar", colour: palette.aoGrey },
         { parameter: "bass", colour: palette.aoYellow },
         { parameter: "drums", colour: palette.aoBlue },
         { parameter: "piano", colour: palette.aoGrey },
@@ -164,5 +164,19 @@ export const loadSampleData = {
         { parameter: "done", colour: "transparent" },
       ],
     },
+  ],
+  parameters: [
+    "title",
+    "vocals",
+    "guitar",
+    "bass",
+    "drums",
+    "piano",
+    "guest players",
+    "guest vocals",
+    "fx",
+    "mix",
+    "master",
+    "done",
   ],
 };
