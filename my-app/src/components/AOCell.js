@@ -1,6 +1,6 @@
 import React from "react";
 import { useForm } from "react-hook-form";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Box, Grid, Popover } from "@mui/material/";
 import { palette, cellSx } from "../assets/theme";
 import { AOPopover } from "./AOPopover";
@@ -13,6 +13,16 @@ export const AOCell = ({
   setHoverCell,
   hoverCell,
 }) => {
+  // HANDLES INITIALIZING GRID COLOURS
+  useEffect(() => {
+    const initialColour = () => {
+      track.parameters.map(
+        (cell) => cell.parameter === parameter && setCellColor(cell.colour)
+      );
+    };
+    initialColour();
+  }, [parameter, track.parameters]);
+
   // HANDLES CELL COLOUR
   const [cellColor, setCellColor] = useState("transparent");
 
@@ -23,9 +33,6 @@ export const AOCell = ({
 
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
-    track.parameters.map(
-      (cell) => cell.parameter === parameter && console.log(cell.colour)
-    );
   };
 
   const handleClose = () => {
