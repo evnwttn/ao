@@ -54,6 +54,8 @@ export const AOGrid = () => {
                       <AOCell
                         key={parameter}
                         cell={{ track, parameter }}
+                        track={track}
+                        parameter={parameter}
                         toggleHovered={toggleHovered}
                         setHoverCell={setHoverCell}
                         hoverCell={hoverCell}

@@ -5,7 +5,14 @@ import { Box, Grid, Popover } from "@mui/material/";
 import { palette, cellSx } from "../assets/theme";
 import { AOPopover } from "./AOPopover";
 
-export const AOCell = ({ cell, toggleHovered, setHoverCell, hoverCell }) => {
+export const AOCell = ({
+  cell,
+  track,
+  parameter,
+  toggleHovered,
+  setHoverCell,
+  hoverCell,
+}) => {
   // HANDLES CELL COLOUR
   const [cellColor, setCellColor] = useState("transparent");
 
@@ -16,6 +23,9 @@ export const AOCell = ({ cell, toggleHovered, setHoverCell, hoverCell }) => {
 
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
+    console.log(cell);
+    console.log(track);
+    console.log(parameter);
   };
 
   const handleClose = () => {
