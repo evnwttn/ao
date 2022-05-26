@@ -7,6 +7,12 @@ import { AOCell } from "./AOCell";
 import { sampleData } from "../assets/TestData";
 import { darkSideOfTheMoon } from "../assets/LoadSample";
 
+// current GRID issues
+// width of title/parameter text cells needs to be limited to avoid overflow
+// # of parameters needs to be limited @ NewModal to prevent overflow
+// vertical scrolling on # of tracks works seemlessly, but needs a e s t h e t i c
+// get a second opinion on the grid highlight, it's merely somewhat sick
+
 export const AOGrid = () => {
   // HANDLES LOADING GRID DATA
   const location = useLocation();
