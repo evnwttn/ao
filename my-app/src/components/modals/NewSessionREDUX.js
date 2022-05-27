@@ -5,9 +5,6 @@ import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import { modalCenteredSx } from "../../assets/theme";
 
 export const NewSesh = () => {
-  const [sessionId, setSessionId] = useState();
-  const [sessionAuthor, setSessionAuthor] = useState();
-  //   const [sessionData, setSessionData] = useState("");
   const [formNumber, setFormNumber] = useState(0);
   const { register, handleSubmit, watch } = useForm({
     defaultValues: {
@@ -16,10 +13,8 @@ export const NewSesh = () => {
   });
 
   const onSubmit = (data) => {
-    data.id && setSessionId(watch("id"));
-    sessionId && setFormNumber(formNumber + 1);
-    data.author && setSessionAuthor(watch("author"));
-    sessionAuthor && setFormNumber(formNumber + 1);
+    data.author && setFormNumber(formNumber + 1);
+    data.id && setFormNumber(formNumber + 1);
     console.log(data);
   };
 
@@ -34,10 +29,14 @@ export const NewSesh = () => {
       >
         <TextField
           variant="standard"
-          helperText="enter a session title to continue"
+          helperText={
+            formNumber === 0
+              ? "who is this session for?"
+              : "enter a session title to continue"
+          }
           margin="normal"
           autoComplete="off"
-          {...(formNumber === 0 ? register("id") : register("author"))}
+          {...(formNumber === 0 ? register("author") : register("id"))}
         />
         <Box>
           <IconButton disableRipple type="submit">
