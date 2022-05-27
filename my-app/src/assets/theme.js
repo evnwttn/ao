@@ -209,14 +209,21 @@ export const modalCenteredSx = {
 
 // AO GRID
 
-export const gridDomSx = {
-  display: "flex",
-  fontFamily: "Noto Sans",
-  fontSize: "0.8vw",
-  letterSpacing: "0.125vw",
-  textAlign: "center",
-  textTransform: "uppercase",
-  flexGrow: 1,
+export const gridSx = {
+  dom: {
+    display: "flex",
+    fontFamily: "Noto Sans",
+    fontSize: "0.8vw",
+    letterSpacing: "0.125vw",
+    textAlign: "center",
+    textTransform: "uppercase",
+    flexGrow: 1,
+  },
+  container: {
+    marginLeft: "2.5vw",
+    marginRight: "2.5vw",
+    marginTop: "2.5vh",
+  },
 };
 
 export const cellSx = {

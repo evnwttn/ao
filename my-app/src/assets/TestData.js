@@ -19,6 +19,22 @@ export const sampleData = {
       ],
     },
     {
+      title: "speak to me2",
+      parameters: [
+        { parameter: "vocals", colour: "transparent" },
+        { parameter: "guitars", colour: "transparent" },
+        { parameter: "bass", colour: "transparent" },
+        { parameter: "drums", colour: "transparent" },
+        { parameter: "piano", colour: "transparent" },
+        { parameter: "guest players", colour: "transparent" },
+        { parameter: "guest vocals", colour: "transparent" },
+        { parameter: "fx", colour: "transparent" },
+        { parameter: "mix", colour: "transparent" },
+        { parameter: "master", colour: "transparent" },
+        { parameter: "done", colour: "transparent" },
+      ],
+    },
+    {
       title: "breathe (in the air)",
       parameters: [
         { parameter: "vocals", colour: "transparent" },

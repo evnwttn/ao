@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { Box, Grid, ThemeProvider } from "@mui/material/";
-import { gridDomSx, cellSx } from "../assets/theme";
+import { gridSx, cellSx } from "../assets/theme";
 import aotheme from "../assets/theme";
 import { AOCell } from "./AOCell";
 import { sampleData } from "../assets/TestData";
@@ -12,7 +12,6 @@ import { darkSideOfTheMoon } from "../assets/LoadSample";
 // width of title/parameter text cells needs to be limited to avoid overflow
 // # of parameters needs to be limited @ NewModal to prevent overflow
 // vertical scrolling on # of tracks works seemlessly, but needs a e s t h e t i c
-// get a second opinion on the grid highlight, it's merely somewhat sick
 
 // configure NewModal to order data as per Test/LoadSample formatting
 
@@ -39,13 +38,11 @@ export const AOGrid = () => {
   return (
     <Box
       sx={{
-        marginLeft: "2.5vw",
-        marginRight: "2.5vw",
-        marginTop: "2.5vh",
+        ...gridSx.container,
       }}
     >
       <ThemeProvider theme={aotheme}>
-        <Box sx={{ ...gridDomSx }}>
+        <Box sx={{ ...gridSx.dom }}>
           <Grid container>
             <Grid container spacing={"0.75vw"}>
               {gridData.parameters.map((parameterTitle) => {
