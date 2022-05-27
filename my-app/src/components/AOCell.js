@@ -58,7 +58,7 @@ export const AOCell = ({
   useEffect(() => {
     const timer = setTimeout(() => {
       setHoverCell(undefined);
-    }, 1250);
+    }, 1750);
     return () => clearTimeout(timer);
   }, [toggleHovered]);
 
@@ -80,8 +80,13 @@ export const AOCell = ({
               // triggers cell hover effects
               (hoverCell && hoverCell.track === cell.track) ||
               (hoverCell && hoverCell.parameter === cell.parameter)
-                ? `0 0 0.45vw 0.2vw rgb(243, 239, 224, 0.125)`
+                ? `0 0 0.5vw 0.2vw rgb(243, 239, 224, 0.125)`
                 : ``,
+            transition:
+              (hoverCell && hoverCell.track === cell.track) ||
+              (hoverCell && hoverCell.parameter === cell.parameter)
+                ? "box-shadow 0.025s linear"
+                : "box-shadow 0.1s linear",
             ...(cellColor !== palette.aoGrey && cellColor !== "transparent"
               ? cellComment !== "" && cellSx.comment
               : cellComment !== "" && cellSx.commentInverse),
