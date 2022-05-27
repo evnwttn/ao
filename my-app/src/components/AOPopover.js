@@ -8,6 +8,7 @@ import HighlightOffIcon from "@mui/icons-material/HighlightOff";
 
 export const AOPopover = ({
   cell,
+  cellComment,
   handleClick,
   register,
   handleSubmit,
@@ -34,6 +35,7 @@ export const AOPopover = ({
     <Box>
       <AOCommentBase
         cell={cell}
+        cellComment={cellComment}
         open={open}
         handleClose={handleClose}
         register={register}

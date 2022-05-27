@@ -13,8 +13,6 @@ export const AOCell = ({
   setHoverCell,
   hoverCell,
 }) => {
-  // HANDLES INITIALIZING GRID COLOURS
-
   // HANDLES CELL COLOUR
   const [cellColor, setCellColor] = useState("transparent");
 
@@ -26,19 +24,6 @@ export const AOCell = ({
     };
     initialColour();
   }, [parameter, track.parameters]);
-
-  // HANDLES POPOVER
-  const [anchorEl, setAnchorEl] = React.useState(null);
-  const open = Boolean(anchorEl);
-  const id = open ? "simple-popover" : undefined;
-
-  const handleClick = (event) => {
-    setAnchorEl(event.currentTarget);
-  };
-
-  const handleClose = () => {
-    setAnchorEl(null);
-  };
 
   // HANDLES COMMENT STORAGE
   const { register, handleSubmit } = useForm();
@@ -56,6 +41,19 @@ export const AOCell = ({
     };
     initialComment();
   }, [parameter, track.parameters]);
+
+  // HANDLES POPOVER
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  const open = Boolean(anchorEl);
+  const id = open ? "simple-popover" : undefined;
+
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
 
   return (
     <>
@@ -109,6 +107,7 @@ export const AOCell = ({
       >
         <AOPopover
           cell={cell}
+          cellComment={cellComment}
           handleClick={(color) => setCellColor(color)}
           register={register}
           handleSubmit={handleSubmit}
