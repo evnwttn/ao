@@ -14,6 +14,10 @@ export const AOCell = ({
   hoverCell,
 }) => {
   // HANDLES INITIALIZING GRID COLOURS
+
+  // HANDLES CELL COLOUR
+  const [cellColor, setCellColor] = useState("transparent");
+
   useEffect(() => {
     const initialColour = () => {
       track.parameters.map(
@@ -22,21 +26,6 @@ export const AOCell = ({
     };
     initialColour();
   }, [parameter, track.parameters]);
-
-  useEffect(() => {
-    const initialComment = () => {
-      track.parameters.map(
-        (cell) =>
-          cell.comment &&
-          cell.parameter === parameter &&
-          setCellComment(cell.comment)
-      );
-    };
-    initialComment();
-  }, [parameter, track.parameters]);
-
-  // HANDLES CELL COLOUR
-  const [cellColor, setCellColor] = useState("transparent");
 
   // HANDLES POPOVER
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -55,6 +44,18 @@ export const AOCell = ({
   const { register, handleSubmit } = useForm();
   const [cellComment, setCellComment] = useState("");
   const onSubmit = (data) => setCellComment(data.comment);
+
+  useEffect(() => {
+    const initialComment = () => {
+      track.parameters.map(
+        (cell) =>
+          cell.comment &&
+          cell.parameter === parameter &&
+          setCellComment(cell.comment)
+      );
+    };
+    initialComment();
+  }, [parameter, track.parameters]);
 
   return (
     <>

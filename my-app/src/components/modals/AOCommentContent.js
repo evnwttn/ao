@@ -9,6 +9,7 @@ export const AOCommentContent = ({
   onSubmit,
   register,
 }) => {
+  console.log(cell);
   return (
     <Box>
       <Box component="form" onSubmit={handleSubmit(onSubmit)}>
