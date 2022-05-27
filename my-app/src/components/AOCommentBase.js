@@ -6,6 +6,7 @@ import { AOCommentModal } from "./AOCommentModal";
 
 export const AOCommentBase = ({
   cell,
+  cellComment,
   open,
   handleClose,
   register,
@@ -17,6 +18,7 @@ export const AOCommentBase = ({
       <>
         <AOCommentModal
           cell={cell}
+          cellComment={cellComment}
           register={register}
           handleSubmit={handleSubmit}
           onSubmit={onSubmit}

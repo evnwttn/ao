@@ -15,8 +15,6 @@ import { darkSideOfTheMoon } from "../assets/LoadSample";
 // get a second opinion on the grid highlight, it's merely somewhat sick
 
 // configure NewModal to order data as per Test/LoadSample formatting
-// just as initial colours are now passed down, commens needs to be as well
-// to enable the "save" functionality
 
 // hook up routing of NEW to aogrid passing in the data
 // if from new, use data props
