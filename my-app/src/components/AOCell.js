@@ -55,12 +55,13 @@ export const AOCell = ({
     setAnchorEl(null);
   };
 
+  // HANDLES HOVER FX TIMER
   useEffect(() => {
     const timer = setTimeout(() => {
       setHoverCell(undefined);
     }, 1750);
     return () => clearTimeout(timer);
-  }, [toggleHovered]);
+  }, [toggleHovered, setHoverCell]);
 
   return (
     <>
