@@ -23,6 +23,18 @@ export const AOCell = ({
     initialColour();
   }, [parameter, track.parameters]);
 
+  useEffect(() => {
+    const initialComment = () => {
+      track.parameters.map(
+        (cell) =>
+          cell.comment &&
+          cell.parameter === parameter &&
+          setCellComment(cell.comment)
+      );
+    };
+    initialComment();
+  }, [parameter, track.parameters]);
+
   // HANDLES CELL COLOUR
   const [cellColor, setCellColor] = useState("transparent");
 
