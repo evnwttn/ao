@@ -15,26 +15,29 @@ export const NewSesh = () => {
     },
   });
 
-  const onSubmitId = (data) => {
-    data.sessionId && setSessionId(watch("sessionId"));
-    console.log(sessionId);
+  const onSubmit = (data) => {
+    data.id && setSessionId(watch("id"));
+    sessionId && setFormNumber(formNumber + 1);
+    data.author && setSessionAuthor(watch("author"));
+    sessionAuthor && setFormNumber(formNumber + 1);
+    console.log(data);
   };
 
   return (
-    formNumber === 0 && (
+    formNumber <= 1 && (
       <Box
         sx={{
           ...modalCenteredSx,
         }}
         component="form"
-        onSubmit={handleSubmit(onSubmitId)}
+        onSubmit={handleSubmit(onSubmit)}
       >
         <TextField
           variant="standard"
           helperText="enter a session title to continue"
           margin="normal"
           autoComplete="off"
-          {...register("sessionId", { required: true })}
+          {...(formNumber === 0 ? register("id") : register("author"))}
         />
         <Box>
           <IconButton disableRipple type="submit">
