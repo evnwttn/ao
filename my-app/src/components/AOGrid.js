@@ -6,12 +6,12 @@ import aotheme from "../assets/theme";
 import { AOCell } from "./AOCell";
 import { sampleData } from "../assets/TestData";
 import { darkSideOfTheMoon } from "../assets/LoadSample";
+import { RemoveScrollBar } from "react-remove-scroll-bar";
 
 // remaining issues for REACT
 
 // width of title/parameter text cells needs to be limited to avoid overflow
 // # of parameters needs to be limited @ NewModal to prevent overflow
-// vertical scrolling on # of tracks works seemlessly, but needs a e s t h e t i c
 
 // configure NewModal to order data as per Test/LoadSample formatting
 
@@ -41,6 +41,7 @@ export const AOGrid = () => {
         ...gridSx.container,
       }}
     >
+      <RemoveScrollBar />
       <ThemeProvider theme={aotheme}>
         <Box sx={{ ...gridSx.dom }}>
           <Grid container>
