@@ -1,4 +1,4 @@
-export const sampleData = {
+export const blankSession = {
   id: "blank session",
   author: "blank session",
   tracks: [
@@ -115,7 +115,7 @@ export const sampleData = {
       ],
     },
     {
-      title: "certainly",
+      title: "gone",
       parameters: [
         { parameter: "0", colour: "transparent", comment: "" },
         { parameter: "01", colour: "transparent", comment: "" },
@@ -131,7 +131,7 @@ export const sampleData = {
       ],
     },
     {
-      title: "gone",
+      title: "terribly",
       parameters: [
         { parameter: "0", colour: "transparent", comment: "" },
         { parameter: "01", colour: "transparent", comment: "" },

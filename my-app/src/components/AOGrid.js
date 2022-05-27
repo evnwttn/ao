@@ -4,7 +4,7 @@ import { Box, Grid, ThemeProvider } from "@mui/material/";
 import { gridSx, cellSx } from "../assets/theme";
 import aotheme from "../assets/theme";
 import { AOCell } from "./AOCell";
-import { sampleData } from "../assets/TestData";
+import { blankSession } from "../assets/BlankSession";
 import { darkSideOfTheMoon } from "../assets/LoadSample";
 
 // remaining issues for REACT
@@ -19,7 +19,7 @@ import { darkSideOfTheMoon } from "../assets/LoadSample";
 export const AOGrid = () => {
   // HANDLES LOADING GRID DATA
   const location = useLocation();
-  const [gridData, setGridData] = useState(sampleData);
+  const [gridData, setGridData] = useState(blankSession);
 
   useEffect(() => {
     const { from } = location.state;
@@ -27,7 +27,6 @@ export const AOGrid = () => {
   }, [location.state]);
 
   // HANDLES CELL HOVERING FX
-
   const [hovered, setHovered] = useState(false);
   const toggleHovered = () => setHovered(!hovered);
   const [hoverCell, setHoverCell] = useState();

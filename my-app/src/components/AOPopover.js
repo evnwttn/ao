@@ -15,7 +15,6 @@ export const AOPopover = ({
   onSubmit,
 }) => {
   // POPOVER
-
   const [open, setOpen] = useState(false);
 
   const handleClose = () => {
@@ -24,7 +23,6 @@ export const AOPopover = ({
   };
 
   // COMMENT SWITCH
-
   const [switchValue, setSwitchValue] = useState("1");
 
   useEffect(() => {
