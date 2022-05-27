@@ -80,7 +80,7 @@ export const AOCell = ({
               // triggers cell hover effects
               (hoverCell && hoverCell.track === cell.track) ||
               (hoverCell && hoverCell.parameter === cell.parameter)
-                ? `0 0 0.45vw 0.2vw rgb(243, 239, 224, 0.25)`
+                ? `0 0 0.45vw 0.2vw rgb(243, 239, 224, 0.125)`
                 : ``,
             ...(cellColor !== palette.aoGrey && cellColor !== "transparent"
               ? cellComment !== "" && cellSx.comment
