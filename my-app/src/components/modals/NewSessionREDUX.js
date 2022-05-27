@@ -2,38 +2,39 @@ import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { Box, TextField, IconButton } from "@mui/material";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
-import { modalCenteredSx, palette } from "../../assets/theme";
+import { modalCenteredSx } from "../../assets/theme";
 
 export const NewSesh = () => {
   const [sessionId, setSessionId] = useState();
-  const [sessionData, setSessionData] = useState("");
-  const [form, setForm] = useState(0);
+  const [sessionAuthor, setSessionAuthor] = useState();
+  //   const [sessionData, setSessionData] = useState("");
+  const [formNumber, setFormNumber] = useState(0);
   const { register, handleSubmit, watch } = useForm({
     defaultValues: {
       parameters: ["title"],
     },
   });
 
-  const onSubmitTitle = (data) => {
-    (data.sessionTitle && setForm(form + 1)) ||
-      setSessionId(watch("sessionTitle"));
+  const onSubmitId = (data) => {
+    data.sessionId && setSessionId(watch("sessionId"));
+    console.log(sessionId);
   };
 
   return (
-    form === 0 && (
+    formNumber === 0 && (
       <Box
         sx={{
           ...modalCenteredSx,
         }}
         component="form"
-        onSubmit={handleSubmit(onSubmitTitle)}
+        onSubmit={handleSubmit(onSubmitId)}
       >
         <TextField
           variant="standard"
           helperText="enter a session title to continue"
           margin="normal"
           autoComplete="off"
-          {...register("sessionTitle", { required: true })}
+          {...register("sessionId", { required: true })}
         />
         <Box>
           <IconButton disableRipple type="submit">
