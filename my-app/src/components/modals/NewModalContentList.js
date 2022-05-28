@@ -15,7 +15,7 @@ export const NewModalContentList = ({ data, input, onSubmit }) => {
                   key={`${track.title}.${number}`}
                   sx={{ bgcolor: palette.aoBlack }}
                   secondaryAction={
-                    <IconButton onClick={() => onSubmit(track)}>
+                    <IconButton onClick={() => onSubmit(track.title)}>
                       <ClearIcon />
                     </IconButton>
                   }

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { Box, TextField, IconButton, Divider } from "@mui/material";
 import AddCircleIcon from "@mui/icons-material/AddCircle";
@@ -23,12 +23,6 @@ export const NewSesh = () => {
     setSessionData({ ...data });
   };
 
-  const onAdd = (data) => {
-    textInput.current.value = "";
-    setInputNumber(inputNumber + 1);
-    setSessionData({ ...data });
-  };
-
   const onSubmitTracks = (data) => {
     textInput.current.value = "";
     setInputNumber(1);
@@ -37,9 +31,15 @@ export const NewSesh = () => {
     setSessionData({ ...data });
   };
 
-  // useEffect(() => {
-  //   console.log(sessionData);
-  // }, [sessionData]);
+  const onAddTrackParameter = (data) => {
+    textInput.current.value = "";
+    setInputNumber(inputNumber + 1);
+    setSessionData({ ...data });
+  };
+
+  useEffect(() => {
+    console.log(sessionData);
+  }, [sessionData]);
 
   return formNumber <= 1 ? (
     <Box
@@ -77,7 +77,7 @@ export const NewSesh = () => {
         sx={{
           ...modalCenteredSx,
         }}
-        onSubmit={handleSubmit(onAdd)}
+        onSubmit={handleSubmit(onAddTrackParameter)}
       >
         <Box
           sx={{
@@ -111,7 +111,11 @@ export const NewSesh = () => {
           <IconButton
             disableRipple
             sx={{ p: "10px", ml: 1 }}
-            onClick={handleSubmit(onSubmitTracks)}
+            onClick={
+              formNumber === 2
+                ? handleSubmit(onSubmitTracks)
+                : handleSubmit(onSubmit)
+            }
           >
             <CheckCircleIcon />
           </IconButton>
