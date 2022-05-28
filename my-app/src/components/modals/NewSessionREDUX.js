@@ -7,6 +7,9 @@ import { newSessionModal, modalCenteredSx } from "../../assets/theme";
 export const NewSesh = () => {
   const [sessionData, setSessionData] = useState();
   const [formNumber, setFormNumber] = useState(0);
+  const [inputTarget, setInputTarget] = useState("tracks");
+  const [inputNumber, setInputNumber] = useState(0);
+  const textInput = React.useRef(null);
   const { register, handleSubmit } = useForm({
     defaultValues: {
       parameters: ["title"],
@@ -16,6 +19,12 @@ export const NewSesh = () => {
   const onSubmit = (data) => {
     data.author && setFormNumber(formNumber + 1);
     data.id && setFormNumber(formNumber + 1);
+    setSessionData({ ...data });
+  };
+
+  const onSubmitInput = (data) => {
+    setInputNumber(inputNumber + 1);
+    textInput.current.value = "";
     setSessionData({ ...data });
   };
 
@@ -59,7 +68,7 @@ export const NewSesh = () => {
       sx={{
         ...modalCenteredSx,
       }}
-      onSubmit={handleSubmit(onSubmit)}
+      onSubmit={handleSubmit(onSubmitInput)}
     >
       <Box
         sx={{
@@ -69,14 +78,23 @@ export const NewSesh = () => {
       >
         Enter the {""}
         {formNumber === 2 ? <b>track titles</b> : <b>session parameters</b>}
-        {""}you wish to include in the
+        {""} you wish to include in the
         {sessionData.id} session. You can always add more later.
       </Box>
       <Box
         sx={{
           ...newSessionModal.field,
         }}
-      ></Box>
+      >
+        <TextField
+          sx={{ ml: 13 }}
+          variant="standard"
+          margin="normal"
+          inputRef={textInput}
+          autoComplete="off"
+          {...register(`${inputTarget}.${inputNumber}.title`)}
+        />
+      </Box>
     </Box>
   ) : (
     <>Hello</>
