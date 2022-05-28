@@ -31,17 +31,19 @@ export const NewModalContentList = ({ data, input, onSubmit }) => {
         {data.parameters &&
           data.parameters.map((parameter, number) => {
             return (
-              <ListItem
-                key={`${parameter}.${number}`}
-                sx={{ bgcolor: palette.aoBlack }}
-                secondaryAction={
-                  <IconButton onClick={() => onSubmit(parameter)}>
-                    <ClearIcon />
-                  </IconButton>
-                }
-              >
-                <ListItemText primary={parameter} />
-              </ListItem>
+              parameter !== "title" && (
+                <ListItem
+                  key={`${parameter}.${number}`}
+                  sx={{ bgcolor: palette.aoBlack }}
+                  secondaryAction={
+                    <IconButton onClick={() => onSubmit(parameter)}>
+                      <ClearIcon />
+                    </IconButton>
+                  }
+                >
+                  <ListItemText primary={parameter} />
+                </ListItem>
+              )
             );
           })}
       </List>
