@@ -53,7 +53,7 @@ export const NewSesh = () => {
         </IconButton>
       </Box>
     </Box>
-  ) : (
+  ) : formNumber <= 3 ? (
     <Box
       component="form"
       sx={{
@@ -75,5 +75,7 @@ export const NewSesh = () => {
         {sessionData.id} session. You can always add more later.
       </Box>
     </Box>
+  ) : (
+    <>Hello</>
   );
 };
