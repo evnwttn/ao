@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
-import { Box, TextField, IconButton } from "@mui/material";
+import { Box, TextField, IconButton, Divider } from "@mui/material";
+import AddCircleIcon from "@mui/icons-material/AddCircle";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import { newSessionModal, modalCenteredSx } from "../../assets/theme";
 
@@ -79,7 +80,7 @@ export const NewSesh = () => {
         Enter the {""}
         {formNumber === 2 ? <b>track titles</b> : <b>session parameters</b>}
         {""} you wish to include in the
-        {sessionData.id} session. You can always add more later.
+        {""} {sessionData.id} session. You can always add more later.
       </Box>
       <Box
         sx={{
@@ -94,6 +95,19 @@ export const NewSesh = () => {
           autoComplete="off"
           {...register(`${inputTarget}.${inputNumber}.title`)}
         />
+        <IconButton disableRipple type="submit">
+          <AddCircleIcon sx={{ mr: 1 }} />
+        </IconButton>
+        <Divider sx={{ height: 28, m: 0.5 }} orientation="vertical" />
+        <IconButton
+          disableRipple
+          sx={{ p: "10px", ml: 1 }}
+          onClick={() => {
+            console.log("yo");
+          }}
+        >
+          <CheckCircleIcon />
+        </IconButton>
       </Box>
     </Box>
   ) : (
