@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { Box, TextField, IconButton } from "@mui/material";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
@@ -6,6 +6,7 @@ import { modalCenteredSx } from "../../assets/theme";
 
 export const NewSesh = () => {
   const [formNumber, setFormNumber] = useState(0);
+  const [sessionData, setSessionData] = useState();
   const { register, handleSubmit } = useForm({
     defaultValues: {
       parameters: ["title"],
@@ -15,7 +16,13 @@ export const NewSesh = () => {
   const onSubmit = (data) => {
     data.author && setFormNumber(formNumber + 1);
     data.id && setFormNumber(formNumber + 1);
+    setSessionData({ ...data });
   };
+
+  useEffect(() => {
+    console.log(sessionData);
+    console.log(formNumber);
+  }, [sessionData, formNumber]);
 
   return formNumber <= 1 ? (
     <Box
