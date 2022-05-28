@@ -18,19 +18,20 @@ export const NewSesh = () => {
   });
 
   const onSubmit = (data) => {
-    data.author && setFormNumber(formNumber + 1);
-    data.id && setFormNumber(formNumber + 1);
+    formNumber === 0 && setFormNumber(formNumber + 1);
+    formNumber === 1 && setFormNumber(formNumber + 1);
     setSessionData({ ...data });
   };
 
   const onSubmitInput = (data) => {
-    setInputNumber(inputNumber + 1);
     textInput.current.value = "";
+    setInputNumber(inputNumber + 1);
     setSessionData({ ...data });
   };
 
   const onSubmitTracks = (data) => {
-    setInputNumber(0);
+    textInput.current.value = "";
+    setInputNumber(1);
     setInputTarget("parameters");
     setFormNumber(formNumber + 1);
     setSessionData({ ...data });
@@ -98,7 +99,9 @@ export const NewSesh = () => {
           margin="normal"
           inputRef={textInput}
           autoComplete="off"
-          {...register(`${inputTarget}.${inputNumber}.title`)}
+          {...(formNumber === 2
+            ? register(`${inputTarget}.${inputNumber}.title`)
+            : register(`${inputTarget}.${inputNumber}`))}
         />
         <IconButton disableRipple type="submit">
           <AddCircleIcon sx={{ mr: 1 }} />
