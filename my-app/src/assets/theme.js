@@ -207,6 +207,16 @@ export const modalCenteredSx = {
   alignItems: "center",
 };
 
+export const newSessionModal = {
+  text: {
+    flexDirection: "row",
+    "b, strong": {
+      color: palette.aoRed,
+    },
+  },
+  field: { p: "2px 4px", display: "flex", alignItems: "center", width: 500 },
+};
+
 // AO GRID
 
 export const gridSx = {

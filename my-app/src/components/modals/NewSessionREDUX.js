@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { Box, TextField, IconButton } from "@mui/material";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
-import { palette, modalCenteredSx } from "../../assets/theme";
+import { newSessionModal, modalCenteredSx } from "../../assets/theme";
 
 export const NewSesh = () => {
   const [sessionData, setSessionData] = useState();
@@ -63,17 +63,20 @@ export const NewSesh = () => {
     >
       <Box
         sx={{
-          flexDirection: "row",
-          "b, strong": {
-            color: palette.aoRed,
-          },
+          ...newSessionModal.text,
         }}
+        w
       >
         Enter the {""}
         {formNumber === 2 ? <b>track titles</b> : <b>session parameters</b>}
         {""}you wish to include in the
         {sessionData.id} session. You can always add more later.
       </Box>
+      <Box
+        sx={{
+          ...newSessionModal.field,
+        }}
+      ></Box>
     </Box>
   ) : (
     <>Hello</>
