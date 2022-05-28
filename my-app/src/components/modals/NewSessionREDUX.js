@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { Box, TextField, IconButton, Divider } from "@mui/material";
 import AddCircleIcon from "@mui/icons-material/AddCircle";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
+import { NewModalContentList } from "./NewModalContentList";
 import { newSessionModal, modalCenteredSx } from "../../assets/theme";
 
 export const NewSesh = () => {
@@ -17,14 +18,14 @@ export const NewSesh = () => {
     },
   });
 
-  const onAdd = (data) => {
-    textInput.current.value = "";
-    setInputNumber(inputNumber + 1);
+  const onSubmit = (data) => {
+    setFormNumber(formNumber + 1);
     setSessionData({ ...data });
   };
 
-  const onSubmit = (data) => {
-    setFormNumber(formNumber + 1);
+  const onAdd = (data) => {
+    textInput.current.value = "";
+    setInputNumber(inputNumber + 1);
     setSessionData({ ...data });
   };
 
@@ -36,9 +37,9 @@ export const NewSesh = () => {
     setSessionData({ ...data });
   };
 
-  useEffect(() => {
-    console.log(sessionData);
-  }, [sessionData]);
+  // useEffect(() => {
+  //   console.log(sessionData);
+  // }, [sessionData]);
 
   return formNumber <= 1 ? (
     <Box
@@ -70,51 +71,60 @@ export const NewSesh = () => {
       </Box>
     </Box>
   ) : formNumber <= 3 ? (
-    <Box
-      component="form"
-      sx={{
-        ...modalCenteredSx,
-      }}
-      onSubmit={handleSubmit(onAdd)}
-    >
+    <>
       <Box
+        component="form"
         sx={{
-          ...newSessionModal.text,
+          ...modalCenteredSx,
         }}
+        onSubmit={handleSubmit(onAdd)}
       >
-        Enter the {""}
-        {formNumber === 2 ? <b>track titles</b> : <b>session parameters</b>}
-        {""} you wish to include in the
-        {""} {sessionData.id} session. You can always add more later.
-      </Box>
-      <Box
-        sx={{
-          ...newSessionModal.field,
-        }}
-      >
-        <TextField
-          sx={{ ml: 13 }}
-          variant="standard"
-          margin="normal"
-          inputRef={textInput}
-          autoComplete="off"
-          {...register(
-            `${inputTarget}.${inputNumber}${formNumber === 2 ? `.title` : ``}`
-          )}
-        />
-        <IconButton disableRipple type="submit">
-          <AddCircleIcon sx={{ mr: 1 }} />
-        </IconButton>
-        <Divider sx={{ height: 28, m: 0.5 }} orientation="vertical" />
-        <IconButton
-          disableRipple
-          sx={{ p: "10px", ml: 1 }}
-          onClick={handleSubmit(onSubmitTracks)}
+        <Box
+          sx={{
+            ...newSessionModal.text,
+          }}
         >
-          <CheckCircleIcon />
-        </IconButton>
+          Enter the {""}
+          {formNumber === 2 ? <b>track titles</b> : <b>session parameters</b>}
+          {""} you wish to include in the
+          {""} {sessionData.id} session. You can always add more later.
+        </Box>
+        <Box
+          sx={{
+            ...newSessionModal.field,
+          }}
+        >
+          <TextField
+            sx={{ ml: 13 }}
+            variant="standard"
+            margin="normal"
+            inputRef={textInput}
+            autoComplete="off"
+            {...register(
+              `${inputTarget}.${inputNumber}${formNumber === 2 ? `.title` : ``}`
+            )}
+          />
+          <IconButton disableRipple type="submit">
+            <AddCircleIcon sx={{ mr: 1 }} />
+          </IconButton>
+          <Divider sx={{ height: 28, m: 0.5 }} orientation="vertical" />
+          <IconButton
+            disableRipple
+            sx={{ p: "10px", ml: 1 }}
+            onClick={handleSubmit(onSubmitTracks)}
+          >
+            <CheckCircleIcon />
+          </IconButton>
+        </Box>
       </Box>
-    </Box>
+      <Box component="form">
+        <NewModalContentList
+          data={sessionData}
+          input={inputTarget}
+          onSubmit={() => console.log("ye")}
+        />
+      </Box>
+    </>
   ) : (
     <>Hello</>
   );

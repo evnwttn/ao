@@ -3,9 +3,13 @@ import ClearIcon from "@mui/icons-material/Clear";
 import { palette } from "../../assets/theme";
 import { modalCenteredSx } from "../../assets/theme";
 
-export const NewModalContentList = ({ input, target, onSubmit }) => {
-  return (
-    <Box sx={{ ...modalCenteredSx, my: 1 }}>
+export const NewModalContentList = ({ data, input, onSubmit }) => {
+  console.log(input);
+  return <Box>Yeet</Box>;
+};
+
+{
+  /* <Box sx={{ ...modalCenteredSx, my: 1 }}>
       <List sx={{ width: "85%" }}>
         {target === `tracks`
           ? input.tracks &&
@@ -43,6 +47,5 @@ export const NewModalContentList = ({ input, target, onSubmit }) => {
               );
             })}
       </List>
-    </Box>
-  );
-};
+    </Box> */
+}
