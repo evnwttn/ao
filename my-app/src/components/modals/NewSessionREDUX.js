@@ -20,10 +20,6 @@ export const NewSesh = () => {
   const onSubmit = (data) => {
     data.author && setFormNumber(formNumber + 1);
     data.id && setFormNumber(formNumber + 1);
-    data.tracks &&
-      setInputTarget("parameters") &&
-      setInputNumber(0) &&
-      setFormNumber(formNumber + 1);
     setSessionData({ ...data });
   };
 
@@ -33,10 +29,16 @@ export const NewSesh = () => {
     setSessionData({ ...data });
   };
 
+  const onSubmitTracks = (data) => {
+    setInputNumber(0);
+    setInputTarget("parameters");
+    setFormNumber(formNumber + 1);
+    setSessionData({ ...data });
+  };
+
   useEffect(() => {
     console.log(sessionData);
-    console.log(inputNumber);
-  }, [sessionData, inputNumber]);
+  }, [sessionData]);
 
   return formNumber <= 1 ? (
     <Box
@@ -105,7 +107,7 @@ export const NewSesh = () => {
         <IconButton
           disableRipple
           sx={{ p: "10px", ml: 1 }}
-          onClick={handleSubmit(onSubmit)}
+          onClick={handleSubmit(onSubmitTracks)}
         >
           <CheckCircleIcon />
         </IconButton>
