@@ -4,10 +4,29 @@ import { palette } from "../../assets/theme";
 import { modalCenteredSx } from "../../assets/theme";
 
 export const NewModalContentList = ({ data, input, onSubmit }) => {
-  console.log(input);
-  return <Box>Yeet</Box>;
+  return (
+    <Box sx={{ ...modalCenteredSx, my: 1 }}>
+      <List sx={{ width: "85%" }}>
+        {data.tracks &&
+          data.tracks.map((track) => {
+            return (
+              <ListItem
+                key={track.title}
+                sx={{ bgcolor: palette.aoBlack }}
+                secondaryAction={
+                  <IconButton onClick={() => onSubmit(track)}>
+                    <ClearIcon />
+                  </IconButton>
+                }
+              >
+                <ListItemText primary={track.title} />
+              </ListItem>
+            );
+          })}
+      </List>
+    </Box>
+  );
 };
-
 {
   /* <Box sx={{ ...modalCenteredSx, my: 1 }}>
       <List sx={{ width: "85%" }}>
