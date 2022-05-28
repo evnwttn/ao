@@ -2,11 +2,11 @@ import React, { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { Box, TextField, IconButton } from "@mui/material";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
-import { modalCenteredSx } from "../../assets/theme";
+import { palette, modalCenteredSx } from "../../assets/theme";
 
 export const NewSesh = () => {
-  const [formNumber, setFormNumber] = useState(0);
   const [sessionData, setSessionData] = useState();
+  const [formNumber, setFormNumber] = useState(0);
   const { register, handleSubmit } = useForm({
     defaultValues: {
       parameters: ["title"],
@@ -54,6 +54,26 @@ export const NewSesh = () => {
       </Box>
     </Box>
   ) : (
-    <Box>Ayyy lol</Box>
+    <Box
+      component="form"
+      sx={{
+        ...modalCenteredSx,
+      }}
+      onSubmit={handleSubmit(onSubmit)}
+    >
+      <Box
+        sx={{
+          flexDirection: "row",
+          "b, strong": {
+            color: palette.aoRed,
+          },
+        }}
+      >
+        Enter the {""}
+        {formNumber === 2 ? <b>track titles</b> : <b>session parameters</b>}
+        {""}you wish to include in the
+        {sessionData.id} session. You can always add more later.
+      </Box>
+    </Box>
   );
 };
