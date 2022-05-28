@@ -8,8 +8,8 @@ import { newSessionModal, modalCenteredSx } from "../../assets/theme";
 export const NewSesh = () => {
   const [sessionData, setSessionData] = useState();
   const [formNumber, setFormNumber] = useState(0);
-  const [inputTarget, setInputTarget] = useState("tracks");
   const [inputNumber, setInputNumber] = useState(0);
+  const [inputTarget, setInputTarget] = useState("tracks");
   const textInput = React.useRef(null);
   const { register, handleSubmit } = useForm({
     defaultValues: {
@@ -17,15 +17,14 @@ export const NewSesh = () => {
     },
   });
 
-  const onSubmit = (data) => {
-    formNumber === 0 && setFormNumber(formNumber + 1);
-    formNumber === 1 && setFormNumber(formNumber + 1);
+  const onAdd = (data) => {
+    textInput.current.value = "";
+    setInputNumber(inputNumber + 1);
     setSessionData({ ...data });
   };
 
-  const onSubmitInput = (data) => {
-    textInput.current.value = "";
-    setInputNumber(inputNumber + 1);
+  const onSubmit = (data) => {
+    setFormNumber(formNumber + 1);
     setSessionData({ ...data });
   };
 
@@ -76,7 +75,7 @@ export const NewSesh = () => {
       sx={{
         ...modalCenteredSx,
       }}
-      onSubmit={handleSubmit(onSubmitInput)}
+      onSubmit={handleSubmit(onAdd)}
     >
       <Box
         sx={{
@@ -99,9 +98,9 @@ export const NewSesh = () => {
           margin="normal"
           inputRef={textInput}
           autoComplete="off"
-          {...(formNumber === 2
-            ? register(`${inputTarget}.${inputNumber}.title`)
-            : register(`${inputTarget}.${inputNumber}`))}
+          {...register(
+            `${inputTarget}.${inputNumber}${formNumber === 2 ? `.title` : ``}`
+          )}
         />
         <IconButton disableRipple type="submit">
           <AddCircleIcon sx={{ mr: 1 }} />
