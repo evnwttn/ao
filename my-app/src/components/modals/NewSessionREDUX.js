@@ -11,6 +11,7 @@ export const NewSesh = () => {
   const [formNumber, setFormNumber] = useState(0);
   const [inputNumber, setInputNumber] = useState(0);
   const [inputTarget, setInputTarget] = useState("tracks");
+  const [trackArray, setTrackArray] = useState();
   const textInput = React.useRef(null);
   const { register, handleSubmit } = useForm({
     defaultValues: {
@@ -19,6 +20,7 @@ export const NewSesh = () => {
   });
 
   const onSubmit = (data) => {
+    textInput.current.value = "";
     setFormNumber(formNumber + 1);
     setSessionData({ ...data });
   };
@@ -51,6 +53,7 @@ export const NewSesh = () => {
     >
       <TextField
         variant="standard"
+        inputRef={textInput}
         helperText={
           formNumber === 0
             ? "enter artist name to continue"
@@ -125,7 +128,7 @@ export const NewSesh = () => {
         <NewModalContentList
           data={sessionData}
           input={inputTarget}
-          onSubmit={() => console.log("ye")}
+          onSubmit={(elm) => console.log(elm)}
         />
       </Box>
     </>

@@ -14,7 +14,6 @@ import { darkSideOfTheMoon } from "../assets/LoadSample";
 // configure NewModal to order data as per Test/LoadSample formatting
 // hook up routing of NEW to aogrid passing in the data
 // if from new, use data props
-// having a blank shell for the time being might be a good backup incase errors
 
 export const AOGrid = () => {
   // HANDLES LOADING GRID DATA
