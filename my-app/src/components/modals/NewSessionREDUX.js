@@ -18,7 +18,6 @@ export const NewSesh = () => {
   });
 
   const onSubmitIdAuthor = (data) => {
-    textInput.current.value = "";
     setFormNumber(formNumber + 1);
     setSessionData({ ...data });
   };
@@ -35,7 +34,11 @@ export const NewSesh = () => {
 
   useEffect(() => {
     textInput.current.value = "";
-  }, [inputArray]);
+  }, [inputArray, formNumber]);
+
+  const submitFinalTracks = (tracks) => {
+    console.log(tracks);
+  };
 
   return formNumber <= 1 ? (
     <Box
@@ -97,9 +100,6 @@ export const NewSesh = () => {
             margin="normal"
             inputRef={textInput}
             autoComplete="off"
-            // {...register(
-            //   `${inputTarget}.${inputNumber}${formNumber === 2 ? `.title` : ``}`
-            // )}
           />
           <IconButton disableRipple type="submit">
             <AddCircleIcon sx={{ mr: 1 }} />
@@ -111,9 +111,9 @@ export const NewSesh = () => {
             onClick={
               formNumber === 2
                 ? () => {
-                    console.log("yo");
+                    submitFinalTracks(inputArray);
                   }
-                : console.log("yo")
+                : console.log("parameters")
             }
           >
             <CheckCircleIcon />
