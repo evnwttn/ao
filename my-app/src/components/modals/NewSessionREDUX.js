@@ -10,7 +10,6 @@ export const NewSesh = () => {
   const [sessionData, setSessionData] = useState();
   const [formNumber, setFormNumber] = useState(0);
   const [inputArray, setInputArray] = useState([]);
-  const [inputIndex, setInputIndex] = useState();
   const textInput = React.useRef(null);
   const { register, handleSubmit } = useForm({
     defaultValues: {
@@ -28,24 +27,15 @@ export const NewSesh = () => {
     setInputArray((inputArray) => [...inputArray, textInput.current.value]);
   };
 
-  useEffect(() => {
-    textInput.current.value = "";
-    console.log(inputArray);
-  }, [inputArray]);
-
-  // const onRemoveTrackParameter = (title) => {
-  //   setInputIndex(title);
-  // };
-
-  // useEffect(() => {
-  //   console.log(inputIndex);
-  // }, [inputIndex]);
-
-  const onRemoveTrackParameter = (item) => {
-    setInputArray((prevState) =>
-      prevState.filter((prevItem) => prevItem !== item)
+  const onRemoveTrackParameter = (title) => {
+    setInputArray((previousArray) =>
+      previousArray.filter((previousInput) => previousInput !== title)
     );
   };
+
+  useEffect(() => {
+    textInput.current.value = "";
+  }, [inputArray]);
 
   return formNumber <= 1 ? (
     <Box
