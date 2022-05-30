@@ -27,6 +27,14 @@ export const NewSesh = () => {
     setInputArray((inputArray) => [...inputArray, textInput.current.value]);
   };
 
+  const onRemoveTrackParameter = (title) => {
+    setInputArray({
+      inputArray: inputArray.filter((elm) => {
+        return elm !== title;
+      }),
+    });
+  };
+
   useEffect(() => {
     console.log(inputArray);
     textInput.current.value = "";
