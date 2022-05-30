@@ -11,7 +11,7 @@ export const NewSesh = () => {
   const [formNumber, setFormNumber] = useState(0);
   const [inputNumber, setInputNumber] = useState(0);
   const [inputTarget, setInputTarget] = useState("tracks");
-  const [trackArray, setTrackArray] = useState();
+  const [trackArray, setTrackArray] = useState([]);
   const textInput = React.useRef(null);
   const { register, handleSubmit } = useForm({
     defaultValues: {
@@ -27,9 +27,12 @@ export const NewSesh = () => {
 
   const onSubmitText = () => {
     console.log(textInput.current.value);
-    // textInput.current.value = "";
-    // setInputNumber(inputNumber + 1);
+    setTrackArray((trackArray) => [...trackArray, textInput.current.value]);
   };
+
+  useEffect(() => {
+    console.log(trackArray);
+  }, [trackArray]);
 
   const onSubmitTracks = (data) => {
     textInput.current.value = "";
@@ -45,9 +48,9 @@ export const NewSesh = () => {
   //   setSessionData({ ...data });
   // };
 
-  useEffect(() => {
-    console.log(sessionData);
-  }, [sessionData]);
+  // useEffect(() => {
+  //   console.log(sessionData);
+  // }, [sessionData]);
 
   return formNumber <= 1 ? (
     <Box
