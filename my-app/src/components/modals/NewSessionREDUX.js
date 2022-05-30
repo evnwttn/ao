@@ -17,14 +17,13 @@ export const NewSesh = () => {
     },
   });
 
-  const onSubmit = (data) => {
+  const onSubmitIdAuthor = (data) => {
     textInput.current.value = "";
     setFormNumber(formNumber + 1);
     setSessionData({ ...data });
   };
 
-  const onSubmitText = () => {
-    console.log(textInput.current.value);
+  const onSubmitTrackParameter = () => {
     setInputArray((inputArray) => [...inputArray, textInput.current.value]);
   };
 
@@ -39,7 +38,7 @@ export const NewSesh = () => {
         ...modalCenteredSx,
       }}
       component="form"
-      onSubmit={handleSubmit(onSubmit)}
+      onSubmit={handleSubmit(onSubmitIdAuthor)}
     >
       <TextField
         variant="standard"
@@ -70,7 +69,7 @@ export const NewSesh = () => {
         sx={{
           ...modalCenteredSx,
         }}
-        onSubmit={handleSubmit(onSubmitText)}
+        onSubmit={handleSubmit(onSubmitTrackParameter)}
       >
         <Box
           sx={{
