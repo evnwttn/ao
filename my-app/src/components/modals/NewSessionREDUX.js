@@ -10,6 +10,7 @@ export const NewSesh = () => {
   const [sessionData, setSessionData] = useState();
   const [formNumber, setFormNumber] = useState(0);
   const [inputArray, setInputArray] = useState([]);
+  const [inputIndex, setInputIndex] = useState();
   const textInput = React.useRef(null);
   const { register, handleSubmit } = useForm({
     defaultValues: {
@@ -27,18 +28,17 @@ export const NewSesh = () => {
     setInputArray((inputArray) => [...inputArray, textInput.current.value]);
   };
 
+  useEffect(() => {
+    textInput.current.value = "";
+  }, [inputArray]);
+
   const onRemoveTrackParameter = (title) => {
-    setInputArray({
-      inputArray: inputArray.filter((elm) => {
-        return elm !== title;
-      }),
-    });
+    setInputIndex(title);
   };
 
   useEffect(() => {
-    console.log(inputArray);
-    textInput.current.value = "";
-  }, [inputArray]);
+    console.log(inputIndex);
+  }, [inputIndex]);
 
   return formNumber <= 1 ? (
     <Box
@@ -126,7 +126,7 @@ export const NewSesh = () => {
       <Box component="form">
         <NewModalContentList
           data={inputArray}
-          onSubmit={(elm) => console.log(elm)}
+          onSubmit={(title) => onRemoveTrackParameter(title)}
         />
       </Box>
     </>
