@@ -25,6 +25,12 @@ export const NewSesh = () => {
     setSessionData({ ...data });
   };
 
+  const onSubmitText = () => {
+    console.log(textInput.current.value);
+    // textInput.current.value = "";
+    // setInputNumber(inputNumber + 1);
+  };
+
   const onSubmitTracks = (data) => {
     textInput.current.value = "";
     setInputNumber(1);
@@ -33,11 +39,11 @@ export const NewSesh = () => {
     setSessionData({ ...data });
   };
 
-  const onAddTrackParameter = (data) => {
-    textInput.current.value = "";
-    setInputNumber(inputNumber + 1);
-    setSessionData({ ...data });
-  };
+  // const onAddTrackParameter = (data) => {
+  //   textInput.current.value = "";
+  //   setInputNumber(inputNumber + 1);
+  //   setSessionData({ ...data });
+  // };
 
   useEffect(() => {
     console.log(sessionData);
@@ -80,7 +86,7 @@ export const NewSesh = () => {
         sx={{
           ...modalCenteredSx,
         }}
-        onSubmit={handleSubmit(onAddTrackParameter)}
+        onSubmit={handleSubmit(onSubmitText)}
       >
         <Box
           sx={{
@@ -103,9 +109,9 @@ export const NewSesh = () => {
             margin="normal"
             inputRef={textInput}
             autoComplete="off"
-            {...register(
-              `${inputTarget}.${inputNumber}${formNumber === 2 ? `.title` : ``}`
-            )}
+            // {...register(
+            //   `${inputTarget}.${inputNumber}${formNumber === 2 ? `.title` : ``}`
+            // )}
           />
           <IconButton disableRipple type="submit">
             <AddCircleIcon sx={{ mr: 1 }} />
