@@ -9,9 +9,7 @@ import { newSessionModal, modalCenteredSx } from "../../assets/theme";
 export const NewSesh = () => {
   const [sessionData, setSessionData] = useState();
   const [formNumber, setFormNumber] = useState(0);
-  const [inputNumber, setInputNumber] = useState(0);
-  const [inputTarget, setInputTarget] = useState("tracks");
-  const [trackArray, setTrackArray] = useState([]);
+  const [inputArray, setInputArray] = useState([]);
   const textInput = React.useRef(null);
   const { register, handleSubmit } = useForm({
     defaultValues: {
@@ -27,31 +25,13 @@ export const NewSesh = () => {
 
   const onSubmitText = () => {
     console.log(textInput.current.value);
-    setTrackArray((trackArray) => [...trackArray, textInput.current.value]);
+    setInputArray((inputArray) => [...inputArray, textInput.current.value]);
   };
 
   useEffect(() => {
-    console.log(trackArray);
+    console.log(inputArray);
     textInput.current.value = "";
-  }, [trackArray]);
-
-  const onSubmitTracks = (data) => {
-    textInput.current.value = "";
-    setInputNumber(1);
-    setInputTarget("parameters");
-    setFormNumber(formNumber + 1);
-    setSessionData({ ...data });
-  };
-
-  // const onAddTrackParameter = (data) => {
-  //   textInput.current.value = "";
-  //   setInputNumber(inputNumber + 1);
-  //   setSessionData({ ...data });
-  // };
-
-  // useEffect(() => {
-  //   console.log(sessionData);
-  // }, [sessionData]);
+  }, [inputArray]);
 
   return formNumber <= 1 ? (
     <Box
@@ -126,8 +106,10 @@ export const NewSesh = () => {
             sx={{ p: "10px", ml: 1 }}
             onClick={
               formNumber === 2
-                ? handleSubmit(onSubmitTracks)
-                : handleSubmit(onSubmit)
+                ? () => {
+                    console.log("yo");
+                  }
+                : console.log("yo")
             }
           >
             <CheckCircleIcon />
@@ -136,8 +118,7 @@ export const NewSesh = () => {
       </Box>
       <Box component="form">
         <NewModalContentList
-          data={sessionData}
-          input={inputTarget}
+          data={inputArray}
           onSubmit={(elm) => console.log(elm)}
         />
       </Box>

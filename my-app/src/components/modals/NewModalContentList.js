@@ -3,45 +3,26 @@ import ClearIcon from "@mui/icons-material/Clear";
 import { palette } from "../../assets/theme";
 import { modalCenteredSx } from "../../assets/theme";
 
-export const NewModalContentList = ({ data, input, onSubmit }) => {
+export const NewModalContentList = ({ data, onSubmit }) => {
   return (
     <Box sx={{ ...modalCenteredSx, my: 1 }}>
       <List sx={{ width: "85%" }}>
-        {input === "tracks"
-          ? data.tracks &&
-            data.tracks.map((track, number) => {
-              return (
-                <ListItem
-                  key={`${track.title}.${number}`}
-                  sx={{ bgcolor: palette.aoBlack }}
-                  secondaryAction={
-                    <IconButton onClick={() => onSubmit(track.title)}>
-                      <ClearIcon />
-                    </IconButton>
-                  }
-                >
-                  <ListItemText primary={track.title} />
-                </ListItem>
-              );
-            })
-          : data.parameters &&
-            data.parameters.map((parameter, number) => {
-              return (
-                parameter !== "title" && (
-                  <ListItem
-                    key={`${parameter}.${number}`}
-                    sx={{ bgcolor: palette.aoBlack }}
-                    secondaryAction={
-                      <IconButton onClick={() => onSubmit(parameter)}>
-                        <ClearIcon />
-                      </IconButton>
-                    }
-                  >
-                    <ListItemText primary={parameter} />
-                  </ListItem>
-                )
-              );
-            })}
+        {data &&
+          data.map((title, number) => {
+            return (
+              <ListItem
+                key={`${title}.${number}`}
+                sx={{ bgcolor: palette.aoBlack }}
+                secondaryAction={
+                  <IconButton onClick={() => onSubmit(title)}>
+                    <ClearIcon />
+                  </IconButton>
+                }
+              >
+                <ListItemText primary={title} />
+              </ListItem>
+            );
+          })}
       </List>
     </Box>
   );
