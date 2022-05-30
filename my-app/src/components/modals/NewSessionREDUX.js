@@ -32,6 +32,7 @@ export const NewSesh = () => {
 
   useEffect(() => {
     console.log(trackArray);
+    textInput.current.value = "";
   }, [trackArray]);
 
   const onSubmitTracks = (data) => {
