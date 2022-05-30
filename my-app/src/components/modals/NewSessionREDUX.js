@@ -30,15 +30,22 @@ export const NewSesh = () => {
 
   useEffect(() => {
     textInput.current.value = "";
+    console.log(inputArray);
   }, [inputArray]);
 
-  const onRemoveTrackParameter = (title) => {
-    setInputIndex(title);
-  };
+  // const onRemoveTrackParameter = (title) => {
+  //   setInputIndex(title);
+  // };
 
-  useEffect(() => {
-    console.log(inputIndex);
-  }, [inputIndex]);
+  // useEffect(() => {
+  //   console.log(inputIndex);
+  // }, [inputIndex]);
+
+  const onRemoveTrackParameter = (item) => {
+    setInputArray((prevState) =>
+      prevState.filter((prevItem) => prevItem !== item)
+    );
+  };
 
   return formNumber <= 1 ? (
     <Box
@@ -126,7 +133,7 @@ export const NewSesh = () => {
       <Box component="form">
         <NewModalContentList
           data={inputArray}
-          onSubmit={(title) => onRemoveTrackParameter(title)}
+          onSubmit={(title) => onRemoveTrackParameter(`${title}`)}
         />
       </Box>
     </>
