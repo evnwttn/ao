@@ -11,7 +11,6 @@ export const NewSesh = () => {
   const [formNumber, setFormNumber] = useState(0);
   const [inputArray, setInputArray] = useState([]);
   const textInput = React.useRef(null);
-  const arrayInput = React.useRef(inputArray);
   const { register, handleSubmit } = useForm({
     defaultValues: {
       parameters: ["title"],
@@ -37,12 +36,8 @@ export const NewSesh = () => {
     textInput.current.value = "";
   }, [inputArray, formNumber]);
 
-  useEffect(() => {
-    console.log(sessionData);
-  }, [sessionData]);
-
   const submitFinalTracks = (data) => {
-    setSessionData({ ...data });
+    console.log(data);
   };
 
   return formNumber <= 1 ? (
@@ -114,7 +109,7 @@ export const NewSesh = () => {
       </Box>
       <Box
         component="form"
-        inputRef={arrayInput}
+        ref={inputArray}
         {...register("tracks")}
         onSubmit={handleSubmit(submitFinalTracks)}
       >
