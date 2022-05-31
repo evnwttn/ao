@@ -11,7 +11,7 @@ export const NewModalContent = () => {
   const [formNumber, setFormNumber] = useState(0);
   const [inputArray, setInputArray] = useState([]);
   const textInput = React.useRef(null);
-  const { register, handleSubmit } = useForm({
+  const { register, handleSubmit, setValue } = useForm({
     defaultValues: {
       parameters: ["title"],
     },
@@ -109,8 +109,7 @@ export const NewModalContent = () => {
       </Box>
       <Box
         component="form"
-        ref={inputArray}
-        {...register("tracks")}
+        onClick={() => setValue("tracks", inputArray)}
         onSubmit={handleSubmit(submitFinalTracks)}
       >
         <IconButton type="submit" disableRipple sx={{ p: "10px", ml: 1 }}>
