@@ -1,5 +1,5 @@
 import { Divider, Box } from "@mui/material";
-import { NewSesh } from "./modals/NewSessionREDUX";
+import { NewModalContent } from "./modals/NewModalContent";
 import { LoadModalContent } from "./modals/LoadModalContent";
 import { ContactModalContent } from "./modals/ContactModalContent";
 import { AboutModalContent } from "./modals/AboutModalContent";
@@ -25,7 +25,7 @@ export const ModalText = ({ prompt }) => {
       </Box>
       <Divider variant="middle" sx={{ color: palette.aoDivider }} />
       <Box sx={{ mt: "5vh" }}>
-        {(prompt === "New" && <NewSesh />) ||
+        {(prompt === "New" && <NewModalContent />) ||
           (prompt === "Load" && <LoadModalContent />) ||
           (prompt === "About" && <AboutModalContent />) ||
           (prompt === "Contact" && <ContactModalContent />)}

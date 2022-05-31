@@ -1,169 +1,130 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
-import { NewModalContentList } from "./NewModalContentList";
-import { modalCenteredSx, palette } from "../../assets/theme";
 import { Box, TextField, IconButton, Divider } from "@mui/material";
-import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import AddCircleIcon from "@mui/icons-material/AddCircle";
+import CheckCircleIcon from "@mui/icons-material/CheckCircle";
+import { NewModalContentList } from "./NewModalContentList";
+import { newSessionModal, modalCenteredSx } from "../../assets/theme";
 
 export const NewModalContent = () => {
-  const [aoSessionTitle, setAoSessionTitle] = useState("");
-  const [titleFormCompleted, setTitleFormCompleted] = useState(false);
-  const [tracksFormCompleted, setTracksFormCompleted] = useState(false);
-  const [parametersFormCompleted, setParametersFormCompleted] = useState(false);
-  const [aoData, setAoData] = useState([]);
-  const [formTarget, setFormTarget] = useState(`tracks`);
+  const [sessionData, setSessionData] = useState();
   const [formNumber, setFormNumber] = useState(0);
-
+  const [inputArray, setInputArray] = useState([]);
   const textInput = React.useRef(null);
-
-  const { register, handleSubmit, watch } = useForm({
+  const { register, handleSubmit } = useForm({
     defaultValues: {
-      sessionTitle: "",
       parameters: ["title"],
     },
   });
 
-  const onSubmitTitle = (data) => {
-    (data.sessionTitle && setTitleFormCompleted(true)) ||
-      setAoSessionTitle(watch("sessionTitle"));
-  };
-
-  const onSubmit = (data) => {
+  const onSubmitIdAuthor = (data) => {
     setFormNumber(formNumber + 1);
+    setSessionData({ ...data });
+  };
+
+  const onSubmitTrackParameter = () => {
+    setInputArray((inputArray) => [...inputArray, textInput.current.value]);
+  };
+
+  const onRemoveTrackParameter = (title) => {
+    setInputArray((previousArray) =>
+      previousArray.filter((previousInput) => previousInput !== title)
+    );
+  };
+
+  useEffect(() => {
     textInput.current.value = "";
-    setAoData({ ...data });
+  }, [inputArray, formNumber]);
+
+  const submitFinalTracks = (data) => {
+    console.log(data);
   };
 
-  const onCompleteTracksForm = () => {
-    setTracksFormCompleted(true);
-    setFormNumber(1);
-    setFormTarget(`parameters`);
-  };
-
-  // onRemove filters through, and removes an element from
-  // the track title or session parameter arrays generated
-  // by user input (AoData.tracks/parameters)
-
-  const onRemove = (data, title) => {
-    formTarget === "tracks"
-      ? setAoData({
-          tracks: aoData.tracks.filter((parameter) => {
-            return parameter !== title && parameter;
-          }),
-        })
-      : formTarget === "parameters" &&
-        setAoData({
-          parameters: aoData.parameters.filter((parameter) => {
-            return parameter !== title && parameter;
-          }),
-        });
-  };
-
-  return (
+  return formNumber <= 1 ? (
+    <Box
+      sx={{
+        ...modalCenteredSx,
+      }}
+      component="form"
+      onSubmit={handleSubmit(onSubmitIdAuthor)}
+    >
+      <TextField
+        variant="standard"
+        inputRef={textInput}
+        helperText={
+          formNumber === 0
+            ? "enter artist name to continue"
+            : "enter a session title to continue"
+        }
+        margin="normal"
+        autoComplete="off"
+        {...(formNumber === 0 ? register("author") : register("id"))}
+      />
+      <Box>
+        <IconButton disableRipple type="submit">
+          <CheckCircleIcon
+            sx={{
+              my: 0.5,
+            }}
+          />
+        </IconButton>
+      </Box>
+    </Box>
+  ) : formNumber <= 3 ? (
     <>
-      {parametersFormCompleted ? (
-        <Box></Box>
-      ) : titleFormCompleted ? (
-        <>
-          <Box
-            component="form"
-            sx={{
-              ...modalCenteredSx,
-            }}
-            onSubmit={handleSubmit(onSubmit)}
-          >
-            <Box
-              sx={{
-                flexDirection: "row",
-                "b, strong": {
-                  color: palette.aoRed,
-                },
-              }}
-            >
-              {formTarget === "tracks" ? (
-                <>
-                  Enter the <b>track titles</b> you wish to include in the{" "}
-                  {aoSessionTitle} session. You can always add more later.
-                </>
-              ) : (
-                <>
-                  Enter the <b>session parameters</b> (ie. guitar, bass, mixing)
-                  you wish to include in the {aoSessionTitle} session. You can
-                  always add more later.
-                </>
-              )}
-            </Box>
-            <Box
-              sx={{
-                p: "2px 4px",
-                display: "flex",
-                alignItems: "center",
-                width: 500,
-              }}
-            >
-              <TextField
-                sx={{ ml: 13 }}
-                variant="standard"
-                margin="normal"
-                inputRef={textInput}
-                autoComplete="off"
-                {...register(`${formTarget}.${formNumber}`)}
-              />
-              <IconButton disableRipple type="submit">
-                <AddCircleIcon sx={{ mr: 1 }} />
-              </IconButton>
-              <Divider sx={{ height: 28, m: 0.5 }} orientation="vertical" />
-              <IconButton
-                disableRipple
-                sx={{ p: "10px", ml: 1 }}
-                onClick={() => {
-                  tracksFormCompleted
-                    ? setParametersFormCompleted(true)
-                    : onCompleteTracksForm();
-                }}
-              >
-                <CheckCircleIcon />
-              </IconButton>
-            </Box>
-          </Box>
-          <Box component="form">
-            <NewModalContentList
-              input={aoData}
-              target={formTarget}
-              onSubmit={handleSubmit(onRemove)}
-            />
-          </Box>
-        </>
-      ) : (
-        <>
-          <Box
-            sx={{
-              ...modalCenteredSx,
-            }}
-            component="form"
-            onSubmit={handleSubmit(onSubmitTitle)}
-          >
-            <TextField
-              variant="standard"
-              helperText="enter a session title to continue"
-              margin="normal"
-              autoComplete="off"
-              {...register("sessionTitle", { required: true })}
-            />
-
-            <Box>
-              <IconButton disableRipple type="submit">
-                <CheckCircleIcon
-                  sx={{
-                    my: 0.5,
-                  }}
-                />
-              </IconButton>
-            </Box>
-          </Box>
-        </>
-      )}
+      <Box
+        component="form"
+        sx={{
+          ...modalCenteredSx,
+        }}
+        onSubmit={handleSubmit(onSubmitTrackParameter)}
+      >
+        <Box
+          sx={{
+            ...newSessionModal.text,
+          }}
+        >
+          Enter the {""}
+          {formNumber === 2 ? <b>track titles</b> : <b>session parameters</b>}
+          {""} you wish to include in the
+          {""} {sessionData.id} session. You can always add more later.
+        </Box>
+        <Box
+          sx={{
+            ...newSessionModal.field,
+          }}
+        >
+          <TextField
+            sx={{ ml: 13 }}
+            variant="standard"
+            margin="normal"
+            inputRef={textInput}
+            autoComplete="off"
+          />
+          <IconButton disableRipple type="submit">
+            <AddCircleIcon sx={{ mr: 1 }} />
+          </IconButton>
+          <Divider sx={{ height: 28, m: 0.5 }} orientation="vertical" />
+        </Box>
+      </Box>
+      <Box
+        component="form"
+        ref={inputArray}
+        {...register("tracks")}
+        onSubmit={handleSubmit(submitFinalTracks)}
+      >
+        <IconButton type="submit" disableRipple sx={{ p: "10px", ml: 1 }}>
+          <CheckCircleIcon />
+        </IconButton>
+      </Box>
+      <Box component="form">
+        <NewModalContentList
+          data={inputArray}
+          onSubmit={(title) => onRemoveTrackParameter(`${title}`)}
+        />
+      </Box>
     </>
+  ) : (
+    <>Hello</>
   );
 };
