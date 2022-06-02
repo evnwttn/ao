@@ -17,16 +17,16 @@ export const NewModalContent = () => {
     },
   });
 
-  const onSubmitIdAuthor = (data) => {
+  const onSubmitForm = (data) => {
     setFormNumber(formNumber + 1);
     setSessionData({ ...data });
   };
 
-  const onSubmitTrackParameter = () => {
+  const onSubmitTrackOrParameter = () => {
     setInputArray((inputArray) => [...inputArray, textInput.current.value]);
   };
 
-  const onRemoveTrackParameter = (title) => {
+  const onRemoveTrackOrParameter = (title) => {
     setInputArray((previousArray) =>
       previousArray.filter((previousInput) => previousInput !== title)
     );
@@ -36,17 +36,13 @@ export const NewModalContent = () => {
     textInput.current.value = "";
   }, [inputArray, formNumber]);
 
-  const submitFinalTracks = (data) => {
-    console.log(data);
-  };
-
   return formNumber <= 1 ? (
     <Box
       sx={{
         ...modalCenteredSx,
       }}
       component="form"
-      onSubmit={handleSubmit(onSubmitIdAuthor)}
+      onSubmit={handleSubmit(onSubmitForm)}
     >
       <TextField
         variant="standard"
@@ -77,7 +73,7 @@ export const NewModalContent = () => {
         sx={{
           ...modalCenteredSx,
         }}
-        onSubmit={handleSubmit(onSubmitTrackParameter)}
+        onSubmit={handleSubmit(onSubmitTrackOrParameter)}
       >
         <Box
           sx={{
@@ -114,7 +110,7 @@ export const NewModalContent = () => {
             setValue(`tracks.${index}.title`, title)
           );
         }}
-        onSubmit={handleSubmit(submitFinalTracks)}
+        onSubmit={handleSubmit(onSubmitForm)}
       >
         <IconButton type="submit" disableRipple sx={{ p: "10px", ml: 1 }}>
           <CheckCircleIcon />
@@ -123,7 +119,7 @@ export const NewModalContent = () => {
       <Box component="form">
         <NewModalContentList
           data={inputArray}
-          onSubmit={(title) => onRemoveTrackParameter(`${title}`)}
+          onSubmit={(title) => onRemoveTrackOrParameter(`${title}`)}
         />
       </Box>
     </>
