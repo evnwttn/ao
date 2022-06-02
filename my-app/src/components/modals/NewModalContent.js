@@ -110,8 +110,8 @@ export const NewModalContent = () => {
       <Box
         component="form"
         onClick={() => {
-          inputArray.forEach((element, index) =>
-            setValue(`tracks.${index}.title`, element)
+          inputArray.forEach((title, index) =>
+            setValue(`tracks.${index}.title`, title)
           );
         }}
         onSubmit={handleSubmit(submitFinalTracks)}
