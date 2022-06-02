@@ -109,14 +109,12 @@ export const NewModalContent = () => {
       </Box>
       <Box
         component="form"
-        // onClick={() => setValue("tracks.title", inputArray)}
-        // onSubmit={handleSubmit(submitFinalTracks)}
-        onSubmit={() => {
-          inputArray.forEach(
-            (element, index) => setValue(`tracks.${index}.title`, element),
-            handleSubmit(submitFinalTracks)
+        onClick={() => {
+          inputArray.forEach((element, index) =>
+            setValue(`tracks.${index}.title`, element)
           );
         }}
+        onSubmit={handleSubmit(submitFinalTracks)}
       >
         <IconButton type="submit" disableRipple sx={{ p: "10px", ml: 1 }}>
           <CheckCircleIcon />
