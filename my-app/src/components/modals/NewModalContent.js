@@ -32,6 +32,15 @@ export const NewModalContent = () => {
     );
   };
 
+  const onSubmitList = (data) => {
+    formNumber === 2 &&
+      setInputArray((previousArray) =>
+        previousArray.filter((previousInput) => previousInput === "title")
+      );
+    setFormNumber(formNumber + 1);
+    console.log(data);
+  };
+
   useEffect(() => {
     textInput.current.value = "";
   }, [inputArray, formNumber]);
@@ -109,10 +118,10 @@ export const NewModalContent = () => {
           inputArray.forEach((title, index) => {
             formNumber === 2
               ? setValue(`tracks.${index}.title`, title)
-              : setValue(`parameters.${index}`, title);
+              : setValue(`parameters.${index + 1}`, title);
           });
         }}
-        onSubmit={handleSubmit(onSubmitForm)}
+        onSubmit={handleSubmit(onSubmitList)}
       >
         <IconButton type="submit" disableRipple sx={{ p: "10px", ml: 1 }}>
           <CheckCircleIcon />
