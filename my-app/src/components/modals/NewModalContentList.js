@@ -6,7 +6,13 @@ import { modalCenteredSx } from "../../assets/theme";
 export const NewModalContentList = ({ data, onSubmit }) => {
   return (
     <Box sx={{ ...modalCenteredSx, my: 1 }}>
-      <List sx={{ width: "85%" }}>
+      <List
+        sx={{
+          width: "85%",
+          maxHeight: "11vw",
+          overflow: "auto",
+        }}
+      >
         {data &&
           data.map((title, number) => {
             return (

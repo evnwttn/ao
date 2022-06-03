@@ -7,8 +7,6 @@ import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import { NewModalContentList } from "./NewModalContentList";
 import { newSessionModal, modalCenteredSx } from "../../assets/theme";
 
-// # of parameters needs to be limited @ NewModal to prevent overflow
-
 export const NewModalContent = () => {
   const [sessionData, setSessionData] = useState();
   const [startNewSession, startNewSessionLaunch] = useState(false);
@@ -28,11 +26,15 @@ export const NewModalContent = () => {
   };
 
   const onSubmitTrackOrParameter = () => {
-    formNumber === 2 && inputArray.length <= 12
+    formNumber === 2 && inputArray.length <= 11
       ? setInputArray((inputArray) => [...inputArray, textInput.current.value])
-      : formNumber === 3 && inputArray.length <= 11
+      : formNumber === 3 && inputArray.length <= 10
       ? setInputArray((inputArray) => [...inputArray, textInput.current.value])
-      : alert("Maximum Reached");
+      : alert(
+          `Maximum Number of ${
+            formNumber === 2 ? `Tracks` : `Parameters`
+          } Reached`
+        );
     textInput.current.value = "";
   };
 
