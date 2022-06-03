@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { Box, TextField, IconButton, Divider } from "@mui/material";
 import AddCircleIcon from "@mui/icons-material/AddCircle";
@@ -20,10 +20,12 @@ export const NewModalContent = () => {
   const onSubmitForm = (data) => {
     setFormNumber(formNumber + 1);
     setSessionData({ ...data });
+    textInput.current.value = "";
   };
 
   const onSubmitTrackOrParameter = () => {
     setInputArray((inputArray) => [...inputArray, textInput.current.value]);
+    textInput.current.value = "";
   };
 
   const onRemoveTrackOrParameter = (title) => {
@@ -40,10 +42,6 @@ export const NewModalContent = () => {
     setFormNumber(formNumber + 1);
     console.log(data);
   };
-
-  useEffect(() => {
-    textInput.current.value = "";
-  }, [inputArray, formNumber]);
 
   return formNumber <= 1 ? (
     <Box
