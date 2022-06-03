@@ -52,7 +52,7 @@ export const AOCell = ({
   useEffect(() => {
     const timer = setTimeout(() => {
       setHoverCell(undefined);
-    }, 1750);
+    }, 1250);
     return () => clearTimeout(timer);
   }, [toggleHovered, setHoverCell]);
 
