@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { Box, TextField, IconButton, Divider } from "@mui/material";
 import AddCircleIcon from "@mui/icons-material/AddCircle";
@@ -137,6 +138,12 @@ export const NewModalContent = () => {
       </Box>
     </>
   ) : (
-    <>Hello</>
+    <Link
+      to="/aogrid"
+      state={{ from: "new" }}
+      style={{ textDecoration: "none" }}
+    >
+      HELLO
+    </Link>
   );
 };
