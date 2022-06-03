@@ -231,6 +231,8 @@ export const gridSx = {
     flexGrow: 1,
   },
   container: {
+    display: "flex",
+    flexDirection: "column",
     marginLeft: "2.5vw",
     marginRight: "2.5vw",
   },

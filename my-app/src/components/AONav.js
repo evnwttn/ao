@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { AONavAboutModal } from "./modals/AONavAboutModal";
 import { palette, logoSx } from "../assets/theme";
 import { Button, Box } from "@mui/material";
@@ -13,7 +14,7 @@ export const AONav = () => {
   return (
     <Box
       sx={{
-        marginTop: "1.5vw",
+        marginTop: "0.5vw",
         display: "flex",
         flexDirection: "row",
         justifyContent: "flex-end",
@@ -23,21 +24,26 @@ export const AONav = () => {
       <AONavAboutModal open={open} handleClose={handleClose} />
       <Button
         disableRipple
+        sx={{ mt: "0.5vw" }}
         onClick={() => setOpen(true)}
         variant="text"
         color={"inherit"}
       >
         ?
       </Button>
-      <Box
-        sx={{
-          ...logoSx,
-          color: palette.aoBlue,
-          fontSize: "2.5vw",
-          mt: "-0.4vw",
-        }}
-      >
-        ꜵ
+      <Box sx={{}}>
+        <Link
+          to="/ao"
+          style={{
+            textDecoration: "none",
+            ...logoSx,
+            color: palette.aoBlue,
+            fontSize: "2.5vw",
+          }}
+          state={{ from: "home" }}
+        >
+          ꜵ
+        </Link>
       </Box>
     </Box>
   );
