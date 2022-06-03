@@ -1,6 +1,6 @@
 import React from "react";
 import { palette, logoSx } from "../assets/theme";
-import { Button, Box } from "@mui/material";
+import { Button, Box, Modal } from "@mui/material";
 
 export const AONav = () => {
   return (
@@ -21,13 +21,12 @@ export const AONav = () => {
       >
         ?
       </Button>
-
       <Box
         sx={{
           ...logoSx,
           color: palette.aoBlue,
           fontSize: "2.5vw",
-          mt: "-0.5vw",
+          mt: "-0.4vw",
         }}
       >
         ꜵ
