@@ -1,8 +1,14 @@
-import React from "react";
+import { useState } from "react";
 import { palette, logoSx } from "../assets/theme";
-import { Button, Box, Modal } from "@mui/material";
+import { Button, Box } from "@mui/material";
 
 export const AONav = () => {
+  const [open, setOpen] = useState(false);
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
   return (
     <Box
       sx={{
