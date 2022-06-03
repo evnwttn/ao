@@ -4,6 +4,7 @@ import { Box, Grid, ThemeProvider } from "@mui/material/";
 import { gridSx, cellSx } from "../assets/theme";
 import aotheme from "../assets/theme";
 import { AOCell } from "./AOCell";
+import { AONav } from "./AONav";
 import { blankSession } from "../assets/BlankSession";
 import { darkSideOfTheMoon } from "../assets/LoadSample";
 
@@ -33,6 +34,7 @@ export const AOGrid = () => {
       }}
     >
       <ThemeProvider theme={aotheme}>
+        <AONav />
         <Box sx={{ ...gridSx.dom }}>
           <Grid container>
             <Grid container spacing={"0.75vw"}>

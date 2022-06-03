@@ -222,6 +222,7 @@ export const newSessionModal = {
 export const gridSx = {
   dom: {
     display: "flex",
+    marginTop: "1.5vh",
     fontFamily: "Noto Sans",
     fontSize: "0.8vw",
     letterSpacing: "0.125vw",
@@ -232,7 +233,6 @@ export const gridSx = {
   container: {
     marginLeft: "2.5vw",
     marginRight: "2.5vw",
-    marginTop: "2.5vh",
   },
 };
 
