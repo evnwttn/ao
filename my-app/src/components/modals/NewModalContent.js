@@ -141,7 +141,11 @@ export const NewModalContent = () => {
     </>
   ) : (
     startNewSession && (
-      <Navigate to="/aogrid" state={{ from: "new" }} replace={true} />
+      <Navigate
+        to="/aogrid"
+        state={{ from: "new", data: sessionData }}
+        replace={true}
+      />
     )
   );
 };

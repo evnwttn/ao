@@ -21,8 +21,9 @@ export const AOGrid = () => {
   const [gridData, setGridData] = useState(blankSession);
 
   useEffect(() => {
-    const { from } = location.state;
+    const { from, data } = location.state;
     from === "load" && setGridData(darkSideOfTheMoon);
+    data && console.log(data);
   }, [location.state]);
 
   // HANDLES CELL HOVERING FX
