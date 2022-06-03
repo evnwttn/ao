@@ -17,30 +17,23 @@ export const AOCell = ({
   const [cellColor, setCellColor] = useState("transparent");
 
   useEffect(() => {
-    const initialColour = () => {
-      track.parameters.map(
-        (cell) => cell.parameter === parameter && setCellColor(cell.colour)
-      );
+    const loadData = () => {
+      track.parameters &&
+        track.parameters.map(
+          (cell) =>
+            (cell.parameter === parameter && setCellColor(cell.colour)) ||
+            (cell.comment &&
+              cell.parameter === parameter &&
+              setCellComment(cell.comment))
+        );
     };
-    initialColour();
+    loadData();
   }, [parameter, track.parameters]);
 
   // HANDLES COMMENT STORAGE
   const { register, handleSubmit } = useForm();
   const [cellComment, setCellComment] = useState("");
   const onSubmit = (data) => setCellComment(data.comment);
-
-  useEffect(() => {
-    const initialComment = () => {
-      track.parameters.map(
-        (cell) =>
-          cell.comment &&
-          cell.parameter === parameter &&
-          setCellComment(cell.comment)
-      );
-    };
-    initialComment();
-  }, [parameter, track.parameters]);
 
   // HANDLES POPOVER
   const [anchorEl, setAnchorEl] = React.useState(null);

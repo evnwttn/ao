@@ -49,7 +49,6 @@ export const NewModalContent = () => {
   };
 
   useEffect(() => {
-    console.log(sessionData);
     formNumber === 4 && startNewSessionLaunch(true);
   }, [formNumber, sessionData]);
 
