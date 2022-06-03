@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { Box, TextField, IconButton, Divider } from "@mui/material";
 import AddCircleIcon from "@mui/icons-material/AddCircle";
@@ -40,8 +40,12 @@ export const NewModalContent = () => {
         previousArray.filter((previousInput) => previousInput === "title")
       );
     setFormNumber(formNumber + 1);
-    console.log(data);
+    setSessionData({ ...data });
   };
+
+  useEffect(() => {
+    console.log(sessionData);
+  }, [formNumber, sessionData]);
 
   return formNumber <= 1 ? (
     <Box
