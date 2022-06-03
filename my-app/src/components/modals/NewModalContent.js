@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { Box, TextField, IconButton, Divider } from "@mui/material";
 import AddCircleIcon from "@mui/icons-material/AddCircle";
@@ -17,6 +17,7 @@ export const NewModalContent = () => {
       parameters: ["title"],
     },
   });
+  const [startNewSession, startNewSessionLaunch] = useState(false);
 
   const onSubmitForm = (data) => {
     setFormNumber(formNumber + 1);
@@ -46,6 +47,7 @@ export const NewModalContent = () => {
 
   useEffect(() => {
     console.log(sessionData);
+    formNumber === 3 && startNewSessionLaunch(true);
   }, [formNumber, sessionData]);
 
   return formNumber <= 1 ? (
@@ -138,12 +140,8 @@ export const NewModalContent = () => {
       </Box>
     </>
   ) : (
-    <Link
-      to="/aogrid"
-      state={{ from: "new" }}
-      style={{ textDecoration: "none" }}
-    >
-      HELLO
-    </Link>
+    startNewSession && (
+      <Navigate to="/aogrid" state={{ from: "new" }} replace={true} />
+    )
   );
 };
