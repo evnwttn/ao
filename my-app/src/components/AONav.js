@@ -15,15 +15,23 @@ export const AONav = () => {
     >
       <Button
         disableRipple
-        key={`test`}
         onClick={() => console.log("yolo")}
         variant="text"
         color={"inherit"}
       >
-        Test
+        ?
       </Button>
 
-      <Box sx={{ ...logoSx, color: palette.aoBlue, fontSize: "2.5vw" }}>ꜵ</Box>
+      <Box
+        sx={{
+          ...logoSx,
+          color: palette.aoBlue,
+          fontSize: "2.5vw",
+          mt: "-0.5vw",
+        }}
+      >
+        ꜵ
+      </Box>
     </Box>
   );
 };
