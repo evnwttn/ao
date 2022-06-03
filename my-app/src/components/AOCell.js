@@ -13,11 +13,11 @@ export const AOCell = ({
   setHoverCell,
   hoverCell,
 }) => {
-  // HANDLES CELL COLOUR
+  // HANDLES CELL COLOUR & INITIAL "LOAD" DATA
   const [cellColor, setCellColor] = useState("transparent");
 
   useEffect(() => {
-    const loadData = () => {
+    const initialData = () => {
       track.parameters &&
         track.parameters.map(
           (cell) =>
@@ -27,7 +27,7 @@ export const AOCell = ({
               setCellComment(cell.comment))
         );
     };
-    loadData();
+    initialData();
   }, [parameter, track.parameters]);
 
   // HANDLES COMMENT STORAGE

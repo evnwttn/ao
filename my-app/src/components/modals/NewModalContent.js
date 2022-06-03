@@ -8,7 +8,6 @@ import { NewModalContentList } from "./NewModalContentList";
 import { newSessionModal, modalCenteredSx } from "../../assets/theme";
 
 // # of parameters needs to be limited @ NewModal to prevent overflow
-// general tidying here
 
 export const NewModalContent = () => {
   const [sessionData, setSessionData] = useState();
@@ -29,7 +28,11 @@ export const NewModalContent = () => {
   };
 
   const onSubmitTrackOrParameter = () => {
-    setInputArray((inputArray) => [...inputArray, textInput.current.value]);
+    formNumber === 2 && inputArray.length <= 12
+      ? setInputArray((inputArray) => [...inputArray, textInput.current.value])
+      : formNumber === 3 && inputArray.length <= 11
+      ? setInputArray((inputArray) => [...inputArray, textInput.current.value])
+      : alert("Maximum Reached");
     textInput.current.value = "";
   };
 
