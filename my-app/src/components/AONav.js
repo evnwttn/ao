@@ -1,9 +1,8 @@
 import React from "react";
 import { palette, logoSx } from "../assets/theme";
-import { Box } from "@mui/system";
+import { Button, Box } from "@mui/material";
 
 export const AONav = () => {
-  console.log("yolo");
   return (
     <Box
       sx={{
@@ -14,6 +13,16 @@ export const AONav = () => {
         alignItems: "center",
       }}
     >
+      <Button
+        disableRipple
+        key={`test`}
+        onClick={() => console.log("yolo")}
+        variant="text"
+        color={"inherit"}
+      >
+        Test
+      </Button>
+
       <Box sx={{ ...logoSx, color: palette.aoBlue, fontSize: "2.5vw" }}>ꜵ</Box>
     </Box>
   );
