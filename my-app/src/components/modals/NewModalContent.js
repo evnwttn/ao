@@ -7,8 +7,12 @@ import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import { NewModalContentList } from "./NewModalContentList";
 import { newSessionModal, modalCenteredSx } from "../../assets/theme";
 
+// # of parameters needs to be limited @ NewModal to prevent overflow
+// general tidying here
+
 export const NewModalContent = () => {
   const [sessionData, setSessionData] = useState();
+  const [startNewSession, startNewSessionLaunch] = useState(false);
   const [formNumber, setFormNumber] = useState(0);
   const [inputArray, setInputArray] = useState([]);
   const textInput = React.useRef(null);
@@ -17,7 +21,6 @@ export const NewModalContent = () => {
       parameters: ["title"],
     },
   });
-  const [startNewSession, startNewSessionLaunch] = useState(false);
 
   const onSubmitForm = (data) => {
     setFormNumber(formNumber + 1);
@@ -46,7 +49,6 @@ export const NewModalContent = () => {
   };
 
   useEffect(() => {
-    console.log(sessionData);
     formNumber === 3 && startNewSessionLaunch(true);
   }, [formNumber, sessionData]);
 

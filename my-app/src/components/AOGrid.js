@@ -7,13 +7,7 @@ import { AOCell } from "./AOCell";
 import { blankSession } from "../assets/BlankSession";
 import { darkSideOfTheMoon } from "../assets/LoadSample";
 
-// remaining issues for REACT
-
 // width of title/parameter text cells needs to be limited to avoid overflow
-// # of parameters needs to be limited @ NewModal to prevent overflow
-// configure NewModal to order data as per Test/LoadSample formatting
-// hook up routing of NEW to aogrid passing in the data
-// if from new, use data props
 
 export const AOGrid = () => {
   // HANDLES LOADING GRID DATA
@@ -23,7 +17,7 @@ export const AOGrid = () => {
   useEffect(() => {
     const { from, data } = location.state;
     from === "load" && setGridData(darkSideOfTheMoon);
-    data && console.log(data);
+    from === "new" && setGridData(data);
   }, [location.state]);
 
   // HANDLES CELL HOVERING FX
