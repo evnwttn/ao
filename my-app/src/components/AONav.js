@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { AONavAboutModal } from "./modals/AONavAboutModal";
 import { palette, logoSx } from "../assets/theme";
 import { Button, Box } from "@mui/material";
 
@@ -19,9 +20,10 @@ export const AONav = () => {
         alignItems: "center",
       }}
     >
+      <AONavAboutModal open={open} handleClose={handleClose} />
       <Button
         disableRipple
-        onClick={() => console.log("yolo")}
+        onClick={() => setOpen(true)}
         variant="text"
         color={"inherit"}
       >
