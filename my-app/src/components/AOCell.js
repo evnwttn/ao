@@ -14,7 +14,7 @@ export const AOCell = ({
   hoverCell,
 }) => {
   // HANDLES CELL COLOUR & INITIAL "LOAD" DATA
-  const [cellColor, setCellColor] = useState("transparent");
+  const [cellColor, setCellColor] = useState(palette.aoGrey);
 
   useEffect(() => {
     const initialData = () => {

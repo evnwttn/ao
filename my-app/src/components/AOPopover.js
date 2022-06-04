@@ -4,7 +4,7 @@ import { AOColorWheel } from "./AOColorWheel";
 import { AOCommentBase } from "./AOCommentBase";
 import { wheelSx } from "../assets/theme";
 import { Tooltip } from "@mui/material/";
-import HighlightOffIcon from "@mui/icons-material/HighlightOff";
+import RemoveCircleOutlineIcon from "@mui/icons-material/RemoveCircleOutline";
 
 export const AOPopover = ({
   cell,
@@ -50,7 +50,7 @@ export const AOPopover = ({
         }}
       >
         <Tooltip title="Delete Task" placement="right-end">
-          <HighlightOffIcon onClick={() => handleClick("transparent")} />
+          <RemoveCircleOutlineIcon onClick={() => handleClick("transparent")} />
         </Tooltip>
       </Box>
     </Box>

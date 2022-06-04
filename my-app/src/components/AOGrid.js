@@ -8,8 +8,6 @@ import { AONav } from "./AONav";
 import { blankSession } from "../assets/BlankSession";
 import { darkSideOfTheMoon } from "../assets/LoadSample";
 
-// width of title/parameter text cells needs to be limited to avoid overflow
-
 export const AOGrid = () => {
   // HANDLES LOADING GRID DATA
   const location = useLocation();
