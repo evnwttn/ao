@@ -8,7 +8,6 @@ export const NewModalContent = () => {
   const [sessionData, setSessionData] = useState();
   const [startNewSession, startNewSessionLaunch] = useState(false);
   const [formPrompt, setFormPrompt] = useState(0);
-  const [thang, setThang] = useState("author");
   const [inputArray, setInputArray] = useState([]);
   const textInput = React.useRef(null);
   const { register, handleSubmit, setValue } = useForm({
@@ -17,8 +16,14 @@ export const NewModalContent = () => {
     },
   });
 
+  // formPrompt key
+  // 1 - session author (textfield)
+  // 2 - sesson title (textfield)
+  // 3 - session track titles (list)
+  // 4 - session parameter titles (list)
+
   const onSubmitForm = (data) => {
-    thang === "author" ? setThang("id") : setThang("tracks");
+    setFormPrompt(formPrompt + 1);
     setSessionData({ ...data });
     textInput.current.value = "";
   };
@@ -62,7 +67,6 @@ export const NewModalContent = () => {
       textInput={textInput}
       formPrompt={formPrompt}
       register={register}
-      thang={thang}
     />
   ) : formPrompt <= 3 ? (
     <NewModalContentListForm
@@ -75,7 +79,6 @@ export const NewModalContent = () => {
       textInput={textInput}
       inputArray={inputArray}
       setValue={setValue}
-      thang={thang}
     />
   ) : (
     startNewSession && (
