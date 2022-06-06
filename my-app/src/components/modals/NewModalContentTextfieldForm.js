@@ -6,7 +6,6 @@ export const NewModalContentTextfieldForm = ({
   handleSubmit,
   onSubmitForm,
   textInput,
-  formPrompt,
   register,
   thang,
 }) => {

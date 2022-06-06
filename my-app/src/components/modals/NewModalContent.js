@@ -18,7 +18,7 @@ export const NewModalContent = () => {
   });
 
   const onSubmitForm = (data) => {
-    setFormPrompt(formPrompt + 1);
+    thang === "author" ? setThang("id") : setThang("tracks");
     setSessionData({ ...data });
     textInput.current.value = "";
   };
