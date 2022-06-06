@@ -1,12 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { Navigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
-import { Box, TextField, IconButton, Divider } from "@mui/material";
-import AddCircleIcon from "@mui/icons-material/AddCircle";
-import CheckCircleIcon from "@mui/icons-material/CheckCircle";
-import { NewModalContentList } from "./NewModalContentList";
 import { NewModalContentTextfieldForm } from "./NewModalContentTextfieldForm";
-import { newSessionModal, modalCenteredSx } from "../../assets/theme";
+import { NewModalContentListForm } from "./NewModalContentListForm";
 
 export const NewModalContent = () => {
   const [sessionData, setSessionData] = useState();
@@ -67,64 +63,17 @@ export const NewModalContent = () => {
       register={register}
     />
   ) : formPrompt <= 3 ? (
-    <>
-      <Box
-        component="form"
-        sx={{
-          ...modalCenteredSx,
-        }}
-        onSubmit={handleSubmit(onSubmitTrackOrParameter)}
-      >
-        <Box
-          sx={{
-            ...newSessionModal.text,
-          }}
-        >
-          Enter the {""}
-          {formPrompt === 2 ? <b>track titles</b> : <b>session parameters</b>}
-          {""} you wish to include in the
-          {""} {sessionData.id} session. You can always add more later.
-        </Box>
-        <Box
-          sx={{
-            ...newSessionModal.field,
-          }}
-        >
-          <TextField
-            sx={{ ml: 13 }}
-            variant="standard"
-            margin="normal"
-            inputRef={textInput}
-            autoComplete="off"
-          />
-          <IconButton disableRipple type="submit">
-            <AddCircleIcon sx={{ mr: 1 }} />
-          </IconButton>
-          <Divider sx={{ height: 28, m: 0.5 }} orientation="vertical" />
-        </Box>
-      </Box>
-      <Box
-        component="form"
-        onClick={() => {
-          inputArray.forEach((title, index) => {
-            formPrompt === 2
-              ? setValue(`tracks.${index}.title`, title)
-              : setValue(`parameters.${index + 1}`, title);
-          });
-        }}
-        onSubmit={handleSubmit(onSubmitList)}
-      >
-        <IconButton type="submit" disableRipple sx={{ p: "10px", ml: 1 }}>
-          <CheckCircleIcon />
-        </IconButton>
-      </Box>
-      <Box component="form">
-        <NewModalContentList
-          data={inputArray}
-          onSubmit={(title) => onRemoveTrackOrParameter(`${title}`)}
-        />
-      </Box>
-    </>
+    <NewModalContentListForm
+      handleSubmit={handleSubmit}
+      onSubmitTrackOrParameter={onSubmitTrackOrParameter}
+      onRemoveTrackOrParameter={onRemoveTrackOrParameter}
+      onSubmitList={onSubmitList}
+      formPrompt={formPrompt}
+      sessionData={sessionData}
+      textInput={textInput}
+      inputArray={inputArray}
+      setValue={setValue}
+    />
   ) : (
     startNewSession && (
       <Navigate
