@@ -1,6 +1,16 @@
-import { Box } from "@mui/material";
+import { Box, TextField, IconButton, Divider } from "@mui/material";
+import { modalCenteredSx, newSessionModal } from "../../assets/theme";
+import { NewModalContentList } from "./NewModalContentList";
+import AddCircleIcon from "@mui/icons-material/AddCircle";
 
-export const NewModalContentListForm = () => {
+export const NewModalContentListForm = ({
+  handleSubmit,
+  onSubmitTrackOrParameter,
+  formPrompt,
+  sessionData,
+  textInput,
+  inputArray,
+}) => {
   return (
     <>
       <Box
