@@ -29,7 +29,7 @@ export const NewModalContent = () => {
   };
 
   const onSubmitTrackOrParameter = () => {
-    // ensures tracks & parameter axis remains below 12
+    // ensures track & parameter totals remain below 12
     formPrompt === 2 && inputArray.length <= 11
       ? setInputArray((inputArray) => [...inputArray, textInput.current.value])
       : formPrompt === 3 && inputArray.length <= 10
@@ -46,7 +46,11 @@ export const NewModalContent = () => {
     textInput.current.value = "";
   };
 
-  const onRemoveTrackOrParameter = (title) => {};
+  const onRemoveTrackOrParameter = (title) => {
+    setInputArray((previousArray) =>
+      previousArray.filter((previousInput) => previousInput !== title)
+    );
+  };
 
   const onSubmitList = (data) => {
     formPrompt === 2 &&
