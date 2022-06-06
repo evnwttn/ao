@@ -10,7 +10,7 @@ import { newSessionModal, modalCenteredSx } from "../../assets/theme";
 export const NewModalContent = () => {
   const [sessionData, setSessionData] = useState();
   const [startNewSession, startNewSessionLaunch] = useState(false);
-  const [formNumber, setFormNumber] = useState(0);
+  const [formPrompt, setFormPrompt] = useState(0);
   const [inputArray, setInputArray] = useState([]);
   const textInput = React.useRef(null);
   const { register, handleSubmit, setValue } = useForm({
@@ -20,19 +20,19 @@ export const NewModalContent = () => {
   });
 
   const onSubmitForm = (data) => {
-    setFormNumber(formNumber + 1);
+    setFormPrompt(formPrompt + 1);
     setSessionData({ ...data });
     textInput.current.value = "";
   };
 
   const onSubmitTrackOrParameter = () => {
-    formNumber === 2 && inputArray.length <= 11
+    formPrompt === 2 && inputArray.length <= 11
       ? setInputArray((inputArray) => [...inputArray, textInput.current.value])
-      : formNumber === 3 && inputArray.length <= 10
+      : formPrompt === 3 && inputArray.length <= 10
       ? setInputArray((inputArray) => [...inputArray, textInput.current.value])
       : alert(
           `Maximum Number of ${
-            formNumber === 2 ? `Tracks` : `Parameters`
+            formPrompt === 2 ? `Tracks` : `Parameters`
           } Reached`
         );
     textInput.current.value = "";
@@ -45,19 +45,19 @@ export const NewModalContent = () => {
   };
 
   const onSubmitList = (data) => {
-    formNumber === 2 &&
+    formPrompt === 2 &&
       setInputArray((previousArray) =>
         previousArray.filter((previousInput) => previousInput === "title")
       );
-    setFormNumber(formNumber + 1);
+    setFormPrompt(formPrompt + 1);
     setSessionData({ ...data });
   };
 
   useEffect(() => {
-    formNumber === 4 && startNewSessionLaunch(true);
-  }, [formNumber, sessionData]);
+    formPrompt === 4 && startNewSessionLaunch(true);
+  }, [formPrompt, sessionData]);
 
-  return formNumber <= 1 ? (
+  return formPrompt <= 1 ? (
     <Box
       sx={{
         ...modalCenteredSx,
@@ -69,13 +69,13 @@ export const NewModalContent = () => {
         variant="standard"
         inputRef={textInput}
         helperText={
-          formNumber === 0
+          formPrompt === 0
             ? "enter artist name to continue"
             : "enter a session title to continue"
         }
         margin="normal"
         autoComplete="off"
-        {...(formNumber === 0 ? register("author") : register("id"))}
+        {...(formPrompt === 0 ? register("author") : register("id"))}
       />
       <Box>
         <IconButton disableRipple type="submit">
@@ -87,7 +87,7 @@ export const NewModalContent = () => {
         </IconButton>
       </Box>
     </Box>
-  ) : formNumber <= 3 ? (
+  ) : formPrompt <= 3 ? (
     <>
       <Box
         component="form"
@@ -102,7 +102,7 @@ export const NewModalContent = () => {
           }}
         >
           Enter the {""}
-          {formNumber === 2 ? <b>track titles</b> : <b>session parameters</b>}
+          {formPrompt === 2 ? <b>track titles</b> : <b>session parameters</b>}
           {""} you wish to include in the
           {""} {sessionData.id} session. You can always add more later.
         </Box>
@@ -128,7 +128,7 @@ export const NewModalContent = () => {
         component="form"
         onClick={() => {
           inputArray.forEach((title, index) => {
-            formNumber === 2
+            formPrompt === 2
               ? setValue(`tracks.${index}.title`, title)
               : setValue(`parameters.${index + 1}`, title);
           });
