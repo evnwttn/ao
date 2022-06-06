@@ -14,6 +14,7 @@ export const NewModalContentListForm = ({
   textInput,
   inputArray,
   setValue,
+  thang,
 }) => {
   return (
     <>
