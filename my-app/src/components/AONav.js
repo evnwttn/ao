@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { AONavAboutModal } from "./modals/AONavAboutModal";
-import { palette, logoSx } from "../assets/theme";
+import { logoSx } from "../assets/theme";
 import { Button, Box } from "@mui/material";
 
 export const AONav = () => {
@@ -35,10 +35,7 @@ export const AONav = () => {
         <Link
           to="/ao"
           style={{
-            textDecoration: "none",
-            ...logoSx,
-            color: palette.aoBlue,
-            fontSize: "2.5vw",
+            ...logoSx.nav,
           }}
           state={{ from: "home" }}
         >

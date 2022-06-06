@@ -151,6 +151,13 @@ export const logoSx = {
   mozUserSelectNone: "none",
   msUserSelectNone: "none",
   userSelectNone: "none",
+  nav: {
+    fontFamily: "Noto-Serif",
+    textTransform: "lowercase",
+    textDecoration: "none",
+    color: palette.aoBlue,
+    fontSize: "2.5vw",
+  },
 };
 
 // HOME
