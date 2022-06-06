@@ -5,6 +5,7 @@ import { Box, TextField, IconButton, Divider } from "@mui/material";
 import AddCircleIcon from "@mui/icons-material/AddCircle";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import { NewModalContentList } from "./NewModalContentList";
+import { NewModalContentTextfieldForm } from "./NewModalContentTextfieldForm";
 import { newSessionModal, modalCenteredSx } from "../../assets/theme";
 
 export const NewModalContent = () => {
@@ -58,35 +59,13 @@ export const NewModalContent = () => {
   }, [formPrompt, sessionData]);
 
   return formPrompt <= 1 ? (
-    <Box
-      sx={{
-        ...modalCenteredSx,
-      }}
-      component="form"
-      onSubmit={handleSubmit(onSubmitForm)}
-    >
-      <TextField
-        variant="standard"
-        inputRef={textInput}
-        helperText={
-          formPrompt === 0
-            ? "enter artist name to continue"
-            : "enter a session title to continue"
-        }
-        margin="normal"
-        autoComplete="off"
-        {...(formPrompt === 0 ? register("author") : register("id"))}
-      />
-      <Box>
-        <IconButton disableRipple type="submit">
-          <CheckCircleIcon
-            sx={{
-              my: 0.5,
-            }}
-          />
-        </IconButton>
-      </Box>
-    </Box>
+    <NewModalContentTextfieldForm
+      handleSubmit={handleSubmit}
+      onSubmitForm={onSubmitForm}
+      textInput={textInput}
+      formPrompt={formPrompt}
+      register={register}
+    />
   ) : formPrompt <= 3 ? (
     <>
       <Box
