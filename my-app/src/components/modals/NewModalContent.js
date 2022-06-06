@@ -29,6 +29,7 @@ export const NewModalContent = () => {
   };
 
   const onSubmitTrackOrParameter = () => {
+    // ensures tracks & parameter axis remains below 12
     formPrompt === 2 && inputArray.length <= 11
       ? setInputArray((inputArray) => [...inputArray, textInput.current.value])
       : formPrompt === 3 && inputArray.length <= 10
@@ -38,14 +39,14 @@ export const NewModalContent = () => {
             formPrompt === 2 ? `Tracks` : `Parameters`
           } Reached`
         );
+    // ensures track & parameter titles do not repeat
+    setInputArray((inputArray) =>
+      inputArray.filter((input, index, array) => array.indexOf(input) === index)
+    );
     textInput.current.value = "";
   };
 
-  const onRemoveTrackOrParameter = (title) => {
-    setInputArray((previousArray) =>
-      previousArray.filter((previousInput) => previousInput !== title)
-    );
-  };
+  const onRemoveTrackOrParameter = (title) => {};
 
   const onSubmitList = (data) => {
     formPrompt === 2 &&
