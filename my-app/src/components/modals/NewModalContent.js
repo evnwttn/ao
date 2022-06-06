@@ -16,11 +16,11 @@ export const NewModalContent = () => {
     },
   });
 
-  // formPrompt key
-  // 1 - session author (textfield)
-  // 2 - sesson title (textfield)
-  // 3 - session track titles (list)
-  // 4 - session parameter titles (list)
+  // prompt key
+  // form 1 - session author (textfield)
+  // form 2 - sesson title (textfield)
+  // form 3 - session track titles (list)
+  // form 4 - session parameter titles (list)
 
   const onSubmitForm = (data) => {
     setFormPrompt(formPrompt + 1);
