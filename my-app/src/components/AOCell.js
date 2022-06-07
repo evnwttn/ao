@@ -16,6 +16,22 @@ export const AOCell = ({
   // HANDLES CELL COLOUR & INITIAL "LOAD" DATA
   const [cellColor, setCellColor] = useState(palette.aoGrey);
 
+  // HANDLES POPOVER
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  const open = Boolean(anchorEl);
+  const id = open ? "simple-popover" : undefined;
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+
+  // HANDLES COMMENT STORAGE
+  const { register, handleSubmit } = useForm();
+  const [cellComment, setCellComment] = useState("");
+  const onSubmit = (data) => setCellComment(data.comment);
+
   useEffect(() => {
     const initialData = () => {
       track.parameters &&
@@ -29,24 +45,6 @@ export const AOCell = ({
     };
     initialData();
   }, [parameter, track.parameters]);
-
-  // HANDLES COMMENT STORAGE
-  const { register, handleSubmit } = useForm();
-  const [cellComment, setCellComment] = useState("");
-  const onSubmit = (data) => setCellComment(data.comment);
-
-  // HANDLES POPOVER
-  const [anchorEl, setAnchorEl] = React.useState(null);
-  const open = Boolean(anchorEl);
-  const id = open ? "simple-popover" : undefined;
-
-  const handleClick = (event) => {
-    setAnchorEl(event.currentTarget);
-  };
-
-  const handleClose = () => {
-    setAnchorEl(null);
-  };
 
   // HANDLES HOVER FX TIMER
   useEffect(() => {
