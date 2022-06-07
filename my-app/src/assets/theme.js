@@ -293,7 +293,7 @@ export const wheelSx = {
     justifyContent: "center",
     display: "flex",
     position: "relative",
-    bottom: "5.75vw",
+    bottom: "0vw",
     pointerEvents: "auto",
     svg: {
       fontSize: "1.75vw",
