@@ -228,6 +228,7 @@ export const gridSx = {
   dom: {
     display: "flex",
     marginTop: "1.5vh",
+    marginBottom: "1.5vw",
     fontFamily: "Noto Sans",
     fontSize: "0.8vw",
     letterSpacing: "0.125vw",
