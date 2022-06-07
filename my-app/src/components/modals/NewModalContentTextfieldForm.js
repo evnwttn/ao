@@ -7,7 +7,7 @@ export const NewModalContentTextfieldForm = ({
   onSubmitForm,
   textInput,
   register,
-  thang,
+  formPrompt,
 }) => {
   return (
     <Box
@@ -21,13 +21,13 @@ export const NewModalContentTextfieldForm = ({
         variant="standard"
         inputRef={textInput}
         helperText={
-          thang === "author"
+          formPrompt === "author"
             ? "enter artist name to continue"
             : "enter a session title to continue"
         }
         margin="normal"
         autoComplete="off"
-        {...(thang === "author" ? register("author") : register("id"))}
+        {...(formPrompt === "author" ? register("author") : register("id"))}
       />
       <Box>
         <IconButton disableRipple type="submit">

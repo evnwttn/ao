@@ -65,6 +65,11 @@ export const NewModalContent = () => {
     formPrompt === 4 && startNewSessionLaunch(true);
   }, [formPrompt, sessionData]);
 
+  useEffect(() => {
+    console.log(sessionData);
+    console.log(formPrompt);
+  }, [sessionData, formPrompt]);
+
   return formPrompt <= 1 ? (
     <NewModalContentTextfieldForm
       handleSubmit={handleSubmit}
