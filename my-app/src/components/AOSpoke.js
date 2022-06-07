@@ -13,13 +13,13 @@ export const AOSpoke = ({
   return (
     <Box sx={{ ...wheelSx.spoke }}>
       <svg
-        width="5vw"
+        width="5.5vw"
         fill={color}
         onClick={() => {
           handleClick(color);
         }}
         transform={transform}
-        viewBox="13 0 10 10"
+        viewBox="12 2 10 10"
       >
         <Tooltip title={toolTip} placement={placement}>
           <path d={svgShapes.quarterCircle} />
