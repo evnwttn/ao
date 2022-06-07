@@ -35,7 +35,14 @@ export const AOGrid = () => {
         <AONav />
         <Box sx={{ ...gridSx.dom }}>
           <Grid container>
-            <Grid container spacing={"0.75vw"}>
+            <Grid
+              sx={{
+                flexFlow: "row nowrap",
+                justifyContent: "center",
+              }}
+              container
+              spacing={"0.75vw"}
+            >
               {gridData.parameters.map((parameterTitle) => {
                 return (
                   <Grid item sm={1} key={parameterTitle}>
@@ -52,7 +59,16 @@ export const AOGrid = () => {
             </Grid>
             {gridData.tracks.map((track, parameter) => {
               return (
-                <Grid container key={track.title} spacing={"0.75vw"}>
+                <Grid
+                  container
+                  sx={{
+                    display: "flex",
+                    flexFlow: "row nowrap",
+                    justifyContent: "center",
+                  }}
+                  key={track.title}
+                  spacing={"0.75vw"}
+                >
                   {gridData.parameters.map((parameter) => {
                     return parameter === `title` ? (
                       <Grid item sm={1} key={parameter}>

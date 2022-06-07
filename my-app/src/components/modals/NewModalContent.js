@@ -67,7 +67,6 @@ export const NewModalContent = () => {
 
   useEffect(() => {
     console.log(sessionData);
-    console.log(formPrompt);
   }, [sessionData, formPrompt]);
 
   return formPrompt <= 1 ? (
