@@ -49,7 +49,7 @@ export const AOPopover = ({
           ...wheelSx.remove,
         }}
       >
-        <Tooltip title="Delete Task" placement="right-end">
+        <Tooltip title="Cancel Task" placement="right-end">
           <RemoveCircleOutlineIcon onClick={() => handleClick("transparent")} />
         </Tooltip>
       </Box>

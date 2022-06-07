@@ -69,8 +69,6 @@ const aotheme = createTheme({
           maxWidth: "none",
           borderRadius: "none",
           pointerEvents: "none",
-          paddingTop: "0vw",
-          // this is where the padding issues are
         },
       },
     },
