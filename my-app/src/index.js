@@ -1,13 +1,12 @@
 import "./index.css";
 import { React, useState, useEffect } from "react";
 import { render } from "react-dom";
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ModalButton } from "./components/ModalButton";
 import { MainLogo } from "./components/MainLogo";
 import { ModalBase } from "./components/ModalBase";
 import { AOGrid } from "./components/AOGrid";
-import { ThemeProvider, Box, Button } from "@mui/material";
-import TableViewIcon from "@mui/icons-material/TableView";
+import { ThemeProvider, Box } from "@mui/material";
 import aotheme from "./assets/theme";
 import { homeSx } from "./assets/theme";
 
@@ -35,11 +34,6 @@ const Home = () => {
       }}
     >
       <ThemeProvider theme={aotheme}>
-        <Button sx={{ position: "fixed" }}>
-          <Link to="/aogrid" state={{ from: "home" }}>
-            <TableViewIcon />
-          </Link>
-        </Button>
         <ModalBase open={open} handleClose={handleClose} text={modalType} />
         <Box
           sx={{
