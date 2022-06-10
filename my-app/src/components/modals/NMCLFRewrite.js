@@ -15,8 +15,8 @@ export const NewModalContentListForm = ({
   inputArray,
   setValue,
 }) => {
-  const handleKeyPress = (e) => {
-    console.log(e);
+  const handleEnter = (key) => {
+    key.code === "Enter" && console.log(key);
   };
   return (
     <>
@@ -38,7 +38,7 @@ export const NewModalContentListForm = ({
           {""} {sessionData.id} session. You can always add more later.
         </Box>
         <Box
-          onKeyPress={handleKeyPress}
+          onKeyDown={handleEnter}
           sx={{
             ...newSessionModal.field,
           }}
