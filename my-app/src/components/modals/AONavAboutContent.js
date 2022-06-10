@@ -1,32 +1,19 @@
 import React from "react";
-import {
-  palette,
-  modalFontSx,
-  logoSx,
-  modalBoxStyling,
-} from "../../assets/theme";
-import { Box, Divider } from "@mui/material";
+import { modalCenteredSx } from "../../assets/theme";
+import { Box } from "@mui/material";
 
 export const AONavAboutContent = () => {
   return (
     <Box
       sx={{
-        ...modalFontSx,
-        ...modalBoxStyling,
+        ...modalCenteredSx,
       }}
     >
-      <Box
-        sx={{
-          ...logoSx,
-          color: palette.aoRed,
-          fontSize: "3vw",
-          mb: 0.5,
-        }}
-      >
-        ꜵ
+      A VISUAL ALBUM MANAGEMENT TOOLKIT DESIGNED TO TRACK &amp; MONITOR
+      PROGRESS, FOSTER COLLABORATION AND AID IN THE SMASHING OF GOALS.
+      <Box sx={{ mt: 2 }}>
+        TO BEGIN START A <b>NEW</b> PROJECT.
       </Box>
-      <Divider variant="middle" sx={{ color: palette.aoDivider }} />
-      <Box sx={{ mt: "5vh" }}>Sup Bitches</Box>
     </Box>
   );
 };
