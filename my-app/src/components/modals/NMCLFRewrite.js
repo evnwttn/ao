@@ -54,6 +54,26 @@ export const NewModalContentListForm = ({
           </IconButton>
           <Divider sx={{ height: 28, m: 0.5 }} orientation="vertical" />
         </Box>
+        <Box
+          sx={{ ...newSessionModal.field }}
+          onClick={() => {
+            inputArray.forEach((title, index) => {
+              formPrompt === 2
+                ? setValue(`tracks.${index}.title`, title)
+                : setValue(`parameters.${index + 1}`, title);
+            });
+          }}
+        >
+          <IconButton type="submit" disableRipple sx={{ p: "10px", ml: 1 }}>
+            <CheckCircleIcon />
+          </IconButton>
+        </Box>
+      </Box>
+      <Box component="form">
+        <NewModalContentList
+          data={inputArray}
+          onSubmit={(title) => onRemoveTrackOrParameter(`${title}`)}
+        />
       </Box>
     </>
   );
