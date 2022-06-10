@@ -15,5 +15,15 @@ export const NewModalContentListForm = ({
   inputArray,
   setValue,
 }) => {
-  return;
+  return (
+    <>
+      <Box
+        component="form"
+        sx={{
+          ...modalCenteredSx,
+        }}
+        onSubmit={handleSubmit(onSubmitList)}
+      ></Box>
+    </>
+  );
 };
