@@ -10,6 +10,10 @@ import { ThemeProvider, Box } from "@mui/material";
 import aotheme from "./assets/theme";
 import { homeSx } from "./assets/theme";
 
+// left to do:
+// ? modal on grid
+// final sweep / cleanup
+
 const Home = () => {
   const [open, setOpen] = useState(false);
   const [modalType, setModalType] = useState("");
