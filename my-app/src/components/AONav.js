@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { AONavAboutModal } from "./modals/AONavAboutModal";
 import { logoSx } from "../assets/theme";
+import { ModalBase } from "../components/ModalBase";
 import { Button, Box } from "@mui/material";
 
 export const AONav = () => {
@@ -21,7 +21,7 @@ export const AONav = () => {
         alignItems: "center",
       }}
     >
-      <AONavAboutModal open={open} handleClose={handleClose} />
+      <ModalBase open={open} handleClose={handleClose} text={"Nav"} />
       <Button
         disableRipple
         sx={{ mt: "0.5vw" }}

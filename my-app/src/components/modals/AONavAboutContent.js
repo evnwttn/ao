@@ -1,6 +1,5 @@
-import React from "react";
-import { modalCenteredSx } from "../../assets/theme";
 import { Box } from "@mui/material";
+import { modalCenteredSx } from "../../assets/theme";
 
 export const AONavAboutContent = () => {
   return (
