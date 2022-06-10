@@ -219,7 +219,13 @@ export const newSessionModal = {
       color: palette.aoRed,
     },
   },
-  field: { p: "2px 4px", display: "flex", alignItems: "center", width: 500 },
+  field: {
+    p: "2px 4px",
+    display: "inline-flex",
+    flexFlow: "row nowrap",
+    alignItems: "center",
+    width: 500,
+  },
 };
 
 // AO GRID
