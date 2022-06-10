@@ -220,7 +220,6 @@ export const newSessionModal = {
     },
   },
   field: {
-    p: "2px 4px",
     display: "inline-flex",
     flexFlow: "row nowrap",
     alignItems: "center",

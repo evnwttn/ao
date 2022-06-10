@@ -4,8 +4,6 @@ import { NewModalContentList } from "./NewModalContentList";
 import AddCircleIcon from "@mui/icons-material/AddCircle";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 
-// add conditional for not allowing 0 tracks or parameteds - just crashed
-
 export const NewModalContentListForm = ({
   handleSubmit,
   onSubmitTrackOrParameter,
@@ -16,7 +14,6 @@ export const NewModalContentListForm = ({
   textInput,
   inputArray,
   setValue,
-  thang,
 }) => {
   return (
     <>
@@ -57,7 +54,7 @@ export const NewModalContentListForm = ({
       </Box>
       <Box
         component="form"
-        sx={{ width: 0 }}
+        sx={{ ...newSessionModal.field }}
         onClick={() => {
           inputArray.forEach((title, index) => {
             formPrompt === 2
