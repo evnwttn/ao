@@ -54,8 +54,7 @@ export const NewModalContentListForm = ({
           </IconButton>
           <Divider sx={{ height: 28, m: 0.5 }} orientation="vertical" />
         </Box>
-        <Box
-          sx={{ ...newSessionModal.field }}
+        <IconButton
           onClick={() => {
             inputArray.forEach((title, index) => {
               formPrompt === 2
@@ -63,11 +62,12 @@ export const NewModalContentListForm = ({
                 : setValue(`parameters.${index + 1}`, title);
             });
           }}
+          type="submit"
+          disableRipple
+          sx={{ p: "10px", ml: 1 }}
         >
-          <IconButton type="submit" disableRipple sx={{ p: "10px", ml: 1 }}>
-            <CheckCircleIcon />
-          </IconButton>
-        </Box>
+          <CheckCircleIcon />
+        </IconButton>
       </Box>
       <Box component="form">
         <NewModalContentList
