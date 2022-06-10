@@ -1,5 +1,5 @@
 import { Box } from "@mui/material";
-import { modalCenteredSx } from "../../assets/theme";
+import { modalCenteredSx, palette } from "../../assets/theme";
 
 export const AONavAboutContent = () => {
   return (
@@ -8,10 +8,44 @@ export const AONavAboutContent = () => {
         ...modalCenteredSx,
       }}
     >
-      A VISUAL ALBUM MANAGEMENT TOOLKIT DESIGNED TO TRACK &amp; MONITOR
-      PROGRESS, FOSTER COLLABORATION AND AID IN THE SMASHING OF GOALS.
+      YOU MAY CLICK ON A CELL TO BEGIN.
       <Box sx={{ mt: 2 }}>
-        TO BEGIN START A <b>NEW</b> PROJECT.
+        <Box
+          sx={{
+            b: {
+              color: palette.aoRed,
+            },
+          }}
+        >
+          <b>Yeah</b> indicades ____
+        </Box>
+        <Box
+          sx={{
+            b: {
+              color: palette.aoRed,
+            },
+          }}
+        >
+          <b>Yeah</b> indicades ____
+        </Box>{" "}
+        <Box
+          sx={{
+            b: {
+              color: palette.aoRed,
+            },
+          }}
+        >
+          <b>Yeah</b> indicades ____
+        </Box>{" "}
+        <Box
+          sx={{
+            b: {
+              color: palette.aoRed,
+            },
+          }}
+        >
+          <b>Yeah</b> indicades ____
+        </Box>
       </Box>
     </Box>
   );
