@@ -55,6 +55,7 @@ export const NewModalContentListForm = ({
       </Box>
       <Box
         component="form"
+        sx={{ width: 0 }}
         onClick={() => {
           inputArray.forEach((title, index) => {
             formPrompt === 2
