@@ -4,6 +4,8 @@ import { NewModalContentList } from "./NewModalContentList";
 import AddCircleIcon from "@mui/icons-material/AddCircle";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 
+// add conditional for not allowing 0 tracks or parameteds - just crashed
+
 export const NewModalContentListForm = ({
   handleSubmit,
   onSubmitTrackOrParameter,

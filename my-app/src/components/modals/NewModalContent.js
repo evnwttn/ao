@@ -57,7 +57,7 @@ export const NewModalContent = () => {
       setInputArray((previousArray) =>
         previousArray.filter((previousInput) => previousInput === "title")
       );
-    setFormPrompt(formPrompt + 1);
+    inputArray.length >= 1 && setFormPrompt(formPrompt + 1);
     setSessionData({ ...data });
   };
 
