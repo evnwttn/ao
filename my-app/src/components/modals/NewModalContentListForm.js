@@ -22,7 +22,7 @@ export const NewModalContentListForm = ({
         sx={{
           ...modalCenteredSx,
         }}
-        onSubmit={handleSubmit(onSubmitTrackOrParameter)}
+        onSubmit={handleSubmit(onSubmitList)}
       >
         <Box
           sx={{
@@ -43,30 +43,36 @@ export const NewModalContentListForm = ({
             sx={{ ml: 13 }}
             variant="standard"
             margin="normal"
-            inputRef={textInput}
             autoComplete="off"
+            inputRef={textInput}
+            onKeyDown={(key) => {
+              key.code === "Enter" &&
+                handleSubmit(onSubmitTrackOrParameter(textInput)) &&
+                key.preventDefault();
+            }}
           />
-          <IconButton disableRipple type="submit">
+          <IconButton
+            onClick={handleSubmit(onSubmitTrackOrParameter)}
+            disableRipple
+          >
             <AddCircleIcon sx={{ mr: 1 }} />
           </IconButton>
           <Divider sx={{ height: 28, m: 0.5 }} orientation="vertical" />
+          <IconButton
+            onClick={() => {
+              inputArray.forEach((title, index) => {
+                formPrompt === 2
+                  ? setValue(`tracks.${index}.title`, title)
+                  : setValue(`parameters.${index + 1}`, title);
+              });
+            }}
+            type="submit"
+            disableRipple
+            sx={{ p: "10px", ml: 1 }}
+          >
+            <CheckCircleIcon />
+          </IconButton>
         </Box>
-      </Box>
-      <Box
-        component="form"
-        sx={{ ...newSessionModal.field }}
-        onClick={() => {
-          inputArray.forEach((title, index) => {
-            formPrompt === 2
-              ? setValue(`tracks.${index}.title`, title)
-              : setValue(`parameters.${index + 1}`, title);
-          });
-        }}
-        onSubmit={handleSubmit(onSubmitList)}
-      >
-        <IconButton type="submit" disableRipple sx={{ p: "10px", ml: 1 }}>
-          <CheckCircleIcon />
-        </IconButton>
       </Box>
       <Box component="form">
         <NewModalContentList
