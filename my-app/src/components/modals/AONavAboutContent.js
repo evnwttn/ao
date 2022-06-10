@@ -10,41 +10,37 @@ export const AONavAboutContent = () => {
     >
       YOU MAY CLICK ON A CELL TO BEGIN.
       <Box sx={{ mt: 2 }}>
+        <b>COLOURWHEEL</b>
         <Box
           sx={{
             b: {
-              color: palette.aoRed,
+              color: palette.aoYellow,
             },
           }}
         >
-          <b>Yeah</b> indicades ____
+          <b>The Top Left</b> indicades that a task is in progress.
         </Box>
         <Box
           sx={{
             b: {
-              color: palette.aoRed,
+              color: palette.aoBlue,
             },
           }}
         >
-          <b>Yeah</b> indicades ____
-        </Box>{" "}
+          <b>The Top Right</b> indicades that a task is completed.
+        </Box>
         <Box
           sx={{
             b: {
-              color: palette.aoRed,
+              textShadow: `0px 0px 10px rgb(243, 239, 224, 0.75)`,
+              color: palette.aoBlack,
             },
           }}
         >
-          <b>Yeah</b> indicades ____
+          <b>The Bottom Left</b> indicates that a task has been set.
         </Box>{" "}
-        <Box
-          sx={{
-            b: {
-              color: palette.aoRed,
-            },
-          }}
-        >
-          <b>Yeah</b> indicades ____
+        <Box>
+          <b>The Bottom Right</b> opens the comment window.
         </Box>
       </Box>
     </Box>
