@@ -14,7 +14,7 @@ export const AONavAboutContent = () => {
         <b>COLOURWHEEL</b>
         <Box
           sx={{
-            my: "0.125vw",
+            mt: "0.125vw",
             b: {
               color: palette.aoYellow,
             },
@@ -24,7 +24,7 @@ export const AONavAboutContent = () => {
         </Box>
         <Box
           sx={{
-            my: "0.125vw",
+            mt: "0.125vw",
 
             b: {
               color: palette.aoBlue,
@@ -35,7 +35,7 @@ export const AONavAboutContent = () => {
         </Box>
         <Box
           sx={{
-            my: "0.125vw",
+            mt: "0.125vw",
             b: {
               textShadow: `0px 0px 10px rgb(243, 239, 224, 0.75)`,
               color: palette.aoBlack,
@@ -44,10 +44,10 @@ export const AONavAboutContent = () => {
         >
           <b>The Bottom Left</b> indicates that a task has been set.
         </Box>{" "}
-        <Box sx={{ my: "0.125vw" }}>
+        <Box sx={{ mt: "0.125vw" }}>
           <b>The Bottom Right</b> opens the comment window.
         </Box>
-        <Box sx={{ my: "0.125vw" }}>
+        <Box>
           <RemoveCircleOutlineIcon sx={{ fontSize: "1.4vw" }} />
           removes a task from the grid.
         </Box>
