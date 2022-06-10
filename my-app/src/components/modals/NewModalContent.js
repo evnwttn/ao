@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Navigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { NewModalContentTextfieldForm } from "./NewModalContentTextfieldForm";
-import { NewModalContentListForm } from "./NewModalContentListForm";
+import { NewModalContentListForm } from "./NMCLFRewrite";
 
 export const NewModalContent = () => {
   const [sessionData, setSessionData] = useState();
@@ -66,8 +66,8 @@ export const NewModalContent = () => {
   }, [formPrompt, sessionData]);
 
   useEffect(() => {
-    console.log(sessionData);
-  }, [sessionData, formPrompt]);
+    console.log(inputArray);
+  }, [inputArray]);
 
   return formPrompt <= 1 ? (
     <NewModalContentTextfieldForm
