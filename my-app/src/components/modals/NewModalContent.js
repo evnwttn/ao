@@ -30,10 +30,12 @@ export const NewModalContent = () => {
 
   const onSubmitTrackOrParameter = () => {
     // ensures track & parameter totals remain below 12
-    formPrompt === 2 && inputArray.length <= 11
-      ? setInputArray((inputArray) => [...inputArray, textInput.current.value])
-      : formPrompt === 3 && inputArray.length <= 10
-      ? setInputArray((inputArray) => [...inputArray, textInput.current.value])
+    formPrompt === 2
+      ? inputArray.length <= 11 &&
+        setInputArray((inputArray) => [...inputArray, textInput.current.value])
+      : formPrompt === 3
+      ? inputArray.length <= 10 &&
+        setInputArray((inputArray) => [...inputArray, textInput.current.value])
       : alert(
           `Maximum Number of ${
             formPrompt === 2 ? `Tracks` : `Parameters`
