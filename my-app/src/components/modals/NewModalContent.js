@@ -10,7 +10,6 @@ export const NewModalContent = () => {
   const [formPrompt, setFormPrompt] = useState(0);
   const [inputArray, setInputArray] = useState([]);
   const textInput = React.useRef(null);
-
   const { register, handleSubmit, setValue } = useForm({
     defaultValues: {
       parameters: ["title"],
@@ -22,10 +21,10 @@ export const NewModalContent = () => {
   }, [formPrompt, sessionData]);
 
   // prompt key
-  // form 1 - session author (textfield)
-  // form 2 - sesson title (textfield)
-  // form 3 - session track titles (list)
-  // form 4 - session parameter titles (list)
+  // form 0 - session author (textfield)
+  // form 1 - sesson title (textfield)
+  // form 2 - session track titles (list)
+  // form 3 - session parameter titles (list)
 
   const onSubmitForm = (data) => {
     setFormPrompt(formPrompt + 1);
