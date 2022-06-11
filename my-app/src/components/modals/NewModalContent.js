@@ -10,11 +10,16 @@ export const NewModalContent = () => {
   const [formPrompt, setFormPrompt] = useState(0);
   const [inputArray, setInputArray] = useState([]);
   const textInput = React.useRef(null);
+
   const { register, handleSubmit, setValue } = useForm({
     defaultValues: {
       parameters: ["title"],
     },
   });
+
+  useEffect(() => {
+    formPrompt === 4 && startNewSessionLaunch(true);
+  }, [formPrompt, sessionData]);
 
   // prompt key
   // form 1 - session author (textfield)
@@ -62,10 +67,6 @@ export const NewModalContent = () => {
     inputArray.length >= 1 && setFormPrompt(formPrompt + 1);
     setSessionData({ ...data });
   };
-
-  useEffect(() => {
-    formPrompt === 4 && startNewSessionLaunch(true);
-  }, [formPrompt, sessionData]);
 
   return formPrompt <= 1 ? (
     <NewModalContentTextfieldForm
