@@ -30,23 +30,6 @@ export const NewModalContent = () => {
 
   const onSubmitTrackOrParameter = () => {
     // ensures track & parameter totals remain below 12
-    formPrompt === 2 && inputArray.length <= 11
-      ? setInputArray((inputArray) => [...inputArray, textInput.current.value])
-      : formPrompt === 3 && inputArray.length <= 10
-      ? setInputArray((inputArray) => [...inputArray, textInput.current.value])
-      : alert(
-          `Maximum Number of ${
-            formPrompt === 2 ? `Tracks` : `Parameters`
-          } Reached`
-        );
-    // ensures track & parameter titles do not repeat
-    setInputArray((inputArray) =>
-      inputArray.filter((input, index, array) => array.indexOf(input) === index)
-    );
-    textInput.current.value = "";
-  };
-
-  const onSubmitTrackOrParameter2 = () => {
     formPrompt === 2
       ? inputArray.length <= 11
         ? setInputArray((inputArray) => [
@@ -54,10 +37,15 @@ export const NewModalContent = () => {
             textInput.current.value,
           ])
         : alert(`Maximum Number of Tracks Reached`)
-      : formPrompt === 3
-      ? inputArray.length <= 10 &&
-        setInputArray((inputArray) => [...inputArray, textInput.current.value])
+      : inputArray.length <= 10
+      ? setInputArray((inputArray) => [...inputArray, textInput.current.value])
       : alert(`Maximum Number of Parameters Reached`);
+
+    // ensures track & parameter titles do not repeat
+    setInputArray((inputArray) =>
+      inputArray.filter((input, index, array) => array.indexOf(input) === index)
+    );
+    textInput.current.value = "";
   };
 
   const onRemoveTrackOrParameter = (title) => {
