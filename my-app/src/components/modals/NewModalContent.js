@@ -16,15 +16,16 @@ export const NewModalContent = () => {
     },
   });
 
+  // formPrompt sequence
+  // 0 - session author (textfield)
+  // 1 - sesson title (textfield)
+  // 2 - track titles (list)
+  // 3 - parameter titles (list)
+  // 4 - grid generation
+
   useEffect(() => {
     formPrompt === 4 && startNewSessionLaunch(true);
   }, [formPrompt, sessionData]);
-
-  // prompt key
-  // form 0 - session author (textfield)
-  // form 1 - sesson title (textfield)
-  // form 2 - session track titles (list)
-  // form 3 - session parameter titles (list)
 
   const onSubmitForm = (data) => {
     setFormPrompt(formPrompt + 1);
