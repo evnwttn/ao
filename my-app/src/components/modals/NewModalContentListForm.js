@@ -6,7 +6,6 @@ import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 
 // friday/sat
 // flip on mobile
-// clean up
 // last minute tidying
 // ??
 // profit

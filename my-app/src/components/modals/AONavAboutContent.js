@@ -1,5 +1,4 @@
 import { Box } from "@mui/material";
-import RemoveCircleOutlineIcon from "@mui/icons-material/RemoveCircleOutline";
 import { modalCenteredSx, palette } from "../../assets/theme";
 
 export const AONavAboutContent = () => {
@@ -46,10 +45,6 @@ export const AONavAboutContent = () => {
         </Box>{" "}
         <Box sx={{ mt: "0.125vw" }}>
           <b>The Bottom Right</b> opens the comment window.
-        </Box>
-        <Box>
-          <RemoveCircleOutlineIcon sx={{ fontSize: "1.4vw" }} />
-          removes a task from the grid.
         </Box>
       </Box>
     </Box>
