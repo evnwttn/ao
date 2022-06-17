@@ -54,10 +54,6 @@ export const NewModalContentListForm = ({
             autoComplete="off"
             inputRef={textInput}
           />
-          <IconButton type="submit" disableRipple>
-            <AddCircleIcon sx={{ mr: 1 }} />
-          </IconButton>
-          <Divider sx={{ height: 28, m: 0.5 }} orientation="vertical" />
           <IconButton
             onClick={() => {
               inputArray.forEach((title, index) => {
@@ -67,6 +63,13 @@ export const NewModalContentListForm = ({
               });
             }}
             type="submit"
+            disableRipple
+          >
+            <AddCircleIcon sx={{ mr: 1 }} />
+          </IconButton>
+          <Divider sx={{ height: 28, m: 0.5 }} orientation="vertical" />
+          <IconButton
+            onClick={handleSubmit(onSubmitList)}
             disableRipple
             sx={{ p: "10px", ml: 1 }}
           >
