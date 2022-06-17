@@ -4,6 +4,14 @@ import { NewModalContentList } from "./NewModalContentList";
 import AddCircleIcon from "@mui/icons-material/AddCircle";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 
+// friday/sat
+// rejig this to flip the submit/click and ditch keydown ONCE AND FOR ALL
+// flip on mobile
+// clean up
+// last minute tidying
+// ??
+// profit
+
 export const NewModalContentListForm = ({
   handleSubmit,
   onSubmitTrackOrParameter,
