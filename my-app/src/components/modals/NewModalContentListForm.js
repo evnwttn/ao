@@ -53,16 +53,8 @@ export const NewModalContentListForm = ({
             margin="normal"
             autoComplete="off"
             inputRef={textInput}
-            onKeyDown={(key) => {
-              key.code === "Enter" &&
-                handleSubmit(onSubmitTrackOrParameter(textInput)) &&
-                key.preventDefault();
-            }}
           />
-          <IconButton
-            onClick={handleSubmit(onSubmitTrackOrParameter)}
-            disableRipple
-          >
+          <IconButton type="submit" disableRipple>
             <AddCircleIcon sx={{ mr: 1 }} />
           </IconButton>
           <Divider sx={{ height: 28, m: 0.5 }} orientation="vertical" />
