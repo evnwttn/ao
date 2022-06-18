@@ -14,7 +14,7 @@ export const AONav = ({ data }) => {
   return (
     <Box sx={{ ...navSx.container }}>
       <ModalBase open={open} handleClose={handleClose} text={"Nav"} />
-      <Box sx={{ display: "inline-flex" }}>
+      <Box sx={{ ...navSx.text, display: "inline-flex" }}>
         <Box>{data.author}</Box>
         <Divider
           orientation="vertical"
