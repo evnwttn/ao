@@ -1,6 +1,4 @@
-import React from "react";
 import { Link } from "react-router-dom";
-import { modalFontSx } from "../../assets/theme";
 import {
   Box,
   List,
@@ -10,6 +8,7 @@ import {
   ListItemText,
 } from "@mui/material";
 import ArrowRightIcon from "@mui/icons-material/ArrowRight";
+import { modalFontSx } from "../../assets/theme";
 
 export const LoadModalContent = () => {
   return (
