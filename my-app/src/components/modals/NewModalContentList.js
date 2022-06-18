@@ -1,14 +1,13 @@
 import { Box, IconButton, List, ListItem, ListItemText } from "@mui/material";
 import ClearIcon from "@mui/icons-material/Clear";
-import { palette } from "../../assets/theme";
-import { modalCenteredSx } from "../../assets/theme";
+import { palette, modalCenteredSx } from "../../assets/theme";
 
 export const NewModalContentList = ({ data, onSubmit }) => {
   return (
-    <Box sx={{ ...modalCenteredSx, my: 1 }}>
+    <Box sx={{ ...modalCenteredSx, my: "1vw" }}>
       <List
         sx={{
-          width: "85%",
+          width: "28vw",
           maxHeight: "11vw",
           overflow: "auto",
         }}
