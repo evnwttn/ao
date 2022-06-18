@@ -1,10 +1,9 @@
 import { useState, useEffect } from "react";
-import { Box } from "@mui/system";
+import { Box, Tooltip } from "@mui/material/";
+import RemoveCircleOutlineIcon from "@mui/icons-material/RemoveCircleOutline";
 import { AOColorWheel } from "./AOColorWheel";
 import { AOCommentBase } from "./AOCommentBase";
 import { wheelSx } from "../assets/theme";
-import { Tooltip } from "@mui/material/";
-import RemoveCircleOutlineIcon from "@mui/icons-material/RemoveCircleOutline";
 
 export const AOPopover = ({
   cell,

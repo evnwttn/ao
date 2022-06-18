@@ -1,7 +1,5 @@
-import React from "react";
-import { Box } from "@mui/system";
+import { Box, Tooltip } from "@mui/material/";
 import { wheelSx, svgShapes } from "../assets/theme";
-import { Tooltip } from "@mui/material/";
 
 export const AOSpoke = ({
   color,
