@@ -19,21 +19,21 @@ export const ContactModalContent = () => {
         placeholder="Name"
         variant="standard"
         margin="normal"
-        sx={{ width: "85%" }}
+        sx={{ width: "28vw" }}
         {...register("Name", {})}
       />
       <TextField
         placeholder="Email Address"
         variant="standard"
         margin="normal"
-        sx={{ width: "85%" }}
+        sx={{ width: "28vw" }}
         {...register("Email Address", {})}
       />
       <TextField
         placeholder="Message"
         variant="standard"
         margin="normal"
-        sx={{ width: "85%" }}
+        sx={{ width: "28vw" }}
         {...register("Message", {})}
       />
       <IconButton disableRipple sx={{ cursor: "default" }} type="submit">
