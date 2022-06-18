@@ -15,13 +15,13 @@ export const AONav = ({ data }) => {
     <Box sx={{ ...navSx.container }}>
       <ModalBase open={open} handleClose={handleClose} text={"Nav"} />
       <Box sx={{ ...navSx.text }}>
-        <Box>{data.author}</Box>
+        <Box sx={{ ...navSx.text.author }}>{data.author}</Box>
         <Divider
           orientation="vertical"
           flexItem
           sx={{ color: palette.aoDivider, mx: "1vw" }}
         />
-        <Box>{data.id}</Box>
+        <Box sx={{ ...navSx.text.id }}>{data.id}</Box>
       </Box>
       <Button
         disableRipple

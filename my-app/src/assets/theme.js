@@ -380,5 +380,7 @@ export const navSx = {
     fontWeight: "400",
     lineHeight: "1.66",
     display: "inline-flex",
+    id: { color: palette.aoWhite, opacity: "0.6" },
+    author: { color: palette.aoWhite },
   },
 };
