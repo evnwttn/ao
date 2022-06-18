@@ -1,5 +1,4 @@
 import { Box } from "@mui/material";
-import "@fontsource/noto-serif";
 import { palette, logoSx } from "../assets/theme";
 
 export const MainLogo = () => {
