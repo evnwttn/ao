@@ -1,5 +1,4 @@
-import { Box } from "@mui/system";
-import { Divider } from "@mui/material";
+import { Box, Divider } from "@mui/material";
 import { AOCommentContent } from "./modals/AOCommentContent";
 import { modalFontSx, modalBoxStyling, palette } from "../assets/theme";
 
