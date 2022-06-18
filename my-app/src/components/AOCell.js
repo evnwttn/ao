@@ -62,7 +62,6 @@ export const AOCell = ({
         onMouseLeave={toggleHovered}
       >
         <Box
-          aria-describedby={cell}
           sx={{
             backgroundColor: cellColor,
             ...cellSx.cell,
