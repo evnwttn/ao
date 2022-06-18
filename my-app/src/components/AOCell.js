@@ -1,9 +1,8 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
-import { useState, useEffect } from "react";
 import { Box, Grid, Popover } from "@mui/material/";
-import { palette, cellSx } from "../assets/theme";
 import { AOPopover } from "./AOPopover";
+import { palette, cellSx } from "../assets/theme";
 
 export const AOCell = ({
   cell,
@@ -19,7 +18,6 @@ export const AOCell = ({
   // HANDLES POPOVER
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
-  const id = open ? "simple-popover" : undefined;
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
   };
@@ -96,7 +94,6 @@ export const AOCell = ({
           left: "0.35vw",
           top: "1.5vw",
         }}
-        id={id}
         open={open}
         anchorEl={anchorEl}
         onClose={handleClose}
