@@ -14,7 +14,6 @@ export const AOGrid = () => {
 
   useEffect(() => {
     const { from, data } = location.state;
-    data && console.log(data);
     from === "load" && setGridData(darkSideOfTheMoon);
     from === "new" && setGridData(data);
   }, [location.state]);
