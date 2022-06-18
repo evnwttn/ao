@@ -371,12 +371,14 @@ export const navSx = {
     alignItems: "center",
   },
   text: {
-    mt: "0.6vw",
+    mt: "0.63vw",
+    mr: "0.5vw",
     fontFamily: "Noto Sans",
     fontSize: "0.8vw",
     letterSpacing: "0.125vw",
     textTransform: "uppercase",
     fontWeight: "400",
     lineHeight: "1.66",
+    display: "inline-flex",
   },
 };

@@ -14,12 +14,12 @@ export const AONav = ({ data }) => {
   return (
     <Box sx={{ ...navSx.container }}>
       <ModalBase open={open} handleClose={handleClose} text={"Nav"} />
-      <Box sx={{ ...navSx.text, display: "inline-flex" }}>
+      <Box sx={{ ...navSx.text }}>
         <Box>{data.author}</Box>
         <Divider
           orientation="vertical"
           flexItem
-          sx={{ color: palette.aoDivider }}
+          sx={{ color: palette.aoDivider, mx: "1vw" }}
         />
         <Box>{data.id}</Box>
       </Box>
