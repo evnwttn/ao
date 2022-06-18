@@ -1,4 +1,4 @@
-import { palette } from "./theme";
+import { palette } from "../theme";
 
 export const darkSideOfTheMoon = {
   id: "the dark side of the moon",

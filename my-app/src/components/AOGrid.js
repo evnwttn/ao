@@ -1,12 +1,11 @@
 import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { Box, Grid, ThemeProvider } from "@mui/material/";
-import { gridSx, cellSx } from "../assets/theme";
-import aotheme from "../assets/theme";
+import aotheme, { gridSx, cellSx } from "../assets/theme";
 import { AOCell } from "./AOCell";
 import { AONav } from "./AONav";
-import { blankSession } from "../assets/BlankSession";
-import { darkSideOfTheMoon } from "../assets/LoadSample";
+import { blankSession } from "../assets/dummydata/BlankSession";
+import { darkSideOfTheMoon } from "../assets/dummydata/LoadSample";
 
 export const AOGrid = () => {
   // HANDLES LOADING GRID DATA
