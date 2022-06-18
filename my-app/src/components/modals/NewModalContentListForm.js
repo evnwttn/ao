@@ -1,14 +1,8 @@
 import { Box, TextField, IconButton, Divider } from "@mui/material";
-import { modalCenteredSx, newSessionModal } from "../../assets/theme";
-import { NewModalContentList } from "./NewModalContentList";
 import AddCircleIcon from "@mui/icons-material/AddCircle";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
-
-// friday/sat
-// flip on mobile
-// last minute tidying
-// ??
-// profit
+import { NewModalContentList } from "./NewModalContentList";
+import { modalCenteredSx, newSessionModal } from "../../assets/theme";
 
 export const NewModalContentListForm = ({
   handleSubmit,
@@ -46,7 +40,7 @@ export const NewModalContentListForm = ({
           }}
         >
           <TextField
-            sx={{ ml: 13 }}
+            sx={{ ml: "7vw", width: "17vw" }}
             variant="standard"
             margin="normal"
             autoComplete="off"
@@ -63,13 +57,16 @@ export const NewModalContentListForm = ({
             type="submit"
             disableRipple
           >
-            <AddCircleIcon sx={{ mr: 1 }} />
+            <AddCircleIcon sx={{ mr: "0.75vw" }} />
           </IconButton>
-          <Divider sx={{ height: 28, m: 0.5 }} orientation="vertical" />
+          <Divider
+            sx={{ height: "2.5vw", m: "0.25vw" }}
+            orientation="vertical"
+          />
           <IconButton
             onClick={handleSubmit(onSubmitList)}
             disableRipple
-            sx={{ p: "10px", ml: 1 }}
+            sx={{ ml: "0.75vw" }}
           >
             <CheckCircleIcon />
           </IconButton>
