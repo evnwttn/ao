@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/ao/static/css/main.b64225d0.css",
+    "main.css": "/ao/static/css/main.e9392916.css",
     "main.js": "/ao/static/js/main.3db63b6a.js",
     "static/media/noto-serif-all-400-normal.woff": "/ao/static/media/noto-serif-all-400-normal.cc8d505e17e9106c7bb6.woff",
     "static/media/noto-sans-all-400-normal.woff": "/ao/static/media/noto-sans-all-400-normal.afb599a90ed7f59170de.woff",
@@ -20,11 +20,11 @@
     "static/media/noto-sans-greek-ext-400-normal.woff2": "/ao/static/media/noto-sans-greek-ext-400-normal.58f04cb6d3d3957099d7.woff2",
     "static/media/noto-sans-vietnamese-400-normal.woff2": "/ao/static/media/noto-sans-vietnamese-400-normal.91167afb324428555ec5.woff2",
     "index.html": "/ao/index.html",
-    "main.b64225d0.css.map": "/ao/static/css/main.b64225d0.css.map",
+    "main.e9392916.css.map": "/ao/static/css/main.e9392916.css.map",
     "main.3db63b6a.js.map": "/ao/static/js/main.3db63b6a.js.map"
   },
   "entrypoints": [
-    "static/css/main.b64225d0.css",
+    "static/css/main.e9392916.css",
     "static/js/main.3db63b6a.js"
   ]
 }
