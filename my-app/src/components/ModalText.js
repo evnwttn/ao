@@ -19,7 +19,7 @@ export const ModalText = ({ prompt }) => {
           ...logoSx,
           color: palette.aoRed,
           fontSize: "3vw",
-          mb: 0.5,
+          mb: "0.25vw",
         }}
       >
         ꜵ
