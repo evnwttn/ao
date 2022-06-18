@@ -29,6 +29,10 @@ export const AOPopover = ({
     switchValue !== "1" ? setOpen(true) : setOpen(false);
   }, [switchValue]);
 
+  useEffect(() => {
+    setOpen(false);
+  }, [cellComment, setOpen]);
+
   return (
     <Box>
       <AOCommentBase
