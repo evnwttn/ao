@@ -1,8 +1,8 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
-import { logoSx } from "../assets/theme";
-import { ModalBase } from "../components/ModalBase";
 import { Button, Box } from "@mui/material";
+import { Link } from "react-router-dom";
+import { logoSx, navSx } from "../assets/theme";
+import { ModalBase } from "../components/ModalBase";
 
 export const AONav = () => {
   const [open, setOpen] = useState(false);
@@ -12,15 +12,7 @@ export const AONav = () => {
   };
 
   return (
-    <Box
-      sx={{
-        marginTop: "0.5vw",
-        display: "flex",
-        flexDirection: "row",
-        justifyContent: "flex-end",
-        alignItems: "center",
-      }}
-    >
+    <Box sx={{ ...navSx.container }}>
       <ModalBase open={open} handleClose={handleClose} text={"Nav"} />
       <Button
         disableRipple

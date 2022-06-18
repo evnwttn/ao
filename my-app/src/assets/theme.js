@@ -359,3 +359,15 @@ export const commentSx = {
     width: "87%",
   },
 };
+
+// NAV
+
+export const navSx = {
+  container: {
+    marginTop: "0.5vw",
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "flex-end",
+    alignItems: "center",
+  },
+};
