@@ -12,7 +12,7 @@ import { modalFontSx } from "../../assets/theme";
 
 export const LoadModalContent = () => {
   return (
-    <Box sx={{ mx: 2, width: "85%" }}>
+    <Box sx={{ mx: "2vw" }}>
       <List>
         <ListItem disablePadding>
           <Link
