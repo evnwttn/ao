@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { Button, Box } from "@mui/material";
+import { Button, Box, Divider } from "@mui/material";
 import { Link } from "react-router-dom";
-import { logoSx, navSx } from "../assets/theme";
+import { logoSx, navSx, palette } from "../assets/theme";
 import { ModalBase } from "../components/ModalBase";
 
 export const AONav = ({ data }) => {
@@ -11,11 +11,18 @@ export const AONav = ({ data }) => {
     setOpen(false);
   };
 
-  console.log(data);
-
   return (
     <Box sx={{ ...navSx.container }}>
       <ModalBase open={open} handleClose={handleClose} text={"Nav"} />
+      <Box sx={{ display: "inline-flex" }}>
+        <Box>{data.author}</Box>
+        <Divider
+          orientation="vertical"
+          flexItem
+          sx={{ color: palette.aoDivider }}
+        />
+        <Box>{data.id}</Box>
+      </Box>
       <Button
         disableRipple
         sx={{ mt: "0.5vw" }}
@@ -25,7 +32,7 @@ export const AONav = ({ data }) => {
       >
         ?
       </Button>
-      <Box sx={{}}>
+      <Box>
         <Link
           to="/ao"
           style={{
