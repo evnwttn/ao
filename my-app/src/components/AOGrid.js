@@ -30,7 +30,7 @@ export const AOGrid = () => {
       }}
     >
       <ThemeProvider theme={aotheme}>
-        <AONav />
+        <AONav data={gridData} />
         <Box sx={{ ...gridSx.dom }}>
           <Grid container>
             <Grid

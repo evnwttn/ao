@@ -4,12 +4,14 @@ import { Link } from "react-router-dom";
 import { logoSx, navSx } from "../assets/theme";
 import { ModalBase } from "../components/ModalBase";
 
-export const AONav = () => {
+export const AONav = ({ data }) => {
   const [open, setOpen] = useState(false);
 
   const handleClose = () => {
     setOpen(false);
   };
+
+  console.log(data);
 
   return (
     <Box sx={{ ...navSx.container }}>
