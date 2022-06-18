@@ -1,12 +1,11 @@
-import React from "react";
-import { TextField, IconButton, Box } from "@mui/material";
 import { useForm } from "react-hook-form";
+import { TextField, IconButton, Box } from "@mui/material";
 import SendIcon from "@mui/icons-material/Send";
 import { modalCenteredSx } from "../../assets/theme";
 
 export const ContactModalContent = () => {
   const { register, handleSubmit } = useForm();
-  const onSubmit = (data) => console.log(data);
+  const onSubmit = (data) => null;
 
   return (
     <Box

@@ -42,7 +42,7 @@ export const AONavAboutContent = () => {
           }}
         >
           <b>The Bottom Left</b> indicates that a task has been set.
-        </Box>{" "}
+        </Box>
         <Box sx={{ mt: "0.125vw" }}>
           <b>The Bottom Right</b> opens the comment window.
         </Box>
