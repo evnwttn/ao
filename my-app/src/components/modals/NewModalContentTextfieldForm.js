@@ -33,7 +33,7 @@ export const NewModalContentTextfieldForm = ({
         <IconButton disableRipple type="submit">
           <CheckCircleIcon
             sx={{
-              my: 0.5,
+              my: "0.25vw",
             }}
           />
         </IconButton>
