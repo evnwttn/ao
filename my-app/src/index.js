@@ -13,7 +13,7 @@ import aotheme, { homeSx } from "./assets/theme";
 
 const Home = () => {
   const screenOrientation = window.screen.orientation;
-  screenOrientation.lock("landscape-primary");
+  console.log(screenOrientation);
 
   const [open, setOpen] = useState(false);
   const [modalType, setModalType] = useState("");
