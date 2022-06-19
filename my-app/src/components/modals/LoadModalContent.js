@@ -22,9 +22,12 @@ export const LoadModalContent = () => {
           >
             <ListItemButton
               sx={{
+                span: {
+                  fontSize: "1.25vw",
+                },
                 "&:hover": {
                   background: "transparent",
-                  opacity: "0.6",
+                  opacity: "0.7",
                   cursor: "pointer",
                 },
               }}
