@@ -14,7 +14,14 @@ import aotheme, { homeSx } from "./assets/theme";
 
 const Home = () => {
   const screenOrientation = window.screen.orientation;
-  console.log(screenOrientation);
+  const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
+  const isPortrait = useMediaQuery({ query: "(orientation: portrait)" });
+  isPortrait &&
+    isMobile &&
+    screenOrientation.lock("landscape").then(
+      (success) => console.log(success),
+      (failure) => console.log(failure)
+    );
 
   const [open, setOpen] = useState(false);
   const [modalType, setModalType] = useState("");
