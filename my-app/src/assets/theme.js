@@ -290,7 +290,6 @@ export const cellSx = {
 export const svgShapes = {
   quarterCircle:
     "m 20 11 H 20 A 8 8 90 0 0 13 4.1 V 2 c 4.7 0.5 8.5 4.2 8.9 9 Z",
-  test: "M 2.5 4.5 H 2.5 A 8 8 90 0 0 -4.5 -2.4 V -4.5 C 0.2 -4 4 -0.3 4.4 4.5 Z",
 };
 
 export const wheelSx = {
@@ -356,7 +355,7 @@ export const commentSx = {
   },
   textField: {
     paddingTop: "0.75vw",
-    width: "87%",
+    width: "29vw",
   },
 };
 
@@ -380,7 +379,7 @@ export const navSx = {
     fontWeight: "400",
     lineHeight: "1.66",
     display: "inline-flex",
-    id: { color: palette.aoWhite, opacity: "0.6" },
+    id: { color: palette.aoWhite, opacity: "0.7" },
     author: { color: palette.aoWhite },
   },
 };
