@@ -4,6 +4,7 @@ import "@fontsource/noto-serif";
 import { useState, useEffect } from "react";
 import { render } from "react-dom";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { useMediaQuery } from "react-responsive";
 import { ThemeProvider, Box } from "@mui/material";
 import { ModalButton } from "./components/ModalButton";
 import { MainLogo } from "./components/MainLogo";
