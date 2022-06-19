@@ -12,6 +12,9 @@ import { AOGrid } from "./components/AOGrid";
 import aotheme, { homeSx } from "./assets/theme";
 
 const Home = () => {
+  const screenOrientation = window.screen.orientation;
+  screenOrientation.lock("landscape-primary");
+
   const [open, setOpen] = useState(false);
   const [modalType, setModalType] = useState("");
 
