@@ -223,7 +223,7 @@ export const newSessionModal = {
     display: "inline-flex",
     flexFlow: "row nowrap",
     alignItems: "center",
-    width: 500,
+    width: "39vw",
   },
 };
 
