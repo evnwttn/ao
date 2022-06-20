@@ -29,13 +29,13 @@ const Home = () => {
     setModalType("");
   };
 
-  const screenOrientation = window.screen.orientation;
-  const isTabletOrMobile = useMediaQuery({ query: "(max-width: 1224px)" });
-  const isPortrait = useMediaQuery({
-    query: "(orientation: portrait)",
-  });
+  // const screenOrientation = window.screen.orientation;
+  // const isTabletOrMobile = useMediaQuery({ query: "(max-width: 1224px)" });
+  // const isPortrait = useMediaQuery({
+  //   query: "(orientation: portrait)",
+  // });
 
-  isTabletOrMobile && isPortrait && screenOrientation.lock("landscape-primary");
+  // isTabletOrMobile && isPortrait && screenOrientation.lock("landscape-primary");
 
   return (
     <Box
