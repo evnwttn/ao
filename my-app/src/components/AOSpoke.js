@@ -16,13 +16,13 @@ export const AOSpoke = ({
         onClick={() => {
           handleClick(color);
         }}
-        transform={transform}
-        webkit-transform={transform}
-        ms-transform={transform}
-        viewBox="11 1 12 12"
+        // transform={transform}
+        // webkit-transform={transform}
+        // ms-transform={transform}
+        viewBox="0 0 12 12"
       >
         <Tooltip title={toolTip} placement={placement}>
-          <path d={svgShapes.quarterCircle} />
+          <path d={svgShapes.topLeft} />
         </Tooltip>
       </svg>
     </Box>
