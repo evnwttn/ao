@@ -13,18 +13,6 @@ import { AOGrid } from "./components/AOGrid";
 import aotheme, { homeSx } from "./assets/theme";
 
 const Home = () => {
-  const screenOrientation = window.screen.orientation;
-  const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
-  const isPortrait = useMediaQuery({
-    query: "(orientation: portrait)",
-  });
-  isPortrait &&
-    isMobile &&
-    screenOrientation.lock("landscape-primary").then(
-      (success) => console.log(success),
-      (failure) => console.log(failure)
-    );
-
   const [open, setOpen] = useState(false);
   const [modalType, setModalType] = useState("");
 
@@ -40,6 +28,14 @@ const Home = () => {
     setOpen(false);
     setModalType("");
   };
+
+  const screenOrientation = window.screen.orientation;
+  const isTabletOrMobile = useMediaQuery({ query: "(max-width: 1224px)" });
+  const isPortrait = useMediaQuery({
+    query: "(orientation: portrait)",
+  });
+
+  isTabletOrMobile && isPortrait && screenOrientation.lock("landscape-primary");
 
   return (
     <Box
