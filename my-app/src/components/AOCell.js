@@ -90,8 +90,8 @@ export const AOCell = ({
       <Popover
         sx={{
           backdropFilter: "blur(1.5px)",
-          left: "0.35vw",
-          top: "1.5vw",
+          top: "1.6vw",
+          left: "0.2vw",
         }}
         open={open}
         anchorEl={anchorEl}
