@@ -17,6 +17,7 @@ export const AOSpoke = ({
           handleClick(color);
         }}
         transform={transform}
+        sx={{ msTransform: transform, webkitTransform: transform }}
         viewBox="11 1 12 12"
       >
         <Tooltip title={toolTip} placement={placement}>
