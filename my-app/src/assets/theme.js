@@ -232,7 +232,7 @@ export const newSessionModal = {
 export const gridSx = {
   dom: {
     display: "flex",
-    marginTop: "1.5vh",
+    marginTop: "0.75vw",
     marginBottom: "1.5vw",
     fontFamily: "Noto Sans",
     fontSize: "0.8vw",
@@ -255,9 +255,9 @@ export const cellSx = {
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    height: 1,
+    height: "2vw",
     padding: 1,
-    marginBottom: 1,
+    marginBottom: "0.5vw",
   },
   titleCell: {
     color: palette.aoYellow,
@@ -268,8 +268,8 @@ export const cellSx = {
     mx: 1,
   },
   cell: {
-    my: "0.75vh",
-    padding: "3.5vh",
+    my: "0.4vw",
+    padding: "1.75vw",
   },
   comment: {
     backgroundImage: `url(${commentFx})`,
