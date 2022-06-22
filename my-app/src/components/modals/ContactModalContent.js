@@ -5,7 +5,7 @@ import { modalCenteredSx } from "../../assets/theme";
 
 export const ContactModalContent = () => {
   const { register, handleSubmit } = useForm();
-  const onSubmit = (data) => null;
+  const onSubmit = (data) => console.log(data);
 
   return (
     <Box
