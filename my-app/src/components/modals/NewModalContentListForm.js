@@ -19,26 +19,16 @@ export const NewModalContentListForm = ({
     <>
       <Box
         component="form"
-        sx={{
-          ...modalCenteredSx,
-        }}
+        sx={modalCenteredSx}
         onSubmit={handleSubmit(onSubmitTrackOrParameter)}
       >
-        <Box
-          sx={{
-            ...newSessionModal.text,
-          }}
-        >
-          Enter the {""}
+        <Box sx={newSessionModal.text}>
+          Enter the
           {formPrompt === 2 ? <b>track titles</b> : <b>session parameters</b>}
-          {""} you wish to include in the
-          {""} {sessionData.id} session. You can always add more later.
+          you wish to include in the {sessionData.id} session. You can always
+          add more later.
         </Box>
-        <Box
-          sx={{
-            ...newSessionModal.field,
-          }}
-        >
+        <Box sx={newSessionModal.field}>
           <TextField
             sx={{ ml: "7vw", width: "17vw" }}
             variant="standard"
