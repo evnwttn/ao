@@ -24,14 +24,10 @@ export const AOGrid = () => {
   const [hoverCell, setHoverCell] = useState();
 
   return (
-    <Box
-      sx={{
-        ...gridSx.container,
-      }}
-    >
+    <Box sx={gridSx.container}>
       <ThemeProvider theme={aotheme}>
         <AONav data={gridData} />
-        <Box sx={{ ...gridSx.dom }}>
+        <Box sx={gridSx.dom}>
           <Grid container>
             <Grid
               sx={{
@@ -44,13 +40,7 @@ export const AOGrid = () => {
               {gridData.parameters.map((parameterTitle) => {
                 return (
                   <Grid item sm={1} key={parameterTitle}>
-                    <Box
-                      sx={{
-                        ...cellSx.paraCell,
-                      }}
-                    >
-                      {parameterTitle}
-                    </Box>
+                    <Box sx={cellSx.paraCell}>{parameterTitle}</Box>
                   </Grid>
                 );
               })}
@@ -70,13 +60,7 @@ export const AOGrid = () => {
                   {gridData.parameters.map((parameter) => {
                     return parameter === `title` ? (
                       <Grid item sm={1} key={parameter}>
-                        <Box
-                          sx={{
-                            ...cellSx.titleCell,
-                          }}
-                        >
-                          {track.title}
-                        </Box>
+                        <Box sx={cellSx.titleCell}>{track.title}</Box>
                       </Grid>
                     ) : (
                       <AOCell

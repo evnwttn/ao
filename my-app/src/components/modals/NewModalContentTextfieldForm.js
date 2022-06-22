@@ -11,9 +11,7 @@ export const NewModalContentTextfieldForm = ({
 }) => {
   return (
     <Box
-      sx={{
-        ...modalCenteredSx,
-      }}
+      sx={modalCenteredSx}
       component="form"
       onSubmit={handleSubmit(onSubmitForm)}
     >
