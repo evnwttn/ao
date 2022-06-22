@@ -3,11 +3,7 @@ import { modalCenteredSx, palette } from "../../assets/theme";
 
 export const AONavAboutContent = () => {
   return (
-    <Box
-      sx={{
-        ...modalCenteredSx,
-      }}
-    >
+    <Box sx={modalCenteredSx}>
       YOU MAY CLICK ON A CELL TO BEGIN.
       <Box sx={{ my: 2 }}>
         <b>COLOURWHEEL</b>

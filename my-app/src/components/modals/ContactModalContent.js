@@ -10,9 +10,7 @@ export const ContactModalContent = () => {
   return (
     <Box
       component="form"
-      sx={{
-        ...modalCenteredSx,
-      }}
+      sx={modalCenteredSx}
       onSubmit={handleSubmit(onSubmit)}
     >
       <TextField
