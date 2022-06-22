@@ -33,7 +33,7 @@ export const AOPopover = ({
   }, [cellComment, setOpen]);
 
   return (
-    <Box>
+    <>
       <AOCommentBase
         cell={cell}
         cellComment={cellComment}
@@ -47,15 +47,11 @@ export const AOPopover = ({
         handleClick={(color) => handleClick(color)}
         openComment={() => setSwitchValue("2")}
       />
-      <Box
-        sx={{
-          ...wheelSx.remove,
-        }}
-      >
+      <Box sx={wheelSx.remove}>
         <Tooltip title="Cancel Task" placement="right-end">
           <RemoveCircleOutlineIcon onClick={() => handleClick("transparent")} />
         </Tooltip>
       </Box>
-    </Box>
+    </>
   );
 };

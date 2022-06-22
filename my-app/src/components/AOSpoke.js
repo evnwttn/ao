@@ -3,7 +3,7 @@ import { wheelSx } from "../assets/theme";
 
 export const AOSpoke = ({ color, shape, handleClick, toolTip, placement }) => {
   return (
-    <Box sx={{ ...wheelSx.spoke }}>
+    <Box sx={wheelSx.spoke}>
       <svg
         width="5.75vw"
         fill={color}

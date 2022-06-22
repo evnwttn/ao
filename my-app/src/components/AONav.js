@@ -12,16 +12,16 @@ export const AONav = ({ data }) => {
   };
 
   return (
-    <Box sx={{ ...navSx.container }}>
+    <Box sx={navSx.container}>
       <ModalBase open={open} handleClose={handleClose} text={"Nav"} />
-      <Box sx={{ ...navSx.text }}>
-        <Box sx={{ ...navSx.text.author }}>{data.author}</Box>
+      <Box sx={navSx.text}>
+        <Box sx={navSx.text.author}>{data.author}</Box>
         <Divider
           orientation="vertical"
           flexItem
           sx={{ color: palette.aoDivider, mx: "1vw" }}
         />
-        <Box sx={{ ...navSx.text.id }}>{data.id}</Box>
+        <Box sx={navSx.text.id}>{data.id}</Box>
       </Box>
       <Button
         disableRipple
@@ -33,13 +33,7 @@ export const AONav = ({ data }) => {
         ?
       </Button>
       <Box>
-        <Link
-          to="/ao"
-          style={{
-            ...logoSx.nav,
-          }}
-          state={{ from: "home" }}
-        >
+        <Link to="/ao" style={logoSx.nav} state={{ from: "home" }}>
           ꜵ
         </Link>
       </Box>
