@@ -10,14 +10,12 @@ export const AOCommentContent = ({
   register,
 }) => {
   return (
-    <Box>
+    <>
       <Box component="form" onSubmit={handleSubmit(onSubmit)}>
         <TextField
           id={`${cell.track}.${cell.parameter}`}
-          inputProps={{ ...commentSx.inputProps }}
-          sx={{
-            ...commentSx.textField,
-          }}
+          inputProps={commentSx.inputProps}
+          sx={commentSx.textField}
           margin="normal"
           variant="filled"
           multiline
@@ -34,6 +32,6 @@ export const AOCommentContent = ({
           />
         </IconButton>
       </Box>
-    </Box>
+    </>
   );
 };
