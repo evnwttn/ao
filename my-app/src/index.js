@@ -38,29 +38,17 @@ const Home = () => {
   // isTabletOrMobile && isPortrait && screenOrientation.lock("landscape-primary");
 
   return (
-    <Box
-      sx={{
-        ...homeSx.mainDiv,
-      }}
-    >
+    <Box sx={homeSx.mainDiv}>
       <ThemeProvider theme={aotheme}>
         <ModalBase open={open} handleClose={handleClose} text={modalType} />
-        <Box
-          sx={{
-            ...homeSx.cornerDiv,
-          }}
-        >
+        <Box sx={homeSx.cornerDiv}>
           <ModalButton text={"About"} handleOpen={(text) => handleOpen(text)} />
           <ModalButton
             text={"Contact"}
             handleOpen={(text) => handleOpen(text)}
           />
         </Box>
-        <Box
-          sx={{
-            ...homeSx.centerDiv,
-          }}
-        >
+        <Box sx={homeSx.centerDiv}>
           <ModalButton text={"New"} handleOpen={(text) => handleOpen(text)} />
           <MainLogo />
           <ModalButton text={"Load"} handleOpen={(text) => handleOpen(text)} />
