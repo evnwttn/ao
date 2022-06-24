@@ -6,7 +6,7 @@ import { NewModalContentListForm } from "./NewModalContentListForm";
 
 export const NewModalContent = () => {
   const [sessionData, setSessionData] = useState();
-  const [startNewSession, startNewSessionLaunch] = useState(false);
+  const [startNewSession, setStartNewSession] = useState(false);
   const [formPrompt, setFormPrompt] = useState(0);
   const [inputArray, setInputArray] = useState([]);
   const textInput = React.useRef(null);
@@ -24,7 +24,7 @@ export const NewModalContent = () => {
   // 4 - grid generation
 
   useEffect(() => {
-    formPrompt === 4 && startNewSessionLaunch(true);
+    formPrompt === 4 && setStartNewSession(true);
   }, [formPrompt, sessionData]);
 
   const onSubmitForm = (data) => {
