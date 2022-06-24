@@ -27,7 +27,24 @@ export const NewModalContent = () => {
     setSessionData({ ...data });
   };
 
-  useEffect(() => {}, [sessionData]);
+  useEffect(() => {
+    switch (formPrompt) {
+      case 1:
+        console.log("yo");
+        break;
+      case 2:
+        console.log("yo");
+        break;
+      case 3:
+        console.log("yo");
+        break;
+      case 4:
+        console.log("yo");
+        break;
+      default:
+        console.log("watch out fam");
+    }
+  }, [sessionData, formPrompt]);
 
   useEffect(() => {
     formPrompt === 4 && setStartNewSession(true);
