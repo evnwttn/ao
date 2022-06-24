@@ -43,6 +43,7 @@ export const NewModalContent = () => {
 
   useEffect(() => {
     formPrompt === 4 && setStartNewSession(true);
+    console.log(sessionData);
   }, [formPrompt, sessionData]);
 
   const onSubmitTrackOrParameter = () => {
@@ -72,7 +73,7 @@ export const NewModalContent = () => {
           alert(`Invald Title`);
       }
     } else {
-      alert(`You must enter a valid title`);
+      alert(`Please enter a valid title`);
     }
 
     setInputArray((inputArray) =>
