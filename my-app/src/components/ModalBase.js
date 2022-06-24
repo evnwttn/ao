@@ -8,7 +8,9 @@ export const ModalBase = ({ open, handleClose, text }) => {
       onClose={handleClose}
       sx={{ backdropFilter: "blur(1.5px)" }}
     >
-      <ModalText prompt={text} />
+      <>
+        <ModalText prompt={text} />
+      </>
     </Modal>
   );
 };

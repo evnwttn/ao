@@ -33,7 +33,7 @@ export const NewModalContent = () => {
     textInput.current.value = "";
   };
 
-  const funcBuild = () => {
+  const onSubmitTrackOrParameter = () => {
     switch (formPrompt) {
       case 2:
         if (inputArray.length <= 11) {
@@ -65,7 +65,7 @@ export const NewModalContent = () => {
     textInput.current.value = "";
   };
 
-  const onSubmitTrackOrParameter = () => {
+  const xx = () => {
     // ensures track & parameter totals remain below 12
     formPrompt === 2
       ? inputArray.length <= 11
