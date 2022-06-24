@@ -16,54 +16,34 @@ export const NewModalContent = () => {
     },
   });
 
-  // formPrompt sequence
-  // 0 - session author
-  // 1 - sesson title
-  // 2 - track titles
-  // 3 - parameter titles
-  // 4 - grid generation
-
-  const demoSubmit = (data) => {
+  const onSubmit = (data) => {
     setSessionData({ ...data });
-  };
-
-  useEffect(() => {
     switch (formPrompt) {
-      case 1:
-        console.log("yo");
+      case 0: // session author
+        setFormPrompt(formPrompt + 1);
+        textInput.current.value = "";
         break;
-      case 2:
-        console.log("yo");
+      case 1: // session title
+        setFormPrompt(formPrompt + 1);
+        textInput.current.value = "";
         break;
-      case 3:
-        console.log("yo");
+      case 2: // track titles
+        setInputArray((previousArray) =>
+          previousArray.filter((previousInput) => previousInput === "title")
+        );
+        inputArray.length >= 1 && setFormPrompt(formPrompt + 1);
         break;
-      case 4:
-        console.log("yo");
+      case 3: // parameter titles
+        inputArray.length >= 1 && setFormPrompt(formPrompt + 1);
         break;
       default:
-        console.log("watch out fam");
+        textInput.current.value = "";
     }
-  }, [sessionData, formPrompt]);
+  };
 
   useEffect(() => {
     formPrompt === 4 && setStartNewSession(true);
   }, [formPrompt, sessionData]);
-
-  const onSubmitForm = (data) => {
-    setFormPrompt(formPrompt + 1);
-    setSessionData({ ...data });
-    textInput.current.value = "";
-  };
-
-  const onSubmitList = (data) => {
-    formPrompt === 2 &&
-      setInputArray((previousArray) =>
-        previousArray.filter((previousInput) => previousInput === "title")
-      );
-    inputArray.length >= 1 && setFormPrompt(formPrompt + 1);
-    setSessionData({ ...data });
-  };
 
   const onSubmitTrackOrParameter = () => {
     if (textInput.current.value) {
@@ -110,7 +90,7 @@ export const NewModalContent = () => {
   return formPrompt <= 1 ? (
     <NewModalContentTextfieldForm
       handleSubmit={handleSubmit}
-      onSubmitForm={onSubmitForm}
+      onSubmitForm={onSubmit}
       textInput={textInput}
       formPrompt={formPrompt}
       register={register}
@@ -120,7 +100,7 @@ export const NewModalContent = () => {
       handleSubmit={handleSubmit}
       onSubmitTrackOrParameter={onSubmitTrackOrParameter}
       onRemoveTrackOrParameter={onRemoveTrackOrParameter}
-      onSubmitList={onSubmitList}
+      onSubmitList={onSubmit}
       formPrompt={formPrompt}
       sessionData={sessionData}
       textInput={textInput}
