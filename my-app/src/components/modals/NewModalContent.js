@@ -31,10 +31,10 @@ export const NewModalContent = () => {
         setInputArray((previousArray) =>
           previousArray.filter((previousInput) => previousInput === "title")
         );
-        inputArray.length >= 1 && setFormPrompt(formPrompt + 1);
+        inputArray.length && setFormPrompt(formPrompt + 1);
         break;
       case 3: // parameter titles
-        inputArray.length >= 1 && setFormPrompt(formPrompt + 1);
+        inputArray.length && setFormPrompt(formPrompt + 1);
         break;
       default:
         textInput.current.value = "";

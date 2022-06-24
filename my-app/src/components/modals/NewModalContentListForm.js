@@ -38,7 +38,6 @@ export const NewModalContentListForm = ({
           <IconButton
             onClick={() => {
               inputArray.forEach((title, index) => {
-                console.log(`this is where it be`);
                 formPrompt === 2
                   ? setValue(`tracks.${index}.title`, title)
                   : setValue(`parameters.${index + 1}`, title);
