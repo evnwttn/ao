@@ -17,10 +17,10 @@ export const NewModalContent = () => {
   });
 
   // formPrompt sequence
-  // 0 - session author (textfield)
-  // 1 - sesson title (textfield)
-  // 2 - track titles (list)
-  // 3 - parameter titles (list)
+  // 0 - session author
+  // 1 - sesson title
+  // 2 - track titles
+  // 3 - parameter titles
   // 4 - grid generation
 
   useEffect(() => {
@@ -34,51 +34,35 @@ export const NewModalContent = () => {
   };
 
   const onSubmitTrackOrParameter = () => {
-    switch (formPrompt) {
-      case 2:
-        if (inputArray.length <= 11) {
-          setInputArray((inputArray) => [
-            ...inputArray,
-            textInput.current.value,
-          ]);
-        } else {
-          alert(`Maximum Number of Tracks Reached`);
-        }
-        break;
-      case 3:
-        if (inputArray.length <= 10) {
-          setInputArray((inputArray) => [
-            ...inputArray,
-            textInput.current.value,
-          ]);
-        } else {
-          alert(`Maximum Number of Parameters Reached`);
-        }
-        break;
-      default:
-        alert(`Invald Title`);
+    if (textInput.current.value) {
+      switch (formPrompt) {
+        case 2:
+          if (inputArray.length <= 11) {
+            setInputArray((inputArray) => [
+              ...inputArray,
+              textInput.current.value,
+            ]);
+          } else {
+            alert(`Maximum Number of Tracks Reached`);
+          }
+          break;
+        case 3:
+          if (inputArray.length <= 10) {
+            setInputArray((inputArray) => [
+              ...inputArray,
+              textInput.current.value,
+            ]);
+          } else {
+            alert(`Maximum Number of Parameters Reached`);
+          }
+          break;
+        default:
+          alert(`Invald Title`);
+      }
+    } else {
+      alert(`Please enter a valid title`);
     }
 
-    setInputArray((inputArray) =>
-      inputArray.filter((input, index, array) => array.indexOf(input) === index)
-    );
-    textInput.current.value = "";
-  };
-
-  const xx = () => {
-    // ensures track & parameter totals remain below 12
-    formPrompt === 2
-      ? inputArray.length <= 11
-        ? setInputArray((inputArray) => [
-            ...inputArray,
-            textInput.current.value,
-          ])
-        : alert(`Maximum Number of Tracks Reached`)
-      : inputArray.length <= 10
-      ? setInputArray((inputArray) => [...inputArray, textInput.current.value])
-      : alert(`Maximum Number of Parameters Reached`);
-
-    // ensures track & parameter titles do not repeat
     setInputArray((inputArray) =>
       inputArray.filter((input, index, array) => array.indexOf(input) === index)
     );
