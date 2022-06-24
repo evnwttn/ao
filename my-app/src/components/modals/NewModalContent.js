@@ -23,6 +23,12 @@ export const NewModalContent = () => {
   // 3 - parameter titles
   // 4 - grid generation
 
+  const demoSubmit = (data) => {
+    setSessionData({ ...data });
+  };
+
+  useEffect(() => {}, [sessionData]);
+
   useEffect(() => {
     formPrompt === 4 && setStartNewSession(true);
   }, [formPrompt, sessionData]);
@@ -31,6 +37,15 @@ export const NewModalContent = () => {
     setFormPrompt(formPrompt + 1);
     setSessionData({ ...data });
     textInput.current.value = "";
+  };
+
+  const onSubmitList = (data) => {
+    formPrompt === 2 &&
+      setInputArray((previousArray) =>
+        previousArray.filter((previousInput) => previousInput === "title")
+      );
+    inputArray.length >= 1 && setFormPrompt(formPrompt + 1);
+    setSessionData({ ...data });
   };
 
   const onSubmitTrackOrParameter = () => {
@@ -60,7 +75,7 @@ export const NewModalContent = () => {
           alert(`Invald Title`);
       }
     } else {
-      alert(`Please enter a valid title`);
+      alert(`You must enter a valid title`);
     }
 
     setInputArray((inputArray) =>
@@ -73,15 +88,6 @@ export const NewModalContent = () => {
     setInputArray((previousArray) =>
       previousArray.filter((previousInput) => previousInput !== title)
     );
-  };
-
-  const onSubmitList = (data) => {
-    formPrompt === 2 &&
-      setInputArray((previousArray) =>
-        previousArray.filter((previousInput) => previousInput === "title")
-      );
-    inputArray.length >= 1 && setFormPrompt(formPrompt + 1);
-    setSessionData({ ...data });
   };
 
   return formPrompt <= 1 ? (
