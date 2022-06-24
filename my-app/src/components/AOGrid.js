@@ -19,8 +19,8 @@ export const AOGrid = () => {
   }, [location.state]);
 
   // HANDLES CELL HOVERING FX
-  const [hovered, setHovered] = useState(false);
-  const toggleHovered = () => setHovered(!hovered);
+  const [isHovered, setIsHovered] = useState(false);
+  const toggleHovered = () => setIsHovered(!isHovered);
   const [hoverCell, setHoverCell] = useState();
 
   return (
