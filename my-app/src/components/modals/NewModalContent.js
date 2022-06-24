@@ -33,6 +33,38 @@ export const NewModalContent = () => {
     textInput.current.value = "";
   };
 
+  const funcBuild = () => {
+    switch (formPrompt) {
+      case 2:
+        if (inputArray.length <= 11) {
+          setInputArray((inputArray) => [
+            ...inputArray,
+            textInput.current.value,
+          ]);
+        } else {
+          alert(`Maximum Number of Tracks Reached`);
+        }
+        break;
+      case 3:
+        if (inputArray.length <= 10) {
+          setInputArray((inputArray) => [
+            ...inputArray,
+            textInput.current.value,
+          ]);
+        } else {
+          alert(`Maximum Number of Parameters Reached`);
+        }
+        break;
+      default:
+        alert(`Invald Title`);
+    }
+
+    setInputArray((inputArray) =>
+      inputArray.filter((input, index, array) => array.indexOf(input) === index)
+    );
+    textInput.current.value = "";
+  };
+
   const onSubmitTrackOrParameter = () => {
     // ensures track & parameter totals remain below 12
     formPrompt === 2
