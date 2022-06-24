@@ -43,7 +43,6 @@ export const NewModalContent = () => {
 
   useEffect(() => {
     formPrompt === 4 && setStartNewSession(true);
-    console.log(sessionData);
   }, [formPrompt, sessionData]);
 
   const onSubmitTrackOrParameter = () => {
