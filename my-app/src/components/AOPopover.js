@@ -14,10 +14,10 @@ export const AOPopover = ({
   onSubmit,
 }) => {
   // POPOVER
-  const [open, setOpen] = useState(false);
+  const [isPopoverOpen, setIsPopoverOpen] = useState(false);
 
   const handleClose = () => {
-    setOpen(false);
+    setIsPopoverOpen(false);
     setSwitchValue("1");
   };
 
@@ -25,19 +25,19 @@ export const AOPopover = ({
   const [switchValue, setSwitchValue] = useState("1");
 
   useEffect(() => {
-    switchValue !== "1" ? setOpen(true) : setOpen(false);
+    switchValue !== "1" ? setIsPopoverOpen(true) : setIsPopoverOpen(false);
   }, [switchValue]);
 
   useEffect(() => {
-    setOpen(false);
-  }, [cellComment, setOpen]);
+    setIsPopoverOpen(false);
+  }, [cellComment, setIsPopoverOpen]);
 
   return (
     <>
       <AOCommentBase
         cell={cell}
         cellComment={cellComment}
-        open={open}
+        open={isPopoverOpen}
         handleClose={handleClose}
         register={register}
         handleSubmit={handleSubmit}
