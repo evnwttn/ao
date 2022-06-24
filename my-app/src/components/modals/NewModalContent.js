@@ -20,11 +20,11 @@ export const NewModalContent = () => {
     setSessionData({ ...data });
     switch (formPrompt) {
       case 0: // session author
-        setFormPrompt(formPrompt + 1);
+        textInput.current.value && setFormPrompt(formPrompt + 1);
         textInput.current.value = "";
         break;
       case 1: // session title
-        setFormPrompt(formPrompt + 1);
+        textInput.current.value && setFormPrompt(formPrompt + 1);
         textInput.current.value = "";
         break;
       case 2: // track titles
