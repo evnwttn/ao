@@ -16,6 +16,10 @@ export const NewModalContent = () => {
     },
   });
 
+  useEffect(() => {
+    console.log(inputArray);
+  }, [inputArray]);
+
   const onSubmit = (data) => {
     setSessionData({ ...data });
     switch (formPrompt) {

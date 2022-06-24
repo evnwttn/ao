@@ -35,6 +35,7 @@ export const NewModalContentListForm = ({
             autoComplete="off"
             inputRef={textInput}
           />
+          {/* MOVE SET VALUE UP AND SUB RIGHT FROM INPUTARRAY?? */}
           <IconButton
             onClick={() => {
               inputArray.forEach((title, index) => {
