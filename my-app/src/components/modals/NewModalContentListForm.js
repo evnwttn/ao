@@ -23,10 +23,9 @@ export const NewModalContentListForm = ({
         onSubmit={handleSubmit(onSubmitTrackOrParameter)}
       >
         <Box sx={newSessionModal.text}>
-          Enter the
+          Enter the&nbsp;
           {formPrompt === 2 ? <b>track titles</b> : <b>session parameters</b>}
-          you wish to include in the {sessionData.id} session. You can always
-          add more later.
+          &nbsp;you wish to include in the {sessionData.id} session.
         </Box>
         <Box sx={newSessionModal.field}>
           <TextField
