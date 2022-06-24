@@ -5,15 +5,15 @@ import { logoSx, navSx, palette } from "../assets/theme";
 import { ModalBase } from "../components/ModalBase";
 
 export const AONav = ({ data }) => {
-  const [open, setOpen] = useState(false);
+  const [isAboutOpen, setIsAboutOpen] = useState(false);
 
   const handleClose = () => {
-    setOpen(false);
+    setIsAboutOpen(false);
   };
 
   return (
     <Box sx={navSx.container}>
-      <ModalBase open={open} handleClose={handleClose} text={"Nav"} />
+      <ModalBase open={isAboutOpen} handleClose={handleClose} text={"Nav"} />
       <Box sx={navSx.text}>
         <Box sx={navSx.text.author}>{data.author}</Box>
         <Divider
@@ -26,7 +26,7 @@ export const AONav = ({ data }) => {
       <Button
         disableRipple
         sx={{ mt: "0.5vw" }}
-        onClick={() => setOpen(true)}
+        onClick={() => setIsAboutOpen(true)}
         variant="text"
         color={"inherit"}
       >
