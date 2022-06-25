@@ -16,10 +16,6 @@ export const NewModalContent = () => {
     },
   });
 
-  // useEffect(() => {
-  //   console.log(inputArray);
-  // }, [inputArray]);
-
   const onSubmit = (data) => {
     setSessionData({ ...data });
     switch (formPrompt) {
@@ -50,6 +46,7 @@ export const NewModalContent = () => {
   }, [formPrompt, sessionData]);
 
   const onSubmitTrackOrParameter = (data) => {
+    console.log(data);
     if (textInput.current.value) {
       switch (formPrompt) {
         case 2:
