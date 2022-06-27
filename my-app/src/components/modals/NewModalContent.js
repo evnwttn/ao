@@ -45,7 +45,7 @@ export const NewModalContent = () => {
     formPrompt === 4 && setStartNewSession(true);
   }, [formPrompt, sessionData]);
 
-  const addTrackOrParameter = () => {
+  const onSubmitTrackOrParameter = () => {
     inputArray.forEach((title, index) => {
       formPrompt === 2
         ? setValue(`tracks.${index}.title`, title)
@@ -53,7 +53,7 @@ export const NewModalContent = () => {
     });
   };
 
-  const onSubmitTrackOrParameter = () => {
+  const addTrackOrParameter = () => {
     if (textInput.current.value) {
       switch (formPrompt) {
         case 2:

@@ -21,7 +21,7 @@ export const NewModalContentListForm = ({
       <Box
         component="form"
         sx={modalCenteredSx}
-        onSubmit={handleSubmit(addTrackOrParameter)}
+        onSubmit={handleSubmit(onSubmitTrackOrParameter)}
       >
         <Box sx={newSessionModal.text}>
           Enter the&nbsp;
@@ -36,12 +36,7 @@ export const NewModalContentListForm = ({
             autoComplete="off"
             inputRef={textInput}
           />
-          {/* IT SUBMITS BEFORE THE ONCLICK - THATS WHATSUP */}
-          <IconButton
-            onClick={onSubmitTrackOrParameter}
-            type="submit"
-            disableRipple
-          >
+          <IconButton onClick={addTrackOrParameter} type="submit" disableRipple>
             <AddCircleIcon sx={{ mr: "0.75vw" }} />
           </IconButton>
           <Divider
