@@ -114,7 +114,6 @@ export const NewModalContent = () => {
       sessionData={sessionData}
       textInput={textInput}
       inputArray={inputArray}
-      setValue={setValue}
     />
   ) : (
     startNewSession && (

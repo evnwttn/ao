@@ -14,7 +14,6 @@ export const NewModalContentListForm = ({
   sessionData,
   textInput,
   inputArray,
-  setValue,
 }) => {
   return (
     <>
