@@ -38,11 +38,12 @@ export const NewModalContentListForm = ({
           {/* IT SUBMITS BEFORE THE ONCLICK - THATS WHATSUP */}
           <IconButton
             onClick={() => {
-              inputArray.forEach((title, index) => {
-                formPrompt === 2
-                  ? setValue(`tracks.${index}.title`, title)
-                  : setValue(`parameters.${index + 1}`, title);
-              });
+              console.log(inputArray);
+              // inputArray.forEach((title, index) => {
+              //   formPrompt === 2
+              //     ? setValue(`tracks.${index}.title`, title)
+              //     : setValue(`parameters.${index + 1}`, title);
+              // });
             }}
             type="submit"
             disableRipple

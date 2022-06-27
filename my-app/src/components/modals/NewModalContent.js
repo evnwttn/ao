@@ -45,8 +45,15 @@ export const NewModalContent = () => {
     formPrompt === 4 && setStartNewSession(true);
   }, [formPrompt, sessionData]);
 
-  const onSubmitTrackOrParameter = (data) => {
-    console.log(data);
+  const addTrackOrParameter = () => {
+    inputArray.forEach((title, index) => {
+      formPrompt === 2
+        ? setValue(`tracks.${index}.title`, title)
+        : setValue(`parameters.${index + 1}`, title);
+    });
+  };
+
+  const onSubmitTrackOrParameter = () => {
     if (textInput.current.value) {
       switch (formPrompt) {
         case 2:
