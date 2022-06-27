@@ -106,6 +106,7 @@ export const NewModalContent = () => {
   ) : formPrompt <= 3 ? (
     <NewModalContentListForm
       handleSubmit={handleSubmit}
+      addTrackOrParameter={addTrackOrParameter}
       onSubmitTrackOrParameter={onSubmitTrackOrParameter}
       onRemoveTrackOrParameter={onRemoveTrackOrParameter}
       onSubmitList={onSubmit}

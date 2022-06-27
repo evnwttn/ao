@@ -6,6 +6,7 @@ import { modalCenteredSx, newSessionModal } from "../../assets/theme";
 
 export const NewModalContentListForm = ({
   handleSubmit,
+  addTrackOrParameter,
   onSubmitTrackOrParameter,
   onRemoveTrackOrParameter,
   onSubmitList,
@@ -36,18 +37,7 @@ export const NewModalContentListForm = ({
             inputRef={textInput}
           />
           {/* IT SUBMITS BEFORE THE ONCLICK - THATS WHATSUP */}
-          <IconButton
-            onClick={() => {
-              console.log(inputArray);
-              // inputArray.forEach((title, index) => {
-              //   formPrompt === 2
-              //     ? setValue(`tracks.${index}.title`, title)
-              //     : setValue(`parameters.${index + 1}`, title);
-              // });
-            }}
-            type="submit"
-            disableRipple
-          >
+          <IconButton onClick={addTrackOrParameter} type="submit" disableRipple>
             <AddCircleIcon sx={{ mr: "0.75vw" }} />
           </IconButton>
           <Divider
