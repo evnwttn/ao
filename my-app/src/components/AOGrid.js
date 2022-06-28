@@ -8,20 +8,17 @@ import { blankSession } from "../assets/dummydata/BlankSession";
 import { darkSideOfTheMoon } from "../assets/dummydata/LoadSample";
 
 export const AOGrid = () => {
-  // HANDLES LOADING GRID DATA
-  const location = useLocation();
   const [gridData, setGridData] = useState(blankSession);
+  const [hoverCell, setHoverCell] = useState();
+  const [isHovered, setIsHovered] = useState(false);
+  const toggleHovered = () => setIsHovered(!isHovered);
 
+  const location = useLocation();
   useEffect(() => {
     const { from, data } = location.state;
     from === "load" && setGridData(darkSideOfTheMoon);
     from === "new" && setGridData(data);
   }, [location.state]);
-
-  // HANDLES CELL HOVERING FX
-  const [isHovered, setIsHovered] = useState(false);
-  const toggleHovered = () => setIsHovered(!isHovered);
-  const [hoverCell, setHoverCell] = useState();
 
   return (
     <Box sx={gridSx.container}>

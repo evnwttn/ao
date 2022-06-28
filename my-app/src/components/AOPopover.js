@@ -13,20 +13,17 @@ export const AOPopover = ({
   handleSubmit,
   onSubmit,
 }) => {
-  // POPOVER
   const [isPopoverOpen, setIsPopoverOpen] = useState(false);
+  const [commentOpen, setCommentOpen] = useState("1");
 
   const handleClose = () => {
     setIsPopoverOpen(false);
-    setSwitchValue("1");
+    setCommentOpen("1");
   };
 
-  // COMMENT SWITCH
-  const [switchValue, setSwitchValue] = useState("1");
-
   useEffect(() => {
-    switchValue !== "1" ? setIsPopoverOpen(true) : setIsPopoverOpen(false);
-  }, [switchValue]);
+    commentOpen !== "1" ? setIsPopoverOpen(true) : setIsPopoverOpen(false);
+  }, [commentOpen]);
 
   useEffect(() => {
     setIsPopoverOpen(false);
@@ -45,7 +42,7 @@ export const AOPopover = ({
       />
       <AOColorWheel
         handleClick={(color) => handleClick(color)}
-        openComment={() => setSwitchValue("2")}
+        openComment={() => setCommentOpen("2")}
       />
       <Box sx={wheelSx.remove}>
         <Tooltip title="Cancel Task" placement="right-end">

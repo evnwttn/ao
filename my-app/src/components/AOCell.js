@@ -12,23 +12,19 @@ export const AOCell = ({
   setHoverCell,
   hoverCell,
 }) => {
-  // HANDLES CELL COLOUR & INITIAL "LOAD" DATA
-  const [cellColor, setCellColor] = useState(palette.aoGrey);
-
-  // HANDLES POPOVER
-  const [anchorEl, setAnchorEl] = React.useState(null);
-  const open = Boolean(anchorEl);
-  const handleClick = (event) => {
-    setAnchorEl(event.currentTarget);
-  };
-  const handleClose = () => {
-    setAnchorEl(null);
-  };
-
-  // HANDLES COMMENT STORAGE
   const { register, handleSubmit } = useForm();
+  const [cellColor, setCellColor] = useState(palette.aoGrey);
   const [cellComment, setCellComment] = useState("");
   const onSubmit = (data) => setCellComment(data.comment);
+
+  const [popoverAnchor, setPopoverAnchor] = React.useState(null);
+  const open = Boolean(popoverAnchor);
+  const handleClick = (event) => {
+    setPopoverAnchor(event.currentTarget);
+  };
+  const handleClose = () => {
+    setPopoverAnchor(null);
+  };
 
   useEffect(() => {
     const initialData = () => {
@@ -44,7 +40,6 @@ export const AOCell = ({
     initialData();
   }, [parameter, track.parameters]);
 
-  // HANDLES HOVER FX TIMER
   useEffect(() => {
     const timer = setTimeout(() => {
       setHoverCell(undefined);
@@ -94,7 +89,7 @@ export const AOCell = ({
           left: "0.2vw",
         }}
         open={open}
-        anchorEl={anchorEl}
+        popoverAnchor={popoverAnchor}
         onClose={handleClose}
         anchorOrigin={{
           vertical: "center",
