@@ -1,6 +1,6 @@
-# ꜵ
+# ꜵ :musical_score:
 
-a dynamic album organizational tool utilizing
+a visual album organizational tool utilizing
 <ul>
     <li><a href="https://reactjs.org/">react</a></li>
     <li><a href="https://mui.com/">mui</a></li>
@@ -14,3 +14,4 @@ a dynamic album organizational tool utilizing
 <img src="https://i.ibb.co/brfCqjP/aohome.png">
 <img src="https://i.ibb.co/RQTq9q5/aoapp.png">
 
+---
