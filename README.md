@@ -24,6 +24,8 @@ gfx / design
 
 ---
 
+<!--
+
 top 5 lessons i learned while building ꜵ (in react)
 
 <ul>
@@ -33,3 +35,5 @@ top 5 lessons i learned while building ꜵ (in react)
     <li>anything is possible, eventually</li>
     <li>everyone drinks tea</li>
 </ul>
+
+-->
