@@ -1,5 +1,17 @@
 import { palette } from "../theme";
 
+export const separationSunday = {
+  id: "separation sunday",
+  author: "the hold steady",
+  tracks: [
+    {
+      title: "speak to me",
+      parameters: [],
+    },
+  ],
+  parameters: ["title"],
+};
+
 export const darkSideOfTheMoon = {
   id: "the dark side of the moon",
   author: "pink floyd",
@@ -7,7 +19,7 @@ export const darkSideOfTheMoon = {
     {
       title: "speak to me",
       parameters: [
-        { parameter: "vocals", colour: palette.aoGrey, comment: "" },
+        { parameter: "vocals", colour: "transparent", comment: "" },
         { parameter: "guitar", colour: palette.aoGrey, comment: "" },
         { parameter: "bass", colour: palette.aoYellow, comment: "" },
         {
