@@ -16,14 +16,14 @@ export const AOCell = ({
   const [cellColor, setCellColor] = useState(palette.aoGrey);
   const [cellComment, setCellComment] = useState("");
   const onSubmit = (data) => setCellComment(data.comment);
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  const open = Boolean(anchorEl);
 
-  const [popoverAnchor, setPopoverAnchor] = React.useState(null);
-  const open = Boolean(popoverAnchor);
   const handleClick = (event) => {
-    setPopoverAnchor(event.currentTarget);
+    setAnchorEl(event.currentTarget);
   };
   const handleClose = () => {
-    setPopoverAnchor(null);
+    setAnchorEl(null);
   };
 
   useEffect(() => {
@@ -89,7 +89,7 @@ export const AOCell = ({
           left: "0.2vw",
         }}
         open={open}
-        popoverAnchor={popoverAnchor}
+        anchorEl={anchorEl}
         onClose={handleClose}
         anchorOrigin={{
           vertical: "center",
