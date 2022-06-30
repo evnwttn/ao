@@ -1,17 +1,5 @@
 import { palette } from "../theme";
 
-export const separationSunday = {
-  id: "separation sunday",
-  author: "the hold steady",
-  tracks: [
-    {
-      title: "speak to me",
-      parameters: [],
-    },
-  ],
-  parameters: ["title"],
-};
-
 export const darkSideOfTheMoon = {
   id: "the dark side of the moon",
   author: "pink floyd",
@@ -20,17 +8,17 @@ export const darkSideOfTheMoon = {
       title: "speak to me",
       parameters: [
         { parameter: "vocals", colour: "transparent", comment: "" },
-        { parameter: "guitar", colour: palette.aoGrey, comment: "" },
-        { parameter: "bass", colour: palette.aoYellow, comment: "" },
+        { parameter: "guitar", colour: "transparent", comment: "" },
+        { parameter: "bass", colour: "transparent", comment: "" },
         {
           parameter: "drums",
-          colour: palette.aoBlue,
-          comment: "can you re-record these they're terrible",
+          colour: "transparent",
+          comment: "",
         },
-        { parameter: "piano", colour: palette.aoGrey, comment: "" },
-        { parameter: "guest players", colour: palette.aoGrey, comment: "" },
+        { parameter: "piano", colour: "transparent", comment: "" },
+        { parameter: "guest players", colour: "transparent", comment: "" },
         { parameter: "guest vocals", colour: "transparent", comment: "" },
-        { parameter: "fx", colour: palette.aoGrey, comment: "" },
+        { parameter: "fx", colour: palette.aoYellow, comment: "" },
         { parameter: "mix", colour: "transparent", comment: "" },
         { parameter: "master", colour: "transparent", comment: "" },
         { parameter: "done", colour: "transparent", comment: "" },
