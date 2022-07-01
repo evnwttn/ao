@@ -23,17 +23,3 @@ gfx / design
 <img src="https://i.ibb.co/RQTq9q5/aoapp.png">
 
 ---
-
-<!--
-
-top 5 lessons i learned while building ꜵ (in react)
-
-<ul>
-    <li>solutions are often found <i>not coding</i></li>
-    <li>someone else knows a less jank way</li>
-    <li>for every js library there is an equal and opposite set of arbitrary quirks</li>
-    <li>anything is possible, eventually</li>
-    <li>everyone drinks tea</li>
-</ul>
-
--->
