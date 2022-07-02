@@ -28,7 +28,7 @@ export const AOCell = ({
 
   useEffect(() => {
     const initialData = () => {
-      track.parameters &&
+      if (track.parameters) {
         track.parameters.map(
           (cell) =>
             (cell.parameter === parameter && setCellColor(cell.colour)) ||
@@ -36,6 +36,7 @@ export const AOCell = ({
               cell.parameter === parameter &&
               setCellComment(cell.comment))
         );
+      }
     };
     initialData();
   }, [parameter, track.parameters]);
