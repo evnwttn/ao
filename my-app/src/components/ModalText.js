@@ -17,7 +17,7 @@ export const ModalText = ({ prompt }) => {
       <Box
         sx={{
           ...logoSx,
-          color: palette.aoRed,
+          color: palette.aoBlue,
           fontSize: "3vw",
           mb: "0.25vw",
         }}
