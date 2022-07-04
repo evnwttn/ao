@@ -75,12 +75,12 @@ const aotheme = createTheme({
     MuiFormHelperText: {
       styleOverrides: {
         root: {
-          color: palette.aoRed,
+          color: palette.aoWhite,
           fontFamily: "Noto Sans",
           fontSize: "0.8vw",
           letterSpacing: "0.125vw",
           textTransform: "uppercase",
-          fontWeight: "800",
+          fontWeight: "400",
         },
       },
     },
@@ -216,7 +216,7 @@ export const newSessionModal = {
   text: {
     flexDirection: "row",
     "b, strong": {
-      color: palette.aoRed,
+      color: palette.aoBlue,
     },
   },
   field: {
