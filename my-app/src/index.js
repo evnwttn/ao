@@ -49,8 +49,8 @@ const Home = () => {
           />
         </Box>
         <Box sx={homeSx.centerDiv}>
-          <ModalButton text={"New"} handleOpen={(text) => handleOpen(text)} />
           <MainLogo />
+          <ModalButton text={"New"} handleOpen={(text) => handleOpen(text)} />
           <ModalButton text={"Load"} handleOpen={(text) => handleOpen(text)} />
         </Box>
       </ThemeProvider>
