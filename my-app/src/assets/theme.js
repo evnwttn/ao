@@ -179,6 +179,9 @@ export const homeSx = {
     flexDirection: "column",
     alignContent: "center",
     justifyContent: "center",
+    divider: {
+      color: palette.aoDivider,
+    },
   },
 };
 
