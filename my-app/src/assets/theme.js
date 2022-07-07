@@ -181,6 +181,10 @@ export const homeSx = {
     justifyContent: "center",
     divider: {
       color: palette.aoDivider,
+      width: "5vw",
+      display: "flex",
+      alignContent: "center",
+      justifyContent: "center",
     },
   },
 };
