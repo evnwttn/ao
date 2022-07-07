@@ -124,9 +124,7 @@ const aotheme = createTheme({
         },
         textSecondary: {
           color: palette.aoRed,
-          fontSize: "1.25vw",
-          letterSpacing: "0.5vw",
-          paddingRight: "0.825vw",
+          fontSize: "1vw",
         },
         textInherit: {
           fontSize: "1vw",
