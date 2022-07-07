@@ -124,7 +124,7 @@ const aotheme = createTheme({
         },
         textSecondary: {
           color: palette.aoRed,
-          fontSize: "1vw",
+          fontSize: "0.9vw",
         },
         textInherit: {
           fontSize: "1vw",
@@ -176,7 +176,7 @@ export const homeSx = {
   },
   centerDiv: {
     display: "flex",
-    paddingTop: "24vh",
+    paddingTop: "25vh",
     flexDirection: "column",
     alignContent: "center",
     justifyContent: "center",
