@@ -149,13 +149,6 @@ export const logoSx = {
   mozUserSelectNone: "none",
   msUserSelectNone: "none",
   userSelectNone: "none",
-  divider: {
-    color: palette.aoDivider,
-    width: "5vw",
-    display: "flex",
-    alignContent: "center",
-    justifyContent: "center",
-  },
   nav: {
     fontFamily: "Noto-Serif",
     textTransform: "lowercase",
