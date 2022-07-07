@@ -5,12 +5,12 @@ import { useState, useEffect } from "react";
 import { render } from "react-dom";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 // import { useMediaQuery } from "react-responsive";
-import { ThemeProvider, Box, Divider } from "@mui/material";
+import { ThemeProvider, Box } from "@mui/material";
 import { ModalButton } from "./components/ModalButton";
 import { MainLogo } from "./components/MainLogo";
 import { ModalBase } from "./components/ModalBase";
 import { AOGrid } from "./components/AOGrid";
-import aotheme, { homeSx, palette } from "./assets/theme";
+import aotheme, { homeSx } from "./assets/theme";
 
 const Home = () => {
   const [open, setOpen] = useState(false);
@@ -50,7 +50,6 @@ const Home = () => {
         </Box>
         <Box sx={homeSx.centerDiv}>
           <MainLogo />
-          <Divider variant="middle" sx={homeSx.centerDiv.divider} />
           <ModalButton text={"New"} handleOpen={(text) => handleOpen(text)} />
           <ModalButton text={"Load"} handleOpen={(text) => handleOpen(text)} />
         </Box>
