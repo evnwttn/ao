@@ -114,12 +114,15 @@ const aotheme = createTheme({
         outlined: {
           border: `1px solid ${palette.aoBlack}`,
           fontFamily: "Noto Sans",
-          fontSize: "0.725vw",
+          fontSize: "0.7vw",
           letterSpacing: "0.125vw",
           textTransform: "uppercase",
           fontWeight: "400",
           lineHeight: "1.66",
           color: palette.aoWhite,
+          "&:hover": {
+            opacity: "0.7",
+          },
         },
         text: {
           color: palette.aoWhite,

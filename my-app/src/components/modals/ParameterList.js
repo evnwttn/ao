@@ -16,9 +16,13 @@ export const ParameterList = () => {
   ];
 
   return (
-    <Box>
+    <Box sx={{ mt: "1vw" }}>
       {parameters.map((parameter) => {
-        return <Button variant="outlined">{parameter}</Button>;
+        return (
+          <Button variant="outlined" disableRipple>
+            {parameter}
+          </Button>
+        );
       })}
     </Box>
   );
