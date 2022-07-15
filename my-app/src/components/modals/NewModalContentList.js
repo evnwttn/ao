@@ -2,7 +2,7 @@ import { Box, IconButton, List, ListItem, ListItemText } from "@mui/material";
 import ClearIcon from "@mui/icons-material/Clear";
 import { palette, modalCenteredSx } from "../../assets/theme";
 
-export const NewModalContentList = ({ data, onClick }) => {
+export const NewModalContentList = ({ data, onSubmit }) => {
   return (
     <Box sx={{ ...modalCenteredSx, my: "1vw" }}>
       <List
@@ -19,7 +19,7 @@ export const NewModalContentList = ({ data, onClick }) => {
                 key={`${title}.${number}`}
                 sx={{ bgcolor: palette.aoBlack }}
                 secondaryAction={
-                  <IconButton onClick={() => onClick(title)}>
+                  <IconButton onClick={() => onSubmit(title)}>
                     <ClearIcon />
                   </IconButton>
                 }

@@ -4,8 +4,6 @@ import { useForm } from "react-hook-form";
 import { NewModalContentTextfieldForm } from "./NewModalContentTextfieldForm";
 import { NewModalContentListForm } from "./NewModalContentListForm";
 
-// IF another title is not submitted, the updated input array is not submitted as session data
-
 export const NewModalContent = () => {
   const [sessionData, setSessionData] = useState();
   const [startNewSession, setStartNewSession] = useState(false);
@@ -91,9 +89,9 @@ export const NewModalContent = () => {
     textInput.current.value = "";
   };
 
-  const onRemoveTrackOrParameter = (removeTitle) => {
+  const onRemoveTrackOrParameter = (title) => {
     setInputArray((previousArray) =>
-      previousArray.filter((previousInput) => previousInput !== removeTitle)
+      previousArray.filter((previousInput) => previousInput !== title)
     );
   };
 
