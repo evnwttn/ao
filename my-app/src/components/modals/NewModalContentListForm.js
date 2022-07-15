@@ -7,6 +7,7 @@ import { modalCenteredSx, newSessionModal } from "../../assets/theme";
 // separate track / parameter forms
 // add in buttons for default options in parameter
 // rework the wording here
+// move submit to below list
 
 export const NewModalContentListForm = ({
   handleSubmit,
@@ -30,6 +31,7 @@ export const NewModalContentListForm = ({
           Enter the&nbsp;
           {formPrompt === 2 ? <b>track titles</b> : <b>session parameters</b>}
           &nbsp;you wish to include in the {sessionData.id} session.
+          {formPrompt === 3 && "Buttons be going here"}
         </Box>
         <Box sx={newSessionModal.field}>
           <TextField
