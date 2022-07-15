@@ -95,16 +95,16 @@ export const NewModalContent = () => {
     setInputArray((previousArray) =>
       previousArray.filter((previousInput) => previousInput !== removeTitle)
     );
-    inputArray.forEach((title, index) => {
-      if (title === removeTitle) {
-        if (formPrompt === 2) {
-          console.log(`tracks.${index}.title`);
-        } else {
-          console.log(`parameters.${index + 1}`);
-        }
-      }
-    });
   };
+
+  useEffect(() => {
+    console.log("yo");
+    inputArray.forEach((title, index) => {
+      formPrompt === 2
+        ? setValue(`tracks.${index}.title`, title)
+        : setValue(`parameters.${index + 1}`, title);
+    });
+  }, [inputArray, setValue, formPrompt]);
 
   return formPrompt <= 1 ? (
     <NewModalContentTextfieldForm
