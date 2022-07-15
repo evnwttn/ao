@@ -9,7 +9,7 @@ export const NewModalContentListForm = ({
   addTrackOrParameter,
   onSubmitTrackOrParameter,
   onRemoveTrackOrParameter,
-  onSubmitList,
+  onSubmitForm,
   formPrompt,
   sessionData,
   textInput,
@@ -18,8 +18,8 @@ export const NewModalContentListForm = ({
   return (
     <>
       <Box
-        component="form"
         sx={modalCenteredSx}
+        component="form"
         onSubmit={handleSubmit(onSubmitTrackOrParameter)}
       >
         <Box sx={newSessionModal.text}>
@@ -35,7 +35,7 @@ export const NewModalContentListForm = ({
             autoComplete="off"
             inputRef={textInput}
           />
-          <IconButton onClick={addTrackOrParameter} type="submit" disableRipple>
+          <IconButton type="submit" onClick={addTrackOrParameter} disableRipple>
             <AddCircleIcon sx={{ mr: "0.75vw" }} />
           </IconButton>
           <Divider
@@ -43,7 +43,7 @@ export const NewModalContentListForm = ({
             orientation="vertical"
           />
           <IconButton
-            onClick={handleSubmit(onSubmitList)}
+            onClick={handleSubmit(onSubmitForm)}
             disableRipple
             sx={{ ml: "0.75vw" }}
           >
@@ -51,7 +51,7 @@ export const NewModalContentListForm = ({
           </IconButton>
         </Box>
       </Box>
-      <Box component="form">
+      <Box>
         <NewModalContentList
           data={inputArray}
           onSubmit={(title) => onRemoveTrackOrParameter(title)}

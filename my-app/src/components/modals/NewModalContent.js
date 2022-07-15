@@ -16,7 +16,7 @@ export const NewModalContent = () => {
     },
   });
 
-  const onSubmit = (data) => {
+  const onSubmitForm = (data) => {
     setSessionData({ ...data });
     switch (formPrompt) {
       case 0: // session author
@@ -90,15 +90,15 @@ export const NewModalContent = () => {
   };
 
   const onRemoveTrackOrParameter = (title) => {
-    setInputArray((previousArray) =>
-      previousArray.filter((previousInput) => previousInput !== title)
+    setInputArray((inputArray) =>
+      inputArray.filter((titles) => titles !== title)
     );
   };
 
   return formPrompt <= 1 ? (
     <NewModalContentTextfieldForm
       handleSubmit={handleSubmit}
-      onSubmitForm={onSubmit}
+      onSubmitForm={onSubmitForm}
       textInput={textInput}
       formPrompt={formPrompt}
       register={register}
@@ -109,7 +109,7 @@ export const NewModalContent = () => {
       addTrackOrParameter={addTrackOrParameter}
       onSubmitTrackOrParameter={onSubmitTrackOrParameter}
       onRemoveTrackOrParameter={onRemoveTrackOrParameter}
-      onSubmitList={onSubmit}
+      onSubmitForm={onSubmitForm}
       formPrompt={formPrompt}
       sessionData={sessionData}
       textInput={textInput}
