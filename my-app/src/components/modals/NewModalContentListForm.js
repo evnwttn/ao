@@ -4,6 +4,10 @@ import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import { NewModalContentList } from "./NewModalContentList";
 import { modalCenteredSx, newSessionModal } from "../../assets/theme";
 
+// separate track / parameter forms
+// add in buttons for default options in parameter
+// rework the wording here
+
 export const NewModalContentListForm = ({
   handleSubmit,
   addTrackOrParameter,

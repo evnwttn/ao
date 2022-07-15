@@ -3,6 +3,7 @@
 https://evnwttn.github.io/ao/
 
 a visual album organizational tool utilizing
+
 <ul>
     <li><a href="https://reactjs.org/">react</a></li>
     <li><a href="https://mui.com/">mui</a></li>
@@ -14,9 +15,10 @@ a visual album organizational tool utilizing
 ---
 
 gfx / design
+
 <ul>
     <li><a href="https://adobe.com/xd">adobe xd</a></li>
-    <li><a href="https://affinity.serif.com/">affinity photo</a></li>
+    <li><a href="https://affinity.serif.com/">affinity</a></li>
 </ul>
 
 <img src="https://i.ibb.co/brfCqjP/aohome.png">
