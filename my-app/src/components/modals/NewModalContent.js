@@ -97,15 +97,6 @@ export const NewModalContent = () => {
     );
   };
 
-  useEffect(() => {
-    console.log("yo");
-    inputArray.forEach((title, index) => {
-      formPrompt === 2
-        ? setValue(`tracks.${index}.title`, title)
-        : setValue(`parameters.${index + 1}`, title);
-    });
-  }, [inputArray, setValue, formPrompt]);
-
   return formPrompt <= 1 ? (
     <NewModalContentTextfieldForm
       handleSubmit={handleSubmit}

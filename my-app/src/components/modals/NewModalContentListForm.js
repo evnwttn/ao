@@ -17,17 +17,17 @@ export const NewModalContentListForm = ({
 }) => {
   return (
     <>
-      <Box
-        component="form"
-        sx={modalCenteredSx}
-        onSubmit={handleSubmit(onSubmitTrackOrParameter)}
-      >
+      <Box sx={modalCenteredSx}>
         <Box sx={newSessionModal.text}>
           Enter the&nbsp;
           {formPrompt === 2 ? <b>track titles</b> : <b>session parameters</b>}
           &nbsp;you wish to include in the {sessionData.id} session.
         </Box>
-        <Box sx={newSessionModal.field}>
+        <Box
+          sx={newSessionModal.field}
+          component="form"
+          onSubmit={handleSubmit(onSubmitTrackOrParameter)}
+        >
           <TextField
             sx={{ ml: "7vw", width: "17vw" }}
             variant="standard"
@@ -39,17 +39,19 @@ export const NewModalContentListForm = ({
             <AddCircleIcon sx={{ mr: "0.75vw" }} />
           </IconButton>
         </Box>
-        <NewModalContentList
-          data={inputArray}
-          onClick={(title) => onRemoveTrackOrParameter(title)}
-        />
-        <IconButton
-          onClick={handleSubmit(onSubmitList)}
-          disableRipple
-          sx={{ ml: "0.75vw" }}
-        >
-          <CheckCircleIcon />
-        </IconButton>
+        <Box>
+          <NewModalContentList
+            data={inputArray}
+            onClick={(title) => handleSubmit(onRemoveTrackOrParameter(title))}
+          />
+          <IconButton
+            onClick={handleSubmit(onSubmitList)}
+            disableRipple
+            sx={{ ml: "0.75vw" }}
+          >
+            <CheckCircleIcon />
+          </IconButton>
+        </Box>
       </Box>
     </>
   );
