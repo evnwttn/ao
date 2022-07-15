@@ -44,11 +44,6 @@ export const NewModalContent = () => {
   };
 
   useEffect(() => {
-    console.log(`array | ${inputArray}`);
-    console.log(sessionData);
-  }, [inputArray, sessionData]);
-
-  useEffect(() => {
     formPrompt === 4 && setStartNewSession(true);
   }, [formPrompt, sessionData]);
 
@@ -96,10 +91,19 @@ export const NewModalContent = () => {
     textInput.current.value = "";
   };
 
-  const onRemoveTrackOrParameter = (title) => {
+  const onRemoveTrackOrParameter = (remove) => {
     setInputArray((previousArray) =>
-      previousArray.filter((previousInput) => previousInput !== title)
+      previousArray.filter((previousInput) => previousInput !== remove)
     );
+    inputArray.forEach((title, index) => {
+      if (title === remove) {
+        if (formPrompt === 2) {
+          setValue(`tracks.${index}.title`, `ass`);
+        } else {
+          setValue(`parameters.${index + 1}`, `ass`);
+        }
+      }
+    });
   };
 
   return formPrompt <= 1 ? (
