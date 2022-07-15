@@ -19,7 +19,12 @@ export const ParameterList = () => {
     <Box sx={{ mt: "1vw" }}>
       {parameters.map((parameter) => {
         return (
-          <Button variant="outlined" disableRipple>
+          <Button
+            key={parameter}
+            variant="outlined"
+            onClick={() => console.log(parameter)}
+            disableRipple
+          >
             {parameter}
           </Button>
         );
