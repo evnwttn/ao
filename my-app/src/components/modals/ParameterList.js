@@ -2,7 +2,7 @@ import { Box, Button } from "@mui/material";
 
 export const ParameterList = () => {
   return (
-    <Box>
+    <Box sx={{}}>
       <Button variant="outlined">Vocals</Button>
       <Button variant="outlined">Bass</Button>
       <Button variant="outlined">Rhythm Guitar</Button>

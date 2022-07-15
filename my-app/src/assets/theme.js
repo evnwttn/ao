@@ -111,6 +111,16 @@ const aotheme = createTheme({
     },
     MuiButton: {
       styleOverrides: {
+        outlined: {
+          border: `1px solid ${palette.aoBlack}`,
+          fontFamily: "Noto Sans",
+          fontSize: "0.725vw",
+          letterSpacing: "0.125vw",
+          textTransform: "uppercase",
+          fontWeight: "400",
+          lineHeight: "1.66",
+          color: palette.aoWhite,
+        },
         text: {
           color: palette.aoWhite,
           fontFamily: "Noto Sans",
