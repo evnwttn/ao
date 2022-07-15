@@ -23,7 +23,11 @@ export const NewModalContentListForm = ({
           {formPrompt === 2 ? <b>track titles</b> : <b>session parameters</b>}
           &nbsp;you wish to include in the {sessionData.id} session.
         </Box>
-        <Box sx={newSessionModal.field}>
+        <Box
+          component="form"
+          onSubmit={handleSubmit(addTrackOrParameter)}
+          sx={newSessionModal.field}
+        >
           <TextField
             sx={{ ml: "7vw", width: "17vw" }}
             variant="standard"
@@ -31,13 +35,20 @@ export const NewModalContentListForm = ({
             autoComplete="off"
             inputRef={textInput}
           />
-          <IconButton disableRipple>
+          <IconButton type="submit" disableRipple>
             <AddCircleIcon sx={{ mr: "0.75vw" }} />
           </IconButton>
         </Box>
         <Box>
-          <NewModalContentList data={inputArray} />
-          <IconButton disableRipple sx={{ ml: "0.75vw" }}>
+          <NewModalContentList
+            data={inputArray}
+            onClick={(title) => onRemoveTrackOrParameter(title)}
+          />
+          <IconButton
+            onClick={console.log(inputArray)}
+            disableRipple
+            sx={{ ml: "0.75vw" }}
+          >
             <CheckCircleIcon />
           </IconButton>
         </Box>
