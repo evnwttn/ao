@@ -91,16 +91,16 @@ export const NewModalContent = () => {
     textInput.current.value = "";
   };
 
-  const onRemoveTrackOrParameter = (remove) => {
+  const onRemoveTrackOrParameter = (removeTitle) => {
     setInputArray((previousArray) =>
-      previousArray.filter((previousInput) => previousInput !== remove)
+      previousArray.filter((previousInput) => previousInput !== removeTitle)
     );
     inputArray.forEach((title, index) => {
-      if (title === remove) {
+      if (title === removeTitle) {
         if (formPrompt === 2) {
-          setValue(`tracks.${index}.title`, `ass`);
+          console.log(`tracks.${index}.title`);
         } else {
-          setValue(`parameters.${index + 1}`, `ass`);
+          console.log(`parameters.${index + 1}`);
         }
       }
     });
