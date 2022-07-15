@@ -42,6 +42,11 @@ export const NewModalContent = () => {
   };
 
   useEffect(() => {
+    console.log(inputArray);
+    console.log(sessionData);
+  }, [inputArray, sessionData]);
+
+  useEffect(() => {
     formPrompt === 4 && setStartNewSession(true);
   }, [formPrompt, sessionData]);
 
