@@ -1,4 +1,4 @@
-import { Box, TextField, IconButton, Divider } from "@mui/material";
+import { Box, TextField, IconButton } from "@mui/material";
 import AddCircleIcon from "@mui/icons-material/AddCircle";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import { NewModalContentList } from "./NewModalContentList";
@@ -38,24 +38,18 @@ export const NewModalContentListForm = ({
           <IconButton onClick={addTrackOrParameter} type="submit" disableRipple>
             <AddCircleIcon sx={{ mr: "0.75vw" }} />
           </IconButton>
-          <Divider
-            sx={{ height: "2.5vw", m: "0.25vw" }}
-            orientation="vertical"
-          />
-          <IconButton
-            onClick={handleSubmit(onSubmitList)}
-            disableRipple
-            sx={{ ml: "0.75vw" }}
-          >
-            <CheckCircleIcon />
-          </IconButton>
         </Box>
-      </Box>
-      <Box>
         <NewModalContentList
           data={inputArray}
           onClick={(title) => onRemoveTrackOrParameter(title)}
         />
+        <IconButton
+          onClick={handleSubmit(onSubmitList)}
+          disableRipple
+          sx={{ ml: "0.75vw" }}
+        >
+          <CheckCircleIcon />
+        </IconButton>
       </Box>
     </>
   );
