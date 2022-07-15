@@ -54,7 +54,7 @@ export const NewModalContentListForm = ({
       <Box>
         <NewModalContentList
           data={inputArray}
-          onSubmit={(title) => onRemoveTrackOrParameter(title)}
+          onClick={(title) => onRemoveTrackOrParameter(title)}
         />
       </Box>
     </>
