@@ -8,6 +8,7 @@ import { modalCenteredSx, newSessionModal } from "../../assets/theme";
 export const NewModalContentListForm = ({
   handleSubmit,
   addTrackOrParameter,
+  addParameterList,
   onSubmitTrackOrParameter,
   onRemoveTrackOrParameter,
   onSubmitForm,
@@ -33,7 +34,7 @@ export const NewModalContentListForm = ({
             <>
               Enter or select the <b>session elements</b> you wish to include in
               the {sessionData.id} session.
-              <ParameterList />
+              <ParameterList addParameterList={addParameterList} />
             </>
           )}
         </Box>
