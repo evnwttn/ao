@@ -89,6 +89,10 @@ export const NewModalContent = () => {
     textInput.current.value = "";
   };
 
+  const addParameterList = (title) => {
+    console.log(title);
+  };
+
   const onRemoveTrackOrParameter = (title) => {
     setInputArray((inputArray) =>
       inputArray.filter((titles) => titles !== title)
@@ -107,6 +111,7 @@ export const NewModalContent = () => {
     <NewModalContentListForm
       handleSubmit={handleSubmit}
       addTrackOrParameter={addTrackOrParameter}
+      addParameterList={addParameterList}
       onSubmitTrackOrParameter={onSubmitTrackOrParameter}
       onRemoveTrackOrParameter={onRemoveTrackOrParameter}
       onSubmitForm={onSubmitForm}
