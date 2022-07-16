@@ -1,6 +1,6 @@
 import { Box, Button } from "@mui/material";
 
-export const ParameterList = () => {
+export const ParameterList = ({ addParameterList }) => {
   const parameters = [
     "Vocals",
     "Bass",
@@ -25,7 +25,7 @@ export const ParameterList = () => {
           <Button
             key={parameter}
             variant="outlined"
-            onClick={() => console.log(parameter)}
+            onClick={() => addParameterList(parameter)}
             disableRipple
           >
             {parameter}
