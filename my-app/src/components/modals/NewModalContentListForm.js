@@ -39,7 +39,7 @@ export const NewModalContentListForm = ({
         </Box>
         <Box sx={newSessionModal.field}>
           <TextField
-            sx={{ ml: "8.25vw", width: "19.5vw" }}
+            sx={{ ml: "8vw", width: "19.5vw" }}
             variant="standard"
             margin="normal"
             autoComplete="off"
