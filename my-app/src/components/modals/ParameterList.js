@@ -7,12 +7,15 @@ export const ParameterList = () => {
     "Rhythm Guitar",
     "Lead Guitar",
     "Drums",
+    "Percussion",
     "Piano",
     "Synth",
     "Strings",
+    "Sax",
     "FX",
     "Mix",
     "Master",
+    "Artwork",
   ];
 
   return (
