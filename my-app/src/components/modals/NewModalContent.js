@@ -95,6 +95,10 @@ export const NewModalContent = () => {
     } else {
       alert(`Maximum Number of Elements Reached`);
     }
+
+    setInputArray((inputArray) =>
+      inputArray.filter((input, index, array) => array.indexOf(input) === index)
+    );
   };
 
   const onRemoveTrackOrParameter = (title) => {
