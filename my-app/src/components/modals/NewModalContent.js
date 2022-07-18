@@ -29,14 +29,6 @@ export const NewModalContent = () => {
   const onSubmitForm = (data) => {
     setSessionData({ ...data });
     switch (formPrompt) {
-      case 0: // session author
-        textInput.current.value && setFormPrompt(formPrompt + 1);
-        textInput.current.value = "";
-        break;
-      case 1: // session title
-        textInput.current.value && setFormPrompt(formPrompt + 1);
-        textInput.current.value = "";
-        break;
       case 2: // track titles
         setInputArray((previousArray) =>
           previousArray.filter((previousInput) => previousInput === "title")
