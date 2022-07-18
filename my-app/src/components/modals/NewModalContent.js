@@ -90,7 +90,9 @@ export const NewModalContent = () => {
   };
 
   const addParameterList = (title) => {
-    console.log(title);
+    if (inputArray.length <= 10) {
+      setInputArray((inputArray) => [...inputArray, title]);
+    }
   };
 
   const onRemoveTrackOrParameter = (title) => {
