@@ -16,20 +16,27 @@ export const NewModalContent = () => {
     },
   });
 
-  const onSubmitAuthorOrId = (data) => {
+  const onSubmitSessionData = (data) => {
     setSessionData({ ...data });
+  };
+
+  const onSubmitTrackOrParameter = () => {
+    inputArray.forEach((title, index) => {
+      formPrompt === 2
+        ? setValue(`tracks.${index}.title`, title)
+        : title !== "title" && setValue(`parameters.${index + 1}`, title);
+    });
   };
 
   useEffect(() => {
     if (formPrompt <= 1) {
       sessionData && textInput.current.value && setFormPrompt(formPrompt + 1);
       textInput.current.value = "";
-    }
-
-    if (formPrompt === 4) {
+    } else if (formPrompt === 4) {
       setStartNewSession(true);
+    } else {
+      inputArray.length && setFormPrompt(formPrompt + 1);
     }
-
     console.log(sessionData);
   }, [sessionData, formPrompt]);
 
@@ -37,9 +44,9 @@ export const NewModalContent = () => {
     setSessionData({ ...data });
     switch (formPrompt) {
       case 2: // track titles
-        setInputArray((previousArray) =>
-          previousArray.filter((previousInput) => previousInput === "title")
-        );
+        // setInputArray((previousArray) =>
+        //   previousArray.filter((previousInput) => previousInput === "title")
+        // );
         inputArray.length && setFormPrompt(formPrompt + 1);
         break;
       case 3: // parameter titles
@@ -48,14 +55,6 @@ export const NewModalContent = () => {
       default:
         textInput.current.value = "";
     }
-  };
-
-  const onSubmitTrackOrParameter = () => {
-    inputArray.forEach((title, index) => {
-      formPrompt === 2
-        ? setValue(`tracks.${index}.title`, title)
-        : setValue(`parameters.${index + 1}`, title);
-    });
   };
 
   const addTrackOrParameter = () => {
@@ -115,7 +114,7 @@ export const NewModalContent = () => {
   return formPrompt <= 1 ? (
     <NewModalContentTextfieldForm
       handleSubmit={handleSubmit}
-      onSubmitForm={onSubmitAuthorOrId}
+      onSubmitForm={onSubmitSessionData}
       textInput={textInput}
       formPrompt={formPrompt}
       register={register}
