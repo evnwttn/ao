@@ -89,6 +89,10 @@ export const NewModalContent = () => {
     textInput.current.value = "";
   };
 
+  useEffect(() => {
+    console.log(inputArray);
+  }, [inputArray]);
+
   const addParameterList = (title) => {
     if (inputArray.length <= 10) {
       setInputArray((inputArray) => [...inputArray, title]);
