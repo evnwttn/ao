@@ -21,8 +21,11 @@ export const NewModalContent = () => {
   };
 
   useEffect(() => {
-    sessionData && textInput.current.value && setFormPrompt(formPrompt + 1);
-    textInput.current.value = "";
+    if (formPrompt <= 1) {
+      sessionData && textInput.current.value && setFormPrompt(formPrompt + 1);
+      textInput.current.value = "";
+    }
+
     console.log(sessionData);
   }, [sessionData, formPrompt]);
 
