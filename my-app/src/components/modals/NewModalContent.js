@@ -73,7 +73,7 @@ export const NewModalContent = () => {
               textInput.current.value,
             ]);
           } else {
-            alert(`Maximum Number of Parameters Reached`);
+            alert(`Maximum Number of Elements Reached`);
           }
           break;
         default:
@@ -89,13 +89,11 @@ export const NewModalContent = () => {
     textInput.current.value = "";
   };
 
-  useEffect(() => {
-    console.log(inputArray);
-  }, [inputArray]);
-
   const addParameterList = (title) => {
     if (inputArray.length <= 10) {
       setInputArray((inputArray) => [...inputArray, title]);
+    } else {
+      alert(`Maximum Number of Elements Reached`);
     }
   };
 
