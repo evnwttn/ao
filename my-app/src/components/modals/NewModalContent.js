@@ -26,6 +26,10 @@ export const NewModalContent = () => {
       textInput.current.value = "";
     }
 
+    if (formPrompt === 4) {
+      setStartNewSession(true);
+    }
+
     console.log(sessionData);
   }, [sessionData, formPrompt]);
 
@@ -45,10 +49,6 @@ export const NewModalContent = () => {
         textInput.current.value = "";
     }
   };
-
-  useEffect(() => {
-    formPrompt === 4 && setStartNewSession(true);
-  }, [formPrompt, sessionData]);
 
   const onSubmitTrackOrParameter = () => {
     inputArray.forEach((title, index) => {
