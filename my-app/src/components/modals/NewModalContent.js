@@ -16,6 +16,16 @@ export const NewModalContent = () => {
     },
   });
 
+  const onSubmitAuthorOrId = (data) => {
+    setSessionData({ ...data });
+  };
+
+  useEffect(() => {
+    sessionData && textInput.current.value && setFormPrompt(formPrompt + 1);
+    textInput.current.value = "";
+    console.log(sessionData);
+  }, [sessionData, formPrompt]);
+
   const onSubmitForm = (data) => {
     setSessionData({ ...data });
     switch (formPrompt) {
@@ -110,7 +120,7 @@ export const NewModalContent = () => {
   return formPrompt <= 1 ? (
     <NewModalContentTextfieldForm
       handleSubmit={handleSubmit}
-      onSubmitForm={onSubmitForm}
+      onSubmitForm={onSubmitAuthorOrId}
       textInput={textInput}
       formPrompt={formPrompt}
       register={register}
