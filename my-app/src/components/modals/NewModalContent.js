@@ -4,6 +4,10 @@ import { useForm } from "react-hook-form";
 import { NewModalContentTextfieldForm } from "./NewModalContentTextfieldForm";
 import { NewModalContentListForm } from "./NewModalContentListForm";
 
+const ModalRejig = () => {
+  return <></>;
+};
+
 export const NewModalContent = () => {
   const [sessionData, setSessionData] = useState();
   const [startNewSession, setStartNewSession] = useState(false);
