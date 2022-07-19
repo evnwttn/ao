@@ -72,19 +72,18 @@ export const NewModalContentListForm = ({
 
 export const overhaulContentListForm = ({
   handleSubmit,
-  addTrackOrParameter,
-  addParameterList,
-  onSubmitTrackOrParameter,
-  onRemoveTrackOrParameter,
-  onSubmitForm,
   formPrompt,
   sessionData,
   textInput,
   inputArray,
+  addTrackOrParameter,
+  addParameterList,
+  onRemoveTrackOrParameter,
+  onSubmitForm,
 }) => {
   return (
     <>
-      <Box sx={modalCenteredSx}>
+      <Box sx={modalCenteredSx} onSubmit={handleSubmit(onSubmitForm)}>
         <Box sx={newSessionModal.text}>
           {formPrompt === 2 ? (
             <>
@@ -107,7 +106,7 @@ export const overhaulContentListForm = ({
             autoComplete="off"
             inputRef={textInput}
           />
-          <IconButton disableRipple>
+          <IconButton onClick={addTrackOrParameter} disableRipple>
             <AddCircleIcon sx={{ mr: "0.75vw" }} />
           </IconButton>
         </Box>
