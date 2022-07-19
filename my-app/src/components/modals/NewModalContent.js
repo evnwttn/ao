@@ -5,6 +5,17 @@ import { NewModalContentTextfieldForm } from "./NewModalContentTextfieldForm";
 import { NewModalContentListForm } from "./NewModalContentListForm";
 
 const ModalRejig = () => {
+  const [sessionData, setSessionData] = useState();
+  const [startNewSession, setStartNewSession] = useState(false);
+  const [formId, setFormId] = useState(`session-author`);
+  const [formArray, setFormArray] = useState([]);
+  const textInput = React.useRef(null);
+  const { register, handleSubmit, setValue } = useForm({
+    defaultValues: {
+      parameters: ["title"],
+    },
+  });
+
   return <></>;
 };
 
