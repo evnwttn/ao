@@ -4,21 +4,6 @@ import { useForm } from "react-hook-form";
 import { NewModalContentTextfieldForm } from "./NewModalContentTextfieldForm";
 import { NewModalContentListForm } from "./NewModalContentListForm";
 
-const ModalRejig = () => {
-  const [sessionData, setSessionData] = useState();
-  const [startNewSession, setStartNewSession] = useState(false);
-  const [formId, setFormId] = useState(`session-author`);
-  const [formArray, setFormArray] = useState([]);
-  const textInput = React.useRef(null);
-  const { register, handleSubmit, setValue } = useForm({
-    defaultValues: {
-      parameters: ["title"],
-    },
-  });
-
-  return <></>;
-};
-
 export const NewModalContent = () => {
   const [sessionData, setSessionData] = useState();
   const [startNewSession, setStartNewSession] = useState(false);
@@ -40,7 +25,9 @@ export const NewModalContent = () => {
       sessionData && textInput.current.value && setFormPrompt(formPrompt + 1);
       textInput.current.value = "";
     }
-
+    if (formPrompt === 2 || 3) {
+      console.log("yo");
+    }
     if (formPrompt === 4) {
       setStartNewSession(true);
     }
@@ -48,8 +35,7 @@ export const NewModalContent = () => {
     console.log(sessionData);
   }, [sessionData, formPrompt]);
 
-  const onSubmitForm = (data) => {
-    setSessionData({ ...data });
+  const onSubmitForm = () => {
     switch (formPrompt) {
       case 2: // track titles
         setInputArray((previousArray) =>
