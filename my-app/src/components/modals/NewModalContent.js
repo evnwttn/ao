@@ -144,3 +144,49 @@ export const NewModalContent = () => {
     )
   );
 };
+
+export const Demo = () => {
+  const [sessionData, setSessionData] = useState();
+  const [startNewSession, setStartNewSession] = useState(false);
+  const [formPrompt, setFormPrompt] = useState(0);
+  const [inputArray, setInputArray] = useState([]);
+  const textInput = React.useRef(null);
+  const { register, handleSubmit, setValue } = useForm({
+    defaultValues: {
+      parameters: ["title"],
+    },
+  });
+
+  return <></>;
+
+  // return formPrompt <= 1 ? (
+  //   <NewModalContentTextfieldForm
+  //     handleSubmit={handleSubmit}
+  //     onSubmitForm={onSubmitSessionData}
+  //     textInput={textInput}
+  //     formPrompt={formPrompt}
+  //     register={register}
+  //   />
+  // ) : formPrompt <= 3 ? (
+  //   <NewModalContentListForm
+  //     handleSubmit={handleSubmit}
+  //     addTrackOrParameter={addTrackOrParameter}
+  //     addParameterList={addParameterList}
+  //     onSubmitTrackOrParameter={onSubmitTrackOrParameter}
+  //     onRemoveTrackOrParameter={onRemoveTrackOrParameter}
+  //     onSubmitForm={onSubmitForm}
+  //     formPrompt={formPrompt}
+  //     sessionData={sessionData}
+  //     textInput={textInput}
+  //     inputArray={inputArray}
+  //   />
+  // ) : (
+  //   startNewSession && (
+  //     <Navigate
+  //       to="/aogrid"
+  //       state={{ from: "new", data: sessionData }}
+  //       replace={true}
+  //     />
+  //   )
+  // );
+};
