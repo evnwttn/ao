@@ -10,6 +10,7 @@ export const NewModalContentListForm = ({
   addInputArray,
   removeInputArray,
   addParameterList,
+  setValue,
   formPrompt,
   sessionData,
   textInput,
@@ -52,7 +53,13 @@ export const NewModalContentListForm = ({
         />
         {inputArray.length > 0 && (
           <IconButton
-            onClick={() => console.log("yo")}
+            onClick={() =>
+              inputArray.forEach((title, index) => {
+                formPrompt === 2
+                  ? setValue(`tracks.${index}.title`, title)
+                  : setValue(`parameters.${index + 1}`, title);
+              })
+            }
             disableRipple
             sx={{ ml: "0.75vw" }}
           >

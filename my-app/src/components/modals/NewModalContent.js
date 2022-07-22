@@ -16,10 +16,8 @@ export const NewModalContent = () => {
     },
   });
 
-  const onSubmitSessionData = (data) => {
-    if (formPrompt <= 1) {
-      setSessionData({ ...data });
-    }
+  const submitSessionData = (data) => {
+    setSessionData({ ...data });
   };
 
   useEffect(() => {
@@ -49,7 +47,7 @@ export const NewModalContent = () => {
         if (inputArray.length <= 10) {
           setInputArray((inputArray) => [...inputArray, textField]);
         } else {
-          alert(`Maximum Number of Parameters Reached`);
+          alert(`Maximum Number of Elements Reached`);
         }
         break;
       default:
@@ -67,23 +65,27 @@ export const NewModalContent = () => {
     checkDuplicates();
   }, [inputArray.length]);
 
-  useEffect(() => {
-    console.log(inputArray);
-    console.log(sessionData);
-  }, [inputArray, sessionData]);
-
   const checkDuplicates = (inputArray) => {
     setInputArray((inputArray) =>
       inputArray.filter((input, index, array) => array.indexOf(input) === index)
     );
   };
 
+  useEffect(() => {
+    checkDuplicates();
+    textInput.current.value = "";
+  }, [inputArray.length]);
+
+  useEffect(() => {
+    console.log(inputArray);
+  }, [inputArray]);
+
   // const onSubmitTrackOrParameter = () => {
-  //   inputArray.forEach((title, index) => {
-  //     formPrompt === 2
-  //       ? setValue(`tracks.${index}.title`, title)
-  //       : setValue(`parameters.${index + 1}`, title);
-  //   });
+  // inputArray.forEach((title, index) => {
+  //   formPrompt === 2
+  //     ? setValue(`tracks.${index}.title`, title)
+  //     : setValue(`parameters.${index + 1}`, title);
+  // });
   // };
 
   // const addTrackOrParameter = () => {
@@ -147,16 +149,12 @@ export const NewModalContent = () => {
     } else {
       alert(`Maximum Number of Elements Reached`);
     }
-
-    setInputArray((inputArray) =>
-      inputArray.filter((input, index, array) => array.indexOf(input) === index)
-    );
   };
 
   return formPrompt <= 1 ? (
     <NewModalContentTextfieldForm
       handleSubmit={handleSubmit}
-      onSubmitForm={onSubmitSessionData}
+      onSubmitForm={submitSessionData}
       textInput={textInput}
       formPrompt={formPrompt}
       register={register}
@@ -167,6 +165,7 @@ export const NewModalContent = () => {
       addInputArray={addInputArray}
       removeInputArray={removeInputArray}
       addParameterList={addParameterList}
+      setValue={setValue}
       formPrompt={formPrompt}
       sessionData={sessionData}
       textInput={textInput}
