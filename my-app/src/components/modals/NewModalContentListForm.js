@@ -22,8 +22,8 @@ export const NewModalContentListForm = ({
     <>
       <Box
         sx={modalCenteredSx}
-        component="form"
-        onSubmit={handleSubmit(onSubmitTrackOrParameter)}
+        // component="form"
+        // onSubmit={handleSubmit(onSubmitTrackOrParameter)}
       >
         <Box sx={newSessionModal.text}>
           {formPrompt === 2 ? (
@@ -47,7 +47,11 @@ export const NewModalContentListForm = ({
             autoComplete="off"
             inputRef={textInput}
           />
-          <IconButton type="submit" onClick={addTrackOrParameter} disableRipple>
+          <IconButton
+            // type="submit"
+            onClick={addTrackOrParameter}
+            disableRipple
+          >
             <AddCircleIcon sx={{ mr: "0.75vw" }} />
           </IconButton>
         </Box>
@@ -59,7 +63,7 @@ export const NewModalContentListForm = ({
         />
         {inputArray.length > 0 && (
           <IconButton
-            onClick={handleSubmit(onSubmitSessionData)}
+            // onClick={handleSubmit(onSubmitSessionData)}
             disableRipple
             sx={{ ml: "0.75vw" }}
           >

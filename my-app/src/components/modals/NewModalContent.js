@@ -17,7 +17,11 @@ export const NewModalContent = () => {
   });
 
   const onSubmitSessionData = (data) => {
-    setSessionData({ ...data });
+    if (formPrompt <= 1) {
+      setSessionData({ ...data });
+    } else if (formPrompt >= 2) {
+      inputArray.length && setSessionData({ ...data });
+    }
   };
 
   useEffect(() => {
@@ -25,12 +29,21 @@ export const NewModalContent = () => {
       sessionData && textInput.current.value && setFormPrompt(formPrompt + 1);
       textInput.current.value = "";
     }
+    // if (formPrompt === 2) {
+    //   inputArray.length && setFormPrompt(formPrompt + 1);
+    //   textInput.current.value = "";
+    // }
+    // if (formPrompt === 3) {
+    //   inputArray.length && setFormPrompt(formPrompt + 1);
+    //   textInput.current.value = "";
+    // }
     if (formPrompt === 4) {
       setStartNewSession(true);
+      textInput.current.value = "";
     }
 
     console.log(sessionData);
-  }, [sessionData, formPrompt]);
+  }, [sessionData, formPrompt, inputArray.length]);
 
   // const onSubmitForm = (data) => {
   //   switch (formPrompt) {
@@ -50,7 +63,6 @@ export const NewModalContent = () => {
   // };
 
   const onSubmitTrackOrParameter = () => {
-    console.log(`i am the onsubmit on line 26`);
     inputArray.forEach((title, index) => {
       formPrompt === 2
         ? setValue(`tracks.${index}.title`, title)
@@ -59,46 +71,74 @@ export const NewModalContent = () => {
   };
 
   const addTrackOrParameter = () => {
-    console.log(`i am the onclick on line 52`);
-    if (textInput.current.value) {
-      switch (formPrompt) {
-        case 2:
-          if (inputArray.length <= 11) {
-            setInputArray((inputArray) => [
-              ...inputArray,
-              textInput.current.value,
-            ]);
-            setInputArray((previousArray) =>
-              previousArray.filter((previousInput) => previousInput === "title")
-            );
-            inputArray.length && setFormPrompt(formPrompt + 1);
-          } else {
-            alert(`Maximum Number of Tracks Reached`);
-          }
-          break;
-        case 3:
-          if (inputArray.length <= 10) {
-            setInputArray((inputArray) => [
-              ...inputArray,
-              textInput.current.value,
-            ]);
-            inputArray.length && setFormPrompt(formPrompt + 1);
-          } else {
-            alert(`Maximum Number of Elements Reached`);
-          }
-          break;
-        default:
-          alert(`Invald Title`);
-      }
-    } else {
-      alert(`Please enter a valid title`);
+    let textField = textInput.current.value;
+    switch (formPrompt) {
+      case 2:
+        if (inputArray.length <= 11) {
+          setInputArray((inputArray) => [...inputArray, textField]);
+        } else {
+          alert(`Maximum Number of Tracks Reached`);
+        }
+        break;
+      case 3:
+        if (inputArray.length <= 10) {
+          setInputArray((inputArray) => [...inputArray, textField]);
+        } else {
+          alert(`Maximum Number of Parameters Reached`);
+        }
+        break;
+      default:
+        alert(`Invalid title`);
     }
+  };
 
+  const checkDuplicates = (inputArray) => {
     setInputArray((inputArray) =>
       inputArray.filter((input, index, array) => array.indexOf(input) === index)
     );
-    // textInput.current.value = "";
   };
+
+  useEffect(() => {
+    checkDuplicates();
+  }, [inputArray.length]);
+
+  // const addTrackOrParameter = () => {
+  //   if (textInput.current.value) {
+  //     switch (formPrompt) {
+  //       case 2:
+  //         if (inputArray.length <= 11) {
+  //           setInputArray((inputArray) => [
+  //             ...inputArray,
+  //             textInput.current.value,
+  //           ]);
+  //           setInputArray((previousArray) =>
+  //             previousArray.filter((previousInput) => previousInput === "title")
+  //           );
+  //         } else {
+  //           alert(`Maximum Number of Tracks Reached`);
+  //         }
+  //         break;
+  //       case 3:
+  //         if (inputArray.length <= 10) {
+  //           setInputArray((inputArray) => [
+  //             ...inputArray,
+  //             textInput.current.value,
+  //           ]);
+  //         } else {
+  //           alert(`Maximum Number of Elements Reached`);
+  //         }
+  //         break;
+  //       default:
+  //         alert(`Invald Title`);
+  //     }
+  //   } else {
+  //     alert(`Please enter a valid title`);
+  //   }
+
+  // setInputArray((inputArray) =>
+  //   inputArray.filter((input, index, array) => array.indexOf(input) === index)
+  // );
+  // };
 
   const addParameterList = (title) => {
     if (inputArray.length <= 10) {
