@@ -25,9 +25,6 @@ export const NewModalContent = () => {
       sessionData && textInput.current.value && setFormPrompt(formPrompt + 1);
       textInput.current.value = "";
     }
-    if (formPrompt === 2 || 3) {
-      console.log("yo");
-    }
     if (formPrompt === 4) {
       setStartNewSession(true);
     }
@@ -35,7 +32,7 @@ export const NewModalContent = () => {
     console.log(sessionData);
   }, [sessionData, formPrompt]);
 
-  const onSubmitForm = () => {
+  const onSubmitForm = (data) => {
     switch (formPrompt) {
       case 2: // track titles
         setInputArray((previousArray) =>
@@ -49,6 +46,7 @@ export const NewModalContent = () => {
       default:
         textInput.current.value = "";
     }
+    onSubmitSessionData(data);
   };
 
   const onSubmitTrackOrParameter = () => {
@@ -143,50 +141,4 @@ export const NewModalContent = () => {
       />
     )
   );
-};
-
-export const Demo = () => {
-  const [sessionData, setSessionData] = useState();
-  const [startNewSession, setStartNewSession] = useState(false);
-  const [formPrompt, setFormPrompt] = useState(0);
-  const [inputArray, setInputArray] = useState([]);
-  const textInput = React.useRef(null);
-  const { register, handleSubmit, setValue } = useForm({
-    defaultValues: {
-      parameters: ["title"],
-    },
-  });
-
-  return <></>;
-
-  // return formPrompt <= 1 ? (
-  //   <NewModalContentTextfieldForm
-  //     handleSubmit={handleSubmit}
-  //     onSubmitForm={onSubmitSessionData}
-  //     textInput={textInput}
-  //     formPrompt={formPrompt}
-  //     register={register}
-  //   />
-  // ) : formPrompt <= 3 ? (
-  //   <NewModalContentListForm
-  //     handleSubmit={handleSubmit}
-  //     addTrackOrParameter={addTrackOrParameter}
-  //     addParameterList={addParameterList}
-  //     onSubmitTrackOrParameter={onSubmitTrackOrParameter}
-  //     onRemoveTrackOrParameter={onRemoveTrackOrParameter}
-  //     onSubmitForm={onSubmitForm}
-  //     formPrompt={formPrompt}
-  //     sessionData={sessionData}
-  //     textInput={textInput}
-  //     inputArray={inputArray}
-  //   />
-  // ) : (
-  //   startNewSession && (
-  //     <Navigate
-  //       to="/aogrid"
-  //       state={{ from: "new", data: sessionData }}
-  //       replace={true}
-  //     />
-  //   )
-  // );
 };
