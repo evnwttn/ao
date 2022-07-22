@@ -9,6 +9,7 @@ export const NewModalContentListForm = ({
   handleSubmit,
   addTrackOrParameter,
   addParameterList,
+  onSubmitSessionData,
   onSubmitTrackOrParameter,
   onRemoveTrackOrParameter,
   onSubmitForm,
@@ -58,7 +59,7 @@ export const NewModalContentListForm = ({
         />
         {inputArray.length > 0 && (
           <IconButton
-            onClick={handleSubmit(onSubmitForm)}
+            onClick={handleSubmit(onSubmitSessionData)}
             disableRipple
             sx={{ ml: "0.75vw" }}
           >

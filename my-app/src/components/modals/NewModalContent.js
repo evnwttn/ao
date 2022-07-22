@@ -32,24 +32,25 @@ export const NewModalContent = () => {
     console.log(sessionData);
   }, [sessionData, formPrompt]);
 
-  const onSubmitForm = (data) => {
-    switch (formPrompt) {
-      case 2: // track titles
-        setInputArray((previousArray) =>
-          previousArray.filter((previousInput) => previousInput === "title")
-        );
-        inputArray.length && setFormPrompt(formPrompt + 1);
-        break;
-      case 3: // parameter titles
-        inputArray.length && setFormPrompt(formPrompt + 1);
-        break;
-      default:
-        textInput.current.value = "";
-    }
-    onSubmitSessionData(data);
-  };
+  // const onSubmitForm = (data) => {
+  //   switch (formPrompt) {
+  //     case 2: // track titles
+  //       setInputArray((previousArray) =>
+  //         previousArray.filter((previousInput) => previousInput === "title")
+  //       );
+  //       inputArray.length && setFormPrompt(formPrompt + 1);
+  //       break;
+  //     case 3: // parameter titles
+  //       inputArray.length && setFormPrompt(formPrompt + 1);
+  //       break;
+  //     default:
+  //       textInput.current.value = "";
+  //   }
+  //   onSubmitSessionData(data);
+  // };
 
   const onSubmitTrackOrParameter = () => {
+    console.log(`i am the onsubmit on line 26`);
     inputArray.forEach((title, index) => {
       formPrompt === 2
         ? setValue(`tracks.${index}.title`, title)
@@ -58,6 +59,7 @@ export const NewModalContent = () => {
   };
 
   const addTrackOrParameter = () => {
+    console.log(`i am the onclick on line 52`);
     if (textInput.current.value) {
       switch (formPrompt) {
         case 2:
@@ -66,6 +68,10 @@ export const NewModalContent = () => {
               ...inputArray,
               textInput.current.value,
             ]);
+            setInputArray((previousArray) =>
+              previousArray.filter((previousInput) => previousInput === "title")
+            );
+            inputArray.length && setFormPrompt(formPrompt + 1);
           } else {
             alert(`Maximum Number of Tracks Reached`);
           }
@@ -76,6 +82,7 @@ export const NewModalContent = () => {
               ...inputArray,
               textInput.current.value,
             ]);
+            inputArray.length && setFormPrompt(formPrompt + 1);
           } else {
             alert(`Maximum Number of Elements Reached`);
           }
@@ -90,7 +97,7 @@ export const NewModalContent = () => {
     setInputArray((inputArray) =>
       inputArray.filter((input, index, array) => array.indexOf(input) === index)
     );
-    textInput.current.value = "";
+    // textInput.current.value = "";
   };
 
   const addParameterList = (title) => {
@@ -124,9 +131,9 @@ export const NewModalContent = () => {
       handleSubmit={handleSubmit}
       addTrackOrParameter={addTrackOrParameter}
       addParameterList={addParameterList}
+      onSubmitSessionData={onSubmitSessionData}
       onSubmitTrackOrParameter={onSubmitTrackOrParameter}
       onRemoveTrackOrParameter={onRemoveTrackOrParameter}
-      onSubmitForm={onSubmitForm}
       formPrompt={formPrompt}
       sessionData={sessionData}
       textInput={textInput}
