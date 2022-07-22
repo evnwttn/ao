@@ -45,27 +45,27 @@ export const NewModalContentListForm = ({
             <AddCircleIcon sx={{ mr: "0.75vw" }} />
           </IconButton>
         </Box>
-      </Box>
-      <Box>
-        <NewModalContentList
-          data={inputArray}
-          onClick={(title) => removeInputArray(title)}
-        />
-        {inputArray.length > 0 && (
-          <IconButton
-            onClick={() =>
-              inputArray.forEach((title, index) => {
-                formPrompt === 2
-                  ? setValue(`tracks.${index}.title`, title)
-                  : setValue(`parameters.${index + 1}`, title);
-              })
-            }
-            disableRipple
-            sx={{ ml: "0.75vw" }}
-          >
-            <CheckCircleIcon />
-          </IconButton>
-        )}
+        <Box>
+          <NewModalContentList
+            data={inputArray}
+            onClick={(title) => removeInputArray(title)}
+          />
+          {inputArray.length > 0 && (
+            <IconButton
+              onClick={() =>
+                inputArray.forEach((title, index) => {
+                  formPrompt === 2
+                    ? setValue(`tracks.${index}.title`, title)
+                    : setValue(`parameters.${index + 1}`, title);
+                })
+              }
+              disableRipple
+              sx={{ ml: "0.75vw" }}
+            >
+              <CheckCircleIcon />
+            </IconButton>
+          )}
+        </Box>
       </Box>
     </>
   );

@@ -61,9 +61,13 @@ export const NewModalContent = () => {
     );
   };
 
-  useEffect(() => {
-    checkDuplicates();
-  }, [inputArray.length]);
+  const addParameterList = (title) => {
+    if (inputArray.length <= 10) {
+      setInputArray((inputArray) => [...inputArray, title]);
+    } else {
+      alert(`Maximum Number of Elements Reached`);
+    }
+  };
 
   const checkDuplicates = (inputArray) => {
     setInputArray((inputArray) =>
@@ -75,10 +79,6 @@ export const NewModalContent = () => {
     checkDuplicates();
     textInput.current.value = "";
   }, [inputArray.length]);
-
-  useEffect(() => {
-    console.log(inputArray);
-  }, [inputArray]);
 
   // const onSubmitTrackOrParameter = () => {
   // inputArray.forEach((title, index) => {
@@ -142,14 +142,6 @@ export const NewModalContent = () => {
   //   }
   //   onSubmitSessionData(data);
   // };
-
-  const addParameterList = (title) => {
-    if (inputArray.length <= 10) {
-      setInputArray((inputArray) => [...inputArray, title]);
-    } else {
-      alert(`Maximum Number of Elements Reached`);
-    }
-  };
 
   return formPrompt <= 1 ? (
     <NewModalContentTextfieldForm
