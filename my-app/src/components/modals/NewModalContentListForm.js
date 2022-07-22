@@ -8,11 +8,8 @@ import { modalCenteredSx, newSessionModal } from "../../assets/theme";
 export const NewModalContentListForm = ({
   handleSubmit,
   addTrackOrParameter,
-  addParameterList,
-  onSubmitSessionData,
-  onSubmitTrackOrParameter,
   onRemoveTrackOrParameter,
-  onSubmitForm,
+  addParameterList,
   formPrompt,
   sessionData,
   textInput,
@@ -20,11 +17,7 @@ export const NewModalContentListForm = ({
 }) => {
   return (
     <>
-      <Box
-        sx={modalCenteredSx}
-        // component="form"
-        // onSubmit={handleSubmit(onSubmitTrackOrParameter)}
-      >
+      <Box sx={modalCenteredSx}>
         <Box sx={newSessionModal.text}>
           {formPrompt === 2 ? (
             <>
@@ -47,11 +40,7 @@ export const NewModalContentListForm = ({
             autoComplete="off"
             inputRef={textInput}
           />
-          <IconButton
-            // type="submit"
-            onClick={addTrackOrParameter}
-            disableRipple
-          >
+          <IconButton onClick={addTrackOrParameter} disableRipple>
             <AddCircleIcon sx={{ mr: "0.75vw" }} />
           </IconButton>
         </Box>
@@ -62,11 +51,7 @@ export const NewModalContentListForm = ({
           onClick={(title) => onRemoveTrackOrParameter(title)}
         />
         {inputArray.length > 0 && (
-          <IconButton
-            // onClick={handleSubmit(onSubmitSessionData)}
-            disableRipple
-            sx={{ ml: "0.75vw" }}
-          >
+          <IconButton disableRipple sx={{ ml: "0.75vw" }}>
             <CheckCircleIcon />
           </IconButton>
         )}

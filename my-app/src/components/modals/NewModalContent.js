@@ -45,31 +45,6 @@ export const NewModalContent = () => {
     console.log(sessionData);
   }, [sessionData, formPrompt, inputArray.length]);
 
-  // const onSubmitForm = (data) => {
-  //   switch (formPrompt) {
-  //     case 2: // track titles
-  //       setInputArray((previousArray) =>
-  //         previousArray.filter((previousInput) => previousInput === "title")
-  //       );
-  //       inputArray.length && setFormPrompt(formPrompt + 1);
-  //       break;
-  //     case 3: // parameter titles
-  //       inputArray.length && setFormPrompt(formPrompt + 1);
-  //       break;
-  //     default:
-  //       textInput.current.value = "";
-  //   }
-  //   onSubmitSessionData(data);
-  // };
-
-  const onSubmitTrackOrParameter = () => {
-    inputArray.forEach((title, index) => {
-      formPrompt === 2
-        ? setValue(`tracks.${index}.title`, title)
-        : setValue(`parameters.${index + 1}`, title);
-    });
-  };
-
   const addTrackOrParameter = () => {
     let textField = textInput.current.value;
     switch (formPrompt) {
@@ -92,15 +67,29 @@ export const NewModalContent = () => {
     }
   };
 
+  useEffect(() => {
+    checkDuplicates();
+  }, [inputArray.length]);
+
+  const onRemoveTrackOrParameter = (title) => {
+    setInputArray((inputArray) =>
+      inputArray.filter((titles) => titles !== title)
+    );
+  };
+
   const checkDuplicates = (inputArray) => {
     setInputArray((inputArray) =>
       inputArray.filter((input, index, array) => array.indexOf(input) === index)
     );
   };
 
-  useEffect(() => {
-    checkDuplicates();
-  }, [inputArray.length]);
+  // const onSubmitTrackOrParameter = () => {
+  //   inputArray.forEach((title, index) => {
+  //     formPrompt === 2
+  //       ? setValue(`tracks.${index}.title`, title)
+  //       : setValue(`parameters.${index + 1}`, title);
+  //   });
+  // };
 
   // const addTrackOrParameter = () => {
   //   if (textInput.current.value) {
@@ -111,9 +100,9 @@ export const NewModalContent = () => {
   //             ...inputArray,
   //             textInput.current.value,
   //           ]);
-  //           setInputArray((previousArray) =>
-  //             previousArray.filter((previousInput) => previousInput === "title")
-  //           );
+  // setInputArray((previousArray) =>
+  //   previousArray.filter((previousInput) => previousInput === "title")
+  // );
   //         } else {
   //           alert(`Maximum Number of Tracks Reached`);
   //         }
@@ -140,6 +129,23 @@ export const NewModalContent = () => {
   // );
   // };
 
+  // const onSubmitForm = (data) => {
+  //   switch (formPrompt) {
+  //     case 2: // track titles
+  //       setInputArray((previousArray) =>
+  //         previousArray.filter((previousInput) => previousInput === "title")
+  //       );
+  //       inputArray.length && setFormPrompt(formPrompt + 1);
+  //       break;
+  //     case 3: // parameter titles
+  //       inputArray.length && setFormPrompt(formPrompt + 1);
+  //       break;
+  //     default:
+  //       textInput.current.value = "";
+  //   }
+  //   onSubmitSessionData(data);
+  // };
+
   const addParameterList = (title) => {
     if (inputArray.length <= 10) {
       setInputArray((inputArray) => [...inputArray, title]);
@@ -149,12 +155,6 @@ export const NewModalContent = () => {
 
     setInputArray((inputArray) =>
       inputArray.filter((input, index, array) => array.indexOf(input) === index)
-    );
-  };
-
-  const onRemoveTrackOrParameter = (title) => {
-    setInputArray((inputArray) =>
-      inputArray.filter((titles) => titles !== title)
     );
   };
 
@@ -171,8 +171,6 @@ export const NewModalContent = () => {
       handleSubmit={handleSubmit}
       addTrackOrParameter={addTrackOrParameter}
       addParameterList={addParameterList}
-      onSubmitSessionData={onSubmitSessionData}
-      onSubmitTrackOrParameter={onSubmitTrackOrParameter}
       onRemoveTrackOrParameter={onRemoveTrackOrParameter}
       formPrompt={formPrompt}
       sessionData={sessionData}
