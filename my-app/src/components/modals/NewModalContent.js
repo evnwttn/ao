@@ -27,21 +27,13 @@ export const NewModalContent = () => {
       sessionData && textInput.current.value && setFormPrompt(formPrompt + 1);
       textInput.current.value = "";
     }
-    // if (formPrompt === 2) {
-    //   inputArray.length && setFormPrompt(formPrompt + 1);
-    //   textInput.current.value = "";
-    // }
-    // if (formPrompt === 3) {
-    //   inputArray.length && setFormPrompt(formPrompt + 1);
-    //   textInput.current.value = "";
-    // }
     if (formPrompt === 4) {
       setStartNewSession(true);
       textInput.current.value = "";
     }
 
     console.log(sessionData);
-  }, [sessionData, formPrompt, inputArray.length]);
+  }, [sessionData, formPrompt]);
 
   const addInputArray = () => {
     let textField = textInput.current.value;
@@ -65,15 +57,20 @@ export const NewModalContent = () => {
     }
   };
 
-  useEffect(() => {
-    checkDuplicates();
-  }, [inputArray.length]);
-
   const removeInputArray = (title) => {
     setInputArray((inputArray) =>
       inputArray.filter((titles) => titles !== title)
     );
   };
+
+  useEffect(() => {
+    checkDuplicates();
+  }, [inputArray.length]);
+
+  useEffect(() => {
+    console.log(inputArray);
+    console.log(sessionData);
+  }, [inputArray, sessionData]);
 
   const checkDuplicates = (inputArray) => {
     setInputArray((inputArray) =>
