@@ -19,8 +19,6 @@ export const NewModalContent = () => {
   const onSubmitSessionData = (data) => {
     if (formPrompt <= 1) {
       setSessionData({ ...data });
-    } else if (formPrompt >= 2) {
-      inputArray.length && setSessionData({ ...data });
     }
   };
 
@@ -45,7 +43,7 @@ export const NewModalContent = () => {
     console.log(sessionData);
   }, [sessionData, formPrompt, inputArray.length]);
 
-  const addTrackOrParameter = () => {
+  const addInputArray = () => {
     let textField = textInput.current.value;
     switch (formPrompt) {
       case 2:
@@ -71,7 +69,7 @@ export const NewModalContent = () => {
     checkDuplicates();
   }, [inputArray.length]);
 
-  const onRemoveTrackOrParameter = (title) => {
+  const removeInputArray = (title) => {
     setInputArray((inputArray) =>
       inputArray.filter((titles) => titles !== title)
     );
@@ -169,9 +167,9 @@ export const NewModalContent = () => {
   ) : formPrompt <= 3 ? (
     <NewModalContentListForm
       handleSubmit={handleSubmit}
-      addTrackOrParameter={addTrackOrParameter}
+      addInputArray={addInputArray}
+      removeInputArray={removeInputArray}
       addParameterList={addParameterList}
-      onRemoveTrackOrParameter={onRemoveTrackOrParameter}
       formPrompt={formPrompt}
       sessionData={sessionData}
       textInput={textInput}

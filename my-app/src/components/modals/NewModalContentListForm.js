@@ -7,8 +7,8 @@ import { modalCenteredSx, newSessionModal } from "../../assets/theme";
 
 export const NewModalContentListForm = ({
   handleSubmit,
-  addTrackOrParameter,
-  onRemoveTrackOrParameter,
+  addInputArray,
+  removeInputArray,
   addParameterList,
   formPrompt,
   sessionData,
@@ -40,7 +40,7 @@ export const NewModalContentListForm = ({
             autoComplete="off"
             inputRef={textInput}
           />
-          <IconButton onClick={addTrackOrParameter} disableRipple>
+          <IconButton onClick={addInputArray} disableRipple>
             <AddCircleIcon sx={{ mr: "0.75vw" }} />
           </IconButton>
         </Box>
@@ -48,10 +48,14 @@ export const NewModalContentListForm = ({
       <Box>
         <NewModalContentList
           data={inputArray}
-          onClick={(title) => onRemoveTrackOrParameter(title)}
+          onClick={(title) => removeInputArray(title)}
         />
         {inputArray.length > 0 && (
-          <IconButton disableRipple sx={{ ml: "0.75vw" }}>
+          <IconButton
+            onClick={() => console.log("yo")}
+            disableRipple
+            sx={{ ml: "0.75vw" }}
+          >
             <CheckCircleIcon />
           </IconButton>
         )}
