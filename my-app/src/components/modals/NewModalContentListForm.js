@@ -6,11 +6,10 @@ import { ParameterList } from "./ParameterList";
 import { modalCenteredSx, newSessionModal } from "../../assets/theme";
 
 export const NewModalContentListForm = ({
-  handleSubmit,
   addInputArray,
   removeInputArray,
   addParameterList,
-  setValue,
+  submitInputArray,
   formPrompt,
   sessionData,
   textInput,
@@ -52,13 +51,7 @@ export const NewModalContentListForm = ({
           />
           {inputArray.length > 0 && (
             <IconButton
-              onClick={() =>
-                inputArray.forEach((title, index) => {
-                  formPrompt === 2
-                    ? setValue(`tracks.${index}.title`, title)
-                    : setValue(`parameters.${index + 1}`, title);
-                })
-              }
+              onClick={submitInputArray}
               disableRipple
               sx={{ ml: "0.75vw" }}
             >

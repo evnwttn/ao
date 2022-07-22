@@ -8,6 +8,7 @@ export const NewModalContent = () => {
   const [sessionData, setSessionData] = useState();
   const [startNewSession, setStartNewSession] = useState(false);
   const [formPrompt, setFormPrompt] = useState(0);
+  const [triggerSubmit, setTriggerSubmit] = useState(0);
   const [inputArray, setInputArray] = useState([]);
   const textInput = React.useRef(null);
   const { register, handleSubmit, setValue } = useForm({
@@ -69,7 +70,7 @@ export const NewModalContent = () => {
     }
   };
 
-  const checkDuplicates = (inputArray) => {
+  const checkDuplicates = () => {
     setInputArray((inputArray) =>
       inputArray.filter((input, index, array) => array.indexOf(input) === index)
     );
@@ -80,13 +81,20 @@ export const NewModalContent = () => {
     textInput.current.value = "";
   }, [inputArray.length]);
 
-  // const onSubmitTrackOrParameter = () => {
-  // inputArray.forEach((title, index) => {
-  //   formPrompt === 2
-  //     ? setValue(`tracks.${index}.title`, title)
-  //     : setValue(`parameters.${index + 1}`, title);
-  // });
-  // };
+  const submitInputArray = () => {
+    inputArray.forEach((title, index) => {
+      formPrompt === 2
+        ? setValue(`tracks.${index}.title`, title)
+        : setValue(`parameters.${index + 1}`, title);
+    });
+    setTriggerSubmit(triggerSubmit + 1);
+  };
+
+  useEffect(() => {
+    if (triggerSubmit >= 1) {
+      console.log(`submit ${triggerSubmit} times`);
+    }
+  }, [triggerSubmit]);
 
   // const addTrackOrParameter = () => {
   //   if (textInput.current.value) {
@@ -157,6 +165,7 @@ export const NewModalContent = () => {
       addInputArray={addInputArray}
       removeInputArray={removeInputArray}
       addParameterList={addParameterList}
+      submitInputArray={submitInputArray}
       setValue={setValue}
       formPrompt={formPrompt}
       sessionData={sessionData}
