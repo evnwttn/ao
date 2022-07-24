@@ -92,9 +92,9 @@ export const NewModalContent = () => {
 
   useEffect(() => {
     if (triggerSubmit >= 1) {
-      console.log(`submit ${triggerSubmit} times`);
+      handleSubmit((data) => console.log(data))();
     }
-  }, [triggerSubmit]);
+  }, [triggerSubmit, handleSubmit]);
 
   // const addTrackOrParameter = () => {
   //   if (textInput.current.value) {
