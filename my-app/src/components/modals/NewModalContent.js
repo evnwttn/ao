@@ -26,6 +26,10 @@ export const NewModalContent = () => {
       sessionData && textInput.current.value && setFormPrompt(formPrompt + 1);
       textInput.current.value = "";
     }
+    if (formPrompt === 2) {
+      sessionData.tracks && setFormPrompt(formPrompt + 1);
+      setInputArray([]);
+    }
     if (formPrompt === 4) {
       setStartNewSession(true);
       textInput.current.value = "";
@@ -92,7 +96,7 @@ export const NewModalContent = () => {
 
   useEffect(() => {
     if (triggerSubmit >= 1) {
-      handleSubmit((data) => console.log(data))();
+      handleSubmit((data) => submitSessionData(data))();
     }
   }, [triggerSubmit, handleSubmit]);
 
