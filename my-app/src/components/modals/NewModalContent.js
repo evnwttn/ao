@@ -17,27 +17,6 @@ export const NewModalContent = () => {
     },
   });
 
-  const submitSessionData = (data) => {
-    setSessionData({ ...data });
-  };
-
-  useEffect(() => {
-    if (formPrompt <= 1) {
-      sessionData && textInput.current.value && setFormPrompt(formPrompt + 1);
-      textInput.current.value = "";
-    }
-    if (formPrompt === 2) {
-      sessionData.tracks && setFormPrompt(formPrompt + 1);
-      setInputArray([]);
-    }
-    if (formPrompt === 3) {
-      sessionData.parameters.length > 1 && setFormPrompt(formPrompt + 1);
-    }
-    if (formPrompt === 4) {
-      setStartNewSession(true);
-    }
-  }, [sessionData, formPrompt]);
-
   const addInputArray = () => {
     let textField = textInput.current.value;
     switch (formPrompt) {
@@ -99,6 +78,27 @@ export const NewModalContent = () => {
       handleSubmit((data) => submitSessionData(data))();
     }
   }, [triggerSubmit, handleSubmit]);
+
+  const submitSessionData = (data) => {
+    setSessionData({ ...data });
+  };
+
+  useEffect(() => {
+    if (formPrompt <= 1) {
+      sessionData && textInput.current.value && setFormPrompt(formPrompt + 1);
+      textInput.current.value = "";
+    }
+    if (formPrompt === 2) {
+      sessionData.tracks && setFormPrompt(formPrompt + 1);
+      setInputArray([]);
+    }
+    if (formPrompt === 3) {
+      sessionData.parameters.length > 1 && setFormPrompt(formPrompt + 1);
+    }
+    if (formPrompt === 4) {
+      setStartNewSession(true);
+    }
+  }, [sessionData, formPrompt]);
 
   // const addTrackOrParameter = () => {
   //   if (textInput.current.value) {
