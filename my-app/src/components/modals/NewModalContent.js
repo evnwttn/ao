@@ -30,12 +30,12 @@ export const NewModalContent = () => {
       sessionData.tracks && setFormPrompt(formPrompt + 1);
       setInputArray([]);
     }
+    if (formPrompt === 3) {
+      sessionData.parameters.length > 1 && setFormPrompt(formPrompt + 1);
+    }
     if (formPrompt === 4) {
       setStartNewSession(true);
-      textInput.current.value = "";
     }
-
-    console.log(sessionData);
   }, [sessionData, formPrompt]);
 
   const addInputArray = () => {
