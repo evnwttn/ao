@@ -100,61 +100,6 @@ export const NewModalContent = () => {
     }
   }, [sessionData, formPrompt]);
 
-  // const addTrackOrParameter = () => {
-  //   if (textInput.current.value) {
-  //     switch (formPrompt) {
-  //       case 2:
-  //         if (inputArray.length <= 11) {
-  //           setInputArray((inputArray) => [
-  //             ...inputArray,
-  //             textInput.current.value,
-  //           ]);
-  // setInputArray((previousArray) =>
-  //   previousArray.filter((previousInput) => previousInput === "title")
-  // );
-  //         } else {
-  //           alert(`Maximum Number of Tracks Reached`);
-  //         }
-  //         break;
-  //       case 3:
-  //         if (inputArray.length <= 10) {
-  //           setInputArray((inputArray) => [
-  //             ...inputArray,
-  //             textInput.current.value,
-  //           ]);
-  //         } else {
-  //           alert(`Maximum Number of Elements Reached`);
-  //         }
-  //         break;
-  //       default:
-  //         alert(`Invald Title`);
-  //     }
-  //   } else {
-  //     alert(`Please enter a valid title`);
-  //   }
-
-  // setInputArray((inputArray) =>
-  //   inputArray.filter((input, index, array) => array.indexOf(input) === index)
-  // );
-  // };
-
-  // const onSubmitForm = (data) => {
-  //   switch (formPrompt) {
-  //     case 2: // track titles
-  //       setInputArray((previousArray) =>
-  //         previousArray.filter((previousInput) => previousInput === "title")
-  //       );
-  //       inputArray.length && setFormPrompt(formPrompt + 1);
-  //       break;
-  //     case 3: // parameter titles
-  //       inputArray.length && setFormPrompt(formPrompt + 1);
-  //       break;
-  //     default:
-  //       textInput.current.value = "";
-  //   }
-  //   onSubmitSessionData(data);
-  // };
-
   return formPrompt <= 1 ? (
     <NewModalContentTextfieldForm
       handleSubmit={handleSubmit}
