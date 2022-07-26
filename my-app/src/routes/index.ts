@@ -1,0 +1,1 @@
+export * as HomeRoute from './home';
