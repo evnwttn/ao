@@ -5,7 +5,7 @@ import * as express from 'express';
 import { logger } from './middleware';
 
 // Import route handlers
-import { HomeRoute } from './routes';
+import { HomeRoute, ContactRoute } from './routes';
 
 // Init express app
 const app = express.default();

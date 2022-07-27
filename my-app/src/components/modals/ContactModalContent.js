@@ -11,7 +11,7 @@ export const ContactModalContent = () => {
   const sendPost = () => {
     axios({
       method: "post",
-      url: "http://localhost:3005/",
+      url: "localhost:3005/contact",
       data: {
         secretMessage: "all your base are belong to us",
       },
