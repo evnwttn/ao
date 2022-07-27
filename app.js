@@ -36,5 +36,5 @@ app.use(middleware_1.logger);
 // Register route handlers
 app.get("/", routes_1.HomeRoute.handler);
 // Start our server and listen on port 3005
-app.listen(3005, () => console.log("yo"));
+app.listen(3005, () => console.log("holla"));
 //POST localhost:3005/contact
