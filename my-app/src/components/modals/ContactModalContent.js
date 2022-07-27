@@ -1,3 +1,4 @@
+import axios from "axios";
 import { useForm } from "react-hook-form";
 import { TextField, IconButton, Box } from "@mui/material";
 import SendIcon from "@mui/icons-material/Send";
@@ -7,11 +8,21 @@ export const ContactModalContent = () => {
   const { register, handleSubmit } = useForm();
   const onSubmit = (data) => console.log(data);
 
+  const sendPost = () => {
+    axios({
+      method: "post",
+      url: "http://localhost:3005/",
+      data: {
+        secretMessage: "all your base are belong to us",
+      },
+    });
+  };
+
   return (
     <Box
-      component="form"
+      // component="form"
       sx={modalCenteredSx}
-      onSubmit={handleSubmit(onSubmit)}
+      // onSubmit={handleSubmit(onSubmit)}
     >
       <TextField
         placeholder="Name"
@@ -34,7 +45,12 @@ export const ContactModalContent = () => {
         sx={{ width: "28vw" }}
         {...register("Message", {})}
       />
-      <IconButton disableRipple sx={{ cursor: "default" }} type="submit">
+      <IconButton
+        onClick={sendPost}
+        disableRipple
+        sx={{ cursor: "default" }}
+        // type="submit"
+      >
         <SendIcon
           sx={{
             ml: "25vw",
