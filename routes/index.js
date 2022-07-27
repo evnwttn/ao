@@ -23,5 +23,6 @@ var __importStar = (this && this.__importStar) || function (mod) {
     return result;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.HomeRoute = void 0;
+exports.ContactRoute = exports.HomeRoute = void 0;
 exports.HomeRoute = __importStar(require("./home"));
+exports.ContactRoute = __importStar(require("./contact"));
