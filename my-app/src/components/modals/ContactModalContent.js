@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-// import axios from "axios";
+import axios from "axios";
 import { useForm } from "react-hook-form";
 import { TextField, IconButton, Box } from "@mui/material";
 import SendIcon from "@mui/icons-material/Send";
@@ -11,18 +11,19 @@ export const ContactModalContent = () => {
   const onSubmit = (data) => setPostData({ ...data });
 
   useEffect(() => {
-    postData && console.log(postData);
-  }, [postData]);
+    const sendPost = () => {
+      axios
+        .post("http://localhost:3005/contact", { postData })
+        .then(function (response) {
+          console.log(response);
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
+    };
 
-  // const sendPost = () => {
-  //   axios({
-  //     method: "post",
-  //     url: "http://localhost:3005/contact",
-  //     data: {
-  //       secretMessage: "all your base are belong to us",
-  //     },
-  //   });
-  // };
+    postData && sendPost();
+  }, [postData]);
 
   return (
     <Box
