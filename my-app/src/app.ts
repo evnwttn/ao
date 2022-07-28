@@ -5,7 +5,7 @@ import * as express from 'express';
 import { logger } from './middleware';
 
 // Import route handlers
-import { HomeRoute, ContactRoute } from './routes';
+import { ContactRoute } from './routes';
 
 // Init express app
 const app = express.default();
@@ -14,7 +14,7 @@ const app = express.default();
 app.use(logger);
 
 // Register route handlers
-app.get("/", HomeRoute.handler);
+app.get("/contact", ContactRoute.handler);
 
 // Start our server and listen on port 3005
 app.listen(3005, () => console.log("holla"));

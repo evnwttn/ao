@@ -1,4 +1,4 @@
 //@ts-ignore
-export function contact(req) {
+export function handler(req) {
     console.log("contact");
 }
