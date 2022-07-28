@@ -5,16 +5,18 @@ import SendIcon from "@mui/icons-material/Send";
 import { modalCenteredSx } from "../../assets/theme";
 
 export const ContactModalContent = () => {
-  const { register, handleSubmit } = useForm();
-  const onSubmit = (data) => console.log(data);
+  // const { register, handleSubmit } = useForm();
+  // const onSubmit = (data) => console.log(data);
+
+  const { register } = useForm();
 
   const sendPost = () => {
     axios({
       method: "post",
-      url: "localhost:3005/contact",
-      data: {
-        secretMessage: "all your base are belong to us",
-      },
+      url: "http://localhost:3005/contact",
+      // data: {
+      //   secretMessage: "all your base are belong to us",
+      // },
     });
   };
 

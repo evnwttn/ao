@@ -1,4 +1,4 @@
 //@ts-ignore
 export function handler(req) {
-    console.log("contact");
+    console.log("hello fool");
 }
