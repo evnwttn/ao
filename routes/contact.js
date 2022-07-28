@@ -1,8 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.contact = void 0;
+exports.handler = void 0;
 //@ts-ignore
-function contact(req) {
+function handler(req) {
     console.log("contact");
 }
-exports.contact = contact;
+exports.handler = handler;

@@ -34,7 +34,7 @@ const app = express.default();
 // Register middlewares
 app.use(middleware_1.logger);
 // Register route handlers
-app.get("/", routes_1.HomeRoute.handler);
+app.get("/contact", routes_1.ContactRoute.handler);
 // Start our server and listen on port 3005
 app.listen(3005, () => console.log("holla"));
 //POST localhost:3005/contact
