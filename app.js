@@ -42,6 +42,7 @@ app.listen(3005, () => console.log("holla"));
 app.use(bodyParser.urlencoded({ extended: false }));
 // Route that receives a POST request to /sms
 app.post('/contact', function (req, res) {
+    res.header("Access-Control-Allow-Origin", "*");
     const body = req.body.Body;
     console.log(body);
     // res.set('Content-Type', 'text/plain')
