@@ -21,7 +21,7 @@ app.options("/contact", function(req, res, next){
   });
 
 // Register route handlers
-app.post("/contact", ContactRoute.handler);
+app.get("/contact", ContactRoute.handler);
 
 // Start our server and listen on port 3005
 app.listen(3005, () => console.log("holla"));
