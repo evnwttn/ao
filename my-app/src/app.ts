@@ -1,5 +1,6 @@
 // Importing the express package
 import * as express from 'express';
+import * as bodyParser from 'body-parser';
 
 // Import middleware
 import { logger } from './middleware';
@@ -9,7 +10,6 @@ import { ContactRoute } from './routes';
 
 // Init express app
 const app = express.default();
-const router = express.Router();
 
 // Register middlewares
 app.use(logger);
@@ -17,11 +17,18 @@ app.use(logger);
 // Register route handlers
 app.get("/contact", ContactRoute.handler);
 
-router.post("/contact",(req, res) => {
-  console.log(req);
-  });
-
 // Start our server and listen on port 3005
 app.listen(3005, () => console.log("holla"));
 
 //POST localhost:3005/contact
+
+app.use(bodyParser.urlencoded({ extended: false }))
+
+// Route that receives a POST request to /sms
+app.post('/contact', function (req, res) {
+  const body = req.body.Body
+  console.log(body);
+  // res.set('Content-Type', 'text/plain')
+  // res.send(`You sent: ${body} to Express`)
+})
+
