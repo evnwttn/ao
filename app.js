@@ -39,6 +39,6 @@ app.options("/contact", function (req, res, next) {
     res.header('Access-Control-Allow-Origin', '*');
 });
 // Register route handlers
-app.post("/contact", routes_1.ContactRoute.handler);
+app.get("/contact", routes_1.ContactRoute.handler);
 // Start our server and listen on port 3005
 app.listen(3005, () => console.log("holla"));
