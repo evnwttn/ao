@@ -27,15 +27,14 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express = __importStar(require("express"));
 // Import middleware
 const middleware_1 = require("./middleware");
+// Import route handlers
+const routes_1 = require("./routes");
 // Init express app
 const app = express.default();
 // Register middlewares
 app.use(middleware_1.logger);
 // Register route handlers
-// app.get("/contact", ContactRoute.handler);
-app.get('/contact', function (req, res) {
-    res.send(`sup ${req}`);
-});
+app.get("/contact", routes_1.ContactRoute.handler);
 // Start our server and listen on port 3005
 app.listen(3005, () => console.log("holla"));
 //POST localhost:3005/contact
