@@ -13,7 +13,7 @@ export const ContactModalContent = () => {
   useEffect(() => {
     const sendPost = () => {
       axios
-        .post("http://localhost:3005/contact", { postData })
+        .post("http://localhost:3005/contact", { data: postData })
         .then(function (response) {
           console.log(response);
         })

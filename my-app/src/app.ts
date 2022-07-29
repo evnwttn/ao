@@ -14,10 +14,7 @@ const app = express.default();
 app.use(logger);
 
 // Register route handlers
-// app.get("/contact", ContactRoute.handler);
-app.get('/contact', function (req, res) {
-    res.send(`sup ${req}`)
-  })
+app.get("/contact", ContactRoute.handler);
 
 // Start our server and listen on port 3005
 app.listen(3005, () => console.log("holla"));
