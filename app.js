@@ -25,20 +25,25 @@ var __importStar = (this && this.__importStar) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 // Importing the express package
 const express = __importStar(require("express"));
+const bodyParser = __importStar(require("body-parser"));
 // Import middleware
 const middleware_1 = require("./middleware");
 // Import route handlers
 const routes_1 = require("./routes");
 // Init express app
 const app = express.default();
-const router = express.Router();
 // Register middlewares
 app.use(middleware_1.logger);
 // Register route handlers
 app.get("/contact", routes_1.ContactRoute.handler);
-router.post("/contact", (req, res) => {
-    console.log(req);
-});
 // Start our server and listen on port 3005
 app.listen(3005, () => console.log("holla"));
 //POST localhost:3005/contact
+app.use(bodyParser.urlencoded({ extended: false }));
+// Route that receives a POST request to /sms
+app.post('/contact', function (req, res) {
+    const body = req.body.Body;
+    console.log(body);
+    // res.set('Content-Type', 'text/plain')
+    // res.send(`You sent: ${body} to Express`)
+});
