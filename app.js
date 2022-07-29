@@ -34,17 +34,8 @@ const routes_1 = require("./routes");
 const app = express.default();
 // Register middlewares
 app.use(middleware_1.logger);
+app.use(bodyParser.urlencoded({ extended: false }));
 // Register route handlers
 app.get("/contact", routes_1.ContactRoute.handler);
 // Start our server and listen on port 3005
 app.listen(3005, () => console.log("holla"));
-//POST localhost:3005/contact
-app.use(bodyParser.urlencoded({ extended: false }));
-// Route that receives a POST request to /sms
-app.post('/contact', function (req, res) {
-    res.header("Access-Control-Allow-Origin", "*");
-    const body = req.body.Body;
-    console.log(body);
-    // res.set('Content-Type', 'text/plain')
-    // res.send(`You sent: ${body} to Express`)
-});
