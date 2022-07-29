@@ -1,6 +1,5 @@
 //@ts-ignore
-export function handler(req, res) {
-    res.header("Access-Control-Allow-Origin", "*");
+export function handler(req, res, next) {   
     console.log('listening');
 
     // const body = req.body.Body
