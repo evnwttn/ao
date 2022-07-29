@@ -31,10 +31,14 @@ const middleware_1 = require("./middleware");
 const routes_1 = require("./routes");
 // Init express app
 const app = express.default();
+const router = express.Router();
 // Register middlewares
 app.use(middleware_1.logger);
 // Register route handlers
 app.get("/contact", routes_1.ContactRoute.handler);
+router.post("/contact", (req, res) => {
+    console.log(req);
+});
 // Start our server and listen on port 3005
 app.listen(3005, () => console.log("holla"));
 //POST localhost:3005/contact
