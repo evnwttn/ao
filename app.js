@@ -39,8 +39,11 @@ app.options("/contact", routes_1.CORS.handler);
 // Register route handlers
 app.get("/contact", routes_1.ContactRoute.handler);
 app.post("/contact", function (req, res) {
-    console.log("post");
-    console.dir(req.body);
+    // console.log("post")
+    // res.send(`You sent ${req.body}`)
+    const body = req.body.Body;
+    res.set('Content-Type', 'text/plain');
+    res.send(`You sent: ${body} to Express`);
 });
 // Start our server and listen on port 3005
 app.listen(3005, () => console.log("server listening @ 3005"));
