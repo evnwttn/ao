@@ -22,8 +22,11 @@ app.options("/contact", CORS.handler);
 app.get("/contact", ContactRoute.handler);
 
 app.post("/contact", function(req, res) {
-  console.log("post")
-  console.dir(req.body)
+  // console.log("post")
+  // res.send(`You sent ${req.body}`)
+  const body = req.body.Body
+  res.set('Content-Type', 'text/plain')
+  res.send(`You sent: ${body} to Express`)
 })
 
 // Start our server and listen on port 3005
