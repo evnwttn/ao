@@ -35,10 +35,8 @@ const app = express.default();
 // Register middlewares
 app.use(middleware_1.logger);
 app.use(bodyParser.urlencoded({ extended: false }));
-app.options("/contact", function (req, res, next) {
-    res.header('Access-Control-Allow-Origin', '*');
-});
+app.options("/contact", routes_1.CORS.handler);
 // Register route handlers
 app.get("/contact", routes_1.ContactRoute.handler);
 // Start our server and listen on port 3005
-app.listen(3005, () => console.log("holla"));
+app.listen(3005, () => console.log("holla @ 3005"));
