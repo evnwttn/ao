@@ -34,16 +34,9 @@ const routes_1 = require("./routes");
 const app = express.default();
 // Register middlewares
 app.use(middleware_1.logger);
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({ extended: true }));
 app.options("/contact", routes_1.CORS.handler);
 // Register route handlers
-app.get("/contact", routes_1.ContactRoute.handler);
-app.post("/contact", function (req, res) {
-    // console.log("post")
-    // res.send(`You sent ${req.body}`)
-    const body = req.body.Body;
-    res.set('Content-Type', 'text/plain');
-    res.send(`You sent: ${body} to Express`);
-});
+app.post("/contact", routes_1.ContactRoute.handler);
 // Start our server and listen on port 3005
 app.listen(3005, () => console.log("server listening @ 3005"));
