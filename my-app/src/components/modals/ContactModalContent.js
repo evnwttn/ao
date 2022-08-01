@@ -9,13 +9,15 @@ export const ContactModalContent = () => {
   const { register, handleSubmit } = useForm();
   const [postData, setPostData] = useState();
   const onSubmit = (data) => setPostData({ ...data });
+  const response = axios.post("localhost:3005/contact");
 
   useEffect(() => {
+    console.log(JSON.stringify(response));
     const sendPost = () => {
       axios
         .post("http://localhost:3005/contact", { data: postData })
-        .then(function (res) {
-          console.log(res);
+        .then(function (response) {
+          console.log(response);
         })
         .catch(function (error) {
           console.log(error);
@@ -23,7 +25,7 @@ export const ContactModalContent = () => {
     };
 
     postData && sendPost();
-  }, [postData]);
+  }, [postData, response]);
 
   return (
     <Box
