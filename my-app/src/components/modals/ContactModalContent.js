@@ -1,6 +1,6 @@
 // import { useState } from "react";
 // import { useForm } from "react-hook-form";
-import axios from "axios";
+import * as axios from "axios";
 import { TextField, IconButton, Box } from "@mui/material";
 import SendIcon from "@mui/icons-material/Send";
 import { modalCenteredSx } from "../../assets/theme";
@@ -11,7 +11,7 @@ export const ContactModalContent = () => {
   // const onSubmit = (data) => setPostData({ ...data });
 
   const sendPost = () => {
-    const response = axios.post("http://localhost:3005/contact");
+    const response = axios.post("localhost:3005/contact");
     console.log(JSON.stringify(response));
   };
 

@@ -14,10 +14,10 @@ const app = express.default();
 app.options("/contact", CORS.handler);
 
 // Register middlewares
-app.use(logger);
+// app.use(logger);
 // app.use(bodyParser.urlencoded({ extended: true }));
 
-app.post('/contact', (req, res) => {
+app.post("/contact", (req, res) => {
 	res	 			
 	.status(200)	
 	.json({ message: 'this should work' });
