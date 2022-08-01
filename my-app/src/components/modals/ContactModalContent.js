@@ -1,65 +1,53 @@
-import { useState, useEffect } from "react";
+// import { useState } from "react";
+// import { useForm } from "react-hook-form";
 import axios from "axios";
-import { useForm } from "react-hook-form";
 import { TextField, IconButton, Box } from "@mui/material";
 import SendIcon from "@mui/icons-material/Send";
 import { modalCenteredSx } from "../../assets/theme";
 
 export const ContactModalContent = () => {
-  const { register, handleSubmit } = useForm();
-  const [postData, setPostData] = useState();
-  const onSubmit = (data) => setPostData({ ...data });
-  const response = axios.post("http://localhost:3005/contact");
+  // const { register, handleSubmit } = useForm();
+  // const [postData, setPostData] = useState();
+  // const onSubmit = (data) => setPostData({ ...data });
 
-  // useEffect(() => {
-  //   const response = axios.post("http://localhost:3005/contact");
-  //   console.log(JSON.stringify(response));
-  //   const sendPost = () => {
-  //     axios
-  //       .post("http://localhost:3005/contact", { data: postData })
-  //       .then(function (response) {
-  //         console.log(response);
-  //       })
-  //       .catch(function (error) {
-  //         console.log(error);
-  //       });
-  //   };
-
-  //   postData && sendPost();
-  // }, [postData]);
-
-  useEffect(() => {
-    postData && console.log(JSON.stringify(response));
-  }, [postData, response]);
+  const sendPost = () => {
+    const response = axios.post("http://localhost:3005/contact");
+    console.log(JSON.stringify(response));
+  };
 
   return (
     <Box
       component="form"
       sx={modalCenteredSx}
-      onSubmit={handleSubmit(onSubmit)}
+      // onSubmit={handleSubmit(onSubmit)}
     >
       <TextField
         placeholder="Name"
         variant="standard"
         margin="normal"
         sx={{ width: "28vw" }}
-        {...register("Name", {})}
+        // {...register("Name", {})}
       />
       <TextField
         placeholder="Email Address"
         variant="standard"
         margin="normal"
         sx={{ width: "28vw" }}
-        {...register("Email Address", {})}
+        // {...register("Email Address", {})}
       />
       <TextField
         placeholder="Message"
         variant="standard"
         margin="normal"
         sx={{ width: "28vw" }}
-        {...register("Message", {})}
+        // {...register("Message", {})}
       />
-      <IconButton disableRipple sx={{ cursor: "default" }} type="submit">
+      <IconButton
+        disableRipple
+        sx={{ cursor: "default" }}
+        // type="submit"
+        onClick={sendPost}
+      >
         <SendIcon
           sx={{
             ml: "25vw",
@@ -70,3 +58,20 @@ export const ContactModalContent = () => {
     </Box>
   );
 };
+
+// useEffect(() => {
+//   const response = axios.post("http://localhost:3005/contact");
+//   console.log(JSON.stringify(response));
+//   const sendPost = () => {
+//     axios
+//       .post("http://localhost:3005/contact", { data: postData })
+//       .then(function (response) {
+//         console.log(response);
+//       })
+//       .catch(function (error) {
+//         console.log(error);
+//       });
+//   };
+
+//   postData && sendPost();
+// }, [postData]);
