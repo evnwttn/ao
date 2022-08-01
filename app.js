@@ -25,13 +25,15 @@ var __importStar = (this && this.__importStar) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 // Importing the express package
 const express = __importStar(require("express"));
+// Import middleware
+const middleware_1 = require("./middleware");
 // Import route handlers
 const routes_1 = require("./routes");
 // Init express app
 const app = express.default();
 app.options("/contact", routes_1.CORS.handler);
 // Register middlewares
-// app.use(logger);
+app.use(middleware_1.logger);
 // app.use(bodyParser.urlencoded({ extended: true }));
 app.post("/contact", (req, res) => {
     res
