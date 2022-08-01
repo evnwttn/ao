@@ -58,20 +58,3 @@ export const ContactModalContent = () => {
     </Box>
   );
 };
-
-// useEffect(() => {
-//   const response = axios.post("http://localhost:3005/contact");
-//   console.log(JSON.stringify(response));
-//   const sendPost = () => {
-//     axios
-//       .post("http://localhost:3005/contact", { data: postData })
-//       .then(function (response) {
-//         console.log(response);
-//       })
-//       .catch(function (error) {
-//         console.log(error);
-//       });
-//   };
-
-//   postData && sendPost();
-// }, [postData]);
