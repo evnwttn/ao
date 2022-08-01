@@ -9,22 +9,27 @@ export const ContactModalContent = () => {
   const { register, handleSubmit } = useForm();
   const [postData, setPostData] = useState();
   const onSubmit = (data) => setPostData({ ...data });
-  const response = axios.post("localhost:3005/contact");
+  const response = axios.post("http://localhost:3005/contact");
+
+  // useEffect(() => {
+  //   const response = axios.post("http://localhost:3005/contact");
+  //   console.log(JSON.stringify(response));
+  //   const sendPost = () => {
+  //     axios
+  //       .post("http://localhost:3005/contact", { data: postData })
+  //       .then(function (response) {
+  //         console.log(response);
+  //       })
+  //       .catch(function (error) {
+  //         console.log(error);
+  //       });
+  //   };
+
+  //   postData && sendPost();
+  // }, [postData]);
 
   useEffect(() => {
-    console.log(JSON.stringify(response));
-    const sendPost = () => {
-      axios
-        .post("http://localhost:3005/contact", { data: postData })
-        .then(function (response) {
-          console.log(response);
-        })
-        .catch(function (error) {
-          console.log(error);
-        });
-    };
-
-    postData && sendPost();
+    postData && console.log(JSON.stringify(response));
   }, [postData, response]);
 
   return (

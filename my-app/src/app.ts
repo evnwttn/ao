@@ -11,18 +11,16 @@ import { ContactRoute, CORS } from './routes';
 // Init express app
 const app = express.default();
 
-// Register middlewares
-app.use(logger);
-app.use(bodyParser.urlencoded({ extended: true }));
 app.options("/contact", CORS.handler);
 
-// Register route handlers
-// app.post("/contact", ContactRoute.handler);
+// Register middlewares
+app.use(logger);
+// app.use(bodyParser.urlencoded({ extended: true }));
 
 app.post('/contact', (req, res) => {
-	res	 			//You need to use res to respond to the request (req)
-	.status(200)	//Setting the response status to 200 means that the request is OK
-	.json({ message: 'this should work' }); //Return an object (this is what your frontend should receive)
+	res	 			
+	.status(200)	
+	.json({ message: 'this should work' });
 });
 
 // Start our server and listen on port 3005
