@@ -25,23 +25,20 @@ var __importStar = (this && this.__importStar) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 // Importing the express package
 const express = __importStar(require("express"));
-const bodyParser = __importStar(require("body-parser"));
 // Import middleware
 const middleware_1 = require("./middleware");
 // Import route handlers
 const routes_1 = require("./routes");
 // Init express app
 const app = express.default();
+app.options("/contact", routes_1.CORS.handler);
 // Register middlewares
 app.use(middleware_1.logger);
-app.use(bodyParser.urlencoded({ extended: true }));
-app.options("/contact", routes_1.CORS.handler);
-// Register route handlers
-// app.post("/contact", ContactRoute.handler);
+// app.use(bodyParser.urlencoded({ extended: true }));
 app.post('/contact', (req, res) => {
-    res //You need to use res to respond to the request (req)
-        .status(200) //Setting the response status to 200 means that the request is OK
-        .json({ message: 'this should work' }); //Return an object (this is what your frontend should receive)
+    res
+        .status(200)
+        .json({ message: 'this should work' });
 });
 // Start our server and listen on port 3005
 app.listen(3005, () => console.log("server listening @ 3005"));
