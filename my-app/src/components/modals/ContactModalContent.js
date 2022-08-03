@@ -11,8 +11,9 @@ export const ContactModalContent = () => {
   // const onSubmit = (data) => setPostData({ ...data });
 
   const sendPost = () => {
-    const response = axios.post("http://localhost:3005/contact");
-    console.log(JSON.stringify(response));
+    const response = axios
+      .post("http://localhost:3005/contact")
+      .then((data) => console.log(JSON.stringify(data)));
   };
 
   return (
