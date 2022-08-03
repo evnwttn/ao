@@ -34,7 +34,6 @@ const app = express.default();
 app.options("/contact", routes_1.CORS.handler);
 // Register middlewares
 app.use(middleware_1.logger);
-// app.use(bodyParser.urlencoded({ extended: true }));
 app.post("/contact", (req, res) => {
     res
         .status(200)
