@@ -2,17 +2,14 @@
 import * as express from 'express';
 
 // Import middleware
-import { logger } from './middleware';
-
-// Import route handlers
-import { ContactRoute, CORS } from './routes';
+import { logger, corsHandler } from './middleware';
 
 // Init express app
 const app = express.default();
 
 // Register middlewares
 app.use(logger);
-app.use(CORS.handler);
+app.use(corsHandler);
 
 app.post("/contact", (req, res) => {
 	res	 			
