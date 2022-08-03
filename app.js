@@ -34,6 +34,7 @@ app.use(middleware_1.logger);
 app.use(middleware_1.corsHandler);
 app.post("/contact", (req, res) => {
     res
+        .header('Access-Control-Allow-Origin', '*')
         .status(200)
         .json({ message: 'this should work' });
 });
