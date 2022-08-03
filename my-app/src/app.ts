@@ -10,10 +10,9 @@ import { ContactRoute, CORS } from './routes';
 // Init express app
 const app = express.default();
 
-app.options("/contact", CORS.handler);
-
 // Register middlewares
 app.use(logger);
+app.use(CORS.handler);
 
 app.post("/contact", (req, res) => {
 	res	 			
