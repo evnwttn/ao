@@ -6,6 +6,7 @@ import { logger, corsHandler } from './middleware';
 
 // Init express app
 const app = express.default();
+const port = 3005;
 
 // Register middlewares
 app.use(logger);
@@ -15,9 +16,8 @@ app.post("/contact", (req, res) => {
 	res
 	.header('Access-Control-Allow-Origin', '*')	 			
 	.status(200)	
-	.json({ message: 'this should work' });
+	.json({ data: 'this should work' });
 });
 
 // Start our server and listen on port 3005
-app.listen(3005, () => console.log("server listening @ 3005"));
-
+app.listen(port, () => console.log("server listening @ 3005"));
