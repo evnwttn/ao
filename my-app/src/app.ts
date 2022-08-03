@@ -1,6 +1,5 @@
 // Importing the express package
 import * as express from 'express';
-import * as bodyParser from 'body-parser';
 
 // Import middleware
 import { logger } from './middleware';
@@ -15,7 +14,6 @@ app.options("/contact", CORS.handler);
 
 // Register middlewares
 app.use(logger);
-// app.use(bodyParser.urlencoded({ extended: true }));
 
 app.post("/contact", (req, res) => {
 	res	 			
