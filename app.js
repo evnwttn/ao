@@ -31,9 +31,9 @@ const middleware_1 = require("./middleware");
 const routes_1 = require("./routes");
 // Init express app
 const app = express.default();
-app.options("/contact", routes_1.CORS.handler);
 // Register middlewares
 app.use(middleware_1.logger);
+app.use(routes_1.CORS.handler);
 app.post("/contact", (req, res) => {
     res
         .status(200)
