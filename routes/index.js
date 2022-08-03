@@ -23,6 +23,5 @@ var __importStar = (this && this.__importStar) || function (mod) {
     return result;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CORS = exports.ContactRoute = void 0;
+exports.ContactRoute = void 0;
 exports.ContactRoute = __importStar(require("./contact"));
-exports.CORS = __importStar(require("./cors"));

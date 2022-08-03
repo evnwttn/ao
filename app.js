@@ -27,13 +27,11 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express = __importStar(require("express"));
 // Import middleware
 const middleware_1 = require("./middleware");
-// Import route handlers
-const routes_1 = require("./routes");
 // Init express app
 const app = express.default();
 // Register middlewares
 app.use(middleware_1.logger);
-app.use(routes_1.CORS.handler);
+app.use(middleware_1.corsHandler);
 app.post("/contact", (req, res) => {
     res
         .status(200)
