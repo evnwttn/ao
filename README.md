@@ -9,7 +9,14 @@ a visual album organizational tool utilizing
     <li><a href="https://mui.com/">mui</a></li>
     <li><a href="https://react-hook-form.com/">react hook form</a></li>
     <li><a href="https://github.com/remix-run/react-router">react router</a></li>
-    <li><a href="https://github.com/yocontra/react-responsive">react responsive</a></li>
+</ul>
+
+---
+
+currently building a backend in
+<ul>
+<li><a href="https://expressjs.com/">express</a></li>
+<li><a href="https://nodejs.org/en/">node</a></li>
 </ul>
 
 ---
@@ -21,7 +28,7 @@ gfx / design
     <li><a href="https://affinity.serif.com/">affinity</a></li>
 </ul>
 
+---
+
 <img src="https://i.ibb.co/brfCqjP/aohome.png">
 <img src="https://i.ibb.co/RQTq9q5/aoapp.png">
-
----
