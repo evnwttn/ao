@@ -10,9 +10,12 @@ const port = 3005;
 
 // Register middlewares
 app.use(logger);
-app.use(corsHandler);
+// app.use(corsHandler);
 
 app.post("/contact", (req, res) => {
+	console.log('here')
+	console.log(JSON.stringify(req.body, null, 4))
+
 	res
 	.header('Access-Control-Allow-Origin', '*')	 			
 	.status(200)	
