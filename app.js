@@ -32,8 +32,10 @@ const app = express.default();
 const port = 3005;
 // Register middlewares
 app.use(middleware_1.logger);
-app.use(middleware_1.corsHandler);
+// app.use(corsHandler);
 app.post("/contact", (req, res) => {
+    console.log('here');
+    console.log(JSON.stringify(req.body, null, 4));
     res
         .header('Access-Control-Allow-Origin', '*')
         .status(200)
