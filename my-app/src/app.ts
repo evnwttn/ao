@@ -10,7 +10,7 @@ const port = 3005;
 
 // Register middlewares
 app.use(logger);
-// app.use(corsHandler);
+app.use(corsHandler);
 
 app.post("/contact", (req, res) => {
 	console.log('here')
