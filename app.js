@@ -32,7 +32,7 @@ const app = express.default();
 const port = 3005;
 // Register middlewares
 app.use(middleware_1.logger);
-// app.use(corsHandler);
+app.use(middleware_1.corsHandler);
 app.post("/contact", (req, res) => {
     console.log('here');
     console.log(JSON.stringify(req.body, null, 4));
