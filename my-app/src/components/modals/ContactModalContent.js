@@ -1,4 +1,3 @@
-// import { useState } from "react";
 import { useForm } from "react-hook-form";
 import * as axios from "axios";
 import { TextField, IconButton, Box } from "@mui/material";
@@ -7,19 +6,11 @@ import { modalCenteredSx } from "../../assets/theme";
 
 export const ContactModalContent = () => {
   const { register, handleSubmit } = useForm();
-  // const [postData, setPostData] = useState();
-  // const onSubmit = (data) => setPostData({ ...data });
   const onSubmit = (data) => {
     axios
       .post("http://localhost:3005/contact", data)
       .then((_data) => console.log(JSON.stringify(_data)));
   };
-
-  // const sendPost = () => {
-  //   axios
-  //     .post("http://localhost:3005/contact", postData)
-  //     .then((data) => console.log(JSON.stringify(data)));
-  // };
 
   return (
     <Box
@@ -48,12 +39,7 @@ export const ContactModalContent = () => {
         sx={{ width: "28vw" }}
         {...register("Message", {})}
       />
-      <IconButton
-        disableRipple
-        sx={{ cursor: "default" }}
-        type="submit"
-        // onClick={sendPost}
-      >
+      <IconButton disableRipple sx={{ cursor: "default" }} type="submit">
         <SendIcon
           sx={{
             ml: "25vw",
