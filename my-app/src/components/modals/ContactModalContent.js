@@ -16,6 +16,17 @@ export const ContactModalContent = () => {
       });
   };
 
+  // const onSubmit = (data) => {
+  //   console.log(`sending...`);
+  //   let xhr = new XMLHttpRequest();
+  //   xhr.open("POST", "http://localhost:3005/contact", true);
+  //   xhr.setRequestHeader(
+  //     "Content-Type",
+  //     "application/x-www-form-urlencoded; charset=UTF-8"
+  //   );
+  //   xhr.send(data);
+  // };
+
   return (
     <Box
       component="form"
