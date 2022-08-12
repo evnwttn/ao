@@ -7,6 +7,7 @@ import { modalCenteredSx } from "../../assets/theme";
 export const ContactModalContent = () => {
   const { register, handleSubmit } = useForm();
   const onSubmit = (data) => {
+    console.log(`sending...`);
     axios
       .post("http://localhost:3005/contact", data)
       .then((_data) => console.log(JSON.stringify(_data)));
