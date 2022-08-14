@@ -11,16 +11,8 @@ export const ContactModalContent = () => {
   const emailField = useRef();
   const messageField = useRef();
 
-  const submitData = () => {
-    setFormData({
-      name: nameField.current.value,
-      email: emailField.current.value,
-      message: messageField.current.value,
-    });
-  };
-
   useEffect(() => {
-    console.log(formData);
+    formData && console.log(formData);
   }, [formData]);
 
   return (
@@ -49,7 +41,13 @@ export const ContactModalContent = () => {
       <IconButton
         disableRipple
         sx={{ cursor: "default" }}
-        onClick={() => submitData()}
+        onClick={() =>
+          setFormData({
+            name: nameField.current.value,
+            email: emailField.current.value,
+            message: messageField.current.value,
+          })
+        }
       >
         <SendIcon
           sx={{
