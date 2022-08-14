@@ -6,24 +6,6 @@ import { modalCenteredSx } from "../../assets/theme";
 
 export const ContactModalContent = () => {
   const { register, handleSubmit } = useForm();
-  // const onSubmit = (data) => {
-  //   console.log(`sending...`);
-  //   axios
-  //     .post("http://localhost:3005/contact", data)
-  //     .then((_data) => console.log(JSON.stringify(_data)))
-  //   .catch(function (error) {
-  //     if (error.response) {
-  //       console.log(error.response.data);
-  //       console.log(error.response.status);
-  //       console.log(error.response.headers);
-  //     } else if (error.request) {
-  //       console.log(error.request);
-  //     } else {
-  //       console.log("Error", error.message);
-  //     }
-  //     console.log(error.config);
-  //   });
-  // };
 
   const onSubmit = (data) => {
     console.log(`sending...`);
@@ -31,9 +13,7 @@ export const ContactModalContent = () => {
       .post("http://localhost:3005/contact", {
         data,
       })
-      .then(function (response) {
-        console.log(response);
-      })
+      .then((_data) => console.log(JSON.stringify(_data)))
       .catch(function (error) {
         console.log(error);
       });
