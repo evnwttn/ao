@@ -1,44 +1,56 @@
 // import { useForm } from "react-hook-form";
-import { useState, useEffect } from "react";
+import { useState, useRef, useEffect } from "react";
 import * as axios from "axios";
 import { TextField, IconButton, Box } from "@mui/material";
 import SendIcon from "@mui/icons-material/Send";
 import { modalCenteredSx } from "../../assets/theme";
 
 export const ContactModalContent = () => {
-  const [formData, setFormData] = useState([]);
+  const [formData, setFormData] = useState();
+  const nameField = useRef();
+  const emailField = useRef();
+  const messageField = useRef();
+
+  const submitData = () => {
+    setFormData({
+      name: nameField.current.value,
+      email: emailField.current.value,
+      message: messageField.current.value,
+    });
+  };
+
   useEffect(() => {
     console.log(formData);
   }, [formData]);
 
   return (
-    <Box
-      component="form"
-      sx={modalCenteredSx}
-      onSubmit={handleSubmit(onSubmit)}
-    >
+    <Box sx={modalCenteredSx}>
       <TextField
         placeholder="Name"
+        inputRef={nameField}
         variant="standard"
         margin="normal"
         sx={{ width: "28vw" }}
-        {...register("Name", {})}
       />
       <TextField
         placeholder="Email Address"
+        inputRef={emailField}
         variant="standard"
         margin="normal"
         sx={{ width: "28vw" }}
-        {...register("Email Address", {})}
       />
       <TextField
         placeholder="Message"
+        inputRef={messageField}
         variant="standard"
         margin="normal"
         sx={{ width: "28vw" }}
-        {...register("Message", {})}
       />
-      <IconButton disableRipple sx={{ cursor: "default" }} type="submit">
+      <IconButton
+        disableRipple
+        sx={{ cursor: "default" }}
+        onClick={() => submitData()}
+      >
         <SendIcon
           sx={{
             ml: "25vw",
