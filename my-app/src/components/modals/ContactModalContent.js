@@ -12,7 +12,15 @@ export const ContactModalContent = () => {
   const messageField = useRef();
 
   useEffect(() => {
-    formData && console.log(formData);
+    formData &&
+      axios
+        .post("http://localhost:5000/contact", {
+          formData,
+        })
+        .then((_data) => console.log(JSON.stringify(_data)))
+        .catch(function (error) {
+          console.log(error);
+        });
   }, [formData]);
 
   return (
@@ -63,17 +71,17 @@ export const ContactModalContent = () => {
 // export const ContactModalContent = () => {
 //   const { register, handleSubmit } = useForm();
 
-//   const onSubmit = (data) => {
-//     console.log(`sending...`);
-//     axios
-//       .post("http://localhost:5000/contact", {
-//         data,
-//       })
-//       .then((_data) => console.log(JSON.stringify(_data)))
-//       .catch(function (error) {
-//         console.log(error);
-//       });
-//   };
+// const onSubmit = (data) => {
+//   console.log(`sending...`);
+//   axios
+//     .post("http://localhost:5000/contact", {
+//       data,
+//     })
+//     .then((_data) => console.log(JSON.stringify(_data)))
+//     .catch(function (error) {
+//       console.log(error);
+//     });
+// };
 
 //   return (
 //     <Box
