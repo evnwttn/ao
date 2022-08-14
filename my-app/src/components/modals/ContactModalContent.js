@@ -17,7 +17,8 @@ export const ContactModalContent = () => {
         .post("http://localhost:5000/contact", {
           formData,
         })
-        .then((_data) => console.log(JSON.stringify(_data)))
+        .then(console.log("sending"))
+        // .then((_data) => console.log(JSON.stringify(_data)))
         .catch(function (error) {
           console.log(error);
         });
