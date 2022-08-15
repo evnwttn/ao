@@ -1,10 +1,10 @@
 import { useState, useRef, useEffect } from "react";
-import * as axios from "axios";
 import { TextField, IconButton, Box } from "@mui/material";
 import SendIcon from "@mui/icons-material/Send";
 import { modalCenteredSx } from "../../assets/theme";
 
 export const ContactModalContent = () => {
+  const axios = require("axios").default;
   const [formData, setFormData] = useState();
   const nameField = useRef();
   const emailField = useRef();
@@ -16,14 +16,18 @@ export const ContactModalContent = () => {
         .post("http://localhost:5000/contact", {
           formData,
         })
-        .then(function (res) {
-          console.log(res);
+        .then(function (response) {
+          console.log(response.data);
+          console.log(response.status);
+          console.log(response.statusText);
+          console.log(response.headers);
+          console.log(response.config);
         })
         // .then((_data) => console.log(JSON.stringify(_data)))
         .catch(function (error) {
           console.log(error);
         });
-  }, [formData]);
+  }, [formData, axios]);
 
   return (
     <Box sx={modalCenteredSx}>
