@@ -11,22 +11,24 @@ export const ContactModalContent = () => {
   const messageField = useRef();
 
   useEffect(() => {
-    formData &&
+    if (formData) {
+      console.log("keepin it real in the 709");
       axios
         .post("http://localhost:5000/contact", {
-          formData,
+          ...formData,
         })
-        .then(function (response) {
-          console.log(response.data);
-          console.log(response.status);
-          console.log(response.statusText);
-          console.log(response.headers);
-          console.log(response.config);
-        })
-        // .then((_data) => console.log(JSON.stringify(_data)))
+        // .then(function (response) {
+        //   console.log(response.data);
+        //   console.log(response.status);
+        //   console.log(response.statusText);
+        //   console.log(response.headers);
+        //   console.log(response.config);
+        // })
+        .then((_data) => console.log(JSON.stringify(_data)))
         .catch(function (error) {
           console.log(error);
         });
+    }
   }, [formData, axios]);
 
   return (
