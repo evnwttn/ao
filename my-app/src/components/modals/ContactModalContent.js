@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from "react";
-import { TextField, IconButton, Box } from "@mui/material";
+import { TextField, IconButton, Box, CircularProgress } from "@mui/material";
 import SendIcon from "@mui/icons-material/Send";
 import { modalCenteredSx } from "../../assets/theme";
 
@@ -57,6 +57,7 @@ export const ContactModalContent = () => {
           })
         }
       >
+        <CircularProgress />
         <SendIcon
           sx={{
             ml: "25vw",
