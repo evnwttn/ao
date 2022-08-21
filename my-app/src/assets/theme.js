@@ -227,7 +227,6 @@ export const modalCenteredSx = {
 };
 
 export const circularProgressSx = {
-  color: "pink",
   ml: "21vw",
   mt: "0.5vw",
   mr: "2vw",

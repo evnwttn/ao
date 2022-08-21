@@ -1,7 +1,11 @@
 import { useState, useRef, useEffect } from "react";
 import { TextField, IconButton, Box, CircularProgress } from "@mui/material";
 import SendIcon from "@mui/icons-material/Send";
-import { modalCenteredSx, circularProgressSx } from "../../assets/theme";
+import {
+  palette,
+  modalCenteredSx,
+  circularProgressSx,
+} from "../../assets/theme";
 
 export const ContactModalContent = () => {
   const axios = require("axios").default;
@@ -58,7 +62,13 @@ export const ContactModalContent = () => {
           })
         }
       >
-        <CircularProgress size="2.33vw" sx={{ circularProgressSx }} />
+        <CircularProgress
+          size="2.33vw"
+          sx={{
+            ...circularProgressSx,
+            color: formLoading ? "pink" : palette.aoBlue,
+          }}
+        />
         <SendIcon
           sx={{
             mt: "1vh",
