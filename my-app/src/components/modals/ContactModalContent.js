@@ -57,10 +57,12 @@ export const ContactModalContent = () => {
           })
         }
       >
-        <CircularProgress />
+        <CircularProgress
+          size="2.33vw"
+          sx={{ color: "pink", ml: "21vw", mt: "0.5vw", mr: "2vw" }}
+        />
         <SendIcon
           sx={{
-            ml: "25vw",
             mt: "1vh",
           }}
         />
