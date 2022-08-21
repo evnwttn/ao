@@ -226,6 +226,13 @@ export const modalCenteredSx = {
   alignItems: "center",
 };
 
+export const circularProgressSx = {
+  color: "pink",
+  ml: "21vw",
+  mt: "0.5vw",
+  mr: "2vw",
+};
+
 export const newSessionModal = {
   text: {
     flexDirection: "row",

@@ -1,11 +1,12 @@
 import { useState, useRef, useEffect } from "react";
 import { TextField, IconButton, Box, CircularProgress } from "@mui/material";
 import SendIcon from "@mui/icons-material/Send";
-import { modalCenteredSx } from "../../assets/theme";
+import { modalCenteredSx, circularProgressSx } from "../../assets/theme";
 
 export const ContactModalContent = () => {
   const axios = require("axios").default;
   const [formData, setFormData] = useState();
+  const [formLoading, setFormLoading] = useState(false);
   const nameField = useRef();
   const emailField = useRef();
   const messageField = useRef();
@@ -57,10 +58,7 @@ export const ContactModalContent = () => {
           })
         }
       >
-        <CircularProgress
-          size="2.33vw"
-          sx={{ color: "pink", ml: "21vw", mt: "0.5vw", mr: "2vw" }}
-        />
+        <CircularProgress size="2.33vw" sx={{ circularProgressSx }} />
         <SendIcon
           sx={{
             mt: "1vh",
