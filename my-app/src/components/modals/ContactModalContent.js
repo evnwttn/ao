@@ -22,7 +22,7 @@ export const ContactModalContent = () => {
         .post("http://localhost:5000/contact", {
           ...formData,
         })
-        .then(console.log("yo"))
+        .then((res) => res !== undefined && setFormLoading(false))
         .catch(function (error) {
           console.log(error);
         });
