@@ -7,8 +7,7 @@ import axios = require("axios");
 export const ContantModalContentTS = () => {
     const [formData, setFormData] = useState<FormData>({} as FormData);
     const [formLoading, setFormLoading] = useState<Boolean>(false);
-
-    const nameField = useRef();
-    const emailField = useRef();
-    const messageField = useRef();
+    const nameField = useRef<HTMLDivElement>(null);
+    const emailField = useRef<HTMLDivElement>(null);
+    const messageField = useRef<HTMLDivElement>(null);
 }
