@@ -22,12 +22,21 @@ export const ContactModalContent = () => {
         .post("http://localhost:5000/contact", {
           ...formData,
         })
-        .then((res) => res !== undefined && setFormLoading(false))
+        .then((res) => console.log(res))
         .catch(function (error) {
           console.log(error);
         });
     }
   }, [formData, axios]);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      if (formLoading) {
+        setFormLoading(false);
+      }
+    }, 2250);
+    return () => clearTimeout(timer);
+  }, [formLoading]);
 
   return (
     <Box sx={modalCenteredSx}>
