@@ -3,3 +3,12 @@ import { TextField, IconButton, Box, CircularProgress } from "@mui/material";
 import SendIcon from "@mui/icons-material/Send";
 import { palette, modalCenteredSx, circularProgressSx } from "../../assets/theme";
 import axios = require("axios");
+
+export const ContantModalContentTS = () => {
+    const [formData, setFormData] = useState<FormData>({} as FormData);
+    const [formLoading, setFormLoading] = useState<Boolean>(false);
+
+    const nameField = useRef();
+    const emailField = useRef();
+    const messageField = useRef();
+}
