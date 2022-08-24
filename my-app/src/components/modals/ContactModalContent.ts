@@ -31,6 +31,6 @@ export const ContantModalContentTS = () => {
         setFormLoading(false);
       }
     }, 2250);
-  }, [formLoading]);
+  }, [formLoading]);   
 
 }

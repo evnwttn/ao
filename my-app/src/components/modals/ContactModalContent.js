@@ -7,36 +7,36 @@ import {
   circularProgressSx,
 } from "../../assets/theme";
 
-export const ContactModalContent = () => {
-  const axios = require("axios").default;
-  const [formData, setFormData] = useState();
-  const [formLoading, setFormLoading] = useState(false);
-  const nameField = useRef();
-  const emailField = useRef();
-  const messageField = useRef();
+const axios = require("axios").default;
+const [formData, setFormData] = useState();
+const [formLoading, setFormLoading] = useState(false);
+const nameField = useRef();
+const emailField = useRef();
+const messageField = useRef();
 
-  useEffect(() => {
-    if (formData) {
-      setFormLoading(true);
-      axios
-        .post("http://localhost:5000/contact", {
-          ...formData,
-        })
-        .then((_data) => console.log(JSON.stringify(_data)))
-        .catch(function (error) {
-          console.log(error);
-        });
+useEffect(() => {
+  if (formData) {
+    setFormLoading(true);
+    axios
+      .post("http://localhost:5000/contact", {
+        ...formData,
+      })
+      .then((_data) => console.log(JSON.stringify(_data)))
+      .catch(function (error) {
+        console.log(error);
+      });
+  }
+}, [formData, axios]);
+
+useEffect(() => {
+  setTimeout(() => {
+    if (formLoading) {
+      setFormLoading(false);
     }
-  }, [formData, axios]);
+  }, 2250);
+}, [formLoading]);
 
-  useEffect(() => {
-    setTimeout(() => {
-      if (formLoading) {
-        setFormLoading(false);
-      }
-    }, 2250);
-  }, [formLoading]);
-
+export const ContactModalContent = () => {
   return (
     <Box sx={modalCenteredSx}>
       <TextField
