@@ -21,12 +21,11 @@ const ContantModalContentTS = () => {
         }
     }, [formData, axios]);
     (0, react_1.useEffect)(() => {
-        const timer = setTimeout(() => {
+        setTimeout(() => {
             if (formLoading) {
                 setFormLoading(false);
             }
         }, 2250);
-        return () => clearTimeout(timer);
     }, [formLoading]);
 };
 exports.ContantModalContentTS = ContantModalContentTS;
