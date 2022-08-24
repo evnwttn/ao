@@ -30,12 +30,11 @@ export const ContactModalContent = () => {
   }, [formData, axios]);
 
   useEffect(() => {
-    const timer = setTimeout(() => {
+    setTimeout(() => {
       if (formLoading) {
         setFormLoading(false);
       }
     }, 2250);
-    return () => clearTimeout(timer);
   }, [formLoading]);
 
   return (
