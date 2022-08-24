@@ -43,37 +43,27 @@ const AOGrid = () => {
         from === "load" && setGridData(LoadSample_1.darkSideOfTheMoon);
         from === "new" && setGridData(data);
     }, [location.state]);
-    return (<material_1.Box sx={theme_1.gridSx.container}>
-      <material_1.ThemeProvider theme={theme_1.default}>
-        <AONav_1.AONav data={gridData}/>
-        <material_1.Box sx={theme_1.gridSx.dom}>
-          <material_1.Grid container>
-            <material_1.Grid sx={{
-            flexFlow: "row nowrap",
-            justifyContent: "center",
-        }} container spacing={"0.75vw"}>
-              {gridData.parameters.map((parameterTitle) => {
-            return (<material_1.Grid item sm={1} key={parameterTitle}>
-                    <material_1.Box sx={theme_1.cellSx.paraCell}>{parameterTitle}</material_1.Box>
-                  </material_1.Grid>);
-        })}
-            </material_1.Grid>
-            {gridData.tracks.map((track, parameter) => {
-            return (<material_1.Grid container sx={{
-                    display: "flex",
-                    flexFlow: "row nowrap",
-                    justifyContent: "center",
-                }} key={track.title} spacing={"0.75vw"}>
-                  {gridData.parameters.map((parameter) => {
-                    return parameter === `title` ? (<material_1.Grid item sm={1} key={parameter}>
-                        <material_1.Box sx={theme_1.cellSx.titleCell}>{track.title}</material_1.Box>
-                      </material_1.Grid>) : (<AOCell_1.AOCell key={parameter} cell={{ track, parameter }} track={track} parameter={parameter} toggleHovered={toggleHovered} setHoverCell={setHoverCell} hoverCell={hoverCell}/>);
-                })}
-                </material_1.Grid>);
-        })}
-          </material_1.Grid>
-        </material_1.Box>
-      </material_1.ThemeProvider>
-    </material_1.Box>);
+    return (React.createElement(material_1.Box, { sx: theme_1.gridSx.container },
+        React.createElement(material_1.ThemeProvider, { theme: theme_1.default },
+            React.createElement(AONav_1.AONav, { data: gridData }),
+            React.createElement(material_1.Box, { sx: theme_1.gridSx.dom },
+                React.createElement(material_1.Grid, { container: true },
+                    React.createElement(material_1.Grid, { sx: {
+                            flexFlow: "row nowrap",
+                            justifyContent: "center",
+                        }, container: true, spacing: "0.75vw" }, gridData.parameters.map((parameterTitle) => {
+                        return (React.createElement(material_1.Grid, { item: true, sm: 1, key: parameterTitle },
+                            React.createElement(material_1.Box, { sx: theme_1.cellSx.paraCell }, parameterTitle)));
+                    })),
+                    gridData.tracks.map((track, parameter) => {
+                        return (React.createElement(material_1.Grid, { container: true, sx: {
+                                display: "flex",
+                                flexFlow: "row nowrap",
+                                justifyContent: "center",
+                            }, key: track.title, spacing: "0.75vw" }, gridData.parameters.map((parameter) => {
+                            return parameter === `title` ? (React.createElement(material_1.Grid, { item: true, sm: 1, key: parameter },
+                                React.createElement(material_1.Box, { sx: theme_1.cellSx.titleCell }, track.title))) : (React.createElement(AOCell_1.AOCell, { key: parameter, cell: { track, parameter }, track: track, parameter: parameter, toggleHovered: toggleHovered, setHoverCell: setHoverCell, hoverCell: hoverCell }));
+                        })));
+                    }))))));
 };
 exports.AOGrid = AOGrid;

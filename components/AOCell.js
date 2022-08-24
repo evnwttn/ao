@@ -60,37 +60,34 @@ const AOCell = ({ cell, track, parameter, toggleHovered, setHoverCell, hoverCell
         }, 1000);
         return () => clearTimeout(timer);
     }, [toggleHovered, setHoverCell]);
-    return (<>
-      <material_1.Grid item sm={1} onClick={handleClick} onMouseEnter={() => setHoverCell(cell)} onMouseLeave={toggleHovered}>
-        <material_1.Box sx={Object.assign(Object.assign(Object.assign(Object.assign({ backgroundColor: cellColor }, theme_1.cellSx.cell), { boxShadow: 
-            // triggers cell hover effects
-            (hoverCell && hoverCell.track === cell.track) ||
-                (hoverCell && hoverCell.parameter === cell.parameter)
-                ? `0 0 0.5vw 0.2vw rgb(243, 239, 224, 0.125)`
-                : ``, transition: (hoverCell && hoverCell.track === cell.track) ||
-                (hoverCell && hoverCell.parameter === cell.parameter)
-                ? "box-shadow 0.025s linear"
-                : "box-shadow 0.1s linear" }), (cellColor !== theme_1.palette.aoGrey && cellColor !== "transparent"
-            ? cellComment !== "" && theme_1.cellSx.comment
-            : cellComment !== "" && theme_1.cellSx.commentInverse)), { "&:hover": {
-                backgroundColor: cellColor === theme_1.palette.aoBlack && theme_1.palette.aoGrey,
-                opacity: "0.6",
-                cursor: "pointer",
-            } })}></material_1.Box>
-      </material_1.Grid>
-      <material_1.Popover sx={{
-            backdropFilter: "blur(1.5px)",
-            top: "1.6vw",
-            left: "0.2vw",
-        }} open={open} anchorEl={anchorEl} onClose={handleClose} anchorOrigin={{
-            vertical: "center",
-            horizontal: "center",
-        }} transformOrigin={{
-            vertical: "center",
-            horizontal: "center",
-        }}>
-        <AOPopover_1.AOPopover cell={cell} cellComment={cellComment} handleClick={(color) => setCellColor(color)} register={register} handleSubmit={handleSubmit} onSubmit={onSubmit}/>
-      </material_1.Popover>
-    </>);
+    return (react_1.default.createElement(react_1.default.Fragment, null,
+        react_1.default.createElement(material_1.Grid, { item: true, sm: 1, onClick: handleClick, onMouseEnter: () => setHoverCell(cell), onMouseLeave: toggleHovered },
+            react_1.default.createElement(material_1.Box, { sx: Object.assign(Object.assign(Object.assign(Object.assign({ backgroundColor: cellColor }, theme_1.cellSx.cell), { boxShadow: 
+                    // triggers cell hover effects
+                    (hoverCell && hoverCell.track === cell.track) ||
+                        (hoverCell && hoverCell.parameter === cell.parameter)
+                        ? `0 0 0.5vw 0.2vw rgb(243, 239, 224, 0.125)`
+                        : ``, transition: (hoverCell && hoverCell.track === cell.track) ||
+                        (hoverCell && hoverCell.parameter === cell.parameter)
+                        ? "box-shadow 0.025s linear"
+                        : "box-shadow 0.1s linear" }), (cellColor !== theme_1.palette.aoGrey && cellColor !== "transparent"
+                    ? cellComment !== "" && theme_1.cellSx.comment
+                    : cellComment !== "" && theme_1.cellSx.commentInverse)), { "&:hover": {
+                        backgroundColor: cellColor === theme_1.palette.aoBlack && theme_1.palette.aoGrey,
+                        opacity: "0.6",
+                        cursor: "pointer",
+                    } }) })),
+        react_1.default.createElement(material_1.Popover, { sx: {
+                backdropFilter: "blur(1.5px)",
+                top: "1.6vw",
+                left: "0.2vw",
+            }, open: open, anchorEl: anchorEl, onClose: handleClose, anchorOrigin: {
+                vertical: "center",
+                horizontal: "center",
+            }, transformOrigin: {
+                vertical: "center",
+                horizontal: "center",
+            } },
+            react_1.default.createElement(AOPopover_1.AOPopover, { cell: cell, cellComment: cellComment, handleClick: (color) => setCellColor(color), register: register, handleSubmit: handleSubmit, onSubmit: onSubmit }))));
 };
 exports.AOCell = AOCell;

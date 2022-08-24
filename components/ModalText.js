@@ -9,18 +9,13 @@ const AboutModalContent_1 = require("./modals/AboutModalContent");
 const AONavAboutContent_1 = require("./modals/AONavAboutContent");
 const theme_1 = require("../assets/theme");
 const ModalText = ({ prompt }) => {
-    return (<material_1.Box sx={Object.assign(Object.assign({}, theme_1.modalFontSx), theme_1.modalBoxStyling)}>
-      <material_1.Box sx={Object.assign(Object.assign({}, theme_1.logoSx), { color: theme_1.palette.aoBlue, fontSize: "3vw", mb: "0.25vw" })}>
-        ꜵ
-      </material_1.Box>
-      <material_1.Divider variant="middle" sx={{ color: theme_1.palette.aoDivider }}/>
-      <material_1.Box sx={{ mt: "5vh" }}>
-        {(prompt === "New" && <NewModalContent_1.NewModalContent />) ||
-            (prompt === "Load" && <LoadModalContent_1.LoadModalContent />) ||
-            (prompt === "About" && <AboutModalContent_1.AboutModalContent />) ||
-            (prompt === "Contact" && <ContactModalContent_1.ContactModalContent />) ||
-            (prompt === "Nav" && <AONavAboutContent_1.AONavAboutContent />)}
-      </material_1.Box>
-    </material_1.Box>);
+    return (React.createElement(material_1.Box, { sx: Object.assign(Object.assign({}, theme_1.modalFontSx), theme_1.modalBoxStyling) },
+        React.createElement(material_1.Box, { sx: Object.assign(Object.assign({}, theme_1.logoSx), { color: theme_1.palette.aoBlue, fontSize: "3vw", mb: "0.25vw" }) }, "\uA735"),
+        React.createElement(material_1.Divider, { variant: "middle", sx: { color: theme_1.palette.aoDivider } }),
+        React.createElement(material_1.Box, { sx: { mt: "5vh" } }, (prompt === "New" && React.createElement(NewModalContent_1.NewModalContent, null)) ||
+            (prompt === "Load" && React.createElement(LoadModalContent_1.LoadModalContent, null)) ||
+            (prompt === "About" && React.createElement(AboutModalContent_1.AboutModalContent, null)) ||
+            (prompt === "Contact" && React.createElement(ContactModalContent_1.ContactModalContent, null)) ||
+            (prompt === "Nav" && React.createElement(AONavAboutContent_1.AONavAboutContent, null)))));
 };
 exports.ModalText = ModalText;

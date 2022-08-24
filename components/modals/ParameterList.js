@@ -19,12 +19,8 @@ const ParameterList = ({ addParameterList }) => {
         "Master",
         "Artwork",
     ];
-    return (<material_1.Box sx={{ mt: "1vw" }}>
-      {parameters.map((parameter) => {
-            return (<material_1.Button key={parameter} variant="outlined" onClick={() => addParameterList(parameter)} disableRipple>
-            {parameter}
-          </material_1.Button>);
-        })}
-    </material_1.Box>);
+    return (React.createElement(material_1.Box, { sx: { mt: "1vw" } }, parameters.map((parameter) => {
+        return (React.createElement(material_1.Button, { key: parameter, variant: "outlined", onClick: () => addParameterList(parameter), disableRipple: true }, parameter));
+    })));
 };
 exports.ParameterList = ParameterList;

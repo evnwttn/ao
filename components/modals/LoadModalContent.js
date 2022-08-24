@@ -9,28 +9,22 @@ const material_1 = require("@mui/material");
 const ArrowRight_1 = __importDefault(require("@mui/icons-material/ArrowRight"));
 const theme_1 = require("../../assets/theme");
 const LoadModalContent = () => {
-    return (<material_1.Box sx={{ mx: "2vw" }}>
-      <material_1.List>
-        <material_1.ListItem disablePadding>
-          <react_router_dom_1.Link to="/aogrid" state={{ from: "load" }} style={Object.assign({ textDecoration: "none" }, theme_1.modalFontSx)}>
-            <material_1.ListItemButton sx={{
-            span: {
-                fontSize: "1.25vw",
-            },
-            "&:hover": {
-                background: "transparent",
-                opacity: "0.7",
-                cursor: "pointer",
-            },
-        }} disableRipple>
-              <material_1.ListItemIcon>
-                <ArrowRight_1.default />
-              </material_1.ListItemIcon>
-              <material_1.ListItemText primary="The Dark Side Of The Moon"/>
-            </material_1.ListItemButton>
-          </react_router_dom_1.Link>
-        </material_1.ListItem>
-      </material_1.List>
-    </material_1.Box>);
+    return (React.createElement(material_1.Box, { sx: { mx: "2vw" } },
+        React.createElement(material_1.List, null,
+            React.createElement(material_1.ListItem, { disablePadding: true },
+                React.createElement(react_router_dom_1.Link, { to: "/aogrid", state: { from: "load" }, style: Object.assign({ textDecoration: "none" }, theme_1.modalFontSx) },
+                    React.createElement(material_1.ListItemButton, { sx: {
+                            span: {
+                                fontSize: "1.25vw",
+                            },
+                            "&:hover": {
+                                background: "transparent",
+                                opacity: "0.7",
+                                cursor: "pointer",
+                            },
+                        }, disableRipple: true },
+                        React.createElement(material_1.ListItemIcon, null,
+                            React.createElement(ArrowRight_1.default, null)),
+                        React.createElement(material_1.ListItemText, { primary: "The Dark Side Of The Moon" })))))));
 };
 exports.LoadModalContent = LoadModalContent;

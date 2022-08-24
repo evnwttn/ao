@@ -48,25 +48,19 @@ const Home = () => {
         setOpen(false);
         setModalType("");
     };
-    return (<material_1.Box sx={theme_1.homeSx.mainDiv}>
-      <material_1.ThemeProvider theme={theme_1.default}>
-        <ModalBase_1.ModalBase open={open} handleClose={handleClose} text={modalType}/>
-        <material_1.Box sx={theme_1.homeSx.cornerDiv}>
-          <ModalButton_1.ModalButton text={"About"} handleOpen={(text) => handleOpen(text)}/>
-          <ModalButton_1.ModalButton text={"Contact"} handleOpen={(text) => handleOpen(text)}/>
-        </material_1.Box>
-        <material_1.Box sx={theme_1.homeSx.centerDiv}>
-          <MainLogo_1.MainLogo />
-          <ModalButton_1.ModalButton text={"New"} handleOpen={(text) => handleOpen(text)}/>
-          <ModalButton_1.ModalButton text={"Load"} handleOpen={(text) => handleOpen(text)}/>
-        </material_1.Box>
-      </material_1.ThemeProvider>
-    </material_1.Box>);
+    return (React.createElement(material_1.Box, { sx: theme_1.homeSx.mainDiv },
+        React.createElement(material_1.ThemeProvider, { theme: theme_1.default },
+            React.createElement(ModalBase_1.ModalBase, { open: open, handleClose: handleClose, text: modalType }),
+            React.createElement(material_1.Box, { sx: theme_1.homeSx.cornerDiv },
+                React.createElement(ModalButton_1.ModalButton, { text: "About", handleOpen: (text) => handleOpen(text) }),
+                React.createElement(ModalButton_1.ModalButton, { text: "Contact", handleOpen: (text) => handleOpen(text) })),
+            React.createElement(material_1.Box, { sx: theme_1.homeSx.centerDiv },
+                React.createElement(MainLogo_1.MainLogo, null),
+                React.createElement(ModalButton_1.ModalButton, { text: "New", handleOpen: (text) => handleOpen(text) }),
+                React.createElement(ModalButton_1.ModalButton, { text: "Load", handleOpen: (text) => handleOpen(text) })))));
 };
 const rootElement = document.getElementById("root");
-(0, react_dom_1.render)(<react_router_dom_1.BrowserRouter>
-    <react_router_dom_1.Routes>
-      <react_router_dom_1.Route path="/ao" element={<Home />}/>
-      <react_router_dom_1.Route path="/aogrid" element={<AOGrid_1.AOGrid />}/>
-    </react_router_dom_1.Routes>
-  </react_router_dom_1.BrowserRouter>, rootElement);
+(0, react_dom_1.render)(React.createElement(react_router_dom_1.BrowserRouter, null,
+    React.createElement(react_router_dom_1.Routes, null,
+        React.createElement(react_router_dom_1.Route, { path: "/ao", element: React.createElement(Home, null) }),
+        React.createElement(react_router_dom_1.Route, { path: "/aogrid", element: React.createElement(AOGrid_1.AOGrid, null) }))), rootElement);

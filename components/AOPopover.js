@@ -23,14 +23,11 @@ const AOPopover = ({ cell, cellComment, handleClick, register, handleSubmit, onS
     (0, react_1.useEffect)(() => {
         setIsPopoverOpen(false);
     }, [cellComment, setIsPopoverOpen]);
-    return (<>
-      <AOCommentBase_1.AOCommentBase cell={cell} cellComment={cellComment} open={isPopoverOpen} handleClose={handleClose} register={register} handleSubmit={handleSubmit} onSubmit={onSubmit}/>
-      <AOColorWheel_1.AOColorWheel handleClick={(color) => handleClick(color)} openComment={() => setCommentOpen("2")}/>
-      <material_1.Box sx={theme_1.wheelSx.remove}>
-        <material_1.Tooltip title="Cancel Task" placement="right-end">
-          <RemoveCircleOutline_1.default onClick={() => handleClick("transparent")}/>
-        </material_1.Tooltip>
-      </material_1.Box>
-    </>);
+    return (React.createElement(React.Fragment, null,
+        React.createElement(AOCommentBase_1.AOCommentBase, { cell: cell, cellComment: cellComment, open: isPopoverOpen, handleClose: handleClose, register: register, handleSubmit: handleSubmit, onSubmit: onSubmit }),
+        React.createElement(AOColorWheel_1.AOColorWheel, { handleClick: (color) => handleClick(color), openComment: () => setCommentOpen("2") }),
+        React.createElement(material_1.Box, { sx: theme_1.wheelSx.remove },
+            React.createElement(material_1.Tooltip, { title: "Cancel Task", placement: "right-end" },
+                React.createElement(RemoveCircleOutline_1.default, { onClick: () => handleClick("transparent") })))));
 };
 exports.AOPopover = AOPopover;
