@@ -25,4 +25,13 @@ export const ContantModalContentTS = () => {
     }
   }, [formData, axios]);
 
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      if (formLoading) {
+        setFormLoading(false);
+      }
+    }, 2250);
+    return () => clearTimeout(timer);
+  }, [formLoading]);
+
 }
