@@ -4,7 +4,7 @@ import { TextField, IconButton, Box, CircularProgress } from "@mui/material";
 import SendIcon from "@mui/icons-material/Send";
 import { palette, modalCenteredSx, circularProgressSx } from "../../assets/theme";
 
-export const ContactModalTypescript = () => {
+export const ContactModalContent = () => {
     const axios = require("axios").default;
     const [formData, setFormData] = useState<{name: string; email: string; message: string}>({
       name: '',
