@@ -4,6 +4,7 @@ exports.ModalText = void 0;
 const material_1 = require("@mui/material");
 const NewModalContent_1 = require("./modals/NewModalContent");
 const LoadModalContent_1 = require("./modals/LoadModalContent");
+// import { ContactModalContent } from "./modals/ContactModalContent";
 const ContactModalContent_1 = require("./modals/ContactModalContent");
 const AboutModalContent_1 = require("./modals/AboutModalContent");
 const AONavAboutContent_1 = require("./modals/AONavAboutContent");
@@ -15,7 +16,7 @@ const ModalText = ({ prompt }) => {
         React.createElement(material_1.Box, { sx: { mt: "5vh" } }, (prompt === "New" && React.createElement(NewModalContent_1.NewModalContent, null)) ||
             (prompt === "Load" && React.createElement(LoadModalContent_1.LoadModalContent, null)) ||
             (prompt === "About" && React.createElement(AboutModalContent_1.AboutModalContent, null)) ||
-            (prompt === "Contact" && React.createElement(ContactModalContent_1.ContactModalContent, null)) ||
+            (prompt === "Contact" && React.createElement(ContactModalContent_1.ContactModalContentTS, null)) ||
             (prompt === "Nav" && React.createElement(AONavAboutContent_1.AONavAboutContent, null)))));
 };
 exports.ModalText = ModalText;
