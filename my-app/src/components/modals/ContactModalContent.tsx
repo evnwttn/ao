@@ -7,14 +7,14 @@ import { palette, modalCenteredSx, circularProgressSx } from "../../assets/theme
 export const ContantModalContentTS = () => {
     const axios = require("axios").default;
     const [formData, setFormData] = useState<{name: string; email: string; message: string}>({
-      name: '',
-      email: '',
-      message: '',
+      name: 'default',
+      email: 'default',
+      message: 'default',
     });    
     const [formLoading, setFormLoading] = useState<Boolean>(false);
-    const nameField = useRef<HTMLDivElement>(null);
-    const emailField = useRef<HTMLDivElement>(null);
-    const messageField = useRef<HTMLDivElement>(null);
+    const nameField = useRef<HTMLInputElement>(null);
+    const emailField = useRef<HTMLInputElement>(null);
+    const messageField = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
     if (formData) {
@@ -64,11 +64,11 @@ export const ContantModalContentTS = () => {
       <IconButton
         disableRipple
         sx={{ cursor: "default" }}
-        onClick={() =>
+        onClick={() => 
           setFormData({
-            name: nameField.current.value,
-            email: emailField.current.value,
-            message: messageField.current.value,
+            name: nameField?.current?.value,
+            email: emailField?.current?.value,
+            message: messageField?.current?.value,
           })
         }
       >
