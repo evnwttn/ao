@@ -26,13 +26,13 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ContactModalTypescript = void 0;
+exports.ContactModalContent = void 0;
 const React = __importStar(require("react"));
 const react_1 = require("react");
 const material_1 = require("@mui/material");
 const Send_1 = __importDefault(require("@mui/icons-material/Send"));
 const theme_1 = require("../../assets/theme");
-const ContactModalTypescript = () => {
+const ContactModalContent = () => {
     const axios = require("axios").default;
     const [formData, setFormData] = (0, react_1.useState)({
         name: '',
@@ -78,4 +78,4 @@ const ContactModalTypescript = () => {
                     mt: "1vh",
                 } }))));
 };
-exports.ContactModalTypescript = ContactModalTypescript;
+exports.ContactModalContent = ContactModalContent;
