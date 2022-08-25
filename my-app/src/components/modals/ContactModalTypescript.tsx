@@ -4,7 +4,7 @@ import { TextField, IconButton, Box, CircularProgress } from "@mui/material";
 import SendIcon from "@mui/icons-material/Send";
 import { palette, modalCenteredSx, circularProgressSx } from "../../assets/theme";
 
-export const ContactModalContentTS = () => {
+export const ContactModalTypescript = () => {
     const axios = require("axios").default;
     const [formData, setFormData] = useState<{name: string; email: string; message: string}>({
       name: '',
@@ -17,7 +17,7 @@ export const ContactModalContentTS = () => {
     const messageField = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
-    if (formData) {
+    if (formData.message !== '') {
       setFormLoading(true);
       axios
         .post("http://localhost:5000/contact", {

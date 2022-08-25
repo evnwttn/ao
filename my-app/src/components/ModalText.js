@@ -2,7 +2,7 @@ import { Divider, Box } from "@mui/material";
 import { NewModalContent } from "./modals/NewModalContent";
 import { LoadModalContent } from "./modals/LoadModalContent";
 // import { ContactModalContent } from "./modals/ContactModalContent";
-import { ContactModalContentTS } from "./modals/ContactModalContent";
+import { ContactModalTypescript } from "./modals/ContactModalTypescript";
 import { AboutModalContent } from "./modals/AboutModalContent";
 import { AONavAboutContent } from "./modals/AONavAboutContent";
 import { palette, logoSx, modalFontSx, modalBoxStyling } from "../assets/theme";
@@ -30,7 +30,7 @@ export const ModalText = ({ prompt }) => {
         {(prompt === "New" && <NewModalContent />) ||
           (prompt === "Load" && <LoadModalContent />) ||
           (prompt === "About" && <AboutModalContent />) ||
-          (prompt === "Contact" && <ContactModalContentTS />) ||
+          (prompt === "Contact" && <ContactModalTypescript />) ||
           (prompt === "Nav" && <AONavAboutContent />)}
       </Box>
     </Box>
