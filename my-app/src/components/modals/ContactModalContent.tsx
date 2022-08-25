@@ -7,9 +7,9 @@ import { palette, modalCenteredSx, circularProgressSx } from "../../assets/theme
 export const ContantModalContentTS = () => {
     const axios = require("axios").default;
     const [formData, setFormData] = useState<{name: string; email: string; message: string}>({
-      name: 'default',
-      email: 'default',
-      message: 'default',
+      name: '',
+      email: '',
+      message: '',
     });    
     const [formLoading, setFormLoading] = useState<Boolean>(false);
     const nameField = useRef<HTMLInputElement>(null);
@@ -66,9 +66,9 @@ export const ContantModalContentTS = () => {
         sx={{ cursor: "default" }}
         onClick={() => 
           setFormData({
-            name: nameField?.current?.value,
-            email: emailField?.current?.value,
-            message: messageField?.current?.value,
+            name: nameField?.current?.value!,
+            email: emailField?.current?.value!,
+            message: messageField?.current?.value!,
           })
         }
       >
