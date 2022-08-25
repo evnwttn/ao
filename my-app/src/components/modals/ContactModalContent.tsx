@@ -6,7 +6,11 @@ import { palette, modalCenteredSx, circularProgressSx } from "../../assets/theme
 
 export const ContantModalContentTS = () => {
     const axios = require("axios").default;
-    const [formData, setFormData] = useState<FormData>({} as FormData);
+    const [formData, setFormData] = useState<{name: string; email: string; message: string}>({
+      name: '',
+      email: '',
+      message: '',
+    });    
     const [formLoading, setFormLoading] = useState<Boolean>(false);
     const nameField = useRef<HTMLDivElement>(null);
     const emailField = useRef<HTMLDivElement>(null);
@@ -35,7 +39,52 @@ export const ContantModalContentTS = () => {
   }, [formLoading]);   
 
   return (
-    <Box></Box>
-  )
+    <Box sx={modalCenteredSx}>
+      <TextField
+        placeholder="Name"
+        inputRef={nameField}
+        variant="standard"
+        margin="normal"
+        sx={{ width: "28vw" }}
+      />
+      <TextField
+        placeholder="Email Address"
+        inputRef={emailField}
+        variant="standard"
+        margin="normal"
+        sx={{ width: "28vw" }}
+      />
+      <TextField
+        placeholder="Message"
+        inputRef={messageField}
+        variant="standard"
+        margin="normal"
+        sx={{ width: "28vw" }}
+      />
+      <IconButton
+        disableRipple
+        sx={{ cursor: "default" }}
+        onClick={() =>
+          setFormData({
+            name: nameField.current.value,
+            email: emailField.current.value,
+            message: messageField.current.value,
+          })
+        }
+      >
+        <CircularProgress
+          size="2.33vw"
+          sx={{
+            ...circularProgressSx,
+            color: formLoading === true ? palette.aoBlue : palette.aoGrey,
+          }}
+        />
+        <SendIcon
+          sx={{
+            mt: "1vh",
+          }}
+        />
+      </IconButton>
+    </Box>  )
 
 }
