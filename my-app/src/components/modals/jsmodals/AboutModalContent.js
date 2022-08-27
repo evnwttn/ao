@@ -1,5 +1,5 @@
 import { Box } from "@mui/material";
-import { modalCenteredSx } from "../../assets/theme";
+import { modalCenteredSx } from "../../../assets/theme";
 
 export const AboutModalContent = () => {
   return (
