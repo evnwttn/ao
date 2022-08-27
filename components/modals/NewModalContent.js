@@ -116,15 +116,13 @@ const NewModalContent = () => {
         }
     }, [sessionData, formPrompt]);
     (0, react_1.useEffect)(() => {
-        startNewSession && console.log(sessionData);
-        // axios
-        //   .post("http://localhost:5000/contact", {
-        //     ...sessionData,
-        //   })
-        //   .then((_data) => console.log(JSON.stringify(_data)))
-        //   .catch(function (error) {
-        //     console.log(error);
-        //   });
+        startNewSession &&
+            axios
+                .post("http://localhost:5000/sessionData", Object.assign({}, sessionData))
+                .then((_data) => console.log(JSON.stringify(_data)))
+                .catch(function (error) {
+                console.log(error);
+            });
     }, [startNewSession, axios, sessionData]);
     return formPrompt <= 1 ? (react_1.default.createElement(NewModalContentTextfieldForm_1.NewModalContentTextfieldForm, { handleSubmit: handleSubmit, onSubmitForm: submitSessionData, textInput: textInput, formPrompt: formPrompt, register: register })) : formPrompt <= 3 ? (react_1.default.createElement(NewModalContentListForm_1.NewModalContentListForm, { handleSubmit: handleSubmit, addInputArray: addInputArray, removeInputArray: removeInputArray, addParameterList: addParameterList, submitInputArray: submitInputArray, setValue: setValue, formPrompt: formPrompt, sessionData: sessionData, textInput: textInput, inputArray: inputArray })) : (startNewSession && (react_1.default.createElement(react_router_dom_1.Navigate, { to: "/aogrid", state: { from: "new", data: sessionData }, replace: true })));
 };
