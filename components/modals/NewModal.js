@@ -25,6 +25,7 @@ var __importStar = (this && this.__importStar) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.NewModalContent = void 0;
 const react_1 = __importStar(require("react"));
+const react_hook_form_1 = require("react-hook-form");
 const NewModalContent = () => {
     const axios = require("axios").default;
     // const [sessionData, setSessionData] = useState();
@@ -32,12 +33,12 @@ const NewModalContent = () => {
     const [formPrompt, setFormPrompt] = (0, react_1.useState)(0);
     const [triggerSubmit, setTriggerSubmit] = (0, react_1.useState)(0);
     const [inputArray, setInputArray] = (0, react_1.useState)([]);
-    // const textInput = React.useRef(null);
-    // const { register, handleSubmit, setValue } = useForm({
-    //   defaultValues: {
-    //     parameters: ["title"],
-    //   },
-    // });
+    const textInput = (0, react_1.useRef)(null);
+    const { register, handleSubmit, setValue } = (0, react_hook_form_1.useForm)({
+        defaultValues: {
+            parameters: ["title"],
+        },
+    });
     return react_1.default.createElement(react_1.default.Fragment, null);
 };
 exports.NewModalContent = NewModalContent;

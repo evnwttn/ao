@@ -35,7 +35,7 @@ const NewModalContent = () => {
     const [formPrompt, setFormPrompt] = (0, react_1.useState)(0);
     const [triggerSubmit, setTriggerSubmit] = (0, react_1.useState)(0);
     const [inputArray, setInputArray] = (0, react_1.useState)([]);
-    const textInput = react_1.default.useRef(null);
+    const textInput = (0, react_1.useRef)(null);
     const { register, handleSubmit, setValue } = (0, react_hook_form_1.useForm)({
         defaultValues: {
             parameters: ["title"],
