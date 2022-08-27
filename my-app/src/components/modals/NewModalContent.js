@@ -101,16 +101,17 @@ export const NewModalContent = () => {
     }
   }, [sessionData, formPrompt]);
 
-  // const submitPostRequest = () => {
-  //   axios
-  //     .post("http://localhost:5000/contact", {
-  //       ...formData,
-  //     })
-  //     .then((_data) => console.log(JSON.stringify(_data)))
-  //     .catch(function (error) {
-  //       console.log(error);
-  //     });
-  // };
+  useEffect(() => {
+    startNewSession &&
+      axios
+        .post("http://localhost:5000/contact", {
+          ...sessionData,
+        })
+        .then((_data) => console.log(JSON.stringify(_data)))
+        .catch(function (error) {
+          console.log(error);
+        });
+  }, [startNewSession, axios, sessionData]);
 
   return formPrompt <= 1 ? (
     <NewModalContentTextfieldForm
