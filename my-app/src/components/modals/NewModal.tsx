@@ -5,6 +5,18 @@ import { NewModalContentTextfieldForm } from "./NewModalContentTextfieldForm";
 import { NewModalContentListForm } from "./NewModalContentListForm";
 
 export const NewModalContent = () => {
-    const axios = require("axios").default;
+    // const axios = require("axios").default;
+    // const [sessionData, setSessionData] = useState();
+    // const [startNewSession, setStartNewSession] = useState(false);
+    // const [formPrompt, setFormPrompt] = useState(0);
+    // const [triggerSubmit, setTriggerSubmit] = useState(0);
+    // const [inputArray, setInputArray] = useState([]);
+    // const textInput = React.useRef(null);
+    // const { register, handleSubmit, setValue } = useForm({
+    //   defaultValues: {
+    //     parameters: ["title"],
+    //   },
+    // });
+
     return <></>
 }
