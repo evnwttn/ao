@@ -5,6 +5,7 @@ import { NewModalContentTextfieldForm } from "./NewModalContentTextfieldForm";
 import { NewModalContentListForm } from "./NewModalContentListForm";
 
 export const NewModalContent = () => {
+  const axios = require("axios").default;
   const [sessionData, setSessionData] = useState();
   const [startNewSession, setStartNewSession] = useState(false);
   const [formPrompt, setFormPrompt] = useState(0);
@@ -99,6 +100,17 @@ export const NewModalContent = () => {
       setStartNewSession(true);
     }
   }, [sessionData, formPrompt]);
+
+  // const submitPostRequest = () => {
+  //   axios
+  //     .post("http://localhost:5000/contact", {
+  //       ...formData,
+  //     })
+  //     .then((_data) => console.log(JSON.stringify(_data)))
+  //     .catch(function (error) {
+  //       console.log(error);
+  //     });
+  // };
 
   return formPrompt <= 1 ? (
     <NewModalContentTextfieldForm
