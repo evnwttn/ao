@@ -102,15 +102,15 @@ export const NewModalContent = () => {
   }, [sessionData, formPrompt]);
 
   useEffect(() => {
-    startNewSession && console.log(sessionData);
-    // axios
-    //   .post("http://localhost:5000/contact", {
-    //     ...sessionData,
-    //   })
-    //   .then((_data) => console.log(JSON.stringify(_data)))
-    //   .catch(function (error) {
-    //     console.log(error);
-    //   });
+    startNewSession &&
+      axios
+        .post("http://localhost:5000/sessionData", {
+          ...sessionData,
+        })
+        .then((_data) => console.log(JSON.stringify(_data)))
+        .catch(function (error) {
+          console.log(error);
+        });
   }, [startNewSession, axios, sessionData]);
 
   return formPrompt <= 1 ? (
