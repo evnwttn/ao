@@ -11,12 +11,12 @@ export const NewModalContent = () => {
     const [formPrompt, setFormPrompt] = useState<Number>(0);
     const [triggerSubmit, setTriggerSubmit] = useState<Number>(0);
     const [inputArray, setInputArray] = useState<Array<string>>([]);
-    // const textInput = React.useRef(null);
-    // const { register, handleSubmit, setValue } = useForm({
-    //   defaultValues: {
-    //     parameters: ["title"],
-    //   },
-    // });
+    const textInput = useRef<HTMLInputElement>(null);
+    const { register, handleSubmit, setValue } = useForm({
+      defaultValues: {
+        parameters: ["title"],
+      },
+    });
 
     return <></>
 }

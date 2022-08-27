@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Navigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { NewModalContentTextfieldForm } from "./NewModalContentTextfieldForm";
@@ -10,7 +10,7 @@ export const NewModalContent = () => {
   const [formPrompt, setFormPrompt] = useState(0);
   const [triggerSubmit, setTriggerSubmit] = useState(0);
   const [inputArray, setInputArray] = useState([]);
-  const textInput = React.useRef(null);
+  const textInput = useRef(null);
   const { register, handleSubmit, setValue } = useForm({
     defaultValues: {
       parameters: ["title"],
