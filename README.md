@@ -1,7 +1,5 @@
 # ꜵ :musical_score:
 
-https://evnwttn.github.io/ao/
-
 a visual album organizational tool utilizing
 
 <ul>
