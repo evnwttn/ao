@@ -4,8 +4,6 @@ import { Box, Grid, Popover } from "@mui/material/";
 import { AOPopover } from "./AOPopover";
 import { palette, cellSx } from "../assets/theme";
 
-// diff highlighted cell from others
-
 export const AOCell = ({
   cell,
   track,

@@ -20,6 +20,10 @@ export const AOGrid = () => {
     from === "new" && setGridData(data);
   }, [location.state]);
 
+  useEffect(() => {
+    console.log(gridData);
+  }, [gridData]);
+
   return (
     <Box sx={gridSx.container}>
       <ThemeProvider theme={aotheme}>
