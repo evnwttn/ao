@@ -11,6 +11,7 @@ export const AOCell = ({
   toggleHovered,
   setHoverCell,
   hoverCell,
+  setCellUpdate,
 }) => {
   const { register, handleSubmit } = useForm();
   const [cellColor, setCellColor] = useState(palette.aoGrey);
