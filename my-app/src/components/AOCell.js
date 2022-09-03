@@ -11,7 +11,7 @@ export const AOCell = ({
   toggleHovered,
   setHoverCell,
   hoverCell,
-  setCellUpdate,
+  // setCellUpdate,
 }) => {
   const { register, handleSubmit } = useForm();
   const [cellColor, setCellColor] = useState(palette.aoGrey);
@@ -48,6 +48,10 @@ export const AOCell = ({
     }, 1000);
     return () => clearTimeout(timer);
   }, [toggleHovered, setHoverCell]);
+
+  useEffect(() => {
+    console.log(`cell: ${{ cell }} | new color: ${cellColor}`);
+  }, [cellColor, cell]);
 
   return (
     <>

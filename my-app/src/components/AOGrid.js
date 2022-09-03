@@ -9,7 +9,7 @@ import { darkSideOfTheMoon } from "../assets/dummydata/LoadSample";
 
 export const AOGrid = () => {
   const [gridData, setGridData] = useState(blankSession);
-  const [cellUpdate, setCellUpdate] = useState();
+  // const [cellUpdate, setCellUpdate] = useState();
   const [hoverCell, setHoverCell] = useState();
   const [isHovered, setIsHovered] = useState(false);
   const toggleHovered = () => setIsHovered(!isHovered);
@@ -20,10 +20,6 @@ export const AOGrid = () => {
     from === "load" && setGridData(darkSideOfTheMoon);
     from === "new" && setGridData(data);
   }, [location.state]);
-
-  useEffect(() => {
-    console.log(cellUpdate);
-  }, [cellUpdate]);
 
   return (
     <Box sx={gridSx.container}>
@@ -74,7 +70,7 @@ export const AOGrid = () => {
                         setHoverCell={setHoverCell}
                         hoverCell={hoverCell}
                         gridData={gridData}
-                        setCellUpdate={setCellUpdate}
+                        // setCellUpdate={setCellUpdate}
                       />
                     );
                   })}
