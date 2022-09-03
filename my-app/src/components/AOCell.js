@@ -20,9 +20,15 @@ export const AOCell = ({
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
 
+  const updateFunction = () => {
+    console.log(cell);
+  };
+
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
+    updateFunction();
   };
+
   const handleClose = () => {
     setAnchorEl(null);
   };
