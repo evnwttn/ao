@@ -49,10 +49,6 @@ export const AOCell = ({
     return () => clearTimeout(timer);
   }, [toggleHovered, setHoverCell]);
 
-  useEffect(() => {
-    console.log(`cell: ${{ cell }} | new color: ${cellColor}`);
-  }, [cellColor, cell]);
-
   return (
     <>
       <Grid
