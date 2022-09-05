@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef, useCallback } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Navigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { NewModalContentTextfieldForm } from "./NewModalContentTextfieldForm";
@@ -89,11 +89,11 @@ export const NewModalContent = () => {
           );
           setValue(
             `tracks[${trackIndex}].parameters[${parameterIndex}].colour`,
-            `default`
+            ``
           );
           setValue(
             `tracks[${trackIndex}].parameters[${parameterIndex}].comment`,
-            `default`
+            ``
           );
         }
       });
