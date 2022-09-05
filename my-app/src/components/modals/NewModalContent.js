@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useCallback } from "react";
 import { Navigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { NewModalContentTextfieldForm } from "./NewModalContentTextfieldForm";
@@ -74,11 +74,33 @@ export const NewModalContent = () => {
     setTriggerSubmit(triggerSubmit + 1);
   };
 
+  // const formatSessionData = useCallback(() => {
+  //   sessionData &&
+  //     sessionData.tracks.forEach((track, trackIndex) => {
+  //       sessionData.parameters.forEach((parameterName, parameterIndex) => {
+  //         if (parameterName !== "title") {
+  //           setValue(
+  //             `tracks[${trackIndex}].parameters[${
+  //               parameterIndex - 1
+  //             }].parameter`,
+  //             parameterName
+  //           );
+  //           setValue(
+  //             `tracks[${trackIndex}].parameters[${parameterIndex - 1}].colour`,
+  //             `default`
+  //           );
+  //           setValue(
+  //             `tracks[${trackIndex}].parameters[${parameterIndex - 1}].comment`,
+  //             `default`
+  //           );
+  //         }
+  //       });
+  //     });
+  // }, [sessionData, setValue]);
+
   useEffect(() => {
-    if (triggerSubmit >= 1) {
-      console.log(sessionData);
-    }
-  }, [triggerSubmit, sessionData]);
+    console.log(sessionData);
+  }, [sessionData]);
 
   useEffect(() => {
     if (triggerSubmit >= 1) {
