@@ -18,6 +18,30 @@ export const NewModalContent = () => {
     },
   });
 
+  const formatSessionData = () => {
+    sessionData &&
+      sessionData.tracks.forEach((track, trackIndex) => {
+        sessionData.parameters.forEach((parameterName, parameterIndex) => {
+          if (parameterName !== "title") {
+            setValue(
+              `tracks[${trackIndex}].parameters[${
+                parameterIndex - 1
+              }].parameter`,
+              parameterName
+            );
+            setValue(
+              `tracks[${trackIndex}].parameters[${parameterIndex - 1}].colour`,
+              ``
+            );
+            setValue(
+              `tracks[${trackIndex}].parameters[${parameterIndex - 1}].comment`,
+              ``
+            );
+          }
+        });
+      });
+  };
+
   const addInputArray = () => {
     let textField = textInput.current.value;
     switch (formPrompt) {
