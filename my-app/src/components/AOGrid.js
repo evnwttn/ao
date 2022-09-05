@@ -12,6 +12,7 @@ export const AOGrid = () => {
   const [hoverCell, setHoverCell] = useState();
   const [isHovered, setIsHovered] = useState(false);
   const toggleHovered = () => setIsHovered(!isHovered);
+  const [updateColor, setUpdateColor] = useState();
 
   const location = useLocation();
   useEffect(() => {
