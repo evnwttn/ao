@@ -75,8 +75,10 @@ export const NewModalContent = () => {
   };
 
   useEffect(() => {
-    console.log("yo");
-  }, [setValue]);
+    if (triggerSubmit >= 1) {
+      console.log(sessionData);
+    }
+  }, [triggerSubmit, sessionData]);
 
   useEffect(() => {
     if (triggerSubmit >= 1) {

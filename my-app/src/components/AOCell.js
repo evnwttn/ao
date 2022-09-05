@@ -11,7 +11,6 @@ export const AOCell = ({
   toggleHovered,
   setHoverCell,
   hoverCell,
-  // setCellUpdate,
 }) => {
   const { register, handleSubmit } = useForm();
   const [cellColor, setCellColor] = useState(palette.aoGrey);
@@ -20,13 +19,8 @@ export const AOCell = ({
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
 
-  const updateFunction = () => {
-    console.log(cell);
-  };
-
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
-    updateFunction();
   };
 
   const handleClose = () => {
