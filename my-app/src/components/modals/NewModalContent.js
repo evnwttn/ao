@@ -69,34 +69,36 @@ export const NewModalContent = () => {
     inputArray.forEach((title, index) => {
       formPrompt === 2
         ? setValue(`tracks.${index}.title`, title)
-        : setValue(`parameters.${index + 1}`, title);
+        : submitParameters();
     });
+
     setTriggerSubmit(triggerSubmit + 1);
   };
 
-  // const formatSessionData = useCallback(() => {
-  //   sessionData &&
-  //     sessionData.tracks.forEach((track, trackIndex) => {
-  //       sessionData.parameters.forEach((parameterName, parameterIndex) => {
-  //         if (parameterName !== "title") {
-  //           setValue(
-  //             `tracks[${trackIndex}].parameters[${
-  //               parameterIndex - 1
-  //             }].parameter`,
-  //             parameterName
-  //           );
-  //           setValue(
-  //             `tracks[${trackIndex}].parameters[${parameterIndex - 1}].colour`,
-  //             `default`
-  //           );
-  //           setValue(
-  //             `tracks[${trackIndex}].parameters[${parameterIndex - 1}].comment`,
-  //             `default`
-  //           );
-  //         }
-  //       });
-  //     });
-  // }, [sessionData, setValue]);
+  const submitParameters = () => {
+    formPrompt === 3 &&
+      inputArray.forEach((paramTitle, paramIndex) => {
+        setValue(`parameters.${paramIndex + 1}`, paramTitle);
+      });
+    sessionData.tracks.forEach((track, trackIndex) => {
+      inputArray.forEach((parameterName, parameterIndex) => {
+        if (parameterName !== "title") {
+          setValue(
+            `tracks[${trackIndex}].parameters[${parameterIndex}].parameter`,
+            parameterName
+          );
+          setValue(
+            `tracks[${trackIndex}].parameters[${parameterIndex}].colour`,
+            `default`
+          );
+          setValue(
+            `tracks[${trackIndex}].parameters[${parameterIndex}].comment`,
+            `default`
+          );
+        }
+      });
+    });
+  };
 
   useEffect(() => {
     console.log(sessionData);
@@ -106,6 +108,7 @@ export const NewModalContent = () => {
     if (triggerSubmit >= 1) {
       handleSubmit((data) => submitSessionData(data))();
     }
+    console.log(triggerSubmit);
   }, [triggerSubmit, handleSubmit]);
 
   const submitSessionData = (data) => {
