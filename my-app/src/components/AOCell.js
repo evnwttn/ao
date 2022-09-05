@@ -25,9 +25,10 @@ export const AOCell = ({
 
   useEffect(() => {
     if (updateInit === true) {
-      console.log(`${cellColor}`);
+      setUpdateCell(cellColor);
+      setUpdateComment(cellComment);
     }
-  }, [cellColor, updateInit]);
+  }, [cellColor, updateInit, setUpdateCell, setUpdateComment, cellComment]);
 
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
