@@ -21,14 +21,14 @@ export const AOCell = ({
   const onSubmit = (data) => setCellComment(data.comment);
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
-  const [updateInit, setUpdateInit] = useState(false);
 
+  const [updateInit, setUpdateInit] = useState(false);
   useEffect(() => {
     if (updateInit === true) {
-      setUpdateCell(cellColor);
+      setUpdateColor(cellColor);
       setUpdateComment(cellComment);
     }
-  }, [cellColor, updateInit, setUpdateCell, setUpdateComment, cellComment]);
+  }, [updateInit, setUpdateComment, cellComment, setUpdateColor, cellColor]);
 
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
