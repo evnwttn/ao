@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef, useCallback } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Navigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { NewModalContentTextfieldForm } from "./NewModalContentTextfieldForm";
@@ -76,6 +76,12 @@ export const NewModalContent = () => {
 
   useEffect(() => {
     if (triggerSubmit >= 1) {
+      console.log(sessionData);
+    }
+  }, [triggerSubmit, sessionData]);
+
+  useEffect(() => {
+    if (triggerSubmit >= 1) {
       handleSubmit((data) => submitSessionData(data))();
     }
   }, [triggerSubmit, handleSubmit]);
@@ -100,10 +106,6 @@ export const NewModalContent = () => {
       setStartNewSession(true);
     }
   }, [sessionData, formPrompt]);
-
-  useEffect(() => {
-    startNewSession && formatSessionData();
-  }, [startNewSession, formatSessionData]);
 
   useEffect(() => {
     startNewSession &&
