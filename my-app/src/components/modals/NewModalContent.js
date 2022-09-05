@@ -3,6 +3,7 @@ import { Navigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { NewModalContentTextfieldForm } from "./NewModalContentTextfieldForm";
 import { NewModalContentListForm } from "./NewModalContentListForm";
+import { palette } from "../../assets/theme";
 
 export const NewModalContent = () => {
   const axios = require("axios").default;
@@ -89,7 +90,7 @@ export const NewModalContent = () => {
           );
           setValue(
             `tracks[${trackIndex}].parameters[${parameterIndex}].colour`,
-            ``
+            `${palette.aoGrey}`
           );
           setValue(
             `tracks[${trackIndex}].parameters[${parameterIndex}].comment`,
