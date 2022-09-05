@@ -17,10 +17,11 @@ export const AOGrid = () => {
   const [updateCell, setUpdateCell] = useState();
   const [updateColor, setUpdateColor] = useState();
   const [updateComment, setUpdateComment] = useState();
-  const updateFunction = () => {
-    console.log(updateCell);
-    console.log(`${updateColor} | ${updateComment}`);
-  };
+  useEffect(() => {
+    updateCell && console.log(updateCell);
+    updateColor && console.log(updateColor);
+    updateComment && console.log(updateComment);
+  }, [updateCell, updateColor, updateComment]);
 
   const location = useLocation();
   useEffect(() => {
@@ -78,6 +79,9 @@ export const AOGrid = () => {
                         setHoverCell={setHoverCell}
                         hoverCell={hoverCell}
                         gridData={gridData}
+                        setUpdateCell={setUpdateCell}
+                        setUpdateColor={setUpdateColor}
+                        setUpdateComment={setUpdateComment}
                       />
                     );
                   })}
