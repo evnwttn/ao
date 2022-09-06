@@ -21,7 +21,9 @@ export const AOGrid = () => {
   useEffect(() => {
     updateColor && console.log(updateColor);
     updateComment && console.log(updateComment);
-  }, [updateColor, updateComment]);
+    updateTrack && console.log(updateTrack);
+    updateParameter && console.log(updateParameter);
+  }, [updateColor, updateComment, updateTrack, updateParameter]);
 
   const location = useLocation();
   useEffect(() => {

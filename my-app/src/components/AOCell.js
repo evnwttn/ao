@@ -26,7 +26,20 @@ export const AOCell = ({
   const updateGrid = useCallback(() => {
     setUpdateColor(cellColor);
     setUpdateComment(cellComment);
-  }, [setUpdateColor, cellColor, setUpdateComment, cellComment]);
+    if (cellColor || cellComment) {
+      setUpdateTrack(track);
+      setUpdateParameter(parameter);
+    }
+  }, [
+    setUpdateColor,
+    cellColor,
+    setUpdateComment,
+    cellComment,
+    setUpdateTrack,
+    track,
+    setUpdateParameter,
+    parameter,
+  ]);
 
   const [updateInit, setUpdateInit] = useState(false);
   useEffect(() => {
