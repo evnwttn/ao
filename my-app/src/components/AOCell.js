@@ -22,15 +22,25 @@ export const AOCell = ({
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
 
-  const updateGrid = useCallback(() => {}, []);
+  const updateGrid = useCallback(() => {
+    setUpdateColor(cellColor);
+    setUpdateComment(cellComment);
+    setUpdateCell(cell);
+  }, [
+    cellColor,
+    cellComment,
+    cell,
+    setUpdateColor,
+    setUpdateComment,
+    setUpdateCell,
+  ]);
 
   const [updateInit, setUpdateInit] = useState(false);
   useEffect(() => {
     if (updateInit === true) {
-      setUpdateColor(cellColor);
-      setUpdateComment(cellComment);
+      updateGrid();
     }
-  }, [updateInit, setUpdateComment, cellComment, setUpdateColor, cellColor]);
+  }, [updateInit, updateGrid]);
 
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
