@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
+import { useForm } from "react-hook-form";
 import { Box, Grid, ThemeProvider } from "@mui/material/";
 import aotheme, { gridSx, cellSx } from "../assets/theme";
 import { AOCell } from "./AOCell";
@@ -13,24 +14,25 @@ export const AOGrid = () => {
   const [isHovered, setIsHovered] = useState(false);
   const toggleHovered = () => setIsHovered(!isHovered);
 
-  // update ZONE
-  const [updateColor, setUpdateColor] = useState();
-  const [updateComment, setUpdateComment] = useState();
-  const [updateTrack, setUpdateTrack] = useState();
-  const [updateParameter, setUpdateParameter] = useState();
-  useEffect(() => {
-    updateColor && console.log(`color | ${updateColor}`);
-    updateComment && console.log(`comment | ${updateComment}`);
-    updateTrack && console.log(`track | ${updateTrack}`);
-    updateParameter && console.log(`param | ${updateParameter}`);
-  }, [updateColor, updateComment, updateTrack, updateParameter]);
-
   const location = useLocation();
   useEffect(() => {
     const { from, data } = location.state;
     from === "load" && setGridData(darkSideOfTheMoon);
     from === "new" && setGridData(data);
   }, [location.state]);
+
+  const [updateColor, setUpdateColor] = useState();
+  const [updateComment, setUpdateComment] = useState();
+  const [updateTrack, setUpdateTrack] = useState();
+  const [updateParameter, setUpdateParameter] = useState();
+  const { setValue } = useForm();
+
+  useEffect(() => {
+    updateColor && console.log(`color | ${updateColor}`);
+    updateComment && console.log(`comment | ${updateComment}`);
+    updateTrack && console.log(`track | ${updateTrack}`);
+    updateParameter && console.log(`param | ${updateParameter}`);
+  }, [updateColor, updateComment, updateTrack, updateParameter]);
 
   return (
     <Box sx={gridSx.container}>
