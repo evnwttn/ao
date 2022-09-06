@@ -23,7 +23,7 @@ export const AOCell = ({
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
 
-  const updateGrid = useCallback(() => {
+  const updateSession = useCallback(() => {
     setUpdateColor(cellColor);
     setUpdateComment(cellComment);
     if (cellColor || cellComment) {
@@ -44,9 +44,9 @@ export const AOCell = ({
   const [updateInit, setUpdateInit] = useState(false);
   useEffect(() => {
     if (updateInit === true) {
-      updateGrid();
+      updateSession();
     }
-  }, [updateInit, updateGrid]);
+  }, [updateInit, updateSession]);
 
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
