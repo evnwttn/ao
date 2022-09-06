@@ -18,7 +18,6 @@ export const AOGrid = () => {
   const [updateColor, setUpdateColor] = useState();
   const [updateComment, setUpdateComment] = useState();
   useEffect(() => {
-    updateCell && console.log(updateCell);
     updateColor && console.log(updateColor);
     updateComment && console.log(updateComment);
   }, [updateCell, updateColor, updateComment]);
