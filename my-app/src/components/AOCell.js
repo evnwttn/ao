@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { useForm } from "react-hook-form";
 import { Box, Grid, Popover } from "@mui/material/";
 import { AOPopover } from "./AOPopover";
@@ -21,6 +21,8 @@ export const AOCell = ({
   const onSubmit = (data) => setCellComment(data.comment);
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
+
+  const updateGrid = useCallback(() => {}, []);
 
   const [updateInit, setUpdateInit] = useState(false);
   useEffect(() => {
