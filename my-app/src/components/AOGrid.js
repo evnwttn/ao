@@ -16,6 +16,8 @@ export const AOGrid = () => {
   // update ZONE
   const [updateColor, setUpdateColor] = useState();
   const [updateComment, setUpdateComment] = useState();
+  const [updateTrack, setUpdateTrack] = useState();
+  const [updateParameter, setUpdateParameter] = useState();
   useEffect(() => {
     updateColor && console.log(updateColor);
     updateComment && console.log(updateComment);
@@ -79,6 +81,8 @@ export const AOGrid = () => {
                         gridData={gridData}
                         setUpdateColor={setUpdateColor}
                         setUpdateComment={setUpdateComment}
+                        setUpdateTrack={setUpdateTrack}
+                        setUpdateParameter={setUpdateParameter}
                       />
                     );
                   })}
