@@ -27,7 +27,7 @@ export const AOCell = ({
     setUpdateColor(cellColor);
     setUpdateComment(cellComment);
     if (cellColor || cellComment) {
-      setUpdateTrack(track);
+      setUpdateTrack(track.title);
       setUpdateParameter(parameter);
     }
   }, [

@@ -19,10 +19,10 @@ export const AOGrid = () => {
   const [updateTrack, setUpdateTrack] = useState();
   const [updateParameter, setUpdateParameter] = useState();
   useEffect(() => {
-    updateColor && console.log(updateColor);
-    updateComment && console.log(updateComment);
-    updateTrack && console.log(updateTrack);
-    updateParameter && console.log(updateParameter);
+    updateColor && console.log(`color | ${updateColor}`);
+    updateComment && console.log(`comment | ${updateComment}`);
+    updateTrack && console.log(`track | ${updateTrack}`);
+    updateParameter && console.log(`param | ${updateParameter}`);
   }, [updateColor, updateComment, updateTrack, updateParameter]);
 
   const location = useLocation();
