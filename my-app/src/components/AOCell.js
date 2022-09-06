@@ -11,7 +11,6 @@ export const AOCell = ({
   toggleHovered,
   setHoverCell,
   hoverCell,
-  setUpdateCell,
   setUpdateColor,
   setUpdateComment,
 }) => {
@@ -25,7 +24,7 @@ export const AOCell = ({
   const updateGrid = useCallback(() => {
     setUpdateColor(cellColor);
     setUpdateComment(cellComment);
-  }, [cellColor, cellComment, setUpdateColor, setUpdateComment]);
+  }, [setUpdateColor, cellColor, setUpdateComment, cellComment]);
 
   const [updateInit, setUpdateInit] = useState(false);
   useEffect(() => {

@@ -14,13 +14,12 @@ export const AOGrid = () => {
   const toggleHovered = () => setIsHovered(!isHovered);
 
   // update ZONE
-  const [updateCell, setUpdateCell] = useState();
   const [updateColor, setUpdateColor] = useState();
   const [updateComment, setUpdateComment] = useState();
   useEffect(() => {
     updateColor && console.log(updateColor);
     updateComment && console.log(updateComment);
-  }, [updateCell, updateColor, updateComment]);
+  }, [updateColor, updateComment]);
 
   const location = useLocation();
   useEffect(() => {
@@ -78,7 +77,6 @@ export const AOGrid = () => {
                         setHoverCell={setHoverCell}
                         hoverCell={hoverCell}
                         gridData={gridData}
-                        setUpdateCell={setUpdateCell}
                         setUpdateColor={setUpdateColor}
                         setUpdateComment={setUpdateComment}
                       />
