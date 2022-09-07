@@ -35,10 +35,10 @@ export const AOGrid = () => {
         gridData.tracks[trackIndex].parameters.forEach(
           (paramTitle, paramIndex) => {
             if (paramTitle.parameter === updateParameter) {
-              setGridData([
-                ...gridData.tracks[trackIndex].parameters[paramIndex].colour,
-                updateColor,
-              ]);
+              // setGridData({
+              //   ...gridData,
+              //   [tracks[trackIndex].parameters[paramIndex.colour]]: updateColor,
+              // });
               // setValue(
               //   `tracks.${trackIndex}.parameters.${paramIndex}.colour`,
               //   updateColor
