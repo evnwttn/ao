@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
-import { useLocation } from "react-router-dom";
 import { useForm } from "react-hook-form";
+import { useLocation } from "react-router-dom";
 import { Box, Grid, ThemeProvider } from "@mui/material/";
 import aotheme, { gridSx, cellSx } from "../assets/theme";
 import { AOCell } from "./AOCell";
@@ -21,11 +21,11 @@ export const AOGrid = () => {
     from === "new" && setGridData(data);
   }, [location.state]);
 
+  const { setValue } = useForm();
   const [updateColor, setUpdateColor] = useState();
   const [updateComment, setUpdateComment] = useState();
   const [updateTrack, setUpdateTrack] = useState();
   const [updateParameter, setUpdateParameter] = useState();
-  const { setValue } = useForm();
 
   useEffect(() => {
     updateColor && console.log(`color | ${updateColor}`);
