@@ -21,10 +21,6 @@ export const AOGrid = () => {
     from === "new" && setGridData(data);
   }, [location.state]);
 
-  useEffect(() => {
-    console.log(gridData);
-  }, [gridData]);
-
   const [updateColor, setUpdateColor] = useState();
   const [updateComment, setUpdateComment] = useState();
   const [updateTrack, setUpdateTrack] = useState();
