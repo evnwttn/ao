@@ -1,5 +1,4 @@
 import { useState, useEffect, useCallback } from "react";
-import { useForm } from "react-hook-form";
 import { useLocation } from "react-router-dom";
 import { Box, Grid, ThemeProvider } from "@mui/material/";
 import aotheme, { gridSx, cellSx } from "../assets/theme";
@@ -25,14 +24,6 @@ export const AOGrid = () => {
   const [updateComment, setUpdateComment] = useState();
   const [updateTrack, setUpdateTrack] = useState();
   const [updateParameter, setUpdateParameter] = useState();
-  const { setValue, handleSubmit } = useForm();
-  const [triggerSubmit, setTriggerSubmit] = useState(0);
-
-  useEffect(() => {
-    if (triggerSubmit) {
-      handleSubmit((data) => console.log(data))();
-    }
-  }, [triggerSubmit, gridData, handleSubmit]);
 
   useEffect(() => {
     console.log(gridData);
@@ -56,7 +47,6 @@ export const AOGrid = () => {
               //   `tracks.${trackIndex}.parameters.${paramIndex}.comment`,
               //   updateComment
               // );
-              setTriggerSubmit((triggerSubmit) => triggerSubmit + 1);
             }
           }
         );
