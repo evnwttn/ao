@@ -21,7 +21,18 @@ export const AOGrid = () => {
     from === "new" && setGridData(data);
   }, [location.state]);
 
-  const { setValue } = useForm();
+  const { setValue, handleSubmit } = useForm();
+  const [triggerSubmit, setTriggerSubmit] = useForm(false);
+  useEffect(() => {
+    if (triggerSubmit) {
+      handleSubmit((data) => setGridData(data))();
+    }
+  }, [triggerSubmit, handleSubmit]);
+
+  useEffect(() => {
+    console.log(gridData);
+  }, [gridData]);
+
   const [updateColor, setUpdateColor] = useState();
   const [updateComment, setUpdateComment] = useState();
   const [updateTrack, setUpdateTrack] = useState();
