@@ -32,7 +32,11 @@ export const AOGrid = () => {
     if (triggerSubmit) {
       handleSubmit((data) => console.log(data))();
     }
-  }, [triggerSubmit, handleSubmit]);
+  }, [triggerSubmit, gridData, handleSubmit]);
+
+  useEffect(() => {
+    console.log(gridData);
+  }, [gridData]);
 
   const updateFunction = useCallback(() => {
     gridData.tracks.forEach((trackTitle, trackIndex) => {
@@ -40,28 +44,25 @@ export const AOGrid = () => {
         gridData.tracks[trackIndex].parameters.forEach(
           (paramTitle, paramIndex) => {
             if (paramTitle.parameter === updateParameter) {
-              setValue(
-                `tracks.${trackIndex}.parameters.${paramIndex}.colour`,
-                updateColor
-              );
-              setValue(
-                `tracks.${trackIndex}.parameters.${paramIndex}.comment`,
-                updateComment
-              );
+              setGridData([
+                ...gridData.tracks[trackIndex].parameters[paramIndex].colour,
+                updateColor,
+              ]);
+              // setValue(
+              //   `tracks.${trackIndex}.parameters.${paramIndex}.colour`,
+              //   updateColor
+              // );
+              // setValue(
+              //   `tracks.${trackIndex}.parameters.${paramIndex}.comment`,
+              //   updateComment
+              // );
               setTriggerSubmit((triggerSubmit) => triggerSubmit + 1);
             }
           }
         );
       }
     });
-  }, [
-    gridData,
-    setValue,
-    updateTrack,
-    updateComment,
-    updateColor,
-    updateParameter,
-  ]);
+  }, [gridData, updateTrack, updateComment, updateColor, updateParameter]);
 
   useEffect(() => {
     updateTrack && updateFunction();
