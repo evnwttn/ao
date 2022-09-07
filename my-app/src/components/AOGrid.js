@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { useForm } from "react-hook-form";
 import { useLocation } from "react-router-dom";
 import { Box, Grid, ThemeProvider } from "@mui/material/";
@@ -38,18 +38,37 @@ export const AOGrid = () => {
     }
   }, [triggerSubmit, handleSubmit]);
 
-  updateFunction = () => {};
-
   useEffect(() => {
     updateTrack && updateFunction();
   }, [updateTrack, updateFunction]);
 
-  useEffect(() => {
-    updateColor && console.log(`color | ${updateColor}`);
-    updateComment && console.log(`comment | ${updateComment}`);
-    updateTrack && console.log(`track | ${updateTrack}`);
-    updateParameter && console.log(`param | ${updateParameter}`);
-  }, [updateColor, updateComment, updateTrack, updateParameter]);
+  const updateFunction = useCallback(() => {
+    gridData.tracks.forEach((trackTitle, trackIndex) => {
+      if (trackTitle.title === updateTrack) {
+        gridData.tracks[trackIndex].parameters.forEach(
+          (paramTitle, paramIndex) => {
+            if (paramTitle.parameter === updateParameter) {
+              setValue(
+                `tracks.${trackIndex}.parameters.${paramIndex}.colour`,
+                updateColor
+              );
+              setValue(
+                `tracks.${trackIndex}.parameters.${paramIndex}.comment`,
+                updateComment
+              );
+            }
+          }
+        );
+      }
+    });
+  }, [
+    gridData,
+    setValue,
+    updateTrack,
+    updateComment,
+    updateColor,
+    updateParameter,
+  ]);
 
   return (
     <Box sx={gridSx.container}>
