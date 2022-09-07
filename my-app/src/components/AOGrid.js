@@ -33,7 +33,7 @@ export const AOGrid = () => {
   const [triggerSubmit, setTriggerSubmit] = useState(0);
 
   useEffect(() => {
-    if (triggerSubmit >= 1) {
+    if (triggerSubmit) {
       handleSubmit((data) => console.log(data))();
     }
   }, [triggerSubmit, handleSubmit]);
@@ -52,7 +52,7 @@ export const AOGrid = () => {
                 `tracks.${trackIndex}.parameters.${paramIndex}.comment`,
                 updateComment
               );
-              setTriggerSubmit(triggerSubmit + 1);
+              setTriggerSubmit((triggerSubmit) => triggerSubmit + 1);
             }
           }
         );
@@ -65,7 +65,6 @@ export const AOGrid = () => {
     updateComment,
     updateColor,
     updateParameter,
-    triggerSubmit,
   ]);
 
   useEffect(() => {
