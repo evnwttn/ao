@@ -14,9 +14,17 @@ export const AOGrid = () => {
   const [isHovered, setIsHovered] = useState(false);
   const toggleHovered = () => setIsHovered(!isHovered);
   const { handleSubmit, setValue } = useForm();
-  const onSubmit = (data) => {
-    console.log(data);
-  };
+  const [triggerSubmit, setTriggerSubmit] = useState(0);
+
+  useEffect(() => {
+    if (triggerSubmit >= 1) {
+      handleSubmit((data) => setGridData((gridData) => [...gridData, data]))();
+    }
+  }, [triggerSubmit, handleSubmit]);
+
+  useEffect(() => {
+    console.log(gridData);
+  }, [gridData]);
 
   const location = useLocation();
   useEffect(() => {
@@ -29,10 +37,6 @@ export const AOGrid = () => {
   const [updateComment, setUpdateComment] = useState();
   const [updateTrack, setUpdateTrack] = useState();
   const [updateParameter, setUpdateParameter] = useState();
-
-  useEffect(() => {
-    console.log(gridData);
-  }, [gridData]);
 
   const updateFunction = useCallback(() => {
     gridData.tracks.forEach((trackTitle, trackIndex) => {
@@ -48,6 +52,7 @@ export const AOGrid = () => {
                 `tracks.${trackIndex}.parameters.${paramIndex}.comment`,
                 updateComment
               );
+              setTriggerSubmit(triggerSubmit + 1);
             }
           }
         );
@@ -60,6 +65,7 @@ export const AOGrid = () => {
     updateColor,
     updateParameter,
     setValue,
+    triggerSubmit,
   ]);
 
   useEffect(() => {
