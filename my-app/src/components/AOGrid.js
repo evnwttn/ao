@@ -19,7 +19,7 @@ export const AOGrid = () => {
   const [updateComment, setUpdateComment] = useState();
   const [updateTrack, setUpdateTrack] = useState();
   const [updateParameter, setUpdateParameter] = useState();
-  const { setValue } = useForm();
+  const { setValue, handleSubmit } = useForm();
 
   useEffect(() => {
     const { from, data } = location.state;
@@ -47,6 +47,7 @@ export const AOGrid = () => {
       }
     });
     setTriggerUpdate(false);
+    handleSubmit((data) => console.log(data))();
   };
 
   useEffect(() => {
