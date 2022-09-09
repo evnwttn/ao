@@ -47,7 +47,7 @@ export const AOGrid = () => {
       }
     });
     setTriggerUpdate(false);
-    handleSubmit((data) => console.log(data))();
+    handleSubmit((data) => data && console.log(data))();
   };
 
   useEffect(() => {
