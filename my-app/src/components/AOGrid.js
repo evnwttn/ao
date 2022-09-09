@@ -21,6 +21,8 @@ export const AOGrid = () => {
   const [updateParameter, setUpdateParameter] = useState();
   const { setValue, handleSubmit } = useForm();
 
+  const [nu, setNu] = useState([]);
+
   useEffect(() => {
     const { from, data } = location.state;
     from === "load" && setGridData(darkSideOfTheMoon);
@@ -47,8 +49,12 @@ export const AOGrid = () => {
       }
     });
     setTriggerUpdate(false);
-    handleSubmit((data) => data && console.log(data))();
+    handleSubmit((data) => data && setNu([gridData].concat(data)))();
   };
+
+  useEffect(() => {
+    console.log(nu);
+  }, [nu]);
 
   useEffect(() => {
     triggerUpdate && thyHolyFunction();
