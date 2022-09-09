@@ -14,6 +14,9 @@ export const AOGrid = () => {
   const [isHovered, setIsHovered] = useState(false);
   const toggleHovered = () => setIsHovered(!isHovered);
   const { handleSubmit, setValue } = useForm();
+  const onSubmit = (data) => {
+    console.log(data);
+  };
 
   const location = useLocation();
   useEffect(() => {
