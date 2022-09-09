@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
-// import { useForm } from "react-hook-form";
 import { Box, Grid, ThemeProvider } from "@mui/material/";
 import aotheme, { gridSx, cellSx } from "../assets/theme";
 import { AOCell } from "./AOCell";
@@ -10,10 +9,12 @@ import { darkSideOfTheMoon } from "../assets/dummydata/LoadSample";
 
 export const AOGrid = () => {
   const [gridData, setGridData] = useState(blankSession);
+  const [sideArray, setSideArray] = useState(gridData);
   const [hoverCell, setHoverCell] = useState();
   const [isHovered, setIsHovered] = useState(false);
   const toggleHovered = () => setIsHovered(!isHovered);
   const location = useLocation();
+  const [triggerUpdate, setTriggerUpdate] = useState(false);
   const [updateColor, setUpdateColor] = useState();
   const [updateComment, setUpdateComment] = useState();
   const [updateTrack, setUpdateTrack] = useState();
@@ -25,11 +26,20 @@ export const AOGrid = () => {
     from === "new" && setGridData(data);
   }, [location.state]);
 
+  const thyHolyFunction = () => {
+    console.log(`${updateColor}`);
+    console.log(`${updateComment}`);
+    console.log(`${updateParameter}`);
+    setSideArray((arr) => [arr, updateColor]);
+    setTriggerUpdate(false);
+  };
+
   useEffect(() => {
-    updateTrack &&
-      console.log(
-        `track : ${updateTrack} // parameter : ${updateParameter} // color : ${updateColor} // comment : ${updateComment}`
-      );
+    console.log(sideArray);
+  }, [sideArray]);
+
+  useEffect(() => {
+    triggerUpdate && updateTrack && thyHolyFunction();
   });
 
   return (
@@ -85,6 +95,7 @@ export const AOGrid = () => {
                         setUpdateComment={setUpdateComment}
                         setUpdateTrack={setUpdateTrack}
                         setUpdateParameter={setUpdateParameter}
+                        setTriggerUpdate={setTriggerUpdate}
                       />
                     );
                   })}

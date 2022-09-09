@@ -15,6 +15,7 @@ export const AOCell = ({
   setUpdateComment,
   setUpdateTrack,
   setUpdateParameter,
+  setTriggerUpdate,
 }) => {
   const { register, handleSubmit } = useForm();
   const [cellColor, setCellColor] = useState(palette.aoGrey);
@@ -26,6 +27,7 @@ export const AOCell = ({
   const updateSession = useCallback(() => {
     setUpdateColor(cellColor);
     setUpdateComment(cellComment);
+    setTriggerUpdate(true);
     if (cellColor || cellComment) {
       setUpdateTrack(track.title);
       setUpdateParameter(parameter);
@@ -39,6 +41,7 @@ export const AOCell = ({
     track,
     setUpdateParameter,
     parameter,
+    setTriggerUpdate,
   ]);
 
   const [updateInit, setUpdateInit] = useState(false);
