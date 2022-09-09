@@ -1,5 +1,6 @@
 import { useState, useEffect, useCallback } from "react";
 import { useLocation } from "react-router-dom";
+import { useForm } from "react-hook-form";
 import { Box, Grid, ThemeProvider } from "@mui/material/";
 import aotheme, { gridSx, cellSx } from "../assets/theme";
 import { AOCell } from "./AOCell";
@@ -12,6 +13,7 @@ export const AOGrid = () => {
   const [hoverCell, setHoverCell] = useState();
   const [isHovered, setIsHovered] = useState(false);
   const toggleHovered = () => setIsHovered(!isHovered);
+  const { handleSubmit, setValue } = useForm();
 
   const location = useLocation();
   useEffect(() => {
@@ -35,24 +37,27 @@ export const AOGrid = () => {
         gridData.tracks[trackIndex].parameters.forEach(
           (paramTitle, paramIndex) => {
             if (paramTitle.parameter === updateParameter) {
-              // setGridData({
-              //   ...gridData,
-              //   [tracks[trackIndex].parameters[paramIndex.colour]]: updateColor,
-              // });
-              // setValue(
-              //   `tracks.${trackIndex}.parameters.${paramIndex}.colour`,
-              //   updateColor
-              // );
-              // setValue(
-              //   `tracks.${trackIndex}.parameters.${paramIndex}.comment`,
-              //   updateComment
-              // );
+              setValue(
+                `tracks.${trackIndex}.parameters.${paramIndex}.colour`,
+                updateColor
+              );
+              setValue(
+                `tracks.${trackIndex}.parameters.${paramIndex}.comment`,
+                updateComment
+              );
             }
           }
         );
       }
     });
-  }, [gridData, updateTrack, updateComment, updateColor, updateParameter]);
+  }, [
+    gridData,
+    updateTrack,
+    updateComment,
+    updateColor,
+    updateParameter,
+    setValue,
+  ]);
 
   useEffect(() => {
     updateTrack && updateFunction();
