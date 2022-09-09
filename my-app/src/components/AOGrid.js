@@ -18,7 +18,8 @@ export const AOGrid = () => {
 
   useEffect(() => {
     if (triggerSubmit >= 1) {
-      handleSubmit((data) => setGridData((gridData) => [...gridData, data]))();
+      // handleSubmit((data) => setGridData((arr) => [...arr, data]))();
+      handleSubmit((data) => console.log(data));
     }
   }, [triggerSubmit, handleSubmit]);
 
