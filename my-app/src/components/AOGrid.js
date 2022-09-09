@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useForm } from "react-hook-form";
 import { useLocation } from "react-router-dom";
 import { Box, Grid, ThemeProvider } from "@mui/material/";
 import aotheme, { gridSx, cellSx } from "../assets/theme";
@@ -9,7 +10,6 @@ import { darkSideOfTheMoon } from "../assets/dummydata/LoadSample";
 
 export const AOGrid = () => {
   const [gridData, setGridData] = useState(blankSession);
-  const [sideArray, setSideArray] = useState(gridData);
   const [hoverCell, setHoverCell] = useState();
   const [isHovered, setIsHovered] = useState(false);
   const toggleHovered = () => setIsHovered(!isHovered);
@@ -19,6 +19,7 @@ export const AOGrid = () => {
   const [updateComment, setUpdateComment] = useState();
   const [updateTrack, setUpdateTrack] = useState();
   const [updateParameter, setUpdateParameter] = useState();
+  const { setValue } = useForm();
 
   useEffect(() => {
     const { from, data } = location.state;
@@ -27,19 +28,29 @@ export const AOGrid = () => {
   }, [location.state]);
 
   const thyHolyFunction = () => {
-    console.log(`${updateColor}`);
-    console.log(`${updateComment}`);
-    console.log(`${updateParameter}`);
-    setSideArray((arr) => [arr, updateColor]);
+    gridData.tracks.forEach((trackTitle, trackIndex) => {
+      if (trackTitle.title === updateTrack) {
+        gridData.tracks[trackIndex].parameters.forEach(
+          (paramTitle, paramIndex) => {
+            if (paramTitle.parameter === updateParameter) {
+              setValue(
+                `tracks.${trackIndex}.parameters.${paramIndex}.colour`,
+                updateColor
+              );
+              setValue(
+                `tracks.${trackIndex}.parameters.${paramIndex}.comment`,
+                updateComment
+              );
+            }
+          }
+        );
+      }
+    });
     setTriggerUpdate(false);
   };
 
   useEffect(() => {
-    console.log(sideArray);
-  }, [sideArray]);
-
-  useEffect(() => {
-    triggerUpdate && updateTrack && thyHolyFunction();
+    triggerUpdate && thyHolyFunction();
   });
 
   return (
