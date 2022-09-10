@@ -52,10 +52,6 @@ export const AOGrid = () => {
     handleSubmit((data) => data && console.log(data))();
   };
 
-  // useEffect(() => {
-  //   console.log(sideArray);
-  // }, [sideArray]);
-
   useEffect(() => {
     triggerUpdate && thyHolyFunction();
   });
