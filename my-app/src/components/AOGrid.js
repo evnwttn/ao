@@ -10,26 +10,29 @@ import { darkSideOfTheMoon } from "../assets/dummydata/LoadSample";
 export const AOGrid = () => {
   const location = useLocation();
   const { from } = location.state;
-  const [gridData, setGridData] = useState(() => {
+  const [gridData] = useState(() => {
     if (from === "load") {
       return darkSideOfTheMoon;
     } else if (from === "new") {
       return location.state.data;
     }
   });
+
   const [hoverCell, setHoverCell] = useState();
   const [isHovered, setIsHovered] = useState(false);
   const toggleHovered = () => setIsHovered(!isHovered);
+
   const [triggerUpdate, setTriggerUpdate] = useState(false);
   const [updateColor, setUpdateColor] = useState();
   const [updateComment, setUpdateComment] = useState();
   const [updateTrack, setUpdateTrack] = useState();
   const [updateParameter, setUpdateParameter] = useState();
-  const { register, setValue, handleSubmit } = useForm({
+  const { setValue, handleSubmit } = useForm({
     defaultValues: gridData,
   });
+  const [updatedArray, setUpdatedArray] = useState();
 
-  const thyHolyFunction = () => {
+  const updateData = () => {
     gridData.tracks.forEach((trackTitle, trackIndex) => {
       if (trackTitle.title === updateTrack) {
         gridData.tracks[trackIndex].parameters.forEach(
@@ -48,13 +51,17 @@ export const AOGrid = () => {
         );
       }
     });
+    handleSubmit((data) => data && setUpdatedArray(data))();
     setTriggerUpdate(false);
-    handleSubmit((data) => data && console.log(data))();
   };
 
   useEffect(() => {
-    triggerUpdate && thyHolyFunction();
+    triggerUpdate && updateData();
   });
+
+  useEffect(() => {
+    console.log(updatedArray);
+  }, [updatedArray]);
 
   return (
     <Box sx={gridSx.container}>
