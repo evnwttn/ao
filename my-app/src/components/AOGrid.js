@@ -63,15 +63,15 @@ export const AOGrid = () => {
 
   setInterval(function () {
     console.log(`sending...`);
-    // updatedArray &&
-    //   axios
-    //     .put("http://localhost:5000/new", {
-    //       ...updatedArray,
-    //     })
-    //     .then((_data) => console.log(JSON.stringify(_data)))
-    //     .catch(function (error) {
-    //       console.log(error);
-    //     });
+    updatedArray &&
+      axios
+        .put("http://localhost:5000/session", {
+          ...updatedArray,
+        })
+        .then((_data) => console.log(JSON.stringify(_data)))
+        .catch(function (error) {
+          console.log(error);
+        });
   }, 10000);
 
   return (
