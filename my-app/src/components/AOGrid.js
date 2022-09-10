@@ -5,29 +5,29 @@ import { Box, Grid, ThemeProvider } from "@mui/material/";
 import aotheme, { gridSx, cellSx } from "../assets/theme";
 import { AOCell } from "./AOCell";
 import { AONav } from "./AONav";
-import { blankSession } from "../assets/dummydata/BlankSession";
 import { darkSideOfTheMoon } from "../assets/dummydata/LoadSample";
 
 export const AOGrid = () => {
-  const [gridData, setGridData] = useState(blankSession);
+  const location = useLocation();
+  const { from } = location.state;
+  const [gridData, setGridData] = useState(() => {
+    if (from === "load") {
+      return darkSideOfTheMoon;
+    } else if (from === "new") {
+      return location.state.data;
+    }
+  });
   const [hoverCell, setHoverCell] = useState();
   const [isHovered, setIsHovered] = useState(false);
   const toggleHovered = () => setIsHovered(!isHovered);
-  const location = useLocation();
   const [triggerUpdate, setTriggerUpdate] = useState(false);
   const [updateColor, setUpdateColor] = useState();
   const [updateComment, setUpdateComment] = useState();
   const [updateTrack, setUpdateTrack] = useState();
   const [updateParameter, setUpdateParameter] = useState();
-  const { setValue, handleSubmit } = useForm();
-
-  const [sideArray, setSideArray] = useState([]);
-
-  useEffect(() => {
-    const { from, data } = location.state;
-    from === "load" && setGridData(darkSideOfTheMoon);
-    from === "new" && setGridData(data);
-  }, [location.state]);
+  const { register, setValue, handleSubmit } = useForm({
+    defaultValues: gridData,
+  });
 
   const thyHolyFunction = () => {
     gridData.tracks.forEach((trackTitle, trackIndex) => {
@@ -49,14 +49,12 @@ export const AOGrid = () => {
       }
     });
     setTriggerUpdate(false);
-    handleSubmit(
-      (data) => data && setSideArray(gridData.tracks.concat(data))
-    )();
+    handleSubmit((data) => data && console.log(data))();
   };
 
-  useEffect(() => {
-    console.log(sideArray);
-  }, [sideArray]);
+  // useEffect(() => {
+  //   console.log(sideArray);
+  // }, [sideArray]);
 
   useEffect(() => {
     triggerUpdate && thyHolyFunction();
