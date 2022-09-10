@@ -61,17 +61,18 @@ export const AOGrid = () => {
     triggerUpdate && updateData();
   });
 
-  useEffect(() => {
-    updatedArray &&
-      axios
-        .put("http://localhost:5000/new", {
-          ...updatedArray,
-        })
-        .then((_data) => console.log(JSON.stringify(_data)))
-        .catch(function (error) {
-          console.log(error);
-        });
-  }, [updatedArray, axios]);
+  setInterval(function () {
+    console.log(`sending...`);
+    // updatedArray &&
+    //   axios
+    //     .put("http://localhost:5000/new", {
+    //       ...updatedArray,
+    //     })
+    //     .then((_data) => console.log(JSON.stringify(_data)))
+    //     .catch(function (error) {
+    //       console.log(error);
+    //     });
+  }, 10000);
 
   return (
     <Box sx={gridSx.container}>
