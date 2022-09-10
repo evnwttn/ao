@@ -32,6 +32,8 @@ export const AOGrid = () => {
   });
   const [updatedArray, setUpdatedArray] = useState();
 
+  const axios = require("axios").default;
+
   const updateData = () => {
     gridData.tracks.forEach((trackTitle, trackIndex) => {
       if (trackTitle.title === updateTrack) {
@@ -60,8 +62,16 @@ export const AOGrid = () => {
   });
 
   useEffect(() => {
-    console.log(updatedArray);
-  }, [updatedArray]);
+    updatedArray &&
+      axios
+        .post("http://localhost:5000/new", {
+          ...updatedArray,
+        })
+        .then((_data) => console.log(JSON.stringify(_data)))
+        .catch(function (error) {
+          console.log(error);
+        });
+  }, [updatedArray, axios]);
 
   return (
     <Box sx={gridSx.container}>
