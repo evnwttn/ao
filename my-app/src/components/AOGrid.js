@@ -49,7 +49,9 @@ export const AOGrid = () => {
       }
     });
     setTriggerUpdate(false);
-    handleSubmit((data) => data && setSideArray([gridData].concat(data)))();
+    handleSubmit(
+      (data) => data && setSideArray(gridData.tracks.concat(data))
+    )();
   };
 
   useEffect(() => {
