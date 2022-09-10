@@ -64,7 +64,7 @@ export const AOGrid = () => {
   useEffect(() => {
     updatedArray &&
       axios
-        .post("http://localhost:5000/new", {
+        .put("http://localhost:5000/new", {
           ...updatedArray,
         })
         .then((_data) => console.log(JSON.stringify(_data)))
