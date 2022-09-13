@@ -1,9 +1,12 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Navigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
+// import { v4 as uuidv4 } from "uuid";
 import { NewModalContentTextfieldForm } from "./NewModalContentTextfieldForm";
 import { NewModalContentListForm } from "./NewModalContentListForm";
 import { palette } from "../../assets/theme";
+
+//todo: rejig w/ no 'id' assign randomly and send to serv, it's redundant
 
 export const NewModalContent = () => {
   const axios = require("axios").default;
