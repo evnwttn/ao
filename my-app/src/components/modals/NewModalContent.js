@@ -133,7 +133,7 @@ export const NewModalContent = () => {
   useEffect(() => {
     startNewSession &&
       axios
-        .post("http://localhost:5000/session", {
+        .post(`http://localhost:5000/session/${sessionData.id}`, {
           ...sessionData,
         })
         .then((_data) => console.log(JSON.stringify(_data)))
