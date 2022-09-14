@@ -1,7 +1,7 @@
 import { palette } from "../theme";
 
 export const darkSideOfTheMoon = {
-  id: "the dark side of the moon",
+  sessionTitle: "the dark side of the moon",
   author: "pink floyd",
   tracks: [
     {
