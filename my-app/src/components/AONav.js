@@ -21,7 +21,7 @@ export const AONav = ({ data }) => {
           flexItem
           sx={{ color: palette.aoDivider, mx: "1vw" }}
         />
-        <Box sx={navSx.text.id}>{data.id}</Box>
+        <Box sx={navSx.text.sessionTitle}>{data.sessionTitle}</Box>
       </Box>
       <Button
         disableRipple
