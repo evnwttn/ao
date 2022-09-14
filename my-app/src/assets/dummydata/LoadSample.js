@@ -1,8 +1,10 @@
 import { palette } from "../theme";
+import { v4 as uuidv4 } from "uuid";
 
 export const darkSideOfTheMoon = {
   sessionTitle: "the dark side of the moon",
   author: "pink floyd",
+  id: uuidv4(),
   tracks: [
     {
       title: "speak to me",
