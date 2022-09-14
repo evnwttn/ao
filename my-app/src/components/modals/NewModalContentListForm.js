@@ -22,12 +22,12 @@ export const NewModalContentListForm = ({
           {formPrompt === 2 ? (
             <>
               Enter the <b>track titles</b> you wish to include in the&nbsp;
-              {sessionData.id} session.
+              {sessionData.sessionTitle} session.
             </>
           ) : (
             <>
               Enter or select the <b>session elements</b> you wish to include in
-              the {sessionData.id} session.
+              the {sessionData.sessionTitle} session.
               <ParameterList addParameterList={addParameterList} />
             </>
           )}
