@@ -25,7 +25,7 @@ export const NewModalContentTextfieldForm = ({
         }
         margin="normal"
         autoComplete="off"
-        {...(formPrompt === 0 ? register("author") : register("id"))}
+        {...(formPrompt === 0 ? register("author") : register("sessionTitle"))}
       />
       <Box>
         <IconButton disableRipple type="submit">
