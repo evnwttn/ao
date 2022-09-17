@@ -113,8 +113,12 @@ export const NewModalContent = () => {
 
   useEffect(() => {
     if (formPrompt <= 1) {
-      sessionData && textInput.current.value && setFormPrompt(formPrompt + 1);
-      textInput.current.value = "";
+      if (textInput.current.value.length >= 15) {
+        alert(`Titles must be less than 14 characters`);
+      } else {
+        sessionData && textInput.current.value && setFormPrompt(formPrompt + 1);
+        textInput.current.value = "";
+      }
     }
     if (formPrompt === 2) {
       sessionData.tracks && setFormPrompt(formPrompt + 1);
