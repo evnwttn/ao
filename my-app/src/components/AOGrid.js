@@ -64,7 +64,7 @@ export const AOGrid = () => {
   useEffect(() => {
     updatedArray &&
       axios
-        .put(`http://localhost:5000/session/${gridData.id}`, {
+        .put(`http://localhost:5000/session`, {
           ...updatedArray,
         })
         .then((_data) => console.log(JSON.stringify(_data)))
