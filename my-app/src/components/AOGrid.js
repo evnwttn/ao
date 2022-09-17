@@ -34,7 +34,7 @@ export const AOGrid = () => {
 
   const axios = require("axios").default;
 
-  const updateData = () => {
+  const updateSessionData = () => {
     gridData.tracks.forEach((trackTitle, trackIndex) => {
       if (trackTitle.title === updateTrack) {
         gridData.tracks[trackIndex].parameters.forEach(
@@ -54,12 +54,9 @@ export const AOGrid = () => {
       }
     });
     handleSubmit((data) => data && setUpdatedArray(data))();
+    setTriggerUpdate(false);
     sendData();
   };
-
-  useEffect(() => {
-    triggerUpdate && updateData();
-  });
 
   const sendData = () => {
     updatedArray &&
@@ -67,11 +64,10 @@ export const AOGrid = () => {
         .put(`http://localhost:5000/session`, {
           ...updatedArray,
         })
-        .then((data) => setGridData(data.data), console.log("yo"))
+        .then((data) => console.log(data.data))
         .catch(function (error) {
           console.log(error);
         });
-    setTriggerUpdate(false);
   };
 
   // setInterval(function () {
@@ -139,7 +135,7 @@ export const AOGrid = () => {
                         setUpdateComment={setUpdateComment}
                         setUpdateTrack={setUpdateTrack}
                         setUpdateParameter={setUpdateParameter}
-                        setTriggerUpdate={setTriggerUpdate}
+                        updateSessionData={updateSessionData}
                       />
                     );
                   })}
