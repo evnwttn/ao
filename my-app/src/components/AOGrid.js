@@ -10,7 +10,7 @@ import { darkSideOfTheMoon } from "../assets/dummydata/LoadSample";
 export const AOGrid = () => {
   const location = useLocation();
   const { from } = location.state;
-  const [gridData] = useState(() => {
+  const [gridData, setGridData] = useState(() => {
     if (from === "load") {
       return darkSideOfTheMoon;
     } else if (from === "new") {
@@ -54,24 +54,25 @@ export const AOGrid = () => {
       }
     });
     handleSubmit((data) => data && setUpdatedArray(data))();
-    setTriggerUpdate(false);
+    sendData();
   };
 
   useEffect(() => {
     triggerUpdate && updateData();
   });
 
-  useEffect(() => {
+  const sendData = () => {
     updatedArray &&
       axios
         .put(`http://localhost:5000/session`, {
           ...updatedArray,
         })
-        .then((data) => setUpdatedArray(data.data))
+        .then((data) => setGridData(data.data), console.log("yo"))
         .catch(function (error) {
           console.log(error);
         });
-  }, [updatedArray, axios]);
+    setTriggerUpdate(false);
+  };
 
   // setInterval(function () {
   //   updatedArray &&
