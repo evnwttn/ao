@@ -114,7 +114,7 @@ export const NewModalContent = () => {
   useEffect(() => {
     if (formPrompt <= 1) {
       if (textInput.current.value.length >= 15) {
-        alert(`Titles must be less than 14 characters`);
+        alert(`Keep titles under 14 characters (use an acronym or abbreviation)`);
       } else {
         sessionData && textInput.current.value && setFormPrompt(formPrompt + 1);
         textInput.current.value = "";
