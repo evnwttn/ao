@@ -140,7 +140,7 @@ export const NewModalContent = () => {
         .post(`http://localhost:5000/session/`, {
           ...sessionData,
         })
-        .then((data) => console.log(data.data))
+        .then((data) => setSessionData(data.data))
         .catch(function (error) {
           console.log(error);
         });
@@ -177,3 +177,5 @@ export const NewModalContent = () => {
     )
   );
 };
+
+// check for ID before Navigate after adding in backend
