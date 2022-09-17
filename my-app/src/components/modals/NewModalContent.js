@@ -114,7 +114,9 @@ export const NewModalContent = () => {
   useEffect(() => {
     if (formPrompt <= 1) {
       if (textInput.current.value.length >= 15) {
-        alert(`Keep titles under 14 characters (use an acronym or abbreviation)`);
+        alert(
+          `Keep titles under 14 characters (use an acronym or abbreviation)`
+        );
       } else {
         sessionData && textInput.current.value && setFormPrompt(formPrompt + 1);
         textInput.current.value = "";
@@ -138,7 +140,7 @@ export const NewModalContent = () => {
         .post(`http://localhost:5000/session/`, {
           ...sessionData,
         })
-        .then((_data) => console.log(JSON.stringify(_data)))
+        .then((data) => console.log(data.data))
         .catch(function (error) {
           console.log(error);
         });

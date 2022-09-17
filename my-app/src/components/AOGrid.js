@@ -67,7 +67,7 @@ export const AOGrid = () => {
         .put(`http://localhost:5000/session`, {
           ...updatedArray,
         })
-        .then((_data) => console.log(JSON.stringify(_data)))
+        .then((data) => console.log(JSON.stringify(data.data)))
         .catch(function (error) {
           console.log(error);
         });
