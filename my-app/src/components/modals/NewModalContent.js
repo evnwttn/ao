@@ -8,7 +8,6 @@ import { palette } from "../../assets/theme";
 export const NewModalContent = () => {
   const axios = require("axios").default;
   const [sessionData, setSessionData] = useState();
-  const [sendDataRequest, setSendDataRequest] = useState(false);
   const [startNewSession, setStartNewSession] = useState(false);
   const [formPrompt, setFormPrompt] = useState(0);
   const [triggerSubmit, setTriggerSubmit] = useState(0);
@@ -131,21 +130,20 @@ export const NewModalContent = () => {
       sessionData.parameters.length > 1 && setFormPrompt(formPrompt + 1);
     }
     if (formPrompt === 4) {
-      setSendDataRequest(true);
+      sendDataRequest();
     }
   }, [sessionData, formPrompt]);
 
-  useEffect(() => {
-    sendDataRequest &&
-      axios
-        .post(`http://localhost:5000/session/`, {
-          ...sessionData,
-        })
-        .then((data) => console.log(data.data), setStartNewSession(true))
-        .catch(function (error) {
-          console.log(error);
-        });
-  }, [sendDataRequest, axios, sessionData]);
+  const sendDataRequest = () => {
+    axios
+      .post(`http://localhost:5000/session/`, {
+        ...sessionData,
+      })
+      .then((data) => setSessionData(data.data), setStartNewSession(true))
+      .catch(function (error) {
+        console.log(error);
+      });
+  };
 
   return formPrompt <= 1 ? (
     <NewModalContentTextfieldForm
