@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { useLocation } from "react-router-dom";
 import { Box, Grid, ThemeProvider } from "@mui/material/";
@@ -22,7 +22,6 @@ export const AOGrid = () => {
   const [isHovered, setIsHovered] = useState(false);
   const toggleHovered = () => setIsHovered(!isHovered);
 
-  const [triggerUpdate, setTriggerUpdate] = useState(false);
   const [updateColor, setUpdateColor] = useState();
   const [updateComment, setUpdateComment] = useState();
   const [updateTrack, setUpdateTrack] = useState();
@@ -54,7 +53,6 @@ export const AOGrid = () => {
       }
     });
     handleSubmit((data) => data && setUpdatedArray(data))();
-    setTriggerUpdate(false);
     sendData();
   };
 
