@@ -8,6 +8,7 @@ import { palette } from "../../assets/theme";
 export const NewModalContent = () => {
   const axios = require("axios").default;
   const [sessionData, setSessionData] = useState();
+  const [sendDataRequest, setSendDataRequest] = useState(false);
   const [startNewSession, setStartNewSession] = useState(false);
   const [formPrompt, setFormPrompt] = useState(0);
   const [triggerSubmit, setTriggerSubmit] = useState(0);
@@ -177,6 +178,3 @@ export const NewModalContent = () => {
     )
   );
 };
-
-// update session data before starting new using backend response
-// check for ID before Navigate after adding in backend
