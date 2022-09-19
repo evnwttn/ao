@@ -25,7 +25,7 @@ export const AOCell = ({
   const open = Boolean(anchorEl);
 
   const [updateInit, setUpdateInit] = useState(false);
-  if (updateInit === true) {
+  const setGridUpdates = () => {
     setUpdateColor(cellColor);
     setUpdateComment(cellComment);
     if (cellColor || cellComment) {
@@ -33,7 +33,12 @@ export const AOCell = ({
       setUpdateParameter(parameter);
       updateSessionData();
     }
-  }
+    console.log("ass");
+  };
+
+  useEffect(() => {
+    updateInit && setGridUpdates();
+  });
 
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
