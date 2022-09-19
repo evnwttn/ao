@@ -24,29 +24,23 @@ export const AOCell = ({
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
 
-  const [updateInit, setUpdateInit] = useState(false);
   const setGridUpdates = () => {
-    setUpdateColor(cellColor);
-    setUpdateComment(cellComment);
     if (cellColor || cellComment) {
+      setUpdateColor(cellColor);
+      setUpdateComment(cellComment);
       setUpdateTrack(track.title);
       setUpdateParameter(parameter);
-      updateSessionData();
     }
-    console.log("ass");
+    updateSessionData();
   };
-
-  useEffect(() => {
-    updateInit && setGridUpdates();
-  });
 
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
-    setUpdateInit(true);
   };
 
   const handleClose = () => {
     setAnchorEl(null);
+    setGridUpdates();
   };
 
   useEffect(() => {
