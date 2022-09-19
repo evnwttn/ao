@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { Box, Grid, Popover } from "@mui/material/";
 import { AOPopover } from "./AOPopover";
@@ -24,7 +24,8 @@ export const AOCell = ({
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
 
-  const updateSession = useCallback(() => {
+  const [updateInit, setUpdateInit] = useState(false);
+  if (updateInit === true) {
     setUpdateColor(cellColor);
     setUpdateComment(cellComment);
     if (cellColor || cellComment) {
@@ -32,23 +33,7 @@ export const AOCell = ({
       setUpdateParameter(parameter);
       updateSessionData();
     }
-  }, [
-    setUpdateColor,
-    cellColor,
-    setUpdateComment,
-    cellComment,
-    setUpdateTrack,
-    track,
-    setUpdateParameter,
-    parameter,
-  ]);
-
-  const [updateInit, setUpdateInit] = useState(false);
-  useEffect(() => {
-    if (updateInit === true) {
-      updateSession();
-    }
-  }, [updateInit, updateSession]);
+  }
 
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
