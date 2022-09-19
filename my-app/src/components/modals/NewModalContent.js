@@ -141,7 +141,7 @@ export const NewModalContent = () => {
         .post(`http://localhost:5000/session/`, {
           ...sessionData,
         })
-        .then((data) => console.log(data.data))
+        .then((data) => console.log(data.data), setStartNewSession(true))
         .catch(function (error) {
           console.log(error);
         });
