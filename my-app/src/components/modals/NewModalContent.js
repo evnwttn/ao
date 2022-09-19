@@ -131,12 +131,12 @@ export const NewModalContent = () => {
       sessionData.parameters.length > 1 && setFormPrompt(formPrompt + 1);
     }
     if (formPrompt === 4) {
-      setStartNewSession(true);
+      setSendDataRequest(true);
     }
   }, [sessionData, formPrompt]);
 
   useEffect(() => {
-    startNewSession &&
+    sendDataRequest &&
       axios
         .post(`http://localhost:5000/session/`, {
           ...sessionData,
@@ -145,7 +145,7 @@ export const NewModalContent = () => {
         .catch(function (error) {
           console.log(error);
         });
-  }, [startNewSession, axios, sessionData]);
+  }, [sendDataRequest, axios, sessionData]);
 
   return formPrompt <= 1 ? (
     <NewModalContentTextfieldForm
