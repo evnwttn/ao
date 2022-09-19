@@ -10,7 +10,7 @@ import { darkSideOfTheMoon } from "../assets/dummydata/LoadSample";
 export const AOGrid = () => {
   const location = useLocation();
   const { from } = location.state;
-  const [gridData, setGridData] = useState(() => {
+  const [gridData] = useState(() => {
     if (from === "load") {
       return darkSideOfTheMoon;
     } else if (from === "new") {
