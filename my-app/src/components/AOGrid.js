@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useLocation } from "react-router-dom";
 import { Box, Grid, ThemeProvider } from "@mui/material/";
@@ -16,6 +16,10 @@ export const AOGrid = () => {
     } else if (from === "new") {
       return location.state.data;
     }
+  });
+
+  useEffect(() => {
+    console.log(location.state.data);
   });
 
   const [hoverCell, setHoverCell] = useState();
