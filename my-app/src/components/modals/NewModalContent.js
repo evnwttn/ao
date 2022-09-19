@@ -112,6 +112,17 @@ export const NewModalContent = () => {
   };
 
   useEffect(() => {
+    const sendDataRequest = () => {
+      axios
+        .post(`http://localhost:5000/session/`, {
+          ...sessionData,
+        })
+        .then((data) => setSessionData(data.data), setStartNewSession(true))
+        .catch(function (error) {
+          console.log(error);
+        });
+    };
+
     if (formPrompt <= 1) {
       if (textInput.current.value.length >= 15) {
         alert(
@@ -132,18 +143,7 @@ export const NewModalContent = () => {
     if (formPrompt === 4) {
       sendDataRequest();
     }
-  }, [sessionData, formPrompt]);
-
-  const sendDataRequest = () => {
-    axios
-      .post(`http://localhost:5000/session/`, {
-        ...sessionData,
-      })
-      .then((data) => setSessionData(data.data), setStartNewSession(true))
-      .catch(function (error) {
-        console.log(error);
-      });
-  };
+  }, [sessionData, formPrompt, axios]);
 
   return formPrompt <= 1 ? (
     <NewModalContentTextfieldForm
