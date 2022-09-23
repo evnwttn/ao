@@ -16,6 +16,7 @@ export const NewModalContent = () => {
   const { register, handleSubmit, setValue } = useForm({
     defaultValues: {
       parameters: ["title"],
+      id: undefined,
     },
   });
 
