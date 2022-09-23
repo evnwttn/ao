@@ -113,18 +113,25 @@ export const NewModalContent = () => {
   };
 
   useEffect(() => {
+    let isMounted = true;
+
     const sendDataRequest = () => {
       axios
         .post(`http://localhost:5000/session/`, {
           ...sessionData,
         })
-        .then((data) => setSessionData(data.data), setStartNewSession(true))
+        .then((data) => {
+          isMounted ? ifMounted(data) : (isMounted = false);
+        })
         .catch(function (error) {
           console.log(error);
         });
     };
 
-    let isMounted = true;
+    const ifMounted = (data) => {
+      setSessionData(data.data);
+      setStartNewSession(true);
+    };
 
     if (formPrompt <= 1) {
       if (textInput.current.value.length >= 15) {
@@ -144,12 +151,8 @@ export const NewModalContent = () => {
       sessionData.parameters.length > 1 && setFormPrompt(formPrompt + 1);
     }
     if (formPrompt === 4) {
-      if (isMounted) sendDataRequest();
+      sendDataRequest();
     }
-
-    return () => {
-      isMounted = false;
-    };
   }, [sessionData, formPrompt, axios]);
 
   return formPrompt <= 1 ? (
