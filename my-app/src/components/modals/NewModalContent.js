@@ -124,6 +124,8 @@ export const NewModalContent = () => {
         });
     };
 
+    let isMounted = true;
+
     if (formPrompt <= 1) {
       if (textInput.current.value.length >= 15) {
         alert(
@@ -142,8 +144,12 @@ export const NewModalContent = () => {
       sessionData.parameters.length > 1 && setFormPrompt(formPrompt + 1);
     }
     if (formPrompt === 4) {
-      sendDataRequest();
+      if (isMounted) sendDataRequest();
     }
+
+    return () => {
+      isMounted = false;
+    };
   }, [sessionData, formPrompt, axios]);
 
   return formPrompt <= 1 ? (
