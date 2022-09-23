@@ -121,14 +121,14 @@ export const NewModalContent = () => {
           ...sessionData,
         })
         .then((data) => {
-          isMounted ? ifMounted(data) : (isMounted = false);
+          isMounted ? serverOnline(data) : (isMounted = false);
         })
         .catch(function (error) {
-          console.log(error);
+          alert("new sessions temporarily unavailable");
         });
     };
 
-    const ifMounted = (data) => {
+    const serverOnline = (data) => {
       setSessionData(data.data);
       setStartNewSession(true);
     };
