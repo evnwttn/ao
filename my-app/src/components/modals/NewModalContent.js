@@ -129,20 +129,9 @@ export const NewModalContent = () => {
         });
     };
 
-    // const serverOnline = (data) => {
-    //   setSessionData(data.data);
-    //   setStartNewSession(true);
-    // };
-
     if (formPrompt <= 1) {
-      if (textInput.current.value.length >= 15) {
-        alert(
-          `Keep titles under 14 characters (use an acronym or abbreviation)`
-        );
-      } else {
-        sessionData && textInput.current.value && setFormPrompt(formPrompt + 1);
-        textInput.current.value = "";
-      }
+      sessionData && textInput.current.value && setFormPrompt(formPrompt + 1);
+      textInput.current.value = "";
     }
     if (formPrompt === 2) {
       sessionData.tracks && setFormPrompt(formPrompt + 1);
