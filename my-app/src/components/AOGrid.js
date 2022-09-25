@@ -17,9 +17,10 @@ export const AOGrid = () => {
       return location.state.data;
     }
   });
+  const [sessionId] = useState(location.state.data.id);
 
   useEffect(() => {
-    console.log(location.state.data);
+    console.log(sessionId);
   });
 
   const [hoverCell, setHoverCell] = useState();
