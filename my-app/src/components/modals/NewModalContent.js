@@ -121,17 +121,18 @@ export const NewModalContent = () => {
           ...sessionData,
         })
         .then((data) => {
-          isMounted ? serverOnline(data) : (isMounted = false);
+          isMounted ? setSessionData(data.data) : (isMounted = false);
         })
+        .then(() => setStartNewSession(true))
         .catch(function (error) {
           alert("new sessions temporarily unavailable");
         });
     };
 
-    const serverOnline = (data) => {
-      setSessionData(data.data);
-      setStartNewSession(true);
-    };
+    // const serverOnline = (data) => {
+    //   setSessionData(data.data);
+    //   setStartNewSession(true);
+    // };
 
     if (formPrompt <= 1) {
       if (textInput.current.value.length >= 15) {
