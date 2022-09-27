@@ -113,21 +113,19 @@ export const NewModalContent = () => {
   };
 
   useEffect(() => {
-    let isMounted = true;
-
-    const sendDataRequest = () => {
+    async function sendDataRequest() {
       axios
         .post(`http://localhost:5000/session/`, {
           ...sessionData,
         })
         .then((data) => {
-          isMounted ? setSessionData(data.data) : (isMounted = false);
+          setSessionData(data.data);
         })
         .then(() => setStartNewSession(true))
         .catch(function (error) {
           alert("new sessions temporarily unavailable");
         });
-    };
+    }
 
     if (formPrompt <= 1) {
       sessionData && textInput.current.value && setFormPrompt(formPrompt + 1);
