@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { useLocation } from "react-router-dom";
 import { Box, Grid, ThemeProvider } from "@mui/material/";
@@ -17,12 +17,6 @@ export const AOGrid = () => {
       return location.state.data;
     }
   });
-  const [sessionId] = useState(location.state.data.id);
-
-  useEffect(() => {
-    console.log(sessionId);
-  });
-
   const [hoverCell, setHoverCell] = useState();
   const [isHovered, setIsHovered] = useState(false);
   const toggleHovered = () => setIsHovered(!isHovered);
@@ -61,7 +55,7 @@ export const AOGrid = () => {
     sendData();
   };
 
-  const sendData = () => {
+  async function sendData() {
     updatedArray &&
       axios
         .put(`http://localhost:5000/session`, {
@@ -71,7 +65,7 @@ export const AOGrid = () => {
         .catch(function (error) {
           console.log(error);
         });
-  };
+  }
 
   return (
     <Box sx={gridSx.container}>
