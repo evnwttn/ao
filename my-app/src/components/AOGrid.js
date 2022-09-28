@@ -56,19 +56,15 @@ export const AOGrid = () => {
   };
 
   const sendData = () => {
-    let isMounted = true;
-
     updatedArray &&
       axios
         .put(`http://localhost:5000/session`, {
           ...updatedArray,
         })
-        .then((data) => (isMounted ? console.log(data.data) : null))
+        .then((data) => console.log(data.data))
         .catch(function (error) {
           console.log(error);
         });
-
-    return () => (isMounted = false);
   };
 
   return (
