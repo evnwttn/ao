@@ -113,19 +113,21 @@ export const NewModalContent = () => {
   };
 
   useEffect(() => {
-    async function sendDataRequest() {
+    let isMounted = true;
+
+    const sendDataRequest = () => {
       axios
         .post(`http://localhost:5000/session/`, {
           ...sessionData,
         })
-        .then((data) => {
-          setSessionData(data.data);
-        })
-        .then(() => setStartNewSession(true))
-        .catch(function (error) {
-          alert("new sessions temporarily unavailable");
+        .then((data) => (isMounted ? setSessionData(data.data) : null))
+        .then(() => (isMounted ? setStartNewSession(true) : null))
+        .catch((error) => {
+          if (isMounted) {
+            alert("New Sessions Temporarily Unavailable");
+          }
         });
-    }
+    };
 
     if (formPrompt <= 1) {
       sessionData && textInput.current.value && setFormPrompt(formPrompt + 1);
@@ -141,6 +143,8 @@ export const NewModalContent = () => {
     if (formPrompt === 4) {
       sendDataRequest();
     }
+
+    return () => (isMounted = false);
   }, [sessionData, formPrompt, axios]);
 
   return formPrompt <= 1 ? (

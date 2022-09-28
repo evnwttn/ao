@@ -55,17 +55,21 @@ export const AOGrid = () => {
     sendData();
   };
 
-  async function sendData() {
+  const sendData = () => {
+    let isMounted = true;
+
     updatedArray &&
       axios
         .put(`http://localhost:5000/session`, {
           ...updatedArray,
         })
-        .then((data) => console.log(data.data))
+        .then((data) => (isMounted ? console.log(data.data) : null))
         .catch(function (error) {
           console.log(error);
         });
-  }
+
+    return () => (isMounted = false);
+  };
 
   return (
     <Box sx={gridSx.container}>
