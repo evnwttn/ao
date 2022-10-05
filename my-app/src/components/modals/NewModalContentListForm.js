@@ -38,6 +38,7 @@ export const NewModalContentListForm = ({
             variant="standard"
             margin="normal"
             autoComplete="off"
+            inputProps={{ maxLength: 14 }}
             inputRef={textInput}
           />
           <IconButton onClick={addInputArray} disableRipple>
