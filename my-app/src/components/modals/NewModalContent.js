@@ -22,23 +22,27 @@ export const NewModalContent = () => {
 
   const addInputArray = () => {
     let textField = textInput.current.value;
-    switch (formPrompt) {
-      case 2:
-        if (inputArray.length <= 11) {
-          setInputArray((inputArray) => [...inputArray, textField]);
-        } else {
-          alert(`Maximum Number of Tracks Reached`);
-        }
-        break;
-      case 3:
-        if (inputArray.length <= 10) {
-          setInputArray((inputArray) => [...inputArray, textField]);
-        } else {
-          alert(`Maximum Number of Elements Reached`);
-        }
-        break;
-      default:
-        alert(`Invalid title`);
+    if (textField.length <= 14) {
+      switch (formPrompt) {
+        case 2:
+          if (inputArray.length <= 11) {
+            setInputArray((inputArray) => [...inputArray, textField]);
+          } else {
+            alert(`Maximum Number of Tracks Reached`);
+          }
+          break;
+        case 3:
+          if (inputArray.length <= 10) {
+            setInputArray((inputArray) => [...inputArray, textField]);
+          } else {
+            alert(`Maximum Number of Elements Reached`);
+          }
+          break;
+        default:
+          alert(`Invalid title`);
+      }
+    } else {
+      alert(`Ye`);
     }
   };
 
