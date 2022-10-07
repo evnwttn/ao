@@ -36,11 +36,11 @@ export const AOCell = ({
 
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
+    setGridUpdates();
   };
 
   const handleClose = () => {
     setAnchorEl(null);
-    setGridUpdates();
   };
 
   useEffect(() => {
