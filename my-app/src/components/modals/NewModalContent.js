@@ -125,6 +125,8 @@ export const NewModalContent = () => {
         .catch((error) => {
           if (isMounted) {
             alert("New Sessions Temporarily Unavailable");
+          } else {
+            console.log(error);
           }
         });
     };
