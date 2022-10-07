@@ -10,7 +10,7 @@ import { darkSideOfTheMoon } from "../assets/dummydata/LoadSample";
 export const AOGrid = () => {
   const location = useLocation();
   const { from } = location.state;
-  const [gridData] = useState(() => {
+  const [gridData, setGridData] = useState(() => {
     if (from === "load") {
       return darkSideOfTheMoon;
     } else if (from === "new") {
@@ -28,7 +28,6 @@ export const AOGrid = () => {
   const { setValue, handleSubmit } = useForm({
     defaultValues: gridData,
   });
-  const [updatedArray, setUpdatedArray] = useState();
 
   const axios = require("axios").default;
 
@@ -51,20 +50,19 @@ export const AOGrid = () => {
         );
       }
     });
-    handleSubmit((data) => data && setUpdatedArray(data))();
+    handleSubmit((data) => data && setGridData(data))();
     sendData();
   };
 
   const sendData = () => {
-    updatedArray &&
-      axios
-        .put(`http://localhost:5000/session`, {
-          ...updatedArray,
-        })
-        .then((data) => console.log(data.data))
-        .catch(function (error) {
-          console.log(error);
-        });
+    axios
+      .put(`http://localhost:5000/session`, {
+        ...gridData,
+      })
+      .then((data) => console.log(data.data))
+      .catch(function (error) {
+        console.log(error);
+      });
   };
 
   return (
