@@ -1,9 +1,8 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Navigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
-import { NewModalContentTextfieldForm } from "./NewModalContentTextfieldForm";
-import { NewModalContentListForm } from "./NewModalContentListForm";
 import { palette } from "../../assets/theme";
+import { NewModalContentListForm, NewModalContentTextfieldForm } from "./index";
 
 export const NewModalContent = () => {
   const axios = require("axios").default;
