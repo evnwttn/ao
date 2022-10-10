@@ -45,7 +45,11 @@ export const LoginModalContent = () => {
           endAdornment: (
             <InputAdornment position="end">
               <IconButton onClick={() => setShowPassword(!showPassword)}>
-                {showPassword ? <VisibilityOff /> : <Visibility />}
+                {showPassword ? (
+                  <VisibilityOff sx={{ color: palette.aoDivider }} />
+                ) : (
+                  <Visibility sx={{ color: palette.aoDivider }} />
+                )}
               </IconButton>
             </InputAdornment>
           ),
