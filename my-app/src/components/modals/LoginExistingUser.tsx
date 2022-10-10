@@ -23,7 +23,7 @@ export const LoginExistingUser = ({
           mb: "0.75vw",
         }}
       >
-        <Box sx={{ color: palette.aoDivider }}>Login |&nbsp;</Box>
+        <Box sx={{ color: palette.aoDivider }}>LOG IN |&nbsp;</Box>
         <Box
           sx={{ cursor: "pointer" }}
           onClick={() => setIsNewUser(!isNewUser)}
