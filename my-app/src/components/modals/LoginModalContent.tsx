@@ -11,5 +11,22 @@ export const LoginModalContent = () => {
   const emailField = useRef<HTMLInputElement>(null);
   const passwordField = useRef<HTMLInputElement>(null);
 
-  return <Box sx={modalCenteredSx}>Login</Box>;
+  return (
+    <Box sx={modalCenteredSx}>
+      <TextField
+        placeholder="Email"
+        inputRef={emailField}
+        variant="standard"
+        margin="normal"
+        sx={{ width: "28vw" }}
+      />
+      <TextField
+        placeholder="Password"
+        inputRef={passwordField}
+        variant="standard"
+        margin="normal"
+        sx={{ width: "28vw" }}
+      />
+    </Box>
+  );
 };
