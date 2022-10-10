@@ -1,20 +1,28 @@
 import React, { useState, useRef } from "react";
-import { Box, TextField, IconButton, CircularProgress } from "@mui/material";
-import SendIcon from "@mui/icons-material/Send";
+import {
+  Box,
+  TextField,
+  IconButton,
+  InputAdornment,
+  CircularProgress,
+} from "@mui/material";
 import {
   modalCenteredSx,
   modalFontSx,
   palette,
   circularProgressSx,
 } from "../../assets/theme";
+import SendIcon from "@mui/icons-material/Send";
+import { Visibility, VisibilityOff } from "@mui/icons-material";
 import { UserLoginData } from "../../types";
 
 export const LoginModalContent = () => {
   const axios = require("axios").default;
   const [userLoginData, setUserLoginData] = useState<UserLoginData>();
-  const [formLoading, setFormLoading] = useState<Boolean>(false);
   const emailField = useRef<HTMLInputElement>(null);
   const passwordField = useRef<HTMLInputElement>(null);
+  const [showPassword, setShowPassword] = useState<Boolean>(false);
+  const [formLoading, setFormLoading] = useState<Boolean>(false);
 
   return (
     <Box sx={modalCenteredSx}>
@@ -24,14 +32,24 @@ export const LoginModalContent = () => {
         inputRef={emailField}
         variant="standard"
         margin="normal"
-        sx={{ width: "28vw" }}
+        sx={{ width: "26vw" }}
       />
       <TextField
         placeholder="Password"
         inputRef={passwordField}
         variant="standard"
+        type="password"
         margin="normal"
-        sx={{ width: "28vw" }}
+        sx={{ width: "26vw" }}
+        InputProps={{
+          endAdornment: (
+            <InputAdornment position="end">
+              <IconButton onClick={() => setShowPassword(!showPassword)}>
+                {showPassword ? <VisibilityOff /> : <Visibility />}
+              </IconButton>
+            </InputAdornment>
+          ),
+        }}
       />
       <IconButton
         disableRipple
