@@ -4,6 +4,8 @@ export * from "./AONavAboutContent";
 export * from "./ContactModalContent";
 export * from "./LoadModalContent";
 export * from "./LoginModalContent";
+export * from "./LoginExistingUser";
+export * from "./LoginNewUser";
 export * from "./NewModalContent";
 export * from "./NewModalContentList";
 export * from "./NewModalContentListForm";

@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
-import { LoginExistingUser } from "./LoginExistingUser";
+import { LoginExistingUser, LoginNewUser } from "./index";
 import { UserLoginData } from "../../types";
 
 export const LoginModalContent = () => {
@@ -29,17 +29,17 @@ export const LoginModalContent = () => {
         });
   }, [userLoginData, axios]);
 
-  return (
-    !isNewUser && (
-      <LoginExistingUser
-        emailField={emailField}
-        passwordField={passwordField}
-        showPassword={showPassword}
-        setShowPassword={setShowPassword}
-        isNewUser={isNewUser}
-        setIsNewUser={setIsNewUser}
-        sendUserLoginData={sendUserLoginData}
-      />
-    )
+  return isNewUser ? (
+    <LoginNewUser />
+  ) : (
+    <LoginExistingUser
+      emailField={emailField}
+      passwordField={passwordField}
+      showPassword={showPassword}
+      setShowPassword={setShowPassword}
+      isNewUser={isNewUser}
+      setIsNewUser={setIsNewUser}
+      sendUserLoginData={sendUserLoginData}
+    />
   );
 };
