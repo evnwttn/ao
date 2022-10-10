@@ -1,7 +1,12 @@
 import React, { useState, useRef } from "react";
 import { Box, TextField, IconButton, CircularProgress } from "@mui/material";
 import SendIcon from "@mui/icons-material/Send";
-import { modalCenteredSx, circularProgressSx } from "../../assets/theme";
+import {
+  modalCenteredSx,
+  modalFontSx,
+  palette,
+  circularProgressSx,
+} from "../../assets/theme";
 import { UserLoginData } from "../../types";
 
 export const LoginModalContent = () => {
@@ -13,6 +18,7 @@ export const LoginModalContent = () => {
 
   return (
     <Box sx={modalCenteredSx}>
+      <Box sx={modalFontSx}>Login</Box>
       <TextField
         placeholder="Email"
         inputRef={emailField}
@@ -27,6 +33,29 @@ export const LoginModalContent = () => {
         margin="normal"
         sx={{ width: "28vw" }}
       />
+      <IconButton
+        disableRipple
+        sx={{ cursor: "default" }}
+        onClick={() =>
+          setUserLoginData({
+            email: emailField?.current?.value!,
+            password: passwordField?.current?.value!,
+          })
+        }
+      >
+        <CircularProgress
+          size="2.33vw"
+          sx={{
+            ...circularProgressSx,
+            color: formLoading === true ? palette.aoBlue : palette.aoGrey,
+          }}
+        />
+        <SendIcon
+          sx={{
+            mt: "1vh",
+          }}
+        />
+      </IconButton>
     </Box>
   );
 };
