@@ -15,6 +15,22 @@ export const LoginExistingUser = ({
 }: any) => {
   return (
     <Box sx={modalCenteredSx}>
+      <Box
+        sx={{
+          display: "flex",
+          flexDirection: "row",
+          fontSize: "0.9vw",
+          mb: "0.9vw",
+        }}
+      >
+        <Box sx={{ color: palette.aoDivider }}>Login |&nbsp;</Box>
+        <Box
+          sx={{ cursor: "pointer" }}
+          onClick={() => setIsNewUser(!isNewUser)}
+        >
+          New User?
+        </Box>
+      </Box>
       <TextField
         placeholder="Email"
         inputRef={emailField}
@@ -54,12 +70,6 @@ export const LoginExistingUser = ({
           }}
         />
       </IconButton>
-      <Box
-        sx={{ ...modalFontSx, mt: "1vw", cursor: "pointer" }}
-        onClick={() => setIsNewUser(!isNewUser)}
-      >
-        New User?
-      </Box>
     </Box>
   );
 };
