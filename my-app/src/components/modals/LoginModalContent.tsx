@@ -21,7 +21,7 @@ export const LoginModalContent = () => {
   const [userLoginData, setUserLoginData] = useState<UserLoginData>();
   const emailField = useRef<HTMLInputElement>(null);
   const passwordField = useRef<HTMLInputElement>(null);
-  const [showPassword, setShowPassword] = useState<Boolean>(false);
+  const [showPassword, setShowPassword] = useState<Boolean>(true);
   const [formLoading, setFormLoading] = useState<Boolean>(false);
 
   return (
@@ -38,7 +38,7 @@ export const LoginModalContent = () => {
         placeholder="Password"
         inputRef={passwordField}
         variant="standard"
-        type="password"
+        type={showPassword ? "password" : "text"}
         margin="normal"
         sx={{ width: "26vw" }}
         InputProps={{
