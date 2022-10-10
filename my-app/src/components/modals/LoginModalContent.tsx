@@ -1,17 +1,6 @@
-import React, { useState, useRef } from "react";
-import {
-  Box,
-  TextField,
-  IconButton,
-  InputAdornment,
-  CircularProgress,
-} from "@mui/material";
-import {
-  modalCenteredSx,
-  modalFontSx,
-  palette,
-  circularProgressSx,
-} from "../../assets/theme";
+import React, { useState, useRef, useEffect } from "react";
+import { Box, TextField, IconButton, InputAdornment } from "@mui/material";
+import { modalCenteredSx, palette } from "../../assets/theme";
 import SendIcon from "@mui/icons-material/Send";
 import { Visibility, VisibilityOff } from "@mui/icons-material";
 import { UserLoginData } from "../../types";
@@ -22,11 +11,21 @@ export const LoginModalContent = () => {
   const emailField = useRef<HTMLInputElement>(null);
   const passwordField = useRef<HTMLInputElement>(null);
   const [showPassword, setShowPassword] = useState<Boolean>(true);
-  const [formLoading, setFormLoading] = useState<Boolean>(false);
+
+  useEffect(() => {
+    userLoginData &&
+      axios
+        .post("http://localhost:5000/login", {
+          ...userLoginData,
+        })
+        .then((_data: any) => console.log(JSON.stringify(_data)))
+        .catch(function (error: any) {
+          console.log(error);
+        });
+  }, [userLoginData, axios]);
 
   return (
     <Box sx={modalCenteredSx}>
-      <Box sx={modalFontSx}>Login</Box>
       <TextField
         placeholder="Email"
         inputRef={emailField}
@@ -65,13 +64,6 @@ export const LoginModalContent = () => {
           })
         }
       >
-        <CircularProgress
-          size="2.33vw"
-          sx={{
-            ...circularProgressSx,
-            color: formLoading === true ? palette.aoBlue : palette.aoGrey,
-          }}
-        />
         <SendIcon
           sx={{
             mt: "1vh",
