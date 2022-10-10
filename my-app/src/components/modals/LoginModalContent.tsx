@@ -47,7 +47,7 @@ export const LoginModalContent = () => {
                 {showPassword ? (
                   <VisibilityOff sx={{ color: palette.aoDivider }} />
                 ) : (
-                  <Visibility sx={{ color: palette.aoDivider }} />
+                  <Visibility />
                 )}
               </IconButton>
             </InputAdornment>
