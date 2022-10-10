@@ -20,7 +20,7 @@ export const LoginExistingUser = ({
           display: "flex",
           flexDirection: "row",
           fontSize: "0.9vw",
-          mb: "0.9vw",
+          mb: "0.75vw",
         }}
       >
         <Box sx={{ color: palette.aoDivider }}>Login |&nbsp;</Box>
@@ -66,6 +66,7 @@ export const LoginExistingUser = ({
       >
         <SendIcon
           sx={{
+            mt: "0.75vw",
             ml: "23.5vw",
           }}
         />
