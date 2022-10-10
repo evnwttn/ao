@@ -1,10 +1,13 @@
 import { Divider, Box } from "@mui/material";
-import { NewModalContent } from "./modals/NewModalContent";
-import { LoadModalContent } from "./modals/LoadModalContent";
-import { ContactModalContent } from "./modals/ContactModalContent";
-import { AboutModalContent } from "./modals/AboutModalContent";
-import { AONavAboutContent } from "./modals/AONavAboutContent";
-import { LoginModalContent } from "./modals/LoginModalContent";
+import {
+  NewModalContent,
+  LoadModalContent,
+  AboutModalContent,
+  AONavAboutContent,
+  LoginModalContent,
+  ContactModalContent,
+} from "../components/modals/index";
+
 import { palette, logoSx, modalFontSx, modalBoxStyling } from "../assets/theme";
 
 export const ModalText = ({ prompt }) => {
