@@ -1,22 +1,30 @@
 import React, { useState, useRef, useEffect } from "react";
 import { TextField, IconButton, Box, CircularProgress } from "@mui/material";
 import SendIcon from "@mui/icons-material/Send";
-import { palette, modalCenteredSx, circularProgressSx } from "../../assets/theme";
+import {
+  palette,
+  modalCenteredSx,
+  circularProgressSx,
+} from "../../assets/theme";
 
 export const ContactModalContent = () => {
-    const axios = require("axios").default;
-    const [formData, setFormData] = useState<{name: string; email: string; message: string}>({
-      name: '',
-      email: '',
-      message: '',
-    });    
-    const [formLoading, setFormLoading] = useState<Boolean>(false);
-    const nameField = useRef<HTMLInputElement>(null);
-    const emailField = useRef<HTMLInputElement>(null);
-    const messageField = useRef<HTMLInputElement>(null);
+  const axios = require("axios").default;
+  const [formData, setFormData] = useState<{
+    name: string;
+    email: string;
+    message: string;
+  }>({
+    name: "",
+    email: "",
+    message: "",
+  });
+  const [formLoading, setFormLoading] = useState<Boolean>(false);
+  const nameField = useRef<HTMLInputElement>(null);
+  const emailField = useRef<HTMLInputElement>(null);
+  const messageField = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
-    if (formData.message !== '') {
+    if (formData.message !== "") {
       setFormLoading(true);
       axios
         .post("http://localhost:5000/contact", {
@@ -30,12 +38,12 @@ export const ContactModalContent = () => {
   }, [formData, axios]);
 
   useEffect(() => {
-   setTimeout(() => {
+    setTimeout(() => {
       if (formLoading) {
         setFormLoading(false);
       }
     }, 2250);
-  }, [formLoading]);   
+  }, [formLoading]);
 
   return (
     <Box sx={modalCenteredSx}>
@@ -63,7 +71,7 @@ export const ContactModalContent = () => {
       <IconButton
         disableRipple
         sx={{ cursor: "default" }}
-        onClick={() => 
+        onClick={() =>
           setFormData({
             name: nameField?.current?.value!,
             email: emailField?.current?.value!,
@@ -84,6 +92,6 @@ export const ContactModalContent = () => {
           }}
         />
       </IconButton>
-    </Box>  )
-
-}
+    </Box>
+  );
+};
