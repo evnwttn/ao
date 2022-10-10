@@ -1,10 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
-import { Box, TextField, IconButton, InputAdornment } from "@mui/material";
-import { modalCenteredSx, modalFontSx, palette } from "../../assets/theme";
-import SendIcon from "@mui/icons-material/Send";
-import { Visibility, VisibilityOff } from "@mui/icons-material";
-import { UserLoginData } from "../../types";
 import { LoginExistingUser } from "./LoginExistingUser";
+import { UserLoginData } from "../../types";
 
 export const LoginModalContent = () => {
   const axios = require("axios").default;

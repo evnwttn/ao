@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import React from "react";
 import { Box, TextField, IconButton, InputAdornment } from "@mui/material";
 import { modalCenteredSx, modalFontSx, palette } from "../../assets/theme";
 import SendIcon from "@mui/icons-material/Send";
