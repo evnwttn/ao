@@ -1,6 +1,6 @@
 import React from "react";
 import { Box, TextField, IconButton, InputAdornment } from "@mui/material";
-import { modalCenteredSx, modalFontSx, palette } from "../../assets/theme";
+import { modalCenteredSx, palette } from "../../assets/theme";
 import SendIcon from "@mui/icons-material/Send";
 import { Visibility, VisibilityOff } from "@mui/icons-material";
 
@@ -15,6 +15,22 @@ export const LoginNewUser = ({
 }: any) => {
   return (
     <Box sx={modalCenteredSx}>
+      <Box
+        sx={{
+          display: "flex",
+          flexDirection: "row",
+          fontSize: "0.9vw",
+          mb: "0.75vw",
+        }}
+      >
+        <Box sx={{ color: palette.aoDivider }}>Login |&nbsp;</Box>
+        <Box
+          sx={{ cursor: "pointer" }}
+          onClick={() => setIsNewUser(!isNewUser)}
+        >
+          Existing User?
+        </Box>
+      </Box>
       <TextField
         placeholder="Email"
         inputRef={emailField}
@@ -50,16 +66,11 @@ export const LoginNewUser = ({
       >
         <SendIcon
           sx={{
+            mt: "0.75vw",
             ml: "23.5vw",
           }}
         />
       </IconButton>
-      <Box
-        sx={{ ...modalFontSx, mt: "1vw", cursor: "pointer" }}
-        onClick={() => setIsNewUser(!isNewUser)}
-      >
-        Existing User?
-      </Box>
     </Box>
   );
 };
