@@ -74,7 +74,12 @@ export const LoginModalContent = () => {
             }}
           />
         </IconButton>
-        <Box sx={{ ...modalFontSx, mt: "1vw" }}>New User?</Box>
+        <Box
+          sx={{ ...modalFontSx, mt: "1vw", cursor: "pointer" }}
+          onClick={() => setIsNewUser(!isNewUser)}
+        >
+          New User?
+        </Box>
       </Box>
     )
   );
