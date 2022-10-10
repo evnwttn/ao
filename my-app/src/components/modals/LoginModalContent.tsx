@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import { Box, TextField, IconButton, InputAdornment } from "@mui/material";
-import { modalCenteredSx, palette } from "../../assets/theme";
+import { modalCenteredSx, modalFontSx, palette } from "../../assets/theme";
 import SendIcon from "@mui/icons-material/Send";
 import { Visibility, VisibilityOff } from "@mui/icons-material";
 import { UserLoginData } from "../../types";
@@ -12,6 +12,13 @@ export const LoginModalContent = () => {
   const emailField = useRef<HTMLInputElement>(null);
   const passwordField = useRef<HTMLInputElement>(null);
   const [showPassword, setShowPassword] = useState<Boolean>(true);
+
+  const sendUserLoginData = () => {
+    setUserLoginData({
+      email: emailField?.current?.value!,
+      password: passwordField?.current?.value!,
+    });
+  };
 
   useEffect(() => {
     userLoginData &&
@@ -59,19 +66,15 @@ export const LoginModalContent = () => {
         <IconButton
           disableRipple
           sx={{ cursor: "default" }}
-          onClick={() =>
-            setUserLoginData({
-              email: emailField?.current?.value!,
-              password: passwordField?.current?.value!,
-            })
-          }
+          onClick={sendUserLoginData}
         >
           <SendIcon
             sx={{
-              mt: "1vh",
+              ml: "23.5vw",
             }}
           />
         </IconButton>
+        <Box sx={{ ...modalFontSx, mt: "1vw" }}>New User?</Box>
       </Box>
     )
   );
