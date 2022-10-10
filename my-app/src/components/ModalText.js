@@ -1,4 +1,5 @@
 import { Divider, Box } from "@mui/material";
+import { palette, logoSx, modalFontSx, modalBoxStyling } from "../assets/theme";
 import {
   NewModalContent,
   LoadModalContent,
@@ -7,8 +8,6 @@ import {
   LoginModalContent,
   ContactModalContent,
 } from "../components/modals/index";
-
-import { palette, logoSx, modalFontSx, modalBoxStyling } from "../assets/theme";
 
 export const ModalText = ({ prompt }) => {
   return (

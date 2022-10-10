@@ -1,9 +1,8 @@
 import { Box, TextField, IconButton } from "@mui/material";
 import AddCircleIcon from "@mui/icons-material/AddCircle";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
-import { NewModalContentList } from "./NewModalContentList";
-import { ParameterList } from "./ParameterList";
 import { modalCenteredSx, newSessionModal } from "../../assets/theme";
+import { ParameterList, NewModalContentList } from "./index";
 
 export const NewModalContentListForm = ({
   addInputArray,
