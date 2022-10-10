@@ -1,9 +1,10 @@
 import { Box } from "@mui/material";
 import { palette, logoSx } from "../assets/theme";
 
-export const MainLogo = () => {
+export const MainLogo = ({ handleOpen, text }) => {
   return (
     <Box
+      onClick={() => handleOpen(text)}
       sx={{
         ...logoSx,
         display: "flex",

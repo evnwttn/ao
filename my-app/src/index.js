@@ -40,7 +40,7 @@ const Home = () => {
           />
         </Box>
         <Box sx={homeSx.centerDiv}>
-          <MainLogo />
+          <MainLogo text={"Contact"} handleOpen={(text) => handleOpen(text)} />
           <ModalButton text={"New"} handleOpen={(text) => handleOpen(text)} />
           <ModalButton text={"Load"} handleOpen={(text) => handleOpen(text)} />
         </Box>
