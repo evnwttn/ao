@@ -30,7 +30,15 @@ export const LoginModalContent = () => {
   }, [userLoginData, axios]);
 
   return isNewUser ? (
-    <LoginNewUser />
+    <LoginNewUser
+      emailField={emailField}
+      passwordField={passwordField}
+      showPassword={showPassword}
+      setShowPassword={setShowPassword}
+      isNewUser={isNewUser}
+      setIsNewUser={setIsNewUser}
+      sendUserLoginData={sendUserLoginData}
+    />
   ) : (
     <LoginExistingUser
       emailField={emailField}

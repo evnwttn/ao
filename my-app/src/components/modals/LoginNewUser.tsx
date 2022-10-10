@@ -13,5 +13,53 @@ export const LoginNewUser = ({
   setIsNewUser,
   sendUserLoginData,
 }: any) => {
-  return <>New User</>;
+  return (
+    <Box sx={modalCenteredSx}>
+      <TextField
+        placeholder="Email"
+        inputRef={emailField}
+        variant="standard"
+        margin="normal"
+        sx={{ width: "26vw" }}
+      />
+      <TextField
+        placeholder="Password"
+        inputRef={passwordField}
+        variant="standard"
+        type={showPassword ? "password" : "text"}
+        margin="normal"
+        sx={{ width: "26vw" }}
+        InputProps={{
+          endAdornment: (
+            <InputAdornment position="end">
+              <IconButton onClick={() => setShowPassword(!showPassword)}>
+                {showPassword ? (
+                  <VisibilityOff sx={{ color: palette.aoDivider }} />
+                ) : (
+                  <Visibility />
+                )}
+              </IconButton>
+            </InputAdornment>
+          ),
+        }}
+      />
+      <IconButton
+        disableRipple
+        sx={{ cursor: "default" }}
+        onClick={sendUserLoginData}
+      >
+        <SendIcon
+          sx={{
+            ml: "23.5vw",
+          }}
+        />
+      </IconButton>
+      <Box
+        sx={{ ...modalFontSx, mt: "1vw", cursor: "pointer" }}
+        onClick={() => setIsNewUser(!isNewUser)}
+      >
+        Existing User?
+      </Box>
+    </Box>
+  );
 };
