@@ -31,7 +31,7 @@ export const LoginModalContent = () => {
     } else {
       userLoginData &&
         axios
-          .post("http://localhost:5000/login", {
+          .put("http://localhost:5000/login", {
             ...userLoginData,
           })
           .then((_data: any) => console.log(JSON.stringify(_data)))
