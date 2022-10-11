@@ -18,16 +18,28 @@ export const LoginModalContent = () => {
   };
 
   useEffect(() => {
-    userLoginData &&
-      axios
-        .post("http://localhost:5000/login", {
-          ...userLoginData,
-        })
-        .then((_data: any) => console.log(JSON.stringify(_data)))
-        .catch(function (error: any) {
-          console.log(error);
-        });
-  }, [userLoginData, axios]);
+    if (isNewUser) {
+      userLoginData &&
+        axios
+          .post("http://localhost:5000/login", {
+            ...userLoginData,
+          })
+          .then((_data: any) => console.log(JSON.stringify(_data)))
+          .catch(function (error: any) {
+            console.log(error);
+          });
+    } else {
+      userLoginData &&
+        axios
+          .post("http://localhost:5000/login", {
+            ...userLoginData,
+          })
+          .then((_data: any) => console.log(JSON.stringify(_data)))
+          .catch(function (error: any) {
+            console.log(error);
+          });
+    }
+  }, [userLoginData, axios, isNewUser]);
 
   return isNewUser ? (
     <LoginNewUser
