@@ -24,7 +24,7 @@ export const LoginModalContent = () => {
           .post("http://localhost:5000/login", {
             ...userLoginData,
           })
-          .then((_data: any) => console.log(JSON.stringify(_data)))
+          .then((data: any) => console.log(JSON.stringify(data)))
           .catch(function (error: any) {
             console.log(error);
           });
@@ -34,7 +34,7 @@ export const LoginModalContent = () => {
           .put("http://localhost:5000/login", {
             ...userLoginData,
           })
-          .then((_data: any) => console.log(JSON.stringify(_data)))
+          .then((data: any) => console.log(JSON.stringify(data)))
           .catch(function (error: any) {
             console.log(error);
           });
