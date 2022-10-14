@@ -5,7 +5,7 @@ import { UserLoginData } from "../../types";
 export const LoginModalContent = () => {
   const axios = require("axios").default;
   const [isNewUser, setIsNewUser] = useState<Boolean>(false);
-  const [userLoginData, setUserLoginData] = useState<UserLoginData>();
+  const [userLoginData, setUserLoginData] = useState<Partial<UserLoginData>>();
   const emailField = useRef<HTMLInputElement>(null);
   const passwordField = useRef<HTMLInputElement>(null);
   const [showPassword, setShowPassword] = useState<Boolean>(true);
@@ -14,8 +14,6 @@ export const LoginModalContent = () => {
     setUserLoginData({
       email: emailField?.current?.value!,
       password: passwordField?.current?.value!,
-      id: null,
-      sessions: [],
     });
   };
 
