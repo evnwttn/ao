@@ -24,6 +24,10 @@ const Home = () => {
     modalType !== "" ? setOpen(true) : setOpen(false);
   }, [modalType]);
 
+  useEffect(() => {
+    userDataVerified && setModalType("");
+  }, [userDataVerified]);
+
   const handleClose = () => {
     setOpen(false);
     setModalType("");
