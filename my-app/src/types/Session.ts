@@ -1,3 +1,5 @@
+import { Track } from "./Track";
+
 export interface Session {
   sessionTitle: string;
   author: string;
