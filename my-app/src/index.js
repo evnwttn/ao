@@ -16,6 +16,8 @@ const Home = () => {
   const [open, setOpen] = useState(true);
   const [modalType, setModalType] = useState("Login");
 
+  useEffect(() => console.log(userDataVerified), [userDataVerified]);
+
   const handleOpen = (text) => {
     setModalType(text);
   };
@@ -28,10 +30,6 @@ const Home = () => {
     setOpen(false);
     setModalType("");
   };
-
-  useEffect(() => {
-    userDataVerified && handleClose();
-  }, [userDataVerified]);
 
   return (
     <Box sx={homeSx.mainDiv}>

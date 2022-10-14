@@ -23,8 +23,8 @@ export const LoginModalContent = ({
   };
 
   useEffect(() => {
-    if (userDataVerified && !isNewUser) {
-      setModalType("Load");
+    if (userDataVerified) {
+      setModalType(isNewUser ? "" : "Load");
     }
   });
 
