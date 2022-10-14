@@ -14,6 +14,8 @@ export const LoginModalContent = () => {
     setUserLoginData({
       email: emailField?.current?.value!,
       password: passwordField?.current?.value!,
+      id: null,
+      sessions: [],
     });
   };
 
@@ -24,7 +26,7 @@ export const LoginModalContent = () => {
           .post("http://localhost:5000/login", {
             ...userLoginData,
           })
-          .then((data: any) => console.log(JSON.stringify(data)))
+          .then((data: any) => console.log(JSON.stringify(data.data)))
           .catch(function (error: any) {
             console.log(error);
           });
