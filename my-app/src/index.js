@@ -31,7 +31,12 @@ const Home = () => {
   return (
     <Box sx={homeSx.mainDiv}>
       <ThemeProvider theme={aotheme}>
-        <ModalBase open={open} handleClose={handleClose} text={modalType} />
+        <ModalBase
+          open={open}
+          handleClose={handleClose}
+          text={modalType}
+          setModalType={setModalType}
+        />
         <Box sx={homeSx.cornerDiv}>
           <ModalButton text={"About"} handleOpen={(text) => handleOpen(text)} />
           <ModalButton
@@ -40,7 +45,7 @@ const Home = () => {
           />
         </Box>
         <Box sx={homeSx.centerDiv}>
-          <MainLogo text={"Login"} handleOpen={(text) => handleOpen(text)} />
+          <MainLogo />
           <ModalButton text={"New"} handleOpen={(text) => handleOpen(text)} />
           <ModalButton text={"Load"} handleOpen={(text) => handleOpen(text)} />
         </Box>

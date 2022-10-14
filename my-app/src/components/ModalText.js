@@ -9,7 +9,7 @@ import {
   ContactModalContent,
 } from "../components/modals/index";
 
-export const ModalText = ({ prompt }) => {
+export const ModalText = ({ prompt, setModalType }) => {
   return (
     <Box
       sx={{
@@ -34,7 +34,9 @@ export const ModalText = ({ prompt }) => {
           (prompt === "About" && <AboutModalContent />) ||
           (prompt === "Contact" && <ContactModalContent />) ||
           (prompt === "Nav" && <AONavAboutContent />) ||
-          (prompt === "Login" && <LoginModalContent />)}
+          (prompt === "Login" && (
+            <LoginModalContent setModalType={setModalType} />
+          ))}
       </Box>
     </Box>
   );

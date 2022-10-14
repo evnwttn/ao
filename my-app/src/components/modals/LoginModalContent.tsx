@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from "react";
 import { LoginExistingUser, LoginNewUser } from "./index";
 import { UserLoginData } from "../../types";
 
-export const LoginModalContent = () => {
+export const LoginModalContent = ({ setModalType }: any) => {
   const axios = require("axios").default;
   const [isNewUser, setIsNewUser] = useState<Boolean>(false);
   const [userLoginData, setUserLoginData] =
@@ -20,8 +20,9 @@ export const LoginModalContent = () => {
   };
 
   useEffect(() => {
-    console.log(userDataVerified);
-  }, [userDataVerified]);
+    userDataVerified && console.log(userDataVerified);
+    userDataVerified && setModalType("Load");
+  }, [userDataVerified, setModalType]);
 
   useEffect(() => {
     if (isNewUser) {
