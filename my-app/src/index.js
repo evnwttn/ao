@@ -12,6 +12,7 @@ import { AOGrid } from "./components/AOGrid";
 import aotheme, { homeSx } from "./assets/theme";
 
 const Home = () => {
+  const [userDataVerified, setUserDataVerified] = useState();
   const [open, setOpen] = useState(true);
   const [modalType, setModalType] = useState("Login");
 
@@ -36,6 +37,8 @@ const Home = () => {
           handleClose={handleClose}
           text={modalType}
           setModalType={setModalType}
+          userDataVerified={userDataVerified}
+          setUserDataVerified={setUserDataVerified}
         />
         <Box sx={homeSx.cornerDiv}>
           <ModalButton text={"About"} handleOpen={(text) => handleOpen(text)} />
