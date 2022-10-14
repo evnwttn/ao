@@ -2,12 +2,15 @@ import React, { useState, useRef, useEffect } from "react";
 import { LoginExistingUser, LoginNewUser } from "./index";
 import { UserLoginData } from "../../types";
 
-export const LoginModalContent = ({ setModalType }: any) => {
+export const LoginModalContent = ({
+  userDataVerified,
+  setUserDataVerified,
+  setModalType,
+}: any) => {
   const axios = require("axios").default;
   const [isNewUser, setIsNewUser] = useState<Boolean>(false);
   const [userLoginData, setUserLoginData] =
     useState<Omit<UserLoginData, "id" | "sessions">>();
-  const [userDataVerified, setUserDataVerified] = useState<UserLoginData>();
   const emailField = useRef<HTMLInputElement>(null);
   const passwordField = useRef<HTMLInputElement>(null);
   const [showPassword, setShowPassword] = useState<Boolean>(true);
@@ -46,7 +49,7 @@ export const LoginModalContent = ({ setModalType }: any) => {
             console.log(error);
           });
     }
-  }, [userLoginData, axios, isNewUser]);
+  }, [userLoginData, axios, isNewUser, setUserDataVerified]);
 
   return isNewUser ? (
     <LoginNewUser
