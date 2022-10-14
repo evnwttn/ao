@@ -7,6 +7,7 @@ export const LoginModalContent = () => {
   const [isNewUser, setIsNewUser] = useState<Boolean>(false);
   const [userLoginData, setUserLoginData] =
     useState<Omit<UserLoginData, "id" | "sessions">>();
+  const [userDataVerified, setUserDataVerified] = useState<UserLoginData>();
   const emailField = useRef<HTMLInputElement>(null);
   const passwordField = useRef<HTMLInputElement>(null);
   const [showPassword, setShowPassword] = useState<Boolean>(true);
@@ -19,13 +20,17 @@ export const LoginModalContent = () => {
   };
 
   useEffect(() => {
+    console.log(userDataVerified);
+  }, [userDataVerified]);
+
+  useEffect(() => {
     if (isNewUser) {
       userLoginData &&
         axios
           .post("http://localhost:5000/login", {
             ...userLoginData,
           })
-          .then((data: any) => console.log(JSON.stringify(data.data)))
+          .then((data: any) => setUserDataVerified(data.data))
           .catch(function (error: any) {
             console.log(error);
           });
