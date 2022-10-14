@@ -232,6 +232,16 @@ export const circularProgressSx = {
   mr: "2vw",
 };
 
+export const loadModalFontSx = {
+  fontFamily: "Noto Sans",
+  fontSize: "0.8vw",
+  letterSpacing: "0.125vw",
+  fontWeight: "400",
+  lineHeight: "1.66",
+  color: palette.aoWhite,
+  textDecoration: "none",
+};
+
 export const newSessionModal = {
   text: {
     flexDirection: "row",

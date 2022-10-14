@@ -9,24 +9,14 @@ import {
   ListItemText,
 } from "@mui/material";
 import ArrowRightIcon from "@mui/icons-material/ArrowRight";
-import { palette } from "../../assets/theme";
-
-const routerLinkSx = {
-  fontFamily: "Noto Sans",
-  fontSize: "0.8vw",
-  letterSpacing: "0.125vw",
-  fontWeight: "400",
-  lineHeight: "1.66",
-  color: palette.aoWhite,
-  textDecoration: "none",
-};
+import { loadModalFontSx } from "../../assets/theme";
 
 export const LoadModalContent = () => {
   return (
     <Box sx={{ mx: "2vw" }}>
       <List>
         <ListItem disablePadding>
-          <Link to="/aogrid" state={{ from: "load" }} style={routerLinkSx}>
+          <Link to="/aogrid" state={{ from: "load" }} style={loadModalFontSx}>
             <ListItemButton
               sx={{
                 span: {
