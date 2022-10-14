@@ -23,9 +23,10 @@ export const LoginModalContent = ({
   };
 
   useEffect(() => {
-    userDataVerified && console.log(userDataVerified);
-    userDataVerified && setModalType("Load");
-  }, [userDataVerified, setModalType]);
+    if (userDataVerified && !isNewUser) {
+      setModalType("Load");
+    }
+  });
 
   useEffect(() => {
     if (isNewUser) {
@@ -44,7 +45,7 @@ export const LoginModalContent = ({
           .put("http://localhost:5000/login", {
             ...userLoginData,
           })
-          .then((data: any) => console.log(JSON.stringify(data)))
+          .then((data: any) => setUserDataVerified(data.data))
           .catch(function (error: any) {
             console.log(error);
           });
