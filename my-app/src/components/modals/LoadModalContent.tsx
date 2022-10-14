@@ -11,7 +11,9 @@ import {
 import ArrowRightIcon from "@mui/icons-material/ArrowRight";
 import { loadModalFontSx } from "../../assets/theme";
 
-export const LoadModalContent = () => {
+export const LoadModalContent = ({ userDataVerified }: any) => {
+  console.log(userDataVerified);
+
   return (
     <Box sx={{ mx: "2vw" }}>
       <List>

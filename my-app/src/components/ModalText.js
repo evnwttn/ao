@@ -35,7 +35,9 @@ export const ModalText = ({
       <Divider variant="middle" sx={{ color: palette.aoDivider }} />
       <Box sx={{ mt: "5vh" }}>
         {(prompt === "New" && <NewModalContent />) ||
-          (prompt === "Load" && <LoadModalContent />) ||
+          (prompt === "Load" && (
+            <LoadModalContent userDataVerified={userDataVerified} />
+          )) ||
           (prompt === "About" && <AboutModalContent />) ||
           (prompt === "Contact" && <ContactModalContent />) ||
           (prompt === "Nav" && <AONavAboutContent />) ||
