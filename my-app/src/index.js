@@ -12,8 +12,8 @@ import { AOGrid } from "./components/AOGrid";
 import aotheme, { homeSx } from "./assets/theme";
 
 const Home = () => {
-  const [open, setOpen] = useState(false);
-  const [modalType, setModalType] = useState("");
+  const [open, setOpen] = useState(true);
+  const [modalType, setModalType] = useState("Login");
 
   const handleOpen = (text) => {
     setModalType(text);
