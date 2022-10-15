@@ -10,7 +10,7 @@ export const LoginModalContent = ({
   const axios = require("axios").default;
   const [isNewUser, setIsNewUser] = useState<Boolean>(false);
   const [userLoginData, setUserLoginData] =
-    useState<Omit<UserLoginData, "id" | "sessions">>();
+    useState<Omit<UserLoginData, "id">>();
   const emailField = useRef<HTMLInputElement>(null);
   const passwordField = useRef<HTMLInputElement>(null);
   const [showPassword, setShowPassword] = useState<Boolean>(true);
