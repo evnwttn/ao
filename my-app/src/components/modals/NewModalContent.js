@@ -4,7 +4,7 @@ import { useForm } from "react-hook-form";
 import { palette } from "../../assets/theme";
 import { NewModalContentListForm, NewModalContentTextfieldForm } from "./index";
 
-export const NewModalContent = () => {
+export const NewModalContent = ({ userDataVerified }) => {
   const axios = require("axios").default;
   const [sessionData, setSessionData] = useState();
   const [startNewSession, setStartNewSession] = useState(false);

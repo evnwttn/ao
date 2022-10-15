@@ -34,7 +34,9 @@ export const ModalText = ({
       </Box>
       <Divider variant="middle" sx={{ color: palette.aoDivider }} />
       <Box sx={{ mt: "5vh" }}>
-        {(prompt === "New" && <NewModalContent />) ||
+        {(prompt === "New" && (
+          <NewModalContent userDataVerified={userDataVerified} />
+        )) ||
           (prompt === "Load" && (
             <LoadModalContent userDataVerified={userDataVerified} />
           )) ||
