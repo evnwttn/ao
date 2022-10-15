@@ -17,6 +17,7 @@ export const AOGrid = () => {
       return location.state.data;
     }
   });
+  const [verifiedUserData] = useState(location.state.user);
   const [hoverCell, setHoverCell] = useState();
   const [isHovered, setIsHovered] = useState(false);
   const toggleHovered = () => setIsHovered(!isHovered);

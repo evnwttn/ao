@@ -170,7 +170,11 @@ export const NewModalContent = ({ userDataVerified }) => {
     startNewSession && (
       <Navigate
         to="/aogrid"
-        state={{ from: "new", data: verifiedSessionData }}
+        state={{
+          from: "new",
+          data: verifiedSessionData,
+          user: userDataVerified,
+        }}
         replace={true}
       />
     )
