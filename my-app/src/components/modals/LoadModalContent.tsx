@@ -17,7 +17,11 @@ export const LoadModalContent = ({ userDataVerified }: any) => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/load?ID=${userDataVerified.id}`)
+      .get("http://localhost:5000/load", {
+        params: {
+          id: userDataVerified.id,
+        },
+      })
       .then((data: any) => console.log(data))
       .catch(function (error: any) {
         console.log(error);
