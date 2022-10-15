@@ -17,7 +17,7 @@ export const LoadModalContent = ({ userDataVerified }: any) => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/load", {
+      .get("http://localhost:5000/session", {
         params: {
           id: userDataVerified.id,
         },
