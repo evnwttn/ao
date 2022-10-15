@@ -16,8 +16,6 @@ const Home = () => {
   const [open, setOpen] = useState(true);
   const [modalType, setModalType] = useState("Login");
 
-  useEffect(() => console.log(userDataVerified), [userDataVerified]);
-
   const handleOpen = (text) => {
     setModalType(text);
   };
