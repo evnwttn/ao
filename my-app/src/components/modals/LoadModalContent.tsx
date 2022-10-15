@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import {
   Box,
@@ -13,7 +13,16 @@ import { loadModalFontSx } from "../../assets/theme";
 
 export const LoadModalContent = ({ userDataVerified }: any) => {
   const axios = require("axios").default;
-  const [userSessions, setUserSessions] = useState<any>();
+  // const [userSessions, setUserSessions] = useState<any>();
+
+  useEffect(() => {
+    axios
+      .get(`http://localhost:5000/load?ID=${userDataVerified.id}`)
+      .then((data: any) => console.log(data))
+      .catch(function (error: any) {
+        console.log(error);
+      });
+  }, [userDataVerified, axios]);
 
   return (
     <Box sx={{ mx: "2vw" }}>
