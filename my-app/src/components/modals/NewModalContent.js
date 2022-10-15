@@ -7,6 +7,7 @@ import { NewModalContentListForm, NewModalContentTextfieldForm } from "./index";
 export const NewModalContent = ({ userDataVerified }) => {
   const axios = require("axios").default;
   const [sessionData, setSessionData] = useState();
+  const [verifiedSessionData, setVerifiedSessionData] = useState();
   const [startNewSession, setStartNewSession] = useState(false);
   const [formPrompt, setFormPrompt] = useState(0);
   const [triggerSubmit, setTriggerSubmit] = useState(0);
@@ -119,7 +120,7 @@ export const NewModalContent = ({ userDataVerified }) => {
         .post(`http://localhost:5000/session/`, {
           ...sessionData,
         })
-        .then((data) => (isMounted ? setSessionData(data.data) : null))
+        .then((data) => (isMounted ? setVerifiedSessionData(data.data) : null))
         .then(() => (isMounted ? setStartNewSession(true) : null))
         .catch((error) => {
           if (isMounted) {
@@ -173,7 +174,7 @@ export const NewModalContent = ({ userDataVerified }) => {
     startNewSession && (
       <Navigate
         to="/aogrid"
-        state={{ from: "new", data: sessionData }}
+        state={{ from: "new", data: verifiedSessionData }}
         replace={true}
       />
     )
