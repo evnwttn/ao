@@ -123,11 +123,7 @@ export const NewModalContent = ({ userDataVerified }) => {
         .then((data) => (isMounted ? setVerifiedSessionData(data.data) : null))
         .then(() => (isMounted ? setStartNewSession(true) : null))
         .catch((error) => {
-          if (isMounted) {
-            alert("New Sessions Temporarily Unavailable");
-          } else {
-            console.log(error);
-          }
+          console.log(error);
         });
     };
 
