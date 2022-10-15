@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import {
   Box,
@@ -12,7 +12,8 @@ import ArrowRightIcon from "@mui/icons-material/ArrowRight";
 import { loadModalFontSx } from "../../assets/theme";
 
 export const LoadModalContent = ({ userDataVerified }: any) => {
-  console.log(userDataVerified);
+  const axios = require("axios").default;
+  const [userSessions, setUserSessions] = useState<any>();
 
   return (
     <Box sx={{ mx: "2vw" }}>
