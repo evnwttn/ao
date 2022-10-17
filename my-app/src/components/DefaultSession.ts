@@ -1,6 +1,6 @@
 import { palette } from "../assets/theme";
 
-export const darkSideOfTheMoon = {
+export const defaultSession = {
   sessionTitle: "the dark side of the moon",
   author: "pink floyd",
   tracks: [
