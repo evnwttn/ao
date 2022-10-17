@@ -33,7 +33,7 @@ export const LoadModalContent = ({ userDataVerified }: any) => {
             <ListItem disablePadding>
               <Link
                 to="/aogrid"
-                state={{ from: "load" }}
+                state={{ from: "load", data: session }}
                 style={loadModalFontSx}
               >
                 <ListItemButton
