@@ -10,10 +10,11 @@ import {
 } from "@mui/material";
 import ArrowRightIcon from "@mui/icons-material/ArrowRight";
 import { loadModalFontSx } from "../../assets/theme";
+import { Session } from "../../types";
 
 export const LoadModalContent = ({ userDataVerified }: any) => {
   const axios = require("axios").default;
-  const [userSessions, setUserSessions] = useState<any>();
+  const [userSessions, setUserSessions] = useState<Session[]>();
 
   useEffect(() => {
     console.log(userSessions);
