@@ -27,7 +27,11 @@ export const LoadModalContent = ({ userDataVerified }: any) => {
 
   return (
     <Box sx={{ mx: "2vw" }}>
-      <List></List>
+      <List>
+        {userSessions?.map((session) => {
+          return <ListItem disablePadding></ListItem>;
+        })}
+      </List>
     </Box>
   );
 };
