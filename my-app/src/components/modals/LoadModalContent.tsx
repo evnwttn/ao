@@ -17,10 +17,6 @@ export const LoadModalContent = ({ userDataVerified }: any) => {
   const [userSessions, setUserSessions] = useState<Session[]>();
 
   useEffect(() => {
-    console.log(userSessions);
-  }, [userSessions]);
-
-  useEffect(() => {
     axios
       .get(`http://localhost:5000/session?id=${userDataVerified.id}`)
       .then((data: any) => setUserSessions(data.data))
