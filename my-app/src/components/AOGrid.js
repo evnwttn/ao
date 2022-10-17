@@ -7,8 +7,10 @@ import { AOCell } from "./AOCell";
 import { AONav } from "./AONav";
 
 export const AOGrid = () => {
+  const axios = require("axios").default;
   const location = useLocation();
   const [gridData, setGridData] = useState(location.state.data);
+
   const [hoverCell, setHoverCell] = useState();
   const [isHovered, setIsHovered] = useState(false);
   const toggleHovered = () => setIsHovered(!isHovered);
@@ -20,8 +22,6 @@ export const AOGrid = () => {
   const { setValue, handleSubmit } = useForm({
     defaultValues: gridData,
   });
-
-  const axios = require("axios").default;
 
   const updateSessionData = () => {
     gridData.tracks.forEach((trackTitle, trackIndex) => {
