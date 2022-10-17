@@ -11,18 +11,21 @@ import {
 import ArrowRightIcon from "@mui/icons-material/ArrowRight";
 import { loadModalFontSx } from "../../assets/theme";
 import { Session } from "../../types";
+import { defaultSession } from "../DefaultSession";
 
 export const LoadModalContent = ({ userDataVerified }: any) => {
   const axios = require("axios").default;
   const [userSessions, setUserSessions] = useState<Session[]>();
 
   useEffect(() => {
-    axios
-      .get(`http://localhost:5000/session?id=${userDataVerified.id}`)
-      .then((data: any) => setUserSessions(data.data))
-      .catch(function (error: any) {
-        console.log(error);
-      });
+    userDataVerified
+      ? axios
+          .get(`http://localhost:5000/session?id=${userDataVerified.id}`)
+          .then((data: any) => setUserSessions(data.data))
+          .catch(function (error: any) {
+            console.log(error);
+          })
+      : setUserSessions(defaultSession);
   }, [userDataVerified, axios]);
 
   return (
