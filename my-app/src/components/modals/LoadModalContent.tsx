@@ -29,7 +29,15 @@ export const LoadModalContent = ({ userDataVerified }: any) => {
     <Box sx={{ mx: "2vw" }}>
       <List>
         {userSessions?.map((session) => {
-          return <ListItem disablePadding></ListItem>;
+          return (
+            <ListItem disablePadding>
+              <Link
+                to="/aogrid"
+                state={{ from: "load" }}
+                style={loadModalFontSx}
+              ></Link>
+            </ListItem>
+          );
         })}
       </List>
     </Box>
