@@ -33,7 +33,7 @@ export const LoadModalContent = ({ userDataVerified }: any) => {
       <List>
         {userSessions?.map((session) => {
           return (
-            <ListItem disablePadding>
+            <ListItem key={session.sessionTitle} disablePadding>
               <Link
                 to="/aogrid"
                 state={{ from: "load", data: session }}
