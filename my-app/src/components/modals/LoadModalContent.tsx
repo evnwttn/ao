@@ -11,7 +11,6 @@ import {
 import ArrowRightIcon from "@mui/icons-material/ArrowRight";
 import { loadModalFontSx } from "../../assets/theme";
 import { Session } from "../../types";
-import { darkSideOfTheMoon } from "../../assets/dummydata/LoadSample";
 
 export const LoadModalContent = ({ userDataVerified }: any) => {
   const axios = require("axios").default;
