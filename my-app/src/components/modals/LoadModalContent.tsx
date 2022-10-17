@@ -35,7 +35,26 @@ export const LoadModalContent = ({ userDataVerified }: any) => {
                 to="/aogrid"
                 state={{ from: "load" }}
                 style={loadModalFontSx}
-              ></Link>
+              >
+                <ListItemButton
+                  sx={{
+                    span: {
+                      fontSize: "1.25vw",
+                    },
+                    "&:hover": {
+                      background: "transparent",
+                      opacity: "0.7",
+                      cursor: "pointer",
+                    },
+                  }}
+                  disableRipple
+                >
+                  <ListItemIcon>
+                    <ArrowRightIcon />
+                  </ListItemIcon>
+                  <ListItemText primary="The Dark Side Of The Moon" />
+                </ListItemButton>
+              </Link>
             </ListItem>
           );
         })}
@@ -62,24 +81,24 @@ export const LoadModalContent = ({ userDataVerified }: any) => {
 //       <List>
 //         <ListItem disablePadding>
 //           <Link to="/aogrid" state={{ from: "load" }} style={loadModalFontSx}>
-//             <ListItemButton
-//               sx={{
-//                 span: {
-//                   fontSize: "1.25vw",
-//                 },
-//                 "&:hover": {
-//                   background: "transparent",
-//                   opacity: "0.7",
-//                   cursor: "pointer",
-//                 },
-//               }}
-//               disableRipple
-//             >
-//               <ListItemIcon>
-//                 <ArrowRightIcon />
-//               </ListItemIcon>
-//               <ListItemText primary="The Dark Side Of The Moon" />
-//             </ListItemButton>
+// <ListItemButton
+//   sx={{
+//     span: {
+//       fontSize: "1.25vw",
+//     },
+//     "&:hover": {
+//       background: "transparent",
+//       opacity: "0.7",
+//       cursor: "pointer",
+//     },
+//   }}
+//   disableRipple
+// >
+//   <ListItemIcon>
+//     <ArrowRightIcon />
+//   </ListItemIcon>
+//   <ListItemText primary="The Dark Side Of The Moon" />
+// </ListItemButton>
 //           </Link>
 //         </ListItem>
 //       </List>
