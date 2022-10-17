@@ -52,7 +52,7 @@ export const LoadModalContent = ({ userDataVerified }: any) => {
                   <ListItemIcon>
                     <ArrowRightIcon />
                   </ListItemIcon>
-                  <ListItemText primary="The Dark Side Of The Moon" />
+                  <ListItemText primary={`${session.sessionTitle}`} />
                 </ListItemButton>
               </Link>
             </ListItem>
