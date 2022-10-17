@@ -5,18 +5,9 @@ import { Box, Grid, ThemeProvider } from "@mui/material/";
 import aotheme, { gridSx, cellSx } from "../assets/theme";
 import { AOCell } from "./AOCell";
 import { AONav } from "./AONav";
-// import { darkSideOfTheMoon } from "../assets/dummydata/LoadSample";
 
 export const AOGrid = () => {
   const location = useLocation();
-  // const { from } = location.state;
-  // const [gridData, setGridData] = useState(() => {
-  //   if (from === "load") {
-  //     return darkSideOfTheMoon;
-  //   } else if (from === "new") {
-  //     return location.state.data;
-  //   }
-  // });
   const [gridData, setGridData] = useState(location.state.data);
   const [hoverCell, setHoverCell] = useState();
   const [isHovered, setIsHovered] = useState(false);
