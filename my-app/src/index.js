@@ -25,8 +25,10 @@ const Home = () => {
   }, [modalType]);
 
   const handleClose = () => {
-    setOpen(false);
-    setModalType("");
+    if (userDataVerified) {
+      setOpen(false);
+      setModalType("");
+    }
   };
 
   return (
