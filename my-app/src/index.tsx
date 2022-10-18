@@ -7,13 +7,14 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ThemeProvider, Box } from "@mui/material";
 import { ModalButton, MainLogo, ModalBase, AOGrid } from "./components/index";
 import aotheme, { homeSx } from "./assets/theme";
+import { UserLoginData } from "./types";
 
 const Home = () => {
-  const [userDataVerified, setUserDataVerified] = useState();
-  const [open, setOpen] = useState(true);
-  const [modalType, setModalType] = useState("Login");
+  const [userDataVerified, setUserDataVerified] = useState<UserLoginData>();
+  const [open, setOpen] = useState<Boolean>(true);
+  const [modalType, setModalType] = useState<string>("Login");
 
-  const handleOpen = (text) => {
+  const handleOpen = (text: string) => {
     setModalType(text);
   };
 
@@ -40,16 +41,25 @@ const Home = () => {
           setUserDataVerified={setUserDataVerified}
         />
         <Box sx={homeSx.cornerDiv}>
-          <ModalButton text={"About"} handleOpen={(text) => handleOpen(text)} />
+          <ModalButton
+            text={"About"}
+            handleOpen={(text: string) => handleOpen(text)}
+          />
           <ModalButton
             text={"Contact"}
-            handleOpen={(text) => handleOpen(text)}
+            handleOpen={(text: string) => handleOpen(text)}
           />
         </Box>
         <Box sx={homeSx.centerDiv}>
           <MainLogo />
-          <ModalButton text={"New"} handleOpen={(text) => handleOpen(text)} />
-          <ModalButton text={"Load"} handleOpen={(text) => handleOpen(text)} />
+          <ModalButton
+            text={"New"}
+            handleOpen={(text: string) => handleOpen(text)}
+          />
+          <ModalButton
+            text={"Load"}
+            handleOpen={(text: string) => handleOpen(text)}
+          />
         </Box>
       </ThemeProvider>
     </Box>
