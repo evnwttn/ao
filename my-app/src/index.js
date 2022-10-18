@@ -1,14 +1,11 @@
 import "./index.css";
 import "@fontsource/noto-sans";
 import "@fontsource/noto-serif";
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { render } from "react-dom";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ThemeProvider, Box } from "@mui/material";
-import { ModalButton } from "./components/ModalButton";
-import { MainLogo } from "./components/MainLogo";
-import { ModalBase } from "./components/ModalBase";
-import { AOGrid } from "./components/AOGrid";
+import { ModalButton, MainLogo, ModalBase, AOGrid } from "./components/index";
 import aotheme, { homeSx } from "./assets/theme";
 
 const Home = () => {
