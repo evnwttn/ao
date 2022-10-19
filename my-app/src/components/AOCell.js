@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { Box, Grid, Popover } from "@mui/material/";
-import { AOPopover } from "./AOPopover";
+import { AOPopover } from "./index";
 import { palette, cellSx } from "../assets/theme";
 
 export const AOCell = ({

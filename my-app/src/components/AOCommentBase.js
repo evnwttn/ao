@@ -1,5 +1,5 @@
 import { Modal } from "@mui/material";
-import { AOCommentModal } from "./AOCommentModal";
+import { AOCommentModal } from "./index";
 
 export const AOCommentBase = ({
   cell,
