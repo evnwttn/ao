@@ -1,3 +1,4 @@
+import React from "react";
 import { Box, TextField, IconButton } from "@mui/material";
 import SaveRoundedIcon from "@mui/icons-material/SaveRounded";
 import { commentSx } from "../../assets/theme";
@@ -8,7 +9,7 @@ export const AOCommentContent = ({
   handleSubmit,
   onSubmit,
   register,
-}) => {
+}: any) => {
   return (
     <>
       <Box component="form" onSubmit={handleSubmit(onSubmit)}>

@@ -7,7 +7,7 @@ import {
   AONavAboutContent,
   LoginModalContent,
   ContactModalContent,
-} from "../components/modals/index";
+} from "./modals/index";
 
 export const ModalText = ({
   prompt,
