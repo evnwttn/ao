@@ -1,7 +1,14 @@
+import React from "react";
 import { Box, Tooltip } from "@mui/material/";
 import { wheelSx } from "../assets/theme";
 
-export const AOSpoke = ({ color, shape, handleClick, toolTip, placement }) => {
+export const AOSpoke = ({
+  color,
+  shape,
+  handleClick,
+  toolTip,
+  placement,
+}: any) => {
   return (
     <Box sx={wheelSx.spoke}>
       <svg
