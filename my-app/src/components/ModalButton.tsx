@@ -1,6 +1,7 @@
+import React from "react";
 import { Button } from "@mui/material";
 
-export const ModalButton = ({ text, handleOpen }) => {
+export const ModalButton = ({ text, handleOpen }: any) => {
   return (
     <Button
       disableRipple
