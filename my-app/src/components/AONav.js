@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Button, Box, Divider } from "@mui/material";
 import { Link } from "react-router-dom";
 import { logoSx, navSx, palette } from "../assets/theme";
-import { ModalBase } from "../components/ModalBase";
+import { ModalBase } from "../components/index";
 
 export const AONav = ({ data }) => {
   const [isAboutOpen, setIsAboutOpen] = useState(false);

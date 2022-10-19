@@ -1,10 +1,9 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { useLocation } from "react-router-dom";
 import { Box, Grid, ThemeProvider } from "@mui/material/";
 import aotheme, { gridSx, cellSx } from "../assets/theme";
-import { AOCell } from "./AOCell";
-import { AONav } from "./AONav";
+import { AONav, AOCell } from "./index";
 
 export const AOGrid = () => {
   const axios = require("axios").default;
