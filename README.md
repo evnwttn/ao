@@ -33,5 +33,12 @@ gfx / design
 
 ---
 
-<img src="https://i.ibb.co/brfCqjP/aohome.png">
+<img src="https://i.ibb.co/qdw19cp/Screenshot-100.png">
 <img src="https://i.ibb.co/RQTq9q5/aoapp.png">
+
+--
+
+previous gfx
+
+<img src="https://i.ibb.co/brfCqjP/aohome.png">
+
