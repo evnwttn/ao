@@ -1,3 +1,4 @@
+import React from "react";
 import { Modal } from "@mui/material";
 import { AOCommentModal } from "./index";
 
@@ -9,7 +10,7 @@ export const AOCommentBase = ({
   register,
   handleSubmit,
   onSubmit,
-}) => {
+}: any) => {
   return (
     <Modal open={open} onClose={handleClose}>
       <>
