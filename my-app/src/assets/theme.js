@@ -170,6 +170,24 @@ export const logoSx = {
     color: palette.aoBlue,
     fontSize: "2.5vw",
   },
+  main: {
+    fontFamily: "Noto-Serif",
+    textTransform: "lowercase",
+    userSelect: "none",
+    msUserSelect: "none",
+    webkitTouchCallout: "none",
+    webkitUserSelect: "none",
+    khtmlUserSelectNone: "none",
+    mozUserSelectNone: "none",
+    msUserSelectNone: "none",
+    userSelectNone: "none",
+    display: "flex",
+    alignContent: "center",
+    justifyContent: "center",
+    color: palette.aoBlue,
+    fontSize: "13vw",
+    mt: "-5vh",
+  },
 };
 
 // HOME
