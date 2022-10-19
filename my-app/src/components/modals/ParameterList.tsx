@@ -1,6 +1,7 @@
+import React from "react";
 import { Box, Button } from "@mui/material";
 
-export const ParameterList = ({ addParameterList }) => {
+export const ParameterList = ({ addParameterList }: any) => {
   const parameters = [
     "Vocals",
     "Bass",
