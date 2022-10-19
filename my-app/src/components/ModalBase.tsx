@@ -1,3 +1,4 @@
+import React from "react";
 import { Modal } from "@mui/material";
 import { ModalText } from "../components/index";
 
@@ -8,7 +9,7 @@ export const ModalBase = ({
   userDataVerified,
   setUserDataVerified,
   setModalType,
-}) => {
+}: any) => {
   return (
     <Modal
       open={open}
