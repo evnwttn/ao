@@ -1,3 +1,4 @@
+import React from "react";
 import { Box } from "@mui/material";
 import { modalCenteredSx, palette } from "../../assets/theme";
 
