@@ -1,5 +1,5 @@
 import { Modal } from "@mui/material";
-import { ModalText } from "../components/ModalText";
+import { ModalText } from "../components/index";
 
 export const ModalBase = ({
   open,

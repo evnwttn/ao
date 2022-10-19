@@ -1,8 +1,7 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { Box, Tooltip } from "@mui/material/";
 import RemoveCircleOutlineIcon from "@mui/icons-material/RemoveCircleOutline";
-import { AOColorWheel } from "./AOColorWheel";
-import { AOCommentBase } from "./AOCommentBase";
+import { AOColorWheel, AOCommentBase } from "./index";
 import { wheelSx } from "../assets/theme";
 
 export const AOPopover = ({
