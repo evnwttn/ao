@@ -17,7 +17,7 @@ export const NewModalContent = ({ userDataVerified }) => {
     defaultValues: {
       parameters: ["title"],
       id: undefined,
-      users: `${userDataVerified.id}`,
+      user: `${userDataVerified.id}`,
     },
   });
 
