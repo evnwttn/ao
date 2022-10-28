@@ -32,9 +32,13 @@ export const LoginModalContent = ({
     if (isNewUser) {
       userLoginData &&
         axios
-          .post("http://localhost:5000/login", {
-            ...userLoginData,
-          })
+          .post(
+            "http://localhost:5000/login",
+            {
+              ...userLoginData,
+            },
+            { withCredentials: true }
+          )
           .then((data: any) => setUserDataVerified(data.data))
           .catch(function (error: any) {
             console.log(error);
@@ -42,9 +46,13 @@ export const LoginModalContent = ({
     } else {
       userLoginData &&
         axios
-          .put("http://localhost:5000/login", {
-            ...userLoginData,
-          })
+          .put(
+            "http://localhost:5000/login",
+            {
+              ...userLoginData,
+            },
+            { withCredentials: true }
+          )
           .then((data: any) => setUserDataVerified(data.data))
           .catch(function (error: any) {
             console.log(error);
