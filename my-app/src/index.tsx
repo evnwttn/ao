@@ -12,7 +12,7 @@ import aotheme, { homeSx } from "./assets/theme";
 
 const Home = () => {
   const axios = require("axios").default;
-  const [sessionUserId, setSessionUserId] = useState<any>();
+  const [sessionUserId, setSessionUserId] = useState<string>();
   const [open, setOpen] = useState<Boolean>(true);
   const [modalType, setModalType] = useState<string>("Login");
 

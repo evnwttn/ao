@@ -11,8 +11,8 @@ import {
 
 export const ModalText = ({
   prompt,
-  sessionUserId,
-  setSessionUserId,
+  userDataVerified,
+  setUserDataVerified,
   setModalType,
 }) => {
   return (
@@ -35,18 +35,18 @@ export const ModalText = ({
       <Divider variant="middle" sx={{ color: palette.aoDivider }} />
       <Box sx={{ mt: "5vh" }}>
         {(prompt === "New" && (
-          <NewModalContent sessionUserId={sessionUserId} />
+          <NewModalContent userDataVerified={userDataVerified} />
         )) ||
           (prompt === "Load" && (
-            <LoadModalContent sessionUserId={sessionUserId} />
+            <LoadModalContent userDataVerified={userDataVerified} />
           )) ||
           (prompt === "About" && <AboutModalContent />) ||
           (prompt === "Contact" && <ContactModalContent />) ||
           (prompt === "Nav" && <AONavAboutContent />) ||
           (prompt === "Login" && (
             <LoginModalContent
-              sessionUserId={setSessionUserId}
-              setSessionUserId={setSessionUserId}
+              userDataVerified={userDataVerified}
+              setUserDataVerified={setUserDataVerified}
               setModalType={setModalType}
             />
           ))}
