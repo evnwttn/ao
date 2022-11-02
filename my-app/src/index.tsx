@@ -8,6 +8,8 @@ import { ThemeProvider, Box } from "@mui/material";
 import { ModalButton, MainLogo, ModalBase, AOGrid } from "./components/index";
 import aotheme, { homeSx } from "./assets/theme";
 
+// CHANGE USERDATAVERIFIED TO SESSIONUSERID & PASS THAT BACK & FORTH INSTEAD
+
 const Home = () => {
   const axios = require("axios").default;
   const [sessionUserId, setSessionUserId] = useState<any>();
