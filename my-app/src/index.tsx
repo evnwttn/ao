@@ -7,22 +7,23 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ThemeProvider, Box } from "@mui/material";
 import { ModalButton, MainLogo, ModalBase, AOGrid } from "./components/index";
 import aotheme, { homeSx } from "./assets/theme";
-import { UserLoginData } from "./types";
 
 const Home = () => {
-  // const axios = require("axios").default;
-  const [userDataVerified, setUserDataVerified] = useState<UserLoginData>();
+  const axios = require("axios").default;
+  const [sessionUserId, setSessionUserId] = useState<string>();
   const [open, setOpen] = useState<Boolean>(true);
   const [modalType, setModalType] = useState<string>("Login");
 
-  // useEffect(() => {
-  //   axios
-  //     .get(`http://localhost:5000/login`)
-  //     .then((data: any) => console.log(data.data))
-  //     .catch(function (error: any) {
-  //       console.log("error");
-  //     });
-  // }, [axios]);
+  useEffect(() => {
+    if (!sessionUserId) {
+      axios
+        .get(`http://localhost:5000/login`)
+        .then((data: any) => setSessionUserId(data.data))
+        .catch(function (error: any) {
+          console.log("error");
+        });
+    }
+  }, [axios, sessionUserId]);
 
   const handleOpen = (text: string) => {
     setModalType(text);
@@ -33,10 +34,9 @@ const Home = () => {
   }, [modalType]);
 
   const handleClose = () => {
-    if (userDataVerified) {
+    if (sessionUserId) {
       setOpen(false);
       setModalType("");
-      console.log(document.cookie);
     }
   };
 
@@ -48,8 +48,8 @@ const Home = () => {
           handleClose={handleClose}
           text={modalType}
           setModalType={setModalType}
-          userDataVerified={userDataVerified}
-          setUserDataVerified={setUserDataVerified}
+          sessionUserId={sessionUserId}
+          setSessionUserId={setSessionUserId}
         />
         <Box sx={homeSx.cornerDiv}>
           <ModalButton
