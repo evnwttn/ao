@@ -13,20 +13,20 @@ import { loadModalFontSx } from "../../assets/theme";
 import { Session } from "../../types";
 import { defaultSession } from "../DefaultSession";
 
-export const LoadModalContent = ({ userDataVerified }: any) => {
+export const LoadModalContent = ({ sessionUserId }: any) => {
   const axios = require("axios").default;
   const [userSessions, setUserSessions] = useState<Session[]>();
 
   useEffect(() => {
-    userDataVerified
+    sessionUserId
       ? axios
-          .get(`http://localhost:5000/session?id=${userDataVerified.id}`)
+          .get(`http://localhost:5000/session?id=${sessionUserId}`)
           .then((data: any) => setUserSessions(data.data))
           .catch(function (error: any) {
             console.log(error);
           })
       : setUserSessions(defaultSession);
-  }, [userDataVerified, axios]);
+  }, [sessionUserId, axios]);
 
   return (
     <Box sx={{ mx: "2vw" }}>
