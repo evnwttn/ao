@@ -9,22 +9,20 @@ import { ModalButton, MainLogo, ModalBase, AOGrid } from "./components/index";
 import aotheme, { homeSx } from "./assets/theme";
 import { UserLoginData } from "./types";
 
-// CHANGE USERDATAVERIFIED TO SESSIONUSERID & PASS THAT BACK & FORTH INSTEAD
-
 const Home = () => {
-  // const axios = require("axios").default;
+  const axios = require("axios").default;
   const [userDataVerified, setUserDataVerified] = useState<UserLoginData>();
   const [open, setOpen] = useState<Boolean>(true);
   const [modalType, setModalType] = useState<string>("Login");
 
-  // useEffect(() => {
-  //   axios
-  //     .get(`http://localhost:5000/login`)
-  //     .then((data: any) => console.log(data.data))
-  //     .catch(function (error: any) {
-  //       console.log("error");
-  //     });
-  // }, [axios]);
+  useEffect(() => {
+    axios
+      .get(`http://localhost:5000/login`)
+      .then((data: any) => console.log(data))
+      .catch(function (error: any) {
+        console.log("error");
+      });
+  }, [axios]);
 
   const handleOpen = (text: string) => {
     setModalType(text);
