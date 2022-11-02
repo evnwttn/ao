@@ -1,8 +1,15 @@
 # ao :musical_score:
 
-https://evnwttn.github.io/ao
+offline version 
+<br />https://evnwttn.github.io/ao
 
-#1 - massive shoutout to my react coach <a href="https://github.com/debrine">dylan brine</a>
+---
+
+massive shoutout to my <a href="https://www.getcoding.ca/">get coding</a> coaches for this project:
+<br /><a href="https://github.com/debrine">dylan brine</a> (react)
+<br /><a href="https://github.com/devthedevel">devin marsh</a> (node)
+
+---
 
 a visual album organizational tool utilizing
 
