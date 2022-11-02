@@ -9,8 +9,6 @@ export const AOGrid = () => {
   const axios = require("axios").default;
   const location = useLocation();
   const [gridData, setGridData] = useState(location.state.data);
-  const [sessionUserId] = useState(location.state.user);
-  console.log(sessionUserId);
 
   const [hoverCell, setHoverCell] = useState();
   const [isHovered, setIsHovered] = useState(false);
