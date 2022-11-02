@@ -3,8 +3,8 @@ import { LoginExistingUser, LoginNewUser } from "./index";
 import { UserLoginData } from "../../types";
 
 export const LoginModalContent = ({
-  sessionUserId,
-  setSessionUserId,
+  userDataVerified,
+  setUserDataVerified,
   setModalType,
 }: any) => {
   const axios = require("axios").default;
@@ -23,7 +23,7 @@ export const LoginModalContent = ({
   };
 
   useEffect(() => {
-    if (sessionUserId) {
+    if (userDataVerified) {
       setModalType(isNewUser ? "" : "Load");
     }
   });
@@ -39,7 +39,7 @@ export const LoginModalContent = ({
             },
             { withCredentials: true }
           )
-          .then((data: any) => setSessionUserId(data.data))
+          .then((data: any) => setUserDataVerified(data.data))
           .catch(function (error: any) {
             console.log(error);
           });
@@ -53,12 +53,12 @@ export const LoginModalContent = ({
             },
             { withCredentials: true }
           )
-          .then((data: any) => setSessionUserId(data.data))
+          .then((data: any) => setUserDataVerified(data.data))
           .catch(function (error: any) {
             console.log(error);
           });
     }
-  }, [userLoginData, axios, isNewUser, setSessionUserId]);
+  }, [userLoginData, axios, isNewUser, setUserDataVerified]);
 
   return isNewUser ? (
     <LoginNewUser
