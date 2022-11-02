@@ -4,7 +4,7 @@ import { useForm } from "react-hook-form";
 import { palette } from "../../assets/theme";
 import { NewModalContentListForm, NewModalContentTextfieldForm } from "./index";
 
-export const NewModalContent = ({ sessionUserId }) => {
+export const NewModalContent = ({ userDataVerified }) => {
   const axios = require("axios").default;
   const [sessionData, setSessionData] = useState();
   const [verifiedSessionData, setVerifiedSessionData] = useState();
@@ -17,7 +17,7 @@ export const NewModalContent = ({ sessionUserId }) => {
     defaultValues: {
       parameters: ["title"],
       id: undefined,
-      user: `${sessionUserId}`,
+      user: `${userDataVerified.id}`,
     },
   });
 
@@ -174,7 +174,7 @@ export const NewModalContent = ({ sessionUserId }) => {
         state={{
           from: "new",
           data: verifiedSessionData,
-          user: sessionUserId,
+          user: userDataVerified,
         }}
         replace={true}
       />
