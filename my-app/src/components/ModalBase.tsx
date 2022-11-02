@@ -6,8 +6,8 @@ export const ModalBase = ({
   open,
   handleClose,
   text,
-  userDataVerified,
-  setUserDataVerified,
+  sessionUserId,
+  setSessionUserId,
   setModalType,
 }: any) => {
   return (
@@ -19,8 +19,8 @@ export const ModalBase = ({
       <>
         <ModalText
           prompt={text}
-          userDataVerified={userDataVerified}
-          setUserDataVerified={setUserDataVerified}
+          sessionUserId={sessionUserId}
+          setSessionUserId={setSessionUserId}
           setModalType={setModalType}
         />
       </>
