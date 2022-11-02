@@ -9,8 +9,6 @@ import { ModalButton, MainLogo, ModalBase, AOGrid } from "./components/index";
 import aotheme, { homeSx } from "./assets/theme";
 import { UserLoginData } from "./types";
 
-// CHANGE USERDATAVERIFIED TO SESSIONUSERID & PASS THAT BACK & FORTH INSTEAD
-
 const Home = () => {
   // const axios = require("axios").default;
   const [userDataVerified, setUserDataVerified] = useState<UserLoginData>();
