@@ -4,8 +4,8 @@ import { logoSx, navSx, palette } from "../assets/theme";
 import { ModalBase } from "./index";
 
 export const AONav = ({ data }: any) => {
-  const [openModal, setOpenModal] = useState(false);
-  const [modalText, setModalText] = useState("");
+  const [openModal, setOpenModal] = useState<Boolean>(false);
+  const [modalText, setModalText] = useState<string>("");
 
   const openNavModal = (text: string) => {
     setModalText(text);
