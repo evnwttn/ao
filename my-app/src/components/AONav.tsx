@@ -3,11 +3,11 @@ import { Button, Box, Divider } from "@mui/material";
 import { logoSx, navSx, palette } from "../assets/theme";
 import { ModalBase } from "./index";
 
-export const AONav = ({ data }) => {
+export const AONav = ({ data }: any) => {
   const [openModal, setOpenModal] = useState(false);
-  const [modalText, setModalText] = useState();
+  const [modalText, setModalText] = useState("");
 
-  const openNavModal = (text) => {
+  const openNavModal = (text: string) => {
     setModalText(text);
     setOpenModal(true);
   };
@@ -23,7 +23,7 @@ export const AONav = ({ data }) => {
         handleClose={handleClose}
         text={`${modalText}`}
       />
-      <Box sx={navSx.text}>
+      <Box sx={{ ...navSx.text, textTransform: "uppercase" }}>
         <Box sx={navSx.text.author}>{data.author}</Box>
         <Divider
           orientation="vertical"
