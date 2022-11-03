@@ -5,7 +5,12 @@ import { ModalBase } from "./index";
 
 export const AONav = ({ data }) => {
   const [openModal, setOpenModal] = useState(false);
-  const [modalText] = useState("Nav");
+  const [modalText, setModalText] = useState();
+
+  const openNavModal = (text) => {
+    setModalText(text);
+    setOpenModal(true);
+  };
 
   const handleClose = () => {
     setOpenModal(false);
@@ -30,7 +35,7 @@ export const AONav = ({ data }) => {
       <Button
         disableRipple
         sx={{ mt: "0.5vw" }}
-        onClick={() => setOpenModal(true)}
+        onClick={() => openNavModal("Nav")}
         variant="text"
         color={"inherit"}
       >
@@ -40,7 +45,7 @@ export const AONav = ({ data }) => {
         <Button
           disableRipple
           sx={logoSx.nav}
-          onClick={() => setOpenModal(true)}
+          onClick={() => openNavModal("Nav")}
           variant="text"
           color={"inherit"}
         >
