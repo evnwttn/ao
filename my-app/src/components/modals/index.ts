@@ -6,6 +6,7 @@ export * from "./LoadModalContent";
 export * from "./LoginModalContent";
 export * from "./LoginExistingUser";
 export * from "./LoginNewUser";
+export * from "./NavMenuContent";
 export * from "./NewModalContent";
 export * from "./NewModalContentList";
 export * from "./NewModalContentListForm";

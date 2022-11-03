@@ -165,7 +165,6 @@ export const logoSx = {
   userSelectNone: "none",
   nav: {
     fontFamily: "Noto-Serif",
-    textTransform: "lowercase",
     textDecoration: "none",
     color: palette.aoBlue,
     fontSize: "2.5vw",

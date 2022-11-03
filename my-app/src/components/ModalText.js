@@ -7,6 +7,7 @@ import {
   AONavAboutContent,
   LoginModalContent,
   ContactModalContent,
+  NavMenuContent,
 } from "./modals/index";
 
 export const ModalText = ({
@@ -43,6 +44,9 @@ export const ModalText = ({
           (prompt === "About" && <AboutModalContent />) ||
           (prompt === "Contact" && <ContactModalContent />) ||
           (prompt === "Nav" && <AONavAboutContent />) ||
+          (prompt === "Menu" && (
+            <NavMenuContent userDataVerified={userDataVerified} />
+          )) ||
           (prompt === "Login" && (
             <LoginModalContent
               userDataVerified={userDataVerified}

@@ -45,7 +45,7 @@ export const AONav = ({ data }) => {
         <Button
           disableRipple
           sx={logoSx.nav}
-          onClick={() => openNavModal("Nav")}
+          onClick={() => openNavModal("Menu")}
           variant="text"
           color={"inherit"}
         >
