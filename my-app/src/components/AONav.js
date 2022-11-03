@@ -1,19 +1,23 @@
 import React, { useState } from "react";
 import { Button, Box, Divider } from "@mui/material";
-import { Link } from "react-router-dom";
 import { logoSx, navSx, palette } from "../assets/theme";
 import { ModalBase } from "./index";
 
 export const AONav = ({ data }) => {
-  const [isAboutOpen, setIsAboutOpen] = useState(false);
+  const [openModal, setOpenModal] = useState(false);
+  const [modalText] = useState("Nav");
 
   const handleClose = () => {
-    setIsAboutOpen(false);
+    setOpenModal(false);
   };
 
   return (
     <Box sx={navSx.container}>
-      <ModalBase open={isAboutOpen} handleClose={handleClose} text={"Nav"} />
+      <ModalBase
+        open={openModal}
+        handleClose={handleClose}
+        text={`${modalText}`}
+      />
       <Box sx={navSx.text}>
         <Box sx={navSx.text.author}>{data.author}</Box>
         <Divider
@@ -26,7 +30,7 @@ export const AONav = ({ data }) => {
       <Button
         disableRipple
         sx={{ mt: "0.5vw" }}
-        onClick={() => setIsAboutOpen(true)}
+        onClick={() => setOpenModal(true)}
         variant="text"
         color={"inherit"}
       >
@@ -36,7 +40,7 @@ export const AONav = ({ data }) => {
         <Button
           disableRipple
           sx={logoSx.nav}
-          onClick={() => setIsAboutOpen(true)}
+          onClick={() => setOpenModal(true)}
           variant="text"
           color={"inherit"}
         >
