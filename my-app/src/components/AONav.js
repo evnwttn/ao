@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { Button, Box, Divider } from "@mui/material";
 import { Link } from "react-router-dom";
 import { logoSx, navSx, palette } from "../assets/theme";
@@ -33,9 +33,15 @@ export const AONav = ({ data }) => {
         ?
       </Button>
       <Box>
-        <Link to="/ao" style={logoSx.nav} state={{ from: "home" }}>
+        <Button
+          disableRipple
+          sx={logoSx.nav}
+          onClick={() => setIsAboutOpen(true)}
+          variant="text"
+          color={"inherit"}
+        >
           ꜵ
-        </Link>
+        </Button>
       </Box>
     </Box>
   );
