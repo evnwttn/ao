@@ -28,7 +28,7 @@ const Home = () => {
     return () => {
       isMounted = false;
     };
-  });
+  }, [axios]);
 
   const handleOpen = (text: string) => {
     setModalType(text);
