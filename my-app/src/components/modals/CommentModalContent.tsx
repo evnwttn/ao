@@ -3,7 +3,7 @@ import { Box, TextField, IconButton } from "@mui/material";
 import SaveRoundedIcon from "@mui/icons-material/SaveRounded";
 import { commentSx } from "../../assets/theme";
 
-export const AOCommentContent = ({
+export const CommentModalContent = ({
   cell,
   cellComment,
   handleSubmit,

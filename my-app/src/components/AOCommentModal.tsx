@@ -1,6 +1,6 @@
 import React from "react";
 import { Box, Divider } from "@mui/material";
-import { AOCommentContent } from "./modals/index";
+import { CommentModalContent } from "./modals/index";
 import { modalFontSx, modalBoxStyling, palette } from "../assets/theme";
 
 export const AOCommentModal = ({
@@ -40,7 +40,7 @@ export const AOCommentModal = ({
         <Box sx={{ pl: "0.75vw" }}>{cell.parameter}</Box>
       </Box>
       <Divider variant="middle" sx={{ color: palette.aoDivider }} />
-      <AOCommentContent
+      <CommentModalContent
         cell={cell}
         cellComment={cellComment}
         register={register}

@@ -1,5 +1,5 @@
 export * from "./AboutModalContent";
-export * from "./AOCommentContent";
+export * from "./CommentModalContent";
 export * from "./AONavAboutContent";
 export * from "./ContactModalContent";
 export * from "./LoadModalContent";
