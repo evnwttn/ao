@@ -15,6 +15,17 @@ const Home = () => {
   const [open, setOpen] = useState<Boolean>(true);
   const [modalType, setModalType] = useState<string>("Login");
 
+  const handleOpen = (text: string) => {
+    setModalType(text);
+  };
+
+  const handleClose = () => {
+    if (userDataVerified) {
+      setOpen(false);
+      setModalType("");
+    }
+  };
+
   useEffect(() => {
     let isMounted = true;
 
@@ -30,20 +41,9 @@ const Home = () => {
     };
   }, [axios]);
 
-  const handleOpen = (text: string) => {
-    setModalType(text);
-  };
-
   useEffect(() => {
     modalType !== "" ? setOpen(true) : setOpen(false);
   }, [modalType]);
-
-  const handleClose = () => {
-    if (userDataVerified) {
-      setOpen(false);
-      setModalType("");
-    }
-  };
 
   return (
     <Box sx={homeSx.mainDiv}>
