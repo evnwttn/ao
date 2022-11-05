@@ -9,18 +9,6 @@ import { ModalButton, MainLogo, ModalBase, AOGrid } from "./components/index";
 import aotheme, { homeSx } from "./assets/theme";
 import { UserLoginData } from "./types";
 
-// const sendDataRequest = () => {
-//   axios
-//     .post(`http://localhost:5000/session/`, {
-//       ...sessionData,
-//     })
-//     .then((data) => (isMounted ? setVerifiedSessionData(data.data) : null))
-//     .then(() => (isMounted ? setStartNewSession(true) : null))
-//     .catch((error) => {
-//       console.log(error);
-//     });
-// };
-
 const Home = () => {
   const axios = require("axios").default;
   const [userDataVerified, setUserDataVerified] = useState<UserLoginData>();
