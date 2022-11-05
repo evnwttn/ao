@@ -276,7 +276,7 @@ export const loadModalFontSx = {
 
 export const navMenuFontSx = {
   fontFamily: "Noto Sans",
-  fontSize: "0.8vw",
+  fontSize: "1vw",
   letterSpacing: "0.125vw",
   fontWeight: "400",
   lineHeight: "1.66",

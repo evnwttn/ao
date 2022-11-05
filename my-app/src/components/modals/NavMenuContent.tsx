@@ -7,6 +7,7 @@ import {
   ListItemButton,
   ListItemText,
 } from "@mui/material";
+import { navMenuFontSx } from "../../assets/theme";
 
 const menuItems = [
   { id: "Home" },
@@ -28,13 +29,7 @@ export const NavMenuContent = () => {
             <ListItem key={item.id} disablePadding>
               <ListItemButton
                 onClick={() => onClick(item.id)}
-                sx={{
-                  "&:hover": {
-                    background: "transparent",
-                    opacity: "0.7",
-                    cursor: "pointer",
-                  },
-                }}
+                sx={navMenuFontSx}
                 disableRipple
               >
                 <ListItemText primary={`${item.id}`} />
