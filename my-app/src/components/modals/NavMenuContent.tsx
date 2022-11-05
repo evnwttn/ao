@@ -1,5 +1,5 @@
-import React from "react";
-// import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import { Navigate } from "react-router-dom";
 import {
   Box,
   List,
@@ -17,12 +17,15 @@ export const NavMenuContent = ({ userDataVerified }: any) => {
     { id: "Log Out" },
   ];
 
+  const [navHome, setNavHome] = useState<Boolean>(false);
+
   const onClick = (item: string) => {
-    console.log(item);
+    setNavHome(true);
   };
 
   return (
     <Box>
+      {navHome && <Navigate to="/ao" replace={true} />}
       <List>
         {menuItems.map((item) => {
           return (
@@ -41,8 +44,3 @@ export const NavMenuContent = ({ userDataVerified }: any) => {
     </Box>
   );
 };
-
-/* 
-      <Link to="/ao" style={loadModalFontSx} state={{ from: "home" }}>
-        Home
-      </Link> */
