@@ -20,7 +20,23 @@ export const NavMenuContent = ({ userDataVerified }: any) => {
   const [navHome, setNavHome] = useState<Boolean>(false);
 
   const onClick = (item: string) => {
-    setNavHome(true);
+    switch (item) {
+      case "Home":
+        setNavHome(true);
+
+        break;
+      case "New":
+        //
+        break;
+      case "Load":
+        //
+        break;
+      case "Log Out":
+        //
+        break;
+      default:
+        break;
+    }
   };
 
   return (
