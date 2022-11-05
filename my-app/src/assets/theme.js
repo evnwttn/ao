@@ -274,6 +274,21 @@ export const loadModalFontSx = {
   textDecoration: "none",
 };
 
+export const navMenuFontSx = {
+  fontFamily: "Noto Sans",
+  fontSize: "0.8vw",
+  letterSpacing: "0.125vw",
+  fontWeight: "400",
+  lineHeight: "1.66",
+  color: palette.aoWhite,
+  textDecoration: "none",
+  "&:hover": {
+    background: "transparent",
+    opacity: "0.7",
+    cursor: "pointer",
+  },
+};
+
 export const newSessionModal = {
   text: {
     flexDirection: "row",

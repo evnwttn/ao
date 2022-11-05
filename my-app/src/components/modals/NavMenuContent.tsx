@@ -29,9 +29,6 @@ export const NavMenuContent = () => {
               <ListItemButton
                 onClick={() => onClick(item.id)}
                 sx={{
-                  span: {
-                    fontSize: "1.25vw",
-                  },
                   "&:hover": {
                     background: "transparent",
                     opacity: "0.7",
