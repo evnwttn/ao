@@ -2,7 +2,7 @@ import React from "react";
 import { Box } from "@mui/material";
 import { modalCenteredSx, palette } from "../../assets/theme";
 
-export const AONavAboutContent = () => {
+export const NavAboutContent = () => {
   return (
     <Box sx={modalCenteredSx}>
       YOU MAY CLICK ON A CELL TO BEGIN.

@@ -4,7 +4,7 @@ import {
   NewModalContent,
   LoadModalContent,
   AboutModalContent,
-  AONavAboutContent,
+  NavAboutContent,
   LoginModalContent,
   ContactModalContent,
   NavMenuContent,
@@ -43,7 +43,7 @@ export const ModalText = ({
           )) ||
           (prompt === "About" && <AboutModalContent />) ||
           (prompt === "Contact" && <ContactModalContent />) ||
-          (prompt === "Nav" && <AONavAboutContent />) ||
+          (prompt === "Nav" && <NavAboutContent />) ||
           (prompt === "Menu" && (
             <NavMenuContent userDataVerified={userDataVerified} />
           )) ||
