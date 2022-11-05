@@ -26,9 +26,9 @@ export const AOGrid = () => {
   const [open, setOpen] = useState(true);
   const [modalType, setModalType] = useState("");
 
-  useEffect(() => {
-    modalType !== "" ? setOpen(true) : setOpen(false);
-  }, [modalType]);
+  // useEffect(() => {
+  //   modalType !== "" ? setOpen(true) : setOpen(false);
+  // }, [modalType]);
 
   const handleClose = () => {
     if (userDataVerified) {
@@ -80,7 +80,7 @@ export const AOGrid = () => {
         userDataVerified={userDataVerified}
       />
       <ThemeProvider theme={aotheme}>
-        <AONav gridData={gridData} userData={userDataVerified} />
+        <AONav gridData={gridData} setModalType={setModalType} />
         <Box sx={gridSx.dom}>
           <Grid container>
             <Grid
