@@ -3,7 +3,7 @@ import { Box } from "@mui/system";
 import { AOSpoke } from "./index";
 import { palette, svgShapes } from "../assets/theme";
 
-export const AOColorWheel = ({ handleClick, openComment }: any) => {
+export const ColorWheel = ({ handleClick, openComment }: any) => {
   return (
     <Box>
       <Box>

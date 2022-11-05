@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Box, Tooltip } from "@mui/material/";
 import RemoveCircleOutlineIcon from "@mui/icons-material/RemoveCircleOutline";
-import { AOColorWheel, AOCommentBase } from "./index";
+import { ColorWheel, AOCommentBase } from "./index";
 import { wheelSx } from "../assets/theme";
 
 export const AOPopover = ({
@@ -39,7 +39,7 @@ export const AOPopover = ({
         handleSubmit={handleSubmit}
         onSubmit={onSubmit}
       />
-      <AOColorWheel
+      <ColorWheel
         handleClick={(color) => handleClick(color)}
         openComment={() => setCommentOpen("2")}
       />

@@ -1,5 +1,5 @@
 export * from "./AOCell";
-export * from "./AOColorWheel";
+export * from "./ColorWheel";
 export * from "./AOCommentBase";
 export * from "./AOCommentModal";
 export * from "./AOGrid";
