@@ -7,8 +7,6 @@ export const AONav = ({ gridData, userData }: any) => {
   const [openModal, setOpenModal] = useState<Boolean>(false);
   const [modalText, setModalText] = useState<string>("");
 
-  console.log(userData);
-
   const openNavModal = (text: string) => {
     setModalText(text);
     setOpenModal(true);
