@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 // import { Link } from "react-router-dom";
 import {
   Box,
@@ -9,7 +9,7 @@ import {
 } from "@mui/material";
 import { navMenuFontSx } from "../../assets/theme";
 
-export const NavMenuContent = () => {
+export const NavMenuContent = ({ userDataVerified }: any) => {
   const menuItems = [
     { id: "Home" },
     { id: "New" },

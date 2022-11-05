@@ -10,7 +10,6 @@ export const AOGrid = () => {
   const location = useLocation();
   const [gridData, setGridData] = useState(location.state.data);
   const [userDataVerified] = useState(location.state.user);
-  console.log(userDataVerified);
 
   const [hoverCell, setHoverCell] = useState();
   const [isHovered, setIsHovered] = useState(false);
