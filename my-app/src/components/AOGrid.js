@@ -9,6 +9,8 @@ export const AOGrid = () => {
   const axios = require("axios").default;
   const location = useLocation();
   const [gridData, setGridData] = useState(location.state.data);
+  const [userDataVerified] = useState(location.state.user);
+  console.log(userDataVerified);
 
   const [hoverCell, setHoverCell] = useState();
   const [isHovered, setIsHovered] = useState(false);
@@ -59,7 +61,7 @@ export const AOGrid = () => {
   return (
     <Box sx={gridSx.container}>
       <ThemeProvider theme={aotheme}>
-        <AONav data={gridData} />
+        <AONav gridData={gridData} userData={userDataVerified} />
         <Box sx={gridSx.dom}>
           <Grid container>
             <Grid

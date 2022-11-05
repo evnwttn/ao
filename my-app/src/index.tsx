@@ -36,7 +36,6 @@ const Home = () => {
     if (userDataVerified) {
       setOpen(false);
       setModalType("");
-      console.log(document.cookie);
     }
   };
 

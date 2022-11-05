@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 // import { Link } from "react-router-dom";
 import {
   Box,
@@ -9,18 +9,18 @@ import {
 } from "@mui/material";
 import { navMenuFontSx } from "../../assets/theme";
 
-const menuItems = [
-  { id: "Home" },
-  { id: "New" },
-  { id: "Load" },
-  { id: "Log Out" },
-];
-
-const onClick = (item: string) => {
-  console.log(item);
-};
-
 export const NavMenuContent = () => {
+  const menuItems = [
+    { id: "Home" },
+    { id: "New" },
+    { id: "Load" },
+    { id: "Log Out" },
+  ];
+
+  const onClick = (item: string) => {
+    console.log(item);
+  };
+
   return (
     <Box>
       <List>
