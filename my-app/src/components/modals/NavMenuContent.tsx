@@ -1,14 +1,12 @@
 import React from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import {
   Box,
   List,
   ListItem,
   ListItemButton,
-  ListItemIcon,
   ListItemText,
 } from "@mui/material";
-import { logoSx } from "../../assets/theme";
 
 const menuItems = [
   { id: "Home" },
@@ -20,9 +18,34 @@ const menuItems = [
 export const NavMenuContent = () => {
   return (
     <Box>
-      <Link to="/ao" style={logoSx.nav} state={{ from: "home" }}>
-        Home
-      </Link>
+      <List>
+        {menuItems.map((item) => {
+          return (
+            <ListItem key={item.id} disablePadding>
+              <ListItemButton
+                sx={{
+                  span: {
+                    fontSize: "1.25vw",
+                  },
+                  "&:hover": {
+                    background: "transparent",
+                    opacity: "0.7",
+                    cursor: "pointer",
+                  },
+                }}
+                disableRipple
+              >
+                <ListItemText primary={`${item.id}`} />
+              </ListItemButton>
+            </ListItem>
+          );
+        })}
+      </List>
     </Box>
   );
 };
+
+/* 
+      <Link to="/ao" style={loadModalFontSx} state={{ from: "home" }}>
+        Home
+      </Link> */
