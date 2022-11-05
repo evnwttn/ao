@@ -26,9 +26,9 @@ export const AOGrid = () => {
   const [open, setOpen] = useState(true);
   const [modalType, setModalType] = useState("");
 
-  // useEffect(() => {
-  //   modalType !== "" ? setOpen(true) : setOpen(false);
-  // }, [modalType]);
+  useEffect(() => {
+    modalType !== "" ? setOpen(true) : setOpen(false);
+  }, [modalType]);
 
   const handleClose = () => {
     if (userDataVerified) {

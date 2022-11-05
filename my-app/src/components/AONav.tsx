@@ -1,9 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import { Button, Box, Divider } from "@mui/material";
 import { logoSx, navSx, palette } from "../assets/theme";
-import { ModalBase } from "./index";
 
-export const AONav = ({ gridData }: any) => {
+export const AONav = ({ gridData, setModalType }: any) => {
   return (
     <Box sx={navSx.container}>
       <Box sx={{ ...navSx.text, textTransform: "uppercase" }}>
@@ -18,7 +17,7 @@ export const AONav = ({ gridData }: any) => {
       <Button
         disableRipple
         sx={{ mt: "0.5vw" }}
-        onClick={() => openNavModal("Nav")}
+        onClick={() => setModalType("Nav")}
         variant="text"
         color={"inherit"}
       >
@@ -28,7 +27,7 @@ export const AONav = ({ gridData }: any) => {
         <Button
           disableRipple
           sx={{ ...logoSx.nav, textTransform: "lowercase" }}
-          onClick={() => openNavModal("Menu")}
+          onClick={() => setModalType("Menu")}
           variant="text"
           color={"inherit"}
         >
