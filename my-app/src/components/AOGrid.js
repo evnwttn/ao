@@ -31,10 +31,8 @@ export const AOGrid = () => {
   }, [modalType]);
 
   const handleClose = () => {
-    if (userDataVerified) {
-      setOpen(false);
-      setModalType("");
-    }
+    setOpen(false);
+    setModalType("");
   };
 
   const updateSessionData = () => {
