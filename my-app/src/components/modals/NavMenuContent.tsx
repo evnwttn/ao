@@ -15,6 +15,10 @@ const menuItems = [
   { id: "Log Out" },
 ];
 
+const onClick = (item: string) => {
+  console.log(item);
+};
+
 export const NavMenuContent = () => {
   return (
     <Box>
@@ -23,6 +27,7 @@ export const NavMenuContent = () => {
           return (
             <ListItem key={item.id} disablePadding>
               <ListItemButton
+                onClick={() => onClick(item.id)}
                 sx={{
                   span: {
                     fontSize: "1.25vw",
