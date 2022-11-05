@@ -9,27 +9,16 @@ import {
 } from "@mui/material";
 import { navMenuFontSx } from "../../assets/theme";
 
-export const NavMenuContent = ({ userDataVerified }: any) => {
-  const menuItems = [
-    { id: "Home" },
-    { id: "New" },
-    { id: "Load" },
-    { id: "Log Out" },
-  ];
-
+export const NavMenuContent = () => {
+  const menuItems = [{ id: "Home" }, { id: "Log Out" }];
   const [navHome, setNavHome] = useState<Boolean>(false);
 
   const onClick = (item: string) => {
     switch (item) {
       case "Home":
+        // axios rebuild cookie session
         setNavHome(true);
 
-        break;
-      case "New":
-        //
-        break;
-      case "Load":
-        //
         break;
       case "Log Out":
         // axios destroy cookie session then

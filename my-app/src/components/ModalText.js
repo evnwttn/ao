@@ -45,7 +45,10 @@ export const ModalText = ({
           (prompt === "Contact" && <ContactModalContent />) ||
           (prompt === "Nav" && <NavAboutContent />) ||
           (prompt === "Menu" && (
-            <NavMenuContent userDataVerified={userDataVerified} />
+            <NavMenuContent
+              userDataVerified={userDataVerified}
+              setModalType={setModalType}
+            />
           )) ||
           (prompt === "Login" && (
             <LoginModalContent
