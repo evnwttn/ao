@@ -5,9 +5,11 @@ import {
   List,
   ListItem,
   ListItemButton,
+  ListItemIcon,
   ListItemText,
 } from "@mui/material";
-import { navMenuFontSx } from "../../assets/theme";
+import ArrowRightIcon from "@mui/icons-material/ArrowRight";
+import { navMenuFontSx, palette } from "../../assets/theme";
 
 export const NavMenuContent = () => {
   const menuItems = [{ id: "Home" }, { id: "Log Out" }];
@@ -42,6 +44,9 @@ export const NavMenuContent = () => {
                 sx={navMenuFontSx}
                 disableRipple
               >
+                <ListItemIcon sx={{ color: palette.aoWhite }}>
+                  <ArrowRightIcon />
+                </ListItemIcon>
                 <ListItemText primary={`${item.id}`} />
               </ListItemButton>
             </ListItem>

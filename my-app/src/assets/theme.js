@@ -282,6 +282,9 @@ export const navMenuFontSx = {
   lineHeight: "1.66",
   color: palette.aoWhite,
   textDecoration: "none",
+  span: {
+    fontSize: "1.25vw",
+  },
   "&:hover": {
     background: "transparent",
     opacity: "0.7",
