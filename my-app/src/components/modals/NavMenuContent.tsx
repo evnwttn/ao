@@ -32,7 +32,9 @@ export const NavMenuContent = ({ userDataVerified }: any) => {
         //
         break;
       case "Log Out":
-        //
+        // axios destroy cookie session then
+        setNavHome(true);
+
         break;
       default:
         break;

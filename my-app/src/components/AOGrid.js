@@ -1,15 +1,14 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { useLocation } from "react-router-dom";
 import { Box, Grid, ThemeProvider } from "@mui/material/";
 import aotheme, { gridSx, cellSx } from "../assets/theme";
-import { AONav, AOCell } from "./index";
+import { ModalBase, AONav, AOCell } from "./index";
 
 export const AOGrid = () => {
   const axios = require("axios").default;
   const location = useLocation();
   const [gridData, setGridData] = useState(location.state.data);
-  const [userDataVerified] = useState(location.state.user);
 
   const [hoverCell, setHoverCell] = useState();
   const [isHovered, setIsHovered] = useState(false);
@@ -22,6 +21,21 @@ export const AOGrid = () => {
   const { setValue, handleSubmit } = useForm({
     defaultValues: gridData,
   });
+
+  const [userDataVerified] = useState(location.state.user);
+  const [open, setOpen] = useState(true);
+  const [modalType, setModalType] = useState("");
+
+  useEffect(() => {
+    modalType !== "" ? setOpen(true) : setOpen(false);
+  }, [modalType]);
+
+  const handleClose = () => {
+    if (userDataVerified) {
+      setOpen(false);
+      setModalType("");
+    }
+  };
 
   const updateSessionData = () => {
     gridData.tracks.forEach((trackTitle, trackIndex) => {
@@ -58,6 +72,13 @@ export const AOGrid = () => {
 
   return (
     <Box sx={gridSx.container}>
+      <ModalBase
+        open={open}
+        handleClose={handleClose}
+        text={modalType}
+        setModalType={setModalType}
+        userDataVerified={userDataVerified}
+      />
       <ThemeProvider theme={aotheme}>
         <AONav gridData={gridData} userData={userDataVerified} />
         <Box sx={gridSx.dom}>
