@@ -30,7 +30,13 @@ const Home = () => {
     let isMounted = true;
 
     axios
-      .post(`http://localhost:5000/cookies/`, { withCredentials: true })
+      .post(
+        `http://localhost:5000/cookies/`,
+        { data: "hello" },
+        {
+          withCredentials: true,
+        }
+      )
       .then((data: any) => (isMounted ? console.log(data.data) : null))
       .catch((error: any) => {
         console.log(error);
