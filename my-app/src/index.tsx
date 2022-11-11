@@ -32,7 +32,7 @@ const Home = () => {
     axios
       .post(
         `http://localhost:5000/cookies/`,
-        { data: "hello" },
+        {},
         {
           withCredentials: true,
         }
