@@ -26,12 +26,12 @@ const Home = () => {
     }
   };
 
-  const handleCookies = (user: object) => {
+  const handleCookies = (user: UserLoginData) => {
     if (!user) {
       return;
     }
 
-    console.log(user);
+    setUserDataVerified(user);
   };
 
   useEffect(() => {
