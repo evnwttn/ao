@@ -26,6 +26,14 @@ const Home = () => {
     }
   };
 
+  const handleCookies = (user: object) => {
+    if (!user) {
+      return;
+    }
+
+    console.log(user);
+  };
+
   useEffect(() => {
     let isMounted = true;
 
@@ -37,7 +45,7 @@ const Home = () => {
           withCredentials: true,
         }
       )
-      .then((data: any) => (isMounted ? console.log(data.data) : null))
+      .then((data: any) => (isMounted ? handleCookies(data.data) : null))
       .catch((error: any) => {
         console.log(error);
       });
