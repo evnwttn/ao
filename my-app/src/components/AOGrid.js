@@ -60,7 +60,7 @@ export const AOGrid = () => {
 
   const sendData = () => {
     axios
-      .put(`http://localhost:5000/session`, {
+      .put(`http://localhost:5000/grid`, {
         ...gridData,
       })
       .catch(function (error) {

@@ -20,7 +20,7 @@ export const LoadModalContent = ({ userDataVerified }: any) => {
   useEffect(() => {
     userDataVerified
       ? axios
-          .get(`http://localhost:5000/session?id=${userDataVerified.id}`)
+          .get(`http://localhost:5000/grid?id=${userDataVerified.id}`)
           .then((data: any) => setUserSessions(data.data))
           .catch(function (error: any) {
             console.log(error);
