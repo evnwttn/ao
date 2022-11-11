@@ -37,7 +37,7 @@ const Home = () => {
           withCredentials: true,
         }
       )
-      .then((data: any) => (isMounted ? setUserDataVerified(data.data) : null))
+      .then((data: any) => (isMounted ? console.log(data.data) : null))
       .catch((error: any) => {
         console.log(error);
       });
