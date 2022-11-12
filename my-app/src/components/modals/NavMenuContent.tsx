@@ -32,8 +32,7 @@ export const NavMenuContent = () => {
               withCredentials: true,
             }
           )
-          // .then(() => setNavHome(true))
-          .then((data: any) => console.log(data.data))
+          .then((data: any) => setNavHome(data.data))
           .catch((error: any) => {
             console.log(error);
           });
