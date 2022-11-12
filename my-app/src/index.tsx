@@ -38,7 +38,7 @@ const Home = () => {
     let isMounted = true;
 
     axios
-      .post(
+      .put(
         `http://localhost:5000/session/`,
         {},
         {
