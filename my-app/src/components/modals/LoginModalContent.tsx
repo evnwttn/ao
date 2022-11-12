@@ -3,14 +3,13 @@ import { LoginExistingUser, LoginNewUser } from "./index";
 import { UserLoginData } from "../../types";
 
 export const LoginModalContent = ({
-  userDataVerified,
-  setUserDataVerified,
+  activeUser,
+  setActiveUser,
   setModalType,
 }: any) => {
   const axios = require("axios").default;
   const [isNewUser, setIsNewUser] = useState<Boolean>(false);
-  const [userLoginData, setUserLoginData] =
-    useState<Omit<UserLoginData, "id">>();
+  const [userLoginData, setUserLoginData] = useState<UserLoginData>();
   const emailField = useRef<HTMLInputElement>(null);
   const passwordField = useRef<HTMLInputElement>(null);
   const [showPassword, setShowPassword] = useState<Boolean>(true);
@@ -23,7 +22,7 @@ export const LoginModalContent = ({
   };
 
   useEffect(() => {
-    if (userDataVerified) {
+    if (activeUser) {
       setModalType(isNewUser ? "" : "Load");
     }
   });
@@ -39,7 +38,7 @@ export const LoginModalContent = ({
             },
             { withCredentials: true }
           )
-          .then((data: any) => setUserDataVerified(data.data))
+          .then(() => setActiveUser(true))
           .catch(function (error: any) {
             console.log(error);
           });
@@ -53,12 +52,12 @@ export const LoginModalContent = ({
             },
             { withCredentials: true }
           )
-          .then((data: any) => setUserDataVerified(data.data))
+          .then(() => setActiveUser(true))
           .catch(function (error: any) {
             console.log(error);
           });
     }
-  }, [userLoginData, axios, isNewUser, setUserDataVerified]);
+  }, [userLoginData, axios, isNewUser, setActiveUser]);
 
   return isNewUser ? (
     <LoginNewUser

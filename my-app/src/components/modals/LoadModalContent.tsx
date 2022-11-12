@@ -11,22 +11,19 @@ import {
 import ArrowRightIcon from "@mui/icons-material/ArrowRight";
 import { loadModalFontSx } from "../../assets/theme";
 import { Session } from "../../types";
-import { defaultSession } from "../DefaultSession";
 
-export const LoadModalContent = ({ userDataVerified }: any) => {
+export const LoadModalContent = () => {
   const axios = require("axios").default;
   const [userSessions, setUserSessions] = useState<Session[]>();
 
   useEffect(() => {
-    userDataVerified
-      ? axios
-          .get(`http://localhost:5000/grid?id=${userDataVerified.id}`)
-          .then((data: any) => setUserSessions(data.data))
-          .catch(function (error: any) {
-            console.log(error);
-          })
-      : setUserSessions(defaultSession);
-  }, [userDataVerified, axios]);
+    axios
+      .get(`http://localhost:5000/grid`)
+      .then((data: any) => setUserSessions(data.data))
+      .catch(function (error: any) {
+        console.log(error);
+      });
+  }, [axios]);
 
   return (
     <Box sx={{ mx: "2vw" }}>

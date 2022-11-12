@@ -22,7 +22,6 @@ export const AOGrid = () => {
     defaultValues: gridData,
   });
 
-  const [userDataVerified, setUserDataVerified] = useState(location.state.user);
   const [open, setOpen] = useState(true);
   const [modalType, setModalType] = useState("");
 
@@ -75,8 +74,6 @@ export const AOGrid = () => {
         handleClose={handleClose}
         text={modalType}
         setModalType={setModalType}
-        userDataVerified={userDataVerified}
-        setUserDataVerified={setUserDataVerified}
       />
       <ThemeProvider theme={aotheme}>
         <AONav gridData={gridData} setModalType={setModalType} />

@@ -7,11 +7,10 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ThemeProvider, Box } from "@mui/material";
 import { ModalButton, MainLogo, ModalBase, AOGrid } from "./components/index";
 import aotheme, { homeSx } from "./assets/theme";
-import { UserLoginData } from "./types";
 
 const Home = () => {
   const axios = require("axios").default;
-  const [userDataVerified, setUserDataVerified] = useState<UserLoginData>();
+  const [activeUser, setActiveUser] = useState<Boolean>(false);
   const [open, setOpen] = useState<Boolean>(true);
   const [modalType, setModalType] = useState<string>("Login");
 
@@ -20,18 +19,18 @@ const Home = () => {
   };
 
   const handleClose = () => {
-    if (userDataVerified) {
+    if (activeUser) {
       setOpen(false);
       setModalType("");
     }
   };
 
-  const handleSession = (user: UserLoginData) => {
+  const handleSession = (user: any) => {
     if (!user) {
       return;
     }
 
-    setUserDataVerified(user);
+    setActiveUser(true);
   };
 
   useEffect(() => {
@@ -67,8 +66,8 @@ const Home = () => {
           handleClose={handleClose}
           text={modalType}
           setModalType={setModalType}
-          userDataVerified={userDataVerified}
-          setUserDataVerified={setUserDataVerified}
+          activeUser={activeUser}
+          setActiveUser={setActiveUser}
         />
         <Box sx={homeSx.cornerDiv}>
           <ModalButton
