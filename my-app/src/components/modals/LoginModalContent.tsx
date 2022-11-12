@@ -33,7 +33,7 @@ export const LoginModalContent = ({
       userLoginData &&
         axios
           .post(
-            "http://localhost:5000/login",
+            "http://localhost:5000/user",
             {
               ...userLoginData,
             },
@@ -47,7 +47,7 @@ export const LoginModalContent = ({
       userLoginData &&
         axios
           .put(
-            "http://localhost:5000/login",
+            "http://localhost:5000/user",
             {
               ...userLoginData,
             },

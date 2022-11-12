@@ -26,7 +26,7 @@ const Home = () => {
     }
   };
 
-  const handleCookies = (user: UserLoginData) => {
+  const handleSession = (user: UserLoginData) => {
     if (!user) {
       return;
     }
@@ -39,13 +39,13 @@ const Home = () => {
 
     axios
       .post(
-        `http://localhost:5000/cookies/`,
+        `http://localhost:5000/session/`,
         {},
         {
           withCredentials: true,
         }
       )
-      .then((data: any) => (isMounted ? handleCookies(data.data) : null))
+      .then((data: any) => (isMounted ? handleSession(data.data) : null))
       .catch((error: any) => {
         console.log(error);
       });
