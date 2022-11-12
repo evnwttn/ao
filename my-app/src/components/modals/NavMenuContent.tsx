@@ -12,13 +12,14 @@ import ArrowRightIcon from "@mui/icons-material/ArrowRight";
 import { navMenuFontSx, palette } from "../../assets/theme";
 
 export const NavMenuContent = () => {
+  const axios = require("axios").default;
   const menuItems = [{ id: "Home" }, { id: "Log Out" }];
   const [navHome, setNavHome] = useState<Boolean>(false);
 
   const onClick = (item: string) => {
     switch (item) {
       case "Home":
-        // axios rebuild cookie session
+        // pass in to not open load array
         setNavHome(true);
 
         break;
