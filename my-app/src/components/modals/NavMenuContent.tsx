@@ -24,8 +24,19 @@ export const NavMenuContent = () => {
 
         break;
       case "Log Out":
-        // axios destroy cookie session then
-        setNavHome(true);
+        axios
+          .post(
+            `http://localhost:5000/session/`,
+            {},
+            {
+              withCredentials: true,
+            }
+          )
+          // .then(() => setNavHome(true))
+          .then((data: any) => console.log(data.data))
+          .catch((error: any) => {
+            console.log(error);
+          });
 
         break;
       default:
