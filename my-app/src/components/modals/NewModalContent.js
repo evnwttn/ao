@@ -126,7 +126,6 @@ export const NewModalContent = () => {
             withCredentials: true,
           }
         )
-        .then((data) => console.log(data.data))
         .then((data) => (isMounted ? setVerifiedSessionData(data.data) : null))
         .then(() => (isMounted ? setStartNewSession(true) : null))
         .catch((error) => {
