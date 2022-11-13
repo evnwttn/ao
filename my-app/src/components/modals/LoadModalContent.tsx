@@ -18,7 +18,13 @@ export const LoadModalContent = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/grid`)
+      .post(
+        `http://localhost:5000/load/`,
+        {},
+        {
+          withCredentials: true,
+        }
+      )
       .then((data: any) => setUserSessions(data.data))
       .catch(function (error: any) {
         console.log(error);

@@ -38,7 +38,7 @@ export const LoginModalContent = ({
             },
             { withCredentials: true }
           )
-          .then(() => setActiveUser(true))
+          .then((data: any) => setActiveUser(data.data))
           .catch(function (error: any) {
             console.log(error);
           });
@@ -52,7 +52,7 @@ export const LoginModalContent = ({
             },
             { withCredentials: true }
           )
-          .then(() => setActiveUser(true))
+          .then((data: any) => setActiveUser(data.data))
           .catch(function (error: any) {
             console.log(error);
           });

@@ -117,9 +117,16 @@ export const NewModalContent = () => {
 
     const sendDataRequest = () => {
       axios
-        .post(`http://localhost:5000/grid/`, {
-          ...sessionData,
-        })
+        .post(
+          `http://localhost:5000/grid/`,
+          {
+            ...sessionData,
+          },
+          {
+            withCredentials: true,
+          }
+        )
+        .then((data) => console.log(data.data))
         .then((data) => (isMounted ? setVerifiedSessionData(data.data) : null))
         .then(() => (isMounted ? setStartNewSession(true) : null))
         .catch((error) => {
