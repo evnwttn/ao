@@ -10,11 +10,10 @@ import {
 } from "@mui/material";
 import ArrowRightIcon from "@mui/icons-material/ArrowRight";
 import { loadModalFontSx } from "../../assets/theme";
-import { Session } from "../../types";
 
 export const LoadModalContent = () => {
   const axios = require("axios").default;
-  const [userSessions, setUserSessions] = useState<Session[]>();
+  const [userSessions, setUserSessions] = useState<any>();
 
   useEffect(() => {
     axios
@@ -34,9 +33,9 @@ export const LoadModalContent = () => {
   return (
     <Box sx={{ mx: "2vw" }}>
       <List>
-        {userSessions?.map((session) => {
+        {userSessions?.map((session: any) => {
           return (
-            <ListItem key={session.sessionTitle} disablePadding>
+            <ListItem key={session.session_title} disablePadding>
               <Link
                 to="/aogrid"
                 state={{ from: "load", data: session }}
@@ -58,7 +57,7 @@ export const LoadModalContent = () => {
                   <ListItemIcon>
                     <ArrowRightIcon />
                   </ListItemIcon>
-                  <ListItemText primary={`${session.sessionTitle}`} />
+                  <ListItemText primary={`${session.session_title}`} />
                 </ListItemButton>
               </Link>
             </ListItem>
