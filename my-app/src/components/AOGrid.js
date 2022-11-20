@@ -87,15 +87,15 @@ export const AOGrid = () => {
               container
               spacing={"0.75vw"}
             >
-              {gridData.parameters.map((parameterTitle) => {
+              {gridData.parameters.map((parameter, index) => {
                 return (
-                  <Grid item sm={1} key={parameterTitle}>
-                    <Box sx={cellSx.paraCell}>{parameterTitle}</Box>
+                  <Grid item sm={1} key={`${parameter}.${index}`}>
+                    <Box sx={cellSx.paraCell}>{parameter}</Box>
                   </Grid>
                 );
               })}
             </Grid>
-            {gridData.tracks.map((track, parameter) => {
+            {gridData.tracks.map((track, index) => {
               return (
                 <Grid
                   container
@@ -104,17 +104,17 @@ export const AOGrid = () => {
                     flexFlow: "row nowrap",
                     justifyContent: "center",
                   }}
-                  key={track.title}
+                  key={`${track}.${index}`}
                   spacing={"0.75vw"}
                 >
                   {gridData.parameters.map((parameter) => {
                     return parameter === `title` ? (
-                      <Grid item sm={1} key={parameter}>
+                      <Grid item sm={1} key={`${parameter}.${index}`}>
                         <Box sx={cellSx.titleCell}>{track.title}</Box>
                       </Grid>
                     ) : (
                       <AOCell
-                        key={parameter}
+                        key={`${parameter}.${index}`}
                         cell={{ track, parameter }}
                         track={track}
                         parameter={parameter}
