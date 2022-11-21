@@ -30,6 +30,9 @@ export const AOCell = ({
       setUpdateComment(cellComment);
       setUpdateTrack(track.title);
       setUpdateParameter(parameter);
+      console.log(
+        `color ${cellColor}, comment ${cellComment}, track ${track.title}, ${parameter}`
+      );
     }
     updateSessionData();
   };
