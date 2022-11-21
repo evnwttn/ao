@@ -34,7 +34,18 @@ export const AOGrid = () => {
     setModalType("");
   };
 
-  const updateSessionData = () => {
+  const updateSessionData = (
+    cellColor,
+    cellComment,
+    cellTrack,
+    cellParameter
+  ) => {
+    console.log(
+      `color: ${cellColor}, comment: ${cellComment}, track: ${cellTrack}, parameter: ${cellParameter}`
+    );
+  };
+
+  const XupdateSessionData = () => {
     gridData.tracks.forEach((trackTitle, trackIndex) => {
       if (trackTitle.title === updateTrack) {
         gridData.tracks[trackIndex].parameters.forEach(
@@ -58,14 +69,16 @@ export const AOGrid = () => {
   };
 
   const sendData = () => {
-    axios
-      .put(`http://localhost:5000/grid`, {
-        ...gridData,
-      })
-      .then((data) => console.log(data.data))
-      .catch(function (error) {
-        console.log(error);
-      });
+    console.log(gridData);
+
+    // axios
+    //   .put(`http://localhost:5000/grid`, {
+    //     ...gridData,
+    //   })
+    //   .then((data) => console.log(data.data))
+    //   .catch(function (error) {
+    //     console.log(error);
+    //   });
   };
 
   return (

@@ -25,25 +25,24 @@ export const AOCell = ({
   const open = Boolean(anchorEl);
 
   const setGridUpdates = () => {
-    if (cellColor || cellComment) {
-      setUpdateColor(cellColor);
-      setUpdateComment(cellComment);
-      setUpdateTrack(track.title);
-      setUpdateParameter(parameter);
-      console.log(
-        `color ${cellColor}, comment ${cellComment}, track ${track.title}, ${parameter}`
-      );
-    }
-    updateSessionData();
+    // setUpdateColor(cellColor);
+    // setUpdateComment(cellComment);
+    // setUpdateTrack(track.title);
+    // setUpdateParameter(parameter);
+    updateSessionData(cellColor, cellComment, track.title, parameter);
   };
+
+  // useEffect(() => {
+  //   setGridUpdates();
+  // }, [cellColor, cellComment, setGridUpdates]);
 
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
-    setGridUpdates();
   };
 
   const handleClose = () => {
     setAnchorEl(null);
+    setGridUpdates();
   };
 
   useEffect(() => {
