@@ -43,6 +43,10 @@ export const AOGrid = () => {
     console.log(
       `color: ${cellColor}, comment: ${cellComment}, track: ${cellTrack}, parameter: ${cellParameter}`
     );
+
+    const index = gridData.tracks.findIndex(
+      (track) => track.title === cellTrack
+    );
   };
 
   const XupdateSessionData = () => {
