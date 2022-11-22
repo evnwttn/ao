@@ -44,7 +44,26 @@ export const AOGrid = () => {
   }, [cellOpen, cellClosed]);
 
   const updateSessionData = (updatedCell) => {
-    console.log(updatedCell);
+    const updateTrackIndex = gridData.tracks.findIndex(
+      (track) => track.title === updatedCell.trackTitle
+    );
+
+    gridData.tracks[updateTrackIndex].parameters.forEach(
+      (paramTitle, paramIndex) => {
+        if (paramTitle.parameter === updatedCell.parameter) {
+          setValue(
+            `tracks.${updateTrackIndex}.parameters.${paramIndex}.colour`,
+            updatedCell.color
+          );
+          setValue(
+            `tracks.${updateTrackIndex}.parameters.${paramIndex}.comment`,
+            updatedCell.comment
+          );
+        }
+      }
+    );
+
+    handleSubmit((data) => data && console.log(data))();
   };
 
   // const XupdateSessionData = () => {
@@ -66,18 +85,15 @@ export const AOGrid = () => {
   //       );
   //     }
   //   });
-  //   handleSubmit((data) => data && setGridData(data))();
+  // handleSubmit((data) => data && setGridData(data))();
   //   sendData();
   // };
 
   const sendData = () => {
-    console.log(gridData);
-
     // axios
     //   .put(`http://localhost:5000/grid`, {
     //     ...gridData,
     //   })
-    //   .then((data) => console.log(data.data))
     //   .catch(function (error) {
     //     console.log(error);
     //   });
