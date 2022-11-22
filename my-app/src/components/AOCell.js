@@ -11,11 +11,8 @@ export const AOCell = ({
   toggleHovered,
   setHoverCell,
   hoverCell,
-  setUpdateColor,
-  setUpdateComment,
-  setUpdateTrack,
-  setUpdateParameter,
-  updateSessionData,
+  setCellOpen,
+  setCellClosed,
 }) => {
   const { register, handleSubmit } = useForm();
   const [cellColor, setCellColor] = useState(palette.aoGrey);
@@ -24,25 +21,24 @@ export const AOCell = ({
   const [anchorEl, setAnchorEl] = React.useState(null);
   const open = Boolean(anchorEl);
 
-  const setGridUpdates = () => {
-    // setUpdateColor(cellColor);
-    // setUpdateComment(cellComment);
-    // setUpdateTrack(track.title);
-    // setUpdateParameter(parameter);
-    updateSessionData(cellColor, cellComment, track.title, parameter);
-  };
-
-  // useEffect(() => {
-  //   setGridUpdates();
-  // }, [cellColor, cellComment, setGridUpdates]);
-
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
+    setCellOpen({
+      color: cellColor,
+      comment: cellComment,
+      trackTitle: track.title,
+      parameter: parameter,
+    });
   };
 
   const handleClose = () => {
     setAnchorEl(null);
-    setGridUpdates();
+    setCellClosed({
+      color: cellColor,
+      comment: cellComment,
+      trackTitle: track.title,
+      parameter: parameter,
+    });
   };
 
   useEffect(() => {

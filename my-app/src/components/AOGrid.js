@@ -6,7 +6,7 @@ import aotheme, { gridSx, cellSx } from "../assets/theme";
 import { ModalBase, AONav, AOCell } from "./index";
 
 export const AOGrid = () => {
-  const axios = require("axios").default;
+  // const axios = require("axios").default;
   const location = useLocation();
   const [gridData, setGridData] = useState(location.state.data);
 
@@ -14,10 +14,6 @@ export const AOGrid = () => {
   const [isHovered, setIsHovered] = useState(false);
   const toggleHovered = () => setIsHovered(!isHovered);
 
-  const [updateColor, setUpdateColor] = useState();
-  const [updateComment, setUpdateComment] = useState();
-  const [updateTrack, setUpdateTrack] = useState();
-  const [updateParameter, setUpdateParameter] = useState();
   const { setValue, handleSubmit } = useForm({
     defaultValues: gridData,
   });
@@ -34,43 +30,45 @@ export const AOGrid = () => {
     setModalType("");
   };
 
-  const updateSessionData = (
-    cellColor,
-    cellComment,
-    cellTrack,
-    cellParameter
-  ) => {
-    console.log(
-      `color: ${cellColor}, comment: ${cellComment}, track: ${cellTrack}, parameter: ${cellParameter}`
-    );
+  const [cellOpen, setCellOpen] = useState();
+  const [cellClosed, setCellClosed] = useState();
 
-    const index = gridData.tracks.findIndex(
-      (track) => track.title === cellTrack
-    );
+  useEffect(() => {
+    if (cellOpen && cellClosed) {
+      Object.entries(cellOpen).forEach(([key]) => {
+        if (cellOpen[key] !== cellClosed[key]) {
+          updateSessionData(cellClosed);
+        }
+      });
+    }
+  }, [cellOpen, cellClosed]);
+
+  const updateSessionData = (updatedCell) => {
+    console.log(updatedCell);
   };
 
-  const XupdateSessionData = () => {
-    gridData.tracks.forEach((trackTitle, trackIndex) => {
-      if (trackTitle.title === updateTrack) {
-        gridData.tracks[trackIndex].parameters.forEach(
-          (paramTitle, paramIndex) => {
-            if (paramTitle.parameter === updateParameter) {
-              setValue(
-                `tracks.${trackIndex}.parameters.${paramIndex}.colour`,
-                updateColor
-              );
-              setValue(
-                `tracks.${trackIndex}.parameters.${paramIndex}.comment`,
-                updateComment
-              );
-            }
-          }
-        );
-      }
-    });
-    handleSubmit((data) => data && setGridData(data))();
-    sendData();
-  };
+  // const XupdateSessionData = () => {
+  //   gridData.tracks.forEach((trackTitle, trackIndex) => {
+  //     if (trackTitle.title === updateTrack) {
+  //       gridData.tracks[trackIndex].parameters.forEach(
+  //         (paramTitle, paramIndex) => {
+  //           if (paramTitle.parameter === updateParameter) {
+  //             setValue(
+  //               `tracks.${trackIndex}.parameters.${paramIndex}.colour`,
+  //               updateColor
+  //             );
+  //             setValue(
+  //               `tracks.${trackIndex}.parameters.${paramIndex}.comment`,
+  //               updateComment
+  //             );
+  //           }
+  //         }
+  //       );
+  //     }
+  //   });
+  //   handleSubmit((data) => data && setGridData(data))();
+  //   sendData();
+  // };
 
   const sendData = () => {
     console.log(gridData);
@@ -140,11 +138,8 @@ export const AOGrid = () => {
                         setHoverCell={setHoverCell}
                         hoverCell={hoverCell}
                         gridData={gridData}
-                        setUpdateColor={setUpdateColor}
-                        setUpdateComment={setUpdateComment}
-                        setUpdateTrack={setUpdateTrack}
-                        setUpdateParameter={setUpdateParameter}
-                        updateSessionData={updateSessionData}
+                        setCellOpen={setCellOpen}
+                        setCellClosed={setCellClosed}
                       />
                     );
                   })}
