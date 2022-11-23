@@ -54,7 +54,7 @@ export const AOGrid = () => {
         }
       );
 
-      handleSubmit((data) => data && console.log(data))();
+      handleSubmit((data) => data && sendData(data))();
     },
     [gridData.tracks, setValue, handleSubmit]
   );
