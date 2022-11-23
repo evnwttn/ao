@@ -40,7 +40,6 @@ export const AOGrid = () => {
           .put(`http://localhost:5000/grid`, {
             ...grid,
           })
-          .then((data) => console.log(data.data))
           .catch(function (error) {
             console.log(error);
           });
