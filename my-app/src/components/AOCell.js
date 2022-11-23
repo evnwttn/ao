@@ -23,12 +23,6 @@ export const AOCell = ({
 
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
-    setCellOpen({
-      color: cellColor,
-      comment: cellComment,
-      trackTitle: track.title,
-      parameter: parameter,
-    });
   };
 
   const handleClose = () => {
@@ -73,6 +67,14 @@ export const AOCell = ({
         onMouseLeave={toggleHovered}
       >
         <Box
+          onClick={() =>
+            setCellOpen({
+              color: cellColor,
+              comment: cellComment,
+              trackTitle: track.title,
+              parameter: parameter,
+            })
+          }
           sx={{
             backgroundColor: cellColor,
             ...cellSx.cell,

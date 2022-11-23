@@ -33,16 +33,6 @@ export const AOGrid = () => {
   const [cellOpen, setCellOpen] = useState();
   const [cellClosed, setCellClosed] = useState();
 
-  useEffect(() => {
-    if (cellOpen && cellClosed) {
-      Object.entries(cellOpen).forEach(([key]) => {
-        if (cellOpen[key] !== cellClosed[key]) {
-          updateSessionData(cellClosed);
-        }
-      });
-    }
-  }, [cellOpen, cellClosed]);
-
   const updateSessionData = (updatedCell) => {
     const updateTrackIndex = gridData.tracks.findIndex(
       (track) => track.title === updatedCell.trackTitle
@@ -65,6 +55,16 @@ export const AOGrid = () => {
 
     handleSubmit((data) => data && console.log(data))();
   };
+
+  useEffect(() => {
+    if (cellOpen && cellClosed) {
+      Object.entries(cellOpen).forEach(([key]) => {
+        if (cellOpen[key] !== cellClosed[key]) {
+          updateSessionData(cellClosed);
+        }
+      });
+    }
+  }, [cellOpen, cellClosed]);
 
   // const XupdateSessionData = () => {
   //   gridData.tracks.forEach((trackTitle, trackIndex) => {
