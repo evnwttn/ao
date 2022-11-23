@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { useForm } from "react-hook-form";
 import { useLocation } from "react-router-dom";
 import { Box, Grid, ThemeProvider } from "@mui/material/";
@@ -6,9 +6,9 @@ import aotheme, { gridSx, cellSx } from "../assets/theme";
 import { ModalBase, AONav, AOCell } from "./index";
 
 export const AOGrid = () => {
-  // const axios = require("axios").default;
+  const axios = require("axios").default;
   const location = useLocation();
-  const [gridData, setGridData] = useState(location.state.data);
+  const [gridData] = useState(location.state.data);
 
   const [hoverCell, setHoverCell] = useState();
   const [isHovered, setIsHovered] = useState(false);
@@ -33,7 +33,33 @@ export const AOGrid = () => {
   const [cellOpen, setCellOpen] = useState();
   const [cellClosed, setCellClosed] = useState();
 
-  const updateSessionData = (updatedCell) => {
+  const updateSessionData = useCallback(
+    (updatedCell) => {
+      const updateTrackIndex = gridData.tracks.findIndex(
+        (track) => track.title === updatedCell.trackTitle
+      );
+
+      gridData.tracks[updateTrackIndex].parameters.forEach(
+        (paramTitle, paramIndex) => {
+          if (paramTitle.parameter === updatedCell.parameter) {
+            setValue(
+              `tracks.${updateTrackIndex}.parameters.${paramIndex}.colour`,
+              updatedCell.color
+            );
+            setValue(
+              `tracks.${updateTrackIndex}.parameters.${paramIndex}.comment`,
+              updatedCell.comment
+            );
+          }
+        }
+      );
+
+      handleSubmit((data) => data && console.log(data))();
+    },
+    [gridData.tracks, handleSubmit, setValue]
+  );
+
+  const updateSessionDataX = (updatedCell) => {
     const updateTrackIndex = gridData.tracks.findIndex(
       (track) => track.title === updatedCell.trackTitle
     );
@@ -64,7 +90,7 @@ export const AOGrid = () => {
         }
       });
     }
-  }, [cellOpen, cellClosed]);
+  }, [cellOpen, cellClosed, updateSessionData]);
 
   // const XupdateSessionData = () => {
   //   gridData.tracks.forEach((trackTitle, trackIndex) => {
@@ -89,14 +115,14 @@ export const AOGrid = () => {
   //   sendData();
   // };
 
-  const sendData = () => {
-    // axios
-    //   .put(`http://localhost:5000/grid`, {
-    //     ...gridData,
-    //   })
-    //   .catch(function (error) {
-    //     console.log(error);
-    //   });
+  const sendData = (grid) => {
+    axios
+      .put(`http://localhost:5000/grid`, {
+        ...grid,
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
   };
 
   return (
