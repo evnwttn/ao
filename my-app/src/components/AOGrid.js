@@ -56,31 +56,8 @@ export const AOGrid = () => {
 
       handleSubmit((data) => data && console.log(data))();
     },
-    [gridData.tracks, handleSubmit, setValue]
+    [gridData.tracks, setValue, handleSubmit]
   );
-
-  const updateSessionDataX = (updatedCell) => {
-    const updateTrackIndex = gridData.tracks.findIndex(
-      (track) => track.title === updatedCell.trackTitle
-    );
-
-    gridData.tracks[updateTrackIndex].parameters.forEach(
-      (paramTitle, paramIndex) => {
-        if (paramTitle.parameter === updatedCell.parameter) {
-          setValue(
-            `tracks.${updateTrackIndex}.parameters.${paramIndex}.colour`,
-            updatedCell.color
-          );
-          setValue(
-            `tracks.${updateTrackIndex}.parameters.${paramIndex}.comment`,
-            updatedCell.comment
-          );
-        }
-      }
-    );
-
-    handleSubmit((data) => data && console.log(data))();
-  };
 
   useEffect(() => {
     if (cellOpen && cellClosed) {
@@ -91,29 +68,6 @@ export const AOGrid = () => {
       });
     }
   }, [cellOpen, cellClosed, updateSessionData]);
-
-  // const XupdateSessionData = () => {
-  //   gridData.tracks.forEach((trackTitle, trackIndex) => {
-  //     if (trackTitle.title === updateTrack) {
-  //       gridData.tracks[trackIndex].parameters.forEach(
-  //         (paramTitle, paramIndex) => {
-  //           if (paramTitle.parameter === updateParameter) {
-  //             setValue(
-  //               `tracks.${trackIndex}.parameters.${paramIndex}.colour`,
-  //               updateColor
-  //             );
-  //             setValue(
-  //               `tracks.${trackIndex}.parameters.${paramIndex}.comment`,
-  //               updateComment
-  //             );
-  //           }
-  //         }
-  //       );
-  //     }
-  //   });
-  // handleSubmit((data) => data && setGridData(data))();
-  //   sendData();
-  // };
 
   const sendData = (grid) => {
     axios
