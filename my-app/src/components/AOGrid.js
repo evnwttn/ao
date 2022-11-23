@@ -35,6 +35,17 @@ export const AOGrid = () => {
 
   const updateSessionData = useCallback(
     (updatedCell) => {
+      const sendData = (grid) => {
+        axios
+          .put(`http://localhost:5000/grid`, {
+            ...grid,
+          })
+          .then((data) => console.log(data.data))
+          .catch(function (error) {
+            console.log(error);
+          });
+      };
+
       const updateTrackIndex = gridData.tracks.findIndex(
         (track) => track.title === updatedCell.trackTitle
       );
@@ -56,7 +67,7 @@ export const AOGrid = () => {
 
       handleSubmit((data) => data && sendData(data))();
     },
-    [gridData.tracks, setValue, handleSubmit]
+    [gridData.tracks, setValue, handleSubmit, axios]
   );
 
   useEffect(() => {
@@ -68,16 +79,6 @@ export const AOGrid = () => {
       });
     }
   }, [cellOpen, cellClosed, updateSessionData]);
-
-  const sendData = (grid) => {
-    axios
-      .put(`http://localhost:5000/grid`, {
-        ...grid,
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
-  };
 
   return (
     <Box sx={gridSx.container}>
