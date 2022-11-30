@@ -18,7 +18,7 @@ export const LoginModalContent = ({
 
   const sendUserLoginData = () => {
     if (confirmField?.current?.value !== passwordField?.current?.value) {
-      setSignUpMessage("Passwords don't match");
+      setSignUpMessage("Passwords do not match");
     } else {
       setUserLoginData({
         email: emailField?.current?.value!,
