@@ -12,6 +12,7 @@ export const LoginModalContent = ({
   const [userLoginData, setUserLoginData] = useState<UserLoginData>();
   const emailField = useRef<HTMLInputElement>(null);
   const passwordField = useRef<HTMLInputElement>(null);
+  const confirmField = useRef<HTMLInputElement>(null);
   const [showPassword, setShowPassword] = useState<Boolean>(true);
 
   const sendUserLoginData = () => {
@@ -63,6 +64,7 @@ export const LoginModalContent = ({
     <LoginNewUser
       emailField={emailField}
       passwordField={passwordField}
+      confirmField={confirmField}
       showPassword={showPassword}
       setShowPassword={setShowPassword}
       isNewUser={isNewUser}

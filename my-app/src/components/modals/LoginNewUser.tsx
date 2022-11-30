@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Box, TextField, IconButton, InputAdornment } from "@mui/material";
 import { modalCenteredSx, palette } from "../../assets/theme";
 import SendIcon from "@mui/icons-material/Send";
@@ -7,6 +7,7 @@ import { Visibility, VisibilityOff } from "@mui/icons-material";
 export const LoginNewUser = ({
   emailField,
   passwordField,
+  confirmField,
   showPassword,
   setShowPassword,
   isNewUser,
@@ -61,7 +62,7 @@ export const LoginNewUser = ({
       />
       <TextField
         placeholder="Confirm Password"
-        inputRef={passwordField}
+        inputRef={confirmField}
         variant="standard"
         type={showPassword ? "password" : "text"}
         margin="normal"
