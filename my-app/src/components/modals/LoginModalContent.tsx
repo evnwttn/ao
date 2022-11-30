@@ -21,12 +21,16 @@ export const LoginModalContent = ({
     switch (isNewUser) {
       case true:
         if (confirmField?.current?.value !== passwordField?.current?.value) {
-          setSignUpMessage("Passwords do not match");
+          setSignUpMessage("PASSWORDS DO NOT MATCH");
         } else {
           setUserLoginData({
             email: emailField?.current?.value!,
             password: passwordField?.current?.value!,
           });
+        }
+
+        if (activeUser !== true) {
+          setSignUpMessage("THIS EMAIL IS ALREADY IN USE");
         }
 
         break;
@@ -35,6 +39,10 @@ export const LoginModalContent = ({
           email: emailField?.current?.value!,
           password: passwordField?.current?.value!,
         });
+
+        if (activeUser !== true) {
+          setLogInMessage("INVALID USERNAME AND/OR PASSWORD");
+        }
 
         break;
       default:
@@ -94,6 +102,7 @@ export const LoginModalContent = ({
     />
   ) : (
     <LoginExistingUser
+      logInMessage={logInMessage}
       emailField={emailField}
       passwordField={passwordField}
       showPassword={showPassword}
