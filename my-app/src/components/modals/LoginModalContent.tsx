@@ -27,10 +27,10 @@ export const LoginModalContent = ({
             email: emailField?.current?.value!,
             password: passwordField?.current?.value!,
           });
-        }
 
-        if (activeUser !== true) {
-          setSignUpMessage("THIS EMAIL IS ALREADY IN USE");
+          if (activeUser !== true) {
+            setSignUpMessage("THIS EMAIL IS ALREADY IN USE");
+          }
         }
 
         break;
