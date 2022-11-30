@@ -5,6 +5,7 @@ import SendIcon from "@mui/icons-material/Send";
 import { Visibility, VisibilityOff } from "@mui/icons-material";
 
 export const LoginExistingUser = ({
+  logInMessage,
   emailField,
   passwordField,
   showPassword,
@@ -31,6 +32,7 @@ export const LoginExistingUser = ({
           New User?
         </Box>
       </Box>
+      <Box sx={{ color: palette.aoRed }}>{logInMessage}</Box>
       <TextField
         placeholder="Email"
         inputRef={emailField}
