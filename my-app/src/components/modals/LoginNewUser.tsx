@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Box, TextField, IconButton, InputAdornment } from "@mui/material";
 import { modalCenteredSx, palette } from "../../assets/theme";
 import SendIcon from "@mui/icons-material/Send";
@@ -40,6 +40,27 @@ export const LoginNewUser = ({
       />
       <TextField
         placeholder="Password"
+        inputRef={passwordField}
+        variant="standard"
+        type={showPassword ? "password" : "text"}
+        margin="normal"
+        sx={{ width: "26vw" }}
+        InputProps={{
+          endAdornment: (
+            <InputAdornment position="end">
+              <IconButton onClick={() => setShowPassword(!showPassword)}>
+                {showPassword ? (
+                  <VisibilityOff sx={{ color: palette.aoDivider }} />
+                ) : (
+                  <Visibility />
+                )}
+              </IconButton>
+            </InputAdornment>
+          ),
+        }}
+      />
+      <TextField
+        placeholder="Confirm Password"
         inputRef={passwordField}
         variant="standard"
         type={showPassword ? "password" : "text"}
