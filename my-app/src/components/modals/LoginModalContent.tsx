@@ -8,7 +8,7 @@ export const LoginModalContent = ({
   setModalType,
 }: any) => {
   const axios = require("axios").default;
-  const [setMessage, setUserMessage] = useState<string>();
+  const [signUpMessage, setSignUpMessage] = useState<string>();
   const [isNewUser, setIsNewUser] = useState<Boolean>(false);
   const [userLoginData, setUserLoginData] = useState<UserLoginData>();
   const emailField = useRef<HTMLInputElement>(null);
@@ -18,7 +18,7 @@ export const LoginModalContent = ({
 
   const sendUserLoginData = () => {
     if (confirmField?.current?.value !== passwordField?.current?.value) {
-      setUserMessage("Passwords don't match");
+      setSignUpMessage("Passwords don't match");
     } else {
       setUserLoginData({
         email: emailField?.current?.value!,
@@ -67,6 +67,7 @@ export const LoginModalContent = ({
 
   return isNewUser ? (
     <LoginNewUser
+      signUpMessage={signUpMessage}
       emailField={emailField}
       passwordField={passwordField}
       confirmField={confirmField}
