@@ -8,6 +8,7 @@ export const LoginModalContent = ({
   setModalType,
 }: any) => {
   const axios = require("axios").default;
+  const [setMessage, setUserMessage] = useState<string>();
   const [isNewUser, setIsNewUser] = useState<Boolean>(false);
   const [userLoginData, setUserLoginData] = useState<UserLoginData>();
   const emailField = useRef<HTMLInputElement>(null);
@@ -16,10 +17,14 @@ export const LoginModalContent = ({
   const [showPassword, setShowPassword] = useState<Boolean>(true);
 
   const sendUserLoginData = () => {
-    setUserLoginData({
-      email: emailField?.current?.value!,
-      password: passwordField?.current?.value!,
-    });
+    if (confirmField?.current?.value !== passwordField?.current?.value) {
+      setUserMessage("Passwords don't match");
+    } else {
+      setUserLoginData({
+        email: emailField?.current?.value!,
+        password: passwordField?.current?.value!,
+      });
+    }
   };
 
   useEffect(() => {
