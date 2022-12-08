@@ -36,9 +36,11 @@ const Home = () => {
   useEffect(() => {
     let isMounted = true;
 
+    // port @ end of url if issues
+
     axios
       .put(
-        `http://localhost:5000/session/`,
+        `http://ao-production.up.railway.app/session/`,
         {},
         {
           withCredentials: true,
