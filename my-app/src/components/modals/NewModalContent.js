@@ -118,7 +118,7 @@ export const NewModalContent = () => {
     const sendDataRequest = () => {
       axios
         .post(
-          `http://localhost:5000/grid/`,
+          `http://ao-production.up.railway.app/grid/`,
           {
             ...sessionData,
           },
