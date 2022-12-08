@@ -57,17 +57,19 @@ export const LoginModalContent = ({
   });
 
   useEffect(() => {
+    let isMounted = true;
+
     if (isNewUser) {
       userLoginData &&
         axios
           .post(
-            "https://ao-production.up.railway.app/user/",
+            "https://ao-production.up.railway.app/user/6332",
             {
               ...userLoginData,
             },
             { withCredentials: true }
           )
-          .then((data: any) => setActiveUser(data.data))
+          .then((data: any) => (isMounted ? setActiveUser(data.data) : null))
           .catch(function (error: any) {
             console.log(error);
           });
@@ -75,17 +77,21 @@ export const LoginModalContent = ({
       userLoginData &&
         axios
           .put(
-            "https://ao-production.up.railway.app/user/",
+            "https://ao-production.up.railway.app/user/6332",
             {
               ...userLoginData,
             },
             { withCredentials: true }
           )
-          .then((data: any) => setActiveUser(data.data))
+          .then((data: any) => (isMounted ? setActiveUser(data.data) : null))
           .catch(function (error: any) {
             console.log(error);
           });
     }
+
+    return () => {
+      isMounted = false;
+    };
   }, [userLoginData, axios, isNewUser, setActiveUser]);
 
   return isNewUser ? (
