@@ -37,7 +37,7 @@ export const AOGrid = () => {
     (updatedCell) => {
       const sendData = (grid) => {
         axios
-          .put(`http://localhost:5000/grid`, {
+          .put(`http://ao-production.up.railway.app/grid`, {
             ...grid,
           })
           .catch(function (error) {
