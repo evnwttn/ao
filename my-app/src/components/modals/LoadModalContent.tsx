@@ -18,7 +18,7 @@ export const LoadModalContent = () => {
   useEffect(() => {
     axios
       .post(
-        `http://ao-production.up.railway.app/load/`,
+        `https://ao-production.up.railway.app/load/`,
         {},
         {
           withCredentials: true,

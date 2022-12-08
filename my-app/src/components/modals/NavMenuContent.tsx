@@ -25,7 +25,7 @@ export const NavMenuContent = () => {
       case "Log Out":
         axios
           .post(
-            `http://ao-production.up.railway.app/session/`,
+            `https://ao-production.up.railway.app/session/`,
             {},
             {
               withCredentials: true,

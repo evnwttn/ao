@@ -40,7 +40,7 @@ const Home = () => {
 
     axios
       .put(
-        `http://ao-production.up.railway.app/session/`,
+        `https://ao-production.up.railway.app/session/`,
         {},
         {
           withCredentials: true,
