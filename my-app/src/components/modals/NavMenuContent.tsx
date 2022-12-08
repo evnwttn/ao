@@ -19,14 +19,13 @@ export const NavMenuContent = () => {
   const onClick = (item: string) => {
     switch (item) {
       case "Home":
-        // pass in to not open load array
         setNavHome(true);
 
         break;
       case "Log Out":
         axios
           .post(
-            `http://localhost:5000/session/`,
+            `http://ao-production.up.railway.app/session/`,
             {},
             {
               withCredentials: true,

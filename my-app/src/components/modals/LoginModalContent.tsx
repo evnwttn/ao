@@ -61,7 +61,7 @@ export const LoginModalContent = ({
       userLoginData &&
         axios
           .post(
-            "http://localhost:5000/user",
+            "http://ao-production.up.railway.app/user",
             {
               ...userLoginData,
             },
@@ -75,7 +75,7 @@ export const LoginModalContent = ({
       userLoginData &&
         axios
           .put(
-            "http://localhost:5000/user",
+            "http://ao-production.up.railway.app/user",
             {
               ...userLoginData,
             },
