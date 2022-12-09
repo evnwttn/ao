@@ -63,13 +63,14 @@ export const LoginModalContent = ({
       userLoginData &&
         axios
           .post(
-            "https://ao-production.up.railway.app/user/6332",
+            "http://ao-production.up.railway.app:5000/user/",
             {
               ...userLoginData,
             },
             { withCredentials: true }
           )
-          .then((data: any) => (isMounted ? setActiveUser(data.data) : null))
+          .then((data: any) => console.log(data))
+          // .then((data: any) => (isMounted ? setActiveUser(data.data) : null))
           .catch(function (error: any) {
             console.log(error);
           });
@@ -77,13 +78,14 @@ export const LoginModalContent = ({
       userLoginData &&
         axios
           .put(
-            "https://ao-production.up.railway.app/user/6332",
+            "http://ao-production.up.railway.app:5000/user/",
             {
               ...userLoginData,
             },
             { withCredentials: true }
           )
-          .then((data: any) => (isMounted ? setActiveUser(data.data) : null))
+          .then((data: any) => console.log(data))
+          // .then((data: any) => (isMounted ? setActiveUser(data.data) : null))
           .catch(function (error: any) {
             console.log(error);
           });
