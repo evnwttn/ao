@@ -27,7 +27,7 @@ export const ContactModalContent = () => {
     if (formData.message !== "") {
       setFormLoading(true);
       axios
-        .post("https://ao-production.up.railway.app/contact/", {
+        .post(`https://ao-production.up.railway.app/contact/`, {
           ...formData,
         })
         .then((_data: any) => console.log(JSON.stringify(_data)))
