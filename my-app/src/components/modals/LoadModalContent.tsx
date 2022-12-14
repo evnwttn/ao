@@ -16,6 +16,8 @@ export const LoadModalContent = () => {
   const [userSessions, setUserSessions] = useState<any>();
 
   useEffect(() => {
+    let isMounted = true;
+
     axios
       .post(
         `https://ao-production.up.railway.app/load/`,
@@ -24,10 +26,15 @@ export const LoadModalContent = () => {
           withCredentials: true,
         }
       )
-      .then((data: any) => setUserSessions(data.data))
+      .then((data: any) => (isMounted ? console.log(data.data) : null))
+      .then((data: any) => (isMounted ? setUserSessions(data.data) : null))
       .catch(function (error: any) {
         console.log(error);
       });
+
+    return () => {
+      isMounted = false;
+    };
   }, [axios]);
 
   return (
