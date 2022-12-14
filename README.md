@@ -1,6 +1,6 @@
 # ao :musical_score:
 
-offline version 
+<b>in deployment // expect errors</b>
 <br />https://evnwttn.github.io/ao
 
 ---
