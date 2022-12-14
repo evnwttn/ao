@@ -19,9 +19,13 @@ export const LoadModalContent = () => {
     let isMounted = true;
 
     axios
-      .post(`https://ao-production.up.railway.app/load/`, {
-        withCredentials: true,
-      })
+      .post(
+        `https://ao-production.up.railway.app/load/`,
+        {},
+        {
+          withCredentials: true,
+        }
+      )
       .then((data: any) => (isMounted ? setUserSessions(data.data) : null))
       .catch(function (error: any) {
         console.log(error);
