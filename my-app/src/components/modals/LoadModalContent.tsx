@@ -28,7 +28,7 @@ export const LoadModalContent = () => {
       )
       .then((data: any) => (isMounted ? setUserSessions(data.data) : null))
       .catch(function (error: any) {
-        console.log(`error: ${error}`);
+        console.log(error);
       });
 
     return () => {
