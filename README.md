@@ -1,6 +1,7 @@
 # ao :musical_score:
 
-<b>in deployment // expect errors</b>
+actively deployed on pages & <a href="https://railway.app/">railway</a>
+<br />current version in testing / <b>expect erros</b>
 <br />https://evnwttn.github.io/ao
 
 ---
