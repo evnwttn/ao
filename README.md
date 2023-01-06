@@ -1,12 +1,13 @@
 # ao :musical_score:
 
-working on a frontend <a href="https://github.com/evnwttn/ao2">rejig</a> w/ next.js/100% typescript/react
+try the client-side <a href="https://evnwttn.github.io/ao2/">demo version</a>
+<br />built w/ next 13, typescript & MUI
 
 ---
 
-actively deployed on pages & <a href="https://railway.app/">railway</a>
+
+<a href="https://evnwttn.github.io/ao">full version</a> deployed on pages & <a href="https://railway.app/">railway</a>
 <br />current version in testing / <b>expect erros</b>
-<br />https://evnwttn.github.io/ao
 
 ---
 
