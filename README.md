@@ -1,7 +1,8 @@
 # ao :musical_score:
 
-try the client-side <a href="https://evnwttn.github.io/ao2/">demo version</a>
+try the client-side <a href="https://ao-demo.vercel.app/">demo version</a>
 <br />built w/ next 13, typescript & MUI
+<br />deployed w/ <a href="https://vercel.com/evnwttn">vercel</a>
 
 ---
 
